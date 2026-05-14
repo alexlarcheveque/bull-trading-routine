@@ -1,3 +1,5 @@
 _research/
 OUTLINE.md
 .env
+logs/
+*.log
