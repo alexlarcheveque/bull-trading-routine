@@ -14,6 +14,15 @@ discarded.
 - no exits, no entries, no portfolio refresh
 - no pre-market watchlist exists yet for today; pre-market.md has not run
 
+## 2026-05-14 pre-market watchlist
+
+Research pass FAILED: xAI Grok API returned permission/credits error on all 4 queries.
+Response body: `{"code":"The caller does not have permission to execute the specified operation","error":"Your newly created team doesn't have any credits or licenses yet. You can purchase those on https://console.x.ai/team/2f47388e-3bd1-4c11-958e-cb40e1715c7b."}`
+
+No tradeable signal today. Market-open will see no watchlist and sit out.
+
+Action item for operator: top up xAI credits at console.x.ai before the next pre-market run, or swap `scripts/grok.sh` to a working news source.
+
 ---
 
 # Format examples (for reference, not real entries)
