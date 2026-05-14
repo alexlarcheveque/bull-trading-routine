@@ -8,6 +8,12 @@ Initial empty log. First watchlist will be appended by pre-market.md on the next
 6:00 AM CT run. Preflight smoke-test entries from setup were intentionally
 discarded.
 
+## 2026-05-14T00:11:01Z market-open SKIPPED
+- alpaca clock: is_open=false, next_open=2026-05-14T09:30:00-04:00
+- routine fired after session close (timestamp ~11 PM CT 2026-05-13)
+- no exits, no entries, no portfolio refresh
+- no pre-market watchlist exists yet for today; pre-market.md has not run
+
 ---
 
 # Format examples (for reference, not real entries)
