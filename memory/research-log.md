@@ -189,3 +189,7 @@ Skipped:
 ## YYYY-MM-DDTHH:MM:SSZ HALT daily-loss-cap
 - day_pnl_pct: -3.4
 - action: no new entries for the rest of the day
+
+## 2026-05-15T20:25:30Z market-open SKIP
+- reason: market closed at fire time (is_open=false, next_open 2026-05-18T09:30 ET)
+- action: no exits, no entries; portfolio unchanged
