@@ -193,3 +193,10 @@ Skipped:
 ## 2026-05-15T20:25:30Z market-open SKIP
 - reason: market closed at fire time (is_open=false, next_open 2026-05-18T09:30 ET)
 - action: no exits, no entries; portfolio unchanged
+
+## 2026-05-15 weekly-review: NO strategy edit
+- week of 2026-05-11 to 2026-05-15: 0 trades closed, equity flat $100k, 0 preflight rejections.
+- Rubric untested: only 1 candidate scored >=7 all week (AMAT, fires Monday 5/18). Cannot evaluate stop tightness, time-stop timing, or rubric weights with zero closed trades.
+- IEX bars 4-5 trading days stale -> Confirmation bucket effectively unscorable in real time; this is a data-feed issue, not a strategy issue. Not an edit.
+- Volume floor recalibration 1M->150k (commit e8d9833) is a guardrails change, human-owned. Strategy.md untouched.
+- Verdict: RESUME MONDAY WITH CURRENT STRATEGY. Default to no edit per routine's stability rule.
