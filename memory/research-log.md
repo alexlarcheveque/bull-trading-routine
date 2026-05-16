@@ -94,6 +94,79 @@ Action items for operator:
 - Volume filter at 1M shares against the current sandbox bars feed eliminates almost every real large-cap. Consider either (a) lowering `min_avg_daily_volume_shares` in guardrails.md to match the data source (~250k looks closer to "liquid" in this feed), or (b) wiring a real-volume data source. Leaving guardrails.md alone for now — pre-market.md is forbidden from editing it.
 - CSCO is the cleanest fundamental catalyst (beat + raise) but the novelty is already gone after the +14.85% pre-market gap. Strategy correctly excludes it on novelty grounds, independent of the volume filter.
 
+## 2026-05-15 pre-market watchlist
+
+Note: routine fired Friday 2026-05-15 ~20:21 ET (after Friday close). Next session is Monday 2026-05-18. Watchlist applies to Monday open. Volume filter recently calibrated to 150k (commit e8d9833).
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- MSFT: Ackman/Pershing Square new position (13F upcoming); stock +2-3%. Source: Reuters, WSJ, May 15.
+- NVDA: TD Cowen PT raise $235→$275, Buy. Source: Investing.com, TipRanks, May 15.
+
+**Q2 — pre-market movers >2% on news (May 15):**
+- HCWB +217%: biotech catalyst, $1.07, low-float. Source: Benzinga.
+- TDIC +101%: news-driven surge, $1.61. Source: Benzinga.
+- AUUD +73%: catalyst move, $2.11. Source: Benzinga.
+- SLE +68.67%: news catalyst, $6.87. Source: Benzinga.
+- PZZA ~+5%: takeover speculation. Source: x.com/marketsday.
+- DXCM +5.5%: earnings/news. Source: Benzinga.
+
+**Q3 — beat-and-raise earnings after May 14 close:**
+- AMAT: Q2 FY26 non-GAAP EPS $2.86 vs $2.68 cons (+$0.18, +20% YoY); Q3 revenue guide $8.95B (±$500M) and EPS $3.36 (±$0.20), above Street. Source: MarketBeat, IBD/Investors.com, Applied Materials IR, May 14/15.
+- No other beat-and-raise reports identified.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- None in the 24h window.
+
+### Candidate filter pass
+
+Already in portfolio: none. Disqualified before Alpaca check (per strategy):
+- MSFT, NVDA: analyst/investor narrative only — no new material corporate event.
+- HCWB, TDIC, AUUD: sub-$5 price floor + likely <$2B market cap; low-float penny moves.
+- SLE: $6.87 but Alpaca asset attributes include `overnight_halted` AND likely micro-cap; skip per cleanliness and universe.
+
+Survivors checked via `./scripts/alpaca.sh asset` + 30-day avg volume + latest trade:
+
+| ticker | tradable | 30d avg vol | passes 150k filter? | last trade (5/15) | last daily bar close (5/8) |
+|--------|----------|-------------|---------------------|--------------------|-----------------------------|
+| AMAT   | yes      | 218,607     | YES                 | $434.27            | $435.34                     |
+| DXCM   | yes      | 227,710     | YES                 | $61.63             | $60.61                      |
+| PZZA   | yes      | 38,838      | NO                  | —                  | $31.15                      |
+
+### Scoring
+
+**AMAT** — Q2 FY26 beat-and-raise: EPS $2.86 vs $2.68 (+$0.18), Q3 revenue guide $8.95B / EPS $3.36 above Street.
+- Catalyst strength: **4** — hard cash-flow event with raised forward guidance on a semicap leader.
+- Novelty: **2** — post-earnings tape essentially flat ($434.27 latest vs $435.34 prior week close); pre-earnings run ($387→$435, +12%) was largely the anticipation move, so additional rerate is plausible. Not 3 (some of the move pre-printed).
+- Confirmation: **0** — flat-to-down on a beat-and-raise is the OPPOSITE of confirmation. Honest scoring: muted post-print reaction is a yellow flag, not a green light.
+- Cleanliness: **1** — earnings just released (event risk past, not within next 3 days); no offsetting news; not halted.
+- **Total: 7 — tradeable at threshold.** Confirmation gap noted.
+
+**DXCM** — +5.5% pre-market on "earnings/news" (Grok unclear on specifics).
+- Catalyst strength: **2** — unspecified earnings/news; can't verify material beat-and-raise.
+- Novelty: **2** — latest trade $61.63 vs $60.61 prior close = +1.7%; the claimed +5.5% pre-market faded into the regular session.
+- Confirmation: **1** — slight green close on the news.
+- Cleanliness: **1**.
+- **Total: 6 — below threshold.**
+
+### Watchlist
+
+| ticker | score | catalyst                                                              | source                |
+|--------|-------|-----------------------------------------------------------------------|-----------------------|
+| AMAT   | 7     | Q2 FY26 EPS $2.86 vs $2.68 (+$0.18); Q3 guide $8.95B rev / $3.36 EPS  | MarketBeat / IR May 14|
+
+Skipped (below threshold or filtered):
+- DXCM (score 6): vague "earnings/news" catalyst; pre-market +5.5% faded to +1.7% by close — novelty largely gone.
+- PZZA (takeover rumor): 30d avg vol 38k fails 150k filter; also rumor only, not confirmed M&A.
+- MSFT (Ackman 13F), NVDA (PT raise): analyst/investor narrative only — strategy excludes.
+- HCWB, TDIC, AUUD: sub-$5 + micro-cap, fails universe.
+- SLE: overnight_halted flag on Alpaca asset; skip per cleanliness.
+
+Action items for operator (informational only, pre-market.md does not edit guardrails):
+- AMAT made the cut largely because the post-earnings reaction was muted (confirmation=0). If Monday's open shows a gap >5% on the news, novelty will collapse and market-open.md should re-evaluate before firing the buy. Strategy's intent is "early on the second wave," not "buy a stock the market already rejected the catalyst on."
+- IEX-feed bars are 5 days stale (latest 5/8 vs today 5/15). Confirmation scoring is therefore weak across the board until a real data feed is wired. Operator may want to add `quote`-based intraday-change cross-check to the scoring step.
+
 ---
 
 # Format examples (for reference, not real entries)
