@@ -8,7 +8,7 @@
 - cash: 100000
 - buying_power: 200000
 - day_pnl_pct: 0.00
-- last_updated: 2026-05-13T23:35-04:00 (initial seed)
+- last_updated: 2026-05-18T09:43-0700 (market-open routine)
 
 ## Open positions
 | ticker | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
@@ -16,5 +16,5 @@
 | —      | —   | —           | —          | —           | —                  |
 
 ## Notes
-First run: no positions yet. Pre-market.md runs first and writes a watchlist;
-market-open.md reads that watchlist and opens positions which will appear here.
+No positions. 2026-05-18 watchlist was empty (no candidate scored >=7);
+market-open had no entries to execute and no positions to exit.

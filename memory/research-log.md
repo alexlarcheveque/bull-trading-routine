@@ -297,3 +297,9 @@ Action items for operator (informational only):
 - IEX bars 4-5 trading days stale -> Confirmation bucket effectively unscorable in real time; this is a data-feed issue, not a strategy issue. Not an edit.
 - Volume floor recalibration 1M->150k (commit e8d9833) is a guardrails change, human-owned. Strategy.md untouched.
 - Verdict: RESUME MONDAY WITH CURRENT STRATEGY. Default to no edit per routine's stability rule.
+
+## 2026-05-18 market-open execution
+- watchlist had 0 tradeable candidates (top score 5 for D, below threshold).
+- 0 positions open -> 0 exits.
+- 0 entries (no signal).
+- Account unchanged: equity $100k, cash $100k, day_pnl 0%.
