@@ -194,6 +194,103 @@ Skipped:
 - reason: market closed at fire time (is_open=false, next_open 2026-05-18T09:30 ET)
 - action: no exits, no entries; portfolio unchanged
 
+## 2026-05-18 pre-market watchlist
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- PANW: Multiple analyst upgrades (Morgan Stanley, Stifel, Piper Sandler), positive flows on May 18. Source: moomoo, May 18.
+- Generic large-cap growth/tech flow context (NVDA, AAPL, MSFT, cybersecurity). Source: Seeking Alpha May 17 report.
+- Note: Grok reports "no major standalone bullish catalysts in the exact last 24 hours" for large-caps.
+
+**Q2 — pre-market movers >2% on May 18 with news catalyst:**
+- RAMP +26-28%: $2.5B all-cash buyout by Publicis + Q1 beat. Source: thestockcatalyst.com.
+- HIVE +24-25%: BUZZ HPC 320 MW AI infrastructure / $3.5B Ontario gigafactory plan. Source: thestockcatalyst.com.
+- D (Dominion Energy) +13-15%: ~$66-67B merger agreement with NextEra Energy. Source: thestockcatalyst.com, thestreet.com.
+- BIO (Bio-Rad) +8%: Elliott Management activist stake. Source: financialpost.com.
+- F (Ford) +5-6.6%: Five-year framework agreement with EDF Power Solutions for up to 20 GWh BESS. Source: chartmill.com.
+
+**Q3 — beat-and-raise earnings after May 17 close:**
+- None identified. Grok reports no qualifying after-hours releases.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- VTRS: FDA accepted NDA for MR-107A-02 (fast-acting meloxicam, non-opioid acute pain). PDUFA target Dec 27, 2026. Source: prnewswire.com.
+- AZN: FDA approved two new Enhertu indications for HER2-positive early breast cancer. Source: biospace.com.
+- NTRA: Signatera CDx FDA-approved as companion diagnostic for muscle-invasive bladder cancer. Source: biospace.com.
+- RTX: $441.6M Patriot missile contract modification. Source: Facebook/Stockstoearn.
+- D + NextEra merger (covered in Q2).
+
+### Candidate filter pass
+
+Already in portfolio: none. Disqualified before Alpaca check (per strategy):
+- PANW: analyst upgrades only — no new corporate event. Strategy excludes.
+
+Survivors checked via `./scripts/alpaca.sh asset` + 30-day avg volume + last close:
+
+| ticker | tradable | 30d avg vol | passes 150k filter? | last bar close (5/13) | min_price $5? |
+|--------|----------|-------------|---------------------|------------------------|---------------|
+| RAMP   | yes      | 23,909      | NO                  | —                      | —             |
+| HIVE   | yes      | 631,756     | YES                 | $2.77                  | NO            |
+| D      | yes      | 291,729     | YES                 | $62.72                 | YES           |
+| BIO    | yes      | 20,962      | NO                  | —                      | —             |
+| F      | yes      | 2,095,883   | YES                 | $13.585                | YES           |
+| VTRS   | yes      | 618,612     | YES                 | $17.38                 | YES           |
+| AZN    | yes      | 114,877     | NO                  | —                      | —             |
+| NTRA   | yes      | 93,955      | NO                  | —                      | —             |
+| RTX    | yes      | 214,862     | YES                 | $178.12                | YES           |
+
+(Alpaca IEX feed bars still ~3 trading days stale: latest 2026-05-13. Same data-feed issue noted last week.)
+
+### Scoring (volume+price-eligible survivors)
+
+**D (Dominion Energy) — ~$66-67B merger announcement with NextEra Energy.**
+- Catalyst strength: **4** — transformational large-cap M&A, "world's largest regulated utility" framing.
+- Novelty: **1** — pre-market already +13-15%; the announced-deal move is largely in. Utility merger closes are 12-18 months out (state PUC + FERC), so the 14-day window catches limited follow-on.
+- Confirmation: **0** — bars 3 days stale, no post-news daily print available.
+- Cleanliness: **0** — M&A target gets capped at deal-spread; arb funds anchor the price. Material upside is in the closing-arb (months) not our 14-day window.
+- **Total: 5 — below threshold.**
+
+**F (Ford) — Five-year EDF Power Solutions framework, up to 20 GWh BESS.**
+- Catalyst strength: **2** — framework agreement (not booked revenue), "up to" 20 GWh is aspirational. Forward-looking but not a near-term cash-flow event.
+- Novelty: **1** — +5-6.6% pre-market; most of a modest move is in. Note: last daily bar (5/13) closed +13.4% on 17M vs 2M avg volume, indicating a separate earlier catalyst we missed — adds momentum context but doesn't increase novelty of today's news.
+- Confirmation: **0** — bars stale.
+- Cleanliness: **1** — no offsetting news; ex-earnings.
+- **Total: 4 — below threshold.**
+
+**VTRS — FDA NDA acceptance for MR-107A-02 (fast-acting meloxicam, non-opioid), PDUFA Dec 27 2026.**
+- Catalyst strength: **1** — NDA acceptance is procedural, not approval. The real binary event is December, 7 months out.
+- Novelty: **2** — fresh news, no big pre-market move reported.
+- Confirmation: **0** — bars stale.
+- Cleanliness: **1**.
+- **Total: 4 — below threshold.**
+
+**RTX — $441.6M Patriot missile contract modification.**
+- Catalyst strength: **1** — ~0.4% of annual revenue. Patriot contract mods are routine for RTX.
+- Novelty: **2** — fresh.
+- Confirmation: **0** — bars stale.
+- Cleanliness: **1**.
+- **Total: 4 — below threshold.**
+
+### Watchlist
+
+| ticker | score | catalyst | source |
+|--------|-------|----------|--------|
+
+No tradeable signal today.
+
+Skipped (below threshold or filtered):
+- D (score 5): big M&A but already +13-15% pre-market, and utility merger close is 12-18 months out — 14-day window catches little follow-on.
+- F (score 4): framework agreement, not booked revenue; partial move already in.
+- VTRS (score 4): NDA acceptance is procedural, not approval; real event is Dec 2026.
+- RTX (score 4): $441.6M contract mod is routine for $110B-revenue RTX.
+- HIVE: $2.77 last close fails min_price_per_share=$5 floor; also bitcoin-miner pivoting to AI, narrative not cash-flow.
+- RAMP, BIO, AZN, NTRA: 30d avg vol below 150k IEX-feed floor.
+- PANW: analyst upgrades only, no new corporate event.
+
+Action items for operator (informational only):
+- M&A target dynamics (RAMP all-cash buyout, D merger): per the 14-day strategy, post-announcement targets sit at deal-spread and offer little directional edge. Worth considering whether to explicitly exclude announced M&A targets in `memory/strategy.md` Universe section.
+- IEX bars remain 3 trading days stale; Confirmation bucket continues to score 0 across the board. Operator data-feed issue noted previously.
+
 ## 2026-05-15 weekly-review: NO strategy edit
 - week of 2026-05-11 to 2026-05-15: 0 trades closed, equity flat $100k, 0 preflight rejections.
 - Rubric untested: only 1 candidate scored >=7 all week (AMAT, fires Monday 5/18). Cannot evaluate stop tightness, time-stop timing, or rubric weights with zero closed trades.
