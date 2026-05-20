@@ -14,3 +14,4 @@
 
 | timestamp | ticker | side | qty | fill_price | reason | score | target_exit_date |
 |-----------|--------|------|-----|------------|--------|-------|------------------|
+| 2026-05-20 09:31 | CAVA | BUY | 60 | 82.4617 | score=9 catalyst=Q1 beat-and-raise (manual override of 150k volume floor) | 9 | 2026-06-03 |

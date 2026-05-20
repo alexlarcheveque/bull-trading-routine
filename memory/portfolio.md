@@ -4,18 +4,18 @@
 # rendered snapshot the next routine reads.
 
 ## Account
-- equity: 100000
-- cash: 100000
-- buying_power: 200000
+- equity: 100000.20
+- cash: 95052.30
+- buying_power: 195052.50
 - day_pnl_pct: 0.00
-- last_updated: 2026-05-20T08:30-0500 (market-open routine)
+- last_updated: 2026-05-20T09:32-0700 (manual CAVA buy)
 
 ## Open positions
 | ticker | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|-----|-------------|------------|-------------|--------------------|
-| —      | —   | —           | —          | —           | —                  |
+| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | 0.00               |
 
 ## Notes
-No positions. 2026-05-20 watchlist was empty (no candidate scored >=7);
-strongest catalyst was CAVA (hypothetical score 9, beat-and-raise) but
-blocked solely by IEX-feed avg volume 132k < 150k floor. No entries, no exits.
+Manual entry: human override of the 150k volume floor on CAVA. Hypothetical
+score 9 (Q1 beat-and-raise). Preflight passed — volume floor lives in the
+pre-market rubric, not in guardrails. Time stop 2026-06-03.
