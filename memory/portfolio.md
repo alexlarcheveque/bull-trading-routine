@@ -4,16 +4,16 @@
 # rendered snapshot the next routine reads.
 
 ## Account
-- equity: 99941.30
+- equity: 99894.60
 - cash: 95052.30
-- buying_power: 194993.60
-- day_pnl_pct: -0.07
-- last_updated: 2026-05-20T12:00-0500 (midday risk pass)
+- buying_power: 194946.90
+- day_pnl_pct: -0.11
+- last_updated: 2026-05-20T15:55-0500 (end-of-day pass)
 
 ## Open positions
 | ticker | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|-----|-------------|------------|-------------|--------------------|
-| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | -1.47              |
+| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | -2.16              |
 
 ## Notes
 Manual entry: human override of the 150k volume floor on CAVA. Hypothetical

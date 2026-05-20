@@ -513,3 +513,12 @@ Action items for operator (informational only):
 - day_pnl_pct: -0.07% — no daily-loss-cap breach (cap: -3%)
 - exits: 0
 - entries: 0 (midday is defense only)
+
+## 2026-05-20T15:55-0500 end-of-day pass
+- market: open (approaching close)
+- time-stops: 0 (CAVA target_exit=2026-06-03, not yet reached)
+- weekly_loss_cap: no breach (-0.11% WTD vs -6% cap)
+- positions: 1 (CAVA 60 @ $82.4617, current $80.68, -2.16%)
+- account: equity=$99,894.60, cash=$95,052.30, buying_power=$194,946.90
+- day_pnl_pct: -0.11%
+- eod email: sent (id=61164734-89c7-4e27-b782-b01fb800a84c)
