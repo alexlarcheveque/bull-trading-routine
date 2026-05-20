@@ -402,3 +402,92 @@ Action items for operator (informational only):
 - IEX bars now 6 trading days stale (latest 5/11 vs today 5/19). Confirmation bucket continues to score 0 across the board. Eighth consecutive day this routine has flagged the data-feed issue — operator decision pending.
 - Six consecutive sessions with zero tradeable signals (score >=7) since pre-market.md started running. Cash remains a position, but the rubric is producing very few signals; weekly-review (2026-05-15) already noted the rubric is untested with zero closed trades. Continue per current strategy per the stability rule.
 2026-05-19 17:31 market-open: market closed (next_open=2026-05-20T09:30:00-04:00), skipping
+
+## 2026-05-20 pre-market watchlist
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- NVDA, MU, INTC, AVGO, AMD: chip stocks extended gains / renewed buying on pre-earnings optimism ahead of Nvidia fiscal Q1 (expected after-bell ~May 21). Source: Yahoo Finance, Investors.com, CNBC, Schwab, May 19-20.
+- GOOGL / BX: Alphabet and Blackstone announced a joint venture to launch a new AI cloud platform using Google's specialized chips. Source: Schwab research note, May 20 morning.
+- No other major company-specific earnings beats, M&A, or upgrades reported.
+
+**Q2 — pre-market movers >2% on May 20 news:**
+- EGHT (8x8): +13-15% after Q4 earnings beat (adj. EPS $0.11 vs $0.08 est.; revenue $185M vs $181M est.) and strong AI CX demand. Source: Benzinga, May 20.
+- INTC, MU, MRVL, ADI: +4-5%+ on semiconductor sector momentum ahead of Nvidia earnings. Source: Benzinga Facebook, May 20.
+- GCL: +70% on expanded strategic investment from ADATA Technology to accelerate entertainment/digital growth. Source: Yahoo Finance, May 20.
+
+**Q3 — beat-and-raise earnings after May 19 close:**
+- CAVA: Revenue $438.3M vs ~$418M consensus (+4.8% beat); adj. EPS $0.20 vs $0.17-0.18 consensus. Same-restaurant sales +9.7%. FY2026 same-restaurant sales guidance raised to 4.5-6.5% (from 3-5%); adj. EBITDA raised to $181-191M (from $176-184M); net new openings raised to 75-77 (from 74-76). Source: CAVA investor relations, Benzinga, Yahoo Finance, Seeking Alpha.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- AZN / Daiichi Sankyo: FDA approved Enhertu (trastuzumab deruxtecan) for presurgical (neoadjuvant) treatment of HER2-positive early breast cancer. Source: CureToday, May 20.
+- Cullinan Therapeutics: FDA Orphan Drug Designation for CLN-049 in r/r AML. (Private / small-cap.)
+- TXT (Textron Systems): contract awarded by US Defense Innovation Unit to build Tsunami USVs for US Navy (size not disclosed). Source: Global Defense Corp, May 19.
+- ECARX (ECX): new contract with leading Chinese automaker (production start later 2026). Source: Fool/earnings transcript, May 19. (Chinese-listed US ADR, small-cap.)
+- York Space Systems: acquiring Solestial Inc. (private company, not US-listed.)
+
+### Candidate filter pass
+
+Already in portfolio: none. Disqualified before Alpaca check (per strategy):
+- NVDA: earnings within 1 trading day (after-bell May 21) — no_earnings_within_days: 3 disqualifies immediately.
+- MU, INTC, AVGO, AMD, MRVL, ADI: sector sentiment / pre-NVDA coattail ride only; no company-specific material corporate event. Strategy excludes speculative macro/sector narratives.
+- GOOGL / BX: JV announced May 19; already covered and scored in yesterday's pre-market pass (both scored 5). Not fresh today — novelty = 0.
+- GCL: +70% pre-market means the move is fully priced; novelty ~0. Also no confirmed market-cap data above $2B universe floor.
+- ECX (ECARX): Chinese company, likely small-cap, ambiguous market cap relative to $2B floor.
+- Cullinan Therapeutics: Orphan Drug Designation is not an approval; private/small-cap.
+- York Space Systems: private company acquisition, not a US-listed equity.
+
+Survivors checked via `./scripts/alpaca.sh asset` + 30-day avg volume:
+
+| ticker | tradable | 30d avg vol | passes 150k filter? | last bar close | min_price $5? |
+|--------|----------|-------------|---------------------|----------------|---------------|
+| CAVA   | yes      | 132,073     | NO                  | $79.90         | YES           |
+| AZN    | yes      | 114,878     | NO                  | $181.87        | YES           |
+| EGHT   | yes      | 87,707      | NO                  | $2.64          | NO ($2.64)    |
+| TXT    | yes      | 68,057      | NO                  | $91.68         | YES           |
+
+All four survivors fail the 150k minimum average daily volume filter.
+No candidate passes into the scoring step.
+
+### Scoring
+
+No volume-eligible candidates to score.
+
+For transparency, would-be scores for the two strongest catalysts:
+
+**CAVA** (hypothetical, fails volume filter):
+- Catalyst strength: **4** — hard beat-and-raise: +4.8% revenue beat, +$0.02-0.03 EPS beat, raised same-restaurant sales AND EBITDA guidance for full year. Cleanest catalyst type in the rubric.
+- Novelty: **2** — stock up ~7% pre-market; some move in, but a meaningful second-wave re-rate is plausible given beat magnitude.
+- Confirmation: **2** — pre-market +7% is itself confirmation; last daily bar (5/13) shows last_vol (160,234) > 30d avg (132,073).
+- Cleanliness: **1** — earnings event just cleared, no upcoming binary within 3 days, no offsetting news.
+- **Hypothetical total: 9 — would be tradeable, blocked solely by IEX feed volume floor.**
+
+**AZN** (hypothetical, fails volume filter):
+- Catalyst strength: **3** — FDA approval of a new oncology indication for an approved drug is a clear positive cash-flow event; held from 4 because this is an extension of an existing approval, not a first-in-class or breakthrough.
+- Novelty: **2** — fresh announcement; no major pre-market move reported.
+- Confirmation: **0** — bars indicate last close $181.87 vs prior $182.75 (slightly down); no confirmation of upward price reaction.
+- Cleanliness: **1** — no offsetting news, ex-earnings.
+- **Hypothetical total: 6 — below threshold even without the volume disqualification.**
+
+### Watchlist
+
+| ticker | score | catalyst | source |
+|--------|-------|----------|--------|
+
+No tradeable signal today.
+
+Skipped (below threshold or filtered):
+- CAVA (would score 9): Q1 beat-and-raise is the day's strongest catalyst — blocked solely by IEX feed avg volume 132k < 150k floor. Real-world ADV likely far higher.
+- AZN (score 6, also fails volume): FDA new indication for Enhertu; no price confirmation.
+- EGHT (fails volume + price floor): Q4 beat-and-raise on 8x8 but price $2.64 < $5 and avg vol 87k.
+- TXT (fails volume): USV contract size undisclosed; routine defense-division award for Textron.
+- NVDA: earnings within 1 trading day — hard disqualification.
+- GOOGL, BX (score ~1 today): JV from 5/19 is yesterday's news; novelty = 0 on repeat.
+- MU, INTC, MRVL, ADI, AMD: sector sentiment only, no company-specific corporate event.
+- GCL: +70% pre-market, move fully priced.
+
+Action items for operator (informational only):
+- CAVA is the third consecutive session where the strongest fundamental catalyst (beat-and-raise) is disqualified solely by the IEX-feed volume floor, not by any fundamental problem with the trade. CAVA real-world ADV is well above 1M shares; the IEX-feed limitation is filtering out genuine signal. Operator may wish to supplement the volume check with a real-volume API endpoint.
+- AZN similarly fails volume on IEX but would only score 6 fundamentally; no action needed.
+- NVDA earnings tomorrow (May 21): semiconductor sector will reprice post-print; watch for fresh catalysts in the sector on 5/21 pre-market pass.
