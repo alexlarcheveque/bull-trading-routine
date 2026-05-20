@@ -500,3 +500,16 @@ Action items for operator (informational only):
 - exits: 0 (no open positions to evaluate)
 - entries: 0 (watchlist score >=7: none; strongest was CAVA hypothetical 9, blocked by IEX vol 132k < 150k)
 - account: equity=$100000, cash=$100000, buying_power=$200000
+
+## 2026-05-20T14:28:56Z preflight reject
+- ticker: CAVA  side: buy  qty: 60  price: 82.22
+- reason: asset lookup failed (unknown ticker or API error)
+
+## 2026-05-20T12:00-0500 midday risk pass
+- market: open
+- positions: 1 (CAVA 60 @ $82.4617)
+- CAVA current price: $81.55 (quote) / $81.25 (positions API); return: -1.47% — no stop (-7%) or target (+12%) triggered
+- thesis check (Grok): no material negative news in last 6 hours; beat-and-raise catalyst intact; analysts reaffirming Buy
+- day_pnl_pct: -0.07% — no daily-loss-cap breach (cap: -3%)
+- exits: 0
+- entries: 0 (midday is defense only)
