@@ -401,3 +401,4 @@ Skipped (below threshold or filtered):
 Action items for operator (informational only):
 - IEX bars now 6 trading days stale (latest 5/11 vs today 5/19). Confirmation bucket continues to score 0 across the board. Eighth consecutive day this routine has flagged the data-feed issue — operator decision pending.
 - Six consecutive sessions with zero tradeable signals (score >=7) since pre-market.md started running. Cash remains a position, but the rubric is producing very few signals; weekly-review (2026-05-15) already noted the rubric is untested with zero closed trades. Continue per current strategy per the stability rule.
+2026-05-19 17:31 market-open: market closed (next_open=2026-05-20T09:30:00-04:00), skipping
