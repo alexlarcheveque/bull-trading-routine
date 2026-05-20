@@ -303,3 +303,101 @@ Action items for operator (informational only):
 - 0 positions open -> 0 exits.
 - 0 entries (no signal).
 - Account unchanged: equity $100k, cash $100k, day_pnl 0%.
+
+## 2026-05-19 pre-market watchlist
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- GOOGL / BX: Alphabet + Blackstone AI cloud JV. BX commits $5B equity (majority owner); 500MW compute capacity online by 2027 using Google TPUs. Source: CNBC, Reuters, Yahoo Finance, May 19.
+- MU: analysts raised price targets amid broader chip sector moves. Source: Yahoo/Motley Fool, May 19.
+- HD: Q1 EPS beat consensus (revenue in-line). Source: Schwab, Yahoo Finance, May 19.
+- AGYS: Q4 beat on higher-margin recurring mix; stock +12-16% intraday. Source: Seeking Alpha/premarket movers, May 19.
+
+**Q2 — pre-market movers >2% on May 19 news:**
+- AMST +208-250%: NurseMagic AI enterprise contract. (Micro-cap.)
+- INM +155-158%: all-stock merger with Mentari. (Micro-cap.)
+- HD ~+0.6%: Q1 beat (EPS $3.43 vs $3.41). Source: CNBC.
+- AS +4.5%: Q1 beat and raised full-year outlook. Source: Investopedia.
+- BX, GOOGL ~+0.7% each: $5B AI infra JV. Source: CNBC.
+
+**Q3 — beat-and-raise earnings after May 18 close:**
+- CAVA cited, but the article tags it as "after May 19 close / early May 20 premarket" — not yet released as of this routine's fire time (pre-market May 19). Defer to tomorrow's pass; not actionable today.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- No qualifying FDA approvals or $100M+ contract wins reported.
+- BFC: agreed to acquire PSB Holdings (all-stock, close Q4 2026). Source: SEC/StockTitan, May 19. (BFC ~$1.5B cap — universe floor fail.)
+- EG: announced asset sale involving AIG. Source: Benzinga M&A, May 19. (Seller-side, not clearly bullish for EG; M&A target dynamics if interpreted as asset divest.)
+
+### Candidate filter pass
+
+Already in portfolio: none. Disqualified before Alpaca check (per strategy):
+- MU: analyst-only, no new corporate event.
+- AMST, INM: micro-caps far below $2B universe floor; +200% moves are pump dynamics, not signal.
+- BFC: small cap; also acquirer in a small all-stock community bank deal.
+- EG: ambiguous direction (asset sale to AIG — net direction for EG depends on terms not disclosed); strategy excludes ambiguous direction.
+- CAVA: hasn't reported yet at this routine's fire time. Defer.
+
+Survivors checked via `./scripts/alpaca.sh asset` + 30-day avg volume:
+
+| ticker | tradable | 30d avg vol | passes 150k filter? | last close (5/11) | min_price $5? |
+|--------|----------|-------------|---------------------|--------------------|---------------|
+| GOOGL  | yes      | 901,984     | YES                 | $388.64            | YES           |
+| BX     | yes      | 269,314     | YES                 | $121.41            | YES           |
+| HD     | yes      | 155,336     | YES (barely)        | $311.40            | YES           |
+| AS     | yes      | 221,452     | YES                 | $34.52             | YES           |
+| AGYS   | yes      | 14,340      | NO                  | $68.95             | YES           |
+
+(Alpaca IEX feed bars still 6 trading days stale: latest bar 2026-05-11. Data-feed issue persists from prior weeks.)
+
+### Scoring (volume+price-eligible survivors)
+
+**GOOGL — Alphabet/Blackstone AI cloud JV ($5B BX equity, 500MW capacity by 2027, Google TPUs).**
+- Catalyst strength: **2** — strategic JV validates TPU demand, but 2027 capacity targets and $5B equity are immaterial against GOOGL's ~$2T cap / ~$350B annual revenue. Not a near-term cash-flow event.
+- Novelty: **2** — fresh today; GOOGL only +0.7% pre-market, most of any move still ahead.
+- Confirmation: **0** — bars stale (5/11 latest).
+- Cleanliness: **1** — no offsetting news, ex-earnings.
+- **Total: 5 — below threshold.**
+
+**BX — Same Alphabet/Blackstone AI cloud JV, majority owner with $5B equity commit.**
+- Catalyst strength: **2** — $5B is meaningful absolute dollars but BX deploys this routinely against ~$1T AUM. Not transformational for fund-economics P&L.
+- Novelty: **2** — fresh, +0.7% pre-market.
+- Confirmation: **0** — bars stale.
+- Cleanliness: **1** — ex-earnings, no offset.
+- **Total: 5 — below threshold.**
+
+**HD — Q1 EPS $3.43 vs $3.41 cons, revenue in-line. No raise reported.**
+- Catalyst strength: **1** — $0.02 (~0.6%) beat with in-line revenue and no guidance raise. Soft print, not the kind of beat that re-rates a large-cap.
+- Novelty: **2** — fresh today; pre-market only +0.6%.
+- Confirmation: **0** — bars stale.
+- Cleanliness: **1**.
+- **Total: 4 — below threshold.**
+
+**AS — Amer Sports Q1 beat AND raised full-year outlook.**
+- Catalyst strength: **3** — beat-and-raise is the strategy's preferred catalyst type. Raised FY guidance is direct forward cash-flow info. Held back from 4 because Grok did not quantify magnitudes (beat size / raise size) — without magnitudes I can't confirm a true narrative reset vs. a small upward nudge.
+- Novelty: **2** — fresh; +4.5% pre-market leaves some room but the cleanest part of the move may already be in.
+- Confirmation: **0** — bars stale.
+- Cleanliness: **1** — no offsetting news.
+- **Total: 6 — below threshold.**
+
+### Watchlist
+
+| ticker | score | catalyst | source |
+|--------|-------|----------|--------|
+
+No tradeable signal today.
+
+Skipped (below threshold or filtered):
+- AS (score 6, top survivor): beat-and-raise, but unquantified magnitudes capped catalyst strength at 3; +4.5% pre-market trims novelty. Closest miss of the day.
+- GOOGL (score 5): $5B AI JV is strategically interesting but immaterial against a $2T cap on a 14-day horizon.
+- BX (score 5): same JV; $5B commit is routine vs $1T AUM.
+- HD (score 4): $0.02 EPS beat with no raise — too soft to re-rate a $300B name.
+- AGYS: +12-16% on Q4 beat — strongest momentum + catalyst combo of the day, but 30d avg vol 14k vs 150k filter; passes neither volume nor scale tests.
+- AMST, INM: micro-cap pumps far below universe floor.
+- MU: analyst PT raises only, no new corporate event.
+- BFC, EG: small/ambiguous M&A.
+- CAVA: post-May 19-close release — defer to tomorrow's pre-market run.
+
+Action items for operator (informational only):
+- IEX bars now 6 trading days stale (latest 5/11 vs today 5/19). Confirmation bucket continues to score 0 across the board. Eighth consecutive day this routine has flagged the data-feed issue — operator decision pending.
+- Six consecutive sessions with zero tradeable signals (score >=7) since pre-market.md started running. Cash remains a position, but the rubric is producing very few signals; weekly-review (2026-05-15) already noted the rubric is untested with zero closed trades. Continue per current strategy per the stability rule.
