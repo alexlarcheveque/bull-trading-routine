@@ -8,7 +8,7 @@
 - cash: 100000
 - buying_power: 200000
 - day_pnl_pct: 0.00
-- last_updated: 2026-05-18T09:43-0700 (market-open routine)
+- last_updated: 2026-05-20T08:30-0500 (market-open routine)
 
 ## Open positions
 | ticker | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
@@ -16,5 +16,6 @@
 | —      | —   | —           | —          | —           | —                  |
 
 ## Notes
-No positions. 2026-05-18 watchlist was empty (no candidate scored >=7);
-market-open had no entries to execute and no positions to exit.
+No positions. 2026-05-20 watchlist was empty (no candidate scored >=7);
+strongest catalyst was CAVA (hypothetical score 9, beat-and-raise) but
+blocked solely by IEX-feed avg volume 132k < 150k floor. No entries, no exits.

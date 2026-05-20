@@ -491,3 +491,12 @@ Action items for operator (informational only):
 - CAVA is the third consecutive session where the strongest fundamental catalyst (beat-and-raise) is disqualified solely by the IEX-feed volume floor, not by any fundamental problem with the trade. CAVA real-world ADV is well above 1M shares; the IEX-feed limitation is filtering out genuine signal. Operator may wish to supplement the volume check with a real-volume API endpoint.
 - AZN similarly fails volume on IEX but would only score 6 fundamentally; no action needed.
 - NVDA earnings tomorrow (May 21): semiconductor sector will reprice post-print; watch for fresh catalysts in the sector on 5/21 pre-market pass.
+
+## 2026-05-20 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 0 open (Alpaca confirms [])
+- day_pnl_pct: 0.00% (no daily-loss-cap breach)
+- weekly_pnl_pct: 0.00% (no weekly-loss-cap breach)
+- exits: 0 (no open positions to evaluate)
+- entries: 0 (watchlist score >=7: none; strongest was CAVA hypothetical 9, blocked by IEX vol 132k < 150k)
+- account: equity=$100000, cash=$100000, buying_power=$200000
