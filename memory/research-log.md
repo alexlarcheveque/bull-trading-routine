@@ -613,6 +613,15 @@ Action items for operator (informational only):
 - NVDA Q2 guide beat ($91B vs $87B) is the key driver; the muted +1.44% pre-market is either "buy the second wave" or "market was disappointed at a smaller beat than hoped." Watch open-print price action carefully — market-open.md will execute the buy at open.
 - AZN note: two FDA approvals in two days (Enhertu May 20, baxdrostat May 18). Neither fresh enough for today's pass, but AZN has accumulated positive news. If a third catalyst surfaces it could compound into a scoreable event.
 
+## 2026-05-21T15:55-0500 end-of-day pass
+- market: open (approaching close)
+- time-stops: 0 (CAVA target_exit=2026-06-03, NVDA target_exit=2026-06-04)
+- weekly_loss_cap: no breach (-0.20% WTD vs -6% cap)
+- positions: 2 (CAVA 60 @ $82.4617, current $80.91, -1.88%; NVDA 22 @ $223.98, current $219.27, -2.10%)
+- account: equity=$99,802.40, cash=$90,124.74, buying_power=$189,927.14
+- day_pnl_pct: -0.08%
+- eod email: sent (id=8a2da6b7-2f1b-45fc-a3ea-f8eb1a4612fd)
+
 ## 2026-05-21 market-open execution
 - market: open (is_open=true, trading_blocked=false)
 - exits: 0 — CAVA at -6.50% (stop -7% not breached); thesis intact (no material negative news); time stop 2026-06-03 not reached. CAVA approaching stop — midday must re-evaluate.

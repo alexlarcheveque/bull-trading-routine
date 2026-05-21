@@ -4,17 +4,17 @@
 # rendered snapshot the next routine reads.
 
 ## Account
-- equity: 99713.81
+- equity: 99802.40
 - cash: 90124.74
-- buying_power: 189851.53
-- day_pnl_pct: -0.17
-- last_updated: 2026-05-21T12:00-0500 (midday pass)
+- buying_power: 189927.14
+- day_pnl_pct: -0.08
+- last_updated: 2026-05-21T15:55-0500 (eod pass)
 
 ## Open positions
 | ticker | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|-----|-------------|------------|-------------|--------------------|
-| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | -3.79              |
-| NVDA   | 22  | 223.98      | 2026-05-21 | 2026-06-04  | -2.01              |
+| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | -1.88              |
+| NVDA   | 22  | 223.98      | 2026-05-21 | 2026-06-04  | -2.10              |
 
 ## Notes
 NVDA entered today via market-open cron (first fully-automated entry). Routine
