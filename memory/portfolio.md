@@ -4,18 +4,20 @@
 # rendered snapshot the next routine reads.
 
 ## Account
-- equity: 99741.22
+- equity: 99726.79
 - cash: 90124.74
-- buying_power: 189865.96
-- day_pnl_pct: -0.14
-- last_updated: 2026-05-21T08:32-0500 (market-open pass)
+- buying_power: 189851.53
+- day_pnl_pct: -0.16
+- last_updated: 2026-05-21T09:50-0700 (manual fix after market-open hang)
 
 ## Open positions
 | ticker | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|-----|-------------|------------|-------------|--------------------|
-| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | -6.50              |
-| NVDA   | 22  | 223.98      | 2026-05-21 | 2026-06-04  | +1.28              |
+| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | -3.79              |
+| NVDA   | 22  | 223.98      | 2026-05-21 | 2026-06-04  | -1.74              |
 
 ## Notes
-- CAVA: -6.50% unrealized — approaching -7% stop ($76.69). Midday routine must re-evaluate.
-- NVDA: entered at open on Q1 FY27 beat-and-raise; Q2 guide $91B vs $87B consensus.
+NVDA entered today via market-open cron (first fully-automated entry). Routine
+hung in an `until` poll loop after the order filled — order is fine, but the
+loop polled `orders open` for a `filled` status that never appears there.
+Routine prompt needs a fix; see Step 6 of market-open.md.
