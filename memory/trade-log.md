@@ -15,3 +15,4 @@
 | timestamp | ticker | side | qty | fill_price | reason | score | target_exit_date |
 |-----------|--------|------|-----|------------|--------|-------|------------------|
 | 2026-05-20 09:31 | CAVA | BUY | 60 | 82.4617 | score=9 catalyst=Q1 beat-and-raise (manual override of 150k volume floor) | 9 | 2026-06-03 |
+| 2026-05-21 08:31 | NVDA | BUY | 22 | 223.98 | score=8 catalyst=Q1 FY27 EPS $1.87 vs $1.78; Q2 rev guide $91B vs $87B consensus (+4.6% raise) | 8 | 2026-06-04 |
