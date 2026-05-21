@@ -522,3 +522,93 @@ Action items for operator (informational only):
 - account: equity=$99,894.60, cash=$95,052.30, buying_power=$194,946.90
 - day_pnl_pct: -0.11%
 - eod email: sent (id=61164734-89c7-4e27-b782-b01fb800a84c)
+
+- push: FAILED (no GitHub credentials in environment; commit 89d8539 is local — push manually)
+
+## 2026-05-21 pre-market watchlist
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- NVDA (NVIDIA): Q1 FY2027 earnings beat after May 20 close — EPS $1.87 vs $1.78 consensus (+$0.09); revenue $81.62B vs $79.2B expected (+3%). Q2 FY2027 revenue guidance $91B ±2% vs ~$87B consensus (+4.6% raise). Stock +0.12% in pre-market to $223.74. Source: Kiplinger, MarketBeat, Investopedia (May 20–21, 2026).
+- No other materially bullish large-cap catalysts identified.
+
+**Q2 — pre-market movers >2% on May 21 with news catalyst:**
+- WHLR +95–99%, PCLA +69%, ATPC +51–57%, LIMN +41%, JUNS +26–36%, EDHL/ILLR/NCPL/LGHL/INFQ +19–34%: Grok provides no specific news catalysts for any mover — described as "primarily low-float/microcap momentum or gap moves." Source: Benzinga, StockAnalysis premarket.
+
+**Q3 — beat-and-raise earnings after May 20 close:**
+- NVDA: see Q1 above.
+- TGT (Target): Q1 EPS $1.71 vs $1.46 consensus (+$0.25, +17%); revenue $25.44B vs $24.64B (+3.2%); comp sales +5.6%. FY2026 net sales growth raised to ~4% (up 2pp); EPS near high end of $7.50–$8.50. BUT pre-market DOWN ~4.9% to $121.01 on margin/SG&A concerns. Source: CNBC, Target IR, StockTitan (May 20–21, 2026).
+- LOW (Lowe's): beat estimates, affirmed (no raise) guidance. Not tradeable.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- AZN: FDA approved Baxfendy (baxdrostat) for hypertension — first-in-class aldosterone synthase inhibitor. Approval date: May 18, 2026 (3 days ago, not fresh). Stock flat pre-market (+0.07%). Source: AstraZeneca IR, drugs.com.
+- JUNS: $100M potential licensing deal for ALA-002 (MDMA therapeutic) with Pharmala Biotech — micro-cap, not universe-eligible.
+- No other qualifying events.
+
+### Candidate filter pass
+
+Already in portfolio: CAVA (skip per portfolio.md).
+
+Disqualified before Alpaca check (per strategy):
+- Q2 movers (WHLR, PCLA, ATPC, LIMN, JUNS, EDHL, ILLR, NCPL, LGHL, INFQ): no specific news catalyst from Grok; all appear micro-cap/low-float pump dynamics. Disqualify on universe + no-catalyst grounds.
+- JUNS (FDA/M&A Q4): micro-cap, well below $2B universe floor.
+- AZN baxdrostat: FDA approval was May 18 (3 days ago) → fails "Fresh" criterion (not surfaced in last 24h). Novelty = 0.
+- LOW: beat without guidance raise → not a tradeable catalyst per strategy.
+
+Survivors checked via `./scripts/alpaca.sh asset` + 30-day avg volume:
+
+| ticker | tradable | 30d avg vol | passes 10k filter? | last bar close (5/15) | min_price $5? |
+|--------|----------|-------------|--------------------|-----------------------|---------------|
+| NVDA   | yes      | 4,349,235   | YES                | $225.31               | YES           |
+| TGT    | yes      | 212,895     | YES                | $121.53               | YES           |
+| AZN    | yes      | 113,565     | YES                | $181.63               | YES           |
+
+### Scoring (volume+price-eligible survivors)
+
+**NVDA — Q1 FY2027 beat-and-raise (released after May 20 close).**
+- EPS $1.87 vs $1.78 consensus (+$0.09, +5%); revenue $81.62B vs $79.2B (+3%).
+- Q2 FY2027 revenue guide: $91B ±2% vs ~$87B consensus (+4.6% raise — ~$4B incremental quarterly revenue).
+- Pre-market May 21: $223.74 (+1.44% from $220.61 prior close).
+- Catalyst strength: **4** — hard beat-and-raise. Q2 guide beat of $91B vs $87B is a genuine forward cash-flow reset for the most critical AI infrastructure company. Earnings event just cleared; next earnings ~Q2 FY2028 (mid-August 2026), well outside 3-day window.
+- Novelty: **2** — Pre-earnings anticipation run moved stock from $219 (5/11) to $235 (5/14) before pulling back to $220 (5/15). Post-earnings pre-market reaction of only +1.44% on a beat+raise of this magnitude suggests the second wave is ahead, but the anticipation run pre-captured meaningful value. Novelty is real but not maximal.
+- Confirmation: **1** — Pre-market directionally up (+1.44%) which is technically confirmation, but the muted reaction given the beat magnitude is a yellow flag. Last dated bar (5/14) shows strong up day ($229→$235, +2.7%) on 4.5M vs 4.35M avg — above-average volume into earnings. Stale data (5/15 latest bar) limits confidence. Scoring 1 (positive direction, weak magnitude).
+- Cleanliness: **1** — No offsetting news, no upcoming binary events, no halts. Stock not halted. No earnings within next 3 trading days.
+- **Total: 8 — TRADEABLE.**
+
+**TGT — Q1 FY2026 beat-and-raise (released after May 20 close). Pre-market DOWN ~4.9%.**
+- EPS $1.71 vs $1.46 (+$0.25, +17%), comp sales +5.6%, net sales growth guide raised to ~4%.
+- BUT stock pre-market −4.9% to ~$121.01 on margin/SG&A concerns.
+- Catalyst strength: **3** — genuine beat+raise headline; held from 4 because market reaction reveals hidden negative (margin compression), undercutting the forward cash-flow story.
+- Novelty: **0** — Pre-market DOWN 4.9%. The directional move is negative; there is no upside novelty available.
+- Confirmation: **0** — Opposite of confirmation. Selling the beat = market rejecting the thesis.
+- Cleanliness: **0** — SG&A/margin weakness is a material offsetting negative revealed by the print.
+- **Total: 3 — below threshold.**
+
+**AZN — Baxfendy FDA approval (baxdrostat, hypertension). Approval: May 18, 3 days ago.**
+- First-in-class aldosterone synthase inhibitor for uncontrolled hypertension.
+- Pre-market: +0.07% (essentially flat). Stock already +1.53% on May 20 close as news was absorbed.
+- Catalyst strength: **3** — first-in-class approval in a large indication is a genuine cash-flow event; held from 4 because competitive positioning and commercial launch timeline unclear.
+- Novelty: **0** — Approval was May 18 (3 days ago). Strategy requires catalyst "first surfaced in last 24 hours." Pre-market flat confirms move already priced.
+- Confirmation: **0** — Flat pre-market; no new upward price reaction.
+- Cleanliness: **1** — no offsetting news.
+- **Total: 4 — below threshold. Also fails freshness criterion — not eligible regardless of score.**
+
+### Watchlist
+
+| ticker | score | catalyst (one line)                                                                    | source                          |
+|--------|-------|----------------------------------------------------------------------------------------|---------------------------------|
+| NVDA   | 8     | Q1 FY27 EPS $1.87 vs $1.78, Q2 rev guide $91B vs $87B consensus (+4.6% raise)        | Kiplinger / MarketBeat May 20   |
+
+Skipped (below threshold or filtered):
+- TGT (score 3): big EPS beat but pre-market −4.9% on margin concerns — market rejecting the thesis; novelty = 0.
+- AZN (score 4, also fails freshness): baxdrostat approval was May 18 (3 days ago), already priced into +1.53% May 20 close; flat pre-market today.
+- LOW: beat without raise — not a tradeable catalyst per strategy.
+- All Q2 movers: micro-cap/low-float pumps, no specific news catalysts from Grok.
+- JUNS ($100M licensing): micro-cap, below $2B universe floor.
+- CAVA: already in portfolio (current position: 60 shares @ $82.46, unrealized −2.16%).
+
+Action items for operator (informational only):
+- NVDA is the day's signal. Entry at the open per strategy (market order, 5% of equity = ~$4,994, ~22 shares at ~$224). Max 2 new positions today — CAVA already open, room for 1 more (NVDA).
+- NVDA Q2 guide beat ($91B vs $87B) is the key driver; the muted +1.44% pre-market is either "buy the second wave" or "market was disappointed at a smaller beat than hoped." Watch open-print price action carefully — market-open.md will execute the buy at open.
+- AZN note: two FDA approvals in two days (Enhertu May 20, baxdrostat May 18). Neither fresh enough for today's pass, but AZN has accumulated positive news. If a third catalyst surfaces it could compound into a scoreable event.
