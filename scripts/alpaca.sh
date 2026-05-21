@@ -13,6 +13,7 @@
 #   alpaca.sh quote       <ticker>                       # latest trade
 #   alpaca.sh bars        <ticker> [timeframe=1Day] [limit=20]
 #   alpaca.sh orders      [status=all] [limit=50]
+#   alpaca.sh order       <order-id>                    # single order by id
 #   alpaca.sh buy         <ticker> <qty>                 # day market buy
 #   alpaca.sh sell        <ticker>                       # closes full position (market)
 #   alpaca.sh cancel-all
@@ -102,6 +103,10 @@ case "$cmd" in
     status="${1:-all}"
     lim="${2:-50}"
     _req GET "$ALPACA_BASE_URL/v2/orders?status=$status&limit=$lim&direction=desc"
+    ;;
+  order)
+    order_id="${1:?usage: alpaca.sh order <order-id>}"
+    _req GET "$ALPACA_BASE_URL/v2/orders/$order_id"
     ;;
   buy)
     ticker="${1:?usage: alpaca.sh buy <ticker> <qty>}"

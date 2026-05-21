@@ -65,7 +65,6 @@ Example NOT-acceptable edits:
 ```
 git add memory/strategy.md memory/research-log.md memory/trade-log.md memory/portfolio.md
 git commit -m "weekly-review $(date +%Y-%m-%d): WTD=<P>%, <N> strategy edits"
-git push origin main
 ```
 
 ## Hard rules

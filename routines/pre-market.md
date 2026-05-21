@@ -70,7 +70,6 @@ line: `No tradeable signal today.`
 ```
 git add memory/research-log.md
 git commit -m "pre-market $(date +%Y-%m-%d): <N> candidates, top score <S>"
-git push origin main
 ```
 
 ## Hard rules

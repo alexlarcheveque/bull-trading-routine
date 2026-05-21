@@ -55,8 +55,19 @@ For each candidate (in order, until you hit `max_new_positions_per_day`):
 3. `QTY=$(awk -v e="$EQUITY" -v p="$PRICE" 'BEGIN{printf "%d", (e * 0.05) / p}')` — 5% sizing (matches `target_position_pct`)
 4. `./.claude/skills/bull/preflight-check.sh <TICKER> buy $QTY $PRICE`
    - If exit non-zero: skip this candidate, log the rejection reason from preflight's stderr to research-log.md. Move to next candidate.
-5. `./scripts/alpaca.sh buy <TICKER> $QTY`
-6. Read the fill: `./scripts/alpaca.sh orders open 5` and find your order ID. Record the actual `filled_avg_price`.
+5. `ORDER_JSON=$(./scripts/alpaca.sh buy <TICKER> $QTY)` — capture the response so you have the order id.
+6. `ORDER_ID=$(echo "$ORDER_JSON" | jq -r .id)` — extract the id, then poll the **specific order** for fill:
+   ```
+   for i in 1 2 3 4 5 6 7 8 9 10; do
+     STATUS=$(./scripts/alpaca.sh order "$ORDER_ID" | jq -r .status)
+     [ "$STATUS" = "filled" ] && break
+     [ "$STATUS" = "canceled" ] || [ "$STATUS" = "rejected" ] || [ "$STATUS" = "expired" ] && break
+     sleep 3
+   done
+   FILL_PRICE=$(./scripts/alpaca.sh order "$ORDER_ID" | jq -r .filled_avg_price)
+   ```
+   Do **NOT** use `orders open` — filled orders leave the `open` status, so polling that endpoint will loop forever. Always fetch the specific order id, with a bounded retry count (max 10 × 3s = 30s).
+   If after 30s the order is still not `filled`, log the final status to `memory/research-log.md` and move on; do not block the routine.
 7. Append to `memory/trade-log.md`:
    `YYYY-MM-DD HH:MM | TICKER | BUY | QTY | FILL_PRICE | score=<S> catalyst=<short> | <S> | $(date -v+14d +%Y-%m-%d)`
 
@@ -89,7 +100,6 @@ and `target_exit` from `memory/trade-log.md` (latest BUY row per ticker).
 ```
 git add memory/portfolio.md memory/trade-log.md memory/research-log.md
 git commit -m "market-open $(date +%Y-%m-%d): <X> buys, <Y> sells, equity=$<E>"
-git push origin main
 ```
 
 ## Hard rules

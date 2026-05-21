@@ -65,7 +65,6 @@ Same portfolio.md rewrite shape as market-open.md, then:
 ```
 git add memory/portfolio.md memory/trade-log.md memory/research-log.md
 git commit -m "eod $(date +%Y-%m-%d): equity=<E>, day=<P>%, <N> time-stops"
-git push origin main
 ```
 
 ## Hard rules

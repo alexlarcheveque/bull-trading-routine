@@ -50,7 +50,6 @@ If `DAY_PNL <= -daily_loss_cap_pct`:
 ```
 git add memory/portfolio.md memory/trade-log.md memory/research-log.md
 git commit -m "midday $(date +%Y-%m-%d): <N> exits, day_pnl=<P>%"
-git push origin main
 ```
 
 ## Hard rules
