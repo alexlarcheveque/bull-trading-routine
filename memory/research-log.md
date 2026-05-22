@@ -706,6 +706,17 @@ Action items for operator (informational only):
 - WDAY scores exactly 7 — the minimum threshold. The thin revenue beat and reiterated (not raised) revenue guide are the weak spots; only the EPS beat magnitude and margin guide-up carry the score. If the open print shows >8% gap-up from last known close ($125.03), novelty collapses and market-open.md should reconsider before firing.
 - Alpaca IEX bars 7 days stale (latest 2026-05-15 vs today 2026-05-22). Confirmation scoring has been effectively 0 or 1 for every session since launch. Operator data-feed issue remains unresolved.
 
+## 2026-05-22T12:00-0500 midday risk pass
+- market: open
+- positions: 3 (CAVA 60 @ $82.4617, NVDA 22 @ $223.98, WDAY 38 @ $130.40)
+- CAVA current price: $82.205; return: -0.31% — no stop (-7%) or target (+12%) triggered
+- NVDA current price: $217.27; return: -3.00% — no stop triggered
+- WDAY current price: $126.615; return: -2.90% — no stop triggered
+- thesis checks (Grok): no material negative news on any position in last 6 hours; all catalysts intact
+- day_pnl_pct: -0.14% — no daily-loss-cap breach (cap: -3%)
+- exits: 0
+- entries: 0 (midday is defense only)
+
 ## 2026-05-22 market-open execution
 - market: open (is_open=true, trading_blocked=false)
 - exits: 0
