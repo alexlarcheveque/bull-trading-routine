@@ -705,3 +705,15 @@ Portfolio capacity: 2 open positions (CAVA + NVDA) of max 5. Room for up to 2 ne
 Action items for operator (informational only):
 - WDAY scores exactly 7 — the minimum threshold. The thin revenue beat and reiterated (not raised) revenue guide are the weak spots; only the EPS beat magnitude and margin guide-up carry the score. If the open print shows >8% gap-up from last known close ($125.03), novelty collapses and market-open.md should reconsider before firing.
 - Alpaca IEX bars 7 days stale (latest 2026-05-15 vs today 2026-05-22). Confirmation scoring has been effectively 0 or 1 for every session since launch. Operator data-feed issue remains unresolved.
+
+## 2026-05-22 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- exits: 0
+  - CAVA at -0.38% (stop -7% not breached); thesis intact (no material negative news); time stop 2026-06-03 not reached.
+  - NVDA at -1.82%; China Mellanox anti-monopoly ruling is 8-month-old news (SAMR Sep 2025); Taiwan export investigation surfaced May 21 and already priced in (NVDA +0.18% today vs yesterday close). Thesis intact.
+- halt checks: day_pnl=+0.10% (cap -3% not breached); weekly_pnl=-0.07% (cap -6% not breached); open positions 2→3 of 5; new positions today 0→1 of 2.
+- entries: 1
+  - WDAY: score=7, 38 shares @ $130.40 fill (market order), open gap +4.2% vs $125.03 (below 8% novelty-collapse threshold), target_exit=2026-06-05
+  - preflight: passed (equity=$99,933, open=2, day_pnl=+0.10%)
+  - order filled after ~35s (order ID: 190bd969-7014-485c-b323-48a012f90904; initial 10-poll loop showed "new", filled on next check — order was processing during opening minute)
+- account post-trade: equity=$99,973.38, cash=$85,169.54, buying_power=$185,142.92, day_pnl=+0.14%
