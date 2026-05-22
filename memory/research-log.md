@@ -728,3 +728,11 @@ Action items for operator (informational only):
   - preflight: passed (equity=$99,933, open=2, day_pnl=+0.10%)
   - order filled after ~35s (order ID: 190bd969-7014-485c-b323-48a012f90904; initial 10-poll loop showed "new", filled on next check — order was processing during opening minute)
 - account post-trade: equity=$99,973.38, cash=$85,169.54, buying_power=$185,142.92, day_pnl=+0.14%
+
+## 2026-05-22T15:55-0500 end-of-day pass
+- market: open (approaching close)
+- time-stops: 0 (CAVA target_exit=2026-06-03, NVDA target_exit=2026-06-04, WDAY target_exit=2026-06-05)
+- weekly_loss_cap: no breach (-0.42% WTD vs -6% cap)
+- positions: 3 (CAVA 60 @ $82.4617, current $80.405, -2.49%; NVDA 22 @ $223.98, current $215.37, -3.84%; WDAY 38 @ $130.40, current $127.645, -2.11%)
+- account: equity=$99,584.04, cash=$85,169.54, buying_power=$184,753.58, day_pnl=-0.25%
+- eod email: sent (id=15ea62ff-59fa-4844-98da-31d7047d5f50)
