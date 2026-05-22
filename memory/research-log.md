@@ -630,3 +630,78 @@ Action items for operator (informational only):
   - NVDA: score=8, 22 shares @ $223.98 fill (market order), target_exit=2026-06-04
   - preflight: passed (equity=$99,734, open=1, day_pnl=-0.15%)
 - account post-trade: equity=$99,741.22, cash=$90,124.74, buying_power=$189,865.96, day_pnl=-0.14%
+
+## 2026-05-22 pre-market watchlist
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- WDAY (Workday): Q1 FY2027 earnings beat with adj. EPS $2.66 vs ~$2.49 consensus (+$0.17, +7%); revenue $2.54B vs $2.52B (+0.8%). Raised non-GAAP operating margin guidance to 30.5% from 30.0%. FY2027 subscription revenue reiterated at $9.925–9.950B. Reported after close May 21, 2026. Source: CNBC, public.com/stocks/wday/earnings, Workday IR (May 21–22, 2026).
+- TT (Trane Technologies): Q1 2026 solid growth, raised FY guidance — referenced in recent coverage, not strictly within 24h window. Source: Yahoo Finance.
+
+**Q2 — pre-market movers >2% on May 22 with news catalyst:**
+- AKTX (Akari Therapeutics): +82–84% pre-market on May 21 preclinical data (ADC synergy with KRAS inhibition in pancreatic cancer) + $5.5M private placement. Micro-cap, below $2B universe floor. Source: Benzinga, Akari Therapeutics IR.
+- EL (Estée Lauder): ~+10% pre-market. No specific catalyst cited in Grok responses — "appeared on some pre-market lists" without explanation. Source: investing.com pre-market.
+- ROST (Ross Stores): ~+5% pre-market. No specific catalyst cited. Source: investing.com pre-market.
+- TTWO (Take-Two Interactive): ~+5% pre-market. No specific catalyst cited. Source: investing.com pre-market.
+
+**Q3 — beat-and-raise earnings after May 21 close:**
+- WDAY: see Q1 above. Only qualifying name.
+- Note: Grok mentions Walmart (WMT), Deere (DE), Ralph Lauren (RL) also had May 21 reports but did not combine beat AND raise guidance.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- AVB (AvalonBay Communities) + EQR (Equity Residential): all-stock merger of equals announced May 21; ~180,000 units, enterprise value ~$69B. AVB shareholders receive 2.793 EQR shares per AVB share (own ~51% of combined). Expected close 2H 2026. Source: SeekingAlpha, BisnowNational (May 21, 2026).
+- PH (Parker-Hannifin): announced acquisition of CIRCOR's commercial and defense aerospace business for $2.55B. Source: Parker-Hannifin IR (May 21, 2026).
+- $453M Navy contract (multi-award) for automated digital network systems — five companies, no single ticker identified. Source: clearancejobs.com (May 21, 2026).
+
+### Candidate filter pass
+
+Already in portfolio: CAVA (skip), NVDA (skip).
+
+Disqualified before Alpaca check:
+- AKTX: market cap well below $2B universe floor; micro-cap biotech.
+- TT: coverage notes reference "recent momentum," catalyst not strictly within 24h window; not fresh enough.
+- EL, ROST, TTWO: no confirmed material catalyst from any of the 4 Grok queries. Strategy requires all three: material + fresh + directional. Without an identified corporate event, these fail the material catalyst test regardless of pre-market move.
+- AVB, EQR: all-stock merger of equals. Per prior research-log note (2026-05-18 RAMP/D): M&A targets in all-stock deals offer little directional edge on a 14-day horizon; deal-spread arb anchors price. Additionally, no clear "clearly bullish" direction for either party (AVB is acquirer, typically flat-to-down; EQR is acquiree in all-stock merger with no cash premium).
+- PH: acquirer in $2.55B acquisition — acquirers typically trade flat-to-down on deal announcement; not "clearly bullish."
+
+Survivors for Alpaca check: WDAY
+
+| ticker | tradable | 30d avg vol | passes 10k filter? | last bar close (5/15) | min_price $5? |
+|--------|----------|-------------|--------------------|-----------------------|---------------|
+| WDAY   | yes      | 251,695     | YES                | $125.03               | YES           |
+
+### Scoring
+
+**WDAY — Q1 FY2027 beat-and-raise (reported after May 21 close).**
+- EPS $2.66 vs ~$2.49 consensus (+$0.17, +7%); revenue $2.54B vs $2.52B (+0.8%).
+- Raised non-GAAP operating margin guidance to 30.5% (from 30.0%); subscription revenue reiterated at $9.925–9.950B.
+- Catalyst strength: **3** — legitimate beat-and-raise; held from 4 because: (a) revenue beat is thin (+0.8%), (b) subscription revenue guidance was reiterated, not raised — only the operating margin was guided up by 50bps (~$50M incremental vs ~$70B market cap). Not a full narrative reset but a genuine positive cash-flow signal.
+- Novelty: **2** — Catalyst released after May 21 close; WDAY not listed as a top % mover in Grok query 2 pre-market list (EL/ROST/TTWO all mentioned, not WDAY), suggesting the second-wave move is largely still ahead. Not 3 because some pre-market repricing has almost certainly occurred on any beat-and-raise.
+- Confirmation: **1** — Alpaca IEX bars are stale (most recent daily bar: 2026-05-15, $125.03). Cannot directly confirm today's pre-market price action from Alpaca. Grok confirms earnings were well-received (cited as "strong" beat); partial credit for directional confirmation via news context alone, penalized for no bar data.
+- Cleanliness: **1** — Just reported Q1; next earnings ~August 2026, well outside 3-day window. No offsetting negative news. Not halted. No disallowed name substrings.
+- **Total: 7 — TRADEABLE (at threshold).**
+
+Data-feed note: Alpaca IEX bars remain stale (latest: 2026-05-15). Confirmation scoring continues to be limited. This is the same issue flagged in all prior pre-market passes. Operator decision pending.
+
+### Watchlist
+
+| ticker | score | catalyst (one line)                                                                           | source                               |
+|--------|-------|-----------------------------------------------------------------------------------------------|--------------------------------------|
+| WDAY   | 7     | Q1 FY27 EPS $2.66 vs $2.49 (+7%); raised non-GAAP op-margin guide to 30.5% from 30.0%       | CNBC / Workday IR newsroom May 21    |
+
+Skipped (below threshold or filtered):
+- EL (score ~3): +10% pre-market but no confirmed material catalyst from Grok — move already in, no catalyst to validate. Novelty = 0.
+- ROST (score ~3): +5% pre-market, no confirmed catalyst from Grok.
+- TTWO (score ~3): +5% pre-market, no confirmed catalyst from Grok.
+- AVB (score ~3): all-stock merger of equals — no clear directional bullish edge on 14-day horizon; arb dynamics cap upside.
+- EQR (score ~3): same merger, same logic.
+- PH (score ~2): acquirer in $2.55B deal; acquirers typically trade flat-to-down on announcement.
+- AKTX (fails universe): micro-cap biotech +82%, below $2B floor; also move entirely priced in.
+- CAVA, NVDA: already held.
+
+Portfolio capacity: 2 open positions (CAVA + NVDA) of max 5. Room for up to 2 new positions today. WDAY is the only signal. Entry at open per strategy: market order, ~5% of equity ($99,802.40) = ~$4,990 ÷ estimated ~$130 = ~38 shares. Market-open.md handles execution.
+
+Action items for operator (informational only):
+- WDAY scores exactly 7 — the minimum threshold. The thin revenue beat and reiterated (not raised) revenue guide are the weak spots; only the EPS beat magnitude and margin guide-up carry the score. If the open print shows >8% gap-up from last known close ($125.03), novelty collapses and market-open.md should reconsider before firing.
+- Alpaca IEX bars 7 days stale (latest 2026-05-15 vs today 2026-05-22). Confirmation scoring has been effectively 0 or 1 for every session since launch. Operator data-feed issue remains unresolved.
