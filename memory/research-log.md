@@ -736,3 +736,12 @@ Action items for operator (informational only):
 - positions: 3 (CAVA 60 @ $82.4617, current $80.405, -2.49%; NVDA 22 @ $223.98, current $215.37, -3.84%; WDAY 38 @ $130.40, current $127.645, -2.11%)
 - account: equity=$99,584.04, cash=$85,169.54, buying_power=$184,753.58, day_pnl=-0.25%
 - eod email: sent (id=15ea62ff-59fa-4844-98da-31d7047d5f50)
+
+## 2026-05-22 weekly-review: NO strategy edit
+- week of 2026-05-18 to 2026-05-22: WTD=-0.42% ($99,584.04), 0 closed trades, 3 open positions (CAVA -2.49%, NVDA -3.84%, WDAY -2.11%).
+- SPY comparison unavailable: IEX feed lags to 2026-05-15; cannot compute alpha.
+- Rubric validated: AMAT (score=7, Confirmation=0) dropped -5.19% on 5/18 — multi-pass design (market-open.md fresh check) correctly avoided the entry. Confirmation bucket working as intended.
+- D (score=5, merger target): rose +9.4% from prior close to 5/18 close but faded from pre-market highs; Cleanliness=0 approach correctly excluded it. Explicit M&A exclusion clause deferred — existing rubric handles it.
+- No stop-outs, no time-stop exits — stops/time-stop mechanics untested; insufficient data for parameter adjustment.
+- Operational flag (not strategy): IEX data-feed lag is #1 risk to Confirmation bucket integrity — needs real intraday quote feed before meaningful Confirmation scoring.
+- Verdict: RESUME MONDAY 2026-05-25 WITH CURRENT STRATEGY. strategy.md unchanged.
