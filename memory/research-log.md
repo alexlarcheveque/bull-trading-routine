@@ -803,3 +803,8 @@ Action items for operator (informational only):
 - Memorial Day holiday creates a two-day gap since last market session (May 22 close → May 27 open). No fresh corporate events surfaced in the holiday weekend. This is a normal result for a holiday Monday.
 - Portfolio heading into Tuesday: 3 positions (CAVA -2.48%, NVDA -3.86%, WDAY -1.73%), all approaching but not at the -7% stop. Midday and EOD routines on Tuesday are the active risk-management passes.
 - NVDA at -3.86% is the closest to the stop. Midday May 26 should re-evaluate thesis (China Mellanox ruling, export restrictions) for any news that surfaced over the weekend.
+
+## 2026-05-25 market-open SKIPPED
+- alpaca clock: is_open=false (Memorial Day — US market holiday)
+- no exits, no entries, no portfolio refresh
+- next market session: 2026-05-27 (Tuesday)
