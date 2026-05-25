@@ -745,3 +745,61 @@ Action items for operator (informational only):
 - No stop-outs, no time-stop exits — stops/time-stop mechanics untested; insufficient data for parameter adjustment.
 - Operational flag (not strategy): IEX data-feed lag is #1 risk to Confirmation bucket integrity — needs real intraday quote feed before meaningful Confirmation scoring.
 - Verdict: RESUME MONDAY 2026-05-25 WITH CURRENT STRATEGY. strategy.md unchanged.
+
+## 2026-05-25 pre-market watchlist
+
+Note: US equity markets are CLOSED today (Memorial Day). This watchlist applies to Tuesday 2026-05-26 open. Any catalyst must still be fresh (surfaced within the last 24h of Tuesday's open) — catalysts from May 21-22 are stale and excluded.
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- UBER: Board met May 24 to discuss raising its takeover bid for Delivery Hero (German food-delivery company) above initial ~€33/share (~€10-11.5B+ valuation), following shareholder pushback on the initial offer. Catalyst is UBER as *acquirer*, not target. Source: Reuters (reporting FT), ~May 24, 2026.
+- No other materially bullish large-cap corporate events identified in the last 24h.
+
+**Q2 — pre-market movers >2% on May 25 with news catalyst:**
+- No pre-market movers on 2026-05-25 — US equity markets closed (Memorial Day). Grok returned May 22 movers (PCLA +180%, LFS +96-105%, AKTX +93%, BIYA +83%, MEHA +66%) but these are 3-day-old data, not fresh. Not actionable for Tuesday's open.
+
+**Q3 — beat-and-raise earnings after May 24 close:**
+- No qualifying earnings reported after May 24 close that beat AND raised guidance. Synopsys (SNPS) expected after Tuesday May 26 close — not yet reported.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- PH (Parker-Hannifin): $2.55B acquisition of CIRCOR's aerospace business (announced May 21). Already covered in 2026-05-22 pre-market pass. Stale (4 days old). Acquirer dynamics.
+- RKLB (Rocket Lab): $90M USAF GEO satellite contract (announced May 22). Below $100M query threshold; also 3 days old — not fresh.
+- VSAT (Viasat): ~$437M USAF PTS-G satellite contract (announced May 22). 3 days old — not fresh.
+- No new FDA approvals or other regulator decisions in the last 24h.
+
+### Candidate filter pass
+
+Already in portfolio: CAVA, NVDA, WDAY (skip all three per portfolio.md).
+
+Disqualified before Alpaca check (per strategy):
+
+- **UBER**: Acquirer in a potential Delivery Hero takeover. Strategy requires catalyst be "clearly bullish for the named ticker." Acquirers are typically flat-to-down on M&A announcement (premium paid, integration risk, capital deployed). Not clearly directionally bullish. Additionally, this is still at "board discussion" stage — no signed deal. Disqualified on direction grounds.
+- **Q2 movers (PCLA, LFS, AKTX, BIYA, MEHA)**: All from May 22 pre-market session (3+ days old); also primarily micro-cap/low-float pumps below $2B universe floor. Not fresh; not universe-eligible.
+- **RKLB**: Contract announced May 22 (3 days old); fails the "fresh — first surfaced in last 24 hours" criterion. Also $90M is below the $100M threshold. No Alpaca check needed.
+- **VSAT**: Contract announced May 22 (3 days old); fails freshness criterion. No Alpaca check needed.
+- **PH**: Already covered and disqualified May 22 (acquirer, not bullish). Stale.
+
+No survivors pass the freshness + directionality filter into the Alpaca check step.
+
+### Scoring
+
+No volume-eligible candidates to score.
+
+### Watchlist
+
+| ticker | score | catalyst (one line) | source |
+|--------|-------|---------------------|--------|
+
+No tradeable signal today.
+
+Skipped (below threshold or filtered):
+- UBER (fails directionality): acquirer in potential Delivery Hero M&A bid; acquirers are flat-to-down on deal announcements; board discussion stage only.
+- RKLB, VSAT (stale): space-force contracts announced May 22 — 3 days old, not fresh for a Tuesday open.
+- PH (stale + acquirer): already disqualified May 22.
+- All Q2 movers: stale (May 22 session) + micro-cap universe failures.
+
+Action items for operator (informational only):
+- Memorial Day holiday creates a two-day gap since last market session (May 22 close → May 27 open). No fresh corporate events surfaced in the holiday weekend. This is a normal result for a holiday Monday.
+- Portfolio heading into Tuesday: 3 positions (CAVA -2.48%, NVDA -3.86%, WDAY -1.73%), all approaching but not at the -7% stop. Midday and EOD routines on Tuesday are the active risk-management passes.
+- NVDA at -3.86% is the closest to the stop. Midday May 26 should re-evaluate thesis (China Mellanox ruling, export restrictions) for any news that surfaced over the weekend.
