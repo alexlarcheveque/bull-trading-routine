@@ -904,3 +904,93 @@ Action items for operator (informational only):
 - halt checks: day_pnl=-0.05% (cap -3% not breached); weekly_pnl=-0.05% (cap -6% not breached); open positions 3 of 5; new positions today 0 of 2
 - entries: 0 (watchlist score >=7: none; top score AZN=6, below threshold)
 - account: equity=$99,556.18, cash=$85,169.54, buying_power=$184,725.72, day_pnl=-0.05%
+
+## 2026-05-26 pre-market watchlist (second pass — manual re-run, post-midday)
+
+Note: Morning pass already ran at ~6:00 AM CT (GILD=4, AZN=6, no signal — see section above).
+Market-open.md already executed (0 entries). This is a supplemental re-run; all findings are informational only — no new entries possible today.
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- MRVL (Marvell Technology): Multiple analyst price target upgrades (HSBC Buy from Hold, PT raised to $300; Stifel $210; Citi $215; Wells Fargo $195; Oppenheimer $200) citing AI/custom silicon momentum. Stock hit new 1-year highs ~$196. Source: MarketBeat, GuruFocus, Seeking Alpha (May 22–26, 2026).
+- MU (Micron Technology): UBS tripled price target amid AI memory/HBM demand strength; approaching $1T market cap. Source: Yahoo Finance (May 25–26, 2026).
+- No other major company-specific bullish catalysts with material corporate events identified.
+
+**Q2 — pre-market movers >2% on May 26 with news catalyst:**
+- MRVL: +5.2–6.5% pre-market. HSBC upgrade to Buy, PT to $300 (AI networking "supercycle"). Source: Seeking Alpha, GuruFocus.
+- MU: +6.2% pre-market. AI HBM demand / analyst momentum. Source: Benzinga.
+- XPEV (XPeng): +6.4% pre-market. Robotaxi rollout news; Q1 earnings scheduled May 28. Source: Benzinga.
+- BIYA: +83%. Binance Plan / BNB position. Micro-cap. Source: MarketChameleon.
+- MEHA: +66%. ~$143M gold-backed DeFi acquisition. Micro-cap. Source: MarketChameleon.
+
+**Q3 — beat-and-raise earnings after May 25 close:**
+- PONY (Pony AI Inc.): Q1 2026 results reported May 26 pre-market. Adj. EPS +$0.09 vs -$0.13 consensus (+$0.22 beat). Raised 2026 robotaxi revenue target to >3.5x 2025 levels (from 3x); fleet size target raised to >3,500 vehicles (from 3,000). Stock +8% on print. Source: Investing.com, Chartmill.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- GILD (Gilead Sciences): FDA approved bulevirtide (Hepcludex) for HDV — accelerated approval dated May 22 (not fresh as of this pass; fully priced in). Source: Gilead IR.
+- MDT (Medtronic): Announced acquisition of undisclosed target for ~$650M (reported May 25 roundup). Source: MedReps.
+- NNE (NANO Nuclear Energy): Acquired Secured Transportation Services LLC for up to $13M. Micro-cap. Source: X/marketsday.
+
+### Candidate filter pass
+
+Already in portfolio: CAVA, NVDA, WDAY (skip).
+
+Disqualified before Alpaca check (per strategy):
+- MRVL: Analyst upgrades only (HSBC, Stifel, Citi, Wells Fargo, Oppenheimer). Strategy explicitly excludes "Pundit price targets / analyst upgrades with no new information." No new corporate event. Disqualified.
+- MU: Analyst PT raise only (UBS). Same exclusion. Disqualified.
+- XPEV: Q1 earnings scheduled May 28 — within 3 trading days. Hard disqualification per no_earnings_within_days: 3.
+- BIYA, MEHA, NNE: Micro/small-cap, well below $2B universe floor.
+
+Survivors for Alpaca + volume check:
+
+| ticker | tradable | 30d ADV (Yahoo) | passes 100k filter? | notes |
+|--------|----------|-----------------|---------------------|-------|
+| GILD   | yes      | 5,832,923       | YES                 | active, NASDAQ |
+| MDT    | yes      | 9,384,548       | YES                 | active, NYSE |
+| PONY   | yes      | 4,386,195       | YES                 | active, NASDAQ, ADS |
+
+### Scoring
+
+**GILD — FDA approved Hepcludex (bulevirtide) for HDV (accelerated approval).**
+- Approval dated May 22 (4 days ago); stock jumped +3% that day, closed $134.36. Today pre-market: $134.40 (~flat). Move fully priced in.
+- Note: bulevirtide marketed in EU since 2023; US approval was widely expected; limited narrative surprise.
+- Catalyst strength: **2** — real first-US-approval, rare disease (HDV affects ~5% of HBV patients). Modest financial impact vs $130B cap.
+- Novelty: **0** — approval already priced in 4 days ago; pre-market flat today.
+- Confirmation: **0** — latest Alpaca bars (through May 21, pre-announcement) below 30d ADV; no post-announcement bar data showing confirming volume.
+- Cleanliness: **1** — no offsetting news, no earnings within 3 days.
+- **Total: 3 — below threshold.**
+
+**MDT — $650M acquisition announced.**
+- $650M acquisition for a ~$100B market-cap company = ~0.65% of market cap. Routine bolt-on scale for Medtronic.
+- Catalyst strength: **1** — small relative deal with no quantified synergy/revenue impact disclosed.
+- Novelty: **1** — fresh (May 25 announcement), but small deal unlikely to move a $100B name.
+- Confirmation: **0** — latest Alpaca bars (May 15–21) show flat price $76–78; no post-announcement data.
+- Cleanliness: **1** — acquirer, no offsetting bad news.
+- **Total: 3 — below threshold.**
+
+**PONY — Q1 2026 beat-and-raise (EPS +$0.09 vs -$0.13; robotaxi revenue target raised to >3.5x 2025).**
+- Market cap: ~$3.87B (above $2B floor). Price ~$8.28–8.93 last week. Chinese ADS.
+- Beat magnitude is large vs negative consensus; guidance raise is meaningful (+17% to robotaxi revenue target).
+- Stock already +8% pre-market on the print; move largely priced in.
+- Catalyst strength: **2** — beat-and-raise held from 3: company is pre-profitability (adj. EPS $0.09 vs -$0.13 is progress but still near-breakeven); Chinese ADS introduces regulatory/delisting tail risk not offset by the catalyst.
+- Novelty: **1** — stock already up 8% pre-market; most of the initial reaction is in. Second-wave plausible but modest.
+- Confirmation: **1** — +8% pre-market on earnings is directional confirmation; last daily bars (May 20–21) show gradual uptrend before print.
+- Cleanliness: **0** — Chinese ADS: structural delisting/regulatory risk is a material offsetting concern per strategy "no offsetting bad news."
+- **Total: 4 — below threshold.**
+
+### Watchlist
+
+| ticker | score | catalyst (one line) | source |
+|--------|-------|---------------------|--------|
+
+No tradeable signal today.
+
+Skipped (below threshold or filtered):
+- PONY (score 4): Q1 beat+raise on loss-making robotaxi company; stock already +8% pre-market; Chinese ADS regulatory overhang; net score below threshold.
+- GILD (score 3): HDV approval fully priced in since May 22; flat pre-market 4 days later.
+- MDT (score 3): $650M acquisition is <1% of market cap; routine bolt-on scale.
+- MRVL: analyst upgrades only (HSBC, Stifel, Citi) — no new corporate event; strategy exclusion.
+- MU: UBS PT raise — analyst only, no corporate event.
+- XPEV: Q1 earnings May 28 — disqualified by no_earnings_within_days: 3.
+- BIYA, MEHA, NNE: micro-cap / below $2B universe floor.
