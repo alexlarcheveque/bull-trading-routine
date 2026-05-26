@@ -994,3 +994,12 @@ Skipped (below threshold or filtered):
 - MU: UBS PT raise — analyst only, no corporate event.
 - XPEV: Q1 earnings May 28 — disqualified by no_earnings_within_days: 3.
 - BIYA, MEHA, NNE: micro-cap / below $2B universe floor.
+
+## 2026-05-26T15:55-0500 end-of-day pass
+- market: open (approaching close)
+- time-stops: 0 (CAVA target_exit=2026-06-03, NVDA target_exit=2026-06-04, WDAY target_exit=2026-06-05)
+- weekly_loss_cap: no breach (-0.18% WTD vs -6% cap)
+- positions: 3 (CAVA 60 @ $82.4617, current $80.225, -2.71%; NVDA 22 @ $223.98, current $214.59, -4.19%; WDAY 38 @ $130.40, current $124.02, -4.89%)
+- account: equity=$99,425.17, cash=$85,169.54, buying_power=$184,594.71, day_pnl=-0.18%
+- eod email: sent (id=8b63b833-dce0-4072-bae4-18b9805afeff)
+- risk note: WDAY at -4.89% is the closest to the -7% stop ($124.02 vs stop $121.27); NVDA at -4.19%; CAVA at -2.71%
