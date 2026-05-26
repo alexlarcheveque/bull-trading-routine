@@ -893,3 +893,14 @@ Action items for operator (informational only):
 - AZN scored 6 — one point short. The gap between a 6 and a tradeable 7 is the Confirmation bucket (no volume data for post-announcement bars; May 21 bar was below-average volume before the announcement). If market-open.md observes AZN opening strongly with above-average volume, operator may reconsider manually. Pre-market routine cannot confirm — that's a market-open judgment call.
 - GILD note: the flat stock price through May 21 is consistent with the rare-disease / EU-precedented nature of the US approval. No action needed.
 - All 3 open positions (CAVA -2.48%, NVDA -3.86%, WDAY -1.73%) are approaching but not at their -7% stops. NVDA is closest. Midday and EOD routines remain the active risk passes today.
+
+## 2026-05-26 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 3 (CAVA, NVDA, WDAY — Alpaca matches portfolio.md)
+- exits: 0
+  - CAVA: live quote $80.86, return -1.94% (stop -7% not breached); thesis intact (Grok: no material negative news, analyst upgrades post-earnings)
+  - NVDA: live quote $215.16, return -3.94% (stop -7% not breached); thesis intact (Grok: no China export/Mellanox negative news in last 24h)
+  - WDAY: live quote $125.60, return -3.68% (stop -7% not breached); thesis intact (Grok: no material negative developments)
+- halt checks: day_pnl=-0.05% (cap -3% not breached); weekly_pnl=-0.05% (cap -6% not breached); open positions 3 of 5; new positions today 0 of 2
+- entries: 0 (watchlist score >=7: none; top score AZN=6, below threshold)
+- account: equity=$99,556.18, cash=$85,169.54, buying_power=$184,725.72, day_pnl=-0.05%
