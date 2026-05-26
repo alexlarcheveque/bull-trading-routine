@@ -808,3 +808,88 @@ Action items for operator (informational only):
 - alpaca clock: is_open=false (Memorial Day — US market holiday)
 - no exits, no entries, no portfolio refresh
 - next market session: 2026-05-27 (Tuesday)
+
+## 2026-05-26 pre-market watchlist
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- DELL (Dell Technologies): ~+16.8% as a top market mover (~$295 pre-market) amid broader tech/AI momentum and positive sentiment around AI server demand. Source: CNBC market movers, Investors.com (~May 26, 2026). Note: no specific corporate event cited — momentum/sentiment framing only.
+- No other major company-specific bullish catalysts for large-caps (>$2B) identified. News flow was limited due to Memorial Day holiday.
+
+**Q2 — pre-market movers >2% on May 26 with news catalyst:**
+- QTEX (QTREX Quantum): ~+83%. Catalyst: ticker rebranding + collaboration framework with top-5 quantum computing company on cryogenic interconnect tech. Source: Globe and Mail / PRN, May 26.
+- PHGE (BiomX): ~+122%. Catalyst: AI/defense pivot (Zorronet subsidiary AI C2 app launch). Source: BiomX IR, May 26.
+- BIYA (Baiya International Group): ~+83%. Catalyst: "Binance Plan" — $1M BNB position (news from May 22 carrying over). Source: MarketChameleon.
+- MEHA (Functional Brands): ~+66%. Catalyst: ~$143M gold-backed DeFi acquisition (announced ~May 22). Source: MarketChameleon.
+
+**Q3 — beat-and-raise earnings after May 25 close:**
+- No qualifying earnings identified. AZO (AutoZone) Q3 FY2026 expected before open today (~$36.13 consensus EPS) but no released results or confirmed beat+raise in available data. SNPS (Synopsys) expected after today's close — not yet reported. Source: Yahoo Finance Earnings Calendar, AlphaStreet.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- GILD (Gilead Sciences): FDA approved bulevirtide (Hepcludex) for chronic hepatitis delta virus (HDV) infection — first US treatment for HDV (accelerated approval). Approval dated ~May 22; news published May 25–26 during market holiday. Source: Medscape, Epocrates, Pink Sheet / Pharma Intelligence (May 25–26, 2026).
+- AZN (AstraZeneca) / Daiichi Sankyo: FDA approved Datroway (datopotamab deruxtecan) for first-line metastatic triple-negative breast cancer (TNBC), based on TROPION-Breast02 Phase 3 data. Reported May 25, 2026. Source: Pharmaceutical Technology, May 25.
+- ESLT (Elbit Systems): ~$1.4B contract from European customer for military modernization programs (5-year). Stock pre-market ~+8–9%. Source: PRN / Investing.com, May 26.
+
+### Candidate filter pass
+
+Already in portfolio: CAVA (skip), NVDA (skip), WDAY (skip).
+
+Disqualified before Alpaca check (per strategy):
+- QTEX, PHGE, BIYA, MEHA: micro/small-caps well below $2B universe floor. Disqualified.
+- DELL: Grok attributes move to "broader tech/AI momentum" and "AI server demand" — no specific new corporate event (no earnings, no contract, no guidance). Fails "Material" criterion. Strategy explicitly excludes: "Generic macro takes" and narrative without underlying corporate event. Disqualified.
+- AZO: Price ~$3,433/share exceeds max_price_per_share: $1,000 guardrail. Also ADV 9,875 < 10,000 minimum. Double-disqualified.
+- AZO earnings: No confirmed beat+raise available at routine fire time. Not actionable.
+
+Survivors checked via `./scripts/alpaca.sh asset` + 30-day avg volume:
+
+| ticker | tradable | 30d avg vol | passes 10k filter? | last bar close (5/21) | min_price $5? |
+|--------|----------|-------------|--------------------|-----------------------|---------------|
+| GILD   | yes      | 228,651     | YES                | $130.455              | YES           |
+| AZN    | yes      | 107,787     | YES                | $189.78               | YES           |
+| ESLT   | yes      | 4,146       | NO (4,146 < 10k)   | —                     | —             |
+
+ESLT eliminated by ADV floor (4,146 shares vs 10,000 minimum).
+
+### Scoring
+
+**GILD — FDA approved bulevirtide (Hepcludex) for chronic HDV infection. First-ever US treatment for HDV.**
+- Approval dated ~May 22; published May 25–26 during Memorial Day holiday; first trading day = today.
+- Last bar (May 21): close $130.455, volume 188,843 vs 30d ADV 228,651 (below average). Stock flat at ~$130 for 5+ days — no pre-positioning visible.
+- Context: bulevirtide has been approved in Europe since 2020 (marketed as Hepcludex since 2023). US approval outcome was expected; limited surprise factor.
+- Catalyst strength: **2** — real FDA approval, first US treatment for a rare disease. Held from 3: hepatitis delta affects ~5% of HBV patients globally; GILD's $130B market cap means the revenue impact is modest. European precedent limits the narrative surprise.
+- Novelty: **1** — stock has been flat, no pre-positioning detected, market hasn't traded post-announcement. However, the European approval precedent and expected-outcome nature of the US approval mean sophisticated investors likely pre-positioned. Not 2.
+- Confirmation: **0** — latest bar volume 188,843 is below the 30d ADV of 228,651. No catalyst-day price/volume reaction visible (announcement came after May 21 session).
+- Cleanliness: **1** — no offsetting bad news, no earnings within 3 trading days.
+- **Total: 4 — below threshold.**
+
+**AZN — FDA approved Datroway (datopotamab deruxtecan) for first-line metastatic TNBC (TROPION-Breast02 Phase 3).**
+- First-line metastatic TNBC is an underserved indication; Datroway showed significant PFS and ORR benefit vs chemotherapy.
+- Reported May 25 during market holiday; first trading day = today.
+- Last bar (May 21): close $189.78, up from $181.63 on May 15 (+4.5% over week). Volume May 21: 70,738 vs 30d ADV 107,787 (below average). Stock rose steadily May 15–21; some anticipatory buying likely.
+- Note: Datroway (Dato-DXd) already approved for HR+/HER2-low breast cancer and HR+/HER2-low NSCLC. This is a new major indication, not a first-in-class drug.
+- Catalyst strength: **3** — FDA approval for first-line metastatic TNBC is meaningful competitive differentiation in an indication with limited first-line options. Phase 3 data is strong. Held from 4 because Datroway already has approvals (not a first-ever drug), and AZN's $200B+ cap means even a large indication moves the stock modestly.
+- Novelty: **2** — official FDA approval published May 25 (market closed); formal announcement not yet traded by market. Stock's +4.5% run May 15–21 may partially reflect pre-positioning, but cannot confirm. First live trading day today.
+- Confirmation: **0** — latest daily bar (May 21) volume 70,738 is below the 30d ADV of 107,787. No catalyst-day volume confirmation available.
+- Cleanliness: **1** — no offsetting news, no earnings within 3 trading days.
+- **Total: 6 — below threshold.**
+
+### Watchlist
+
+| ticker | score | catalyst (one line) | source |
+|--------|-------|---------------------|--------|
+
+No tradeable signal today.
+
+Skipped (below threshold or filtered):
+- AZN (score 6): FDA approval for first-line metastatic TNBC is the day's strongest qualifying catalyst — below threshold because: Dato-DXd already has prior approvals (reduces narrative step-change), stock already +4.5% this week (some anticipation priced in), and no volume confirmation on latest daily bar.
+- GILD (score 4): HDV approval is real but niche; European precedent limits surprise; flat price + below-avg volume; modest financial impact for a $130B company.
+- ESLT: ADV 4,146 below 10,000 minimum — eliminated before scoring.
+- AZO: price $3,433 exceeds $1,000 max; ADV 9,875 just below $10,000 minimum — double-eliminated.
+- DELL: AI-momentum narrative with no specific new corporate event — fails "Material" catalyst criterion.
+- QTEX, PHGE, BIYA, MEHA: micro/small-cap pumps, below $2B universe floor.
+
+Action items for operator (informational only):
+- AZN scored 6 — one point short. The gap between a 6 and a tradeable 7 is the Confirmation bucket (no volume data for post-announcement bars; May 21 bar was below-average volume before the announcement). If market-open.md observes AZN opening strongly with above-average volume, operator may reconsider manually. Pre-market routine cannot confirm — that's a market-open judgment call.
+- GILD note: the flat stock price through May 21 is consistent with the rare-disease / EU-precedented nature of the US approval. No action needed.
+- All 3 open positions (CAVA -2.48%, NVDA -3.86%, WDAY -1.73%) are approaching but not at their -7% stops. NVDA is closest. Midday and EOD routines remain the active risk passes today.
