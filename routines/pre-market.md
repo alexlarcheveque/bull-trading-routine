@@ -32,7 +32,7 @@ Deduplicate. For each ticker, apply universe filters from `memory/guardrails.md`
 - Skip if already in `memory/portfolio.md` (no adding to winners).
 - Skip if any disallowed instrument substring matches.
 - Skip if `./scripts/alpaca.sh asset <TICKER>` returns non-active or non-tradable.
-- Skip if `./scripts/alpaca.sh bars <TICKER> 1Day 30 | jq '[.bars[].v] | add/length'` < `min_avg_daily_volume_shares`.
+- Skip if `./scripts/volume.sh <TICKER>` < `min_avg_daily_volume_shares`. This is REAL consolidated 30-day ADV from Yahoo (NOT Alpaca's IEX-only feed, which under-reports 4-15x and false-rejects liquid names like ESLT/CAVA). If `volume.sh` errors (delisted/unknown ticker), skip the candidate.
 
 ## Step 3: Score each survivor
 

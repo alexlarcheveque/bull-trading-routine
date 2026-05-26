@@ -12,7 +12,7 @@ front-running the headline itself.
 
 - US common stock and standard ETFs listed on NYSE / Nasdaq.
 - Market cap ≥ $2B.
-- 30-day average daily consolidated volume ≥ 100,000 shares (matches the 10k IEX floor in guardrails.md at ~5-15% capture).
+- 30-day average daily consolidated volume ≥ 100,000 shares (measured via scripts/volume.sh from Yahoo's consolidated tape, enforced by guardrails.md).
 - **Excluded:** options, futures, crypto, OTC, leveraged/inverse ETFs (anything with
   2x/3x/UltraPro/Direxion in the name), SPACs pre-merger, anything halted, anything
   with earnings inside the next 3 trading days (event risk dominates our signal).
