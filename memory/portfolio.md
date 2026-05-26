@@ -4,15 +4,15 @@
 # rendered snapshot the next routine reads.
 
 ## Account
-- equity: 99556.18
+- equity: 99388.14
 - cash: 85169.54
 - buying_power: 184725.72
-- day_pnl_pct: -0.05
-- last_updated: 2026-05-26T08:30-0500 (market-open pass)
+- day_pnl_pct: -0.21
+- last_updated: 2026-05-26T12:00-0500 (midday pass)
 
 ## Open positions
 | ticker | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|-----|-------------|------------|-------------|--------------------|
-| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | -1.94              |
-| NVDA   | 22  | 223.98      | 2026-05-21 | 2026-06-04  | -3.94              |
-| WDAY   | 38  | 130.40      | 2026-05-22 | 2026-06-05  | -3.68              |
+| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | -3.36              |
+| NVDA   | 22  | 223.98      | 2026-05-21 | 2026-06-04  | -4.80              |
+| WDAY   | 38  | 130.40      | 2026-05-22 | 2026-06-05  | -4.26              |
