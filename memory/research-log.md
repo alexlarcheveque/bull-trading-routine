@@ -1117,3 +1117,12 @@ Skipped (below threshold or filtered):
 - exits: 0
 - entries: 0 (midday is defense only)
 - risk note: NVDA at -6.38% is CRITICAL — stop trigger $208.30 vs current $209.70 (gap only $1.40). EOD routine must re-evaluate.
+
+## 2026-05-27T15:55-0500 end-of-day pass
+- market: open (approaching close)
+- time-stops: 0 (CAVA target_exit=2026-06-03, NVDA target_exit=2026-06-04, WDAY target_exit=2026-06-05, SMTC target_exit=2026-06-10)
+- weekly_loss_cap: no breach (-0.15% WTD vs -6% cap)
+- positions: 4 (CAVA 60 @ $82.4617, current $82.48, +0.02%; NVDA 22 @ $223.98, current $212.56, -5.10%; SMTC 30 @ $165.00, current $156.72, -5.02%; WDAY 38 @ $130.40, current $124.47, -4.55%)
+- account: equity=$99,276, cash=$80,219.54, buying_power=$179,495.54, day_pnl=-0.15%
+- eod email: sent (id=3349a404-0fb5-4244-944c-a77032cd4197)
+- risk note: NVDA recovered from midday critical ($209.70→$212.56, gap to stop now $4.26); SMTC and WDAY both drifted lower (gaps $3.27 and $3.20 respectively)

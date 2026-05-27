@@ -4,24 +4,25 @@
 # rendered snapshot the next routine reads.
 
 ## Account
-- equity: 99390.67
+- equity: 99276.00
 - cash: 80219.54
-- buying_power: 179610.21
-- day_pnl_pct: -0.04
-- last_updated: 2026-05-27T12:00-0500 (midday pass)
+- buying_power: 179495.54
+- day_pnl_pct: -0.15
+- last_updated: 2026-05-27T15:55-0500 (EOD pass)
 
 ## Open positions
 | ticker | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|-----|-------------|------------|-------------|--------------------|
-| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | +1.47              |
-| NVDA   | 22  | 223.98      | 2026-05-21 | 2026-06-04  | -6.38              |
-| SMTC   | 30  | 165.00      | 2026-05-27 | 2026-06-10  | -3.90              |
-| WDAY   | 38  | 130.40      | 2026-05-22 | 2026-06-05  | -3.47              |
+| CAVA   | 60  | 82.4617     | 2026-05-20 | 2026-06-03  | +0.02              |
+| NVDA   | 22  | 223.98      | 2026-05-21 | 2026-06-04  | -5.10              |
+| SMTC   | 30  | 165.00      | 2026-05-27 | 2026-06-10  | -5.02              |
+| WDAY   | 38  | 130.40      | 2026-05-22 | 2026-06-05  | -4.55              |
 
 ## Pending orders
 None.
 
 ## Risk flags
-- NVDA at -6.38% — stop trigger at $208.30 (current $209.70, gap $1.40). CRITICAL — EOD must re-evaluate.
-- SMTC at -3.90% — stop trigger at $153.45 (current $158.56). Initial position, monitoring.
-- WDAY at -3.47% — stop trigger at $121.27 (current $125.87). Monitor.
+- NVDA at -5.10% — stop trigger at $208.30 (current $212.56, gap $4.26). Recovered from midday low $209.70; monitor.
+- SMTC at -5.02% — stop trigger at $153.45 (current $156.72, gap $3.27). Post-earnings drift; watch closely.
+- WDAY at -4.55% — stop trigger at $121.27 (current $124.47, gap $3.20). Gap tightening; watch.
+- CAVA at +0.02% unrealized (+2.69% today) — comfortable buffer; no action needed.
