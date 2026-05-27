@@ -190,6 +190,90 @@ Skipped:
 - day_pnl_pct: -3.4
 - action: no new entries for the rest of the day
 
+## 2026-05-27 pre-market watchlist
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- MU (Micron): UBS tripled PT to $1,625 (Street-high), citing AI-driven structural shift in memory. Stock +19% intraday on 5/26, briefly touched $1T market cap. Source: CNBC, Bloomberg, Reuters, 2026-05-26.
+
+**Q2 — pre-market movers 2026-05-27 >2% on news:**
+- SNGX (Soligenix): +110-116% pre-market (~$1.08-$1.11). ThermoVax vaccine platform flagged as Bundibugyo/Ebola candidate. Source: Benzinga, stockanalysis.com.
+- FGL (Founder Group): +74% pre-market (~$3.28). Solar/EPC contract wins, Nasdaq compliance regain. Source: stocktitan.net.
+- No major large-cap names with >2% pre-market gains on fresh news.
+
+**Q3 — beat-and-raise earnings after 2026-05-26 close:**
+- SMTC (Semtech): Q1 FY27 rev $291M (beat $283.7M est, +2.6%); adj EPS $0.51 (beat $0.45 est, +13.3%). Q2 guide raised to ~$328M midpoint vs prior ~$300.4M (+9.2%). Source: StockStory, Yahoo Finance, 2026-05-26.
+- UFG (Uni-Fuels Holdings): Q1 2026 rev $83.2M (+64% YoY). Raised FY 2026 guide to $320-340M from $310-330M. Source: stocktitan.net, 2026-05-26.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- MDAI (Spectral AI): FDA De Novo for DeepView burn-care system. Source: stocktitan.net 8-K, 2026-05-26.
+- OTLK (Outlook Therapeutics): FDA appeal granted for bevacizumab-vikg (nAMD), path to BLA resubmission June 2026. Source: ophthalmologytimes.com, 2026-05-26.
+- GILD (Gilead Sciences): FDA approval for hepatitis D (HDV) drug (prior EU approval). Source: bizjournals.com, 2026-05-26.
+- AZN/DSNKY (AstraZeneca/Daiichi Sankyo): FDA approval for Enhertu neoadjuvant/adjuvant HER2+ breast cancer indications. Source: medicalxpress.com, ~2026-05-26.
+
+### Candidate filter pass
+
+Already in portfolio: CAVA, NVDA, WDAY — none appear in today's Grok output.
+
+Disqualified before Alpaca check:
+- MU: Analyst PT upgrade only — no new corporate event (strategy explicitly excludes "analyst upgrades with no new information"). Stock already +19% on 5/26; novelty = 0.
+- SNGX: Price ~$1.08 — fails min_price_per_share $5. Skip.
+- FGL: Price ~$3.28 — fails min_price_per_share $5. Skip.
+- UFG: Quarterly revenue $83.2M implies sub-$1B annual run rate → market cap almost certainly <$2B. Skip.
+- MDAI: Spectral AI — small medical device company, clearly sub-$2B. Skip.
+- OTLK: BLA resubmission path (not an approval); likely sub-$2B. Skip.
+
+Survivors for Alpaca + volume check: SMTC, GILD, AZN.
+
+| ticker | tradable | 30d avg vol (Yahoo) | passes 100k floor? | last close (5/26) |
+|--------|----------|---------------------|--------------------|--------------------|
+| SMTC   | YES      | 3,010,910           | YES                | $164.46            |
+| GILD   | YES      | 5,957,123           | YES                | $133.73            |
+| AZN    | YES      | 1,946,073           | YES                | $187.11            |
+
+After-hours / pre-market check (Grok + last trade via alpaca quote):
+- SMTC: AH around $171 (+$6.54 / +4.0% from close). Earnings catalyst post-close — not priced in at 5/26 EOD.
+- GILD: AH $133.50-133.72 (essentially flat). FDA approval announced ~14h ago, no market reaction.
+- AZN: $187.11 (flat vs $187.08 on 5/22). Enhertu HER2+ indication may be same news block from 5/18 research log; stock has shown no reaction.
+
+### Scoring
+
+**SMTC — Q1 FY27 beat-and-raise (Semtech, NASDAQ:SMTC)**
+- Catalyst strength (0–4): EPS beat $0.51 vs $0.45 (+13.3%, +$0.06); Q2 guide raised +9.2%. Hard cash-flow event with forward guidance lift in an AI-chip name. Score: **3** (revenue beat softer at +2.6%, keeps from 4).
+- Novelty (0–3): Catalyst hit after 5/26 close ($164.46). AH ~$171 = 4% gap. 13% EPS beat + 9% guide raise in AI chips warrants more than 4% re-rate; second-wave price discovery still ahead. Score: **2**.
+- Confirmation (0–2): Stock +4.9% on 5/26 on strong momentum even before earnings. AH buyers continuing to ~$171. Score: **2**.
+- Cleanliness (0–1): Event risk past (just reported). Next earnings ~3 months out. Price $164-171 (within $5–$1000 range). No halts, no offsetting news. Score: **1**.
+- **Total: 8 — tradeable.**
+
+**GILD — FDA approval for hepatitis D (Gilead Sciences, NASDAQ:GILD)**
+- Catalyst strength (0–4): HDV (hepatitis D) is a rare co-infection, small addressable patient population relative to GILD's $100B+ market cap. Modest cash-flow delta. Score: **2**.
+- Novelty (0–3): AH essentially flat. Market has absorbed / dismissed the catalyst already. Score: **1**.
+- Confirmation (0–2): Stock -0.47% on 5/26. No price confirmation. Score: **0**.
+- Cleanliness (0–1): Score: **1**.
+- **Total: 4 — below threshold. Skip.**
+
+**AZN — Enhertu neoadjuvant/adjuvant HER2+ FDA approval (AstraZeneca, NYSE:AZN)**
+- Catalyst strength (0–4): Blockbuster drug, but indication expansion partially shared with Daiichi Sankyo. Also: 5/18 research log shows same approval was already noted on 5/18; either recycled or a new sub-indication. Score: **2**.
+- Novelty (0–3): Stock flat since 5/21 ($189.78 → $187.11 on 5/26). Market has had 1+ week to price this in with no reaction. Score: **0**.
+- Confirmation (0–2): Flat to slightly down on 5/26. Score: **0**.
+- Cleanliness (0–1): Score: **1**.
+- **Total: 3 — below threshold. Skip.**
+
+### Watchlist
+
+| ticker | score | catalyst (one line)                                                              | source                         |
+|--------|-------|---------------------------------------------------------------------------------|--------------------------------|
+| SMTC   | 8     | Q1 FY27 EPS $0.51 vs $0.45 (+13.3%), Q2 guide raised to $328M vs $300.4M (+9.2%) | StockStory / Yahoo Finance, 5/26 |
+
+Skipped (below threshold):
+- MU (score ~3): analyst PT upgrade only, no new corporate event; +19% move on 5/26 already fully priced in.
+- GILD (score 4): FDA hepatitis D approval (small market), AH flat, no price confirmation.
+- AZN (score 3): Enhertu indication news absorbed 1+ week ago with no price reaction, novelty exhausted.
+- SNGX, FGL: price <$5 (universe exclusion).
+- UFG: sub-$2B estimated market cap (universe exclusion).
+- MDAI, OTLK: sub-$2B estimated market cap (universe exclusion).
+
 ## 2026-05-15T20:25:30Z market-open SKIP
 - reason: market closed at fire time (is_open=false, next_open 2026-05-18T09:30 ET)
 - action: no exits, no entries; portfolio unchanged
