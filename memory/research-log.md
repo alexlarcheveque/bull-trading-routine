@@ -1103,3 +1103,17 @@ Skipped (below threshold or filtered):
   - Note: midday and EOD routines must check order status and append trade-log entry once filled.
 - account: equity=$99,509.05, cash=$85,169.54, buying_power=$179,728.59, day_pnl=+0.08%
 - risk note: NVDA at -5.67% is now closest to stop (stop trigger $208.30 vs current $211.275); WDAY at -4.33%; CAVA at +0.05%
+
+## 2026-05-27T12:00-0500 midday risk pass
+- market: open
+- positions reconciled: 4 (CAVA 60 @ $82.4617, NVDA 22 @ $223.98, SMTC 30 @ $165.00, WDAY 38 @ $130.40) — Alpaca authoritative; portfolio.md rewritten
+- SMTC fill confirmed: order 1ca88290-2610-4920-8105-93a362b2db6d filled at $165.00 at 2026-05-27T08:34 CT; trade-log entry appended
+- exit evaluation:
+  - CAVA: current $83.67, return +1.47% — no stop (-7%) or target (+12%) triggered; thesis intact (Grok: no material negative news)
+  - NVDA: current $209.70, return -6.38% — no stop triggered (stop $208.30; gap $1.40); thesis intact (Grok: no new guidance cut, recall, lawsuit, regulatory reversal, or exec departure; smuggling allegations are ongoing background context, not a new specific event)
+  - SMTC: current $158.56, return -3.90% — no stop triggered (stop $153.45); thesis intact (Grok: beat-and-raise Q1 FY27 catalyst fully intact, no material negative news)
+  - WDAY: current $125.87, return -3.47% — no stop triggered (stop $121.27); thesis intact (Grok: Goldman/Needham PT cuts are analyst valuation resets — no new corporate negative such as guidance cut, exec change, or customer loss)
+- day_pnl_pct: -0.04% — no daily-loss-cap breach (cap: -3%)
+- exits: 0
+- entries: 0 (midday is defense only)
+- risk note: NVDA at -6.38% is CRITICAL — stop trigger $208.30 vs current $209.70 (gap only $1.40). EOD routine must re-evaluate.
