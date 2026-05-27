@@ -1087,3 +1087,19 @@ Skipped (below threshold or filtered):
 - account: equity=$99,425.17, cash=$85,169.54, buying_power=$184,594.71, day_pnl=-0.18%
 - eod email: sent (id=8b63b833-dce0-4072-bae4-18b9805afeff)
 - risk note: WDAY at -4.89% is the closest to the -7% stop ($124.02 vs stop $121.27); NVDA at -4.19%; CAVA at -2.71%
+
+## 2026-05-27 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 3 (CAVA, NVDA, WDAY — Alpaca matches portfolio.md on qty/entry; unrealized P&L updated from Alpaca)
+- exits: 0
+  - CAVA: live price $82.50, return +0.05% (stop -7% not breached; target +12% not hit); thesis intact (Grok: no material negative news, beat-and-raise catalyst confirmed)
+  - NVDA: live price $211.275, return -5.67% (stop -7% not breached — stop trigger at $208.30); thesis intact (Grok: no new China export restrictions or Mellanox actions; May 21 beat-and-raise catalyst intact)
+  - WDAY: live price $124.755, return -4.33% (stop -7% not breached — stop trigger at $121.27); thesis intact (Grok: no customer losses, guidance cuts, or management changes)
+- halt checks: day_pnl=+0.08% (cap -3% not breached); weekly_pnl=+0.08% WTD (cap -6% not breached); open positions 3 of 5; new positions today 0 of 2
+- entries: 1 attempted
+  - SMTC: score=8, preflight PASSED (equity=$99,565.55, open=3, day_pnl=+0.14%)
+  - order submitted: 30 shares market order, order_id=1ca88290-2610-4920-8105-93a362b2db6d
+  - fill status after 30s poll (10 × 3s): status=new — NOT YET FILLED. Buying power reserved (~$4,950). Moving on per routine rules.
+  - Note: midday and EOD routines must check order status and append trade-log entry once filled.
+- account: equity=$99,509.05, cash=$85,169.54, buying_power=$179,728.59, day_pnl=+0.08%
+- risk note: NVDA at -5.67% is now closest to stop (stop trigger $208.30 vs current $211.275); WDAY at -4.33%; CAVA at +0.05%
