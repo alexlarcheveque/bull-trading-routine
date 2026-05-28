@@ -1126,3 +1126,97 @@ Skipped (below threshold or filtered):
 - account: equity=$99,276, cash=$80,219.54, buying_power=$179,495.54, day_pnl=-0.15%
 - eod email: sent (id=3349a404-0fb5-4244-944c-a77032cd4197)
 - risk note: NVDA recovered from midday critical ($209.70→$212.56, gap to stop now $4.26); SMTC and WDAY both drifted lower (gaps $3.27 and $3.20 respectively)
+
+## 2026-05-28 pre-market watchlist
+
+### Candidate filter pass
+
+Already in portfolio: CAVA, NVDA, SMTC, WDAY — skip all four per portfolio.md.
+
+Disqualified before Alpaca check (per strategy):
+- HSY (Hershey): Evercore ISI analyst upgrade to Outperform — analyst opinion only, no new corporate event. Strategy explicitly excludes "analyst upgrades with no new information."
+- MU (Micron): UBS PT triple — analyst PT raise only, no corporate event. Same exclusion. Already surfaced in 2026-05-26 pass as well.
+- MGM (MGM Resorts): JPMorgan upgrade to Overweight — analyst upgrade only, no new corporate event.
+- ASTC (Astrotech): EU/ECAC approval for threat detection product + lunar initiative; stock +59-200% pre-market. Pre-market surge implies move fully priced in; also likely sub-$2B market cap. Disqualified on universe + novelty grounds.
+- SNGX (Soligenix): +90% pre-market; price well under $5 per share — fails min_price_per_share=$5. Previously screened out on 2026-05-27.
+- ATPC, SNYR, HSPTU, UMAC, GNS: Low-float/penny names with no confirmed material corporate catalyst. Sub-$2B universe floor.
+- CB&I: $250-500M LNG storage contract is a private subsidiary/division, not independently listed on US exchanges. Alpaca asset lookup: not found (404). Skip.
+- SNOW (Snowflake): Genuine beat-and-raise + $6B AWS deal (see scoring below). Stock +24% AH on May 27, then +37.6% to ~$241 pre-market May 28. Total move at time of research pass: >37% from prior close of $172.23. Strategy criterion: "Fresh — not already 5%+ priced in intraday." At +37%, the first-wave move is the entire story — no second-wave opportunity remains. Novelty=0. Score calculated below for transparency; disqualified on novelty grounds.
+
+Survivors for Alpaca + volume check: A (Agilent Technologies), ABBV (AbbVie)
+
+| ticker | tradable | 30d ADV (Yahoo) | passes 100k filter? | last bar close (5/22) | min_price $5? |
+|--------|----------|-----------------|---------------------|-----------------------|---------------|
+| A      | yes      | 2,189,836       | YES                 | $114.905              | YES           |
+| ABBV   | yes      | 6,304,573       | YES                 | $215.755              | YES           |
+
+### Scoring
+
+**SNOW — Q1 FY27 beat-and-raise + $6B AWS collaboration (for transparency; disqualified on novelty)**
+- EPS $0.39 vs $0.32 est. (+$0.07, +22%); revenue $1.39B vs $1.32B (+5.3%); FY product revenue raised to $5.84B (from $5.66B, +3.2%); op margin raised to 13.5% (from 12.5%); $6B expanded AWS collaboration.
+- Catalyst strength: **4** — landmark beat-and-raise with hyperscaler partnership announcement.
+- Novelty: **0** — +37.6% pre-market on May 28; strategy "Fresh" criterion requires not already 5%+ priced in intraday. Entire first-wave move already complete. We missed it.
+- Confirmation: **2** — massive directional price action on heavy volume.
+- Cleanliness: **1** — no offsetting news, ex-earnings.
+- **Total: 7 — mathematically at threshold, but novelty=0 disqualifies per strategy rule. Do not trade.**
+
+**A (Agilent Technologies) — Q2 FY2026 beat-and-raise (reported after May 27 close)**
+- Non-GAAP EPS $1.49 vs $1.41 est. (+$0.08, +5.7%); revenue $1.83B vs $1.80B (+1.7%).
+- Raised FY2026 non-GAAP EPS guide to $6.00–$6.10 (midpoint +$0.08); FY revenue guide raised to $7.39–$7.49B (core growth +30bps at midpoint).
+- Catalyst strength: **3** — genuine beat-and-raise on a life-sciences instruments leader. Held from 4: revenue beat thin (+1.7%), guidance raise modest (+$0.08 EPS at midpoint, +30bps revenue). Not a full narrative reset but a clear forward cash-flow positive.
+- Novelty: **2** — catalyst released after May 27 close. Grok reports +8% pre-market reaction. An 8% gap on this caliber of beat-and-raise is a reasonable starting position; analyst upgrades and institutional re-positioning often follow a Q2 beat for a coverage-heavy life-sciences name. Not 3 because the initial gap already captures the most liquid part of the move.
+- Confirmation: **1** — Grok confirms +8% pre-market on the print (directional). Alpaca IEX bars (latest May 22, $114.905) are stale vs Yahoo ADV 2.19M shares; bar volumes (~109-160k) reflect known IEX feed undercount. Cannot confirm above-average post-announcement volume from bar data. Partial credit for directional pre-market confirmation only.
+- Cleanliness: **1** — Q2 just reported; next earnings ~August 2026, well outside 3-day window. No halts, no offsetting negative news. Price ~$124 estimated open (within $5–$1,000 range).
+- **Total: 7 — TRADEABLE (at threshold).**
+
+**ABBV (AbbVie) — FDA approval of DECNUPAZ (pivekimab sunirine) for BPDCN (May 27, 2026)**
+- First US approval of an ADC for blastic plasmacytoid dendritic cell neoplasm (BPDCN), an ultra-rare aggressive blood cancer. AbbVie's first blood cancer ADC.
+- BPDCN: ~1,000 patients/year in the US; very limited commercial opportunity relative to ABBV's ~$350B market cap.
+- Catalyst strength: **2** — real FDA approval, first-in-class for the indication. Held from 3: BPDCN affects ~1,000 US patients/year (ultra-rare), modest revenue delta vs $350B cap where Skyrizi/Rinvoq ($25B+ combined FY2026 run-rate) dominate the financial story.
+- Novelty: **2** — approval announced May 27; first trading session is today. Alpaca bars (through May 22) show stock stable at $215–$216 with no evident pre-positioning. Pre-market reaction not visible in Grok Q2 data, suggesting no dramatic gap yet — second-wave potential intact.
+- Confirmation: **0** — latest bar (May 22, $215.755) is pre-announcement. Volume 244,731 is well below Yahoo 30d ADV 6.3M (IEX undercount confirmed). No post-approval bar data available. Cannot confirm upward price/volume reaction.
+- Cleanliness: **1** — no offsetting news; no earnings within 3 trading days; not halted; price within range.
+- **Total: 5 — below threshold. Skip.**
+
+### Watchlist
+
+| ticker | score | catalyst (one line)                                                                          | source                                    |
+|--------|-------|----------------------------------------------------------------------------------------------|-------------------------------------------|
+| A      | 7     | Q2 FY26 EPS $1.49 vs $1.41 (+5.7%); FY EPS guide raised to $6.00-$6.10, rev to $7.39-7.49B | Investing.com / Agilent IR, 2026-05-27    |
+
+Skipped (below threshold or filtered):
+- SNOW (score 7, disqualified on novelty): Q1 FY27 massive beat+raise + $6B AWS deal, but already +37.6% pre-market — entire first wave priced in, novelty=0. Strategy requires "not already 5%+ priced in intraday." Pass.
+- ABBV (score 5): FDA approval for BPDCN is real but ultra-rare (1k patients/year US) vs $350B cap; no price confirmation (bars pre-date announcement).
+- HSY, MU, MGM: analyst upgrades/PT raises only — no new corporate event; strategy exclusion.
+- ASTC: likely sub-$2B market cap; +59-200% pre-market move already fully priced in; novelty=0.
+- SNGX: price <$5 — fails min_price_per_share floor.
+- ATPC, SNYR, HSPTU, UMAC, GNS: low-float/penny names, no confirmed material catalyst, sub-$2B universe.
+- CB&I: not independently listed on US exchanges, not found on Alpaca.
+- CAVA, NVDA, SMTC, WDAY: already held in portfolio.
+
+Portfolio capacity: 4 open positions of max 5. Room for 1 new position today. A is the only signal. Entry at open per strategy: market order, ~5% of equity ($99,276) = ~$4,964 ÷ estimated ~$124 open = ~40 shares. Market-open.md handles execution.
+
+Note: A scores exactly 7 — at threshold. The thin revenue beat (+1.7%) and modest guidance raise are the weak spots. If A opens above ~$125 (>8.7% gap from last known close $114.90), novelty begins to compress and market-open.md should re-evaluate before executing.
+
+## 2026-05-28 raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- SNOW (Snowflake): Q1 FY2027 EPS $0.39 vs $0.32 est. (+$0.07); revenue $1.39B vs $1.32B; raised FY product revenue guide to $5.84B (from $5.66B); raised non-GAAP op margin guide to 13.5% (from 12.5%); $6B expanded AWS collaboration. Stock +24% AH on 5/27. Source: CNBC, Yahoo Finance, Investors.com, SiliconAngle, 2026-05-27.
+- HSY (Hershey): Evercore ISI upgraded to Outperform, PT $255, citing confection outlook + retailer feedback. Source: Investing.com, CNBC, 2026-05-27.
+- MU (Micron): UBS tripled PT to $1,625 (Street high), AI memory structural shift thesis; stock near $1T market cap. Source: CNBC, Yahoo Finance, 2026-05-26.
+- MGM (MGM Resorts): JPMorgan upgraded to Overweight. Source: CNBC, 2026-05-26.
+
+**Q2 — pre-market movers 2026-05-28 >2% on news:**
+- ASTC (Astrotech): +59% to ~$21.93. EU/ECAC approvals for Detect Tracer 1000 threat detection tech + lunar resource initiative. Source: Benzinga, StockStotrade, 2026-05-27/28.
+- SNOW: +37.6% to ~$241.21 pre-market. Q1 beat-and-raise + AWS deal (see Q1/Q3). Source: Benzinga, 2026-05-28.
+- SNGX (Soligenix): +90%+ pre-market. ThermoVax/Ebola platform, HyBryte trials. Source: StockAnalysis, MarketWatch.
+- Other movers (ATPC +88%, SNYR +64%, HSPTU +44%, UMAC +36%, GNS +29%): low-float/penny names, no major confirmed catalyst. Source: Benzinga, 2026-05-28.
+
+**Q3 — beat-and-raise earnings after 2026-05-27 close:**
+- A (Agilent Technologies): Q2 FY2026 non-GAAP EPS $1.49 (beat $1.41 est. by $0.08 / +5.7%); revenue $1.83B (beat $1.80B, +1.7%). Raised FY2026 non-GAAP EPS guide to $6.00-$6.10 (up $0.08 at midpoint); FY revenue guide raised to $7.39-7.49B (core growth 4.5-6%, +30bps midpoint). Source: Investing.com, company release, 2026-05-27.
+- SNOW (Agilent Technologies): Q1 FY2027 non-GAAP EPS $0.39 (beat $0.32 est. by $0.07); revenue $1.39B (beat $1.32B). Raised FY product revenue guide to $5.84B (~31% growth, from $5.66B); non-GAAP op margin guide raised to 13.5% (from 12.5%). Source: Investors.com, SiliconAngle, 2026-05-27.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- ABBV (AbbVie): FDA approved DECNUPAZ (pivekimab sunirine-pvzy) on 2026-05-27 for adult BPDCN patients. First ADC for blood cancer from AbbVie; ultra-rare indication (~1,000 US patients/year). Source: AbbVie IR (news.abbvie.com), 2026-05-27.
+- CB&I: $250-500M lump-sum contract from Technip Energies/Caturus for five 50,000 m³ LNG storage tanks at Commonwealth LNG facility, Louisiana. Announced 2026-05-27. Source: cbi.com press release, 2026-05-27. (Note: CB&I is not independently listed on US exchanges; ticker CBI not found on Alpaca — no trade possible.)
+- No major new M&A announcements or significant FTC/DOJ/SEC regulator decisions identified.
