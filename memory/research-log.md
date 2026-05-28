@@ -1238,6 +1238,15 @@ Note: A scores exactly 7 — at threshold. The thin revenue beat (+1.7%) and mod
 - CB&I: $250-500M lump-sum contract from Technip Energies/Caturus for five 50,000 m³ LNG storage tanks at Commonwealth LNG facility, Louisiana. Announced 2026-05-27. Source: cbi.com press release, 2026-05-27. (Note: CB&I is not independently listed on US exchanges; ticker CBI not found on Alpaca — no trade possible.)
 - No major new M&A announcements or significant FTC/DOJ/SEC regulator decisions identified.
 
+## 2026-05-28T15:55-0500 end-of-day pass
+- market: open (approaching close)
+- time-stops: 0 (A target_exit=2026-06-11, CAVA target_exit=2026-06-03, NVDA target_exit=2026-06-04, SMTC target_exit=2026-06-10, WDAY target_exit=2026-06-05)
+- weekly_loss_cap: no breach (+0.11% WTD vs -6% cap; week start equity $99,556.18 on 2026-05-26)
+- positions: 5 (A 36 @ $133.745278, current $136.08, +1.75%; CAVA 60 @ $82.461667, current $78.40, -4.93%; NVDA 22 @ $223.98, current $213.88, -4.51%; SMTC 30 @ $165.00, current $166.58, +0.96%; WDAY 38 @ $130.40, current $130.43, +0.02%)
+- account: equity=$99,666.91, cash=$75,404.71, buying_power=$175,071.62, day_pnl=+0.39%
+- eod email: sent (id=f39d0b76-be3b-4a8d-89d3-0c3e0371b112)
+- risk note: CAVA at -4.93% is now CLOSEST to stop (trigger $76.69 vs current $78.40, gap $1.71) — deteriorated from -2.77% at midday; NVDA at -4.51% (gap $5.58); pre-market Friday must re-evaluate CAVA thesis
+
 ## 2026-05-28T12:00-0500 midday risk pass
 - market: open
 - positions reconciled: 5 (A 36 @ $133.745278, CAVA 60 @ $82.461667, NVDA 22 @ $223.98, SMTC 30 @ $165.00, WDAY 38 @ $130.40) — Alpaca authoritative; portfolio.md rewritten
