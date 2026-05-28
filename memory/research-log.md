@@ -1198,6 +1198,23 @@ Portfolio capacity: 4 open positions of max 5. Room for 1 new position today. A 
 
 Note: A scores exactly 7 — at threshold. The thin revenue beat (+1.7%) and modest guidance raise are the weak spots. If A opens above ~$125 (>8.7% gap from last known close $114.90), novelty begins to compress and market-open.md should re-evaluate before executing.
 
+## 2026-05-28 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 4 → 5 (CAVA, NVDA, SMTC, WDAY — Alpaca matches portfolio.md; A added via new order)
+- exits: 0
+  - CAVA: live price $81.095, return -1.66% (stop -7% not breached); thesis intact (Grok: no material negative news, beat-and-raise catalyst intact)
+  - NVDA: live price $212.82, return -4.98% (stop $208.30 not breached, gap $4.52); thesis intact (Grok: no new China export restrictions, Mellanox actions, or guidance cuts)
+  - SMTC: live price $160.64, return -2.64% (stop $153.45 not breached, gap $7.19); thesis intact (Grok: beat-and-raise Q1 FY27 intact, no material negative news)
+  - WDAY: live price $124.99, return -4.15% (stop $121.27 not breached, gap $3.72); thesis intact (Grok: no guidance cuts, customer losses, or management changes)
+- halt checks: day_pnl=+0.02% (cap -3% not breached); weekly_pnl≈-0.16% WTD (cap -6% not breached); open positions 4→5 of 5; new positions today 0→1 of 2
+- entries: 1 attempted (A, score=7)
+  - A: preflight PASSED (equity=$99,353.70, open=4, day_pnl=0.08%)
+  - order submitted: 36 shares market order, order_id=b73867cc-df71-424f-a61b-5a5ffcb1b7a7
+  - fill status after 30s poll (10 × 3s): status=partially_filled — 9 of 36 shares @ $134.23. Remaining 27 shares still pending in working order.
+  - trade-log: partial entry logged (9 shares @ $134.23). Midday must check order b73867cc and append full fill row when confirmed.
+- novelty re-evaluation at open: A opened ~$135.91 at initial quote, implying ~+8% from estimated May 27 close (~$125.84). Consistent with pre-market Grok report of "+8% pre-market." Score of 7 holds — novelty not compressed beyond pre-market expectation. Pre-market note threshold ($125 / 8.7% from stale IEX bar) was keyed off stale $114.905 bar; actual earnings gap from real prior close is ~+8%, within expected range.
+- account post-trade: equity=$99,296.49, cash=$79,011.47, buying_power=$174,683.75, day_pnl=+0.02%
+
 ## 2026-05-28 raw Grok output
 
 **Q1 — bullish news, US large-caps, last 24h:**

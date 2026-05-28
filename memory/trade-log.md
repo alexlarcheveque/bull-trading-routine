@@ -18,3 +18,4 @@
 | 2026-05-21 08:31 | NVDA | BUY | 22 | 223.98 | score=8 catalyst=Q1 FY27 EPS $1.87 vs $1.78; Q2 rev guide $91B vs $87B consensus (+4.6% raise) | 8 | 2026-06-04 |
 | 2026-05-22 09:32 | WDAY | BUY | 38 | 130.40 | score=7 catalyst=Q1 FY27 EPS $2.66 vs $2.49 (+7%); raised non-GAAP op-margin guide to 30.5% from 30.0% | 7 | 2026-06-05 |
 | 2026-05-27 08:34 | SMTC | BUY | 30 | 165.00 | score=8 catalyst=Q1 FY27 EPS $0.51 vs $0.45 (+13.3%); Q2 guide raised to $328M vs $300.4M (+9.2%) | 8 | 2026-06-10 |
+| 2026-05-28 08:34 | A | BUY | 9 | 134.23 | score=7 catalyst=Q2 FY26 EPS $1.49 vs $1.41 (+5.7%); FY EPS guide raised to $6.00-$6.10, rev to $7.39-7.49B (partial fill 9/36; 27 shares pending order b73867cc) | 7 | 2026-06-11 |
