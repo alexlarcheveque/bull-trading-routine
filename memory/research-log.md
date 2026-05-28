@@ -1237,3 +1237,18 @@ Note: A scores exactly 7 — at threshold. The thin revenue beat (+1.7%) and mod
 - ABBV (AbbVie): FDA approved DECNUPAZ (pivekimab sunirine-pvzy) on 2026-05-27 for adult BPDCN patients. First ADC for blood cancer from AbbVie; ultra-rare indication (~1,000 US patients/year). Source: AbbVie IR (news.abbvie.com), 2026-05-27.
 - CB&I: $250-500M lump-sum contract from Technip Energies/Caturus for five 50,000 m³ LNG storage tanks at Commonwealth LNG facility, Louisiana. Announced 2026-05-27. Source: cbi.com press release, 2026-05-27. (Note: CB&I is not independently listed on US exchanges; ticker CBI not found on Alpaca — no trade possible.)
 - No major new M&A announcements or significant FTC/DOJ/SEC regulator decisions identified.
+
+## 2026-05-28T12:00-0500 midday risk pass
+- market: open
+- positions reconciled: 5 (A 36 @ $133.745278, CAVA 60 @ $82.461667, NVDA 22 @ $223.98, SMTC 30 @ $165.00, WDAY 38 @ $130.40) — Alpaca authoritative; portfolio.md rewritten
+- A full fill confirmed: order b73867cc-df71-424f-a61b-5a5ffcb1b7a7 status=filled, 36/36 shares @ $133.745278 avg; trade-log correction row appended
+- exit evaluation:
+  - A: current $135.34, return +1.19% — no stop (-7%) or target (+12%) triggered; thesis intact (Grok: earnings beat+raise catalyst confirmed, no negative news)
+  - CAVA: current $80.175, return -2.77% — no stop triggered (stop $76.69); thesis intact (Grok: Q1 beat-and-raise fully intact, no material negative news)
+  - NVDA: current $212.23, return -5.25% — no stop triggered (stop $208.30, gap $3.93); thesis intact (Grok: no new guidance cut, regulatory reversal, or exec departure)
+  - SMTC: current $167.595, return +1.57% — no stop or target triggered; thesis intact (Grok: Q1 FY27 beat+raise intact, no material negative news; +6.6% today on continued catalyst momentum)
+  - WDAY: current $127.56, return -2.18% — no stop triggered (stop $121.27, gap $6.29); thesis intact (Grok: no guidance cuts, customer losses, or management changes)
+- day_pnl_pct: +0.35% — no daily-loss-cap breach (cap: -3%)
+- exits: 0
+- entries: 0 (midday is defense only)
+- risk note: NVDA at -5.25% remains closest to stop (gap $3.93 to $208.30); WDAY and CAVA both recovering vs prior sessions
