@@ -1382,3 +1382,16 @@ Candidates that passed Alpaca + volume checks:
 No tradeable signal today.
 
 Additional constraint: portfolio at max capacity (5/5 positions). Market-open.md should sit out and not execute any entries.
+
+## 2026-05-29 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 5 (A, CAVA, NVDA, SMTC, WDAY — Alpaca matches portfolio.md on qty/entry)
+- exits: 0
+  - A: live price $133.57, return -0.13% (stop $117.70 [-12%] not breached, target $167.18 [+25%] not hit); thesis intact (Grok: Q2 beat+raise catalyst confirmed, no material negative news)
+  - CAVA: live price $79.505, return -3.59% (stop $72.57 not breached); thesis intact (Grok: no material negative news; insider selling is routine, not a corporate negative)
+  - NVDA: live price $213.87, return -4.51% (stop $197.10 not breached); thesis intact (Grok: no new China export restrictions, guidance cuts, or exec departures)
+  - SMTC: live price $167.48, return +1.50% (stop $145.20 not breached, target $206.25 not hit); thesis intact (Grok: Q1 FY27 beat+raise intact, no material negative news)
+  - WDAY: live price $134.40, return +3.07% (stop $114.75 not breached, target $163.00 not hit); thesis intact (Grok: Google Cloud AI partnership expansion noted; no guidance cuts or customer losses)
+- halt checks: day_pnl=+0.22% (cap -15% not breached); weekly_pnl≈+0.27% WTD from week-start $99,556.18 (cap -30% not breached); open positions 5/5 (at max — no entries)
+- entries: 0 (portfolio full 5/5; watchlist 0 signals — top score DELL=7 but novelty=0 per pre-market pass)
+- account: equity=$99,829.01, cash=$75,404.71, buying_power=$175,233.72, day_pnl=+0.22%
