@@ -1261,3 +1261,124 @@ Note: A scores exactly 7 — at threshold. The thin revenue beat (+1.7%) and mod
 - exits: 0
 - entries: 0 (midday is defense only)
 - risk note: NVDA at -5.25% remains closest to stop (gap $3.93 to $208.30); WDAY and CAVA both recovering vs prior sessions
+
+## 2026-05-29T05:54:16Z preflight reject
+- ticker: SMTC260619C00160000  side: buy  qty: 3  price: 6.00
+- reason: asset lookup failed (unknown ticker or API error)
+
+## 2026-05-29T05:54:17Z preflight reject
+- ticker: SMTC260619C00160000  side: buy  qty: 50  price: 6.00
+- reason: asset lookup failed (unknown ticker or API error)
+
+## 2026-05-29T05:54:17Z preflight reject
+- ticker: AAPL  side: buy  qty: 10  price: 200
+- reason: open positions=5 >= max_concurrent_positions=5
+
+## 2026-05-29T05:56:49Z preflight reject
+- ticker: SMTC260618C00160000  side: buy  qty: 3  price: 20.29
+- reason: option premium 6.1340% ($6087.00) > max_option_premium_pct=5%
+
+## 2026-05-29T05:56:50Z preflight reject
+- ticker: SMTC260618C00160000  side: buy  qty: 100  price: 20.29
+- reason: option premium 204.4659% ($202900.00) > max_option_premium_pct=5%
+
+## 2026-05-29T05:56:50Z preflight reject
+- ticker: SMTC260618C00160000  side: sell  qty: 1  price: 20.29
+- reason: cannot sell-to-open: hold 0 contracts, tried to sell 1 (long-only)
+
+## 2026-05-29T05:56:51Z preflight reject
+- ticker: MSFT  side: buy  qty: 1  price: 400
+- reason: open positions=5 >= max_concurrent_positions=5
+
+## 2026-05-29T05:57:22Z preflight reject
+- ticker: NVDA260612C00215000  side: buy  qty: 100  price: 6.31
+- reason: option premium 63.5881% ($63100.00) > max_option_premium_pct=5%
+
+## 2026-05-29T05:57:23Z preflight reject
+- ticker: NVDA260612C00215000  side: sell  qty: 1  price: 6.31
+- reason: cannot sell-to-open: hold 0 contracts, tried to sell 1 (long-only)
+
+## 2026-05-29T05:57:23Z preflight reject
+- ticker: NVDA260612C00215000  side: buy  qty: 3  price: 6.31
+- reason: options_enabled is not true in guardrails
+
+## 2026-05-29T05:57:39Z preflight reject
+- ticker: NVDA260612C00215000  side: buy  qty: 100  price: 6.31
+- reason: option premium 63.5887% ($63100.00) > max_option_premium_pct=5%
+
+## 2026-05-29T05:57:44Z preflight reject
+- ticker: NVDA260612C00215000  side: sell  qty: 1  price: 6.31
+- reason: cannot sell-to-open: hold 0 contracts, tried to sell 1 (long-only)
+
+## 2026-05-29T05:58:02Z preflight reject
+- ticker: NVDA260612C00215000  side: sell  qty: 1  price: 6.31
+- reason: cannot sell-to-open: hold 0 contracts, tried to sell 1 (long-only)
+
+## 2026-05-29T05:58:03Z preflight reject
+- ticker: NVDA260612C00215000  side: sell  qty: 1  price: 6.31
+- reason: cannot sell-to-open: hold 0 contracts, tried to sell 1 (long-only)
+
+## 2026-05-29T06:17:10Z preflight reject
+- ticker: AVGO  side: buy  qty: 56  price: 349.65
+- reason: open positions=5 >= max_concurrent_positions=5
+
+## 2026-05-29 pre-market watchlist
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- SNOW (Snowflake): Q1 FY26 EPS $0.39 vs $0.14 est.; revenue $1.04B +26% YoY; $6B AWS commitment; stock +36.5% on 2026-05-28. Sources: CNBC, Yahoo Finance.
+- BBY (Best Buy): Q1 FY27 EPS $1.28 vs $1.23 est., revenue beat; stock +~15% on 2026-05-28. Sources: CNBC, public.com.
+
+**Q2 — pre-market movers >2% on news (2026-05-29):**
+- DELL: pre-market +37-40% on Q1 FY27 beat+raise (AI server demand, record results). Sources: Investing.com, StockAnalysis.
+- MU: +3.2% (sector/AI momentum, no fresh corporate news). Source: Investing.com.
+- IBM: +5% (AI strength, no fresh earnings catalyst identified). Source: Investing.com.
+- ORCL: +3.4% (AI growth narrative). Source: Investing.com.
+
+**Q3 — beat-and-raise earnings after 2026-05-28 close:**
+- CRM (Salesforce): Q1 FY27 non-GAAP EPS $3.88 vs ~$3.12 cons (+$0.76 beat); revenue ~$11.13B vs $11.05B est.; raised FY27 revenue guide to $45.9-46.2B. Sources: TIKR, MarketBeat, Schwab.
+- SNOW: Q1 FY26 beat+raise (captured above; stock reaction was on 2026-05-28 session).
+- Build-A-Bear Workshop: EPS beat + raised profit forecast — micro-cap, below universe floor. Source: Benzinga.
+
+**Q4 — FDA/M&A/contracts/regulator decisions, last 24h:**
+- AZN (AstraZeneca): FDA approved durvalumab (Imfinzi) + BCG for BCG-naïve high-risk NMIBC (POTOMAC trial). Source: FDA.gov, 2026-05-28.
+- MBC (MasterBrand): Completed all-stock merger with AMWD (~$3.6B). Source: VirginiaBusiness.com.
+- CBOE: SEC approved extended pre/post-market trading hours for select single-stock options, effective 2026-07-13. Source: Cboe IR, 2026-05-28.
+- UNP/NSC: STB accepted revised UP/NS merger application but held proceeding in abeyance pending more info — not a definitive approval. Source: STB.gov.
+
+### Candidate filter pass
+
+Portfolio already full: 5/5 max_concurrent_positions (A, CAVA, NVDA, SMTC, WDAY). No new entries possible today regardless of score.
+
+Disqualified before scoring:
+- SNOW: +36.5% on 2026-05-28 session — move fully priced in from yesterday; catalyst not fresh for today.
+- BBY: +15% on 2026-05-28 session — same, already priced in.
+- MU, IBM, ORCL: pre-market moves attributed to sector/AI momentum, no fresh corporate catalyst identified.
+- Build-A-Bear Workshop: market cap below $2B universe floor.
+- MBC: merger completion not fresh (FTC review closed earlier); no price catalyst.
+- UNP/NSC: STB acceptance is procedural, not a decision.
+
+Candidates that passed Alpaca + volume checks:
+
+| ticker | alpaca status | 30d ADV (Yahoo) | pass? |
+|--------|---------------|-----------------|-------|
+| DELL | active/tradable | 7,201,913 | yes |
+| CRM | active/tradable | 13,113,460 | yes |
+| AZN | active/tradable | 1,954,933 | yes |
+| CBOE | active/tradable | 941,573 | yes |
+
+### Scoring
+
+| ticker | catalyst str (0-4) | novelty (0-3) | confirmation (0-2) | cleanliness (0-1) | **score** | verdict |
+|--------|--------------------|---------------|--------------------|-------------------|-----------|---------|
+| DELL | 4 — Q1 FY27 beat+raise; AI server demand record | 0 — +37-40% priced in pre-market; "move already happened" | 2 — massive up on enormous volume | 1 — no offsets, no earnings in 3d | **7** | Fails freshness pre-req (>5% priced intraday); at position cap |
+| CRM | 3 — Q1 FY27 EPS +$0.76 beat; rev raised | 1 — catalyst <24h old, but after-hours price DOWN ~2% ($176.30 vs ~$180 prior close) | 0 — stock declined on earnings | 1 — no offsets | **5** | Market skeptical; not directionally bullish |
+| AZN | 2 — FDA label expansion (Imfinzi+BCG, NMIBC) | 1 — catalyst <24h old, but negligible revenue delta for $200B+ company | 0 — after-hours flat/down (-0.9%, $185.38 vs $187.08) | 1 — no offsets | **4** | Immaterial catalyst for company size; no price confirmation |
+| CBOE | 1 — SEC approval for extended options hours (effective 2026-07-13) | 1 — catalyst <24h old, distant revenue impact | 0 — stock down -3.8% after-hours | 1 — no offsets | **3** | Minor operational news; negative reaction |
+
+## 2026-05-29 pre-market watchlist result
+
+No tradeable signal today.
+
+Additional constraint: portfolio at max capacity (5/5 positions). Market-open.md should sit out and not execute any entries.
