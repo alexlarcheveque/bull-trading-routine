@@ -3,6 +3,15 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-05-29 midday pass
+0 exits. All 5 positions within thresholds (stop -12%, target +25%).
+- A: +2.49% — thesis intact (Q2 beat + raised guidance still in play)
+- CAVA: -4.02% — thesis intact, no negative news
+- NVDA: -3.96% — thesis intact, AI demand positive
+- SMTC: -6.34% (down -7% today) — thesis intact; Grok found no concrete catalyst for the drop; old 2024-2025 class action, not fresh
+- WDAY: +10.69% — thesis intact, Google Cloud partnership announced yesterday
+Day P&L: +0.33% — well within 15% daily loss cap.
+
 ## 2026-05-13 seed
 Initial empty log. First watchlist will be appended by pre-market.md on the next
 6:00 AM CT run. Preflight smoke-test entries from setup were intentionally
