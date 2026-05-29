@@ -17,20 +17,26 @@ You are the midday risk pass. Be cheap and decisive.
 
 ## Step 1: Per-position exit check
 
-For each open position:
+For each open position, detect the instrument via Alpaca `asset_class`
+(`us_option` = long call, else shares), then apply the **Exit rules in
+`memory/strategy.md`** (stop / target / thesis-broken — both instruments).
+Time stop + expiry guard are end-of-day's job, not midday's.
 
-1. Current price: `./scripts/alpaca.sh quote <TICKER> | jq -r .trade.p`
-2. Entry price: from `memory/portfolio.md` (or position's `avg_entry_price`).
+1. Current value:
+   - shares: `./scripts/alpaca.sh quote <TICKER> | jq -r .trade.p`
+   - option: `./scripts/alpaca.sh option-quote <OCC> | jq -r '.quotes|to_entries[0].value.bp'` (bid)
+2. Entry: from `memory/portfolio.md` (shares: entry_price; option: entry premium),
+   or the position's `avg_entry_price`.
 3. Return %: `(current - entry) / entry * 100`.
-4. Trigger:
-   - return <= -7% → SELL (stop loss)
-   - return >= +12% → SELL (profit target)
-   - thesis broken: `./scripts/grok.sh "Any material negative news on $TICKER in the last 6 hours? Be specific — guidance cut, recall, lawsuit, regulatory reversal, key exec leaving."` — if Grok returns something concrete, SELL.
+4. Trigger (thresholds from strategy.md / guardrails.md — never hardcode):
+   - shares: return <= -`per_trade_stop_pct` → SELL; return >= +`per_trade_target_pct` → SELL.
+   - option: return <= -`option_stop_pct` → SELL; return >= +`option_target_pct` → SELL.
+   - thesis broken (either): `./scripts/grok.sh "Any material negative news on <UNDERLYING> in the last 6 hours? Be specific — guidance cut, recall, lawsuit, regulatory reversal, key exec leaving."` — if Grok returns something concrete, SELL.
 
-For each SELL:
-- `./.claude/skills/bull/preflight-check.sh <TICKER> sell <QTY> <PRICE>`
-- `./scripts/alpaca.sh sell <TICKER>`
-- Append to `memory/trade-log.md`.
+For each SELL (instrument-aware):
+- shares:  `./.claude/skills/bull/preflight-check.sh <TICKER> sell <QTY> <PRICE> equity` then `./scripts/alpaca.sh sell <TICKER>`
+- option:  `./.claude/skills/bull/preflight-check.sh <OCC> sell <QTY> <PREMIUM> option` then `./scripts/alpaca.sh option-sell <OCC>`
+- Append the close to `memory/trade-log.md` (for options, record the exit premium as fill_price).
 
 ## Step 2: Daily loss cap
 

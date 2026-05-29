@@ -13,12 +13,22 @@ You are the end-of-day pass.
 - `memory/strategy.md` — time-stop rule.
 - `memory/portfolio.md`, `./scripts/alpaca.sh positions`, `memory/trade-log.md`.
 
-## Step 1: Time stops
+## Step 1: Time stops + expiry guard
 
-For each open position whose `target_exit_date` from `memory/portfolio.md` is today or earlier:
-- `./.claude/skills/bull/preflight-check.sh <TICKER> sell <QTY> <PRICE>`
-- `./scripts/alpaca.sh sell <TICKER>`
-- Append to `memory/trade-log.md` with reason `time-stop (14d)`.
+For each open position, detect the instrument via Alpaca `asset_class`
+(`us_option` = long call, else shares).
+
+**Time stop** — if `target_exit_date` from `memory/portfolio.md` is today or earlier:
+- shares:  `./.claude/skills/bull/preflight-check.sh <TICKER> sell <QTY> <PRICE> equity` → `./scripts/alpaca.sh sell <TICKER>`
+- option:  `./.claude/skills/bull/preflight-check.sh <OCC> sell <QTY> <PREMIUM> option` → `./scripts/alpaca.sh option-sell <OCC>`
+- Append to `memory/trade-log.md` with reason `time-stop (max_hold_days)`.
+
+**Expiry guard (options only)** — parse the expiry from the OCC symbol (the `YYMMDD`
+right after the underlying ticker). If the contract expires within 2 trading days,
+`option-sell` it now regardless of P&L. NEVER let a call ride into expiration.
+
+**Safety net** — also re-run the stop / target / thesis checks from `memory/strategy.md`
+(both instruments) before close, in case midday missed something.
 
 ## Step 2: Weekly-loss-cap flatten check
 
@@ -70,5 +80,6 @@ git commit -m "eod $(date +%Y-%m-%d): equity=<E>, day=<P>%, <N> time-stops"
 ## Hard rules
 
 - Preflight gates every sell, including time-stop sells.
+- Expiry guard is mandatory for options: never hold a call within 2 trading days of expiry.
 - If the EOD email fails to send, log it to research-log.md but DON'T retry forever — one attempt, then move on. The email is for humans; the trade-log is the source of truth.
 - Never open positions from EOD.

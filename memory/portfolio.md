@@ -10,11 +10,11 @@
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| A | equity | 36 | 133.745278 | — | — | -8.03 |
+| A | equity | 36 | 133.745278 | 2026-05-28 | 2026-06-11 | -8.03 |
 | CAVA | equity | 60 | 82.461667 | 2026-05-20 | 2026-06-03 | -4.79 |
 | NVDA | equity | 22 | 223.98 | 2026-05-21 | 2026-06-04 | -3.87 |
-| SMTC | equity | 30 | 165 | 2026-05-27 | 2026-06-03 | 1.21 |
-| WDAY | equity | 38 | 130.4 | 2026-05-27 | 2026-06-03 | 0.61 |
+| SMTC | equity | 30 | 165 | 2026-05-27 | 2026-06-10 | 1.21 |
+| WDAY | equity | 38 | 130.4 | 2026-05-22 | 2026-06-05 | 0.61 |
 
 ## Notes
 Schema migrated for options. All 5 current positions are SHARES, grandfathered under
