@@ -22,12 +22,11 @@ For each row in `./scripts/alpaca.sh positions`:
 
 - Get the original `entry_price`, `entry_date`, `target_exit_date` from `memory/portfolio.md` (or compute from the position's `avg_entry_price` if missing).
 - Get current price: `./scripts/alpaca.sh quote <TICKER> | jq -r .trade.p`.
-- Compute return: `(current - entry) / entry * 100`.
-- Apply exit rules from `memory/strategy.md`:
-  - return >= +12% → SELL (profit target)
-  - return <= -7% → SELL (stop loss)
-  - thesis broken (check today's Grok output via a quick `./scripts/grok.sh "Any material negative news on $TICKER in last 24h?"`) → SELL
-  - (time stop is enforced in end-of-day, not here)
+- Detect instrument via Alpaca `asset_class` (`us_option` = long call, else shares).
+- Apply the **Exit rules in `memory/strategy.md`** — they cover BOTH shares and long
+  calls (stop / target / thesis-broken), with the exact valuation commands per
+  instrument. Use a quick `./scripts/grok.sh "Any material negative news on <UNDERLYING> in last 24h?"`
+  for the thesis check. (Time stop + expiry guard are enforced in end-of-day, not here.)
 
 For each SELL:
 1. Run preflight: `./.claude/skills/bull/preflight-check.sh <TICKER> sell <QTY> <PRICE>`
@@ -45,31 +44,59 @@ If any halt fires, log the reason to `memory/research-log.md`, skip to Step 4 (c
 
 ## Step 3: Entries
 
-Read today's watchlist from `memory/research-log.md`. Take rows with score >= 7,
-sorted descending by score.
+Read today's watchlist from `memory/research-log.md`. Take rows with score >= the entry
+threshold in `memory/strategy.md`, sorted descending by score. Follow the **Entry rules
+in `memory/strategy.md`** to choose instrument (long call vs shares) and to size each
+order. Read every number (`target_position_pct`, `max_option_premium_pct`,
+`option_min/max_days_to_expiry`, `max_hold_days`, `max_new_positions_per_day`) from
+`memory/guardrails.md` at runtime — NEVER hardcode them here.
 
-For each candidate (in order, until you hit `max_new_positions_per_day`):
+For each candidate (descending score, until you hit `max_new_positions_per_day`):
 
+**A. Decide instrument** (per strategy.md Entry rules):
+- `OPTIONABLE=$(./scripts/alpaca.sh option-chain <TICKER> call | jq '.option_contracts|length')`
+- If `score >= 8` AND `OPTIONABLE > 0` → **CALL path (B)**. Else → **SHARES path (C)**.
+
+**B. CALL path (long call):**
+1. `SPOT=$(./scripts/alpaca.sh quote <TICKER> | jq -r .trade.p)`
+2. `EQUITY=$(./scripts/alpaca.sh account | jq -r .equity)`
+3. Pick the contract from
+   `./scripts/alpaca.sh option-chain <TICKER> call <gte> <lte>` where
+   `gte = today + option_min_days_to_expiry`, `lte = today + option_max_days_to_expiry`.
+   Choose the nearest expiry in range; strike = nearest at or just ABOVE `SPOT`.
+   Save its OCC symbol as `SYM`.
+4. `ASK=$(./scripts/alpaca.sh option-quote $SYM | jq -r '.quotes|to_entries[0].value.ap')`
+5. `CONTRACTS=$(awk -v e="$EQUITY" -v a="$ASK" -v pct=<max_option_premium_pct> 'BEGIN{n=int((e*pct/100)/(a*100)); if(n<1)n=1; print n}')`
+6. Preflight: `./.claude/skills/bull/preflight-check.sh $SYM buy $CONTRACTS $ASK option`
+   - If it REJECTS (e.g. 1 contract still exceeds the premium cap): log the reason and
+     **fall back to the SHARES path (C)** for this same name.
+7. `ORDER_JSON=$(./scripts/alpaca.sh option-buy $SYM $CONTRACTS)` → poll fill via **(D)**.
+8. Append to `memory/trade-log.md` (mark it an option):
+   `YYYY-MM-DD HH:MM | $SYM | BUY | $CONTRACTS | $FILL | option call score=<S> catalyst=<short> underlying=<TICKER> | <S> | $(date -v+<max_hold_days>d +%Y-%m-%d)`
+
+**C. SHARES path:**
 1. `PRICE=$(./scripts/alpaca.sh quote <TICKER> | jq -r .trade.p)`
 2. `EQUITY=$(./scripts/alpaca.sh account | jq -r .equity)`
-3. `QTY=$(awk -v e="$EQUITY" -v p="$PRICE" 'BEGIN{printf "%d", (e * 0.05) / p}')` — 5% sizing (matches `target_position_pct`)
-4. `./.claude/skills/bull/preflight-check.sh <TICKER> buy $QTY $PRICE`
-   - If exit non-zero: skip this candidate, log the rejection reason from preflight's stderr to research-log.md. Move to next candidate.
-5. `ORDER_JSON=$(./scripts/alpaca.sh buy <TICKER> $QTY)` — capture the response so you have the order id.
-6. `ORDER_ID=$(echo "$ORDER_JSON" | jq -r .id)` — extract the id, then poll the **specific order** for fill:
-   ```
-   for i in 1 2 3 4 5 6 7 8 9 10; do
-     STATUS=$(./scripts/alpaca.sh order "$ORDER_ID" | jq -r .status)
-     [ "$STATUS" = "filled" ] && break
-     [ "$STATUS" = "canceled" ] || [ "$STATUS" = "rejected" ] || [ "$STATUS" = "expired" ] && break
-     sleep 3
-   done
-   FILL_PRICE=$(./scripts/alpaca.sh order "$ORDER_ID" | jq -r .filled_avg_price)
-   ```
-   Do **NOT** use `orders open` — filled orders leave the `open` status, so polling that endpoint will loop forever. Always fetch the specific order id, with a bounded retry count (max 10 × 3s = 30s).
-   If after 30s the order is still not `filled`, log the final status to `memory/research-log.md` and move on; do not block the routine.
-7. Append to `memory/trade-log.md`:
-   `YYYY-MM-DD HH:MM | TICKER | BUY | QTY | FILL_PRICE | score=<S> catalyst=<short> | <S> | $(date -v+14d +%Y-%m-%d)`
+3. `QTY=$(awk -v e="$EQUITY" -v p="$PRICE" -v pct=<target_position_pct> 'BEGIN{printf "%d",(e*pct/100)/p}')`
+4. Preflight: `./.claude/skills/bull/preflight-check.sh <TICKER> buy $QTY $PRICE equity`
+   - If non-zero: skip this candidate, log the reason, move to the next.
+5. `ORDER_JSON=$(./scripts/alpaca.sh buy <TICKER> $QTY)` → poll fill via **(D)**.
+6. Append to `memory/trade-log.md`:
+   `YYYY-MM-DD HH:MM | <TICKER> | BUY | $QTY | $FILL | equity score=<S> catalyst=<short> | <S> | $(date -v+<max_hold_days>d +%Y-%m-%d)`
+
+**D. Bounded fill poll (both paths):**
+```
+ORDER_ID=$(echo "$ORDER_JSON" | jq -r .id)
+for i in 1 2 3 4 5 6 7 8 9 10; do
+  STATUS=$(./scripts/alpaca.sh order "$ORDER_ID" | jq -r .status)
+  [ "$STATUS" = "filled" ] && break
+  case "$STATUS" in canceled|rejected|expired) break;; esac
+  sleep 3
+done
+FILL=$(./scripts/alpaca.sh order "$ORDER_ID" | jq -r .filled_avg_price)
+```
+NEVER poll `orders open` — filled orders leave that status and the loop never ends.
+If still unfilled after 30s, log the final status to `memory/research-log.md` and move on.
 
 ## Step 4: Refresh portfolio.md
 
@@ -86,14 +113,15 @@ Pull the authoritative state and rewrite `memory/portfolio.md`:
 - day_pnl_pct: <pct>
 
 ## Open positions
-| ticker | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
-|--------|-----|-------------|------------|-------------|--------------------|
-| ...    | ... | ...         | ...        | ...         | ...                |
+| ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
+|--------|------------|-----|-------------|------------|-------------|--------------------|
+| ...    | equity/call| ... | ...         | ...        | ...         | ...                |
 ```
 
 `equity / cash / buying_power` come from `./scripts/alpaca.sh account`.
-Open positions come from `./scripts/alpaca.sh positions`. Cross-reference `entry_date`
-and `target_exit` from `memory/trade-log.md` (latest BUY row per ticker).
+Open positions come from `./scripts/alpaca.sh positions`. Cross-reference `entry_date` and `target_exit` from `memory/trade-log.md` (latest BUY
+row per ticker). For options, `ticker` is the OCC symbol, `instrument`=call, and
+`entry_price` is the entry premium per share.
 
 ## Step 5: Commit
 

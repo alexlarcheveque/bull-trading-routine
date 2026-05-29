@@ -52,26 +52,55 @@ Each candidate gets a composite score:
 Only score ≥ 7 trades. If nothing scores ≥ 7, **we do not trade today**. Cash is a
 position.
 
-## Entry rules
+## Entry rules (AGGRESSIVE / video mode)
 
 - Buy at the **open** following the pre-market research pass that produced the score.
-- Market order, full target size in one shot (no laddering for now — keep simple).
-- Target position size: **5% of account equity** per name.
-- Max **2 new positions per day**, max **5 open positions** at any time.
+- **Instrument choice:**
+  - If score **>= 8** AND the name is optionable
+    (`./scripts/alpaca.sh option-chain <T> call` returns > 0 contracts):
+    buy a **LONG CALL** for leveraged upside.
+  - Otherwise: buy **SHARES**.
+- **Shares sizing:** `target_position_pct` of equity (guardrails; currently 20%),
+  market order, full size in one shot.
+- **Call sizing:** target `max_option_premium_pct` of equity in premium (currently 5%).
+  `contracts = floor((equity * max_option_premium_pct/100) / (ask * 100))`, min 1.
+  If even 1 contract trips the premium cap (preflight rejects), **fall back to shares**.
+- **Call contract selection:** type=call; expiry = nearest listed expiration in
+  `[option_min_days_to_expiry, option_max_days_to_expiry]` DTE (target ~3–5 weeks);
+  strike = nearest strike **at or just above** spot (ATM / slightly OTM).
+- Caps: max `max_new_positions_per_day` new/day, max `max_concurrent_positions` open.
+  **All sizes and caps live in guardrails.md — never hardcode them in a routine.**
 
-## Exit rules (the 14-day discipline)
+## Exit rules
 
-For every position, on entry, we record `entry_price`, `entry_date`, `target_exit_date`
-(= entry_date + 14 calendar days). Exits trigger on whichever comes first:
+On entry we record `entry_price` (the **premium** for options), `entry_date`, and
+`target_exit_date` (= entry_date + `max_hold_days` calendar days; currently 7). All
+thresholds below come from guardrails.md — never hardcode them.
 
-1. **Profit target hit**: +12% from entry → sell full position.
-2. **Stop loss hit**: −7% from entry → sell full position. No averaging down. Ever.
-3. **Thesis broken**: the original catalyst is contradicted by new news (acquisition
-   falls through, FDA reverses, guidance cut, etc.) → sell full position next bar.
-4. **Time stop**: at `target_exit_date`, sell full position regardless of P&L. The
-   edge has decayed; do not become a long-term investor by accident.
+**Detecting instrument at exit time:** a position is an option iff its Alpaca
+`asset_class == "us_option"`. Options use `option-quote` / `option-sell` and preflight
+with a trailing `option` arg; shares use `quote` / `sell` and preflight `equity`.
 
-The midday routine enforces (2) and (3). The end-of-day routine enforces (4).
+**SHARES** (use `per_trade_target_pct` / `per_trade_stop_pct`):
+- current = `./scripts/alpaca.sh quote <T> | jq -r .trade.p`; return = (current-entry)/entry*100.
+1. Profit target: return >= +`per_trade_target_pct` (currently +25%) → sell full.
+2. Stop loss:   return <= -`per_trade_stop_pct` (currently -12%) → sell full. Never average down.
+3. Thesis broken (Grok on the name) → sell next bar.
+4. Time stop: today >= `target_exit_date` → sell regardless of P&L.
+
+**OPTIONS / long calls** (premium-based; use `option_target_pct` / `option_stop_pct`):
+- entry premium = the BUY fill price; current premium =
+  `./scripts/alpaca.sh option-quote <OCC> | jq -r '.quotes|to_entries[0].value.bp'` (bid).
+- return = (current-entry)/entry*100.
+1. Profit target: return >= +`option_target_pct` (currently +80%) → option-sell full.
+2. Stop loss:   return <= -`option_stop_pct` (currently -50%) → option-sell full.
+3. Thesis broken on the underlying → option-sell.
+4. Time stop: today >= `target_exit_date` → option-sell.
+5. **Expiry guard:** if the contract expires within 2 trading days, option-sell now
+   regardless of P&L. NEVER let a call ride into expiration.
+
+The midday routine enforces stop / target / thesis (both instruments). The end-of-day
+routine enforces time stop + expiry guard, and re-checks the rest as a safety net.
 
 ## What "best 14-day returns" means for journaling
 
