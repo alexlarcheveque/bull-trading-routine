@@ -2,7 +2,9 @@
 # preflight-check.sh — hard guardrail. Refuses any order that would violate
 # memory/guardrails.md. Called by the decision prompt BEFORE alpaca.sh buy/sell.
 #
-# Args:   <ticker> <buy|sell> <qty> <price>
+# Args:   <ticker> <buy|sell> <qty> <price> [instrument=equity|option]
+#         For options: <ticker> is the OCC symbol, <price> is per-share premium
+#         (per-contract cost = qty * price * 100), <instrument> must be "option".
 # Exit 0: trade is allowed.
 # Exit 1: trade is rejected. Reason printed on stderr.
 # Exit 2: configuration error (missing files, bad env, etc.).
@@ -26,9 +28,11 @@ command -v jq >/dev/null || { echo "preflight: jq required" >&2; exit 2; }
 TICKER="${1:?usage: preflight-check.sh <ticker> <buy|sell> <qty> <price>}"
 SIDE="${2:?usage: preflight-check.sh <ticker> <buy|sell> <qty> <price>}"
 QTY="${3:?usage: preflight-check.sh <ticker> <buy|sell> <qty> <price>}"
-PRICE="${4:?usage: preflight-check.sh <ticker> <buy|sell> <qty> <price>}"
+PRICE="${4:?usage: preflight-check.sh <ticker> <buy|sell> <qty> <price> [equity|option]}"
+INSTRUMENT="${5:-equity}"
 
 [[ "$SIDE" == "buy" || "$SIDE" == "sell" ]] || { echo "preflight: side must be buy|sell" >&2; exit 1; }
+[[ "$INSTRUMENT" == "equity" || "$INSTRUMENT" == "option" ]] || { echo "preflight: instrument must be equity|option" >&2; exit 1; }
 TICKER_UC=$(echo "$TICKER" | tr '[:lower:]' '[:upper:]')
 
 # ---- guardrails reader -------------------------------------------------------
@@ -70,6 +74,66 @@ reject() {
   } >> "$LOG"
   exit 1
 }
+
+# ---- OPTIONS PATH ------------------------------------------------------------
+# Options are sized on premium-at-risk (can go to zero), not share notional.
+# This branch handles all option checks and exits; the share-based checks below
+# only run for equity orders.
+if [[ "$INSTRUMENT" == "option" ]]; then
+  OPTIONS_ENABLED=$(g_str options_enabled)
+  [[ "$OPTIONS_ENABLED" == "true" ]] || reject "options_enabled is not true in guardrails"
+
+  MAX_OPT_PREMIUM_PCT=$(g_num max_option_premium_pct)
+  MAX_TOTAL_OPT_PCT=$(g_num max_total_option_premium_pct)
+
+  ACCT_JSON=$("$ALPACA" account)
+  EQUITY=$(echo "$ACCT_JSON" | jq -r '.equity')
+  LAST_EQUITY=$(echo "$ACCT_JSON" | jq -r '.last_equity')
+  [[ "$(echo "$ACCT_JSON" | jq -r '.account_blocked')" == "false" ]] || reject "account is blocked"
+  [[ "$(echo "$ACCT_JSON" | jq -r '.trading_blocked')" == "false" ]] || reject "trading is blocked"
+
+  # premium cost of THIS play = qty contracts * per-share premium * 100
+  PLAY_PREMIUM=$(awk -v q="$QTY" -v p="$PRICE" 'BEGIN { printf "%.2f", q * p * 100 }')
+
+  if [[ "$SIDE" == "buy" ]]; then
+    DAY_PNL_PCT=$(awk -v e="$EQUITY" -v l="$LAST_EQUITY" \
+      'BEGIN { if (l+0 == 0) print 0; else printf "%.4f", (e - l) / l * 100 }')
+    awk -v p="$DAY_PNL_PCT" -v cap="$DAILY_LOSS_CAP" \
+      'BEGIN { exit (p+0 > -cap+0) ? 0 : 1 }' \
+      || reject "daily P&L $DAY_PNL_PCT% breached daily_loss_cap_pct=-$DAILY_LOSS_CAP%"
+
+    PLAY_PCT=$(awk -v c="$PLAY_PREMIUM" -v e="$EQUITY" 'BEGIN { printf "%.4f", c / e * 100 }')
+    awk -v pct="$PLAY_PCT" -v cap="$MAX_OPT_PREMIUM_PCT" \
+      'BEGIN { exit (pct+0 <= cap+0) ? 0 : 1 }' \
+      || reject "option premium $PLAY_PCT% (\$$PLAY_PREMIUM) > max_option_premium_pct=$MAX_OPT_PREMIUM_PCT%"
+
+    POSITIONS_JSON=$("$ALPACA" positions)
+    EXISTING_OPT_PREMIUM=$(echo "$POSITIONS_JSON" | jq -r '
+      [ .[] | select(.asset_class == "us_option") | (.market_value|tonumber|fabs) ] | add // 0')
+    TOTAL_PCT=$(awk -v ex="$EXISTING_OPT_PREMIUM" -v add="$PLAY_PREMIUM" -v e="$EQUITY" \
+      'BEGIN { printf "%.4f", (ex + add) / e * 100 }')
+    awk -v pct="$TOTAL_PCT" -v cap="$MAX_TOTAL_OPT_PCT" \
+      'BEGIN { exit (pct+0 <= cap+0) ? 0 : 1 }' \
+      || reject "total option premium $TOTAL_PCT% > max_total_option_premium_pct=$MAX_TOTAL_OPT_PCT%"
+
+    HELD=$(echo "$POSITIONS_JSON" | jq -r --arg s "$TICKER_UC" \
+      'map(select(.symbol == $s)) | (.[0].qty // "0")')
+    awk -v q="$HELD" 'BEGIN { exit (q+0 == 0) ? 0 : 1 }' \
+      || reject "already hold $HELD contracts of $TICKER_UC — no adding"
+  fi
+
+  if [[ "$SIDE" == "sell" ]]; then
+    POSITIONS_JSON=$("$ALPACA" positions)
+    HELD=$(echo "$POSITIONS_JSON" | jq -r --arg s "$TICKER_UC" \
+      'map(select(.symbol == $s)) | (.[0].qty // "0")')
+    awk -v have="$HELD" -v want="$QTY" \
+      'BEGIN { exit (have+0 >= want+0) ? 0 : 1 }' \
+      || reject "cannot sell-to-open: hold $HELD contracts, tried to sell $QTY (long-only)"
+  fi
+
+  echo "preflight OK $TICKER_UC $SIDE $QTY option @ \$$PRICE (premium=\$$PLAY_PREMIUM, equity=$EQUITY)"
+  exit 0
+fi
 
 # ---- 1. price band -----------------------------------------------------------
 awk -v p="$PRICE" -v lo="$MIN_PRICE" -v hi="$MAX_PRICE" \

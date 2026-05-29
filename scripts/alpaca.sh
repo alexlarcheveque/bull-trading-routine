@@ -17,6 +17,10 @@
 #   alpaca.sh buy         <ticker> <qty>                 # day market buy
 #   alpaca.sh sell        <ticker>                       # closes full position (market)
 #   alpaca.sh cancel-all
+#   alpaca.sh option-chain <ticker> [type=call] [exp_gte] [exp_lte]
+#   alpaca.sh option-quote <occ-symbol>                  # latest bid/ask (indicative)
+#   alpaca.sh option-buy   <occ-symbol> <qty>            # day market buy-to-open
+#   alpaca.sh option-sell  <occ-symbol>                  # closes full option position
 #
 # Mode safety: BULL_MODE and ALPACA_BASE_URL must agree (paper<>paper-api, live<>api).
 set -euo pipefail
@@ -124,6 +128,35 @@ case "$cmd" in
   cancel-all)
     _req DELETE "$ALPACA_BASE_URL/v2/orders"
     ;;
+
+  # ---- options (long calls only; level 3 paper account) ----------------------
+  option-chain)
+    ul="${1:?usage: alpaca.sh option-chain <ticker> [type] [exp_gte] [exp_lte]}"
+    otype="${2:-call}"
+    gte="${3:-}"
+    lte="${4:-}"
+    url="$ALPACA_BASE_URL/v2/options/contracts?underlying_symbols=$ul&type=$otype&status=active&limit=500"
+    [[ -n "$gte" ]] && url="$url&expiration_date_gte=$gte"
+    [[ -n "$lte" ]] && url="$url&expiration_date_lte=$lte"
+    _req GET "$url"
+    ;;
+  option-quote)
+    osym="${1:?usage: alpaca.sh option-quote <occ-symbol>}"
+    _req GET "$DATA_URL/v1beta1/options/quotes/latest?symbols=$osym&feed=indicative"
+    ;;
+  option-buy)
+    osym="${1:?usage: alpaca.sh option-buy <occ-symbol> <qty>}"
+    qty="${2:?usage: alpaca.sh option-buy <occ-symbol> <qty>}"
+    body=$(jq -n --arg s "$osym" --arg q "$qty" '{
+      symbol: $s, qty: $q, side: "buy", type: "market", time_in_force: "day"
+    }')
+    _req POST "$ALPACA_BASE_URL/v2/orders" "$body"
+    ;;
+  option-sell)
+    osym="${1:?usage: alpaca.sh option-sell <occ-symbol>}"
+    _req DELETE "$ALPACA_BASE_URL/v2/positions/$osym"
+    ;;
+
   *)
     echo "alpaca.sh: unknown command '$cmd'" >&2
     exit 64

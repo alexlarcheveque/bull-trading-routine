@@ -13,9 +13,15 @@ front-running the headline itself.
 - US common stock and standard ETFs listed on NYSE / Nasdaq.
 - Market cap ≥ $2B.
 - 30-day average daily consolidated volume ≥ 100,000 shares (measured via scripts/volume.sh from Yahoo's consolidated tape, enforced by guardrails.md).
-- **Excluded:** options, futures, crypto, OTC, leveraged/inverse ETFs (anything with
+- **Excluded:** futures, crypto, OTC, leveraged/inverse ETFs (anything with
   2x/3x/UltraPro/Direxion in the name), SPACs pre-merger, anything halted, anything
   with earnings inside the next 3 trading days (event risk dominates our signal).
+- **Options (AGGRESSIVE / video mode):** long CALLS allowed on a qualifying catalyst
+  for leveraged upside. Long-only — never sell to open, no spreads, no puts. Sizing is
+  on premium-at-risk (can go to zero), capped by guardrails.md (max_option_premium_pct,
+  max_total_option_premium_pct). The underlying must still pass the universe + catalyst
+  tests. Option exits: +80% premium take-profit, -50% premium stop, or close on the
+  underlying's 7-day time stop (whichever first). Never let a contract ride to expiry.
 
 ## What counts as a "tradeable catalyst"
 
