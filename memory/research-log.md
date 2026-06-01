@@ -1494,3 +1494,20 @@ Skipped (below threshold):
 - CAVA: target_exit = 2026-06-03 (T-2)
 - NVDA: target_exit = 2026-06-04 (T-3)
 - WDAY: target_exit = 2026-06-05 (T-4)
+
+## 2026-06-01 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 5 (A, CAVA, NVDA, SMTC, WDAY — Alpaca matches portfolio.md on qty/entry)
+- exits: 0
+  - A: live price $133.68, return -0.05% (stop $117.70 [-12%] not breached, target $167.18 [+25%] not hit); thesis intact (Grok: Q2 beat+raise catalyst confirmed, no material negative news)
+  - CAVA: live price $76.975, return -6.65% (stop $72.57 not breached); thesis intact (Grok: no material negative news; Q1 beat+raise and raised guidance remain in force)
+  - NVDA: live price $217.39, return -2.94% (stop $197.10 not breached); thesis intact — new May 31 DoC guidance closes China export loophole, but NVDA already excluded from China data center revenue and company confirmed no change to current situation; thesis (Q1 FY27 beat+raise, $91B Q2 guide) unaffected
+  - SMTC: live price $152.565, return -7.54% (stop $145.20 not breached); thesis intact (Grok: Northland downgrade May 26 is valuation-driven, not a new company-specific negative; Q1 FY27 beat+raise intact)
+  - WDAY: live price $152.89, return +17.25% (stop $114.75 not breached, target $163.00 [+25%] not yet hit); thesis intact (Grok: no material negative news; Google Cloud AI partnership positive context)
+- halt checks: day_pnl=+0.23% (cap -15% not breached); weekly_pnl=0% realized (cap -30% not breached); open positions 5/5 (at max — no entries)
+- entries: 0 (portfolio full 5/5; watchlist 0 signals — top scores JNJ=5, PFE=5, both below threshold)
+- account: equity=$100,004.60, cash=$75,404.71, buying_power=$175,409.31, day_pnl=+0.23%
+- risk notes:
+  - SMTC at -7.54% is closest to stop (trigger $145.20 vs current $152.565, gap $7.365); monitor at midday
+  - CAVA at -6.65% approaching stop (trigger $72.57 vs current $76.975, gap $4.405); time-stop 2026-06-03 in 2 days
+  - WDAY at +17.25% approaching target (trigger $163.00 vs current $152.89, gap $10.11); time-stop 2026-06-05
