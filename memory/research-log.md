@@ -1511,3 +1511,15 @@ Skipped (below threshold):
   - SMTC at -7.54% is closest to stop (trigger $145.20 vs current $152.565, gap $7.365); monitor at midday
   - CAVA at -6.65% approaching stop (trigger $72.57 vs current $76.975, gap $4.405); time-stop 2026-06-03 in 2 days
   - WDAY at +17.25% approaching target (trigger $163.00 vs current $152.89, gap $10.11); time-stop 2026-06-05
+
+## 2026-06-01T15:55-0500 end-of-day pass
+- market: open (approaching close)
+- time-stops: 0 (A target_exit=2026-06-11, CAVA target_exit=2026-06-03, NVDA target_exit=2026-06-04, SMTC target_exit=2026-06-10, WDAY target_exit=2026-06-05)
+- weekly_loss_cap: no breach (+0.44% WTD vs -30% cap; last_equity=$99,719.89 Friday close)
+- positions: 5 (A 36 @ $133.745278, current $136.15, +1.80%; CAVA 60 @ $82.461667, current $74.98, -9.07%; NVDA 22 @ $223.98, current $223.26, -0.32%; SMTC 30 @ $165.00, current $148.71, -9.87%; WDAY 38 @ $130.40, current $157.01, +20.41%)
+- account: equity=$100,159.04, cash=$75,404.71, buying_power=$175,548.42, day_pnl=+0.44%
+- eod email: sent (id=4031cb48-a137-4db5-bf91-65a356a6fa72)
+- risk notes:
+  - SMTC at -9.87% deepest drawdown (stop $145.20, gap $3.51); time-stop 2026-06-10
+  - CAVA at -9.07% approaching stop (trigger $72.57, gap $2.41); time-stop 2026-06-03 (T-2) — must sell at open 2026-06-03 regardless of P&L
+  - WDAY at +20.41% approaching +25% target ($163.00, gap $5.99); time-stop 2026-06-05 (T-4)
