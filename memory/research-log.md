@@ -1404,3 +1404,93 @@ Additional constraint: portfolio at max capacity (5/5 positions). Market-open.md
 - halt checks: day_pnl=+0.22% (cap -15% not breached); weekly_pnl≈+0.27% WTD from week-start $99,556.18 (cap -30% not breached); open positions 5/5 (at max — no entries)
 - entries: 0 (portfolio full 5/5; watchlist 0 signals — top score DELL=7 but novelty=0 per pre-market pass)
 - account: equity=$99,829.01, cash=$75,404.71, buying_power=$175,233.72, day_pnl=+0.22%
+
+## 2026-06-01 pre-market watchlist
+
+### Raw Grok output
+
+**Q1 — bullish news, US large-caps, last 24h:**
+- DELL (~$198B): Q1 FY27 AI server revenue +757% YoY to $16.1B; raised FY27 AI server guide to ~$60B (from $50B), full-year rev $165-169B. Stock surged ~33%. Sources: Reuters, Barron's (May 28).
+- OKTA: Q1 FY27 rev $765M vs ~$752M est (+11% YoY); EPS beat; strong Agentic AI identity momentum. Stock +30%. Source: Yahoo Finance (May 28).
+- JNJ: (1) Phase 3 PROTEUS trial — ERLEADA (apalutamide) significant metastasis/death risk reduction in high-risk localized prostate cancer. (2) Phase 1b/2 OrigAMI-4 — RYBREVANT FASPRO in advanced head/neck cancer, 42% ORR. Presented/published May 31, 2026 (ASCO). Sources: StockTitan, GuruFocus.
+- LLY: Retevmo (selpercatinib) Phase 3 adjuvant — 83% risk reduction in early-stage RET+ lung cancer. May 31 ASCO. Source: StockTitan.
+- PFE: BRAFTOVI regimen nearly doubling PFS in metastatic colorectal cancer. Phase 3, May 31 ASCO. Source: StockTitan.
+- MSFT: +5.5% on ongoing AI strength — no single fresh 24h catalyst identified.
+
+**Q2 — pre-market movers 2026-06-01 >2% on news catalyst:**
+(Note: all listed moves are from May 29 open, already fully reflected in last-known prices.)
+- DELL: +~32% — Q1 beat, AI server surge. Source: Yahoo Finance, TradingKey.
+- NTAP: +~18-23% — Q4/FY26 earnings beat. Source: MarketBeat, Benzinga.
+- HPE: +~12% — AI infrastructure earnings. Source: MarketBeat.
+- PD (PagerDuty): +~24% — earnings + buyback. Source: MarketBeat.
+- REPL (Replimune): +~73% — biotech mover. Source: MarketBeat.
+
+**Q3 — beat-and-raise earnings after yesterday's close (post-May 29/30):**
+No qualifying post-May 29 beat-and-raise releases identified. Grok noted ADSK (Q1 rev $1.93B vs $1.89B, raised outlook, per May 30 scoreboard) and GILD (Q1 adj EPS $2.03 vs ~$1.91, raised FY guide +$400M) as earlier-May examples — explicitly NOT post-May 29. Sources: Seeking Alpha, TIKR.
+
+**Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h:**
+- MNKD (MannKind): FDA expanded Afrezza inhaled insulin to children/adolescents 6+ (announced May 29). Source: AJMC.
+- NVRI (Enviri): Clean Earth sale to Veolia + New Enviri spin-off expected to close June 1. Source: Enviri IR.
+- OCFC (OceanFirst) + FFIC (Flushing Financial): merger expected to close ~June 1 (all regulatory/shareholder approvals received). Source: OceanFirst IR.
+
+### Candidate filter pass
+
+**Already in portfolio (skip):** A, CAVA, NVDA, SMTC, WDAY — none appear in Grok output.
+
+**Disqualified before Alpaca check:**
+- LLY: price $1,127 on May 29 close — exceeds `max_price_per_share: 1000`. Disqualified.
+- DELL (+32%), OKTA (+30%), NTAP (+18-23%), HPE (+12%), PD (+24%): all >5% priced in from May 29 session; move already happened per strategy's freshness criterion. Novelty = 0. Disqualified.
+- REPL: biotech small-cap, well below $2B universe floor. Disqualified.
+- ADSK, GILD: Grok explicitly flags both as pre-May 29 events (not post-close on/after May 29). Already priced in. Disqualified.
+- MSFT: "ongoing AI strength" — generic narrative, no specific corporate event. Strategy excludes.
+- MNKD: small-cap, likely well below $1B universe floor. Disqualified.
+- NVRI: small-cap, ambiguous direction (asset sale + spin-off closing is a structural event, not a growth catalyst). Disqualified.
+- OCFC, FFIC: small regional banks (~$1-2B combined), below $1B universe floor individually; M&A target dynamics cap upside. Disqualified.
+
+**Survivors for asset + volume check:** JNJ, PFE
+
+| ticker | tradable | 30d ADV (Yahoo consolidated) | passes 100k? | last known price (May 29 close) | price in $5-$1000? |
+|--------|----------|------------------------------|--------------|---------------------------------|---------------------|
+| JNJ    | YES      | 7,841,096                    | YES          | $225.23                         | YES                 |
+| PFE    | YES      | 35,957,420                   | YES          | $26.17                          | YES                 |
+
+Data note: Alpaca IEX feed has no bars or intraday data beyond May 29 close (missing May 30 and June 1 pre-market). Scores reflect this limitation.
+
+### Scoring
+
+**JNJ — ASCO May 31: Phase 3 PROTEUS (ERLEADA adjuvant prostate) + Phase 1b/2 OrigAMI-4 (RYBREVANT FASPRO head/neck)**
+- Catalyst strength: **2** — Phase 3 ERLEADA data is clinically meaningful, but adjuvant data for an already-approved and generating drug is incremental for a $400B company; RYBREVANT OrigAMI-4 is Phase 1b/2 only (early stage, not registrational). Score: 2.
+- Novelty: **2** — ASCO Sunday May 31 data is genuinely unpriced; last known trade May 29 ($225.23) predates ASCO. No data available for May 30 or June 1 pre-market. Held from 3 because JNJ was declining into May 29 close ($230.80 → $225.23, -2.4%), suggesting some market weakness or sector rotation that may mute the ASCO pop.
+- Confirmation: **0** — Latest bar (May 29): JNJ closed DOWN from prior session ($230.80 → $225.23, -2.4%). No post-ASCO price data available to confirm. Score: 0.
+- Cleanliness: **1** — No earnings in next 3 trading days, no offsetting negative news, no halts. Score: 1.
+- **Total: 5 — below threshold.**
+
+**PFE — ASCO May 31: Phase 3 BRAFTOVI combination "nearly doubling PFS" in metastatic colorectal cancer**
+- Catalyst strength: **2** — "Nearly doubling PFS" in a Phase 3 oncology trial is a strong clinical result. However, Phase 3 data alone (not an FDA approval) is a step removed from cash-flow certainty; BRAFTOVI is one drug in a large portfolio for a $150B company already trading at multi-year lows. Score: 2.
+- Novelty: **2** — ASCO Sunday May 31 data is genuinely unpriced; last known trade May 29 ($26.17) predates ASCO. PFE was essentially flat from May 26–29 (no pre-leak). No data for May 30 or June 1 pre-market. Held from 3 due to data gap — can't confirm the move hasn't started.
+- Confirmation: **0** — Latest available bar (May 27 close): PFE essentially flat ($26.21). No post-ASCO bars. Score: 0.
+- Cleanliness: **1** — No earnings in next 3 trading days, no offsetting news. Score: 1.
+- **Total: 5 — below threshold.**
+
+### Watchlist
+
+| ticker | score | catalyst (one line) | source |
+|--------|-------|---------------------|--------|
+
+No tradeable signal today.
+
+Skipped (below threshold):
+- DELL (pre-market May 29 +32%): AI server beat, massive catalyst, but move fully priced in — novelty = 0. Would also face max-positions constraint.
+- OKTA (pre-market May 29 +30%): Q1 beat+raise, novelty = 0.
+- NTAP (+18-23%), HPE (+12%), PD (+24%): all May 29 moves, novelty = 0.
+- JNJ (score 5): ASCO data is fresh but catalyst is incremental for scale; no price confirmation, declining trend into May 29.
+- PFE (score 5): ASCO "nearly doubling PFS" is the strongest surviving catalyst, but Phase 3 alone without FDA action plus no confirmation keeps score at 5. Watch for a confirmed price reaction — if PFE opens up >3% on above-average volume, re-evaluate as a potential score-7 name for tomorrow's pass.
+- LLY: ASCO data fresh but price $1,127 exceeds max_price_per_share=$1,000 — hard disqualification.
+- ADSK, GILD: pre-May 29 catalysts, already priced.
+- MNKD: small-cap, below $1B universe floor.
+- OCFC, FFIC, NVRI: small-cap or ambiguous direction.
+
+**Portfolio constraint note:** All 5 positions are currently open (A, CAVA, NVDA, SMTC, WDAY) — at `max_concurrent_positions: 5`. Market-open must sit out entries regardless of watchlist. Three exits approaching on time stop:
+- CAVA: target_exit = 2026-06-03 (T-2)
+- NVDA: target_exit = 2026-06-04 (T-3)
+- WDAY: target_exit = 2026-06-05 (T-4)
