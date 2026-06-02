@@ -9,6 +9,22 @@ Research pass FAILED: xAI API credits exhausted — HTTP 403 from api.x.ai with 
 
 Note: portfolio is also at max concurrent positions (5/5: A, CAVA, NVDA, SMTC, WDAY), so no new entries could have been placed today regardless. CAVA hits its time-stop tomorrow (2026-06-03).
 
+## 2026-06-02 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 5 (A, CAVA, NVDA, SMTC, WDAY) — matches portfolio.md
+- exits evaluated (price-based stops/targets):
+  - A:    cur=$133.37  ret=-0.28%  stop=$117.70  target=$167.18 → NO EXIT
+  - CAVA: cur=$73.60   ret=-10.75% stop=$72.57   target=$103.08 → NO EXIT (gap $1.03 above stop — WATCH)
+  - NVDA: cur=$225.90  ret=+0.86%  stop=$197.10  target=$279.97 → NO EXIT
+  - SMTC: cur=$159.00  ret=-3.64%  stop=$145.20  target=$206.25 → NO EXIT (SMTC recovered from prior -9.87% low)
+  - WDAY: cur=$150.49  ret=+15.41% stop=$114.75  target=$163.00 → NO EXIT
+- thesis check: UNAVAILABLE — Grok API credits exhausted (same failure as pre-market; grok.sh returned empty)
+- exits: 0
+- halt checks: day_pnl=-0.09% (cap -15%: clear); weekly_pnl: no closed trades (cap -30%: clear); open_positions=5/5
+- entries: 0 (watchlist empty — Grok exhausted; also at max concurrent positions 5/5)
+- account: equity=$100,092.57, cash=$75,404.71, buying_power=$175,497.28, day_pnl=-0.09%
+- NOTE: CAVA time-stop fires TOMORROW (2026-06-03) — EOD routine will close at whatever price
+
 ## 2026-05-29 midday pass
 0 exits. All 5 positions within thresholds (stop -12%, target +25%).
 - A: +2.49% — thesis intact (Q2 beat + raised guidance still in play)
