@@ -33,6 +33,22 @@ Note: portfolio is also at max concurrent positions (5/5: A, CAVA, NVDA, SMTC, W
 - SMTC: cur=$166.39  ret=+0.95%   stop=$145.20  target=$206.25 → HOLD
 - WDAY: cur=$146.21  ret=+12.03%  stop=$114.75  target=$163.00 → HOLD
 - thesis check: UNAVAILABLE — Grok API credits exhausted (same failure as pre-market; no thesis-broken sells per hard rule)
+
+## 2026-06-02 end-of-day pass
+- market: open
+- time-stops: 0 (A=2026-06-11, NVDA=2026-06-04, SMTC=2026-06-10, WDAY=2026-06-05 — none reached today)
+- expiry guard: no options in portfolio
+- safety net exits (stop/target re-check at close):
+  - A:    cur=$134.60  ret=+0.64%   stop=$117.70  target=$167.18 → HOLD
+  - CAVA: cur=$72.42   ret=-12.18%  stop=$72.57   → STOP TRIGGERED — preflight OK → SELL 60 @ $72.26 fill
+  - NVDA: cur=$222.42  ret=-0.70%   stop=$197.10  target=$279.97 → HOLD
+  - SMTC: cur=$166.54  ret=+0.93%   stop=$145.20  target=$206.25 → HOLD
+  - WDAY: cur=$148.79  ret=+14.10%  stop=$114.75  target=$163.00 → HOLD
+- exits: 1 (CAVA stop -12.18%, realized -$612)
+- thesis check: UNAVAILABLE — Grok API credits exhausted (xAI HTTP 403; no thesis-broken sells)
+- weekly-loss-cap: -0.03% WTD vs -30% cap → clear
+- account post-close: equity=$100,129, cash=$79,740, buying_power=$179,870, day_pnl=-0.05%
+- eod email: sent (id=fedea271-63a3-4c79-97c9-6d36ce7a5694)
 - daily loss cap: day_pnl=+0.00% (cap -15%: clear)
 
 ## 2026-05-29 midday pass

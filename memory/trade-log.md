@@ -20,3 +20,4 @@
 | 2026-05-27 08:34 | SMTC | BUY | 30 | 165.00 | score=8 catalyst=Q1 FY27 EPS $0.51 vs $0.45 (+13.3%); Q2 guide raised to $328M vs $300.4M (+9.2%) | 8 | 2026-06-10 |
 | 2026-05-28 08:34 | A | BUY | 9 | 134.23 | score=7 catalyst=Q2 FY26 EPS $1.49 vs $1.41 (+5.7%); FY EPS guide raised to $6.00-$6.10, rev to $7.39-7.49B (partial fill 9/36; 27 shares pending order b73867cc) | 7 | 2026-06-11 |
 | 2026-05-28 12:00 | A | BUY | 27 | 133.584 | full-fill correction — order b73867cc complete; 27 remaining shares filled; total position 36 shares @ $133.745278 avg (supersedes partial-fill row above) | - | 2026-06-11 |
+| 2026-06-02 14:56 | CAVA | SELL | 60 | 72.26 | stop -12.18% | - | 2026-06-03 |
