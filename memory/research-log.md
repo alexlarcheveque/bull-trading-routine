@@ -3,6 +3,12 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-02 pre-market watchlist
+
+Research pass FAILED: xAI API credits exhausted — HTTP 403 from api.x.ai with message "Your team has either used all available credits or reached its monthly spending limit." All four Grok queries blocked. No watchlist generated. Market-open will see no watchlist and sit out.
+
+Note: portfolio is also at max concurrent positions (5/5: A, CAVA, NVDA, SMTC, WDAY), so no new entries could have been placed today regardless. CAVA hits its time-stop tomorrow (2026-06-03).
+
 ## 2026-05-29 midday pass
 0 exits. All 5 positions within thresholds (stop -12%, target +25%).
 - A: +2.49% — thesis intact (Q2 beat + raised guidance still in play)
