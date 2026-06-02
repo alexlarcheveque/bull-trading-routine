@@ -25,6 +25,16 @@ Note: portfolio is also at max concurrent positions (5/5: A, CAVA, NVDA, SMTC, W
 - account: equity=$100,092.57, cash=$75,404.71, buying_power=$175,497.28, day_pnl=-0.09%
 - NOTE: CAVA time-stop fires TOMORROW (2026-06-03) — EOD routine will close at whatever price
 
+## 2026-06-02 midday pass
+0 exits. All 5 positions within stop/target thresholds.
+- A:    cur=$135.13  ret=+1.03%   stop=$117.70  target=$167.18 → HOLD
+- CAVA: cur=$73.50   ret=-11.09%  stop=$72.57   target=$103.08 → HOLD (gap $0.93 — TIME-STOP TOMORROW)
+- NVDA: cur=$225.51  ret=+0.71%   stop=$197.10  target=$279.98 → HOLD
+- SMTC: cur=$166.39  ret=+0.95%   stop=$145.20  target=$206.25 → HOLD
+- WDAY: cur=$146.21  ret=+12.03%  stop=$114.75  target=$163.00 → HOLD
+- thesis check: UNAVAILABLE — Grok API credits exhausted (same failure as pre-market; no thesis-broken sells per hard rule)
+- daily loss cap: day_pnl=+0.00% (cap -15%: clear)
+
 ## 2026-05-29 midday pass
 0 exits. All 5 positions within thresholds (stop -12%, target +25%).
 - A: +2.49% — thesis intact (Q2 beat + raised guidance still in play)
