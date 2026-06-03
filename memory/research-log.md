@@ -3,6 +3,21 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-03 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 4 (A, NVDA, SMTC, WDAY) — matches portfolio.md; CAVA closed EOD 2026-06-02
+- exits evaluated (price-based stops/targets):
+  - A:    cur=$133.645  ret=-0.07%  stop=$117.70  target=$167.18 → NO EXIT
+  - NVDA: cur=$222.26   ret=-0.77%  stop=$197.10  target=$279.98 → NO EXIT
+  - SMTC: cur=$166.235  ret=+0.75%  stop=$145.20  target=$206.25 → NO EXIT
+  - WDAY: cur=$144.99   ret=+11.19% stop=$114.75  target=$163.00 → NO EXIT
+- thesis check: UNAVAILABLE — Grok API credits exhausted (HTTP 403; no thesis-broken sells per hard rule)
+- exits: 0
+- halt checks: day_pnl=-0.08% (cap -15%: clear); weekly_pnl=-0.61% (cap -30%: clear); open_positions=4/5
+- entries: 0 (watchlist empty — Grok exhausted since 2026-06-02)
+- account: equity=$99,982.22, cash=$79,740.30, buying_power=$179,722.52, day_pnl=-0.08%
+- NOTE: NVDA time-stop fires TOMORROW (2026-06-04) — EOD routine today will close
+
 ## 2026-06-03 pre-market watchlist
 
 Research pass FAILED: xAI API credits exhausted — HTTP 403 from api.x.ai with message "Your team has either used all available credits or reached its monthly spending limit." All four Grok queries blocked. No watchlist generated. Market-open will see no watchlist and sit out.
