@@ -3,6 +3,23 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-03 end-of-day pass
+- market: open
+- time-stops: 0 (A=2026-06-11, NVDA=2026-06-04, SMTC=2026-06-10, WDAY=2026-06-05 — none reached today)
+- expiry guard: no options in portfolio
+- safety net exits (stop/target re-check at close):
+  - A:    cur=$137.77  ret=+3.01%  stop=$117.70  target=$167.18 → HOLD
+  - NVDA: cur=$215.03  ret=-4.00%  stop=$197.10  target=$279.97 → HOLD
+  - SMTC: cur=$163.69  ret=-0.79%  stop=$145.20  target=$206.25 → HOLD
+  - WDAY: cur=$146.59  ret=+12.42% stop=$114.75  target=$163.00 → HOLD
+- exits: 0
+- thesis check: UNAVAILABLE — Grok API credits exhausted (xAI HTTP 403; no thesis-broken sells)
+- weekly-loss-cap: -0.18% WTD vs -30% cap → clear
+- account post-close: equity=$99,912, cash=$79,740, buying_power=$179,652, day_pnl=-0.12%
+- NOTE: NVDA time-stop fires TOMORROW (2026-06-04) — market-open routine will close at open
+- eod email: sent (id=9197fddf-5131-47ef-bd83-b2c259d78df3)
+- daily loss cap: day_pnl=-0.12% (cap -15%: clear)
+
 ## 2026-06-03 market-open execution
 - market: open (is_open=true, trading_blocked=false)
 - positions reconciled: 4 (A, NVDA, SMTC, WDAY) — matches portfolio.md; CAVA closed EOD 2026-06-02
