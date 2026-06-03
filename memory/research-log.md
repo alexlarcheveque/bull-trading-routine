@@ -3,6 +3,12 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-03 pre-market watchlist
+
+Research pass FAILED: xAI API credits exhausted — HTTP 403 from api.x.ai with message "Your team has either used all available credits or reached its monthly spending limit." All four Grok queries blocked. No watchlist generated. Market-open will see no watchlist and sit out.
+
+Note: portfolio holds A (time-stop 2026-06-11), NVDA (time-stop 2026-06-04, tomorrow), SMTC (time-stop 2026-06-10), WDAY (time-stop 2026-06-05, Thu). 4 open positions (4/5 max). CAVA closed via stop-loss at EOD yesterday.
+
 ## 2026-06-02 pre-market watchlist
 
 Research pass FAILED: xAI API credits exhausted — HTTP 403 from api.x.ai with message "Your team has either used all available credits or reached its monthly spending limit." All four Grok queries blocked. No watchlist generated. Market-open will see no watchlist and sit out.
