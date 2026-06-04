@@ -3,6 +3,14 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-04 pre-market watchlist
+
+Research pass FAILED: xAI API credits exhausted — HTTP 403 from api.x.ai with message "Your team has either used all available credits or reached its monthly spending limit." All four Grok queries blocked. No watchlist generated. Market-open will see no watchlist and sit out.
+
+This is the third consecutive day of Grok API failure (2026-06-02, 2026-06-03, 2026-06-04). Operator must replenish xAI credits to restore research capability.
+
+Note: NVDA time-stop fires TODAY (2026-06-04) — market-open routine will close NVDA at open regardless of watchlist. Current portfolio: A (time-stop 2026-06-11), NVDA (time-stop 2026-06-04 TODAY), SMTC (time-stop 2026-06-10), WDAY (time-stop 2026-06-05 Thu). After NVDA closes: 3/5 positions open (2 slots available).
+
 ## 2026-06-03 end-of-day pass
 - market: open
 - time-stops: 0 (A=2026-06-11, NVDA=2026-06-04, SMTC=2026-06-10, WDAY=2026-06-05 — none reached today)
