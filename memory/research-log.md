@@ -3,6 +3,22 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-04 end-of-day pass
+- market: open
+- time-stops: 0 (A=2026-06-11, SMTC=2026-06-10, WDAY=2026-06-05 — none reached today)
+- expiry guard: no options in portfolio
+- safety net exit check at close:
+  - A:    cur=$138.005  ret=+3.19%  stop=$117.70  target=$167.18 → HOLD
+  - SMTC: cur=$169.840  ret=+2.93%  stop=$145.20  target=$206.25 → HOLD
+  - WDAY: cur=$148.695  ret=+14.03% stop=$114.75  target=$163.00 → HOLD
+- thesis check: UNAVAILABLE — Grok API credits exhausted (day 3)
+- exits: 0 (NVDA already closed; no new exits at EOD)
+- weekly-loss-cap: WTD≈+0.05% (cap -30%) → CLEAR
+- account: equity=$100,141.17, cash=$84,443.92, buying_power=$369,170.18, day_pnl=+0.23%
+- EOD email sent (notify.sh id=4f49d72c-9e9d-43c7-9a8a-343d631b4fa8)
+- ALERT: Grok API credits exhausted 3 consecutive days — research & thesis-check both offline
+- ALERT: WDAY time-stop fires TOMORROW (2026-06-05) — market-open will close at open
+
 ## 2026-06-04 midday pass
 - market: open
 - positions reconciled (Alpaca): 3 (A, SMTC, WDAY) — NVDA fully closed (order ada63afb: 22 shares total, avg $213.80)
