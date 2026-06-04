@@ -21,3 +21,4 @@
 | 2026-05-28 08:34 | A | BUY | 9 | 134.23 | score=7 catalyst=Q2 FY26 EPS $1.49 vs $1.41 (+5.7%); FY EPS guide raised to $6.00-$6.10, rev to $7.39-7.49B (partial fill 9/36; 27 shares pending order b73867cc) | 7 | 2026-06-11 |
 | 2026-05-28 12:00 | A | BUY | 27 | 133.584 | full-fill correction — order b73867cc complete; 27 remaining shares filled; total position 36 shares @ $133.745278 avg (supersedes partial-fill row above) | - | 2026-06-11 |
 | 2026-06-02 14:56 | CAVA | SELL | 60 | 72.26 | stop -12.18% | - | 2026-06-03 |
+| 2026-06-04 08:31 | NVDA | SELL | 15 | 213.44 | time-stop 7d (partial fill; 7 shares remaining under order ada63afb-10e4-4e90-bdfb-db278f3237ee) | - | 2026-06-04 |
