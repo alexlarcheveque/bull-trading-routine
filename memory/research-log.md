@@ -3,6 +3,19 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-04 midday pass
+- market: open
+- positions reconciled (Alpaca): 3 (A, SMTC, WDAY) — NVDA fully closed (order ada63afb: 22 shares total, avg $213.80)
+- exits evaluated:
+  - A:    cur=$139.13  ret=+4.02%  stop=$117.70  target=$167.18 → HOLD
+  - SMTC: cur=$164.93  ret=-0.04%  stop=$145.20  target=$206.25 → HOLD
+  - WDAY: cur=$149.52  ret=+14.66% stop=$114.75  target=$163.00 → HOLD
+- thesis check: UNAVAILABLE — Grok API credits exhausted (day 3); no thesis-broken sells per hard rule
+- exits: 0 (NVDA already closed prior to this pass — final 7 shares filled @ $214.57 at 13:36 UTC; logged in trade-log.md)
+- daily loss cap: day_pnl=+0.19% (cap -15%: clear; no halt)
+- entries: 0 (midday is defense only)
+- account: equity=$100,084.73, cash=$84,443.92, buying_power=$369,057.30, day_pnl=+0.19%
+
 ## 2026-06-04 market-open execution
 - market: open (is_open=true, trading_blocked=false)
 - positions reconciled: 4 (A, NVDA, SMTC, WDAY) — matches portfolio.md
