@@ -23,3 +23,4 @@
 | 2026-06-02 14:56 | CAVA | SELL | 60 | 72.26 | stop -12.18% | - | 2026-06-03 |
 | 2026-06-04 08:31 | NVDA | SELL | 15 | 213.44 | time-stop 7d (partial fill; 7 shares remaining under order ada63afb-10e4-4e90-bdfb-db278f3237ee) | - | 2026-06-04 |
 | 2026-06-04 13:36 | NVDA | SELL | 7 | 214.5743 | time-stop 7d (final fill; order ada63afb complete; total exit avg $213.80 for all 22 shares, ret=-4.55%) | - | 2026-06-04 |
+| 2026-06-05 08:37 | WDAY | SELL | 38 | 148.4621 | time-stop 7d (order df179d63; filled 08:37 CT; ret=+13.85%) | - | 2026-06-05 |

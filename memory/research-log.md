@@ -3,6 +3,22 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-05 midday pass
+- market: open
+- positions reconciled (Alpaca): 2 (A, SMTC) — WDAY fully closed (order df179d63: 38 shares @ $148.4621 filled 08:37 CT)
+- exits evaluated:
+  - A:    cur=$136.29  ret=+1.90%  stop=$117.70  target=$167.18 → HOLD
+  - SMTC: cur=$160.46  ret=-2.76%  stop=$145.20  target=$206.25 → HOLD
+- thesis check: UNAVAILABLE — Grok API credits exhausted (day 4); no thesis-broken sells per hard rule
+- exits: 0 (WDAY already closed at market-open; A and SMTC within thresholds)
+- WDAY close confirmed: order df179d63 filled (38 shares @ $148.4621, ret=+13.85%); logged to trade-log.md
+- daily loss cap: day_pnl=-0.35% (cap -15%: clear; no halt)
+- entries: 0 (midday is defense only)
+- account: equity=$99,780.83, cash=$90,085.46, buying_power=$379,732.58, day_pnl=-0.35%
+- open_positions: 2/5 (A, SMTC)
+- ALERT: Grok API credits exhausted 4 consecutive days — research & thesis-check both offline
+- ACTION REQUIRED: Replenish xAI credits at console.x.ai
+
 ## 2026-06-05 market-open execution
 - market: open (is_open=true, trading_blocked=false)
 - positions reconciled: 3 (A, SMTC, WDAY) — matches portfolio.md
