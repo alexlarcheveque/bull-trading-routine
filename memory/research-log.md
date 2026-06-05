@@ -3,6 +3,17 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-05 weekly-review: NO strategy edit
+- week of 2026-06-02 to 2026-06-05: WTD=-0.60% ($99,489.92), 3 trades closed (CAVA -12.18% stop, NVDA -4.55% time-stop, WDAY +13.85% time-stop).
+- SPY comparison unavailable: Alpaca IEX feed lags 3 days (most recent bar 2026-06-01).
+- Score-to-return inversion noted (score=9/8 underperformed vs score=7/7) but N=5 is too small; noise more likely than rubric flaw.
+- 0 stop-outs that would've been green at day 14; 1 time-stop at loss (NVDA, never in green during hold); 0 time-stops that were green 5+ days before exit and turned red.
+- SNOW miss (2026-05-28, novelty=0 at +37.5% gap) was correct per rubric; its continued +18% run does not indicate rubric error.
+- Dominant weekly event: Grok API exhaustion (4 consecutive days offline) — operational, not strategic. No strategy edit addresses this.
+- No edit to strategy.md per stability rule (3-trade sample insufficient; current strategy untested under new 7-day max_hold_days).
+- Verdict: RESUME MONDAY 2026-06-08 WITH CURRENT STRATEGY. Priority: replenish xAI credits, evaluate SMTC (-8.23%) and A (+1.20%), deploy 3 open slots.
+- Weekly review email: a47cf787-bf0f-4766-a287-82e8bfd24077
+
 ## 2026-06-05 end-of-day pass
 - market: open
 - time-stops evaluated: A (exit 2026-06-11), SMTC (exit 2026-06-10) — neither due today
