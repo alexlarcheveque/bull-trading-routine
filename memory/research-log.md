@@ -3,6 +3,24 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-05 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 3 (A, SMTC, WDAY) — matches portfolio.md
+- exits evaluated:
+  - A:    cur=$138.09  ret=+3.25%  stop=$117.70  target=$167.18 → HOLD
+  - SMTC: cur=$163.14  ret=-1.13%  stop=$145.20  target=$206.25 → HOLD
+  - WDAY: cur=$148.62  ret=+13.97% stop=$114.75  target=$163.00 → TIME-STOP 2026-06-05 → SELL
+- thesis check: UNAVAILABLE — Grok API credits exhausted (day 4); no thesis-broken sells
+- exits attempted: 1 (WDAY time-stop)
+  - preflight: PASS
+  - order submitted: df179d63-e118-4c50-a012-372e844d27e3 (side=sell qty=38 type=market)
+  - fill status after 90s polling: "new" (UNFILLED) — order is live DAY order; midday routine must confirm fill
+- halt checks: day_pnl=-0.18% (cap -15%: clear); WTD≈-0.18% (cap -30%: clear); open_positions=3/5
+- entries: 0 (no watchlist — Grok exhausted since 2026-06-02; score threshold not met)
+- account: equity=$99,946.48, cash=$84,443.90, buying_power=$368,780.77, day_pnl=-0.18%
+- ALERT: Grok API credits exhausted 4 consecutive days — research & thesis-check both offline
+- NOTE: WDAY sell order df179d63 live but unfilled at market-open; midday/EOD must confirm and log fill to trade-log.md
+
 ## 2026-06-05 pre-market pass
 Research pass FAILED: Grok API credits exhausted (day 4, team 2f47388e). Attempted queries 1 and 2 — both returned HTTP 200 with billing error body. No candidates scored. No watchlist generated.
 
