@@ -3,6 +3,17 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-05 pre-market pass
+Research pass FAILED: Grok API credits exhausted (day 4, team 2f47388e). Attempted queries 1 and 2 — both returned HTTP 200 with billing error body. No candidates scored. No watchlist generated.
+
+- Queries attempted: 2 of 4 (all confirmed failing at credits level; further attempts skipped)
+- Error: "Your team has either used all available credits or reached its monthly spending limit"
+- ALERT: Grok credits exhausted 4 consecutive days (since 2026-06-02) — research and thesis-check both offline
+- WDAY time-stop fires TODAY (2026-06-05) — market-open will close at open regardless (no research needed for exits)
+- New buys: NONE (no watchlist)
+- Positions: 3/5 (A, SMTC, WDAY→closing today; 2 slots available after WDAY exit)
+- ACTION REQUIRED: Replenish xAI credits at console.x.ai to restore research capability
+
 ## 2026-06-04 end-of-day pass
 - market: open
 - time-stops: 0 (A=2026-06-11, SMTC=2026-06-10, WDAY=2026-06-05 — none reached today)
