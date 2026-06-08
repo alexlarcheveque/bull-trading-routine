@@ -3,6 +3,18 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-08 pre-market watchlist
+
+Research pass FAILED: xAI API credits exhausted — HTTP 200 with billing error body from api.x.ai: "Your team has either used all available credits or reached its monthly spending limit." All four Grok queries blocked. No candidates scored. No watchlist generated. Market-open will see no watchlist and sit out.
+
+- Queries attempted: 1 of 4 (billing error confirmed on first attempt; further calls produce identical failure)
+- Error: "Your team 2f47388e-3bd1-4c11-958e-cb40e1715c7b has either used all available credits or reached its monthly spending limit"
+- Day 6 consecutive of Grok API failure (since 2026-06-02)
+- New buys: NONE (no watchlist)
+- Current positions: 2/5 (A target_exit=2026-06-11, SMTC target_exit=2026-06-10); 3 slots available
+- SMTC time-stop fires 2026-06-10 (Tuesday); market-open must handle that exit
+- ACTION REQUIRED: Replenish xAI credits at console.x.ai to restore research capability
+
 ## 2026-06-05 weekly-review: NO strategy edit
 - week of 2026-06-02 to 2026-06-05: WTD=-0.60% ($99,489.92), 3 trades closed (CAVA -12.18% stop, NVDA -4.55% time-stop, WDAY +13.85% time-stop).
 - SPY comparison unavailable: Alpaca IEX feed lags 3 days (most recent bar 2026-06-01).
