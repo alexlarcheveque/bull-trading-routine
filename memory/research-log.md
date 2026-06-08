@@ -3,6 +3,24 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-08 end-of-day pass
+- market: open
+- time-stops evaluated: A (exit 2026-06-11), SMTC (exit 2026-06-10) — neither due today
+- time-stops fired: 0
+- expiry guard: no options in portfolio
+- safety net exit check (pre-close prices):
+  - A:    cur=$133.63  ret=-0.09%  stop=$117.70  target=$167.18 → HOLD
+  - SMTC: cur=$157.81  ret=-4.36%  stop=$145.20  target=$206.25 → HOLD
+- thesis check: UNAVAILABLE — Grok API credits exhausted (day 7 consecutive); no thesis-broken sells per hard rule
+- exits: 0
+- weekly-loss-cap: WTD=+0.14% (cap -30%) → CLEAR
+- account: equity=$99,627.00, cash=$90,085.44, buying_power=$387,058.13, day_pnl=+0.14%
+- open_positions: 2/5 (A, SMTC)
+- EOD email sent (notify.sh id=920ee3ec-bbaa-4d8c-9de3-33764c05df92)
+- ALERT: Grok API credits exhausted 7 consecutive days (since 2026-06-02) — research & thesis-check both offline
+- ALERT: SMTC time-stop fires TOMORROW (2026-06-10) — market-open routine will close at open
+- ACTION REQUIRED: Replenish xAI credits at console.x.ai
+
 ## 2026-06-08 midday risk pass
 - market: open
 - positions reconciled: 2 (A, SMTC — Alpaca authoritative)
