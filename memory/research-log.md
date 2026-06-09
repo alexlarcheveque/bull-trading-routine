@@ -3,6 +3,22 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-09 EOD risk pass
+- market: open
+- time-stops fired: 0
+  - A:    target_exit=2026-06-11 → no stop today (2026-06-09 < 2026-06-11)
+  - SMTC: target_exit=2026-06-10 → no stop today (2026-06-09 < 2026-06-10)
+- expiry guard: n/a (no options in portfolio)
+- safety net checks:
+  - A:    cur=$135.19  ret=+1.08%  stop=$117.70  target=$167.18 → HOLD
+  - SMTC: cur=$157.51  ret=-4.54%  stop=$145.20  target=$206.25 → HOLD (stop not triggered)
+  - thesis check: UNAVAILABLE — Grok API credits exhausted (day 9 consecutive)
+- weekly_loss_cap: WTD=+0.05% vs cap=-30% → CLEAR
+- daily_loss_cap: day_pnl=+0.05% vs cap=-15% → CLEAR
+- EOD email sent (id=690e8987-aa48-4b12-b182-604f985f60df)
+- ALERT: SMTC time-stop fires TOMORROW (2026-06-10) — market-open routine must close at open
+- ALERT: Grok API credits exhausted 9 consecutive days (since 2026-06-02)
+
 ## 2026-06-09 midday risk pass
 - market: open
 - exits: 0
