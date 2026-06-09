@@ -3,6 +3,15 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-09 midday risk pass
+- market: open
+- exits: 0
+  - A:    cur=$135.27  ret=+1.14%  stop=$117.70  target=$167.18  time-stop=2026-06-11 → HOLD
+  - SMTC: cur=$149.49  ret=-9.40%  stop=$145.20  target=$206.25  time-stop=2026-06-10 → HOLD (stop not triggered; EOD time-stop fires tomorrow)
+  - thesis check: UNAVAILABLE — Grok API credits exhausted (day 9 consecutive)
+- daily_loss_cap: day_pnl=-0.19% vs cap=-15% → CLEAR
+- no new orders, no cancellations
+
 ## 2026-06-09 market-open execution
 - market: open (is_open=true, trading_blocked=false)
 - positions reconciled: 2 (A, SMTC — Alpaca matches portfolio.md on qty/entry)
