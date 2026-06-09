@@ -3,6 +3,21 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-09 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 2 (A, SMTC — Alpaca matches portfolio.md on qty/entry)
+- exits: 0
+  - A:    cur=$132.62  ret=-0.84%  stop=$117.70  target=$167.18  time-stop=2026-06-11 → HOLD
+  - SMTC: cur=$160.58  ret=-2.68%  stop=$145.20  target=$206.25  time-stop=2026-06-10 → HOLD
+  - thesis check: UNAVAILABLE — Grok API credits exhausted (day 8 consecutive); no thesis-broken exits per hard rule
+- halt checks: day_pnl=+0.13% (cap -15% clear); WTD positive; open positions 2/5 → ALL CLEAR
+- entries: 0 — watchlist empty (Grok API offline day 8, no candidates)
+- account: equity=$99,759.81, cash=$90,085.44, buying_power=$387,430.00, day_pnl=+0.13%
+- open_positions: 2/5 (A, SMTC)
+- ALERT: Grok API credits exhausted 8 consecutive days (since 2026-06-02) — research & thesis-check both offline
+- ALERT: SMTC time-stop fires TOMORROW (2026-06-10) — EOD routine will close at open
+- ACTION REQUIRED: Replenish xAI credits at console.x.ai
+
 ## 2026-06-09 pre-market watchlist
 
 Research pass FAILED: xAI API credits exhausted — HTTP 200 with billing error body from api.x.ai: "Your team has either used all available credits or reached its monthly spending limit." All four Grok queries blocked. No candidates scored. No watchlist generated. Market-open will see no watchlist and sit out.
