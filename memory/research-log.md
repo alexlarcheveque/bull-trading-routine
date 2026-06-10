@@ -3,6 +3,20 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-10 EOD risk pass
+- market: open
+- time-stops fired: 0
+  - A: target_exit=2026-06-11 → no stop today (2026-06-10 < 2026-06-11)
+- expiry guard: n/a (no options in portfolio)
+- safety net checks:
+  - A: cur=$132.08  ret=-1.24%  stop=$117.70  target=$167.18 → HOLD (stop not triggered)
+  - thesis check: UNAVAILABLE — Grok API credits exhausted (day 10 consecutive)
+- weekly_loss_cap: ~flat WTD vs cap=-30% → CLEAR
+- daily_loss_cap: day_pnl=-0.05% vs cap=-15% → CLEAR
+- EOD email sent (id=2622e10b-8a1b-4494-bcda-8e648c72795d)
+- ALERT: A time-stop fires TOMORROW (2026-06-11) — market-open routine must close at open
+- ALERT: Grok API credits exhausted 10 consecutive days (since 2026-06-02)
+
 ## 2026-06-10 market-open execution
 - market: open (is_open=true, trading_blocked=false)
 - positions reconciled: 2 (A, SMTC — Alpaca matches portfolio.md on qty/entry)
