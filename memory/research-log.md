@@ -3,6 +3,21 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-10 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 2 (A, SMTC — Alpaca matches portfolio.md on qty/entry)
+- exits: 1
+  - SMTC: cur=$157.62 → filled avg $159.672  ret=-3.23%  time-stop (target_exit=2026-06-10) → SOLD 30 shares (order c0074680; partially filled over ~3 min)
+  - A:    cur=$134.19  ret=+0.33%  stop=$117.70  target=$167.18  time-stop=2026-06-11 → HOLD
+  - thesis check: UNAVAILABLE — Grok API credits exhausted (day 10 consecutive)
+- halt checks: day_pnl=+0.02% (cap -15% clear); WTD positive; open positions 1/5 → ALL CLEAR
+- entries: 0 — watchlist empty (Grok API offline day 10, no candidates)
+- account: equity=$99,706.44, cash=$94,875.60, buying_power=$393,028.75, day_pnl=+0.02%
+- open_positions: 1/5 (A only)
+- ALERT: Grok API credits exhausted 10 consecutive days (since 2026-06-02) — research & thesis-check both offline
+- ALERT: A time-stop fires TOMORROW (2026-06-11) — market-open routine must close at open
+- ACTION REQUIRED: Replenish xAI credits at console.x.ai
+
 ## 2026-06-10 pre-market research pass
 
 Research pass FAILED: Grok API credits exhausted (day 10 consecutive since 2026-06-02). All 4 Grok queries returned `permission-denied`. Market-open will see no watchlist and sit out on new positions.
