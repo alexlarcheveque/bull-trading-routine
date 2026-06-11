@@ -3,6 +3,14 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-11 pre-market research pass
+
+Research pass FAILED: Grok API credits exhausted (day 11 consecutive since 2026-06-02). API returns `permission-denied`: "team 2f47388e has either used all available credits or reached its monthly spending limit." Market-open will see no watchlist and sit out on new positions.
+
+Note for market-open: A's time-stop fires TODAY (target_exit=2026-06-11) — must close at open regardless of P&L.
+
+ACTION REQUIRED: Replenish xAI credits at console.x.ai to restore research capability.
+
 ## 2026-06-10 EOD risk pass
 - market: open
 - time-stops fired: 0
