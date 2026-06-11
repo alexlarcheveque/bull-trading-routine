@@ -1890,3 +1890,18 @@ Skipped (below threshold):
   - SMTC at -9.87% deepest drawdown (stop $145.20, gap $3.51); time-stop 2026-06-10
   - CAVA at -9.07% approaching stop (trigger $72.57, gap $2.41); time-stop 2026-06-03 (T-2) — must sell at open 2026-06-03 regardless of P&L
   - WDAY at +20.41% approaching +25% target ($163.00, gap $5.99); time-stop 2026-06-05 (T-4)
+
+## 2026-06-11 market-open execution
+- market: open (is_open=true, trading_blocked=false)
+- positions reconciled: 1 (A — Alpaca matches portfolio.md on qty/entry)
+- watchlist: none (pre-market failed — Grok API credits exhausted, day 11) → 0 entries
+- exits: 1 queued — A TIME-STOP (target_exit=2026-06-11 reached today)
+  - A: cur=$131.61, ret=-1.60% (stop $117.70 not breached, target $167.18 not hit) → sell on time stop per strategy.md exit rule 4
+  - thesis check SKIPPED: Grok API credits exhausted (no thesis-broken evaluation possible)
+  - preflight: OK (A sell 36 @ 131.61)
+  - order submitted: market sell 36 A, order_id=1702b975-5505-4489-a9e5-2affceafd3d2, submitted 13:31:32Z
+  - **UNFILLED after ~90s of polling** — status still `new` (paper fill lag). Logged per routine; midday MUST check this order, append the trade-log SELL row with the actual fill price, and reconcile portfolio.md.
+- halt checks: day_pnl=-0.01% (cap -15% clear); WTD ~flat (cap -30% clear); positions 1/5
+- entries: 0 (no watchlist — research offline)
+- account: equity=$99,600.58, cash=$94,875.58, buying_power=$392,732.32
+- ACTION REQUIRED: Replenish xAI credits at console.x.ai to restore research capability.
