@@ -1905,3 +1905,15 @@ Skipped (below threshold):
 - entries: 0 (no watchlist — research offline)
 - account: equity=$99,600.58, cash=$94,875.58, buying_power=$392,732.32
 - ACTION REQUIRED: Replenish xAI credits at console.x.ai to restore research capability.
+
+## 2026-06-12 pre-market research pass
+
+Research pass FAILED: Grok API credits exhausted (day 12 consecutive since 2026-06-02).
+xAI API returns `permission-denied`: "team has either used all available credits or
+reached its monthly spending limit." Confirmed via 3 attempts (2x grok.sh — empty
+output, exit 0 — and 1 raw curl showing the error body; grok.sh's jq filter swallows
+the error JSON silently).
+
+No watchlist today. Market-open will sit out.
+
+ACTION REQUIRED: Replenish xAI credits at console.x.ai.
