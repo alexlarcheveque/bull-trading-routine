@@ -1923,3 +1923,11 @@ ACTION REQUIRED: Replenish xAI credits at console.x.ai.
 No open positions (Alpaca confirms empty), no watchlist (research pass failed — Grok
 credits exhausted, day 12). 0 sells, 0 buys. Equity $99,562.69, 100% cash, day P&L 0.00%.
 Sitting out until xAI credits are replenished.
+
+## 2026-06-12 EOD
+- positions: 0 (Alpaca confirms empty — 100% cash)
+- time-stops: 0; expiry guard: n/a; safety net: nothing to check; trades today: none
+- account: equity=$99,562.69, cash=$99,562.69, day_pnl=0.00%
+- weekly cap: WTD -0.15% ($99,714.96 Mon open → $99,562.69) vs -30% cap — clear
+- eod email: sent (id=2cc07af5-e9b9-42b2-bb41-04d81c938641)
+- research still offline: Grok API credits exhausted (day 12). ACTION REQUIRED: replenish at console.x.ai
