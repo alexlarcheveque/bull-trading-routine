@@ -1931,3 +1931,11 @@ Sitting out until xAI credits are replenished.
 - weekly cap: WTD -0.15% ($99,714.96 Mon open → $99,562.69) vs -30% cap — clear
 - eod email: sent (id=2cc07af5-e9b9-42b2-bb41-04d81c938641)
 - research still offline: Grok API credits exhausted (day 12). ACTION REQUIRED: replenish at console.x.ai
+
+## 2026-06-12 weekly-review: NO strategy edit
+- week of 2026-06-08 to 2026-06-12: WTD=-0.15% (-$152.27, $99,714.96→$99,562.69) vs SPY -0.23% → alpha +0.08%.
+- 2 trades closed, both time-stops at a loss (SMTC -3.23%, A -2.65%); 0 stop-outs; 0 preflight rejections; win rate 0%.
+- Research offline ALL 5 days (Grok credits exhausted, day 8-12 of outage) — zero candidates scored or rejected; rubric ungradeable this week.
+- Q3 time-stop rule technically triggered (both exits red after being green 5+ days earlier) but both fixes are no-ops on this sample: neither name reached +8% (trailing stop never arms), and the green→red flip was the 06-05 SPY -2.6% macro day, not signal decay. No edit per "would it have helped this week" test.
+- Current 7-day/-12%/+25% strategy has still produced 0 closed trades under its own rules — no sample to learn from.
+- Verdict: RESUME MONDAY 2026-06-15 WITH CURRENT STRATEGY, contingent on xAI credit replenishment (console.x.ai). Book is 100% cash, 0/5 slots deployed.
