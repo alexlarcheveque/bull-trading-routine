@@ -16,11 +16,11 @@ front-running the headline itself.
 - **Excluded:** futures, crypto, OTC, leveraged/inverse ETFs (anything with
   2x/3x/UltraPro/Direxion in the name), SPACs pre-merger, anything halted, anything
   with earnings inside the next 3 trading days (event risk dominates our signal).
-- **Options (AGGRESSIVE / video mode):** long CALLS allowed on a qualifying catalyst
+- **Options (MAX DEGEN / video mode):** long CALLS allowed on a qualifying catalyst
   for leveraged upside. Long-only — never sell to open, no spreads, no puts. Sizing is
   on premium-at-risk (can go to zero), capped by guardrails.md (max_option_premium_pct,
   max_total_option_premium_pct). The underlying must still pass the universe + catalyst
-  tests. Option exits: +80% premium take-profit, -50% premium stop, or close on the
+  tests. Option exits: +150% premium take-profit, -60% premium stop, or close on the
   underlying's 7-day time stop (whichever first). Never let a contract ride to expiry.
 
 ## What counts as a "tradeable catalyst"
@@ -52,21 +52,21 @@ Each candidate gets a composite score:
 Only score ≥ 7 trades. If nothing scores ≥ 7, **we do not trade today**. Cash is a
 position.
 
-## Entry rules (AGGRESSIVE / video mode)
+## Entry rules (MAX DEGEN / video mode)
 
 - Buy at the **open** following the pre-market research pass that produced the score.
 - **Instrument choice:**
-  - If score **>= 8** AND the name is optionable
+  - If score **>= 7** AND the name is optionable
     (`./scripts/alpaca.sh option-chain <T> call` returns > 0 contracts):
     buy a **LONG CALL** for leveraged upside.
   - Otherwise: buy **SHARES**.
-- **Shares sizing:** `target_position_pct` of equity (guardrails; currently 20%),
+- **Shares sizing:** `target_position_pct` of equity (guardrails; currently 50%),
   market order, full size in one shot.
-- **Call sizing:** target `max_option_premium_pct` of equity in premium (currently 5%).
+- **Call sizing:** target `max_option_premium_pct` of equity in premium (currently 25%).
   `contracts = floor((equity * max_option_premium_pct/100) / (ask * 100))`, min 1.
   If even 1 contract trips the premium cap (preflight rejects), **fall back to shares**.
 - **Call contract selection:** type=call; expiry = nearest listed expiration in
-  `[option_min_days_to_expiry, option_max_days_to_expiry]` DTE (target ~3–5 weeks);
+  `[option_min_days_to_expiry, option_max_days_to_expiry]` DTE (target ~1–2 weeks);
   strike = nearest strike **at or just above** spot (ATM / slightly OTM).
 - Caps: max `max_new_positions_per_day` new/day, max `max_concurrent_positions` open.
   **All sizes and caps live in guardrails.md — never hardcode them in a routine.**
@@ -83,8 +83,8 @@ with a trailing `option` arg; shares use `quote` / `sell` and preflight `equity`
 
 **SHARES** (use `per_trade_target_pct` / `per_trade_stop_pct`):
 - current = `./scripts/alpaca.sh quote <T> | jq -r .trade.p`; return = (current-entry)/entry*100.
-1. Profit target: return >= +`per_trade_target_pct` (currently +25%) → sell full.
-2. Stop loss:   return <= -`per_trade_stop_pct` (currently -12%) → sell full. Never average down.
+1. Profit target: return >= +`per_trade_target_pct` (currently +60%) → sell full.
+2. Stop loss:   return <= -`per_trade_stop_pct` (currently -25%) → sell full. Never average down.
 3. Thesis broken (Grok on the name) → sell next bar.
 4. Time stop: today >= `target_exit_date` → sell regardless of P&L.
 
@@ -92,8 +92,8 @@ with a trailing `option` arg; shares use `quote` / `sell` and preflight `equity`
 - entry premium = the BUY fill price; current premium =
   `./scripts/alpaca.sh option-quote <OCC> | jq -r '.quotes|to_entries[0].value.bp'` (bid).
 - return = (current-entry)/entry*100.
-1. Profit target: return >= +`option_target_pct` (currently +80%) → option-sell full.
-2. Stop loss:   return <= -`option_stop_pct` (currently -50%) → option-sell full.
+1. Profit target: return >= +`option_target_pct` (currently +150%) → option-sell full.
+2. Stop loss:   return <= -`option_stop_pct` (currently -60%) → option-sell full.
 3. Thesis broken on the underlying → option-sell.
 4. Time stop: today >= `target_exit_date` → option-sell.
 5. **Expiry guard:** if the contract expires within 2 trading days, option-sell now

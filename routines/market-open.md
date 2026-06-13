@@ -55,7 +55,7 @@ For each candidate (descending score, until you hit `max_new_positions_per_day`)
 
 **A. Decide instrument** (per strategy.md Entry rules):
 - `OPTIONABLE=$(./scripts/alpaca.sh option-chain <TICKER> call | jq '.option_contracts|length')`
-- If `score >= 8` AND `OPTIONABLE > 0` → **CALL path (B)**. Else → **SHARES path (C)**.
+- If `score >= 7` AND `OPTIONABLE > 0` → **CALL path (B)**. Else → **SHARES path (C)**.
 
 **B. CALL path (long call):**
 1. `SPOT=$(./scripts/alpaca.sh quote <TICKER> | jq -r .trade.p)`

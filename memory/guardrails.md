@@ -2,17 +2,17 @@
 # Hard caps. preflight-check.sh refuses any order that violates these.
 # Numbers, not prose. Edit a value, restart routines — that's the whole knob panel.
 
-max_position_pct: 25             # AGGRESSIVE (video mode) — was 7
-target_position_pct: 20          # AGGRESSIVE — was 5; concentrated bets = big swings
-max_concurrent_positions: 5      # ~full deployment at 20% each
-max_new_positions_per_day: 3     # AGGRESSIVE — was 2; deploy fast
+max_position_pct: 60             # MAX DEGEN — was 25; one name can be most of the book
+target_position_pct: 50          # MAX DEGEN — was 20; all-in on top conviction
+max_concurrent_positions: 2      # MAX DEGEN — was 5; two fat bets, not a basket
+max_new_positions_per_day: 2     # MAX DEGEN — fill both slots in a day
 
-per_trade_stop_pct: 12           # AGGRESSIVE — was 7; let losers run scarier
-per_trade_target_pct: 25         # AGGRESSIVE — was 12; juicy wins
-max_hold_days: 7                 # AGGRESSIVE — was 14; faster turnover
+per_trade_stop_pct: 25           # MAX DEGEN — was 12; let it really breathe (or blow up)
+per_trade_target_pct: 60         # MAX DEGEN — was 25; swing for the fences
+max_hold_days: 7                 # faster turnover
 
-daily_loss_cap_pct: 15           # AGGRESSIVE — was 3; don't halt on first red day
-weekly_loss_cap_pct: 30          # AGGRESSIVE — was 6
+daily_loss_cap_pct: 40           # MAX DEGEN — was 15; basically never auto-halt
+weekly_loss_cap_pct: 80          # MAX DEGEN — was 30
 
 min_market_cap_usd: 1_000_000_000   # AGGRESSIVE — was 2B; punchier mid-caps
 min_avg_daily_volume_shares: 100_000     # REAL consolidated 30-day ADV via scripts/volume.sh (Yahoo), not IEX. Matches strategy.md 100k universe.
@@ -32,11 +32,11 @@ no_earnings_within_days: 3       # do not open a new position if earnings within
 # Premium can go to ZERO, so these are sized on premium-at-risk, NOT notional.
 options_enabled: true
 options_type_allowed: call       # long calls only (no puts, no spreads, no sell-to-open)
-max_option_premium_pct: 5        # max premium for ONE option play as % of equity (~$5k)
-max_total_option_premium_pct: 20 # max total premium at risk across ALL open option plays
-option_min_days_to_expiry: 14    # avoid 0DTE theta-crush; room past the 7d hold
-option_max_days_to_expiry: 45    # don't overpay for far-dated time value
-option_target_pct: 80            # take profit on a contract at +80%
-option_stop_pct: 50              # cut a contract at -50% premium
+max_option_premium_pct: 25       # MAX DEGEN — was 5; one call play up to 25% of equity
+max_total_option_premium_pct: 60 # MAX DEGEN — was 20; up to 60% of the book in premium-at-risk
+option_min_days_to_expiry: 7     # MAX DEGEN — was 14; short-dated, high gamma
+option_max_days_to_expiry: 14    # MAX DEGEN — was 45; near-dated weeklies only
+option_target_pct: 150           # MAX DEGEN — was 80; let winners run to a multiple
+option_stop_pct: 60              # MAX DEGEN — was 50; give it room before cutting
 
 # Live trading is gated separately by BULL_MODE=live in env. preflight still applies in live mode.
