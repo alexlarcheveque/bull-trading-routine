@@ -26,3 +26,4 @@
 | 2026-06-05 08:37 | WDAY | SELL | 38 | 148.4621 | time-stop 7d (order df179d63; filled 08:37 CT; ret=+13.85%) | - | 2026-06-05 |
 | 2026-06-10 08:33 | SMTC | SELL | 30 | 159.672 | time-stop 7d (order c0074680; avg fill $159.672; ret=-3.23%) | - | 2026-06-10 |
 | 2026-06-11 08:37 | A | SELL | 36 | 130.198056 | time-stop 7d (order 1702b975 submitted at market-open, filled 08:37 CT; ret=-2.65%) | - | 2026-06-11 |
+| 2026-06-15 08:31 | TSEM260626C00280000 | BUY | 10 | 23.8 | option call score=7 catalyst=Multi-year InP epiwafer supply agreement with IQE for AI data center optical; IP litigation settled underlying=TSEM | 7 | 2026-06-22 |

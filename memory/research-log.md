@@ -97,6 +97,13 @@ Skipped (below threshold):
 - TROW (score 3): SEC crypto ETF approval is indirect/mild catalyst; not a mover
 - VTYX: acquisition buzz only, likely sub-$1B market cap, already +67% (no novelty)
 
+## 2026-06-15 market-open execution
+
+- Exits: 0 (no open positions at open).
+- Halt checks: day P&L 0.00% (cap -40%) clear; week P&L 0.00% (cap -80%) clear; 0/2 positions open.
+- Entry: TSEM260626C00280000 (TSEM Jun 26 $280 call) — 10 contracts BUY @ $23.80 fill avg. Order bce2135c filled instantly. Premium at risk=$23,800 (23.9% of equity). Exit thresholds: +150% target ($59.50 bid) / -60% stop ($9.52 bid) / time-stop 2026-06-22.
+- Post-trade equity: $92,962.49 (option marked at bid $17.20; unrealized -27.73% mark-to-market).
+
 **1 tradeable candidate: TSEM at score 7.**
 
 ---
