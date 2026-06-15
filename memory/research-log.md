@@ -3,6 +3,15 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-15 midday risk pass
+- market: open
+- positions reconciled (Alpaca): 1 (TSEM260626C00280000 — matches portfolio.md)
+- exits: 0
+  - TSEM260626C00280000: entry=$23.80  bid=$20.14  ret=-15.38%  stop=-60%($9.52)  target=+150%($59.50)  time-stop=2026-06-22 → HOLD
+  - thesis check: CLEAR — Grok found no material negative news on TSEM in last 6 hours; IQE InP deal confirmed positive
+- daily_loss_cap: day_pnl=-3.92% vs cap=-40% → CLEAR
+- no cancellations, no new orders
+
 ## 2026-06-15 pre-market research pass
 
 ### Grok API status
