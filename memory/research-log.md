@@ -3,6 +3,104 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-15 pre-market research pass
+
+### Grok API status
+Credits restored (first successful queries since 2026-06-02; 13-day outage ended).
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+> US-Iran ceasefire/de-escalation agreement (broad market bullish catalyst, easing oil supply/inflation concerns and geopolitical risks); ongoing positive sentiment into mid-June.
+> - Broad large-cap equities (S&P 500 tech/chip stocks, cyclicals): Relief rally from interim US-Iran deal to halt fighting and reopen Strait of Hormuz, reducing energy supply risks. S&P 500 +1.75% or more on related news days; futures positive as of June 15 updates. [CNBC, Yahoo Finance]
+> - SPCX (SpaceX): Record ~$75B IPO priced at $135/share; shares surged ~19-25% on debut (~June 12), pushing market cap above $2T. Continued positive sentiment. [CNBC, TechCrunch]
+> No other major company-specific events for >$10B market-cap US equities in the exact last 24 hours.
+> Sources: CNBC, Yahoo Finance, Reuters, Al Jazeera (crawled around June 12–15, 2026).
+
+### Grok raw output — Query 2: Pre-market movers >2% on news catalyst (June 15)
+> Semiconductor/memory stocks (main cluster — geopolitical de-escalation + AI/data center demand + upcoming earnings):
+> - MU (Micron Technology): +~7.5% (to ~$1,055). AI-driven demand expectations ahead of June 24 earnings. Analyst targets raised to ~$1,250. [Yahoo Finance]
+> - WDC (Western Digital): +~5.6%. Sector move.
+> - STX (Seagate Technology): +~5.5%. Sector move.
+> - SMCI (Super Micro Computer): +~5.5%. Sector move.
+> - KLAC, DELL: +~4–5%. Sector.
+> Other notable movers:
+> - TSEM (Tower Semiconductor): +~4.7–5% (to ~$275). Specific company news. [Benzinga]
+> - VTYX (Ventyx Biosciences): +~67% intraday. Reports/buzz around Eli Lilly acquisition interest. [YouTube]
+> Notes: Many small-cap gainers (CAST +249%, VSME +70%+) lack clear public catalysts. Data reflects early pre-market ~6–7 AM ET.
+> Sources: Investing.com, Benzinga premarket, Yahoo Finance.
+
+### Grok raw output — Query 3: After-close earnings beats with raised guidance
+> No prominent earnings reports released after the June 14, 2026 market close were identified as both beating estimates AND raising guidance. Earnings calendars show ~34 reports scheduled for June 15 overall with no timely post-release details on beat + raised outlook available.
+> (Adobe/ADBE beat and raised guidance ~June 11–12, but does not match post-June-14 timing.)
+> Sources: Yahoo Finance earnings calendar, Nasdaq, Earnings Whispers.
+
+### Grok raw output — Query 4: FDA approvals, contracts >$100M, M&A, regulator decisions (last 24h)
+> - GM: GM Defense awarded ~$143M firm-fixed-price US Army contract (W912CH-26-F-0339) for infantry squad vehicles and winch kits; cumulative program value ~$624M. Work completes June 2027. [Investing.com]
+> - FDA: Final order adding bemotrizinol (BEMT) as OTC sunscreen ingredient (first new addition in 20+ years, 6% concentration). Primary beneficiary is dsm-firmenich's Parsol Shield (not US-listed). [FDA.gov]
+> - SEC: Approved T. Rowe Price (TROW) actively managed crypto ETF to list on NYSE Arca; fund can hold 5–15 cryptos (BTC, ETH, SOL, XRP, DOGE, SHIB, others) plus USDC. [Bitget]
+> No major M&A announcements identified in the strict last 24 hours.
+
+### TSEM-specific Grok follow-up
+> Catalyst: Multi-year InP epiwafer supply agreement between Tower Semiconductor (TSEM) and IQE plc, supporting AI-driven data center optical connectivity (200Gb/s/lane transceivers and 400Gb/lane modulators), with first-year minimum purchase commitments, ongoing volume commitments, and settlement of prior IP disputes/litigation. Announced June 15, 2026.
+> Pre-market: TSEM shares +~4.7–5% (to ~$275).
+> Earlier May 2026 $1.3B silicon photonics contract context; today's agreement is an additional fresh catalyst distinct from prior news.
+> Sources: IQE press release (iqep.com), StockTitan, Benzinga (all dated June 15, 2026).
+
+---
+
+### Candidate universe filter pass
+
+| ticker | ADV (Yahoo) | price est. | active/tradable | filter result |
+|--------|-------------|------------|-----------------|---------------|
+| MU     | passes      | ~$1,055    | yes             | SKIP — price > $1,000 cap |
+| WDC    | 7,322,303   | ~$517      | yes             | catalog: sector/macro catalyst only |
+| STX    | 3,813,620   | ~$860      | yes             | catalog: sector/macro catalyst only |
+| SMCI   | 58,672,426  | ~$31       | yes             | SKIP — crashed -17% June 10 (negative event; cleanliness=0) |
+| TSEM   | 2,237,516   | ~$275      | yes             | PASS all filters |
+| GM     | 7,527,076   | ~$79       | yes             | catalog: catalyst too small vs company size |
+| TROW   | 1,979,763   | ~$106      | yes             | catalog: mild/indirect catalyst |
+| VTYX   | n/a         | n/a        | n/a             | SKIP — likely < $1B market cap |
+
+---
+
+### Scoring — survivors
+
+**TSEM — Tower Semiconductor**
+- Catalyst strength (0–4): **3** — material multi-year supply contract with minimum purchase commitments in the hot AI/data center optical connectivity segment; IP litigation settlement removes overhang. Not an earnings beat/raise (would be 4), but a real corporate event with forward cash-flow implications.
+- Novelty (0–3): **2** — announced today June 15 (fresh). Stock up ~5% pre-market; real price discovery likely incomplete. Prior IP dispute was a headwind now removed. Bars show stock at $228–$261 range entering today vs $275 pre-market estimate, suggesting meaningful upside still to be discovered as analysts absorb the news.
+- Confirmation (0–2): **1** — directionally confirmed pre-market (+5% on the announcement); full intraday volume confirmation pending open. ADV 2.2M is sufficient liquidity.
+- Cleanliness (0–1): **1** — no offsetting bad news; IP settlement is additive positive; no earnings within 3 trading days (Q2 results expected late July); no halt, no disallowed instrument flags.
+- **Total: 7** ✓ (meets ≥ 7 threshold)
+
+**WDC / STX** — sector/macro catalyst (US-Iran relief, no company-specific news)
+- Catalyst strength: 1 | Novelty: 0 | Confirmation: 1 | Cleanliness: 1 = **Score: 3**
+
+**GM** — $143M contract vs ~$150B annual revenue
+- Catalyst strength: 1 | Novelty: 1 | Confirmation: 0 | Cleanliness: 1 = **Score: 3**
+
+**TROW** — SEC crypto ETF approval (indirect/mild)
+- Catalyst strength: 1 | Novelty: 1 | Confirmation: 0 | Cleanliness: 1 = **Score: 3**
+
+---
+
+## 2026-06-15 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                   | source                                    |
+|--------|---------|---------------------------------------------------------------------------------------|-------------------------------------------|
+| TSEM   | 7     | Multi-year InP epiwafer supply agreement with IQE for AI data center optical (IP settled) | iqep.com/media/press-releases/2026/06/15 |
+
+Skipped (below threshold):
+- MU (price cap): ~$1,055 pre-market exceeds max_price_per_share=$1,000 hard cap; would have scored 6 (catalyst is geo/macro + analyst targets, not fresh company news)
+- WDC (score 3): +5.6% pre-market but catalyst is macro (US-Iran de-escalation), not company-specific; no novelty
+- STX (score 3): +5.5% pre-market, same macro driver as WDC
+- SMCI (skip): crashed -17% June 10 on negative event; cleanliness=0 regardless of today's bounce
+- GM (score 3): $143M Army contract too small relative to $150B+ revenue base; no price movement
+- TROW (score 3): SEC crypto ETF approval is indirect/mild catalyst; not a mover
+- VTYX: acquisition buzz only, likely sub-$1B market cap, already +67% (no novelty)
+
+**1 tradeable candidate: TSEM at score 7.**
+
+---
+
 ## 2026-06-11 pre-market research pass
 
 Research pass FAILED: Grok API credits exhausted (day 11 consecutive since 2026-06-02). API returns `permission-denied`: "team 2f47388e has either used all available credits or reached its monthly spending limit." Market-open will see no watchlist and sit out on new positions.

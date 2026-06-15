@@ -23,9 +23,8 @@ WDAY: fully closed 2026-06-05 via time-stop. ret=+13.85%.
 NVDA: fully closed 2026-06-04 via time-stop. ret=-4.55%.
 CAVA: closed 2026-06-03 via time-stop (stop hit at -12.18%).
 
-Risk flags as of 2026-06-12 EOD:
-- Research offline: Grok API credits exhausted since 2026-06-02 (day 12 consecutive)
-  — no new entries possible until credits restored
-- Daily loss cap: 0.00% (cap -15%) — clear
-- WTD P&L: -0.15% (cap -30%) — clear
-- ACTION REQUIRED: Replenish xAI credits at console.x.ai
+Risk flags as of 2026-06-15 pre-market:
+- Research restored: Grok API credits replenished (was offline since 2026-06-02; 13-day outage)
+- Daily loss cap: 0.00% (cap -40%) — clear
+- WTD P&L: 0.00% (cap -80%) — clear (new week)
+- Pre-market watchlist: TSEM score=7 (1 tradeable candidate — market-open.md will execute)
