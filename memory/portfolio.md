@@ -1,5 +1,5 @@
 # portfolio.md
-# Updated 2026-06-16 09:31 by market-open routine.
+# Updated 2026-06-16 12:00 by midday routine.
 
 ## Account
 - equity: 91462.21
@@ -17,3 +17,4 @@
 Exit thresholds: take-profit at +150% premium ($59.50 bid), stop at -60% ($9.52 bid).
 2026-06-15 EOD: 0 time-stops, 0 expiry-guard exits. Bid recovered to $21.68 (ret=-8.91%). Weekly cap CLEAR (-1.31% WTD vs -80%). EOD email sent (id: ae67d65f).
 2026-06-16 market-open: 0 buys, 0 exits. TSEM bid=$15.77 (ret=-33.74%). Stop not triggered ($9.52). Thesis intact (Grok: no material negative news; InP/AI data center thesis unchanged). Day P&L=-6.81% (< 40% daily cap). No watchlist candidates from pre-market pass.
+2026-06-16 midday: 0 exits. TSEM bid=$16.00 (ret=-32.77%) — stop at $9.52 not triggered; thesis intact (Grok: no material negative news in last 6h). Day P&L=-6.70% (< 40% daily cap, no halt).
