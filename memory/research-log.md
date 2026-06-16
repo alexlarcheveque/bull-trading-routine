@@ -3,6 +3,101 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-16 pre-market research pass
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+> US-Iran peace framework/deal (announced ~June 15, 2026) drove broad market gains, with notable rallies in tech/chip stocks due to reduced geopolitical risk, lower oil prices, and improved sentiment. [investors.com, CNBC]
+> - NVDA (Nvidia): Rallied on the de-escalation (part of chip/AI stock surge). [investors.com]
+> - AMD (Advanced Micro Devices) and MU (Micron Technology): Led chip stock gains on U.S.-Iran deal. [investors.com]
+> SpaceX (SPCX) post-IPO momentum: Continued strong gains (~10% pre-market after prior spikes; market cap >$2T). [CNBC, cnbc.com/2026/06/12/spacex-ipo-spcx-live-updates]
+> No other major company-specific catalysts for >$10B market-cap US equities identified in the strict last 24 hours. Market reaction is macro/geopolitical-driven.
+
+### Grok raw output — Query 2: Pre-market movers >2% on news catalyst (June 16)
+> SpaceX-related leveraged ETFs: LOFF (Direxion Daily SpaceX Bull 2X ETF) ~+20%, SPAX (T-REX 2X Long SpaceX Daily Target ETF) ~+20%, SPCF (ProShares Ultra SpaceX) ~+20%. Moved on SpaceX IPO/debut developments and positive sentiment. [benzinga.com/premarket]
+> Other large % gainers: SLBT (~+395%), GDHG (~+178%), TDIC (~+71%), IVDA (~+53%), IMCC (~+51%), BEEM (~+40%), CRVO (~+26%), CRE (~+21%), WNW. Mostly small/micro-caps; catalysts not detailed. [benzinga.com/premarket, stockanalysis.com]
+> Broader positive sentiment from US-Iran-related deal and SpaceX news lifting indices.
+
+### Grok raw output — Query 3: After-close earnings beats with raised guidance
+> No prominent earnings reports released after the June 15, 2026 market close identified as both beating consensus AND raising guidance. Earnings calendars show Kroger (KR), Progressive (PGR), Accenture (ACN), Jabil (JBL) reporting around June 15–18, but no beat+raise confirmed for post-June-15 timing. [zacks.com/earnings, facebook.com/EarningsWhispers]
+
+### Grok raw output — Query 4: FDA approvals, contracts >$100M, M&A, regulator decisions (last 24h)
+> FDA: Accelerated approval granted to Tzield (teplizumab-mzwv) for new indication — delay insulin decline in children ages 8–17 with Stage 3 T1D. Affects Sanofi (SNY), which acquired original developer Provention Bio. [fda.gov press announcement, June 15 2026]
+> M&A: Fox Corporation (FOXA/FOX) agreed to acquire Roku, Inc. (ROKU) in a cash-and-stock deal valued at ~$22B enterprise value ($160/share). [newsroom.roku.com, prnewswire.com, June 15 2026]
+> M&A: Nuvei agreed to acquire Payoneer Global Inc. (PAYO) for $2.75B ($7.40/share in cash), expected close mid-2027. [nuvei.com, prnewswire.com, June 15 2026]
+> No large contract wins (>$100M) or other significant regulator decisions identified.
+
+---
+
+### Candidate universe filter pass
+
+| ticker | ADV (Yahoo 30d) | last price | active/tradable | filter result |
+|--------|-----------------|------------|-----------------|---------------|
+| NVDA   | —               | —          | yes             | SKIP — macro/geopolitical catalyst only (US-Iran deal); not company-specific |
+| AMD    | —               | —          | yes             | SKIP — same macro driver |
+| MU     | —               | —          | yes             | SKIP — macro + pre-earnings analyst hype; no fresh corporate event |
+| SPCX   | 381,508,987     | $193.76    | yes             | PASS filters (us_equity, ADV >> 100k); no fresh 24h catalyst → score below |
+| LOFF   | —               | —          | n/a             | SKIP — "Direxion" in name → disallowed_name_substrings |
+| SPAX   | —               | —          | n/a             | SKIP — "2X" in name → disallowed_name_substrings |
+| SPCF   | —               | —          | n/a             | SKIP — "ProShares Ultra" in name → disallowed_name_substrings |
+| SLBT/GDHG/TDIC/IVDA/IMCC/BEEM/CRVO/CRE/WNW | — | — | — | SKIP — small/micro-caps; likely < $1B market cap, no clear institutional catalyst |
+| ROKU   | 3,479,986       | $140.86    | yes             | PASS filters (us_equity, ADV >> 100k); M&A catalyst → score below |
+| FOXA   | —               | —          | yes             | SKIP — acquirer in deal; typically depresses acquirer; not bullish for us |
+| PAYO   | 9,378,533       | $7.04      | yes             | PASS filters; M&A target → score below |
+| SNY    | 2,576,444       | $43.78     | yes             | PASS filters (us_equity, ADS); FDA catalyst → score below |
+
+---
+
+### Scoring — survivors
+
+**ROKU — Roku Inc.**
+- Pre-announcement close (June 11): $119.70 | Deal price: $160.00 (Fox cash-and-stock) | Last trade: $140.86 (+17.7% on announcement day)
+- Catalyst strength (0–4): **3** — material M&A at a significant premium ($160 vs $119.70 = +33.7% to undisturbed). Clearly directional for ROKU.
+- Novelty (0–3): **1** — stock already moved +17.7% on announcement day; remaining gap to deal price ($140.86 → $160) is only +13.6% of deal-risk-discount (merger arb spread), not open-ended price discovery.
+- Confirmation (0–2): **2** — price up significantly on above-average volume on announcement day.
+- Cleanliness (0–1): **1** — no offsetting news; deal terms appear final.
+- **Total: 7** → NUMERICAL PASS, but STRUCTURALLY INELIGIBLE. This is a merger arb situation: price is capped at $160 deal value. Max gain from $140.86 is +13.6%, far below our +60% profit target for shares and +150% for options. Our thesis (catalyst mispricing → price discovery over 7–14 days) does not apply to M&A targets whose price is anchored to the deal value. Skip.
+
+**PAYO — Payoneer Global Inc.**
+- Pre-announcement close (June 11): $6.75 | Deal price: $7.40 (Nuvei cash, mid-2027 close) | Last trade: $7.04 (+4.3%)
+- Catalyst strength (0–4): **2** — $2.75B acquisition, directional event; but delayed close (mid-2027 expected) significantly reduces immediacy.
+- Novelty (0–3): **1** — stock already moved +4.3% on announcement; remaining gap to $7.40 is only +5.1%; deal close mid-2027 means the arb spread likely persists for 12+ months.
+- Confirmation (0–2): **2** — price up on volume.
+- Cleanliness (0–1): **1** — no offsetting news.
+- **Total: 6** → Below threshold. Also structurally wrong (merger arb, tiny max gain, 12-month deal horizon).
+
+**SNY — Sanofi ADS**
+- Catalyst strength (0–4): **2** — FDA accelerated approval for Tzield (new pediatric T1D indication) is a real regulatory event. However, Sanofi's market cap is ~$100B+; a single new indication for a niche pediatric disease is not a material cash-flow driver at this scale.
+- Novelty (0–3): **2** — event is fresh (June 15); stock hasn't reacted much yet.
+- Confirmation (0–2): **0** — stock traded DOWN slightly ($44.10 pre-announcement → $43.78 last trade); no upward price or volume confirmation. Market signals the catalyst is immaterial.
+- Cleanliness (0–1): **1** — no offsetting news.
+- **Total: 5** → Below threshold. Negative confirmation (stock didn't respond) overrides the event freshness.
+
+**SPCX — SpaceX**
+- Catalyst strength (0–4): **1** — no specific new corporate catalyst in the last 24 hours. Post-IPO momentum (IPO was June 12) is continuation, not a discrete event. "Stock going up" is not a catalyst.
+- Novelty (0–3): **1** — stock already up ~28% from IPO open ($151.15 → $193.76) in 3 days. Extent of fair-value discovery unknown given no public operating history, but no identifiable 24h catalyst means this is momentum-chasing rather than thesis-driven.
+- Confirmation (0–2): **2** — price up on very high volume.
+- Cleanliness (0–1): **0** — brand-new public company; no earnings history; extreme fair-value uncertainty; high beta/volatility likely. No earnings risk per se but high uncertainty fails our cleanliness check.
+- **Total: 4** → Below threshold. No specific fresh catalyst; post-IPO momentum does not meet our "material, fresh news catalyst" standard.
+
+---
+
+## 2026-06-16 pre-market watchlist
+
+No tradeable signal today.
+
+Skipped (below threshold or structurally ineligible):
+- ROKU (score 7, structurally ineligible): Merger arb capped at $160 deal price; +13.6% max gain from $140.86 cannot reach our +60% profit target. M&A arb is a different strategy.
+- PAYO (score 6): Merger arb, 5.1% max gain to $7.40 deal price, deal closes mid-2027. Not our thesis.
+- SNY (score 5): FDA pediatric T1D indication immaterial for a $100B+ pharma; stock traded DOWN on announcement — no confirmation.
+- SPCX (score 4): No fresh 24h catalyst; post-IPO momentum only; new public company with extreme fair-value uncertainty (cleanliness=0).
+- NVDA/AMD/MU: Macro/geopolitical (US-Iran deal) — generic market move, not company-specific catalysts.
+- LOFF/SPAX/SPCF: Disallowed instruments (leveraged ETF name substrings: Direxion, 2X, ProShares Ultra).
+- SLBT/GDHG/TDIC/IVDA/IMCC/BEEM/CRVO/CRE/WNW: Small/micro-cap movers; fail $1B market cap filter.
+
+Existing position: TSEM260626C00280000 (Jun 26 $280 call, 10 contracts, entry $23.80, time-stop 2026-06-22) — unchanged; monitored by midday/EOD routines.
+
+---
+
 ## 2026-06-15 midday risk pass
 - market: open
 - positions reconciled (Alpaca): 1 (TSEM260626C00280000 — matches portfolio.md)
