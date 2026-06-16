@@ -98,6 +98,17 @@ Existing position: TSEM260626C00280000 (Jun 26 $280 call, 10 contracts, entry $2
 
 ---
 
+## 2026-06-16 market-open execution pass
+- market: open | trading_blocked: false
+- exits checked: 1 position (TSEM260626C00280000)
+  - bid=$15.77 ret=-33.74% | stop=-60%($9.52) → HOLD | target=+150%($59.50) → HOLD
+  - time-stop: 2026-06-22 (today=2026-06-16) → HOLD
+  - expiry guard: expires 2026-06-26 (10+ trading days) → HOLD
+  - thesis: CLEAR — Grok found no material negative news; InP/AI data center supply agreement with IQE intact
+- halt checks: day_pnl=-6.81% vs cap=-40% → CLEAR | weekly closed trades=0 → CLEAR
+- entries: 0 — no candidates from pre-market pass (all below score threshold or structurally ineligible)
+- no orders placed
+
 ## 2026-06-15 midday risk pass
 - market: open
 - positions reconciled (Alpaca): 1 (TSEM260626C00280000 — matches portfolio.md)
