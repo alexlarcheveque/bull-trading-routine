@@ -2158,4 +2158,121 @@ Sitting out until xAI credits are replenished.
 - Research offline ALL 5 days (Grok credits exhausted, day 8-12 of outage) — zero candidates scored or rejected; rubric ungradeable this week.
 - Q3 time-stop rule technically triggered (both exits red after being green 5+ days earlier) but both fixes are no-ops on this sample: neither name reached +8% (trailing stop never arms), and the green→red flip was the 06-05 SPY -2.6% macro day, not signal decay. No edit per "would it have helped this week" test.
 - Current 7-day/-12%/+25% strategy has still produced 0 closed trades under its own rules — no sample to learn from.
+
+---
+
+## 2026-06-17 pre-market research pass
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+> **LZB (La-Z-Boy, ~$1.4B market cap):** Strong Q4 FY2026 earnings beat (EPS $1.26 vs. consensus ~$0.82, +$0.44 beat; revenue also topped estimates at ~$570M). Results released after market close on June 16, 2026, with positive commentary on retail sales growth and margin improvement. [streetinsider.com, quiverquant.com]
+> **ABBV (AbbVie, large-cap):** FDA approval of SKINVIVE by JUVÉDERM for reducing horizontal neck lines/improving neck appearance (first/only HA injectable for this indication). Announced June 16, 2026. [news.abbvie.com, prnewswire.com]
+
+### Grok raw output — Query 2: Pre-market movers >2% on news catalyst (June 17)
+> **ASTS (AST SpaceMobile)**: Up notably in pre-market (~6%+ moves around the news). Catalyst: Company announced BlueBird 8, 9, and 10 satellites cleared/scheduled for SpaceX Falcon 9 launch on June 17 from Cape Canaveral, advancing its space-based cellular broadband constellation. [sherwood.news, finance.yahoo.com]
+> **INTC (Intel)**: Up ~4%+ in pre-market. Catalyst: Reports that Intel has commenced production of its 18A-P chips, a key step in its turnaround amid AI-driven CPU demand. [finance.yahoo.com]
+> **WDC (Western Digital)**: Gains 2-6%+ range in pre-market data amid ongoing AI storage demand, recent analyst upgrades/price target raises, and sector momentum — thematic, no single-day headline. [finance.yahoo.com, investing.com]
+
+### Grok raw output — Query 3: After-close earnings beats + guidance raises (June 16)
+> No specific companies matching the exact criteria (earnings released after the June 16, 2026 market close that both beat EPS/revenue expectations AND raised guidance) were identified in available web search results. Earnings calendars indicate ~84 companies reported on/around June 16 and ~52 on June 17. La-Z-Boy (LZB) reported after close with EPS beat but fiscal-year just ended so no full-year guidance raise possible. [zacks.com, schwab.com]
+
+### Grok raw output — Query 4: FDA approvals, contracts >$100M, M&A, regulator decisions (last 24h)
+> **AbbVie (ABBV)**: FDA approved SKINVIVE by JUVÉDERM for reducing neck lines/improving neck appearance in adults. Label extension from prior cheek indication. [news.abbvie.com, prnewswire.com — June 16, 2026]
+> **Merck (MRK)**: FDA approved Welireg (belzutifan) + Keytruda (pembrolizumab) combination for adjuvant treatment of certain kidney cancer patients (clear cell renal cell carcinoma). [raps.org — June 16, 2026]
+> **Roche**: FDA approved VENTANA PTEN (SP218) RxDx Assay as companion diagnostic for prostate cancer therapy guidance. [clpmag.com]
+> **Naloxone/Amphastar**: FDA approved Rextovy, new 4-mg OTC naloxone nasal spray. [ajmc.com, thehill.com]
+> **Fox/ROKU M&A**: Fox Corporation (FOXA/FOX) acquiring Roku (ROKU) in cash-and-stock deal ~$22B enterprise value (~$160/share). Announced June 15, 2026. [foxcorporation.com, nbcnews.com]
+
+---
+
+### Candidate universe filter pass
+
+| ticker | ADV (Yahoo 30d) | last price (June 16 close) | active/tradable | filter result |
+|--------|-----------------|----------------------------|-----------------|---------------|
+| LZB    | 412,336         | $35.19 (pre-earnings close) | yes            | PASS — us_equity NYSE, ADV > 100k, market cap ~$1.3B > $1B, price in range |
+| ABBV   | 5,428,126       | —                           | yes            | PASS — us_equity NYSE, ADV >> 100k |
+| ASTS   | 26,290,896      | —                           | yes            | PASS — us_equity NASDAQ, ADV >> 100k |
+| INTC   | 138,736,126     | $116.88 (after-hours)       | yes            | PASS — us_equity NASDAQ, ADV >> 100k |
+| MRK    | 9,957,253       | $115.26                     | yes            | PASS — us_equity NYSE, ADV >> 100k |
+| ROKU   | 3,863,176       | $137.94                     | yes            | PASS filters — but M&A arb structure; score below |
+| WDC    | —               | —                           | yes            | SKIP — analyst upgrades/sector momentum only; no fresh corporate event (strategy.md: "pundit price targets / analyst upgrades with no new information" excluded) |
+| FOXA   | —               | —                           | yes            | SKIP — acquirer in ROKU deal; M&A acquisitions typically depress acquirer price; not bullish for us |
+
+---
+
+### Scoring — survivors
+
+**LZB — La-Z-Boy Incorporated**
+- Q4 FY2026 (period ended April 25, 2026) after close June 16: adjusted EPS $1.26 vs $0.82 consensus (+53.7% beat; beat prior year $0.92 too). Revenue $570.3M (flat YoY, roughly in-line). Written same-store sales +11%, delivered +9%. Op margin 9.9% (+50 bps YoY).
+- Q1 FY2027 guide: sales $490–510M with adj. op margin 4.0–5.5% (seasonal step-down from Q4's $570M / 9.9% peak quarter; fiscal Q1 = May–July, summer furniture trough).
+- Pre-market reaction: Grok notes ~1.8% decline on the print (earnings call scheduled 8:30 AM ET June 17).
+- June 16 close: $35.19 (stock declined from $38.50 on June 12 → $35.19 going into earnings; analyst expectations low = consensus $0.82 vs $0.92 prior year, i.e., analysts expected YoY decline).
+- Last bar (June 12): close=38.495, vol=18,787 (IEX-understated; Yahoo ADV=412K). 5-bar trend: declining from $39.05 → $38.50.
+- Catalyst strength (0–4): **2** — Real EPS beat (+53.7% vs consensus) with strong demand metrics (written +11%). BUT revenue was flat YoY and only in-line vs consensus; no standalone guidance raise (fiscal year ended); Q1 guide disappointed vs Q4 run-rate (though seasonal). The forward signal from written +11% is encouraging but partially offset by the Q1 margin guide (4.0–5.5% vs Q4's 9.9%).
+- Novelty (0–3): **3** — Announced after June 16 close; no bar reflects it yet; not priced in.
+- Confirmation (0–2): **0** — Pre-market reaction is slightly negative (~-1.8% per Grok); last available bar (June 12) showed declining trend into earnings. Market is not confirming the beat as bullish.
+- Cleanliness (0–1): **1** — Just reported; no earnings within 3 days; no halts; no offsetting bad corporate news (Q1 guide weakness is seasonal, not a red flag).
+- **Total: 6** → Below threshold. Mixed print: strong EPS beat absorbed by weak Q1 guide and negative initial reaction.
+
+**ABBV — AbbVie Inc.**
+- FDA approval of SKINVIVE by JUVÉDERM for neck lines/neck appearance in adults (label extension from cheek indication). Announced June 16, 2026.
+- ABBV market cap: ~$390B. Allergan Aesthetics is one division. SKINVIVE neck-line extension is incremental to an existing cosmetic injectable product.
+- Catalyst strength (0–4): **1** — Real regulatory event but a cosmetic label extension with no material cash-flow delta at ABBV's scale. Not a first-in-class for a serious indication.
+- Novelty (0–3): **2** — Fresh June 16 news, not yet in bars.
+- Confirmation (0–2): **0** — No post-announcement bar; last bar (June 12): close=$227.67, flat. No upward catalyst response visible.
+- Cleanliness (0–1): **1** — No offsetting news; no halts.
+- **Total: 4** → Below threshold. Needle-small for a $390B company.
+
+**ASTS — AST SpaceMobile Inc.**
+- BlueBird 8, 9, 10 satellite launch scheduled today (June 17) on SpaceX Falcon 9. Grok reports up notably pre-market.
+- Last bar (June 12): open=$97.00, close=$82.43, vol=1,442,562 (very high vol, stock down -15% in one day). 5-bar trend: $92 → $89 → $87 → $97 → $82 — declining with extreme vol spike on last bar.
+- The June 12 high-volume down day is a major red flag: distribution. Stock was rejected at $97 and closed at $82 on massive selling.
+- Catalyst assessment: Satellite launches are SCHEDULED events, not surprises. BlueBird launch timeline has been publicly disclosed months in advance. Not a "fresh 24-hour" surprise catalyst per strategy.md.
+- Catalyst strength (0–4): **2** — Launch is a real milestone for constellation build-out, but it is a known/scheduled event.
+- Novelty (0–3): **1** — Known schedule, not a surprise; stock already in declining trend suggesting this launch is not catalyzing fresh demand.
+- Confirmation (0–2): **0** — Last bar: down -15% on 3× normal volume. Price action strongly non-confirming even with pre-market bump (could be noise on thin pre-market).
+- Cleanliness (0–1): **0** — The June 12 distribution day (large vol + big decline) represents potential negative corporate development (possible lock-up expiry, funding news, etc.). No offsetting positive catalyst that explains the bar. Fails cleanliness.
+- **Total: 3** → Below threshold. Declining chart with distribution, known launch event, no fresh surprise.
+
+**INTC — Intel Corporation**
+- Reports Intel commenced production of 18A-P chips (2nm-class process; key milestone in Intel's AI/foundry turnaround). Up ~4% pre-market June 17.
+- Last bar (June 12): close=$124.55, vol=5,901,388 (roughly normal for INTC). 5-bar trend: strong rally $110 → $124 over June 8–12. Quote June 16 (after-hours): $116.88 — fell back ~$7.67 (-6%) from June 12 high.
+- Context: INTC has been the center of an ongoing turnaround narrative (18A, Intel Foundry Services, Lip-Bu Tan CEO). Multiple "18A milestone" headlines over the past 12-18 months. This is a continuation of a running story.
+- Catalyst strength (0–4): **3** — "Commenced production" is concrete and material (vs. "making progress"). If 18A-P scales, it re-establishes Intel's competitive position in leading-edge chips. Direct impact on foundry revenue trajectory.
+- Novelty (0–3): **1** — 18A story has been in the press for 12+ months; stock ran $110→$124 last week (likely in anticipation), then gave back to $116. Another 4% pre-market pop continues the pattern of repeated buy-the-news/fade cycles. Very little first-wave surprise left.
+- Confirmation (0–2): **1** — Up ~4% pre-market = directional confirmation, but the June 12→16 pullback (-6%) weakens conviction (prior wave faded immediately).
+- Cleanliness (0–1): **1** — No earnings within 3 days (INTC typically reports late July); no halts.
+- **Total: 6** → Below threshold. Compelling tech story but novelty is low for a well-covered, multi-month narrative. Repeated buy/fade pattern suggests smart money already positioned.
+
+**MRK — Merck & Co., Inc.**
+- FDA approved Welireg (belzutifan) + Keytruda combination for adjuvant treatment of clear cell renal cell carcinoma (kidney cancer). June 16, 2026.
+- MRK market cap: ~$290B. Keytruda is the world's largest oncology drug (~$30B+ revenue). Adjuvant kidney cancer indication expands the label into earlier-stage patients.
+- Last bar (June 12): close=$119.04, vol=405,931 (below 9.96M ADV — thin bar; IEX issue). Quote June 16: $115.26 — stock actually declined from $120 range to $115.
+- Catalyst strength (0–4): **2** — Real label expansion for Keytruda (adjuvant = earlier-stage, larger patient population). However, adjuvant kidney cancer is not a top-5 indication; at MRK's scale, incremental.
+- Novelty (0–3): **2** — Fresh June 16 news; FDA approval for combo rather than monotherapy is a novel regulatory outcome.
+- Confirmation (0–2): **0** — MRK declined from $120→$115 on June 16 (stock went DOWN on or around the approval day). Zero confirmation.
+- Cleanliness (0–1): **1** — No offsetting news; no halts; no earnings within 3 days.
+- **Total: 5** → Below threshold. Real catalyst but non-confirming price action (MRK fell on the day).
+
+**ROKU — Roku Inc.**
+- Fox acquiring ROKU at ~$160/share (cash-and-stock, $22B enterprise value). Announced June 15.
+- ROKU June 12 bar: open=$124.41, high=$148.74, close=$143.22, vol=723K (4× normal) — this was the announcement day or the day before. June 16 quote: $137.94. Stock has ALREADY moved +$18–19 from pre-announcement and is now fading below June 12 close.
+- Same structural problem as prior ROKU analysis (June 16 pass): M&A arb. Upside capped at $160; current $137.94 = +15.9% max gain, far below +60% profit target for shares.
+- **Structurally ineligible** — M&A arb is not our thesis. Skip.
+
+---
+
+## 2026-06-17 pre-market watchlist
+
+No tradeable signal today.
+
+Skipped (below threshold):
+- LZB (score 6): Q4 EPS $1.26 vs $0.82 (+53.7%) is a real beat, but revenue flat, Q1 FY2027 guide disappoints seasonally, initial pre-market reaction is mild ~-1.8%, no confirmation. Score just misses.
+- INTC (score 6): 18A-P production start is a concrete milestone, but 18A story is well-covered (12+ months), stock did buy-the-news/fade last week already, novelty too low.
+- MRK (score 5): Real FDA combo approval, but stock DECLINED on the day — zero confirmation; needle small for $290B company.
+- ABBV (score 4): Cosmetic label extension (neck lines), immaterial for a $390B pharma. Catalyst strength too low.
+- ASTS (score 3): Scheduled known launch event (not a surprise catalyst), June 12 distribution day (big vol + -15%) is bearish signal, cleanliness fails.
+- ROKU: Structurally ineligible — M&A arb capped at $160 deal price; +15.9% max gain from $137.94 cannot reach +60% profit target.
+- WDC: Analyst upgrades / sector momentum only — excluded per strategy.md.
+
+Existing position: TSEM260626C00280000 (Jun 26 $280 call, 10 contracts, entry $23.80, -52.02% as of EOD June 16, bid=$11.42, stop=$9.52, time-stop 2026-06-22) — monitored by midday/EOD routines.
 - Verdict: RESUME MONDAY 2026-06-15 WITH CURRENT STRATEGY, contingent on xAI credit replenishment (console.x.ai). Book is 100% cash, 0/5 slots deployed.
