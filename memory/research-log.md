@@ -2276,3 +2276,15 @@ Skipped (below threshold):
 
 Existing position: TSEM260626C00280000 (Jun 26 $280 call, 10 contracts, entry $23.80, -52.02% as of EOD June 16, bid=$11.42, stop=$9.52, time-stop 2026-06-22) — monitored by midday/EOD routines.
 - Verdict: RESUME MONDAY 2026-06-15 WITH CURRENT STRATEGY, contingent on xAI credit replenishment (console.x.ai). Book is 100% cash, 0/5 slots deployed.
+
+---
+
+## 2026-06-17 market-open execution pass
+- market: open | trading_blocked: false
+- exits checked: 1 position (TSEM260626C00280000)
+  - bid=$10.10 ret=-57.56% | stop=-60%($9.52) → HOLD ($10.10 > $9.52) | target=+150%($59.50) → HOLD
+  - time-stop: 2026-06-22 (enforced EOD) | expiry guard: 2026-06-26 (enforced EOD)
+  - thesis: CLEAR — Grok found no material negative news; InP/AI data center supply agreement with IQE intact
+- halt checks: day_pnl=-3.80% vs cap=-40% → CLEAR | weekly realized P&L=$0 (no closed trades this week, WTD unrealized ~-13.8% vs cap=-80%) → CLEAR
+- entries: 0 — no candidates from pre-market pass (best: LZB=6, INTC=6; all below threshold of 7)
+- no orders placed
