@@ -2288,3 +2288,85 @@ Existing position: TSEM260626C00280000 (Jun 26 $280 call, 10 contracts, entry $2
 - halt checks: day_pnl=-3.80% vs cap=-40% → CLEAR | weekly realized P&L=$0 (no closed trades this week, WTD unrealized ~-13.8% vs cap=-80%) → CLEAR
 - entries: 0 — no candidates from pre-market pass (best: LZB=6, INTC=6; all below threshold of 7)
 - no orders placed
+
+---
+
+## 2026-06-18 pre-market research pass
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+> Limited materially bullish company-specific news for US large-cap equities in ~24h through June 18, 2026 (June 17 trading/after-hours). Notable items:
+> - KMX (CarMax): Q1 earnings and revenue beat (EPS $1.31 vs. $0.95 expected); shares rose >3.5% in response. [cnbc.com/2026/06/16/stock-market-today-live-updates.html]
+> - HUN (Huntsman): Upgraded to Neutral from Underperform by Mizuho; PT raised to $14 from $10. [benzinga.com/analyst-stock-ratings/upgrades]
+> - MOS (Mosaic): Upgraded to Buy from Sell by Freedom Broker; PT raised to $32 from $24. [benzinga.com]
+> - CRI (Carter's): Upgraded to Equal-Weight from Underweight by Wells Fargo; PT raised to $42 from $30. [benzinga.com]
+> No high-impact FDA approvals, major M&A, or other catalysts for >$1B names otherwise identified. Source: CNBC, MarketWatch/Benzinga.
+
+### Grok raw output — Query 2: Pre-market movers >2% on news catalyst (June 18)
+> QURE (uniQure): ~+78% pre-market on positive regulatory update for AMT-130 gene therapy (Huntington's disease) — BLA submission plans after FDA feedback. [finance.yahoo.com/markets/stocks/gainers/]
+> Other large gainers (CAST ~+150%, LNKS ~+90%, APWC ~+70%, ADTX ~+60%) — low-float/penny stock volatility or prior announcements, not fresh same-day catalysts. [benzinga.com/premarket, stockanalysis.com]
+> Source: Benzinga, StockAnalysis, Yahoo Finance pre-market snapshots.
+
+### Grok raw output — Query 3: After-close earnings beats + raised guidance (June 17 close)
+> No confirmed beat+raise reports available. ACN (Accenture) and KR (Kroger) both have earnings calls scheduled for 8:00 AM EDT June 18 — results not yet published as of Grok's search window. Consensus: ACN EPS ~$3.71, rev ~$18.78B; KR EPS ~$1.59, rev ~$45.4B. Source: newsroom.accenture.com, ir.kroger.com.
+
+### Grok raw output — Query 4: FDA approvals, contracts >$100M, M&A, regulator decisions (last 24h)
+> - SPR/SPRO (Spero Therapeutics): FDA approved Utebzi (tebipenem pivoxil), first oral carbapenem for complicated UTIs, June 17 2026. Partner: GSK. SPRO closed ~$2.46 (+16%) on approval day; market cap ~$122M. [us.gsk.com, stocktitan.net/news/SPRO]
+> - No other qualifying events (large contract wins, M&A, other regulator decisions) identified.
+> Source: FDA announcement via Clinical Trial Vanguard / GSK press release / Drugs.com.
+
+---
+
+### Candidate universe filter pass
+
+**Eliminated before scoring:**
+- HUN: Analyst upgrade only — "pundit price target / upgrade with no new information" per strategy.md. Skip.
+- MOS: Analyst upgrade only. Skip.
+- CRI: Analyst upgrade only. Skip.
+- GSK: FDA partner approval (Utebzi) for Spero drug. Immaterial to ~$100B company. Catalyst strength = 0–1. Skip.
+- SPRO: FDA approval is real catalyst BUT market cap ~$122M < $1B minimum (guardrails). Skip.
+- SPRO (Alpaca symbol): maps to Spirit Aerosystems — inactive/not tradable. N/A.
+- QURE: BLA announcement is real catalyst, BUT +78% pre-market = move entirely priced in, novelty = 0. Market cap also sub-$1B. Skip.
+- ACN: Earnings results not yet published at research-pass time (call at 8 AM ET, ~1h after this pass runs). Cannot score without actuals. Monitor at market-open.
+- KR: Same — results not yet published. Monitor at market-open.
+
+**Survivors: KMX only**
+
+**KMX — volume/asset checks:**
+- `alpaca.sh asset KMX`: active, tradable, NYSE, us_equity ✓
+- `volume.sh KMX`: 3,464,453 30-day consolidated ADV (Yahoo) >> 100k minimum ✓
+- Price (June 17 quote): $47.32 — within $5–$1000 bounds ✓
+- Market cap: ~$7–8B >> $1B minimum ✓
+- Earnings within 3 days: just reported today, next earnings ~September ✓
+- In portfolio: no (all cash after TSEM stop-out June 17) ✓
+
+**KMX — bar confirmation check:**
+- Last bar available: June 15, close $52.22, volume 337,080 (IEX; real ADV is 3.46M per Yahoo — IEX under-reports as documented)
+- June 17 EOD quote: $47.32 → stock declined ~9.6% in the 2 days preceding earnings (bearish positioning going in)
+- Pre-market June 18: up ~3.5% to ~$48.97 in response to Q1 beat
+- No regular-session June 18 bar available yet (pre-market routine runs before open)
+- Confirmation note: Pre-market uptick on material earnings beat; volume will be elevated given news catalyst — confirmed directional move in progress
+
+**KMX — scoring:**
+- Catalyst strength (0–4): Q1 EPS $1.31 vs $0.95 consensus (+38% beat), revenue beat. No guidance raise reported. Beat magnitude is exceptional for large-cap consumer discretionary; cash-flow delta is material for the quarter. **Score: 3**
+- Novelty (0–3): Stock down ~9.6% in 2 days going into earnings (market was positioned bearishly). Pre-market reaction (+3.5%) is muted relative to the size of the beat, suggesting most of the re-rating is still ahead as analysts revise estimates upward. **Score: 2**
+- Confirmation (0–2): Pre-market up ~3.5% on earnings catalyst. Regular-session bar not yet available. Partial credit. **Score: 1**
+- Cleanliness (0–1): No offsetting bad news. No earnings within 3 trading days (just reported). No halt or OTC concern. **Score: 1**
+- **Total: 7** — at threshold, tradeable.
+
+---
+
+## 2026-06-18 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                       | source                                    |
+|--------|-------|---------------------------------------------------------------------------|-------------------------------------------|
+| KMX    | 7     | Q1 FY2026 EPS $1.31 vs $0.95 consensus (+38% beat), revenue beat; stock -9.6% into earnings | cnbc.com/2026/06/16/stock-market-today-live-updates.html |
+
+Skipped (below threshold):
+- QURE (score ~4): +78% pre-market on AMT-130 BLA news — move entirely priced in, novelty = 0; also sub-$1B market cap
+- SPRO (N/A): FDA approval of Utebzi (first oral carbapenem) — real catalyst but market cap ~$122M < $1B minimum; eliminated at universe filter
+- HUN (score 2): Mizuho upgrade to Neutral — analyst upgrade only, no new corporate information; excluded per strategy.md
+- MOS (score 2): Freedom Broker upgrade to Buy — analyst upgrade only; excluded per strategy.md
+- CRI (score 2): Wells Fargo upgrade to Equal-Weight — analyst upgrade only; excluded per strategy.md
+- GSK (score 1): Utebzi FDA approval is Spero's drug; immaterial to ~$100B company
+- ACN (score N/A): Earnings call at 8:00 AM ET — results not published at research-pass time; market-open routine should check actuals before any decision
+- KR (score N/A): Same — earnings call at 8:00 AM ET; check at market-open
