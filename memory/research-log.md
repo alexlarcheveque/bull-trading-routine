@@ -2370,3 +2370,20 @@ Skipped (below threshold):
 - GSK (score 1): Utebzi FDA approval is Spero's drug; immaterial to ~$100B company
 - ACN (score N/A): Earnings call at 8:00 AM ET — results not published at research-pass time; market-open routine should check actuals before any decision
 - KR (score N/A): Same — earnings call at 8:00 AM ET; check at market-open
+
+---
+
+## 2026-06-18 market-open execution pass
+- market: open | trading_blocked: false
+- exits checked: 0 positions (TSEM260626C00280000 closed at EOD 2026-06-17 via stop-loss)
+- ACN market-open check: Down ~18% to ~$128.90 (vs June 17 close $156.01) on revenue miss, full-year guidance cut, weak bookings — despite EPS beat ($3.80 vs $3.71). Negative confirmation; not a bullish catalyst → SKIP.
+- KR market-open check: Adjusted EPS $1.58 in-line with consensus (~$1.58–1.59); revenue modest beat; guidance reaffirmed (no raise). Not a tradeable catalyst → SKIP.
+- halt checks: day_pnl=0.00% vs cap=-40% → CLEAR | WTD realized=-6.45% (TSEM stop June 17) vs cap=-80% → CLEAR | open positions 0/2 → CLEAR
+- entries: 1 candidate (KMX, score=7)
+  - OPTIONABLE check: 15 KMX call contracts returned → CALL path attempted
+  - Option DTE filter (June 25–July 2, 7–14 DTE): 0 eligible contracts — all available KMX calls expire today (June 18) → fall back to SHARES path
+  - Shares sizing: EQUITY=$85,561.70 / PRICE=$48.06 / target_position_pct=50% → QTY=890 shares
+  - Preflight: PASS (preflight-check.sh exit=0)
+  - Buy order submitted: KMX 890 shares market order (order id=f78c9693-9608-485f-a407-787ebe3c41c7)
+  - Fill poll (10 × 3s = 30s): status="new" — UNFILLED after bounded poll
+  - ORDER LIVE BUT UNFILLED: f78c9693 — midday routine must confirm fill and log to trade-log.md (YYYY-MM-DD HH:MM | KMX | BUY | 890 | <FILL> | equity score=7 catalyst=Q1 FY2026 EPS $1.31 vs $0.95 (+38% beat); stock -9.6% into earnings | 7 | 2026-06-25)
