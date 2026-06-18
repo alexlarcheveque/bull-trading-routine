@@ -1,16 +1,16 @@
 # portfolio.md
-# Updated 2026-06-18 06:34 by market-open routine.
+# Updated 2026-06-18 12:00 by midday routine.
 
 ## Account
-- equity: 85561.70
-- cash: 85561.70
+- equity: 88770.31
+- cash: 42512.56
 - buying_power: 299144.09
-- day_pnl_pct: 0.00
+- day_pnl_pct: 3.75
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| — | — | — | — | — | — | — |
+| KMX | shares | 890 | 48.43 | 2026-06-18 | 2026-06-25 | +7.32% |
 
 ## Notes
 2026-06-15 market-open: 1 buy executed. TSEM260626C00280000 (Jun 26 $280 call) — 10 contracts @ $23.80 fill avg (order bce2135c). Catalyst: Multi-year InP epiwafer supply agreement with IQE for AI data center optical connectivity; IP litigation settled. Score=7. Premium at risk=$23,800 (23.9% of equity, within 25% cap). Target exit: 2026-06-22 (7-day time stop). Expiry guard: contract expires 2026-06-26 (>2 trading days from time stop — clear).
@@ -23,3 +23,4 @@ Exit thresholds: take-profit at +150% premium ($59.50 bid), stop at -60% ($9.52 
 2026-06-17 midday: 0 exits. TSEM bid=$12.24 (ret=-48.57%) — stop at $9.52 not triggered; thesis intact (Grok: no material negative news in last 6h; InP/AI data center thesis unchanged). Day P&L=-1.22% (< 40% daily cap, no halt).
 2026-06-17 EOD: 1 stop-loss exit. TSEM bid=$8.86 (ret=-62.77%) crossed -60% stop threshold ($9.52). Preflight OK. Sold 10 contracts @ $9.80 fill avg (order abf8f693, ret=-58.82%). 0 time-stops (target 2026-06-22 not reached). 0 expiry-guard exits (expiry 2026-06-26, 7 trading days away). WTD=-6.45% (Monday open $91,462 → $85,562), weekly cap CLEAR (-80%). EOD email sent (id: d88ff672).
 2026-06-18 market-open: 0 exits (no positions). 1 buy attempted: KMX 890 shares @ market (score=7, Q1 EPS $1.31 vs $0.95 +38% beat). Call path attempted — 0 eligible contracts in 7–14 DTE window (all KMX calls expire today June 18); fell back to shares. Preflight PASS. Order f78c9693 submitted but UNFILLED after 30s poll (status=new). Buying_power reduced to $299,144.09 (order reserved). Midday routine must confirm fill and log to trade-log.md.
+2026-06-18 midday: Order f78c9693 confirmed FILLED — 890 shares @ $48.43 avg. Current price $51.975 (+7.32%). Stop at -25% ($36.32), target at +60% ($77.49) — neither triggered. Thesis intact (Grok: no material negative news in last 6h). Day P&L=+3.75% (< 40% daily cap, no halt). 0 exits.
