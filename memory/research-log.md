@@ -3,6 +3,23 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-18 EOD risk pass
+- market: open
+- time-stops evaluated: KMX (target_exit=2026-06-25) — not reached today
+- time-stops fired: 0
+- expiry guard: no options in portfolio
+- safety net checks (pre-close prices):
+  - KMX: cur=$53.54  ret=+10.55%  stop=$36.32  target=$77.49  time-stop=2026-06-25 → HOLD
+  - thesis check: CLEAR — Grok found no material negative news on KMX in last 6h; Q1 EPS +38% beat thesis unchanged
+- weekly_loss_cap: WTD=-1.48% (Monday open $91,462 → $90,108) vs cap=-80% → CLEAR
+- daily_loss_cap: day_pnl=+5.31% vs cap=-40% → CLEAR
+- exits: 0
+- trade-log correction: KMX BUY (order f78c9693, 890 shares @ $48.431618, 2026-06-18 09:31) appended to trade-log.md — was omitted by midday routine
+- account: equity=$90,108.16, cash=$42,457.56, buying_power=$303,251.92, day_pnl=+5.31%
+- EOD email sent (id=5f56880f-5d12-46fa-9331-0a708365885e)
+
+---
+
 ## 2026-06-16 pre-market research pass
 
 ### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
