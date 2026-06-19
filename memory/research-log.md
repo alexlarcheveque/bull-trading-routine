@@ -2404,3 +2404,57 @@ Skipped (below threshold):
   - Buy order submitted: KMX 890 shares market order (order id=f78c9693-9608-485f-a407-787ebe3c41c7)
   - Fill poll (10 × 3s = 30s): status="new" — UNFILLED after bounded poll
   - ORDER LIVE BUT UNFILLED: f78c9693 — midday routine must confirm fill and log to trade-log.md (YYYY-MM-DD HH:MM | KMX | BUY | 890 | <FILL> | equity score=7 catalyst=Q1 FY2026 EPS $1.31 vs $0.95 (+38% beat); stock -9.6% into earnings | 7 | 2026-06-25)
+
+---
+
+## 2026-06-19 pre-market research pass
+
+### Grok raw output — query 1: large-cap bullish news (last 24h)
+- **INTC**: Trump announced via Truth Social that Apple has agreed to partner with Intel on chip design/manufacturing in the US. INTC rallied +10.64% on June 18 ($121.10 → $133.99), intraday high $135.48. Neither company confirmed details; analysts note deal may start small. Sources: Reuters (reuters.com/business/trump-says-apple-work-with-intel-manufacture-chips-us-2026-06-18/), CNBC (cnbc.com/2026/06/18/trump-intel-apple-chip-design-deal.html).
+- **MRVL**: Keybanc maintained Overweight + raised PT; stock up ~8% June 18 amid semi rally.
+- **MU**: Broad semi sector rally +9% June 18 on memory pricing tailwinds and positive spillover from INTC news.
+
+### Grok raw output — query 2: pre-market movers June 19 (>2%, real news)
+- All named movers are micro/penny caps below universe filters: ADTX (+234%), CAST (+133%), CDT (+92%), LNKS (+86%), WKSP (+57%, financing at $1.20/share). No large-cap (>$1B) pre-market movers with genuine news catalysts identified for June 19. Sources: Benzinga premarket, StockAnalysis gainers.
+
+### Grok raw output — query 3: earnings beat + raised guidance (after June 18 close)
+- **JBL (Jabil)**: Fiscal Q3 2026 — EPS $3.16 vs ~$3.09 consensus; revenue ~$8.8B vs ~$8.6B est (+12% YoY). Raised FY2026 guidance: revenue to ~$35B (from $34B), core EPS to ~$12.70 (from $12.25), FCF >$1.4B. AI infrastructure strength cited. Initial surge +7–14% on June 17-18, then full reversion; AH June 18 ~$372.65 (+0.21% from $371.88 close). Sources: Proactive Investors, Investing.com, IBD.
+
+### Grok raw output — query 4: FDA / contracts / M&A (last 24h)
+- **BIIB**: Announced acquisition of private biotech RayThera for up to $1B; preclinical small-molecule immunology assets; expected close Q3 2026. Sources: Biogen IR, GlobeNewswire.
+- **MRNA**: VRBPAC voted 9-0 (unanimous) in favor of Moderna's MFLUSIVA (mRNA-1010) mRNA flu vaccine for adults 50-64 and 65+; AdCom met June 18 (8:30 AM–4:00 PM ET); FDA decision expected August 5, 2026. MRNA closed +3.50% ($61.80 → $63.96), intraday high $67.74 (+9.6%), volume ~24M vs 8M ADV. Sources: BioWorld, BioPharma Dive, Reuters.
+- **MRK**: FDA approved additional pediatric indication for CAPVAXIVE pneumococcal vaccine. Minor label expansion for mega-cap. Sources: StockTitan.
+- **NVCR**: Phase 3 TRIDENT trial (EF-32) failed primary endpoint — median OS 17.7 vs 17.5 months, HR 0.953, p=0.519; stock -18% on June 18 ($17.85 → ~$14.50–15.73). Sources: BusinessWire, RTTNews.
+
+---
+
+### Candidate evaluation
+
+| ticker | universe pass | catalyst strength (0–4) | novelty (0–3) | confirmation (0–2) | cleanliness (0–1) | score | verdict |
+|--------|--------------|------------------------|---------------|-------------------|-------------------|-------|---------|
+| INTC | PASS (active, tradable; ADV 137.8M >> 100k) | 2 — Apple-Intel deal unconfirmed by either company; speculative | 0 — +10.64% fully priced in on June 18; AH flat | 1 — big volume June 18, but yesterday's session | 0 — no earnings within 3d? unclear; prior close June 17 $121.10 | **3** | SKIP |
+| JBL | PASS (active, tradable; ADV 1.3M >> 100k) | 3 — beat+raise with AI infrastructure tailwind | 1 — surged +7-14% June 17-18, then fully reversed; AH barely moved | 0 — price flat/negative vs pre-earnings close; no confirmation | 1 — clean | **5** | SKIP |
+| MRNA | PASS (active, tradable; ADV 8M >> 100k) | 3 — unanimous 9-0 AdCom for mRNA flu vaccine is significant signal | 1 — stock already moved +3.5% (close) / +9.6% (intraday high) on June 18; market has processed the news | 1 — above-average volume June 18, but gave back intraday gains | 1 — clean | **6** | SKIP |
+| MRVL | PASS | 0 — analyst PT raise only, no new corporate information | 0 | 1 | 1 | **2** | SKIP (analyst upgrade only; excluded per strategy.md) |
+| MU | PASS | 1 — sector sentiment spillover, no specific catalyst | 0 — move already happened June 18 | 1 | 1 | **3** | SKIP (macro/sentiment, not a corporate catalyst) |
+| BIIB | PASS | 1 — acquirer of preclinical assets; no near-term cash-flow impact | 0 | 0 | 0 — deal uncertainty | **1** | SKIP (acquirer of early-stage pipeline; not a bullish corporate catalyst) |
+| MRK | PASS | 1 — pediatric label expansion immaterial for ~$240B company | 0 | 0 | 1 | **2** | SKIP (not material for mega-cap) |
+| NVCR | FAIL (no-short rule; trial failed, stock −18%) | — | — | — | — | — | SKIP (negative catalyst; no-shorts rule) |
+| Pre-market movers (WKSP, ADTX, CAST, etc.) | FAIL (all sub-$5/share; sub-$1B market cap) | — | — | — | — | — | SKIP (universe filter: price < $5, market cap < $1B) |
+
+## 2026-06-19 pre-market watchlist
+
+No tradeable signal today.
+
+Best score: MRNA = 6 (AdCom vote already priced into June 18 close; not enough novelty remaining).
+
+Skipped (below threshold):
+- INTC (score 3): Trump/Apple-Intel chip deal — +10.64% already priced in on June 18 ($121.10 → $133.99); catalyst is unconfirmed speculation; novelty = 0
+- JBL (score 5): Q3 FY2026 beat+raise ($3.16 vs $3.09 EPS; FY guide raised) — stock surged then fully reversed on June 17-18; AH +0.21% only; market has processed and rejected the move
+- MRNA (score 6): Unanimous 9-0 VRBPAC vote for MFLUSIVA — meaningful but stock moved +3.5% (intraday +9.6%) on June 18; move already happened; FDA decision August 5 is known timing
+- MRVL (score 2): Analyst PT raise only — no new corporate information; excluded per strategy.md
+- MU (score 3): Sector sentiment/memory pricing spillover — no specific corporate catalyst
+- BIIB (score 1): Acquirer of preclinical immunology assets for up to $1B — not bullish for acquirer
+- MRK (score 2): Minor pediatric CAPVAXIVE label expansion — immaterial for ~$240B company
+- NVCR (N/A): TRIDENT Phase 3 failed primary endpoint; stock −18%; no-shorts rule applies
+- Pre-market movers (WKSP, ADTX, CAST, CDT, LNKS): All micro/penny caps; price < $5 and/or market cap < $1B; eliminated at universe filter
