@@ -2458,3 +2458,12 @@ Skipped (below threshold):
 - MRK (score 2): Minor pediatric CAPVAXIVE label expansion — immaterial for ~$240B company
 - NVCR (N/A): TRIDENT Phase 3 failed primary endpoint; stock −18%; no-shorts rule applies
 - Pre-market movers (WKSP, ADTX, CAST, CDT, LNKS): All micro/penny caps; price < $5 and/or market cap < $1B; eliminated at universe filter
+
+---
+
+## 2026-06-19 market-open execution pass
+- market: CLOSED (Juneteenth federal holiday) — is_open=false
+- trading_blocked: false
+- action: market closed, skipping all exits and entries
+- pre-market watchlist: 0 candidates (best score: MRNA=6, below threshold)
+- no orders placed
