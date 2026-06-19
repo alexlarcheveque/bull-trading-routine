@@ -3,6 +3,27 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-19 weekly-review: NO strategy edit
+- week of 2026-06-16 to 2026-06-19 (short week — Juneteenth Friday; 3 trading days: Jun 16/17/18)
+- WTD P&L: -$1,354 (-1.48%) [Monday open $91,462 → Thursday EOD $90,108]
+- vs SPY: UNAVAILABLE (Alpaca IEX bars stalled at 2026-06-12; same data-feed lag as prior reviews)
+- 1 trade closed: TSEM260626C00280000 call, stop -58.82% (Jun 15–17, 2 trading days)
+- win rate: 0/1 = 0% | avg loser: -58.82% | 0 time-stops | 0 preflight rejections
+- stop-out hindsight: TSEM option stopped at $9.80; current bid $18.52 (-22.3% implied vs entry $23.80).
+  Underlying TSEM: $286.53 (thesis was right, option path was not). Stop fired correctly per rules.
+  0 stop-outs "green" at day 14 — below the ≥2 threshold for a stop-rule adjustment.
+- missed candidates: ROKU (score 7, M&A arb, -2.0% since eval — correct reject), INTC (score 6,
+  +7.5% from Jun 12 but macro/sector driver — correct score), LZB (score 6, +2.9% — no miss).
+- observation logged: supply-contract catalysts (TSEM) showed gradual/volatile price discovery
+  less suited to short-dated calls than earnings beats. N=1 — revisit after 2+ similar cases before
+  considering a strategy.md edit on catalyst-type → instrument choice.
+- missing June 12 review: Grok API offline that week; SMTC time-stop Jun 10 (-3.23%),
+  A time-stop Jun 11 (-2.65%) — no rubric signals, no strategy change warranted.
+- strategy edit: NONE (1-trade sample, option loss within MAX DEGEN parameters, thesis was correct)
+- VERDICT: RESUME MONDAY 2026-06-23 WITH CURRENT STRATEGY.
+  Priority: KMX target exit 2026-06-25 (+10.55% unrealized); deploy remaining 1 slot on ≥7 signal.
+- weekly review email: 46578e54-e8bc-4b9f-883f-b2d71271993b
+
 ## 2026-06-18 EOD risk pass
 - market: open
 - time-stops evaluated: KMX (target_exit=2026-06-25) — not reached today
