@@ -3,6 +3,20 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-24 market-open execution pass
+- market: open (is_open=true) | trading_blocked: false
+- positions reconciled (Alpaca): 1 (KMX 890 sh @ $48.431618) — matches portfolio.md
+- exits checked: 1 position (KMX)
+  - KMX: cur=$52.64  ret=+8.69%  stop=-25%($36.32)→HOLD  target=+60%($77.49)→HOLD
+  - time-stop: 2026-06-25 (today=2026-06-24) → HOLD (fires tomorrow; enforced by EOD)
+  - thesis check: CLEAR — Grok found no material negative KMX news in last 24h; Q1 FY27 EPS +38% beat thesis intact; UBS PT→$57, Morgan Stanley PT→$44 post-earnings
+- exits: 0
+- halt checks: day_pnl=+1.40% vs cap=-40% → CLEAR | WTD≈flat / 0 closed trades this week vs cap=-80% → CLEAR | open positions 1/2 → CLEAR (1 slot free)
+- entries: 0 — NO pre-market watchlist block dated 2026-06-24 exists. Last research pass was 2026-06-19 (0 candidates, top score 6 MRNA). No pre-market/market-open commits for 06-22, 06-23, or 06-24; only a 06-22 midday ran. Market-open executes the watchlist pre-market produces — with none, no entries.
+- no orders placed
+- account: equity=$89,894.55, cash=$42,457.55, buying_power=$302,653.80, day_pnl=+1.40%
+- ANOMALY (flag for weekly-review): the pre-market research routine appears not to have run since 2026-06-19. With 1 open slot free and KMX timing out tomorrow, the book is under-deployed because no watchlist is being generated. Operator: confirm pre-market cron is firing.
+
 ## 2026-06-19 weekly-review: NO strategy edit
 - week of 2026-06-16 to 2026-06-19 (short week — Juneteenth Friday; 3 trading days: Jun 16/17/18)
 - WTD P&L: -$1,354 (-1.48%) [Monday open $91,462 → Thursday EOD $90,108]

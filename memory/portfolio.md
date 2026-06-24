@@ -1,16 +1,16 @@
 # portfolio.md
-# Updated 2026-06-18 15:55 by EOD routine.
+# Updated 2026-06-24 09:39 by market-open routine.
 
 ## Account
-- equity: 90108.16
-- cash: 42457.56
-- buying_power: 303251.92
-- day_pnl_pct: 5.31
+- equity: 89894.55
+- cash: 42457.55
+- buying_power: 302653.80
+- day_pnl_pct: 1.40
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| KMX | shares | 890 | 48.43 | 2026-06-18 | 2026-06-25 | +10.55% |
+| KMX | shares | 890 | 48.43 | 2026-06-18 | 2026-06-25 | +8.81% |
 
 ## Notes
 2026-06-15 market-open: 1 buy executed. TSEM260626C00280000 (Jun 26 $280 call) — 10 contracts @ $23.80 fill avg (order bce2135c). Catalyst: Multi-year InP epiwafer supply agreement with IQE for AI data center optical connectivity; IP litigation settled. Score=7. Premium at risk=$23,800 (23.9% of equity, within 25% cap). Target exit: 2026-06-22 (7-day time stop). Expiry guard: contract expires 2026-06-26 (>2 trading days from time stop — clear).
@@ -26,3 +26,4 @@ Exit thresholds: take-profit at +150% premium ($59.50 bid), stop at -60% ($9.52 
 2026-06-18 midday: Order f78c9693 confirmed FILLED — 890 shares @ $48.43 avg. Current price $51.975 (+7.32%). Stop at -25% ($36.32), target at +60% ($77.49) — neither triggered. Thesis intact (Grok: no material negative news in last 6h). Day P&L=+3.75% (< 40% daily cap, no halt). 0 exits.
 2026-06-18 EOD: 0 time-stops (KMX exit 2026-06-25 not reached), 0 expiry-guard exits (no options). Safety net CLEAR — KMX $53.54 (+10.55% vs entry $48.43); stop $36.32 (clear), target $77.49 (not triggered); thesis intact (Grok: no material negative news; Q1 EPS beat thesis unchanged). WTD=-1.48% (Monday open $91,462 → $90,108), weekly cap CLEAR (-80%). KMX BUY logged to trade-log.md (missed by midday). EOD email sent (id: 5f56880f).
 2026-06-22 midday: 0 exits. KMX last $52.68 (ret=+8.77% vs entry $48.43) — stop at -25% ($36.32) and target at +60% ($77.49) neither triggered; thesis intact (Grok: no material negative news in last 6h; Q1 EPS beat / turnaround thesis unchanged). Day P&L=-1.01% (< 40% daily cap, no halt). Alpaca reconciled — 890 shares, matches portfolio.
+2026-06-24 market-open: 0 exits, 0 buys. KMX last $52.64 (ret=+8.69% vs entry $48.43) — stop $36.32 (clear), target $77.49 (not triggered); thesis CLEAR (Grok: no material negative KMX news in last 24h; Q1 EPS beat intact, UBS PT→$57, MS PT→$44). Time-stop 2026-06-25 = TOMORROW (EOD enforces). Halt checks: day_pnl=+1.40% (cap -40%), WTD≈flat / 0 closed trades (cap -80%), 1/2 positions → ALL CLEAR. Entries: 0 — NO pre-market watchlist for today (last research pass was 2026-06-19; pre-market/market-open did not commit for 06-22/06-23/06-24). Alpaca reconciled — 890 shares, matches portfolio. ANOMALY for weekly-review: pre-market research routine appears not to have run since 2026-06-19.
