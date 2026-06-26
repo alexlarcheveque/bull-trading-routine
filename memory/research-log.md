@@ -2567,3 +2567,16 @@ Skipped (below threshold):
 - action: market closed, skipping all exits and entries
 - pre-market watchlist: 0 candidates (best score: MRNA=6, below threshold)
 - no orders placed
+
+## 2026-06-26 market-open execution pass
+- market: OPEN (is_open=true); trading_blocked=false
+- positions at open: KMX 890 shares (entry $48.43 2026-06-18, target_exit 2026-06-25)
+- Step 1 exits:
+  - KMX: cur≈$52.10  ret=+7.6% (stop $36.32 clear, target $77.49 not hit, thesis intact per Grok)
+    → TIME STOP fired: target_exit 2026-06-25 < today 2026-06-26 (OVERDUE 1 day; 06-25 EOD did not run).
+    Preflight OK. SOLD 890 @ $52.53 (order 56b07918, ret=+8.46%). Sell polled `new` 30s (paper-sim lag) then filled.
+- Step 2 halt checks: day_pnl=-0.37% (cap -40%), 0 open positions (cap 2), WTD clear (cap -80%) → ALL CLEAR
+- Step 3 entries: 0 — 2026-06-26 pre-market watchlist = no tradeable signal (best MU=6, untradeable >$1000/sh; nothing >=7)
+- result: 0 buys, 1 sell, equity≈$89,209, now FLAT (all cash)
+- ANOMALY: EOD routine not running (no EOD commits in recent git log; only midday + pre-market fire). KMX slipped a day past its
+  time stop because of this — market-open enforced the overdue time stop to honor strategy.md. EOD cron needs investigating.
