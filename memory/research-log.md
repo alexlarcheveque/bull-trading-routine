@@ -3,6 +3,71 @@
 # Pre-market.md writes a daily watchlist block. Preflight-check.sh appends a
 # rejection block whenever an order is blocked. Halt events get a marker.
 
+## 2026-06-26 pre-market research pass
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+**MU (Micron Technology):** Massive Q3/FY earnings beat and sharply raised next-quarter revenue
+guidance (~$50B vs. ~$43B consensus), signaling sustained strong AI-driven memory demand. Stock
+rose double-digits intraday. Sources: Bloomberg TV "Daybreak Europe 6/26/2026"; X posts. Timestamp:
+news broke/reported June 25–26, 2026 (post-earnings reaction). No other materially bullish large-cap
+catalysts prominently reported in last 24h; broader market mixed-to-negative on Fed commentary +
+Apple-related pressure. SK Hynix US listing noted but not a US-listed large-cap.
+
+### Grok raw output — Query 2: Pre-market movers >2% on news (2026-06-26)
+Pre-market gainers ~6:22 AM ET (Investing.com): CRL +7.83%, RL +6.80%, ATO +5.85%, ECL +4.44%,
+CTAS +4.32%, KKR +4.20%, CINF +3.92%. Micro-caps (ILLR +~92%, IVF +~55%, SDOT/TII/BDRX/SHPH 30%+)
+low-float/volatility, no fundamental news. "Clear same-day news catalysts tied specifically to the
+June 26 pre-market moves appear limited or absent" — moves align with momentum / prior earnings (RL's
+May 21 beat) / rotation / gap-fill, NOT fresh catalysts. No major new earnings/M&A/FDA/analyst actions
+linked to these surges. Sources: Investing.com, Benzinga, stockanalysis.com.
+
+### Grok raw output — Query 3: Earnings beat AND raised guidance (after yesterday's close)
+**MU (Micron):** fiscal Q3 2026. Beat: adj EPS $25.11 vs ~$20.78–$20.98 consensus (+~$4.13); revenue
+$41.46B vs ~$35.8–35.9B est. Raise: Q4 revenue guide ~$50B vs consensus ~$43.58B; strong AI/HBM
+outlook. NOTE: report date was June 24, 2026 (after prior close) — NOT after the June 25 close.
+Source: CNBC/MarketBeat/Bloomberg. No other tickers beat AND raised after the June 25 close (June 26
+calendar = Apogee, Cineverse — no matching beat+raise detail).
+
+### Grok raw output — Query 4: FDA / contracts >$100M / M&A / regulator (last 24h)
+**TECH (Bio-Techne):** M&A announced June 25, 2026 — Merck KGaA to acquire Bio-Techne for ~$11.3B
+(€9.9B EV), all-cash at $73.00/share, a 36% premium. Expected close late 2026 / early 2027, subject
+to approvals; ~€140M annual cost synergies by year three. Sources: insidearbitrage.com,
+listingtrack.io. No FDA approvals, large contract wins (>$100M), or major regulator decisions matching
+criteria in last 24h.
+
+### Universe filter + scoring
+| ticker | asset | 30d ADV (Yahoo) | last bar (Jun 22, feed lag) | verdict |
+|--------|-------|-----------------|------------------------------|---------|
+| MU   | active/tradable us_equity | 55,650,830 | $1,211.38 | **FAILS guardrail max_price_per_share=1000** (>$1000/sh → preflight reject). Also move already happened. |
+| TECH | active/tradable us_equity | 4,639,530  | $55.62 (pre-deal) | passes universe; gaps to ~$72 deal price at open. |
+
+- Both NOT held (portfolio = KMX only). No disallowed substrings. Both pass volume floor (100k).
+- Bars feed is stale at 2026-06-22 (same IEX lag noted in prior passes) — confirmation inferred.
+
+### Scores
+- **MU = 6** (untradeable): catalyst strength 4 (enormous beat+raise, AI/HBM), novelty 1 (reported
+  June 24 after close — TWO days ago, double-digit move already realized; we'd be chasing the second
+  wave with most of it gone), confirmation ~1 (pre-earnings run-up strong; post-print bars unavailable),
+  cleanliness 0 (price $1,211 breaches the $1,000/sh hard cap → preflight rejects; 5% sizing fragments).
+  Strong news, but BOTH the price cap and the spent novelty disqualify it. SKIP.
+- **TECH = 4**: catalyst strength 3 (real all-cash deal, but a TARGET — upside capped at $73 deal price),
+  novelty 0 (the 36% premium is captured at the announcement gap; at the open it trades ~$72, leaving
+  only ~1.4% spread to a deal closing 6+ months out, with deal-break risk), confirmation 0, cleanliness 1.
+  Classic merger-arb with no momentum left for a 14-day swing. SKIP.
+
+## 2026-06-26 pre-market watchlist
+
+No tradeable signal today.
+
+Skipped (below threshold):
+- MU (score 6): strongest catalyst of the day but untradeable — trades >$1,000/sh ($1,211), breaching
+  the max_price_per_share=1000 guardrail (preflight would reject); and the earnings move already
+  happened June 24 (novelty ~1, we'd be chasing).
+- TECH (score 4): all-cash M&A target at $73 (36% premium). Premium is captured at the open gap (~$72);
+  only ~1% spread left to a late-2026/2027 close. No momentum for our 14-day window.
+- CRL/RL/ATO/ECL/CTAS/KKR/CINF (pre-market gainers): Grok found NO fresh same-day catalyst —
+  momentum/rotation/gap-fill. Fail the freshness test in strategy.md.
+
 ## 2026-06-24 market-open execution pass
 - market: open (is_open=true) | trading_blocked: false
 - positions reconciled (Alpaca): 1 (KMX 890 sh @ $48.431618) — matches portfolio.md
