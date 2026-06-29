@@ -2580,3 +2580,43 @@ Skipped (below threshold):
 - result: 0 buys, 1 sell, equity≈$89,209, now FLAT (all cash)
 - ANOMALY: EOD routine not running (no EOD commits in recent git log; only midday + pre-market fire). KMX slipped a day past its
   time stop because of this — market-open enforced the overdue time stop to honor strategy.md. EOD cron needs investigating.
+
+---
+
+## 2026-06-29 pre-market research pass
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+Limited specific company-level bullish news for large-caps (>$2B) in the last ~24h (Jun 28 eve → Jun 29).
+No major earnings, beats, guidance raises, FDA approvals, or major contracts widely reported for large-caps;
+Jun 29 had no major earnings/data expected. Broader sentiment positive on US-Iran talks (macro, not company-specific).
+Prior-period spillover (outside strict 24h window): FCEL +~22% on Jefferies upgrade (analyst action, Jun 26);
+AMZN analyst Buy ratings (Jun 26); SMCI/RKLB predate window. Sources: schwab.com, cnbc.com, marketchameleon, morningstar.
+
+### Grok raw output — Query 2: Pre-market movers >2% on catalyst (2026-06-29)
+- UPC (Universe Pharmaceuticals): +167–210% pre-mkt on Jun 26 all-stock acquisition of Best Praise Intl (~$10.75M, China patents). Micro/penny-cap.
+- DCOY (Decoy Therapeutics): +110–156% on Jun 26 up-to-$21M PIPE financing (dilutive). Micro-cap.
+- CHTR (Charter Communications): +11–12% on Bloomberg report (Jun 26) of executive talks with SpaceX re: US consumer mobile partnership. NEITHER COMPANY CONFIRMED.
+- CMCSA ~+19–23%, CAH ~+13%, INLF: appeared in aggregates but "lack clearly documented same-day news catalyst" per Grok (unverifiable; possible data error).
+Sources: stockanalysis.com, benzinga, cnn, tradingview, stocktitan, reuters, bloomberg.
+
+### Grok raw output — Query 3: After-close beat-AND-raise
+None identified. AVAV (AeroVironment) and CNXC (Concentrix) scheduled to report AMC Jun 29 — not yet reported.
+Sources: finance.yahoo.com/calendar/earnings, marketbeat.com.
+
+### Grok raw output — Query 4: FDA / >$100M contracts / M&A / regulator (last 24h)
+WKEY (WISeKey): Jun 29 merger agreement to redomicile Switzerland → BVI (corporate restructuring, not a bullish demand/cash-flow catalyst). Micro-cap.
+No FDA approvals, >$100M contract wins, or major M&A affecting US-listed names in last 24h. AbbVie SKYRIZI pediatric approval (Jun 26) outside window. Sources: stocktitan, investingnews, abbvie.com.
+
+## 2026-06-29 pre-market watchlist
+
+No tradeable signal today.
+
+Best score: CHTR = 3.
+
+Skipped (below threshold):
+- CHTR (score 3): SpaceX mobile-partnership "talks" — UNCONFIRMED rumor reported by Bloomberg Jun 26 (3 days stale, fails freshness), neither company confirmed (fails materiality — talks ≠ deal), and +11–12% move already happened Fri (novelty ~0). Liquid large-cap (active/tradable, 30d ADV 3.5M) but the catalyst itself does not qualify. Catalyst 1 + novelty 0 + confirmation 1 + cleanliness 1 = 3.
+- UPC (N/A): micro/penny-cap pharma (~$10.75M acquisition); fails universe filter (price <$5, mcap <$1B).
+- DCOY (N/A): micro-cap; PIPE financing is dilutive, not a bullish catalyst; fails universe filter.
+- WKEY (N/A): redomicile/corporate restructuring, not a demand/cash-flow catalyst; micro-cap.
+- CMCSA, CAH (N/A): large moves with NO documented catalyst per Grok — cannot verify a real news event; not tradeable on an unexplained move (likely stale data or sector flow).
+- FCEL, AMZN (N/A): analyst upgrade / Buy ratings only — excluded per strategy.md (no new corporate information); also outside 24h window.
