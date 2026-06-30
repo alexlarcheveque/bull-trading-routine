@@ -2620,3 +2620,10 @@ Skipped (below threshold):
 - WKEY (N/A): redomicile/corporate restructuring, not a demand/cash-flow catalyst; micro-cap.
 - CMCSA, CAH (N/A): large moves with NO documented catalyst per Grok — cannot verify a real news event; not tradeable on an unexplained move (likely stale data or sector flow).
 - FCEL, AMZN (N/A): analyst upgrade / Buy ratings only — excluded per strategy.md (no new corporate information); also outside 24h window.
+
+## 2026-06-30 market-open
+
+NO pre-market watchlist for 2026-06-30 (pre-market routine did not run / produced no research block).
+Market-open had nothing to execute: 0 exits (book flat, Alpaca positions=[]), 0 entries (no watchlist).
+Halt checks clear: day_pnl=0.00% vs -40% cap, 0/2 positions. Equity=$89,209.09. Still flat.
+FLAGGED for weekly-review: pre-market cron may not be firing (also EOD not committing — see portfolio.md).
