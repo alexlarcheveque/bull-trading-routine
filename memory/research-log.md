@@ -2627,3 +2627,43 @@ NO pre-market watchlist for 2026-06-30 (pre-market routine did not run / produce
 Market-open had nothing to execute: 0 exits (book flat, Alpaca positions=[]), 0 entries (no watchlist).
 Halt checks clear: day_pnl=0.00% vs -40% cap, 0/2 positions. Equity=$89,209.09. Still flat.
 FLAGGED for weekly-review: pre-market cron may not be firing (also EOD not committing — see portfolio.md).
+
+## 2026-07-01 pre-market research
+
+### Grok raw output — Query 1: Bullish large-cap news (last 24h)
+NKE (Nike): Q4 FY2026 earnings beat (EPS reported variously $0.72 vs ~$0.14 est, or $0.20 vs $0.12-0.13 est per differing reports; revenue ~$10.97B, roughly in-line to slight miss). Shares popped after-hours. NO guidance raise noted. Source: Yahoo Finance, CNBC (~14h ago), company IR. Timestamp: 2026-06-30 after-hours.
+CMCSA (Comcast): Upgraded to Buy by Rosenblatt (PT $31) and Deutsche Bank (PT $32) post-NBCUniversal-spinoff. Analyst action only. Source: WSJ upgrades list, Yahoo Finance (~23h ago). Timestamp: 2026-06-30.
+Broader: AI/chip momentum (KLAC, VRT gains) driving index records, but NO discrete company-specific catalysts for those names per Grok. Source: marketwatch.com.
+
+### Grok raw output — Query 2: Pre-market movers >2% on catalyst (2026-07-01)
+- LGO (Largo Inc): ~+20% on winning a 5-year US Defense contract for high-purity vanadium. Source: marketchameleon.com.
+- EHGO (Eshallgo): ~+70% on $750k registered direct offering (dilutive). Micro-cap.
+- LGPS (LogProstyle): ~+29-30% on special dividend announcement. Micro-cap.
+- SOC (Sable Offshore): ~+11-12% on pricing common stock + convertible notes (debt repay; dilutive).
+- BTOG (Bit Origin): ~+9-10% on AI-infrastructure pivot / GPU deals. Micro-cap.
+- NIO (NIO Inc): modest ~+1-5% on strong Q2 2026 delivery update (~+49% YoY). 
+- Excluded extreme movers (TC +300%, DXF +170%, GSUN +113%): low-float / reverse-split / filing driven, no fundamental news. Source: stockanalysis.com, benzinga.com, marketchameleon.com.
+
+### Grok raw output — Query 3: After-close beat-AND-raise
+None identified. NKE beat EPS (~$0.20 vs ~$0.13 consensus) but NO confirmed guidance raise; revenue in-line/slight miss. GIS (General Mills) expected to report 2026-07-01 — not yet out. Other beat-AND-raise names (e.g. HPE) predate window. Source: cnbc.com, marketbeat.com, investing.com.
+
+### Grok raw output — Query 4: FDA / >$100M contracts / M&A / regulator (last 24h)
+QUERY FAILED — Grok/xAI API returned "curl (56) Connection reset by peer" on 3 consecutive attempts (initial + 2 retries + 1 more). No output obtained for this query. Partial mitigation: Query 2 already surfaced the one contract-win catalyst in scope (LGO defense contract), and Queries 1/3 covered earnings + corporate news. No tradeable large-cap FDA/contract/M&A catalyst reached this pass, but coverage of this category is INCOMPLETE for 2026-07-01.
+
+## 2026-07-01 pre-market watchlist
+
+No tradeable signal today.
+
+Best score: NKE = 5 (below the 7 threshold).
+
+Scored:
+- NKE (score 5): Q4 FY2026 EPS beat but NO guidance raise; revenue in-line/slight miss (offsetting). Move already popped after-hours 06-30, and NKE is NOT on today's pre-market gainers list (fading/priced-in). Stock in a downtrend ($43.21 -> $40.74 over prior week). Catalyst 2 (beat w/o raise) + novelty 1 (pop already happened) + confirmation 1 (no fresh pre-market strength) + cleanliness 1 = 5. Passes universe (active/tradable, ADV 24.8M, price ~$41, large-cap) but signal too weak.
+
+Skipped (universe filter / not a catalyst):
+- LGO (N/A): 5-yr US Defense vanadium contract is a real catalyst, BUT price $0.64 << $5 min_price_per_share and micro-cap << $1B min_market_cap. Fails universe.
+- NIO (N/A): strong Q2 deliveries (+49% YoY) but price $4.87 < $5 min_price_per_share. Fails universe.
+- CMCSA (N/A): analyst upgrades only (Rosenblatt/Deutsche) — no new corporate information, excluded per strategy.md.
+- EHGO, LGPS, SOC, BTOG (N/A): micro-cap / low-float; offerings are dilutive, not bullish demand catalysts. Fail universe.
+- KLAC, VRT (N/A): no discrete company-specific catalyst per Grok (sector momentum only). Not tradeable.
+
+NOTE for weekly-review: Grok Query 4 (FDA/contracts/M&A) failed 3x with connection resets — this category's coverage is incomplete today. Queries 1-3 succeeded. Also, Alpaca daily bars still lag (latest bar 2026-06-26; 06-29/06-30 missing) — confirmation checks rely on Grok pre-market data as a result.
