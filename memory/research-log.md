@@ -2667,3 +2667,66 @@ Skipped (universe filter / not a catalyst):
 - KLAC, VRT (N/A): no discrete company-specific catalyst per Grok (sector momentum only). Not tradeable.
 
 NOTE for weekly-review: Grok Query 4 (FDA/contracts/M&A) failed 3x with connection resets — this category's coverage is incomplete today. Queries 1-3 succeeded. Also, Alpaca daily bars still lag (latest bar 2026-06-26; 06-29/06-30 missing) — confirmation checks rely on Grok pre-market data as a result.
+
+## 2026-07-02 pre-market research
+
+### Grok raw output — Query 1: Bullish large-cap news (last 24h)
+META (Meta Platforms) and GIS (General Mills) saw the most notable materially bullish catalysts on July 1, 2026, both well above the $2B market cap threshold.
+- META: Bloomberg reported Meta is developing plans to build a cloud business, selling access to excess AI computing capacity and models (e.g. via APIs) to third parties to monetize its heavy AI infrastructure investments. Eased concerns over AI spending. Shares closed up ~8.8-9%. Sources: Bloomberg (Jul 1 2026), Reuters (Jul 1), CNBC (Jul 1).
+- GIS: Reported Q4/FY2026 results (ended May 31) — adjusted EPS $0.95 (beat by ~17-19c), revenue $4.61B (slight beat). Outlined a $3B cumulative cost-savings target by FY2030 and improved FY2027 organic growth outlook. Shares rose ~7-8.8%. Sources: General Mills press release (Jul 1 2026, titled "Adjusted Results In Line With Company Expectations"), CNBC/Yahoo (Jul 1).
+- Other large-cap movers (e.g. APP) noted intraday but lacked comparably specific high-impact catalysts.
+
+### Grok raw output — Query 2: Pre-market movers >2% on catalyst (2026-07-02)
+- BE (Bloom Energy): rose nearly 8% (~10% in related reports) in pre-market after announcing an expansion of its partnership with Brookfield Asset Management to finance power projects for AI infrastructure/data centers (frame agreement increased toward $25B). Analyst notes highlighted it as positive for BE's role in AI power. Source: Robinhood/Schwab market update.
+- Other gainers listed (GPC +14%, MRSH +7%, DHI +5.7%; small-caps USDE +151%, WHLR +109%, DSY +73%) NOT linked to specific fresh catalysts — appear to be gap-fills/low-float/sector flows. Sources: Investing.com, Benzinga.
+- No >2% movers explicitly tied to verified fresh catalysts beyond BE. Markets cautious ahead of the June jobs report. Source: WSJ.
+
+### Grok raw output — Query 3: After-close beat-AND-raise
+None identified. Yahoo's Jul 2 earnings calendar lists 17 mostly small/micro-cap names (BMNR, LNN, RR, AVXL) with EPS largely unavailable/pending and no beat+raise indications. Broader searches for beat+raised guidance post-Jul 1 yield no matches. Sources: Yahoo Finance calendar, Zacks/Nasdaq, CNBC.
+
+### Grok raw output — Query 4: FDA / >$100M contracts / M&A / regulator (last 24h)
+- KR (Kroger): announced a $1.65B agreement to acquire Giant Eagle on Jul 1 2026. Sources: Kroger IR, Reuters.
+- QCOM (Qualcomm): acquired Israeli cybersecurity firm SAM Seamless Network for >$100M (reports cite >$100M-$150M+), around Jul 1 2026. Source: Globes.
+- FDA: Orca Bio (PRIVATE) received FDA approval for TREGZI (Orca-T) cell therapy, Jun 30 2026 — not tradeable (private). A Croma-Pharma/Obagi (WALD-linked) FDA reference appears to date earlier in 2026.
+- No major >$100M contract wins or other significant regulator decisions tied to US-listed companies in the last 24h.
+
+### BE catalyst verification (follow-up Grok)
+Brookfield-Bloom expansion was announced JUNE 30, 2026 (not today): framework raised from the prior $5B (Oct 2025) to $25B — a 5x increase, funded from Brookfield's $100B AI Infrastructure Fund; Bloom becomes a preferred onsite power provider. BE next earnings ~JULY 30, 2026 (clear of the 3-day window). The ~25% BE decline the week of Jun 22-26 had NO single negative company-specific trigger — attributed to cooling AI-power hype, profit-taking, and index/rebalance mechanics ("mechanical, not fundamental"). Sources: Bloom Energy IR, Seeking Alpha, MarketBeat.
+
+### Universe filter + scoring
+| ticker | asset | 30d ADV (Yahoo) | latest trade | last daily bar (06-29, feed lag) | verdict |
+|--------|-------|-----------------|--------------|----------------------------------|---------|
+| BE   | active/tradable us_equity | 12,997,023 | $289.38 | $275.00 | passes universe ($5-$1000, cap, ADV); catalyst 2 days stale, falling knife |
+| META | active/tradable us_equity | 18,762,856 | $612.965 | $562.37 | passes universe; +9% already realized on a rumor |
+| GIS  | active/tradable us_equity | 11,048,743 | $37.805 | $36.39 | passes universe; +7-8% pop already happened |
+| KR   | active/tradable us_equity | 8,897,810  | $56.22 | $55.93 | passes universe; acquirer, flat |
+| QCOM | (not scored) | - | - | - | bolt-on <$150M immaterial for ~$180B cap — not a material catalyst |
+
+- None held (portfolio flat). No disallowed substrings. All pass 100k volume floor and price caps.
+- Alpaca bars SEVERELY lagged (daily to 06-29; 1Min feed returning 06-22 data) — confirmation inferred from latest-trade + Grok pre-market.
+
+### Scores (catalyst 0-4 / novelty 0-3 / confirmation 0-2 / cleanliness 0-1)
+- **BE = 6**: catalyst 3 (5x→$25B AI-power financing frame, hot theme — but financing capacity, not booked revenue), novelty 1 (announced Jun 30 ~48h ago, already re-rated +5%, fails <24h freshness), confirmation 1 (up modestly but catalyst-day volume unverifiable due to feed lag; violent falling-knife context, -25% prior week on cooling AI-power sentiment), cleanliness 1 (earnings Jul 30 clear; prior selloff mechanical, no fresh offsetting news). Best catalyst of the day but stale and dangerous. SKIP.
+- **GIS = 6**: catalyst 2 (EPS beat ~20% + $3B cost program by FY2030 + soft "improved" FY27 organic outlook; company itself framed results "in line with expectations"; Grok's beat-and-raise query did NOT list it), novelty 1 (popped +7-8% yesterday), confirmation 2 (up on above-avg volume, holding), cleanliness 1 (just reported, no earnings within 3 days). SKIP.
+- **META = 6**: catalyst 2 (Bloomberg-sourced RUMOR of "plans" to monetize AI compute via cloud — narrative shift, not a signed deal/product), novelty 1 (+9% already fully realized, trading $613 near highs), confirmation 2 (clear move on volume), cleanliness 1 (earnings ~late July, >3 days). SKIP.
+- **KR = 4**: catalyst 2 (acquirer of Giant Eagle for $1.65B — small target vs ~$40B+ Kroger cap; acquirers rarely rally), novelty 1, confirmation 0 (price flat ~$56), cleanliness 1. SKIP.
+- **QCOM = n/a**: SAM Seamless bolt-on <$150M is immaterial for a ~$180B company. Not a material catalyst per strategy.md. SKIP.
+
+## 2026-07-02 pre-market watchlist
+
+No tradeable signal today.
+
+Best score: BE / GIS / META = 6 (below the 7 threshold).
+
+Skipped (below threshold):
+- BE (score 6): strongest catalyst of the day (Brookfield 5x→$25B AI-power financing frame) but announced Jun 30 (~48h old, fails <24h freshness); reaction muted (~+5% over 2 days on a "$25B" headline); stock is a violent falling knife (-25% the prior week on cooling AI-power hype); catalyst-day volume unverifiable (feed lag). Chasing a stale catalyst on a knife.
+- GIS (score 6): real EPS beat but company framed results "in line with expectations," the "raise" is a soft/long-dated cost program + minor organic-growth outlook bump (Grok's beat-and-raise query found none), and the +7-8% pop already happened yesterday.
+- META (score 6): only a Bloomberg-sourced rumor of "plans" for an AI-compute cloud business (no announced product/deal), and the +9% move is already fully realized.
+- KR (score 4): acquirer in a small $1.65B bolt-on; no share-level upside catalyst, price flat.
+
+Skipped (universe / not a material catalyst):
+- QCOM (n/a): SAM Seamless acquisition >$100-150M is an immaterial bolt-on for a ~$180B market cap. Not a tradeable catalyst.
+- Orca Bio FDA approval (n/a): company is PRIVATE — not tradeable.
+- GPC/MRSH/DHI + small-caps (n/a): Grok found NO fresh same-day catalyst — gap-fill/low-float/sector flow. Fail the freshness test.
+
+NOTE for weekly-review: (1) Alpaca market-data feed is WORSE than prior passes — daily bars stop at 06-29 and the 1Min endpoint returns 06-22 data; confirmation now depends entirely on latest-trade + Grok. Worth investigating the data subscription/feed. (2) All 4 Grok queries succeeded today (unlike 2026-07-01 where Query 4 failed 3x). (3) Minor Grok inconsistency: Query 3 (beat-and-raise) returned "none" while Query 1 surfaced GIS's cost-program/outlook improvement — the outlook bump was too soft to register as a formal raise, consistent with scoring GIS catalyst 2.
