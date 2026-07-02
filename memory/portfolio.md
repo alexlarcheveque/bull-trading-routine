@@ -13,6 +13,7 @@
 | (none — flat) | | | | | | |
 
 ## Notes
+2026-07-02 midday: 0 exits (flat — Alpaca confirms no positions, nothing to check). Daily loss cap CLEAR (day_pnl=0.00% vs -40% cap). Equity $89,209.09 unchanged. No new positions (not midday's job).
 2026-07-02 market-open: 0 exits (flat — Alpaca confirms no positions), 0 buys. Halt checks all CLEAR (day_pnl=0.00% vs -40% cap; 0/2 positions). Today's 2026-07-02 pre-market watchlist exists but has NO tradeable signal (top score 6 — BE/GIS/META — below the 7 entry threshold), so no entries. Still FLAT; cash is a position. Note: market next opens 2026-07-06 (Jul 3–5 closed for July 4th holiday).
 2026-07-01 midday: 0 exits (flat — Alpaca confirms no positions, nothing to check). Daily loss cap CLEAR (day_pnl=0.00% vs -40% cap). Equity $89,209.09 unchanged. No new positions (not midday's job).
 2026-06-30 midday: 0 exits (flat — Alpaca confirms no positions, nothing to check). Daily loss cap CLEAR (day_pnl=0.00% vs -40% cap). No new positions (not midday's job).
