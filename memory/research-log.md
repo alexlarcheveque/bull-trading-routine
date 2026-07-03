@@ -2747,3 +2747,9 @@ Research pass intentionally SKIPPED — no Grok queries run:
 ## 2026-07-03 pre-market watchlist
 
 No tradeable signal today. (Market holiday — no research performed.)
+
+## 2026-07-03 market-open
+
+Market closed (Independence Day observed). Alpaca clock is_open=false — bail-out
+check fired, routine skipped. No exits, no entries, no portfolio changes.
+Next session: Mon 2026-07-06.
