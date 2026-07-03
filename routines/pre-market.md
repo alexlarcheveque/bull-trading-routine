@@ -62,8 +62,9 @@ Skipped (below threshold):
 - TICK4 (score 4): analyst upgrade only, no new corporate news
 ```
 
-Only rows with score >= 7 are tradeable. If nothing scores >= 7, write a single
-line: `No tradeable signal today.`
+Only rows with score >= the current entry threshold in `memory/strategy.md` are
+tradeable. If nothing reaches that threshold, write a single line:
+`No tradeable signal today.`
 
 ## Step 5: Commit
 

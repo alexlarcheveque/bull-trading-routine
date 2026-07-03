@@ -16,7 +16,7 @@ procedures defined here. Read this file once before doing anything else.
 3. **`guardrails.md` is human-only.** No routine ever edits it. It is the human's safety budget.
 4. **Source of truth is Alpaca.** When `memory/portfolio.md` and `./scripts/alpaca.sh positions` disagree, Alpaca wins. Rewrite the file; do not trust the file.
 5. **Paper unless `BULL_MODE=live`.** `scripts/alpaca.sh` enforces that `BULL_MODE` and `ALPACA_BASE_URL` agree. If they disagree, every API call exits 2. Flip them together via `./install.sh --enable-live`.
-6. **No options, no shorts, no margin, no leveraged ETFs.** Enforced in `guardrails.md` and in preflight.
+6. **No shorts, no margin, no leveraged ETFs.** Options are long-call-only when enabled in `guardrails.md`: no puts, spreads, or sell-to-open.
 7. **No adding to an existing position.** If we already hold a ticker, preflight rejects another buy.
 8. **Every routine ends with a commit to `main`.** The next cron run reads the committed state. Uncommitted work effectively never happened.
 

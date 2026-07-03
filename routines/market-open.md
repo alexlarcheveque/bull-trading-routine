@@ -55,7 +55,8 @@ For each candidate (descending score, until you hit `max_new_positions_per_day`)
 
 **A. Decide instrument** (per strategy.md Entry rules):
 - `OPTIONABLE=$(./scripts/alpaca.sh option-chain <TICKER> call | jq '.option_contracts|length')`
-- If `score >= 7` AND `OPTIONABLE > 0` → **CALL path (B)**. Else → **SHARES path (C)**.
+- If `score >= the entry threshold in strategy.md` AND `OPTIONABLE > 0` → **CALL path (B)**.
+  Else → **SHARES path (C)**.
 
 **B. CALL path (long call):**
 1. `SPOT=$(./scripts/alpaca.sh quote <TICKER> | jq -r .trade.p)`
@@ -134,5 +135,5 @@ git commit -m "market-open $(date +%Y-%m-%d): <X> buys, <Y> sells, equity=$<E>"
 
 - Preflight gates EVERY order. If you skip preflight even once, the routine is broken — stop and email an alert.
 - Never average down. Never add to an existing position.
-- Never trade outside `allowed_instruments`.
+- Never trade outside `allowed_instruments` or the long-call option rules in `guardrails.md`.
 - If `./scripts/alpaca.sh` returns non-2xx on a critical call (account, positions, buy, sell), retry once. If it fails twice, email an alert and exit — do not continue blind.

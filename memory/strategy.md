@@ -15,13 +15,15 @@ front-running the headline itself.
 - 30-day average daily consolidated volume ≥ 100,000 shares (measured via scripts/volume.sh from Yahoo's consolidated tape, enforced by guardrails.md).
 - **Excluded:** futures, crypto, OTC, leveraged/inverse ETFs (anything with
   2x/3x/UltraPro/Direxion in the name), SPACs pre-merger, anything halted, anything
-  with earnings inside the next 3 trading days (event risk dominates our signal).
-- **Options (MAX DEGEN / video mode):** long CALLS allowed on a qualifying catalyst
+  blocked by the `no_earnings_within_days` guardrail (currently 0 in FULL YOLO
+  paper-video mode, so earnings proximity is allowed).
+- **Options (FULL YOLO / paper-video mode):** long CALLS allowed on a qualifying catalyst
   for leveraged upside. Long-only — never sell to open, no spreads, no puts. Sizing is
   on premium-at-risk (can go to zero), capped by guardrails.md (max_option_premium_pct,
   max_total_option_premium_pct). The underlying must still pass the universe + catalyst
-  tests. Option exits: +150% premium take-profit, -60% premium stop, or close on the
-  underlying's 7-day time stop (whichever first). Never let a contract ride to expiry.
+  tests. Option exits: +100% premium take-profit, -100% premium stop, or close on the
+  underlying's 7-day time stop / expiry guard (whichever first). Never let a contract
+  ride to expiry.
 
 ## What counts as a "tradeable catalyst"
 
@@ -47,26 +49,28 @@ Each candidate gets a composite score:
 - **Catalyst strength** (0–4): how big is the cash-flow / narrative delta?
 - **Novelty** (0–3): how much of the move is still ahead vs. already priced in today?
 - **Confirmation** (0–2): price up on above-average volume since the catalyst hit?
-- **Cleanliness** (0–1): no offsetting bad news, no earnings inside 3 days, no halts?
+- **Cleanliness** (0–1): no offsetting bad news, no halts, and passes the current
+  earnings-proximity guardrail?
 
-Only score ≥ 7 trades. If nothing scores ≥ 7, **we do not trade today**. Cash is a
-position.
+FULL YOLO paper-video threshold: score ≥ 6 trades. If nothing scores ≥ 6, **we do
+not trade today**. Cash is still a position when there is no named, directional
+corporate catalyst.
 
-## Entry rules (MAX DEGEN / video mode)
+## Entry rules (FULL YOLO / paper-video mode)
 
 - Buy at the **open** following the pre-market research pass that produced the score.
 - **Instrument choice:**
-  - If score **>= 7** AND the name is optionable
+  - If score **>= 6** AND the name is optionable
     (`./scripts/alpaca.sh option-chain <T> call` returns > 0 contracts):
     buy a **LONG CALL** for leveraged upside.
   - Otherwise: buy **SHARES**.
-- **Shares sizing:** `target_position_pct` of equity (guardrails; currently 50%),
+- **Shares sizing:** `target_position_pct` of equity (guardrails; currently 100%),
   market order, full size in one shot.
-- **Call sizing:** target `max_option_premium_pct` of equity in premium (currently 25%).
+- **Call sizing:** target `max_option_premium_pct` of equity in premium (currently 100%).
   `contracts = floor((equity * max_option_premium_pct/100) / (ask * 100))`, min 1.
   If even 1 contract trips the premium cap (preflight rejects), **fall back to shares**.
 - **Call contract selection:** type=call; expiry = nearest listed expiration in
-  `[option_min_days_to_expiry, option_max_days_to_expiry]` DTE (target ~1–2 weeks);
+  `[option_min_days_to_expiry, option_max_days_to_expiry]` DTE (target ~3–7 days);
   strike = nearest strike **at or just above** spot (ATM / slightly OTM).
 - Caps: max `max_new_positions_per_day` new/day, max `max_concurrent_positions` open.
   **All sizes and caps live in guardrails.md — never hardcode them in a routine.**
@@ -83,8 +87,8 @@ with a trailing `option` arg; shares use `quote` / `sell` and preflight `equity`
 
 **SHARES** (use `per_trade_target_pct` / `per_trade_stop_pct`):
 - current = `./scripts/alpaca.sh quote <T> | jq -r .trade.p`; return = (current-entry)/entry*100.
-1. Profit target: return >= +`per_trade_target_pct` (currently +60%) → sell full.
-2. Stop loss:   return <= -`per_trade_stop_pct` (currently -25%) → sell full. Never average down.
+1. Profit target: return >= +`per_trade_target_pct` (currently +100%) → sell full.
+2. Stop loss:   return <= -`per_trade_stop_pct` (currently -100%) → sell full. Never average down.
 3. Thesis broken (Grok on the name) → sell next bar.
 4. Time stop: today >= `target_exit_date` → sell regardless of P&L.
 
@@ -92,8 +96,8 @@ with a trailing `option` arg; shares use `quote` / `sell` and preflight `equity`
 - entry premium = the BUY fill price; current premium =
   `./scripts/alpaca.sh option-quote <OCC> | jq -r '.quotes|to_entries[0].value.bp'` (bid).
 - return = (current-entry)/entry*100.
-1. Profit target: return >= +`option_target_pct` (currently +150%) → option-sell full.
-2. Stop loss:   return <= -`option_stop_pct` (currently -60%) → option-sell full.
+1. Profit target: return >= +`option_target_pct` (currently +100%) → option-sell full.
+2. Stop loss:   return <= -`option_stop_pct` (currently -100%) → option-sell full.
 3. Thesis broken on the underlying → option-sell.
 4. Time stop: today >= `target_exit_date` → option-sell.
 5. **Expiry guard:** if the contract expires within 2 trading days, option-sell now

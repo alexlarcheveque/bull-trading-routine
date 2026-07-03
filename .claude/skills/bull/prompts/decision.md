@@ -37,10 +37,12 @@ threshold in `memory/strategy.md`, sorted descending by score. For each, in orde
 - Earnings within `no_earnings_within_days`? Skip.
 - Failed any other guardrail (price, volume, market cap, instrument type)? Skip.
 - **Choose instrument + size per the strategy.md Entry rules:**
-  - score >= 8 AND optionable (`alpaca.sh option-chain <T> call` > 0) → **long CALL**,
-    sized to `max_option_premium_pct` of equity (ATM/slightly-OTM, 14-45 DTE). Preflight
-    with a trailing `option` arg; buy via `alpaca.sh option-buy`. If the call trips the
-    premium cap, fall back to shares.
+  - score >= the strategy entry threshold AND optionable
+    (`alpaca.sh option-chain <T> call` > 0) → **long CALL**, sized to
+    `max_option_premium_pct` of equity. Select expiry and strike from the guardrail
+    DTE window in `memory/guardrails.md` (ATM/slightly-OTM). Preflight with a trailing
+    `option` arg; buy via `alpaca.sh option-buy`. If the call trips the premium cap,
+    fall back to shares.
   - otherwise → **shares**, qty `floor((target_position_pct/100)*equity/last_price)`.
     Preflight with a trailing `equity` arg; buy via `alpaca.sh buy`.
 - If preflight exits non-zero, skip and log the reason.

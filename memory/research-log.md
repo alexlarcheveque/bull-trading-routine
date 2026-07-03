@@ -2769,3 +2769,17 @@ broke." Execution review:
   50% target equity positions, long calls allowed up to 25% premium per play / 60%
   total option premium), but they still do not permit shorts, margin, leveraged ETFs,
   bypassing preflight, or intentionally targeting account ruin.
+
+## 2026-07-03 FULL YOLO next-session policy update
+
+Operator clarified the YOLO request is for the next market session, not for the
+closed holiday session. Human risk-budget change applied for paper/video mode:
+- Entry threshold lowered from score >=7 to score >=6.
+- Positioning changed from two 50% shots to one 100% shot.
+- Preferred instrument remains long CALL only; calls now size up to 100% of equity
+  as premium-at-risk, with total option premium cap also 100%.
+- Expiry window tightened to 3-7 DTE for higher gamma.
+- Profit/stop geometry changed to +100% / -100% premium or share return, matching
+  the "2x or broke" video objective as closely as preflight permits.
+- Still not allowed: preflight bypass, shorts, margin sizing above equity, puts,
+  spreads, sell-to-open options, leveraged/inverse ETFs, crypto, futures, OTC.
