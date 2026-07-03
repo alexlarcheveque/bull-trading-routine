@@ -2730,3 +2730,20 @@ Skipped (universe / not a material catalyst):
 - GPC/MRSH/DHI + small-caps (n/a): Grok found NO fresh same-day catalyst — gap-fill/low-float/sector flow. Fail the freshness test.
 
 NOTE for weekly-review: (1) Alpaca market-data feed is WORSE than prior passes — daily bars stop at 06-29 and the 1Min endpoint returns 06-22 data; confirmation now depends entirely on latest-trade + Grok. Worth investigating the data subscription/feed. (2) All 4 Grok queries succeeded today (unlike 2026-07-01 where Query 4 failed 3x). (3) Minor Grok inconsistency: Query 3 (beat-and-raise) returned "none" while Query 1 surfaced GIS's cost-program/outlook improvement — the outlook bump was too soft to register as a formal raise, consistent with scoring GIS catalyst 2.
+
+## 2026-07-03 pre-market research
+
+Market HOLIDAY — Independence Day observed (Jul 4 falls on Saturday). Alpaca clock
+confirms is_open=false; next open 2026-07-06 09:30 ET (next close 16:00 ET same day).
+This matches the 2026-07-02 market-open note ("market next opens 2026-07-06").
+
+Research pass intentionally SKIPPED — no Grok queries run:
+- No market-open execution pass today; the next one (Mon 07-06) only consumes a
+  same-day (2026-07-06) watchlist, so anything written today is never traded.
+- Any catalyst from the last 24h would be ~72h old by Monday's open and fail the
+  strategy's <24h freshness rule regardless of score.
+- Monday's own 6:00 AM pre-market pass will research fresh over-the-weekend catalysts.
+
+## 2026-07-03 pre-market watchlist
+
+No tradeable signal today. (Market holiday — no research performed.)
