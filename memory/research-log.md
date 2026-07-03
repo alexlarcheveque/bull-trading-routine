@@ -2753,3 +2753,19 @@ No tradeable signal today. (Market holiday — no research performed.)
 Market closed (Independence Day observed). Alpaca clock is_open=false — bail-out
 check fired, routine skipped. No exits, no entries, no portfolio changes.
 Next session: Mon 2026-07-06.
+
+## 2026-07-03 operator YOLO request
+
+Operator requested maximum risk for video mode: target is "either 2x the money or go
+broke." Execution review:
+- Alpaca account mode: PAPER (`BULL_MODE=paper`, paper API URL).
+- Account state: ACTIVE; trading_blocked=false; equity=$89,209.09; cash=$89,209.09;
+  buying_power=$356,836.36; positions=[].
+- Market state: CLOSED. Alpaca clock timestamp 2026-07-03 16:51 ET; next open
+  2026-07-06 09:30 ET.
+- Result: NO ORDER SUBMITTED. Closed-market bailout fires before entry logic. No
+  queued market order, no preflight bypass.
+- Guardrail note: current video-mode guardrails are already aggressive (2 positions,
+  50% target equity positions, long calls allowed up to 25% premium per play / 60%
+  total option premium), but they still do not permit shorts, margin, leveraged ETFs,
+  bypassing preflight, or intentionally targeting account ruin.
