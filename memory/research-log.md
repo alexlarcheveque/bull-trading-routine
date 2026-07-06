@@ -2810,3 +2810,31 @@ Flat all day (Alpaca confirms []). 0 time-stops, 0 expiry guards, safety-net
 stop/target/thesis checks not applicable. Weekly loss cap CLEAR (WTD 0.00% vs
 -100% cap). Equity $89,209.09, day 0.00%. EOD email sent (id 81904b65).
 Pre-market-cron-missed flag from market-open stands for weekly-review.
+
+## 2026-07-06 pre-market (late run, 15:55 PDT — post-close)
+
+Research pass FAILED: Grok API out of credits (xAI returns `permission-denied:
+"team 2f47388e... has either used all available credits or reached its monthly
+spending limit"` — 3/3 attempts failed; grok.sh surfaces this as empty output).
+Same failure shape as the 2026-06-02→06-14 credit outage. Operator must refill
+at console.x.ai or tomorrow's 6 AM pre-market fails too.
+
+**No watchlist written** — and none would have been valid anyway: this pass ran
+at 15:55 PDT, ~3h after the close. The 2026-07-06 session is complete (market-open,
+midday, EOD all ran); a post-close "pre-market" watchlist dated today is never
+executed, and tomorrow's 6 AM run supersedes it with fresher news. Deliberately
+not fabricating a stale watchlist.
+
+**RESOLVES the ⚠️ missed-cron flag from 2026-07-06 market-open:** the 6 AM cron
+DID fire — logs/pre-market-2026-07-06.log shows START 03:36 PDT, then
+"API Error: Connection closed mid-response". pmset power log confirms the Mac
+was cycling Sleep/DarkWake through that window: the run started during a
+DarkWake and was killed when the machine re-slept. Likely the same cause as the
+2026-06-30 miss and the historical EOD-cron gaps. Operator has an uncommitted
+fix in scripts/run-routine.sh wrapping the claude call in `caffeinate -is` —
+correct fix; this 15:55 retry ran under it successfully.
+
+**Status for tomorrow (2026-07-07):** FULL YOLO policy still armed and untraded.
+Two preconditions for the session to actually fire: (1) Grok credits refilled,
+(2) caffeinate patch stays in place (and should be committed). Operator emailed
+(Resend id 8a47f9cd) with both items at 15:57 PDT.
