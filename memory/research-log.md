@@ -2783,3 +2783,23 @@ closed holiday session. Human risk-budget change applied for paper/video mode:
   the "2x or broke" video objective as closely as preflight permits.
 - Still not allowed: preflight bypass, shorts, margin sizing above equity, puts,
   spreads, sell-to-open options, leveraged/inverse ETFs, crypto, futures, OTC.
+
+## 2026-07-06 market-open
+
+Market OPEN (Alpaca clock is_open=true), trading_blocked=false. Positions: FLAT
+(Alpaca confirms []) — 0 exits.
+
+**NO 2026-07-06 pre-market watchlist exists in research-log.md** — the pre-market
+routine did not run this morning (latest git commit is pre-market 2026-07-03; latest
+research block is 2026-07-03). With no same-day scored watchlist there is nothing to
+execute, so 0 entries. Per decision.md, execution does not invent its own research.
+
+Halt checks (for the record, all CLEAR): day_pnl=0.00% vs -100% cap; week realized
+P&L 0% vs -100% cap; 0/1 concurrent positions; 0/1 new today.
+
+⚠️ FLAG for operator/weekly-review: this was the armed FULL YOLO session
+(policy commit adebd2c "enable full yolo next session"), and it was missed because
+the pre-market cron did not fire. Investigate why pre-market did not run on
+2026-07-06; the YOLO policy presumably carries to the next session with a watchlist.
+
+Equity $89,209.09 unchanged, cash $89,209.09. Still FLAT; cash is a position.
