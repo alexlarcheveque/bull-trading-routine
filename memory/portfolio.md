@@ -1,5 +1,5 @@
 # portfolio.md
-# Updated 2026-07-06 06:51 PDT by market-open routine.
+# Updated 2026-07-06 13:55 PDT by end-of-day routine.
 
 ## Account
 - equity: 89209.09
@@ -13,6 +13,7 @@
 | (none — flat) | | | | | | |
 
 ## Notes
+2026-07-06 EOD: 0 time-stops, 0 expiry guards (flat — Alpaca confirms no positions). Weekly loss cap CLEAR (WTD 0.00% vs -100% cap). Equity $89,209.09 unchanged, day_pnl=0.00%. EOD email sent. No trades today — pre-market cron missed, so the armed FULL YOLO session had no watchlist; flag stands for operator/weekly-review.
 2026-07-06 midday: 0 exits (flat — Alpaca confirms no positions, nothing to check). Daily loss cap CLEAR (day_pnl=0.00% vs -100% cap). Equity $89,209.09 unchanged. No new positions (not midday's job).
 2026-07-06 market-open: 0 exits (flat — Alpaca confirms no positions), 0 buys. Market OPEN, halt checks all CLEAR (day_pnl=0.00% vs -100% cap; 0/1 positions). NO 2026-07-06 pre-market watchlist exists — the pre-market routine did not run this morning, so there was nothing to execute. ⚠️ This was the armed FULL YOLO session (commit adebd2c); flagged in research-log for operator/weekly-review to investigate the missed pre-market cron. Still FLAT; cash is a position.
 2026-07-03 operator YOLO request: Alpaca confirms paper mode, account ACTIVE, trading_blocked=false, equity/cash $89,209.09, positions flat. Alpaca clock is_open=false for Independence Day observed; next open 2026-07-06 09:30 ET. No order submitted because market-open gate is closed and preflight cannot be bypassed.
