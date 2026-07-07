@@ -2838,3 +2838,92 @@ correct fix; this 15:55 retry ran under it successfully.
 Two preconditions for the session to actually fire: (1) Grok credits refilled,
 (2) caffeinate patch stays in place (and should be committed). Operator emailed
 (Resend id 8a47f9cd) with both items at 15:57 PDT.
+
+## 2026-07-07 pre-market raw Grok output
+
+Grok API is BACK — credits refilled (test query + all 4 research queries succeeded
+on first attempt, 06:0x PDT). Resolves the 2026-07-06 credit outage.
+
+### Query 1 — bullish large-cap news last 24h
+
+**Key materially bullish developments for US large-cap equities (market cap >$2B) in the ~last 24 hours (primarily July 6–7, 2026 trading/news flow) centered on index inclusion/passive flows for SpaceX and multiple analyst upgrades in cybersecurity/tech.** [reuters.com/business/wall-street-warms-spacex-ahead-nasdaq-100-inclusion-2026-07-07/] [finance.yahoo.com/news/marvell-upgraded-trade-desk-downgraded-143122342.html]
+
+- **SPCX (SpaceX)**: Addition to the Nasdaq-100 index (effective July 7, among the fastest inclusions ever at ~15 trading days post-IPO); expected to trigger >$4B in passive inflows (e.g., via QQQ); early bullish Wall Street broker coverage/initiation. [reuters.com July 7, 2026 update; CNBC/Yahoo Finance/Motley Fool July 6–7]. Timestamp: Announcements and coverage July 6–7, 2026.
+- **S (SentinelOne)**: Upgraded to Outperform (from Sector Perform) by Scotiabank; viewed as AI/cybersecurity beneficiary. [Scotiabank via The Fly/Yahoo Finance and MarketWatch, July 6, 2026]
+- **QLYS (Qualys)**: Upgraded to Outperform (from Sector Perform) by Scotiabank. [MarketWatch, July 6, 2026]
+- **OKTA (Okta)**: Upgraded to Outperform (from Sector Perform) by Scotiabank with $165 price target; framed as AI beneficiary amid rising cybersecurity/identity spend. [The Fly/Yahoo Finance/MarketWatch, July 6, 2026]
+- **IREN**: Upgraded by Freedom Broker. [MarketWatch upgrades/downgrades, July 6, 2026]
+
+Broader context included a chip/tech rebound supporting the Nasdaq (+1.12% on July 6), but no other major company-specific earnings beats, guidance raises, or approvals stood out in the period for large caps. Market caps for the named tickers exceed $2B based on context (e.g., SpaceX ~$2T+ post-IPO).
+
+### Query 2 — pre-market movers 2026-07-07
+
+**CRNX (Crinetics Pharmaceuticals) and FISV (Fiserv) stand out as pre-market movers (>2% higher) on July 7, 2026, driven by clear news catalysts.** [benzinga.com/premarket] [stockanalysis.com/markets/premarket/gainers/]
+
+- **CRNX**: Up ~99% pre-market. Vertex Pharmaceuticals announced a ~$10 billion acquisition of Crinetics. This followed after-hours/early trading reaction to the deal news (company press release and multiple reports). [finance.yahoo.com/quote/CRNX/] [crinetics.com/news-events/]
+- **FISV**: Up ~7% pre-market. Reuters reported the company is exploring a sale of its STAR debit card network, prompting the move (noted in Benzinga and other coverage). [benzinga.com/markets/equities/26/07/60296437/fiserv-stock-fisv-is-trending-overnight-heres-why]
+
+Other prominent pre-market gainers (e.g., CHRW ~5-6%, GDDY, BKR, HAS, RJF, or microcaps like TDTH) lacked identifiable fresh news catalysts in available reports and appear more consistent with broader market/sector flows or gap-filling.
+
+### Query 3 — earnings beat + raise after yesterday's close
+
+**No major or notable earnings reports released after the July 6, 2026 market close (i.e., post-close July 6 or on July 7) appear to have both beaten estimates and raised guidance.**
+
+Earnings calendars (Zacks, Kiplinger, MarketBeat) indicate a very light reporting week:
+- July 6: Only a handful of small-cap names reported (e.g., SINC, HSTC per Zacks), with no details on beats or guidance raises in summaries.
+- July 7: Limited reports from smaller companies like EPAC (Enerpac Tool Group), KRUS (Kura Sushi), PENG (Penguin Solutions), and SAR (Saratoga Investment); no indications of combined beats + raises in available overviews.
+
+Broader market commentary describes the period as quiet ahead of heavier bank earnings later in July.
+
+### Query 4 — FDA / contracts / M&A / regulatory last 24h
+
+**No qualifying events (new FDA approvals, >$100M contract wins, M&A announcements, or major regulator decisions) were published in the last 24 hours (approx. July 6–7, 2026) affecting US-listed companies.**
+
+Notable context from recent days (not within the strict 24-hour window):
+- **M&A activity**: Several large deals were reported around July 2–6, including Vertex Pharmaceuticals acquiring Crinetics Pharmaceuticals (~$10B equity value), Lockheed Martin acquiring Ultra Maritime ($3.45B), and Solstice Advanced Materials (Honeywell spinoff) acquiring Element Solutions ($14.5B).
+- **FDA/regulatory**: Multiple PDUFA decision dates are upcoming in July 2026 (e.g., atacicept for IgA nephropathy on July 7), but no new approvals were announced. HHS determinations on terminating remaining COVID-19 EUAs were issued June 30 (effective later in 2026–2027).
+- Older or non-qualifying items (e.g., June approvals, smaller contracts, or scheduled meetings) do not meet the recency or size thresholds.
+
+## 2026-07-07 pre-market watchlist
+
+No tradeable signal today.
+
+Scored candidates (all below the ≥6 FULL YOLO threshold):
+
+| ticker | score | catalyst (one line)                                                          | source                        |
+|--------|-------|-------------------------------------------------------------------------------|-------------------------------|
+| SPCX   | 5     | Nasdaq-100 inclusion effective today, >$4B expected passive inflows            | reuters.com (2026-07-07)      |
+| FISV   | 5     | Reuters: exploring sale of STAR debit card network, +7% pre-market             | benzinga.com / Reuters        |
+
+Scoring notes:
+- SPCX (2+2+0+1=5): flow event, not a cash-flow catalyst — $4B inflows ≈ 0.2% of ~$2T
+  cap. Inclusion announced days ago (stock ran 152→170 Jun 26–30 on anticipation,
+  faded to $158.51 last trade 07-06, DOWN ~2% on the day). Confirmation 0: price
+  declining into the effective date; effective-day flows are classically front-run.
+- FISV (2+1+1+1=5): "exploring a sale" is exploratory — no signed deal, no numbers.
+  Already +7% pre-market, which brushes the 5%-priced-in freshness limit. Confirmation
+  1 (pre-market pop only; Alpaca daily bars still stale at 07-02, cannot verify volume).
+
+Skipped (disqualified, not scored):
+- CRNX: fails FRESH test — Vertex ~$10B acquisition already fully priced (+99%, last
+  trade $83.93 vs $42.24 prior close; pinned at deal price). M&A target = no second
+  wave; residual upside is arb-sized with deal-break downside. Passed universe filters
+  (active, ADV 1.36M) but the move already happened.
+- S / QLYS / OKTA / IREN: Scotiabank/Freedom Broker analyst upgrades only — "pundit
+  price targets / analyst upgrades with no new information" are non-qualifying per
+  strategy.md.
+- ESI (Element Solutions): $14.5B acquisition by Solstice — announced ~Jul 2–6 (not
+  fresh) and target already pinned.
+- VRTX / LMT: acquirers in their deals, not bullish-catalyst targets.
+- CHRW / GDDY / BKR / HAS / RJF / TDTH: pre-market gainers with no identifiable news
+  catalyst (Grok: sector flows / gap-fill).
+
+Universe-filter results (for the record): SPCX active/tradable ADV 170.5M; CRNX
+active/tradable ADV 1.36M; FISV active/tradable ADV 8.57M — all pass; none held.
+
+⚠️ Data-feed anomaly STILL PRESENT: Alpaca daily bars end at 2026-07-02 (no 07-06
+bar as of 03:43 PDT 07-07); confirmation scoring fell back to latest-trade prices.
+Standing item for weekly-review.
+
+✅ Grok credits refilled — API working again (all 4 queries first-try). 
+✅ Pre-market cron fired on time this morning (caffeinate fix holding).
