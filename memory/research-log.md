@@ -2927,3 +2927,14 @@ Standing item for weekly-review.
 
 ✅ Grok credits refilled — API working again (all 4 queries first-try). 
 ✅ Pre-market cron fired on time this morning (caffeinate fix holding).
+
+## 2026-07-07 end-of-day — BAILED OUT (ran after close)
+
+⚠️ EOD routine started 13:02 PDT (~7 min after the 12:55 PDT schedule); by the
+clock check at 16:03 ET the market had closed (16:00 ET), so the routine bailed
+out per the is_open gate. **No material impact today**: Alpaca confirms flat
+(0 positions), so no time-stops, expiry guards, or weekly-cap checks were missed.
+No EOD email sent for 2026-07-07. Note: EOD completion times have been drifting
+late all week (13:05–13:13 on Jun 26–Jul 6) even when the run itself succeeded —
+launchd start delay despite the caffeinate fix. Operator/weekly-review item:
+consider moving the EOD cron earlier (e.g. 12:45 PDT) for margin.
