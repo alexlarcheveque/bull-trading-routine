@@ -3075,3 +3075,21 @@ Weekly-review item stands.
   orders on gap-up names.
 - target_exit 2026-07-15 (7d hold). Exit management: stop/target ±100%, thesis check
   midday, time stop + expiry n/a (shares) at EOD.
+
+## 2026-07-08 end-of-day — BAILED OUT (ran after close, 2nd consecutive day)
+
+⚠️ EOD routine started ~13:05 PDT; by the clock check at 16:06 ET the market had
+closed (16:00 ET), so the routine bailed per the is_open gate. Second consecutive
+late fire (07-07 was ~7 min late too) — the "move the EOD cron earlier (e.g.
+12:45 PDT)" item from yesterday is now URGENT for operator/weekly-review, because
+today we are NOT flat.
+
+**No material impact today, verified post-close:**
+- Time stop: PENG target_exit 2026-07-15 — not due today.
+- Expiry guard: n/a — PENG position is shares (us_equity), no options held.
+- Stop/target safety net: PENG +16.5% ($67.16 → $78.26 close) vs ±100% thresholds — no trigger.
+- Weekly loss cap: WTD strongly positive (equity $104,520.57 vs Monday base $89,209.09, ~+17.2%) — cap clear.
+
+No EOD email sent for 2026-07-08 (bail rule). Equity at close: $104,520.57
+(day +17.16% vs last_equity $89,209.09), cash -$2,326.91 (slippage margin note
+from market-open stands). PENG 1363 sh confirmed at Alpaca, matches portfolio.md.
