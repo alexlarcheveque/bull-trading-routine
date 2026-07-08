@@ -2938,3 +2938,119 @@ No EOD email sent for 2026-07-07. Note: EOD completion times have been drifting
 late all week (13:05–13:13 on Jun 26–Jul 6) even when the run itself succeeded —
 launchd start delay despite the caffeinate fix. Operator/weekly-review item:
 consider moving the EOD cron earlier (e.g. 12:45 PDT) for margin.
+
+## 2026-07-08 pre-market research (raw Grok output)
+
+### Query 1 — bullish large-cap news last 24h
+
+**Key materially bullish developments for US large-cap equities (market cap >$2B) in the ~last 24 hours (primarily July 7, 2026, actions and index inclusion):**
+
+- **SPCX (SpaceX)**: Joined the Nasdaq-100 index (fast-track inclusion ahead of open on July 7), triggering expected passive/index fund buying (hundreds of billions in AUM tracking the index). Multiple brokerages initiated or reiterated bullish coverage amid the event. [finance.yahoo.com, reuters.com] Timestamp: July 7, 2026.
+- **NET (Cloudflare)**: Scotiabank upgraded to Outperform with a higher price target; shares rose sharply (~8.6%). [finance.yahoo.com, 247wallst.com] Timestamp: July 7, 2026.
+- **SHOP (Shopify)**: Bank of America reinstated coverage with a Buy rating and $150 price target. [247wallst.com] Timestamp: July 7, 2026.
+- **AAPL (Apple)**: JPMorgan raised its price target to $345, citing favorable revenue drivers. [247wallst.com] Timestamp: July 7, 2026.
+- **FSLR (First Solar)**: Deutsche Bank upgraded on strong fundamentals. [247wallst.com] Timestamp: July 7, 2026.
+
+**Additional July 7 analyst upgrades (select examples with large-cap relevance):**
+- **MGM**: Wells Fargo upgraded to Equal-Weight. [benzinga.com]
+- **ALGT**: Melius Research upgraded to Buy. [benzinga.com]
+- **DHI**: Zelman & Associates upgraded to Outperform. [benzinga.com]
+- **NVR**: Zelman & Associates upgraded to Buy. [benzinga.com]
+
+No major earnings beats or M&A were prominently highlighted in the immediate 24-hour window from available results (per this query; see Query 3 for PENG).
+
+### Query 2 — pre-market movers 2026-07-08
+
+**Top pre-market gainers (>2%) on July 8, 2026, per Benzinga data (as of ~6:10 AM ET), include several small-cap or low-float names showing large moves.**
+
+- **EDBL** (Edible Garden): +66.5%
+- **IOTR** (iOThree): +59.9% (reported ~70% higher in one Benzinga piece)
+- **BATL** (Battalion Oil): +36.5%
+- **DCX** (Digital Currency X): +29.4%
+- **SKYQ** (Sky Quarry): +21.3%
+- Leveraged BABA ETFs (BABU +19.6%, BABX +19.4%, KBAB +17.2%)
+- **TC** (Token Cat): +17.1%
+- **TPET** (Trio Petroleum): +15.3%
+
+**Catalysts**: Specific news details are sparse for most, with many appearing driven by volume, sector rotation, or announcements. Losers like **FCEL** (-17.6%) were tied to a $225M stock offering. Broader energy names (e.g., VLO, LYB, FANG) showed gains, potentially sector-related. Sources: Benzinga Premarket, MarketBeat, Investing.com.
+
+### Query 3 — beat-and-raise earnings after yesterday's close
+
+**PENG (Penguin Solutions, Inc.)** reported Q3 fiscal 2026 results after the July 7, 2026 market close.
+
+- **Beat**: Adjusted EPS of $0.84 (vs. consensus $0.56, beat by $0.28); revenue of $479 million (vs. estimate ~$421.4 million).
+- **Raised guidance**: Full-year fiscal 2026 outlook raised to net sales growth of 22% ±2%, GAAP EPS of $1.97 ±$0.05, and non-GAAP/adjusted EPS of $2.60 ±$0.05 (midpoint above prior consensus of $2.28).
+- Stock reported "soars 9%" after hours (Investing.com). "Record sales and raised outlook amid AI surge" (GuruFocus).
+
+**Source**: Company IR release and contemporaneous reporting (Investing.com, Seeking Alpha transcript, GuruFocus).
+
+No other companies reporting after the July 7 close were identified as having both beaten estimates and raised guidance.
+
+### Query 4 — FDA / contracts / M&A / regulatory last 24h
+
+**FDA approval (July 7, 2026):** The FDA granted accelerated approval to Vera Therapeutics' (NASDAQ: VERA) Trutakna (atacicept) for reducing proteinuria in adults with primary immunoglobulin A nephropathy (IgAN), based on ORIGIN 3 trial results showing a 46% proteinuria reduction. [drugs.com, fda.gov, ajmc.com]
+
+**M&A activity:**
+- Envirotech Vehicles (EVTV) closed its merger with Azio AI (announced July 7). [stocktitan.net]
+- Henkel's acquisition of Olaplex (OLPX) expected completion July 7, 2026 at $2.06/share (initially announced March 2026). [solactive.com]
+- Lockheed Martin (LMT) $3.45B acquisition of Ultra Maritime (reported July 6–7). [thedailyrecord.com]
+
+**Regulator decisions:** SEC formed a new Retail Fraud Working Group (July 7). CPSC mandatory eFiling rule takes effect July 8. No large contract wins (>$100M) in the 24-hour window.
+
+## 2026-07-08 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                 | source                          |
+|--------|-------|--------------------------------------------------------------------------------------|---------------------------------|
+| PENG   | 8     | Q3 adj EPS $0.84 vs $0.56 (+50% beat), rev $479M vs $421M; FY adj EPS raised to $2.60 vs $2.28 consensus (+14%) | investing.com / company IR      |
+| VERA   | 7     | FDA accelerated approval of Trutakna (atacicept) for IgA nephropathy, 46% proteinuria reduction (ORIGIN 3)      | fda.gov / drugs.com / ajmc.com  |
+
+**Both rows are ≥ the FULL YOLO entry threshold (6). Top pick: PENG (8).**
+Max 1 new position/day — market-open should take PENG only. PENG has options
+(`has_options` on the asset record); strategy says score ≥6 + optionable → long call,
+3–7 DTE, ATM/slightly OTM, premium sized per guardrails.
+
+Scoring notes:
+- PENG (4+2+1+1=8): Catalyst strength 4 — a +50% EPS beat plus a +14% FY guide raise
+  ("record sales amid AI surge") is a first-order cash-flow delta, the biggest beat this
+  book has seen since SMTC (+13%). Novelty 2 — reported AFTER yesterday's close; the +9%
+  AH pop only lifts the stock (~$68.3) back to its 07-06 close ($67.63) because PENG fell
+  -7.3% in the regular session BEFORE earnings (closed $62.705). Net repricing vs the
+  pre-catalyst reference is ~+1%; the 14-day second wave is substantially ahead. Not
+  novelty 3 because a 9% AH move did already print. Confirmation 1 — AH pop is
+  press-reported and directional, but no 07-07/AH bar exists to verify volume.
+  Cleanliness 1 — no offsetting news, no halt, earnings-proximity guardrail is 0.
+- VERA (4+1+1+1=7): Catalyst strength 4 — first FDA approval of the company's lead asset;
+  transformational for a ~$2.5B biotech. Novelty 1 (honest): the PDUFA date (Jul 7) was
+  known in advance and the +7.3% approval-day move already printed over a FULL regular
+  session (closed $42.975 vs $40.055) — brushes the 5%-priced-in freshness limit, same
+  treatment as FISV yesterday. Mitigant: price only recovered the pre-PDUFA dip (07-02
+  flushed to $36.91 on 2x volume); $42.975 is just +0.1% above the 06-30 close.
+  Confirmation 1 — up on approval day, volume unverifiable (no 07-07 bar).
+  Cleanliness 1 — accelerated approval carries a confirmatory-trial condition but no
+  offsetting bad news.
+
+Skipped (disqualified, not scored):
+- NET / SHOP / AAPL / FSLR / MGM / ALGT / DHI / NVR: analyst upgrades / PT raises /
+  coverage reinstatements only — "pundit price targets / analyst upgrades with no new
+  information" are non-qualifying per strategy.md.
+- SPCX: Nasdaq-100 inclusion was EFFECTIVE yesterday (07-07) — flow event now stale;
+  scored 5 yesterday and effective-day flows are classically front-run. Fails fresh.
+- EDBL / IOTR / BATL / DCX / SKYQ / TC / TPET: micro/small-cap pre-market movers, fail
+  min_market_cap ($1B) and/or min_price ($5); no verifiable corporate catalyst.
+- BABU / BABX / KBAB: leveraged ETFs — disallowed instrument class.
+- OLPX: Henkel acquisition completing at $2.06 — target pinned to deal price, no second wave.
+- LMT: acquirer in the Ultra Maritime deal, not a bullish-catalyst target.
+- EVTV: micro-cap reverse-merger pivot, fails market-cap filter.
+- VLO / LYB / FANG: sector rotation per Grok, no named corporate catalyst.
+
+Universe-filter results: PENG active/tradable, ADV 3.38M (volume.sh, consolidated);
+VERA active/tradable, ADV 1.83M. Both clear the 100k floor; neither is held (book flat).
+Price filters pass (PENG ~$62.71 last, VERA ~$42.98 last; both in $5–$1000 band).
+
+Data-feed note: Alpaca daily bars now reach 07-06 (improved from the 07-02 staleness
+flagged 07-07) but there is STILL no 07-07 bar as of ~6am CT 07-08 — feed lags ~1 trading
+day. Confirmation scoring again fell back to latest-trade prices + press reports.
+Weekly-review item stands.
+
+✅ Grok API healthy — all 4 queries first-try.
+✅ Pre-market cron fired on schedule (caffeinate fix holding, day 2).
