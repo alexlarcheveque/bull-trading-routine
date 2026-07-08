@@ -30,3 +30,4 @@
 | 2026-06-17 14:56 | TSEM260626C00280000 | SELL | 10 | 9.8 | stop -58.82% (bid $8.86 crossed -60% threshold $9.52; order abf8f693) | - | 2026-06-22 |
 | 2026-06-18 09:31 | KMX | BUY | 890 | 48.431618 | score=7 catalyst=Q1 EPS $1.31 vs $0.95 +38% beat; call path ineligible (no 7-14 DTE KMX calls — all expired today Jun 18); fell back to shares (order f78c9693; fill confirmed midday) | 7 | 2026-06-25 |
 | 2026-06-26 06:33 | KMX | SELL | 890 | 52.53 | time-stop OVERDUE (target_exit 2026-06-25, sold 06-26; 06-25 EOD routine did not run to enforce it); ret=+8.46% vs entry $48.43; thesis intact (Grok: no negative news); order 56b07918 | - | 2026-06-18 |
+| 2026-07-08 06:35 | PENG | BUY | 1363 | 67.15774 | score=8 catalyst=Q3 adj EPS $0.84 vs $0.56 +50% beat, FY guide raised +14%; call path ineligible (nearest expiry Jul 17 = 9 DTE, outside 3-7 DTE window); fell back to shares (order 12242a0d; slow fill ~3min, partial 807 then full) | 8 | 2026-07-15 |

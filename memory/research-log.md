@@ -3054,3 +3054,24 @@ Weekly-review item stands.
 
 ✅ Grok API healthy — all 4 queries first-try.
 ✅ Pre-market cron fired on schedule (caffeinate fix holding, day 2).
+
+## 2026-07-08 market-open execution
+
+- Bail-outs clear: market OPEN, trading_blocked=false. Book was flat → 0 exits.
+- Halt checks clear: day_pnl 0.00% vs -100% cap; WTD 0.00%; 0/1 positions open.
+- **BUY PENG 1363 sh @ $67.16 avg** (score 8, top of watchlist; max 1/day so VERA not taken).
+- Call path ineligible: `option-chain PENG call` in the 3–7 DTE window (2026-07-11..15)
+  returned 0 contracts. PENG has monthlies only — nearest expiry 2026-07-17 (9 DTE) is
+  outside the guardrail window. Fell back to SHARES per strategy Entry rules.
+- Preflight PASSED (PENG buy 1363 @ 65.43 equity). Order 12242a0d.
+- Slow fill: status "new" for ~90s, then partial 807 sh @ $67.48, full 1363 @ $67.15774
+  ~3 min after submit. Poll loop extended past 30s to confirm; no unbounded polling.
+- ⚠️ AMBIGUITY for weekly review: sized 1363 sh at the $65.43 quote but the market
+  order filled +2.6% higher ($67.16) — opening-auction slippage on a gapping name.
+  Result: cash -$2,326.91 (~2.6% margin usage) vs `no_margin: true`. Preflight passed
+  at quote time; breach is fill-slippage-induced. No corrective trim sent (not an
+  authorized exit; decision.md says log ambiguity, don't act). Suggest weekly review
+  consider a slippage buffer (e.g. size at 97–98% of equity) for 100%-sized market
+  orders on gap-up names.
+- target_exit 2026-07-15 (7d hold). Exit management: stop/target ±100%, thesis check
+  midday, time stop + expiry n/a (shares) at EOD.

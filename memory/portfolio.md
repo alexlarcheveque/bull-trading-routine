@@ -1,18 +1,19 @@
 # portfolio.md
-# Updated 2026-07-07 by midday routine.
+# Updated 2026-07-08 06:35 by market-open routine.
 
 ## Account
-- equity: 89209.09
-- cash: 89209.09
-- buying_power: 356836.36
-- day_pnl_pct: 0.00
+- equity: 88476.15
+- cash: -2326.91
+- buying_power: 244940.93
+- day_pnl_pct: -0.82
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| (none — flat) | | | | | | |
+| PENG   | equity     | 1363 | 67.15774   | 2026-07-08 | 2026-07-15  | -0.79              |
 
 ## Notes
+2026-07-08 market-open: 0 exits (was flat), 1 buy — PENG 1363 sh @ $67.16 (score 8: Q3 +50% EPS beat, FY guide +14%). Halt checks all CLEAR pre-entry (day_pnl 0.00% vs -100% cap; 0/1 positions). Call path was ineligible: PENG has options but nearest expiry is Jul 17 (9 DTE), outside the 3–7 DTE guardrail window — fell back to shares per strategy. ⚠️ Fill slippage: sized 1363 sh at $65.43 quote but market order filled avg $67.16 (+2.6%), so cash is -$2,326.91 — small margin usage vs the no_margin guardrail. No corrective trim sent (procedure doesn't authorize one); flagged for weekly review — consider a sizing buffer (e.g. 98% of equity) for 100%-sized market orders. Order fill was also slow: pending ~90s, partial 807 sh, full fill ~3 min after submit.
 2026-07-07 midday: 0 exits (flat — Alpaca confirms no positions, nothing to check). Daily loss cap CLEAR (day_pnl=0.00% vs -100% cap). Equity $89,209.09 unchanged. No new positions (not midday's job).
 2026-07-07 market-open: 0 exits (flat — Alpaca confirms no positions), 0 buys. Market OPEN, trading_blocked=false, halt checks all CLEAR (day_pnl=0.00% vs -100% cap; 0/1 positions). 2026-07-07 pre-market watchlist exists (cron fired on time — caffeinate fix holding) but has NO tradeable signal: top scores SPCX=5 and FISV=5, both below the ≥6 FULL YOLO threshold. Still FLAT; cash is a position. Equity $89,209.09 unchanged.
 2026-07-06 EOD: 0 time-stops, 0 expiry guards (flat — Alpaca confirms no positions). Weekly loss cap CLEAR (WTD 0.00% vs -100% cap). Equity $89,209.09 unchanged, day_pnl=0.00%. EOD email sent. No trades today — pre-market cron missed, so the armed FULL YOLO session had no watchlist; flag stands for operator/weekly-review.
