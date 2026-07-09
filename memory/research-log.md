@@ -3093,3 +3093,112 @@ today we are NOT flat.
 No EOD email sent for 2026-07-08 (bail rule). Equity at close: $104,520.57
 (day +17.16% vs last_equity $89,209.09), cash -$2,326.91 (slippage margin note
 from market-open stands). PENG 1363 sh confirmed at Alpaca, matches portfolio.md.
+
+## 2026-07-09 pre-market research (raw Grok output)
+
+### Q1: Materially bullish large-cap news, last 24h
+
+**PENG (Penguin Solutions Inc.):** Q3 FY2026 net sales of $479M (+48% YoY) with raised full-year net sales and EPS outlook (earnings beat/raise). Source: Morningstar.com (market movers, as of ~Jul 9, 2026, 2:05 AM). Market cap qualifies as large-cap (> $2B based on ~$78 share price and typical float).
+
+**WULF (TeraWulf Inc.):** Signed 20-year lease with Anthropic for ~401 MW data center capacity, generating $19B in contracted revenue (major AI infrastructure deal). Source: Morningstar.com and WSJ (Jul 8-9, 2026 coverage). Up ~13% intraday.
+
+**PARR (Par Pacific Holdings Inc.):** +11.57% move (energy/refining sector beneficiary amid oil price surge). Source: Morningstar.com (Jul 9, 2026). Market cap >$2B.
+
+**DLTR (Dollar Tree Inc.):** Upgraded to neutral from sell by Goldman Sachs. Source: Schwab market update (Jul 8, 2026 premarket).
+
+**Energy names (e.g., BKR, VLO, DINO/HF Sinclair):** Gains tied to oil price jump after U.S. policy moves on Iran. Sources: IBD/YouTube (Jul 8, 2026) and Schwab (Jul 8, 2026).
+
+Broader context includes analyst bullishness on SpaceX (SPCX) post-IPO coverage with high price targets, but specific last-24h triggers are limited. Market caps verified via context/pricing where available; smaller movers (e.g., BVC, SPTX) excluded.
+
+### Q2: Pre-market movers 2026-07-09 on real catalysts
+
+**BE (Bloom Energy) ~3% premarket; RPGL (Republic Power Group) ~35% premarket (among top movers).**
+
+- **BE**: Rose in premarket after retail investors dismissed a short-seller report as "manipulation," amid broader sentiment despite recent profit-taking. (Yahoo Finance)
+- **RPGL**: Surged after regaining compliance with Nasdaq's minimum bid price requirement (recent news alongside prior reverse split). (Yahoo Finance)
+
+Top premarket gainers lists (Benzinga, StockAnalysis, TradingView) show many small/penny stocks (LGHL +75%, SDOT +26%, JLHL +21%, EOSER +21%) but most lack clear news catalysts — momentum/low-float/gap-fill. Larger names with modest premarket gains tie to sector sentiment or analyst notes; earnings (e.g., PEP) noted but no widespread >2% movers on news.
+
+### Q3: Beat-and-raise earnings after yesterday's close
+
+**PENG (Q3 FY2026, reported ~July 7-8 after close)**: Non-GAAP EPS $0.84 vs. ~$0.56 consensus (~50% beat); revenue $479M vs. ~$421M est (~13.7% beat). Raised FY2026 net sales growth outlook to 22% ±2% (from prior ~12%) and non-GAAP EPS to $2.60 ±$0.05 (from ~$2.15 midpoint). Sources: earnings transcripts, IR release, Benzinga/Yahoo.
+
+**LEVI (Q2 FY2026, reported July 8)**: Adj. EPS $0.28 vs. $0.24 consensus ($0.04/16.7% beat); revenue $1.56B vs. $1.52B est (~2.6% beat). Raised FY2026 reported net revenue growth to 7.0%-7.5% (from 5.5%-6.5%) and adj. diluted EPS to $1.46-$1.52 (from $1.42-$1.48); also raised dividend. Sources: CNBC, company IR, Investing.com ("beats Q2 2026 estimates but shares fall").
+
+No other clear matches for after-July-8-close beat-and-raise (PepsiCo expected July 9; HPE was June).
+
+### Q4: FDA / contracts / M&A / regulatory, last 24h
+
+- **JNJ**: FDA approved the Dual Energy THERMOCOOL SMARTTOUCH SF Platform (RF + pulsed-field ablation catheter). (Yahoo Finance)
+- **VERA (Vera Therapeutics)**: FDA granted accelerated approval to atacicept (TRUTAKNA) for adults with primary IgA nephropathy at risk of disease progression (ORIGIN 3 trial proteinuria data). (nephcure.org)
+- **AMRX (Amneal Pharmaceuticals)**: FDA accepted for review two ANDAs for a generic tirzepatide autoinjector (NCE-1 filing; commercialization subject to final approval). (Amneal IR)
+- **M&A**: Enverus acquired TGS ASA's North American well log data business for $100M upfront + $15M earnout. (worldoil.com)
+
+No large contract wins (>$100M) or major new regulator decisions (FTC/DOJ/SEC) identified beyond the above.
+
+## 2026-07-09 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                    | source                |
+|--------|-------|----------------------------------------------------------------------------------------|-----------------------|
+| WULF   | 8     | 20-year lease with Anthropic: ~401 MW data center capacity, $19B contracted revenue     | morningstar.com / wsj.com |
+
+**WULF (8) is ≥ the FULL YOLO entry threshold (6) — TRADEABLE on paper.**
+
+⚠️ **BOOK IS FULL:** we hold PENG (1363 sh, target_exit 2026-07-15) and
+`max_concurrent_positions: 1`. Unless PENG exits first (stop/target/thesis — none
+close as of last check, +16.5%), market-open CANNOT take WULF today. Watchlist is
+informational; no execution expected.
+
+Scoring notes:
+- WULF (4+2+1+1=8): Catalyst strength 4 — $19B contracted revenue over 20 years
+  (~$950M/yr) against a roughly $9–11B market cap and a revenue base an order of
+  magnitude smaller; a hyperscaler-anchored (Anthropic) 401 MW lease is a first-order,
+  multi-year cash-flow transformation, the strongest non-earnings catalyst this book
+  has seen. Novelty 2 (honest): a +13% intraday move ALREADY printed on 07-08 per
+  Morningstar/WSJ — that alone caps novelty. Mitigant (same treatment as PENG 07-08):
+  vs the last verifiable pre-catalyst reference (07-06 close $22.195, after a week-long
+  slide from $25.59) the last trade $22.825 is only +2.8% net — under the 5%-priced-in
+  line; comparable AI-datacenter lease deals have re-rated over weeks, so the 14-day
+  second wave is substantially ahead. Not 3 because the headline-day move did print.
+  Confirmation 1 — up big on announcement day per press, but Alpaca bars still lag
+  (latest 07-06), so announcement-day volume is unverifiable. Cleanliness 1 — no
+  offsetting news, no halt, earnings-proximity guardrail is 0. Note: WULF asset record
+  has `has_options` — market-open should check the 3–7 DTE call window per strategy.
+
+Skipped (below threshold or disqualified):
+- VERA (would-be ~6): FDA approval catalyst is now ~48h old — fails the 24h freshness
+  gate outright (scored 7 on 07-08, not taken due to max 1/day; day-2 print faded
+  -1.2% to $42.47). Missed it; do not chase.
+- LEVI (score 5 = 3+1+0+1): Q2 beat ($0.28 vs $0.24) + FY raise + dividend hike is a
+  real catalyst, but the stock FELL ~6% on the print ($24.69 → $23.15) — confirmation 0
+  and the market's verdict says the raise was already priced/offset by margin concerns.
+  We don't buy catalyst names moving the wrong way.
+- AMRX (score 5 = 2+2+0+1): FDA ACCEPTANCE for review of generic tirzepatide ANDAs —
+  a filing milestone, not an approval; monetization is years out (NCE-1/litigation).
+  Stock flat ($16.95 vs $16.93). Not material enough now.
+- PARR (score 4 = 1+0+2+1): +12.8% already printed ($60.75 → $68.50) on an oil-price
+  surge — sector/macro move, no named corporate catalyst; fails materiality and novelty.
+- BKR / VLO / DINO: same macro oil rotation, no corporate catalyst — disqualified.
+- DLTR: Goldman upgrade (to neutral!) only — analyst action with no new information,
+  non-qualifying per strategy.
+- BE: pre-market bounce on retail dismissing a SHORT report — short-report situations
+  are asymmetric-downside, non-qualifying per strategy.
+- RPGL: Nasdaq bid-price compliance regained post reverse-split — micro-cap, fails
+  min_market_cap; not a demand catalyst.
+- JNJ: ablation-catheter platform approval is immaterial to a ~$400B cap's cash flows —
+  catalyst strength ~1.
+- SPCX: analyst bullishness only, no fresh trigger (also stale from 07-07).
+- LGHL / SDOT / JLHL / EOSER: penny/low-float pre-market movers, no verifiable
+  catalyst, fail market-cap/price filters.
+
+Universe-filter results: WULF active/tradable (NASDAQ), consolidated 30-day ADV 31.9M
+(volume.sh); last $22.825, within $5–$1000 band; cap ~$9–11B > $1B floor; not held.
+LEVI (ADV 2.66M), VERA (1.93M), AMRX (2.22M), PARR (908k) all passed filters too but
+scored below threshold / failed freshness.
+
+Data-feed note: Alpaca daily bars still lag — latest bar 07-06, no 07-07/07-08 bars at
+~6am CT 07-09 (known anomaly, flagged for weekly review). Confirmation scoring again
+relied on latest-trade prints + press.
+
+✅ Pre-market cron fired on schedule (caffeinate fix holding, day 3). All 4 Grok
+queries succeeded first-try.
