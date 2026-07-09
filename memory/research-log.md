@@ -3202,3 +3202,16 @@ relied on latest-trade prints + press.
 
 ✅ Pre-market cron fired on schedule (caffeinate fix holding, day 3). All 4 Grok
 queries succeeded first-try.
+
+## 2026-07-09 market-open execution
+
+- Bail-out checks: market OPEN, trading_blocked=false.
+- Exits: 0. PENG +27.63% ($67.16 → $85.71); stop/target ±100% clear; thesis INTACT
+  per Grok (no material negative news in 24h — coverage is the Q3 beat, raised guide,
+  ~25% surge on AI momentum). Time stop 2026-07-15 is EOD's job.
+- Halt check: **1/1 open positions — max_concurrent_positions reached → NO new
+  entries today.** WULF (score 8, ≥6 threshold) NOT taken; watchlist was
+  informational only, exactly as the pre-market pass predicted. Day P&L +10.22%
+  (clear vs -100% cap); week P&L positive (clear).
+- 0 orders sent → no trade-log rows. portfolio.md refreshed (equity $115,317.02).
+- Cron fired on time (06:31 local / 08:31 CT).
