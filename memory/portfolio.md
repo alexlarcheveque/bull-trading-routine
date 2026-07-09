@@ -1,18 +1,19 @@
 # portfolio.md
-# Updated 2026-07-09 06:31 by market-open routine.
+# Updated 2026-07-09 12:00 by midday routine.
 
 ## Account
-- equity: 115317.02
+- equity: 117252.48
 - cash: -2326.92
-- buying_power: 320095.35
-- day_pnl_pct: 10.22
+- buying_power: 325514.63
+- day_pnl_pct: 12.06
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| PENG   | equity     | 1363 | 67.15774   | 2026-07-08 | 2026-07-15  | +27.63             |
+| PENG   | equity     | 1363 | 67.15774   | 2026-07-08 | 2026-07-15  | +30.13             |
 
 ## Notes
+2026-07-09 midday: 0 exits. PENG +30.13% from entry ($67.16 → $87.40) — stop (-100%) and target (+100%) not triggered. Thesis INTACT per Grok: no negative news in last 6 hours; coverage remains the Q3 beat + raised guide + NVIDIA AI Factory partner momentum; CFO transition previously announced, framed neutrally. Daily loss cap CLEAR (day_pnl=+12.06% vs -100% cap). Equity $117,252.48. Reconcile: Alpaca confirms 1363 sh PENG, matches portfolio.md.
 2026-07-09 market-open: 0 exits, 0 buys. PENG held — +27.63% from entry ($67.16 → $85.71), stop/target (±100%) not triggered, thesis INTACT per Grok (no negative news; coverage is the Q3 beat + AI momentum). Halt check: 1/1 positions — max_concurrent_positions full, so NO new entries; WULF (score 8, Anthropic lease) not taken, as pre-market flagged. Day P&L +10.22% vs -100% cap (clear). Equity $115,317.02. Reconcile: Alpaca confirms 1363 sh PENG, matches portfolio.md. Cron fired on time (06:31 local).
 2026-07-08 midday: 0 exits. PENG +11.1% from entry ($67.16 → $74.64) — stop (-100%) and target (+100%) not triggered. Thesis INTACT per Grok: no negative news, coverage dominated by the Q3 beat + raised FY guide; CFO departure was previously announced, not new. Daily loss cap CLEAR (day_pnl=+11.43% vs -100% cap). Equity $99,393.78. Reconcile: Alpaca confirms 1363 sh PENG, matches portfolio.md.
 2026-07-08 market-open: 0 exits (was flat), 1 buy — PENG 1363 sh @ $67.16 (score 8: Q3 +50% EPS beat, FY guide +14%). Halt checks all CLEAR pre-entry (day_pnl 0.00% vs -100% cap; 0/1 positions). Call path was ineligible: PENG has options but nearest expiry is Jul 17 (9 DTE), outside the 3–7 DTE guardrail window — fell back to shares per strategy. ⚠️ Fill slippage: sized 1363 sh at $65.43 quote but market order filled avg $67.16 (+2.6%), so cash is -$2,326.91 — small margin usage vs the no_margin guardrail. No corrective trim sent (procedure doesn't authorize one); flagged for weekly review — consider a sizing buffer (e.g. 98% of equity) for 100%-sized market orders. Order fill was also slow: pending ~90s, partial 807 sh, full fill ~3 min after submit.
