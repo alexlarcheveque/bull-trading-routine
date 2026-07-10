@@ -3215,3 +3215,18 @@ queries succeeded first-try.
   (clear vs -100% cap); week P&L positive (clear).
 - 0 orders sent → no trade-log rows. portfolio.md refreshed (equity $115,317.02).
 - Cron fired on time (06:31 local / 08:31 CT).
+
+## 2026-07-10 market-open execution
+
+- Bail-out checks: market OPEN, trading_blocked=false.
+- Exits: 0. PENG +17.1% ($67.16 → $78.67 at refresh; $78.75 at check); stop/target
+  ±100% clear; thesis INTACT per Grok (no material negative news in 24h — coverage is
+  the Q3 record sales +48% YoY, raised FY guide, and NVIDIA AI Factory Specialized
+  Partner momentum). Time stop 2026-07-15 is EOD's job.
+- ⚠️ **NO 2026-07-10 pre-market watchlist exists** — the pre-market routine did not
+  run this morning (latest block is 2026-07-09). Flagged for operator/weekly-review
+  to investigate the missed pre-market cron (previously missed 07-06).
+- Halt check: **1/1 open positions — max_concurrent_positions reached → NO new
+  entries today** (so the missing watchlist changed nothing). Day P&L -3.41% (clear
+  vs -100% cap); week P&L positive (Monday open $89,209 → $104,900, clear).
+- 0 orders sent → no trade-log rows. portfolio.md refreshed (equity $104,900.29).
