@@ -65,7 +65,12 @@ corporate catalyst.
     buy a **LONG CALL** for leveraged upside.
   - Otherwise: buy **SHARES**.
 - **Shares sizing:** `target_position_pct` of equity (guardrails; currently 100%),
-  market order, full size in one shot.
+  market order, full size in one shot. Compute share count at **98% of target
+  notional** — `floor(0.98 × equity × target_position_pct/100 ÷ quote)` — because
+  opening-auction fills on gapping catalyst names run 2–3% above the pre-open quote
+  (PENG 2026-07-08 filled +2.6%, pushing cash negative against `no_margin`). The 2%
+  haircut keeps a 100%-sized market order inside the cash balance. [added 2026-07-10
+  weekly review]
 - **Call sizing:** target `max_option_premium_pct` of equity in premium (currently 100%).
   `contracts = floor((equity * max_option_premium_pct/100) / (ask * 100))`, min 1.
   If even 1 contract trips the premium cap (preflight rejects), **fall back to shares**.

@@ -3245,3 +3245,27 @@ queries succeeded first-try.
 - EOD email sent OK (notify id d05e6465).
 - ⚠️ Standing flag: 07-10 pre-market cron MISSED (no watchlist block). EOD cron fired
   on time today. Verify the caffeinate wrapper in run-routine.sh (still uncommitted).
+
+## 2026-07-10 weekly-review: 1 strategy edit (slippage sizing buffer)
+- week of 2026-07-06 to 2026-07-10: WTD +$15,854.90 (+17.77%), equity $89,209.09 → $105,063.99
+- vs SPY +0.9% ($748.22 Mon open → $754.94 Fri) → alpha ≈ +16.9 pts
+- 0 trades closed (PENG 1363 sh open, +17.4% unrealized, time-stop 2026-07-15); 0 stop-outs,
+  0 time-stops, 0 preflight rejections
+- rubric hindsight (eval → Fri): PENG 8 TAKEN +16.6% | WULF 8 (book full) -3.8% |
+  VERA 7 (max 1/day) -2.3% | SPCX 5 -8.2% | LEVI 5 +5.1% | PARR 4 -4.0% | CRNX pinned -0.4%.
+  Scores monotonic with outcomes; 0 skipped names ripped >10% — no misses, no re-weighting.
+- observation (2nd week): earnings beat-and-raise catalysts (PENG, prev WDAY/KMX) keep
+  outperforming non-earnings catalysts (WULF lease -3.8%, VERA FDA -2.3%, June TSEM supply
+  call -58.8%). N≈3 — revisit before encoding a catalyst-type preference.
+- STRATEGY EDIT (revert if next week worse): Entry rules shares sizing now computes share
+  count at 98% of target notional (was 100%) to absorb opening-auction slippage — PENG
+  07-08 filled +2.6% over the sizing quote, driving cash to -$2,326.91 vs `no_margin: true`.
+  Compliance fix, not a risk-budget change (guardrails untouched).
+- NOT made (human-only knobs): widening 3–7 DTE option window (PENG monthlies at 9 DTE
+  forced shares fallback — flagged only).
+- operator flags: (1) URGENT commit caffeinate fix in scripts/run-routine.sh — pre-market
+  cron missed 07-06 AND 07-10; (2) move EOD cron to ~12:45 PDT — late-fired+bailed 07-07 &
+  07-08, and PENG's mandatory time-stop is EOD 07-15; (3) Alpaca daily bars lag 1–4 days
+  (latest 07-06 on Friday) — confirmation scoring degraded all week.
+- VERDICT: RESUME MONDAY 2026-07-13 WITH CURRENT STRATEGY (+1 sizing edit). No cap flatten
+  this week (WTD +17.77% vs -100% cap).
