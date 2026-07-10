@@ -1,18 +1,19 @@
 # portfolio.md
-# Updated 2026-07-10 06:31 by market-open routine.
+# Updated 2026-07-10 12:00 by midday routine.
 
 ## Account
-- equity: 104900.29
+- equity: 102739.94
 - cash: -2326.92
-- buying_power: 290928.51
-- day_pnl_pct: -3.41
+- buying_power: 284879.51
+- day_pnl_pct: -5.26
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| PENG   | equity     | 1363 | 67.15774   | 2026-07-08 | 2026-07-15  | +17.14             |
+| PENG   | equity     | 1363 | 67.15774   | 2026-07-08 | 2026-07-15  | +14.94             |
 
 ## Notes
+2026-07-10 midday: 0 exits. PENG +14.94% from entry ($67.16 → $77.19) — stop (-100%) and target (+100%) not triggered. Thesis INTACT per Grok: no material negative news in last 6 hours; coverage remains the Jul 7 record Q3 (+48% YoY sales) + raised FY guide; CFO departure is old news. Daily loss cap CLEAR (day_pnl=-5.26% vs -100% cap). PENG fading intraday (-5.2% today, $81.39 → $77.19) but well within ±100% bands. Equity $102,739.94. Reconcile: Alpaca confirms 1363 sh PENG, matches portfolio.md.
 2026-07-10 market-open: 0 exits, 0 buys. PENG held — +17.1% from entry ($67.16 → $78.67), stop/target (±100%) not triggered, thesis INTACT per Grok (no material negative news in 24h; coverage remains Q3 record sales +48% YoY, raised FY guide, NVIDIA AI Factory partner momentum). ⚠️ NO 2026-07-10 pre-market watchlist in research-log.md — pre-market routine did not run this morning; flagged for operator/weekly-review. Moot for entries anyway: 1/1 positions — max_concurrent_positions full. Day P&L -3.41% vs -100% cap (clear); week P&L positive (clear). Equity $104,900.29. Reconcile: Alpaca confirms 1363 sh PENG, matches portfolio.md.
 2026-07-09 EOD: 0 time-stops (PENG target_exit 2026-07-15, not due), 0 expiry guards (no options). Safety net: PENG +21.23% ($67.16 → $81.42), stop/target ±100% clear; thesis INTACT per Grok (no negative news last 8h; coverage still Q3 beat-and-raise + NVIDIA momentum). Weekly loss cap CLEAR (WTD +21.7% vs Monday open $89,209 vs -100% cap). PENG faded intraday from midday $87.40 to $81.42 but day still +3.81%. Equity $108,614.47. EOD email sent OK. Cron fired ON TIME today after 2 late days. Reconcile: Alpaca confirms 1363 sh PENG, matches portfolio.md.
 2026-07-09 midday: 0 exits. PENG +30.13% from entry ($67.16 → $87.40) — stop (-100%) and target (+100%) not triggered. Thesis INTACT per Grok: no negative news in last 6 hours; coverage remains the Q3 beat + raised guide + NVIDIA AI Factory partner momentum; CFO transition previously announced, framed neutrally. Daily loss cap CLEAR (day_pnl=+12.06% vs -100% cap). Equity $117,252.48. Reconcile: Alpaca confirms 1363 sh PENG, matches portfolio.md.
