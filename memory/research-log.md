@@ -3230,3 +3230,18 @@ queries succeeded first-try.
   entries today** (so the missing watchlist changed nothing). Day P&L -3.41% (clear
   vs -100% cap); week P&L positive (Monday open $89,209 → $104,900, clear).
 - 0 orders sent → no trade-log rows. portfolio.md refreshed (equity $104,900.29).
+
+## 2026-07-10 end-of-day pass
+
+- Bail-out: market OPEN.
+- Time stops: 0 due — PENG target_exit 2026-07-15 (Wednesday). EOD 07-15 MUST enforce it.
+- Expiry guard: n/a — no options held (PENG is shares, asset_class us_equity).
+- Safety net: PENG +17.5% ($67.16 → $78.91), stop/target ±100% clear. Thesis INTACT
+  per Grok — no material negative news in last 8h; PENG fell ~6.6% today with one
+  report framing it as "forward guidance spooking Wall Street," but no guidance cut,
+  contract loss, accounting issue, or halt; CFO transition is old news.
+- Weekly loss cap: CLEAR — WTD +17.8% (Monday open $89,209.09 → $105,063.99) vs -100% cap.
+- 0 orders sent → no trade-log rows. Day P&L -3.26% ($108,607.65 → $105,063.99).
+- EOD email sent OK (notify id d05e6465).
+- ⚠️ Standing flag: 07-10 pre-market cron MISSED (no watchlist block). EOD cron fired
+  on time today. Verify the caffeinate wrapper in run-routine.sh (still uncommitted).
