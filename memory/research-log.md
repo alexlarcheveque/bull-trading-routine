@@ -3345,3 +3345,10 @@ Skipped (filters / below threshold):
 - HUBB/VRSN/HWM: +2-4% pre-market on sector/market flows, no company-specific news.
 
 No tradeable signal today. Top score 5 < entry threshold 6. (Book is also full: PENG 1/1 max_concurrent_positions, target_exit 2026-07-15.)
+
+## 2026-07-13 market-open decision
+
+- Exits: 0. PENG +10.6% from entry ($67.16 → $74.25); stop/target (±100%) not triggered; thesis INTACT per Grok (no negative news in 24h — coverage remains Q3 beat, raised FY guide ~22% sales growth midpoint, buybacks). Time stop 2026-07-15 not due (EOD enforces it).
+- Entries: 0. HALT — book full (1/1 max_concurrent_positions, PENG held). Moot anyway: top watchlist score 5 (META/MRK/SRPT) < entry threshold 6, so no tradeable signal.
+- Halt checks: day P&L -5.03% vs -100% cap CLEAR; weekly cap CLEAR (new week, Monday).
+- Equity $99,209.77. Reconcile: Alpaca confirms 1363 sh PENG, matches portfolio.md.
