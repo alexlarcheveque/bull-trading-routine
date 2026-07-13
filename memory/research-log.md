@@ -3269,3 +3269,79 @@ queries succeeded first-try.
   (latest 07-06 on Friday) — confirmation scoring degraded all week.
 - VERDICT: RESUME MONDAY 2026-07-13 WITH CURRENT STRATEGY (+1 sizing edit). No cap flatten
   this week (WTD +17.77% vs -100% cap).
+
+## 2026-07-13 raw Grok output (pre-market)
+
+### Query 1 — bullish large-cap news last 24h
+
+**META (Meta Platforms) and AAPL (Apple) had notable bullish mentions in the last ~24 hours (as of ~10:30 GMT on July 13, 2026).** Both have market caps far exceeding $2B. No other large-cap US equity catalysts stood out prominently from recent searches.[[1]](https://x.com/MaharajTrading/status/2076615251642958271)[[2]](https://x.com/whitee_rhinoo/status/2076612881047581143)
+
+- **META**: Announcement of $600 billion commitment to US infrastructure and jobs over the next three years; also boosting Louisiana data center capacity to 5GW with >$1B local investment. Stock noted trading at ~$669 with bullish technicals.
+  **Source**: X posts (e.g., @MaharajTrading and @StockMarketZaps).
+  **Timestamp**: ~July 13, 2026, 10:17-10:30 GMT.[[1]](https://x.com/MaharajTrading/status/2076615251642958271)[[3]](https://x.com/StockMarketZaps/status/2076611972519375047)
+
+- **AAPL**: Citigroup raised price target from $315 to $365 (Buy rating implied).
+  **Source**: X posts (e.g., @whitee_rhinoo and @isamillionaire).
+  **Timestamp**: ~July 13, 2026, 10:16-10:21 GMT.[[2]](https://x.com/whitee_rhinoo/status/2076612881047581143)
+
+Note: Broader web searches for earnings beats, FDA approvals, upgrades, or gainers on July 12-13, 2026, returned limited or no matching large-cap results. ZVRA (FDA-approved products) was mentioned but appears too small-cap for inclusion. Always verify with primary filings/news wires, as social mentions can be unconfirmed.
+
+### Query 2 — pre-market movers on news
+
+**Top pre-market gainers (>2%) on July 13, 2026, with identifiable news or corporate catalysts (per available reports) include AGEN; many other large movers (e.g., MIMI, FTRK, QTTB, EHGO, ELPW) show significant percentage gains but lack clear same-day news catalysts in reports and appear driven by momentum, low float, or prior developments.**[[1]](https://www.benzinga.com/premarket)[[2]](https://www.investing.com/equities/pre-market)
+
+- **AGEN (Agenus)**: Up ~15% pre-market (to ~$3.86). Catalyst: $85 million private placement financing announcement.[[2]](https://www.investing.com/equities/pre-market)
+- Other notable pre-market gainers (>2%, per Benzinga data as of ~6 AM ET July 13): MIMI (~+55%), FTRK (~+43%), QTTB (~+39%), EHGO (~+31%), SOBR (~+20%), ELPW (~+18%). These lack explicit fresh same-day news in leading coverage and are often attributed to trading dynamics rather than new catalysts.[[1]](https://www.benzinga.com/premarket)
+
+Larger/mid-cap examples with smaller moves (still >2%): HUBB (~+4.3%), VRSN (~+3.7%), HWM (~+3.6%). These may tie to broader market or sector flows rather than company-specific news.[[2]](https://www.investing.com/equities/pre-market)
+
+Data is time-sensitive and drawn from pre-market snapshots (e.g., Benzinga, Investing.com). Always verify real-time quotes and full news releases, as catalysts can emerge intraday. Sources primarily include Benzinga premarket movers and Investing.com reports.
+
+### Query 3 — beat-and-raise earnings since yesterday's close
+
+**None identified based on available sources.**[[1]](https://www.earningswhispers.com/calendar)[[2]](https://finance.yahoo.com/calendar/earnings/)
+
+Earnings calendars for July 13, 2026 (reports released after July 12 close) list limited companies (e.g., BMNR, FBK with AMC timing), but no post-release news confirms any that both beat estimates *and* raised guidance.[[2]](https://finance.yahoo.com/calendar/earnings/)
+
+Recent FactSet data covers results only through ~July 10. Earlier 2026 examples (e.g., Penguin Solutions on ~July 7) exist but fall outside the timeframe.[[3]](https://www.investing.com/news/earnings/penguin-solutions-soars-9-on-q3-earnings-beat-raised-outlook-93CH-4780064)[[4]](https://www.factset.com/earningsinsight)
+
+No matching tickers, beat/raise figures, or sources were found in targeted searches.
+
+### Query 4 — FDA / contracts / M&A / regulator decisions last 24h
+
+**No major large contract wins (>$100M) or broad regulator decisions (e.g., FTC/SEC/DOJ) were identified in the last 24 hours.** Several FDA-related actions and one M&A event were reported.[[1]](https://www.medicaleconomics.com/view/fda-approves-eli-lilly-s-weight-loss-pill-judge-revokes-citizenship-over-stolen-medical-secrets-for-china-new-covid-19-cicada-variant-spreads-to-25-states-morning-medical-update)[[2]](https://biz.chosun.com/en/en-science/2026/07/13/JCKWWLQPVZAEBAX3SKERVVITQU/)
+
+**FDA actions (affecting US-listed companies):**
+- **Eli Lilly (LLY)**: FDA approved orforglipron (Foundayo), a once-daily oral GLP-1 weight-loss pill, positioned as the second oral entrant after Novo Nordisk's oral Wegovy; pricing noted at ~$149/month.[[1]](https://www.medicaleconomics.com/view/fda-approves-eli-lilly-s-weight-loss-pill-judge-revokes-citizenship-over-stolen-medical-secrets-for-china-new-covid-19-cicada-variant-spreads-to-25-states-morning-medical-update)
+- **Merck (MRK)**: FDA approved KEYTRUDA (pembrolizumab) and KEYTRUDA QLEX with Padcev (enfortumab vedotin-ejfv) for treatment before and after surgery in adults with muscle-invasive bladder cancer.[[2]](https://biz.chosun.com/en/en-science/2026/07/13/JCKWWLQPVZAEBAX3SKERVVITQU/)
+- **Sarepta Therapeutics (SRPT)**: FDA accepted sNDAs for AMONDYS 45 (casimersen) and VYONDYS 53 (golodirsen) for Duchenne muscular dystrophy (DMD), with a PDUFA target action date of February 28, 2027.[[3]](https://investorrelations.sarepta.com/news-releases/news-release-details/sarepta-announces-fda-acceptance-sndas-amondys-45r-and-vyondys)
+- **HLB** (US-listed ADR/context): FDA rejected the company's liver cancer drug; HLB stock plunged, and the firm is pursuing rapid reapproval.[[2]](https://biz.chosun.com/en/en-science/2026/07/13/JCKWWLQPVZAEBAX3SKERVVITQU/)
+
+**M&A announcement/vote:**
+- **XOMA Royalty Corporation (XOMA)** and **Ligand Pharmaceuticals (LGND)**: Shareholders of XOMA vote on the proposed merger on July 13, 2026; if approved, closing is expected before market open on July 14, 2026. Pre-merger XOMA common shareholders receive $39/share plus one CVR; preferred shares receive mandatory redemption at $25 each. Trading halt anticipated after hours July 13. Pre-merger XOMA common shareholders receive $39/share plus one CVR.[[4]](https://www.nasdaqtrader.com/TraderNews.aspx?id=ECA2026-430)
+
+These items are drawn from news published or updated within ~4-16 hours of the July 13, 2026 query timeframe. No other qualifying events (e.g., >$100M contracts or non-FDA regulator rulings) appeared in recent searches.
+
+## 2026-07-13 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                        | source                  |
+|--------|-------|----------------------------------------------------------------------------|-------------------------|
+| META   | 5     | $600B 3-yr US infra/jobs commitment + 5GW LA data center (X-sourced only)  | x.com/MaharajTrading    |
+| MRK    | 5     | FDA approved KEYTRUDA(+QLEX)/Padcev perioperative for MIBC — label expand  | biz.chosun.com          |
+| SRPT   | 5     | FDA accepted sNDAs for AMONDYS 45/VYONDYS 53 (DMD); PDUFA 2027-02-28      | investorrelations.sarepta.com |
+
+Scoring detail:
+- META: strength 2 (capex/jobs commitment — big AI-infra narrative but a spending pledge, not a revenue event; only X-post sourcing, no primary wire), novelty 1 (posts quote ~$669 vs 07-09 close $631.48 — ~+6% already moved), confirmation 1 (latest bar 07-09 up on ~1.7x avg volume, but predates catalyst; no post-catalyst bar exists yet), cleanliness 1. Total 5.
+- MRK: strength 2 (KEYTRUDA label expansion into perioperative MIBC — real but incremental for a mega-cap; approval was broadly anticipated), novelty 2 (fresh in last 24h, no move yet — stock drifted down into it), confirmation 0 (latest bar down on modest volume), cleanliness 1. Total 5.
+- SRPT: strength 1 (sNDA acceptance is procedural — no approval, PDUFA is 7+ months out), novelty 2 (fresh), confirmation 1 (07-09 bar up on slightly above-avg volume), cleanliness 1. Total 5.
+
+Skipped (filters / below threshold):
+- LLY: BLOCKED by max_price_per_share guardrail — trades ~$1,215 vs $1,000 cap. Otherwise the strongest catalyst of the day (FDA approved orforglipron/Foundayo oral GLP-1, ~$149/mo — strength 4, fresh). Not tradeable under current guardrails.
+- AAPL: Citi price-target raise $315→$365 — analyst PT with no new corporate information; explicitly non-qualifying per strategy.md.
+- AGEN: fails min_price_per_share ($3.86 < $5); also catalyst is an $85M private placement (dilutive financing, not a demand/cash-flow catalyst).
+- XOMA: merger vote today, closing expected pre-open 07-14 at $39/share — arb spread, no directional catalyst edge; trading halt anticipated.
+- HLB: FDA REJECTION of liver cancer drug — negative catalyst, not directional-bullish.
+- MIMI/FTRK/QTTB/EHGO/SOBR/ELPW: pre-market momentum/low-float movers with no identified news catalyst.
+- HUBB/VRSN/HWM: +2-4% pre-market on sector/market flows, no company-specific news.
+
+No tradeable signal today. Top score 5 < entry threshold 6. (Book is also full: PENG 1/1 max_concurrent_positions, target_exit 2026-07-15.)
