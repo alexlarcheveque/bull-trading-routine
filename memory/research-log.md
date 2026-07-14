@@ -3352,3 +3352,57 @@ No tradeable signal today. Top score 5 < entry threshold 6. (Book is also full: 
 - Entries: 0. HALT — book full (1/1 max_concurrent_positions, PENG held). Moot anyway: top watchlist score 5 (META/MRK/SRPT) < entry threshold 6, so no tradeable signal.
 - Halt checks: day P&L -5.03% vs -100% cap CLEAR; weekly cap CLEAR (new week, Monday).
 - Equity $99,209.77. Reconcile: Alpaca confirms 1363 sh PENG, matches portfolio.md.
+
+## 2026-07-14 pre-market research
+
+### Query 1 — materially bullish large-cap news last 24h
+
+**Limited standout materially bullish individual catalysts for US large-cap equities (>$2B market cap) were reported in the ~last 24 hours ending July 14, 2026 (primarily July 13 activity).** Searches across news aggregators and social media highlighted general market commentary, previews, and a few pre-market movers rather than major post-earnings beats, guidance raises, or other high-impact events for qualifying US names. Earnings season commentary noted bank reports expected around mid-week, but specific results were not detailed in the window.
+
+Notable pre-market positive movers (July 13, 2026 context; catalysts not detailed beyond price action):
+- FAST (Fastenal Co.): +2.93% pre-market. Large-cap industrial distributor. [benzinga]
+- MGM (MGM Resorts International): +2.71% pre-market. Large-cap gaming/hospitality. [benzinga]
+- SDGR (Schrödinger, Inc.): +2.49% pre-market (confirm market cap >$2B threshold). [benzinga]
+
+Other mentions (SK Hynix ADR, TSMC June revenue +68% YoY) fell outside the 24h window / non-US issuers. Broader market notes referenced a constructive weekly close and AI/tech resilience but no new single-stock catalysts. [cnbc, wealthenhancement]
+
+### Query 2 — pre-market movers 2026-07-14 with news catalyst
+
+**Notable pre-market gainers (>2%) on July 14, 2026 with identifiable news catalysts include small-cap/biotech NXTC; larger-cap/semiconductor movers (MU, WDC, AMAT, EQIX, HUBB, GLW) appear in top gainer lists but lack clear single-company news catalysts (sector flows, CPI, anticipation of bank earnings).** [investing.com]
+
+- NXTC (NextCure): Up sharply (+264%+ in pre-market). Catalyst: announced merger with Avere Therapeutics to advance a once-weekly oral IL-23 therapy (July 14, 2026 release). [nextcure IR, marketbeat]
+
+Other pre-market top gainers (EQIX +7.3%, HUBB +4.4%, GLW +4.3%, WDC +3.6%, MU +3.4%, AMAT +3.4%, INTC +2.8%, AMD +2.2%) did not surface specific company news catalysts for July 14; moves reflect broader semiconductor/tech sector momentum or gap activity. Major bank earnings and CPI were scheduled that day. [investing.com]
+
+### Query 3 — beat-and-raise earnings since yesterday's close
+
+**No qualifying earnings reports identified from searches.** Major banks (JPM, BAC, GS, C, WFC) reported Q2 2026 results before the open on July 14, 2026 (after July 13 close), but available sources provide only previews/expectations of likely beats — no confirmed post-release details on EPS/revenue beats combined with raised full-year guidance. [yahoo, investing.com, cnbc, moneymorning]
+
+Other recent "beat and raise" examples (HWM, LEVI, ADBE) are from earlier dates. No matches for the exact timing.
+
+### Query 4 — FDA / contracts / M&A / regulator decisions last 24h
+
+**FDA approvals/decisions (July 13, 2026):**
+- FDA approved Leqembi Iqlik (lecanemab-irmb) subcutaneous injection as an initiation/starting dose for early Alzheimer's disease (Biogen, NASDAQ: BIIB). [stocktitan]
+- FDA accepted BioMarin's supplemental NDA for full approval of Voxzogo (vosoritide) in children with achondroplasia (BioMarin Pharmaceutical, NASDAQ: BMRN). [stocktitan]
+
+**No large contract wins (>$100M), M&A announcements, or other regulator decisions (FTC/SEC/DOJ) affecting US-listed companies were identified in the last 24 hours.**
+
+## 2026-07-14 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                       | source        |
+|--------|-------|---------------------------------------------------------------------------|---------------|
+| BIIB   | 5     | FDA approved Leqembi Iqlik subcutaneous initiation dose (early Alzheimer's)| stocktitan.net|
+| BMRN   | 4     | FDA accepted sNDA for full approval of Voxzogo in achondroplasia (procedural)| stocktitan.net|
+
+Scoring detail:
+- BIIB: strength 2 (route-of-administration/formulation line-extension of already-approved Leqembi — a real adoption catalyst but incremental for a diversified mega-cap, and Leqembi economics are shared with Eisai), novelty 1 (stock already gapped ~+4.9% off Fri close $199.30 → $209.13 pre-market — the headline pop is largely happening now), confirmation 1 (last COMPLETED daily bar 07-10 was +0.3% on BELOW-avg volume 48.7k, and it predates the catalyst; no post-catalyst daily bar yet — only a pre-market gap), cleanliness 1 (no offsetting news; earnings-proximity guardrail is 0). Total 5.
+- BMRN: strength 1 (sNDA ACCEPTANCE is procedural — no approval; Voxzogo already accelerated-approved; PDUFA months out), novelty 2 (fresh in 24h, no move — quote $59.17 ≈ Fri close $59.105), confirmation 0 (last bar 07-10 DOWN $59.98 → $59.11 on ~90k near-avg volume), cleanliness 1. Total 4.
+
+Skipped (filters / below threshold):
+- NXTC: fails min_price_per_share ($2.28 < $5 floor). +264% merger pop (Avere Therapeutics reverse-merger) — novelty 0, already fully moved. Micro-cap.
+- JPM/BAC/GS/C/WFC: Q2 bank earnings released pre-open 07-14 but NO confirmed beat-and-raise details available at research time — previews only; non-qualifying until confirmed.
+- MU/WDC/AMAT/EQIX/HUBB/GLW/INTC/AMD: +2-7% pre-market on semiconductor/tech sector momentum, CPI, and bank-earnings anticipation — no company-specific news catalyst.
+- FAST/MGM/SDGR: +2.5-2.9% pre-market with no catalyst detailed beyond price action (FAST possibly earnings-anticipation, unconfirmed).
+
+No tradeable signal today. Top score 5 (BIIB) < entry threshold 6. (Book is also full: PENG 1/1 max_concurrent_positions, target_exit 2026-07-15.)
