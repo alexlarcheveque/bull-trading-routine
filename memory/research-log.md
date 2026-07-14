@@ -3406,3 +3406,7 @@ Skipped (filters / below threshold):
 - FAST/MGM/SDGR: +2.5-2.9% pre-market with no catalyst detailed beyond price action (FAST possibly earnings-anticipation, unconfirmed).
 
 No tradeable signal today. Top score 5 (BIIB) < entry threshold 6. (Book is also full: PENG 1/1 max_concurrent_positions, target_exit 2026-07-15.)
+
+## 2026-07-14 market-open decision
+
+0 exits, 0 buys. PENG held (+11.10% from $67.16 → $74.61; stop/target ±100% clear, thesis INTACT per Grok — Jul 13 convertible-notes offering/refinancing is neutral-to-bullish, no guidance cut/contract loss/accounting/halt). Time stop 2026-07-15 (EOD enforces tomorrow). Entries halted: 1/1 max_concurrent_positions full; moot anyway — top watchlist score 5 (BIIB) < 6 threshold. Day P&L -3.63% vs -100% cap (clear); weekly cap clear. Equity $99,175.69. cash -$2,326.92 (residual margin from 07-08 PENG fill slippage; unchanged — no new orders).
