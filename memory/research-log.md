@@ -3478,3 +3478,17 @@ Skipped (filters / below threshold):
 - SST VI / SSGT III: non-traded REITs — not tradeable instruments.
 
 CELC (8) >= threshold 6 — TRADEABLE. Note for market-open: book is currently full (PENG 1/1, max_concurrent_positions), and PENG's time stop (target_exit 2026-07-15) is enforced by EOD, not market-open — so unless PENG exits first, the 1/1 cap blocks a CELC entry at the open.
+
+## 2026-07-15 market-open
+
+- Bail-outs: market open ✓, trading_blocked false ✓.
+- Step 1 exits: PENG (only position) +19.5% ($67.15774 → $80.25). Stop/target ±100%
+  not hit. Thesis INTACT per Grok: record Q3 FY2026 (net sales +48% YoY), raised FY26
+  guidance, buybacks — no negative news in last 24h. NO SELL. Time stop (target_exit
+  2026-07-15 = today) is EOD's job per market-open.md — EOD MUST sell PENG today.
+- Step 2 HALT: open positions 1 >= max_concurrent_positions 1 → NO NEW ENTRIES.
+  CELC (score 8, FDA approval REVTORPYK) tradeable but blocked by the 1/1 book cap.
+  Day P&L +3.55% and weekly P&L positive — loss caps clear; only the concurrency
+  cap fired. 0 buys, 0 sells. Note for weekly review: this is the second session a
+  score>=6 candidate was blocked while PENG occupied the single slot (07-15 CELC 8;
+  cap cost is real when the incumbent is 1 day from its time stop).
