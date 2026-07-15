@@ -3410,3 +3410,71 @@ No tradeable signal today. Top score 5 (BIIB) < entry threshold 6. (Book is also
 ## 2026-07-14 market-open decision
 
 0 exits, 0 buys. PENG held (+11.10% from $67.16 → $74.61; stop/target ±100% clear, thesis INTACT per Grok — Jul 13 convertible-notes offering/refinancing is neutral-to-bullish, no guidance cut/contract loss/accounting/halt). Time stop 2026-07-15 (EOD enforces tomorrow). Entries halted: 1/1 max_concurrent_positions full; moot anyway — top watchlist score 5 (BIIB) < 6 threshold. Day P&L -3.63% vs -100% cap (clear); weekly cap clear. Equity $99,175.69. cash -$2,326.92 (residual margin from 07-08 PENG fill slippage; unchanged — no new orders).
+
+## 2026-07-15 pre-market research
+
+### Query 1 — materially bullish large-cap news last 24h
+
+**Key materially bullish developments for US large-cap equities (market cap >$2B) in the last 24 hours (primarily July 14, 2026 trading):**
+
+- **GS (Goldman Sachs)**: Q2 profits soared amid strong Wall Street trading activity; shares rallied ~9% (best day of the year). [wsj.com/livecoverage/stock-market-today-bank-earnings-07-14-2026, finance.yahoo.com]
+  - Catalyst: Robust equity trading revenues and overall bank earnings signaling healthy economy. Timestamp: July 14, 2026 (earnings/market reaction).
+- **JPM (JPMorgan), BAC (Bank of America)**: Strong Q2 earnings with solid trading results and economic backdrop signals; shares rose (BAC noted 27% profit jump in one report). [finance.yahoo.com, WSJ]
+  - Catalyst: Highest quarterly profit in US banking history (JPM) and broader sector strength. Timestamp: July 14, 2026.
+- **Broader large-cap equities**: Stocks rose on cooler-than-expected June CPI (3.5% vs. higher expectations), easing Fed rate-hike bets, plus chip stock rally. S&P 500 +0.4%, Nasdaq +0.9%. [WSJ, Yahoo Finance]
+
+Note: IBM (large-cap) had negative results (profit warning, sharp decline), offsetting some sentiment. Energy names saw tailwinds from rising oil amid geopolitical tensions. No other major individual large-cap catalysts (e.g., M&A or product wins) stood out in results.
+
+### Query 2 — pre-market movers 2026-07-15 with news catalyst
+
+**Semiconductor equipment and related chip stocks (e.g., KLAC, LRCX, AMAT, TER, WDC) led pre-market gainers on July 15, 2026, with moves of ~5-8% amid a sector rally driven by easing inflation concerns, renewed buying interest in AI/memory names after recent pullbacks, and strength in Asian semiconductor markets (e.g., SK Hynix ADR surging sharply).** [investing.com/equities/pre-market]
+
+- KLAC (KLA Corp.): +7.69%
+- LRCX (Lam Research): +7.54%
+- AMAT (Applied Materials): +6.83%
+- TER (Teradyne): +6.73%
+- WDC (Western Digital): +6.56%
+- Others in the group (e.g., AMD, STX, GLW) also up >5% in some snapshots.
+
+These appear tied to broader sector momentum rather than single-stock events.
+
+**NXTC (NextCure)** stood out with extreme gains (reported in the 300%+ range in early data) on an explicit catalyst: the July 14, 2026 announcement of a merger with Avere Therapeutics to advance an oral IL-23 therapy program, including a concurrent $320M private placement. [ir.nextcure.com, stockanalysis.com/markets/premarket/gainers]
+
+Smaller or lower-float names (e.g., certain biotechs or microcaps like SHPH or TGHL showing triple-digit % moves) were often excluded here as they frequently reflect volatility, low volume, or gap-fills rather than clear fundamental news. [benzinga.com/premarket]
+
+### Query 3 — beat-and-raise earnings since yesterday's close
+
+**ASML (ASML)**: Beat Q2 2026 estimates with ~€9.3B revenue and €7.58 EPS; raised full-year 2026 sales outlook to €43-45B (second hike this year) on strong AI/chip demand. [cnbc.com/2026/07/15/asml-2q-earnings-ai-chips-orders.html, chartmill.com]
+
+Sources: CNBC, Chartmill/market reports (earnings released July 15, 2026, before open). No other major reports after the July 14 close clearly matched both criteria based on available data. Banks reported earlier on July 14 (pre-open) with beats but limited/no explicit guidance raises noted in summaries.
+
+### Query 4 — FDA / contracts / M&A / regulator decisions last 24h
+
+**FDA approval (published July 14, 2026):** Celcuity Inc. (NASDAQ: CELC) received FDA approval for REVTORPYK (gedatolisib), the first and only approved PI3K/mTOR inhibitor, in combination with fulvestrant (with or without palbociclib) for adults with HR+/HER2- locally advanced or metastatic breast cancer without a PIK3CA mutation, following progression on endocrine therapy. This marks Celcuity's first approved therapy and transitions the company to commercial stage. [ir.celcuity.com, fda.gov]
+
+**M&A announcement (published July 14, 2026):** Strategic Storage Trust VI (SST VI) to acquire Strategic Storage Growth Trust III (SSGT III), SmartStop-affiliated NON-TRADED self-storage REITs, all-stock merger ~$1.2B, closing Q4 2026. [finance.yahoo.com, streetinsider.com] — non-traded, not tradeable.
+
+No other FDA approvals, >$100M contract wins, M&A announcements, or major regulator decisions fitting the last-24-hour window were identified. A Kratos Defense (KTOS) ~$100M contract award was reported around July 13 (outside window).
+
+## 2026-07-15 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                          | source          |
+|--------|-------|-------------------------------------------------------------------------------|-----------------|
+| CELC   | 8     | FDA approved REVTORPYK (gedatolisib), first-ever approval — commercial stage  | ir.celcuity.com |
+| BAC    | 5     | Q2 profit +27%, strong trading revenues (no guidance raise)                   | yahoo/WSJ       |
+| JPM    | 4     | Record Q2 profit ("highest in US banking history") but no raise, already moved| yahoo/WSJ       |
+
+Scoring detail:
+- CELC: strength 4 (first FDA approval in company history — REVTORPYK/gedatolisib, first-and-only PI3K/mTOR inhibitor for HR+/HER2- mBC without PIK3CA mutation; single-asset biotech transitions to commercial stage, step-change in forward cash flows), novelty 2 (published 07-14 ~24h ago; latest trade $110.905 vs pre-catalyst 07-10 close $107.59 = only +3.1% — move NOT already made, though approval was partially anticipated after the stock's year-long run-up), confirmation 1 (price up since catalyst but Alpaca daily bars lag at 07-10 — no post-catalyst bar to verify volume; latest-trade fallback only), cleanliness 1 (no offsetting news, no halt, earnings guardrail 0). Total 8. Universe: active/tradable, ADV 1.73M >> 100k, $110.91 within $5-$1000, mkt cap ~$5B > $1B.
+- BAC: strength 2 (big beat, diversified mega-bank, no raise), novelty 1 (reported pre-open 07-14, reaction largely yesterday; $60.63 vs $59.64 = +1.7%), confirmation 1 (up, volume unverifiable — bar lag), cleanliness 1. Total 5.
+- JPM: strength 2 (record profit, no explicit raise), novelty 0 (rallied 07-14 on the print; $342.97 vs $336.38 = +2.0% residual), confirmation 1, cleanliness 1. Total 4.
+
+Skipped (filters / below threshold):
+- ASML (BLOCKED — max_price_per_share): $1,776.13 > $1,000 cap. Day's strongest catalyst — Q2 beat (~€9.3B rev, €7.58 EPS) AND raised FY26 sales outlook to €43-45B, second hike this year. Would have scored ~7-8. Same cap that blocked LLY 07-13.
+- GS (BLOCKED — max_price_per_share): $1,141.87 > $1,000 cap. Also novelty ~0 (+9% yesterday, best day of year — move done).
+- KLAC/LRCX/AMAT/TER/WDC/AMD/STX/GLW: +5-8% pre-market TODAY on ASML read-through / sector momentum — no company-specific corporate event, and the sympathy move is already in (novelty 0-1). Scores ~4-5. Precedent: 07-14 skipped the same group.
+- NXTC (fails min_market_cap): ~$170M micro-cap even after +300% merger pop (Avere Therapeutics reverse-merger + $320M placement). Price $6.17 now passes the $5 floor, but novelty 0 — move fully made.
+- KTOS: ~$100M contract reported ~07-13, outside the 24h window; borderline materiality. Not scored.
+- SST VI / SSGT III: non-traded REITs — not tradeable instruments.
+
+CELC (8) >= threshold 6 — TRADEABLE. Note for market-open: book is currently full (PENG 1/1, max_concurrent_positions), and PENG's time stop (target_exit 2026-07-15) is enforced by EOD, not market-open — so unless PENG exits first, the 1/1 cap blocks a CELC entry at the open.
