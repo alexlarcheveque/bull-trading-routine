@@ -1,17 +1,16 @@
 # portfolio.md
-# Updated 2026-07-15 12:00 by midday routine.
+# Updated 2026-07-16 06:35 by market-open routine.
 
 ## Account
-- equity: 94296.15
-- cash: -2326.92
-- buying_power: 261236.92
-- day_pnl_pct: -9.05
+- equity: 91720.08
+- cash: 91720.08
+- buying_power: 366880.32
+- day_pnl_pct: -5.41
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| PENG   | equity     | 1363 | 67.15774   | 2026-07-08 | 2026-07-15  | +6.23              |
+| (none) |            |     |             |            |             |                    |
 
 ## Notes
-2026-07-15 market-open: 0 buys, 0 sells. PENG exit check: +19.5% ($67.16 → $80.25 at check), stop/target ±100% clear, thesis INTACT per Grok (record Q3 FY2026 net sales +48% YoY, raised FY26 guidance, buybacks — no negative news in 24h). Time stop (target_exit TODAY 2026-07-15) is enforced by EOD routine — EOD MUST sell PENG today. Halt: open positions 1/1 (max_concurrent_positions) → no new entries; CELC (score 8, FDA approval) NOT bought despite >= threshold 6. Reconcile: Alpaca confirms 1363 sh PENG @ avg 67.15774, matches.
-2026-07-15 midday: 0 exits. PENG $71.34 → +6.23% vs entry, stop/target ±100% clear. Down ~8.4% intraday on $650M 0% convertible notes pricing (dilution/positioning) — Grok confirms NO concrete negative news (guidance raise intact, no lawsuit/recall/regulatory/exec exit) → thesis NOT broken, hold. Day P&L -9.05% vs daily_loss_cap 100 — no halt. Reminder: EOD must sell PENG today (time stop, target_exit 2026-07-15).
+2026-07-16 market-open: 1 sell, 0 buys. PENG time-stop was OVERDUE (target_exit 2026-07-15; 07-15 EOD routine never ran) — sold full 1363 @ $69.00, ret +2.74% vs entry $67.15774 (realized +$2,511; order 6ffa504b). Book now flat, all cash. No entries: top watchlist score 5 (PYPL/UAL/JBHT) < threshold 6. Halt checks clear (day P&L -5.41%, week realized +2.74%, positions 0/1).

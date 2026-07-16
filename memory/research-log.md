@@ -3581,3 +3581,8 @@ Skipped (filters / below threshold / not qualifying):
 - Alpaca confirms PENG still open: 1363 sh @ $67.15774, +4.9% unrealized (last close ~$70.45 vs $80+ at yesterday's open — the delay is costing real P&L).
 - Per KMX 06-26 precedent: market-open must sell PENG at the open today, reason "time-stop OVERDUE (target_exit 2026-07-15, EOD 07-15 did not run)".
 - This routine is research-only (hard rule: no buy/sell) — flagging, not acting.
+
+## 2026-07-16 market-open decisions
+
+- EXIT: PENG sold 1363 @ $69.00 (order 6ffa504b) — time-stop OVERDUE (target_exit 2026-07-15; 07-15 EOD routine never ran). Ret +2.74% vs entry $67.15774 (realized +$2,511). Note: was +19.7% at 07-15 open before the convertible-notes dip; the missed EOD run cost ~$15k vs yesterday's exit window.
+- ENTRIES: none. Halt checks clear (day P&L -5.41% vs cap 100; week realized +2.74%; positions 0/1 after exit) but top watchlist score is 5 (PYPL, UAL, JBHT) < entry threshold 6 — per strategy, no trade when nothing scores >= 6.
