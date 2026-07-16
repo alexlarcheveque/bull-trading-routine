@@ -3492,3 +3492,92 @@ CELC (8) >= threshold 6 — TRADEABLE. Note for market-open: book is currently f
   cap fired. 0 buys, 0 sells. Note for weekly review: this is the second session a
   score>=6 candidate was blocked while PENG occupied the single slot (07-15 CELC 8;
   cap cost is real when the incumbent is 1 day from its time stop).
+
+## 2026-07-16 pre-market — raw Grok output
+
+### Query 1 — bullish large-cap news last 24h
+
+**Key materially bullish catalysts for US large-cap equities (market caps well above $2B) on/around July 15, 2026 (within the last ~24 hours as of July 16):**
+
+- **ASML**: Beat Q2 estimates and raised full-year sales forecast (citing strong AI demand); announced plans to boost chipmaking equipment production capacity by 30%. Positive market reaction. [finance.yahoo.com, investors.com — July 15, 2026]
+- **BLK (BlackRock)**: Strong Q2 earnings beat (EPS $13.91 vs. ~$12.69 expected; revenue beat). Shares rallied >5% (best day in over a year). [cnbc.com — July 15, 2026]
+- **AAPL (Apple)**: Gained approval to launch generative AI features for iPhones in China (via Alibaba partnership); hit all-time high, up ~4%. [finance.yahoo.com/Bloomberg — July 15, 2026]
+- **GOOGL/GOOG (Alphabet)** and **AMZN (Amazon)**: Rose ~3% each amid broader Big Tech gains and cooling inflation data. [cnbc.com — July 15, 2026]
+- **MS (Morgan Stanley)**: Q2 earnings/revenue beat (driven by 69% surge in equity trading). Up ~2%. [schwab.com/IBD — July 15, 2026]
+- **PNC**: Q2 earnings beat with record revenue/net interest income/fee income; raised quarterly dividend. [investor.pnc.com — July 15, 2026]
+- **JNJ (Johnson & Johnson)**: Q2 beat on sales/profit (strong pharma performance); raised full-year 2026 sales and adjusted EPS guidance. [jnj.com press release, cnbc.com — July 15, 2026]
+
+Broader positive backdrop included softer wholesale inflation data supporting the market rally (S&P 500 +0.3%, Nasdaq +0.6%).
+
+### Query 2 — pre-market movers 2026-07-16
+
+**Key pre-market gainers (>2%) on July 16, 2026, tied to news/earnings catalysts (primarily from earnings beats or corporate developments reported around July 15 close or overnight), based on listings from Benzinga, Investing.com, Yahoo Finance.**
+
+- **PYPL (PayPal)**: Up ~17% (various reports cite ~$55–56 range). Attributed to a reported acquisition bid around $60.50/share. [finance.yahoo.com, benzinga.com/premarket]
+- **JBHT (J.B. Hunt Transport)**: Up ~7% (e.g., ~$296). Driven by Q2 2026 earnings beat (EPS $1.91 vs. ~$1.71 est.; revenue beat). Earnings released after July 15 close. [investing.com, benzinga.com]
+- **UNH (UnitedHealth Group)**: Up ~6.5% (e.g., ~$446). Linked to Q2 earnings expectations/results and sector positioning. [investing.com]
+- **HUM (Humana)**, **MOH (Molina Healthcare)**, **CNC (Centene)**: Up 3.5–5% range. Health insurer moves tied to earnings season and sector dynamics. [investing.com]
+
+Other movers (e.g., BLK, WST, GWW in some lists) appear in pre-market gainers but with less explicit same-day news attribution. Small/micro-cap movers (ATAI, ATPC, LIMN, TGHL, DXST) show extreme % gains but frequently lack attributed catalysts.
+
+### Query 3 — beat-and-raise earnings since yesterday's close
+
+**UAL (United Airlines) – reported July 15, 2026 (after market close).**
+
+- **EPS beat**: Q2 adjusted diluted EPS of $1.99 (beat consensus estimates of ~$1.89 or lower by ~$0.10).
+- **Guidance raise**: Raised full-year 2026 adjusted diluted EPS outlook to $9.00–$11.00 (despite ~$6B higher anticipated fuel costs). [prnewswire.com — United release July 15, 2026; marketbeat.com]
+
+No other confirmed reports from after the July 15 close matched both criteria based on available data (e.g., NFLX, TSM, UNH reported or are scheduled around July 16 but lack matching post-release details).
+
+### Query 4 — FDA / contracts / M&A / regulator decisions last 24h
+
+**FDA approvals:** FDA approved gedatolisib (Revtorpyk) on or around July 14–15, 2026, in combination with fulvestrant for HR+/HER2- advanced/metastatic breast cancer (PIK3CA wild-type). [oncnursingnews.com, drugs.com] — (Celcuity CELC; same catalyst as 07-15 watchlist.)
+
+**M&A progress:** Olin Corp. (OLN) and Huntsman Corp. (HUN): SEC declared their S-4 registration statement effective for the previously announced all-stock merger of equals (OlinHuntsman). Special shareholder meetings Aug. 25, 2026. [huntsman.com] — procedural, not new deal news.
+
+**Regulator decisions:** FTC final order against TruHeight (private) — not tradeable.
+
+No large contract wins (>$100M) identified in the last 24 hours.
+
+### Follow-up queries (anomalous price reactions)
+
+**CELC (why -17% on 07-15):** Drop driven by a delayed commercial launch (marketing begins late Q3 2026, not immediately) plus label concerns, which overshadowed the largely-anticipated FDA approval. Traded as low as ~$85 from prior close ~$111. No secondary offering or dilution reported. Classic sell-the-news amplified by execution-timing risk. [reuters.com 07-15, seekingalpha.com]
+
+**UAL (pre-market reaction):** Down ~5% after-hours on the 07-15 release and still soft pre-market 07-16 (~$118, -2.2%) — investors focused on the ~$6B fuel-cost headwind and margin/demand concerns despite the beat ($1.99 vs ~$1.89) and FY raise ($9.00–$11.00). Market is selling the catalyst. [finance.yahoo.com, cnbc.com]
+
+**JNJ (why down on beat-raise):** Closed -2.7% to ~$247 on MedTech segment underperformance, legacy patent pressures, and medtech sector concerns, despite Q2 adj EPS $2.90 vs $2.85 and FY26 raise (sales midpoint ~$101.1B, EPS midpoint $11.68). [reuters.com, cnbc.com]
+
+## 2026-07-16 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                              | source          |
+|--------|-------|-----------------------------------------------------------------------------------|-----------------|
+| PYPL   | 5     | Reported acquisition bid ~$60.50/sh — but stock already +20% ($46.33→$55.52)      | yahoo/benzinga  |
+| UAL    | 5     | Q2 beat $1.99 vs $1.89 + FY26 EPS raise to $9-11 — but trading DOWN on fuel costs | prnewswire/UAL  |
+| JBHT   | 5     | Q2 beat $1.91 vs $1.71, revenue beat — no raise, +7% pre-market already           | benzinga        |
+| JNJ    | 4     | Q2 beat + FY26 raise — closed -2.7% on MedTech weakness                           | jnj.com/reuters |
+| CELC   | 3     | FDA approval (07-14) — now -17% on delayed Q3 launch + label concerns             | reuters.com     |
+
+Scoring detail:
+- PYPL: strength 3 (takeover bid at ~$60.50 = ~30% premium to pre-news price, but unconfirmed/"reported" — no named acquirer, no signed deal), novelty 0 (already +19.8% — $46.33 07-10 bar close → $55.52 07-15 close; strategy rule "already 5%+ priced in = we missed it" applies squarely; remaining ~9% spread to rumored bid is rumor-arb with -15% downside if denied, not our catalyst-drift edge), confirmation 1 (price up big since news; volume unverifiable — bars lag at 07-10), cleanliness 1. Total 5. Universe: active/tradable, ADV 18.6M.
+- UAL: strength 3 (genuine beat-and-raise: adj EPS $1.99 vs ~$1.89, FY26 raised to $9.00-11.00 absorbing ~$6B fuel headwind), novelty 1 (news is <24h old BUT the market's first verdict is NEGATIVE — down ~5% after-hours, ~$118 pre-market; our thesis rides the second wave of an up-move, not a hoped-for reversal), confirmation 0 (price DOWN since catalyst), cleanliness 1 (no separate bad news; fuel headwind is part of the same release). Total 5. Universe: active/tradable, ADV 5.4M.
+- JBHT: strength 2 (clean beat +11.7% EPS, revenue beat, but no guidance raise), novelty 1 (+7% pre-market — move mostly made per the 5% rule), confirmation 1 (up since catalyst, volume unverifiable — bar lag), cleanliness 1. Total 5. Universe: active/tradable, ADV 1.0M.
+- JNJ: strength 3 (beat + dual FY26 raise, but mega-cap so small % delta), novelty 1 (day-old, market sold it), confirmation 0 (closed -2.7% post-release), cleanliness 0 (offsetting MedTech weakness + patent pressure). Total 4. Universe: active/tradable, ADV 8.5M.
+- CELC: re-scored from 07-15's 8 → 3. strength 3 (approval real but anticipated; launch delayed to late Q3 dents near-term cash flows), novelty 0 (catalyst 48h old and market rejected it, -17%), confirmation 0 (price sharply down since catalyst), cleanliness 0 (offsetting news: launch delay + label concerns). Do NOT catch this knife.
+
+Skipped (filters / below threshold / not qualifying):
+- ASML (BLOCKED — max_price_per_share): $1,813.48 > $1,000 cap, third session running. Day-2 of beat + FY raise + 30% capacity expansion news.
+- BLK (score ~4): Q2 beat EPS $13.91 vs $12.69, but +5% move made 07-15 (best day in a year), no raise cited.
+- AAPL (score ~4): China AI approval via Alibaba — material but +4% to ATH already 07-15, novelty ~0.
+- MS (score ~4): Q2 beat on 69% equity-trading surge, +2% 07-15, no raise. PNC similar (beat + dividend raise ≠ guidance raise), moved 07-15.
+- GOOGL/AMZN: macro tape (cooling inflation), no company-specific corporate event — does not qualify.
+- UNH/HUM/MOH/CNC: pre-market moves on "earnings expectations/sector positioning" — no confirmed released catalyst attributable; UNH reports ~07-16, un-scoreable pre-release.
+- OLN/HUN: S-4 declared effective — procedural milestone on a deal announced earlier, not fresh material news.
+- Micro-caps (ATAI, ATPC, LIMN, TGHL, DXST): no attributed catalysts / fail $1B market-cap floor.
+
+**No tradeable signal today.** Top score 5 < threshold 6. Rare day: five real catalysts, every one either already priced (PYPL, JBHT), rejected by the market's first reaction (UAL, JNJ, CELC), or price-cap blocked (ASML).
+
+**⚠️ URGENT FLAG for market-open 2026-07-16: PENG time stop is OVERDUE.**
+- target_exit was 2026-07-15. The EOD 07-15 routine NEVER RAN — zero commits after midday 07-15 (git log verified). Same cron failure mode flagged 07-07/07-08 and KMX 06-25.
+- Alpaca confirms PENG still open: 1363 sh @ $67.15774, +4.9% unrealized (last close ~$70.45 vs $80+ at yesterday's open — the delay is costing real P&L).
+- Per KMX 06-26 precedent: market-open must sell PENG at the open today, reason "time-stop OVERDUE (target_exit 2026-07-15, EOD 07-15 did not run)".
+- This routine is research-only (hard rule: no buy/sell) — flagging, not acting.
