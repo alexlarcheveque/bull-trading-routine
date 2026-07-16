@@ -1,5 +1,5 @@
 # portfolio.md
-# Updated 2026-07-16 midday by midday routine.
+# Updated 2026-07-16 EOD by end-of-day routine.
 
 ## Account
 - equity: 91720.08
@@ -13,5 +13,5 @@
 | (none) |            |     |             |            |             |                    |
 
 ## Notes
-2026-07-16 market-open: 1 sell, 0 buys. PENG time-stop was OVERDUE (target_exit 2026-07-15; 07-15 EOD routine never ran) — sold full 1363 @ $69.00, ret +2.74% vs entry $67.15774 (realized +$2,511; order 6ffa504b). Book now flat, all cash. No entries: top watchlist score 5 (PYPL/UAL/JBHT) < threshold 6. Halt checks clear (day P&L -5.41%, week realized +2.74%, positions 0/1).
+2026-07-16 EOD: 0 time-stops due, expiry guard n/a — book flat all session after the market-open PENG sell (+2.74%, +$2,511 realized). Day -5.41% is entirely the pre-open PENG mark vs 07-15 close; no intraday exposure. Weekly loss cap clear (WTD ~-7.5% vs -100% cap). EOD email sent (Resend id 61340fd9). Only trade today: SELL PENG 1363 @ $69.00 (time-stop OVERDUE, order 6ffa504b). Watchlist top score 5 < 6 — no entries anywhere today. Operator items still pending: caffeinate fix uncommitted, EOD cron move to ~12:45 PDT.
 2026-07-16 midday: 0 exits — book flat (Alpaca reconciled, no positions). Day P&L -5.41% (all from the pre-open PENG mark vs last_equity; no intraday exposure). Daily loss cap (-100%) not hit. No action.
