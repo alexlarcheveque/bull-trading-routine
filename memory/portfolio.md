@@ -1,17 +1,16 @@
 # portfolio.md
-# Updated 2026-07-16 EOD by end-of-day routine.
+# Updated 2026-07-17 06:39 by market-open routine.
 
 ## Account
-- equity: 91720.08
-- cash: 91720.08
-- buying_power: 366880.32
-- day_pnl_pct: -5.41
+- equity: 80036.86
+- cash: 1461.86
+- buying_power: 5847.44
+- day_pnl_pct: -12.74
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| (none) |            |     |             |            |             |                    |
+| MRK260724C00130000 | call | 449 | 2.01 | 2026-07-17 | 2026-07-24 | -12.94 |
 
 ## Notes
-2026-07-16 EOD: 0 time-stops due, expiry guard n/a — book flat all session after the market-open PENG sell (+2.74%, +$2,511 realized). Day -5.41% is entirely the pre-open PENG mark vs 07-15 close; no intraday exposure. Weekly loss cap clear (WTD ~-7.5% vs -100% cap). EOD email sent (Resend id 61340fd9). Only trade today: SELL PENG 1363 @ $69.00 (time-stop OVERDUE, order 6ffa504b). Watchlist top score 5 < 6 — no entries anywhere today. Operator items still pending: caffeinate fix uncommitted, EOD cron move to ~12:45 PDT.
-2026-07-16 midday: 0 exits — book flat (Alpaca reconciled, no positions). Day P&L -5.41% (all from the pre-open PENG mark vs last_equity; no intraday exposure). Daily loss cap (-100%) not hit. No action.
+2026-07-17 market-open: BUY 449x MRK 07-24 $130 calls @ $2.01 (premium $90,249, order e3e48485, filled in <30s). Score 8 — FDA approval of Lipfendra, first oral PCSK9 inhibitor. Call path: spot $129.26, only expiry in 3-7 DTE window is 07-24 (7 DTE); strike 130 = nearest at/above spot; ask $2.04 → 449 contracts under 100% premium cap; filled $2.01. Preflight OK. No exits (book was flat). Halt checks clear at entry time (day 0%, week ~-7.5%, 0/1 positions). day_pnl_pct -12.74 is the immediate mark of the position at bid $1.75 vs $2.01 ask-side entry — mostly bid-ask spread on a fresh fill, not a price move. NOTE for EOD: target_exit = expiry date (07-24); expiry guard (sell within 2 trading days of expiry) will force exit by ~07-22 — earlier than the time stop. UNH (also 8) was the fallback, not taken (1/1 daily cap).
