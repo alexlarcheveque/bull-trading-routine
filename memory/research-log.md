@@ -3586,3 +3586,101 @@ Skipped (filters / below threshold / not qualifying):
 
 - EXIT: PENG sold 1363 @ $69.00 (order 6ffa504b) — time-stop OVERDUE (target_exit 2026-07-15; 07-15 EOD routine never ran). Ret +2.74% vs entry $67.15774 (realized +$2,511). Note: was +19.7% at 07-15 open before the convertible-notes dip; the missed EOD run cost ~$15k vs yesterday's exit window.
 - ENTRIES: none. Halt checks clear (day P&L -5.41% vs cap 100; week realized +2.74%; positions 0/1 after exit) but top watchlist score is 5 (PYPL, UAL, JBHT) < entry threshold 6 — per strategy, no trade when nothing scores >= 6.
+
+## 2026-07-17 pre-market research (raw Grok output)
+
+### Query 1 — Bullish large-cap news last 24h
+
+**Limited materially bullish company-specific news emerged for US large-cap equities (>$2B market cap) in the ~24 hours through July 17, 2026.** Broader market commentary noted resilience tied to earnings and AI, but concrete catalysts were sparse. Key items identified:
+
+- **UNH (UnitedHealth Group)**: Strong Q2 profit and raised FY26 outlook. [rttnews.com 3667291] (RTTNews, July 16, 2026).
+- **ABT (Abbott)**: Lifted FY26 adjusted EPS view and backed sales forecast (despite reported Q2 profit decline); shares rose ~11%. [rttnews.com 3667291] (RTTNews, July 16, 2026).
+- **BE (Bloom Energy)**: Secured $1.7B project investment/backing (IDF and Oaktree) for fuel cell systems powering AI cloud infrastructure. [finance.yahoo.com/quote/BE] (Yahoo Finance/Reuters/Simply Wall St., ~18-19 hours prior to July 17 crawl).
+- **TSM (TSMC)**: Reported 77.4% YoY profit growth (beat expectations) and raised capex outlook to as much as $64B. [x.com/JulieHicks7805/status/2078066719529066510] (X posts, July 17, 2026).
+
+Smaller or non-US names (e.g., certain biotechs with FDA news or acquisitions) appeared but fall outside the >$2B US large-cap filter. Broader biotech M&A/dealmaking and AI themes were referenced in multi-day outlooks but lacked fresh 24-hour company-specific triggers. [endpoints.news, biospace.com]
+
+Sources are primarily recent web crawls and X posts; real-time verification recommended for trading decisions.
+
+### Query 2 — Pre-market movers on news
+
+**Notable pre-market gainers (>2%) on July 17, 2026, tied to specific recent news catalysts (e.g., mergers, acquisitions, earnings beats, policy/news, or major business updates) rather than unexplained gap-fills or low-float volatility alone.** [thestockcatalyst.com/NYSEPMMovers, stockanalysis.com/markets/premarket]
+
+Focus is on those with explicit headlines from the prior 1–2 days (primarily via TheStockCatalyst premarket movers tracker and related reports). Many micro/small-cap movers (e.g., CJMB, BIYA, GNPX) show large % gains but lack clear news links and are typically excluded here as potential gap-fills or speculative trading. [stockanalysis.com/markets/premarket/gainers]
+
+Key examples (approximate pre-market % gains where reported; actual moves can fluctuate):
+- **ATAI (AtaiBeckley)**: +~30–33% on Eli Lilly agreeing to acquire the psychedelic drugmaker for up to $3.8B (deal news). [thestockcatalyst.com]
+- **VEEE (Twin Vee Powercats)**: +~23–35% on merger announcement with Greenland-focused miner USFM (to privatize recreational marine business). [thestockcatalyst.com]
+- **TGHL (The Growhub)**: +~50%+ range on plans for $400M EnChem America share merger (issuing 85% stake). [thestockcatalyst.com]
+- **RUBI (Rubico)**: +~44% on pipeline updates (adding MR tanker, backlog to $304.6M) and NAV estimate rising 94% to $183.1M. [thestockcatalyst.com]
+- **IQST (iQSTEL)**: +~28% on preliminary H1 2026 revenue of $207M (plus expectations from Ultranet closing). [thestockcatalyst.com]
+- **DSGR (Distribution Solutions Group)**: +~25% on $35/share go-private merger agreement. [thestockcatalyst.com]
+- **CDNA (CareDx)**: +~19% on Medicare finalizing transplant testing coverage policy. [thestockcatalyst.com]
+- **MAN (ManpowerGroup)**: +~17% on Q2 earnings beat (EPS $1.13 vs. $0.83 est.; revenue beat). [thestockcatalyst.com]
+
+Additional context: Broader pre-market lists (e.g., Investing.com) highlight larger names like **UNH** (+~7–8%) amid earnings-related or sector moves, though specific catalysts for the exact session vary. [investing.com/equities/pre-market] Data is time-sensitive and drawn from pre-market trackers as of ~July 16–17, 2026 reports; always verify live quotes and full news for trading decisions. Sources primarily include stockanalysis.com, thestockcatalyst.com, and aggregated financial news feeds.
+
+### Query 3 — Beat-and-raise earnings after yesterday's close
+
+**UnitedHealth Group (UNH)** is the primary match from available reports. [unitedhealthgroup.com Q2 PDF, finance.yahoo.com]
+
+- **Beat**: Q2 adjusted EPS of $6.38 (beat consensus ~$4.85–$4.87 by ~$1.51); revenue ~$112.0–112.03B (beat ~$110.81B expected). [marketbeat.com]
+- **Raised guidance**: FY 2026 adjusted EPS raised to $19.50–$20.00 (from prior >$18.25); also raised segment operating earnings outlooks (e.g., UnitedHealthcare ≥$12B, Optum Health ≥$2.2B). [cnbc.com 2026/07/16 unitedhealth-group-unh-earnings-q2-2026]
+- **Source**: Company release (businesswire/unitedhealthgroup.com, July 16, 2026); CNBC/Yahoo Finance coverage. [businesswire.com 20260716830877]
+
+Netflix (NFLX, reported after close July 16) posted a minor EPS beat ($0.80 vs. $0.79) but a slight revenue miss and weak stock reaction with no clear guidance raise noted. [cnbc.com] Other AMC reports (e.g., ISRG) lack confirmed beat + raise details in results. Earlier reports (e.g., UAL, JNJ on/around July 15) are outside the post-July 16 close window. No other prominent matches identified.
+
+### Query 4 — FDA / contracts / M&A / regulator decisions last 24h
+
+**FDA Approval (July 16, 2026):** Merck (NYSE: MRK) announced FDA approval of Lipfendra (enlicitide), the first and only once-daily oral PCSK9 inhibitor, as an adjunct to diet and exercise to reduce LDL-C in adults with hypercholesterolemia (including heterozygous familial hypercholesterolemia). It showed significant LDL-C reductions in pivotal trials. [merck.com/news, drugs.com/newdrugs]
+
+**M&A Announcement (July 16, 2026):** Eli Lilly (NYSE: LLY) entered a definitive agreement to acquire AtaiBeckley (Nasdaq: ATAI), a clinical-stage biotech focused on psychedelic-based therapies for mental health conditions (e.g., treatment-resistant depression), for $2.8 billion upfront in cash (~$6.75/share) plus up to $1 billion in milestones (total up to ~$3.8 billion). The deal is expected to close in Q3 2026, subject to approvals. [cnbc.com 2026/07/16 eli-lilly-to-buy-psychedelics-maker-ataibeckley, ir.ataibeckley.com]
+
+No large contract wins (>$100M) or other major regulator decisions (e.g., SEC/FTC) matching the criteria were identified in results from the past ~24 hours. A Celcuity (CELC) PDUFA decision date of July 17 for gedatolisib was noted in prior coverage but no new approval or outcome was reported.
+
+### Follow-up queries (price reactions / verification)
+
+**UNH (07-16 reaction):** Closed $423.38, +1.16% vs 07-15 close $418.52 — NOT the +7-8% the pre-market tracker implied. Volume ~9.4M vs 65-day avg ~7.1M (~132% of average). Pre-market 07-17 ~$426 (+0.6%). Offsetting news: expanded DOJ antitrust probe into UNH's Claritev unit reported within days (data/market practices, potential collusion allegations); older Medicare Advantage billing inquiries linger. [investing.com, marketwatch.com, simplywall.st, yahoo]
+
+**MRK (07-16 reaction):** Closed $127.63, +3.25% vs 07-15 close $123.61, volume ~12.4-13M vs ~10.4M avg (above average). Reuters/IBD coverage frames the approval as a positive surprise, not fully priced in (first-in-class oral option vs injectables). [reuters.com 2026-07-16, investors.com, yahoo]
+
+**TSM (verification):** Results were reported July 16 (not the morning of 07-17). Q2: revenue NT$1.27T (~$40.2B) +36% YoY, net profit NT$706.56B +77.4% YoY, both beats; 2026 capex raised to $60-64B from $52-56B; additional $100B Arizona investment announced. BUT the ADR is DOWN pre-market 07-17 (~-2% to -7.3% across reports) amid a tech selloff and capex/margin concerns — sell-the-news. [cnbc.com, yahoo, investing.com]
+
+**BE (07-16 reaction):** Closed $206.73, DOWN ~13.3% (prior close ~$239) DESPITE the $1.7B announcement. The investment is project-level (IDF lead developer + Oaktree minority equity, tax equity/senior debt) to deploy Bloom fuel cells for Nebius AI infrastructure — not equity into Bloom itself. Decline attributed to permitting/regulatory concerns and short-seller activity. [prnewswire.com, yahoo, ad-hoc-news.de]
+
+## 2026-07-17 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                    | source              |
+|--------|-------|----------------------------------------------------------------------------------------|---------------------|
+| MRK    | 8     | FDA approved Lipfendra (enlicitide), first-ever oral PCSK9 inhibitor for LDL-C (07-16) | reuters/merck.com   |
+| UNH    | 8     | Q2 adj EPS $6.38 vs ~$4.87 (+31% beat); FY26 EPS raised to $19.50-20.00 from >$18.25   | businesswire/cnbc   |
+| CDNA   | 5     | Medicare finalized transplant-testing coverage — but +19% pre-market, move made        | thestockcatalyst    |
+| ATAI   | 5     | LLY definitive deal $2.8B upfront (~$6.75/sh) + CVRs — trading $7.14, arb only         | cnbc/ir.ataibeckley |
+| TSM    | 4     | Q2 net profit +77.4% beat, capex raised to $60-64B — ADR DOWN pre-market, sell-the-news| cnbc/yahoo          |
+| ABT    | 4     | FY26 adj EPS view lifted — but +11% move made 07-16 and Q2 profit declined             | rttnews             |
+| MAN    | 4     | Q2 EPS $1.13 vs $0.83 (+36% beat), no raise — +17% pre-market already                  | thestockcatalyst    |
+| DSGR   | 4     | Go-private at $35/sh — trading $34.44, 1.6% arb spread, not our edge                   | thestockcatalyst    |
+| BE     | 3     | $1.7B IDF/Oaktree project financing for Nebius AI deployments — stock closed -13.3%    | prnewswire          |
+
+Scoring detail:
+- MRK: strength 3 (first-in-class oral PCSK9 approval — blockbuster-class LDL-C market, real forward-revenue delta, but on a ~$320B mega-cap the % impact is moderate), novelty 2 (+3.25% day-1 — under the 5% rule the move is NOT made; Reuters/IBD describe it as not fully priced in; second-wave launch/peak-sales coverage ahead), confirmation 2 (VERIFIED up on above-average volume: +3.25% on ~12.4-13M vs ~10.4M avg), cleanliness 1 (no offsetting news found). Total 8. Universe: active/tradable, $127.66, ADV 11.6M.
+- UNH: strength 4 (monster beat: adj EPS $6.38 vs ~$4.87 = +31%; FY26 raised to $19.50-20.00 from >$18.25 = ~+8% midpoint raise on the largest US health insurer), novelty 2 (only +1.16% close + ~+0.6% pre-market since release — mechanically almost all of the repricing is still ahead; NOT scored 3 because the market had a full session and chose a muted verdict), confirmation 2 (VERIFIED up on above-average volume: +1.16% on ~132% of 65-day avg, pre-market up again), cleanliness 0 (expanded DOJ antitrust probe into Claritev unit reported within days — live offsetting negative; strategy flags legal overhangs as asymmetric downside). Total 8. Universe: active/tradable, $423.28, ADV 6.8M.
+- CDNA: strength 3 (CMS finalizing transplant-test coverage is a direct reimbursement/revenue driver), novelty 0 (+19% pre-market today per tracker; quote $40.33 vs $28.51 07-10 bar close = +41% — the 5%-priced-in freshness gate fires squarely), confirmation 1 (up big; pre-market volume unverifiable, bars lag at 07-10), cleanliness 1. Total 5.
+- ATAI: strength 3 (definitive all-cash deal), novelty 0 (trading $7.14 ABOVE the $6.75 upfront cash — remaining value is CVR speculation; upside capped), confirmation 1, cleanliness 1. Total 5. Merger-arb, not catalyst drift (PYPL 07-16 precedent).
+- TSM: strength 3 (beat + capex raise are real but results were 07-16, heavily anticipated, monthly revenue pre-announced), novelty 1 (market's first verdict is NEGATIVE — ADR down pre-market; UAL 07-16 precedent: we ride up-moves, not hoped-for reversals), confirmation 0 (price DOWN since catalyst), cleanliness 0 (broader tech selloff + margin/capex concerns offsetting). Total 4. Also note: ADR of a Taiwanese issuer — Alpaca classes it us_equity (passes guardrails), TSEM/ESLT precedent allows foreign issuers on US exchanges.
+- ABT: strength 3 (FY26 adj EPS raise), novelty 0 (+11% move made 07-16), confirmation 1 (up, day volume unverified — bar lag), cleanliness 0 (Q2 profit DECLINED — raise sits on an offsetting negative print). Total 4.
+- MAN: strength 2 (+36% EPS beat but NO raise), novelty 0 (+17% pre-market; $51.55 vs $38.71 07-10 close = +33%), confirmation 1, cleanliness 1. Total 4.
+- DSGR: strength 2 (go-private, definitive), novelty 0 (1.6% to deal price), confirmation 1, cleanliness 1. Total 4. Arb, skip.
+- BE: strength 2 (project-level financing for deployments — enables growth but is NOT revenue and NOT equity into BE), novelty 1 (untouched move — but the market REJECTED it, -13.3%), confirmation 0 (closed sharply down on the news day), cleanliness 0 (permitting/regulatory concerns + short-seller activity). Total 3. Do not catch.
+
+Skipped (filters / not qualifying):
+- TGHL ($1.44), RUBI ($3.48), IQST ($1.18): fail min_price_per_share $5.
+- VEEE: micro-cap shell/reverse-merger play (~$36 post-split, far below $1B market-cap floor); merger-with-miner privatization noise.
+- LLY (acquirer): $3.8B bolt-on is immaterial to LLY's size; also price-blocked (> $1,000/sh cap, per 07-13/07-15 precedent).
+- NFLX: $0.80 vs $0.79 minor beat with revenue MISS and weak reaction, no raise — does not qualify.
+- CELC: PDUFA outcome for today 07-17 not yet reported; name re-scored 3 on 07-16 (-17% launch-delay rejection). No new catalyst.
+- OLN/HUN: no new deal news (S-4 procedural, 07-16 log).
+
+**TRADEABLE SIGNAL: MRK 8 and UNH 8 — both >= threshold 6. Book is EMPTY (0/1) and no 1/1 block today.**
+Ranking rationale (max_new_positions_per_day: 1 — market-open takes ONE): MRK ranked #1 over UNH at equal score on cleanliness — MRK has no offsetting legal overhang, and its day-1 confirmation (+3.25% on above-avg volume) is 3x UNH's (+1.16%). UNH's DOJ probe expansion is exactly the asymmetric-downside profile strategy says to avoid. If MRK fails preflight/universe at open, UNH is the fallback at the same score.
+Market-open notes: both names optionable in principle — instrument choice (call in 3-7 DTE window vs shares fallback) is market-open's job per strategy.md. Alpaca daily bars STILL lag (latest 07-10 on 07-17) — confirmation scored from verified close/volume prints via Grok follow-ups instead.
