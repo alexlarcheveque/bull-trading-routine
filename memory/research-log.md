@@ -3684,3 +3684,10 @@ Skipped (filters / not qualifying):
 **TRADEABLE SIGNAL: MRK 8 and UNH 8 — both >= threshold 6. Book is EMPTY (0/1) and no 1/1 block today.**
 Ranking rationale (max_new_positions_per_day: 1 — market-open takes ONE): MRK ranked #1 over UNH at equal score on cleanliness — MRK has no offsetting legal overhang, and its day-1 confirmation (+3.25% on above-avg volume) is 3x UNH's (+1.16%). UNH's DOJ probe expansion is exactly the asymmetric-downside profile strategy says to avoid. If MRK fails preflight/universe at open, UNH is the fallback at the same score.
 Market-open notes: both names optionable in principle — instrument choice (call in 3-7 DTE window vs shares fallback) is market-open's job per strategy.md. Alpaca daily bars STILL lag (latest 07-10 on 07-17) — confirmation scored from verified close/volume prints via Grok follow-ups instead.
+
+## 2026-07-17 weekly-review: 1 strategy edit (mega-cap call restriction)
+
+- EDIT: Entry rules / instrument choice — long calls now require market cap < $100B; mega-caps take shares even when optionable. REVERT by deleting the market-cap condition if next week is worse under it. Rationale: MRK 07-17 all-in 7-DTE ATM call turned a -1.4% underlying move into -53% premium (-55% day); catalyst drift on >$100B names can't clear short-dated ATM breakeven+theta. Hindsight: edit would have made this week ~-3% instead of -61% and changes no prior week's trade.
+- Week 07-13..07-17: WTD -61.00% (-$64,090.13) vs SPY -1.55%. 1 closed trade (PENG +2.74%); the rest is unrealized mark on the open MRK 07-24 $130 call (-53.2%).
+- Rubric check: skips were all correct (BIIB -1.5%, UAL -2.2%, PYPL +1.9%, nothing rejected ripped >10%). CELC 8 (07-15) fell ~-20% from score date — only the 1/1 book cap kept us out; the cap saved the book, not cost it.
+- Time stop validated: PENG exit $69.00 vs $60.33 today (+12.6% saved). But 3rd EOD cron miss (07-15) cost ~$15k of the PENG exit window — operator item, urgent before the 07-22 MRK expiry-guard sell.

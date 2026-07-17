@@ -61,9 +61,13 @@ corporate catalyst.
 - Buy at the **open** following the pre-market research pass that produced the score.
 - **Instrument choice:**
   - If score **>= 6** AND the name is optionable
-    (`./scripts/alpaca.sh option-chain <T> call` returns > 0 contracts):
+    (`./scripts/alpaca.sh option-chain <T> call` returns > 0 contracts)
+    AND market cap **< $100B**:
     buy a **LONG CALL** for leveraged upside.
-  - Otherwise: buy **SHARES**.
+  - Otherwise: buy **SHARES**. Mega-caps (>= $100B) take shares even when optionable:
+    their catalyst drift (~1-4%) sits below the breakeven+theta hurdle of a 3-7 DTE
+    ATM call — MRK 07-17 turned a -1.4% underlying move into -53% of premium in one
+    session. [added 2026-07-17 weekly review]
 - **Shares sizing:** `target_position_pct` of equity (guardrails; currently 100%),
   market order, full size in one shot. Compute share count at **98% of target
   notional** — `floor(0.98 × equity × target_position_pct/100 ÷ quote)` — because
