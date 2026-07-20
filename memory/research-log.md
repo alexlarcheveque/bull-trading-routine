@@ -3758,3 +3758,10 @@ Skipped (filters / not qualifying):
 **No tradeable signal today.** Top score 4 < threshold 6. Quiet weekend tape: zero fresh 24h catalysts across all four queries (Grok 4/4 first-try). Book is full anyway (MRK calls, 1/1) — market-open has nothing to act on and no cap conflict to resolve.
 
 Reminder for downstream routines (from 07-17 EOD/weekly): midday must watch the MRK ±100% premium band; EOD 2026-07-22 MUST fire the expiry-guard option-sell (07-24 expiry) — do not ride a near-0-DTE call.
+
+## 2026-07-20 market-open
+
+- Exits: 0. MRK260724C00130000 bid $0.64 vs $2.01 entry = -68.2%, inside ±100% stop/target band. Thesis INTACT per Grok: no negative Lipfendra/MRK news in last 24h, coverage still positive on first-oral-PCSK9 approval. Time stop (07-24) and expiry guard (EOD 07-22) not due here.
+- Halt check: no new entries — open positions 1/1 (max_concurrent_positions). Moot anyway: top watchlist score 4 (GE) < entry threshold 6.
+- Daily P&L at open: -39.2% (equity $29,292.98 vs last_equity $48,150.98) — mark-to-market bleed on the all-in MRK call (mark $0.62 vs Friday $1.04). Under the -100% daily cap. Weekly cap clear (new week, no realized trades).
+- Reminder stands: midday watches the ±100% premium band; EOD 2026-07-22 MUST fire the expiry-guard option-sell.
