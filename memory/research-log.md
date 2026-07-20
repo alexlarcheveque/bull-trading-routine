@@ -3691,3 +3691,70 @@ Market-open notes: both names optionable in principle — instrument choice (cal
 - Week 07-13..07-17: WTD -61.00% (-$64,090.13) vs SPY -1.55%. 1 closed trade (PENG +2.74%); the rest is unrealized mark on the open MRK 07-24 $130 call (-53.2%).
 - Rubric check: skips were all correct (BIIB -1.5%, UAL -2.2%, PYPL +1.9%, nothing rejected ripped >10%). CELC 8 (07-15) fell ~-20% from score date — only the 1/1 book cap kept us out; the cap saved the book, not cost it.
 - Time stop validated: PENG exit $69.00 vs $60.33 today (+12.6% saved). But 3rd EOD cron miss (07-15) cost ~$15k of the PENG exit window — operator item, urgent before the 07-22 MRK expiry-guard sell.
+
+## 2026-07-20 pre-market research (raw Grok output)
+
+### Query 1: bullish large-cap news last 24h
+
+**JNJ (Johnson & Johnson)**: Crushed earnings expectations with a strong revenue beat; stock surged as investors reassessed the healthcare sector outlook.
+Source: X post by @thetradingfeed (Latest mode). Timestamp: Sun, 19 Jul 2026 22:46:47 GMT. [x.com/thetradingfeed/status/2078974862459072617]
+
+**TSM (TSMC)**: Reported strong multi-year AI chip demand outlook; CFO noted possible debt funding for CAPEX if timing favors (bullish).
+Source: X post by @StockMarketZaps (Latest mode). Timestamp: Sun, 19 Jul 2026 23:27:15 GMT. [x.com/StockMarketZaps/status/2078985046145306847]
+
+No other materially bullish catalysts for US large-cap equities (market cap >$2B) were identified in the last 24 hours from available searches. Most other mentions involved small-cap or non-US names, longer-term commentary, or non-catalytic content.
+
+### Query 2: pre-market movers 2026-07-20
+
+**WLFC (Willis Lease Finance) +200% premarket (to ~$191.66).** [benzinga.com/premarket]
+Catalyst: 3-for-1 forward stock split effective for trading on a split-adjusted basis at market open on July 20, 2026 (following shareholder and board approval in June, with Nasdaq final approval pending). [markets.businessinsider.com, stocktitan.net/overview/WLFC]
+
+**Other notable premarket gainers (>2%, per Benzinga and similar trackers as of July 20, 2026 data):** BIYA (~+52%), ADVB (~+36%), and several smaller names (e.g., GOAI, VMAR). [benzinga.com/premarket, stockanalysis.com]
+
+These appear driven by company-specific activity, filings, or low-float dynamics rather than broad gap-fills or sector moves, though explicit catalysts beyond the WLFC split are less prominently detailed in major coverage (small-cap movers often react to recent 8-Ks, earnings, or partnerships). Larger-cap names (e.g., SYY, CNC ~+3%) were also higher but more consistent with general market/sector flows. [investing.com/equities/pre-market]
+
+### Query 3: beat-and-raise earnings since last close
+
+**None identified.**
+
+Searches across recent news, earnings calendars (e.g., Yahoo Finance, Markets Insider, Zacks), and targeted queries for July 20, 2026 reports (post-July 19 close) did not surface any companies that both beat EPS estimates and raised full-year or quarterly guidance. [finance.yahoo.com/calendar/earnings, markets.businessinsider.com/earnings-calendar]
+
+Notable recent examples (from earlier in the week, e.g., ~July 16) include:
+- **GE Aerospace (GE)**: Q2 2026 beat with raised full-year revenue, EPS, and FCF guidance. [finance.yahoo.com, qz.com]
+
+July 20 reporters (per calendars) include STLD, WRB, CCK, and others, but no post-release details on beats + guidance raises were available in results.
+
+### Query 4: FDA / contracts / M&A / regulator decisions last 24h
+
+**No qualifying events (FDA approvals, >$100M contract wins, M&A announcements, or regulator decisions) were identified in the last 24 hours (roughly July 19-20, 2026) affecting US-listed companies.** [fda.gov novel-drug-approvals-2026, sec.gov rulemaking-activity]
+
+Recent or upcoming items (outside the 24-hour window) include:
+- FDA advisory committee meetings scheduled for July 23-24 and July 29, 2026 (no approvals announced). [fda.gov advisory-committee-calendar]
+- Older FTC orders (e.g., July 15, 2026) and SEC rulemakings/proposals with comment deadlines around July 20, 2026. [ftc.gov, sullcrom.com]
+- Contract awards and M&A activity from earlier in 2026 or prior (none meeting the recency or size criteria). [washingtontechnology.com]
+
+Searches across news, regulatory sites, and announcements yielded no matches for the specified timeframe or criteria.
+
+## 2026-07-20 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                  | source            |
+|--------|-------|--------------------------------------------------------------------------------------|-------------------|
+| GE     | 4     | Q2 beat + FY rev/EPS/FCF guidance raise — but reported 07-16, 4 days stale           | yahoo/qz          |
+| TSM    | 3     | X-sourced "multi-year AI demand" commentary rehashing 07-16 earnings (scored 4 then) | x.com/StockMarketZaps |
+| JNJ    | 3     | X-sourced echo of 07-16 Q2 beat; stock actually sold off on MedTech weakness         | x.com/thetradingfeed |
+
+Scoring detail:
+- GE: strength 3 (real beat-and-raise across rev/EPS/FCF), novelty 0 (reported 2026-07-16 — 4 days and 2 full sessions ago; second-wave coverage already ran), confirmation 0 (bars lag at 07-15, cannot verify a post-print up-move on volume; pre-catalyst bars only), cleanliness 1. Total 4.
+- TSM: strength 2 (no NEW corporate event — weekend X commentary restating the 07-16 print + capex raise), novelty 0 (07-17 log: ADR sold off on the news, sell-the-news verdict already in), confirmation 0 (bars show 4 straight down sessions into 07-15), cleanliness 0 (margin/capex concerns + tech-selloff overhang from 07-17). Total 2.
+- JNJ: strength 2 (Q2 beat was real), novelty 0 (reported 07-16; 07-16 log scored it 4 — "beat-raise sold off on MedTech weakness"), confirmation 0 (bars: $257.86 on 07-13 to $246.98 on 07-15, falling into the print; X claim of "surged" contradicts our own 07-16 verification), cleanliness 1. Total 3.
+
+Skipped (filters / not qualifying):
+- WLFC: "+200% pre-market" is the 3-for-1 split display artifact, not a price move; a stock split is not a material catalyst (no cash-flow delta). Not qualifying.
+- BIYA, ADVB, GOAI, VMAR: small-cap/low-float movers with no named corporate catalyst; fail the $1B market-cap floor and materiality test.
+- SYY, CNC (~+3%): general market/sector flows per the tracker, no company-specific event.
+- MRK: already held (449x 07-24 $130 calls) — portfolio skip; no new Lipfendra news surfaced overnight.
+- STLD, WRB, CCK report today 07-20 — results not out at research time; tomorrow's pass will catch any beat-and-raise.
+
+**No tradeable signal today.** Top score 4 < threshold 6. Quiet weekend tape: zero fresh 24h catalysts across all four queries (Grok 4/4 first-try). Book is full anyway (MRK calls, 1/1) — market-open has nothing to act on and no cap conflict to resolve.
+
+Reminder for downstream routines (from 07-17 EOD/weekly): midday must watch the MRK ±100% premium band; EOD 2026-07-22 MUST fire the expiry-guard option-sell (07-24 expiry) — do not ride a near-0-DTE call.
