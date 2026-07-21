@@ -3765,3 +3765,60 @@ Reminder for downstream routines (from 07-17 EOD/weekly): midday must watch the 
 - Halt check: no new entries — open positions 1/1 (max_concurrent_positions). Moot anyway: top watchlist score 4 (GE) < entry threshold 6.
 - Daily P&L at open: -39.2% (equity $29,292.98 vs last_equity $48,150.98) — mark-to-market bleed on the all-in MRK call (mark $0.62 vs Friday $1.04). Under the -100% daily cap. Weekly cap clear (new week, no realized trades).
 - Reminder stands: midday watches the ±100% premium band; EOD 2026-07-22 MUST fire the expiry-guard option-sell.
+
+## 2026-07-21 pre-market raw Grok output
+
+### Query 1 — bullish large-cap news last 24h
+
+**No major materially bullish news or catalysts (e.g., significant earnings beats, guidance raises, FDA approvals, contract wins, or upgrades) were identified for US large-cap equities (market cap >$2B) in the last 24 hours (roughly July 20–21, 2026).** [finance.yahoo.com/calendar/earnings, morningstar.com/markets/movers]
+
+Earnings reports were scheduled for several large-caps on July 21 (e.g., Novartis/NVS ~$285B market cap, Charles Schwab/SCHW ~$178B, Danaher/DHR ~$142B), but no post-earnings results, beats, or related reactions were reported in available sources. Recent FDA activity and approvals referenced in coverage occurred earlier in July (e.g., July 7–10). Price movers/gainers noted around July 20 were primarily smaller or mid-cap names (e.g., ACHR, IREN, CIFR) without large-cap relevance or clear fundamental catalysts.
+
+### Query 2 — pre-market movers on news
+
+**Crown Holdings (CCK) stands out as a clear pre-market gainer (>2%) driven by an actual earnings catalyst on July 21, 2026.** [benzinga.com/news/26/07/60570014]
+
+- CCK rose sharply in pre-market (reports of ~3.5–16% gains depending on timing/source) after reporting Q2 2026 results that beat estimates ($2.49 adjusted EPS vs. $2.16 consensus; sales $3.668B vs. $3.367B expected) and raising FY26 EPS guidance. Results released after Monday's close; earnings call Tuesday morning.
+
+Other notable pre-market gainers (>2%) with news/analyst catalysts:
+- **Global Payments (GPN)**: +~5.85% on a Morgan Stanley upgrade and higher price target. [au.finance.yahoo.com]
+- **Alibaba (BABA)**: +~4.67% tied to AI partnerships and new model preview. [au.finance.yahoo.com]
+- **Credo Technology (CRDO)**: +~4.63% following a Barclays price target increase ahead of Q2 earnings. [au.finance.yahoo.com]
+
+Many other large % pre-market movers (e.g., SLGB, HIHO, LASE) lacked clear news catalysts — gap-fills, low-float speculation, or sector rotation. [benzinga.com/premarket]
+
+### Query 3 — beat-and-raise after yesterday's close
+
+**No specific companies matching the exact criteria (earnings released after the July 20, 2026 market close, with both a beat and raised guidance) were identified in recent web results.** [seekingalpha.com/news/4615722, finance.yahoo.com/calendar/earnings]
+
+Earnings calendars show NVS, SCHW, DHR, CB reporting July 21 BMO, but actual results not yet available at search time. Earlier mid-July reports (UNH, ABT, JNJ beat-and-raise) predate the July 20 close. (Note: CCK's after-Monday-close beat-and-raise was caught by Query 2 above.)
+
+### Query 4 — FDA / contracts / M&A / regulator decisions last 24h
+
+**No qualifying events identified in the last 24 hours.** [fda.gov/drugs/novel-drug-approvals-2026, thedefensepost.com]
+
+- Recent FDA approvals were earlier in July (gedatolisib/Celcuity ~July 14–16; Keytruda combos July 10). Advisory committee meetings upcoming July 23–24.
+- ~$100M USAF contract to Kongsberg (~19h ago) — not a US-listed primary awardee.
+- Federal judge paused the Paramount Skydance / Warner Bros. Discovery merger (~July 20) for at least two weeks — a regulator/court decision but BEARISH/neutral for the parties, not a bullish catalyst.
+- Tribeca Strategic Acquisition Corp SPAC share/rights split — not qualifying.
+
+## 2026-07-21 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                            | source              |
+|--------|-------|--------------------------------------------------------------------------------|---------------------|
+| CCK    | 7     | Q2 EPS $2.49 vs $2.16 (+15.3% beat), sales $3.668B vs $3.367B, raised FY26 EPS guide (released after Mon close) | benzinga.com/news/26/07/60570014 |
+| BABA   | 4     | AI partnerships + new model preview; +4.7% pre-market                          | au.finance.yahoo.com |
+
+Scoring detail:
+- CCK: strength 3 (clean beat-and-raise: +15.3% EPS beat, +8.9% sales beat, FY26 EPS guide raised), novelty 2 (surfaced after Monday's close, <24h fresh; pre-market ~+3.5% already underway but under the 5% priced-in bar — some intraday prints quoted higher, so entry should sanity-check the gap), confirmation 1 (pre-market up on the news; regular-session volume unverifiable — IEX bars lag at 07-16 and the catalyst is overnight), cleanliness 1 (no offsetting news; earnings just cleared, not imminent). Total 7. Filters: active/tradable NYSE, ADV 1,124,566 ≥ 100k, mkt cap ~$14B ≥ $1B floor, not held. Sub-$100B and has_options — call path eligible per strategy if market-open can act.
+- BABA: strength 2 (AI partnerships + model preview is a product/narrative item, no named cash-flow delta), novelty 1 (+4.67% pre-market already), confirmation 0 (last bars predate the news; 07-15's +4.8%-on-2x-volume was a different story), cleanliness 1. Total 4. Filters pass (ADV 13.97M) but score below threshold. Mega-cap (~$280B) → would be shares-only anyway.
+
+Skipped (not qualifying / below threshold):
+- GPN (+5.9% pre-market): Morgan Stanley upgrade + PT raise only — strategy explicitly excludes analyst actions with no new corporate information.
+- CRDO (+4.6% pre-market): Barclays PT increase ahead of earnings — same exclusion, and earnings still pending (binary risk).
+- ACHR, IREN, CIFR: movers with no named fundamental catalyst per Grok.
+- NVS, SCHW, DHR, CB: report 07-21 BMO — results not out at research time; tomorrow's pass catches any beat-and-raise.
+- PARA/WBD: merger PAUSED by federal judge — court decision is bearish/neutral, not a bullish catalyst.
+- SLGB, HIHO, LASE: low-float speculation, no catalyst.
+
+Tradeable: CCK (7 ≥ threshold 6). Note for market-open: book is currently FULL 1/1 (MRK 07-24 130C at -80%) — no entry unless an exit frees the slot first. Reminder stands: EOD 2026-07-22 MUST fire the expiry-guard option-sell on the MRK call.
