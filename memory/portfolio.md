@@ -1,17 +1,17 @@
 # portfolio.md
-# Updated 2026-07-20 12:00 by midday routine.
+# Updated 2026-07-21 08:40 by market-open routine.
 
 ## Account
-- equity: 20312.98
+- equity: 1454.98
 - cash: 1454.98
 - buying_power: 5819.92
-- day_pnl_pct: -57.81
+- day_pnl_pct: -87.16
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| MRK260724C00130000 | call | 449 | 2.01 | 2026-07-17 | 2026-07-24 | -80.1 |
+| MRK260724C00130000 | call | 449 | 2.01 | 2026-07-17 | 2026-07-24 | -100.0 |
 
 ## Notes
-2026-07-20 market-open: 0 exits, 0 entries. MRK call bid $0.64 vs $2.01 entry (-68.2% on bid; -69.2% on mark $0.62) — inside ±100% band. Thesis intact per Grok (no negative Lipfendra news). No new entries: book full 1/1, and top watchlist score 4 < threshold 6. ⚠️ Standing order for downstream routines: midday watches the ±100% premium band; EOD 2026-07-22 MUST execute the expiry-guard option-sell (07-24 expiry) — never ride a near-0-DTE call.
-2026-07-20 midday: 0 exits. MRK call bid $0.40 vs $2.01 entry (-80.1% on bid) — inside ±100% band, no stop trigger. Thesis intact per Grok (no negative MRK news; Lipfendra coverage still positive). Day P&L -57.81% — above -100% daily cap, no halt. Expiry-guard reminder for EOD 2026-07-22 stands.
+2026-07-21 market-open: **MRK call hit the -100% premium stop** (bid $0.00, spot $124.975 vs strike 130, 3 DTE). Market close rejected twice by Alpaca (no bid in book — "reenter with a limit"). A day LIMIT sell-to-close for all 449 contracts is **WORKING at $0.05** (order 61cab386-f81e-455f-8b52-a80cb69de452, preflight passed; started $0.15, laddered down). Position shown above because it has NOT yet filled — book remains 1/1, which blocked today's CCK entry (score 7). Alert emailed.
+⚠️ Standing orders: midday TODAY — check order 61cab386; if filled, append SELL row to trade-log and free the book; if unfilled, ladder to $0.01. EOD 2026-07-22 — expiry-guard close is MANDATORY (07-24 expiry); use a LIMIT (market close gets rejected with no bid), never ride into expiry.

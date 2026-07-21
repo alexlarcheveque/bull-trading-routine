@@ -3822,3 +3822,11 @@ Skipped (not qualifying / below threshold):
 - SLGB, HIHO, LASE: low-float speculation, no catalyst.
 
 Tradeable: CCK (7 ≥ threshold 6). Note for market-open: book is currently FULL 1/1 (MRK 07-24 130C at -80%) — no entry unless an exit frees the slot first. Reminder stands: EOD 2026-07-22 MUST fire the expiry-guard option-sell on the MRK call.
+
+## 2026-07-21 market-open decisions
+
+- **MRK260724C00130000 (449 @ $2.01): -100% STOP TRIGGERED.** Open bid $0.00 / ask $0.31, MRK spot $124.975 vs strike 130, 3 DTE. Return on bid = -100% → option stop fired (no Grok thesis check needed; stop is definitive).
+- **Exit blocked by market structure:** `alpaca.sh option-sell` (DELETE /positions market close) rejected twice by Alpaca — "no available quote for symbol, please reenter with a limit" (empty bid side at the open). Per the API's instruction, deviated from the script: placed a day LIMIT sell-to-close for all 449 contracts (preflight PASSED before ordering). $0.15 limit → 30s no fill → replaced at $0.05 (order 61cab386-f81e-455f-8b52-a80cb69de452) → 60s+ still `new`, 0 filled. **Order left working for the day.** Alert emailed (Resend id 8b2e8a31).
+- **Halt check: book still FULL 1/1** (position not yet closed) → max_concurrent_positions blocks entries. **CCK (score 7, Q2 beat-and-raise) NOT entered** — slot never freed. No other candidate ≥ threshold 6 (BABA 4).
+- Daily P&L -87.16% (equity $1,454.98 vs last_equity $11,332.98 — the MRK premium marked to $0 overnight). Above the -100% daily cap → no loss-cap halt. Weekly: equity > 0, above -100% weekly cap → no flatten.
+- **Standing orders for downstream routines:** (1) midday TODAY: check order 61cab386 — if filled, journal the SELL row in trade-log; if still unfilled, keep laddering ($0.01 acceptable — recorded value is $0, exit > price). (2) EOD 2026-07-22: expiry-guard close is MANDATORY (07-24 expiry) — if the $0.05 limit is still unfilled use a $0.01 limit, never a market close (no-bid rejection), never ride into expiry.
