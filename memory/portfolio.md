@@ -1,5 +1,5 @@
 # portfolio.md
-# Updated 2026-07-21 12:00 by midday routine.
+# Updated 2026-07-21 15:55 by end-of-day routine.
 
 ## Account
 - equity: 6834.00
@@ -13,8 +13,11 @@
 | (none) | | | | | | |
 
 ## Notes
-2026-07-21 midday: limit sell order 61cab386 **FILLED** — all 449 MRK 07/24 $130 calls
-sold at avg $0.12 (limit $0.05, price-improved) at 08:41 CT. Realized -94.03% on the
-premium (-$84,861 vs $90,249 paid). SELL row appended to trade-log. Book is now **0/1 —
-free**. The 07-22 expiry-guard standing order is CLEARED (position no longer exists).
-Day P&L -39.70% (last_equity $11,332.98 → $6,834) — under the 100% daily cap, no halt.
+2026-07-21 EOD: book empty (Alpaca confirms 0 positions), 100% cash. 0 time-stops due,
+expiry guard CLEAR — the MRK 07-24 calls were fully closed at midday (order 61cab386,
+avg $0.12, ret=-94.03%, realized -$84,861), so the mandatory 07-22 expiry-guard sell is
+no longer needed. Weekly cap check: WTD ~-83% (Fri close $40,973.86 → $6,834) vs -100%
+FULL YOLO cap — no flatten. Day P&L -39.70% vs last_equity $11,332.98. All-time -93.17%
+vs $100k paper start. EOD email sent (Resend c2e41d1f). Book is 0/1 going into 07-22 —
+first score ≥6 candidate can be taken; CCK (7, blocked at 07-21 open) can be re-scored
+at 07-22 pre-market if still fresh.

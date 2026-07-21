@@ -3830,3 +3830,11 @@ Tradeable: CCK (7 ≥ threshold 6). Note for market-open: book is currently FULL
 - **Halt check: book still FULL 1/1** (position not yet closed) → max_concurrent_positions blocks entries. **CCK (score 7, Q2 beat-and-raise) NOT entered** — slot never freed. No other candidate ≥ threshold 6 (BABA 4).
 - Daily P&L -87.16% (equity $1,454.98 vs last_equity $11,332.98 — the MRK premium marked to $0 overnight). Above the -100% daily cap → no loss-cap halt. Weekly: equity > 0, above -100% weekly cap → no flatten.
 - **Standing orders for downstream routines:** (1) midday TODAY: check order 61cab386 — if filled, journal the SELL row in trade-log; if still unfilled, keep laddering ($0.01 acceptable — recorded value is $0, exit > price). (2) EOD 2026-07-22: expiry-guard close is MANDATORY (07-24 expiry) — if the $0.05 limit is still unfilled use a $0.01 limit, never a market close (no-bid rejection), never ride into expiry.
+
+## 2026-07-21 EOD
+
+- 0 time-stops due (book empty — MRK exit filled at midday, order 61cab386).
+- Expiry guard CLEAR: no open options; the mandatory 07-22 expiry-guard sell on MRK 07-24 130C is moot (position closed 07-21 08:41 CT at avg $0.12).
+- Weekly cap: WTD ~-83% (Fri close $40,973.86 -> $6,834.00) vs -100% cap — no flatten.
+- EOD email sent (Resend c2e41d1f). Equity $6,834.00 all cash, day -39.70%, all-time -93.17%.
+- Book 0/1 going into 07-22 — CCK (7) re-scoreable at pre-market if still fresh.
