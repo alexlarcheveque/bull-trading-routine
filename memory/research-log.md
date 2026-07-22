@@ -3838,3 +3838,85 @@ Tradeable: CCK (7 ≥ threshold 6). Note for market-open: book is currently FULL
 - Weekly cap: WTD ~-83% (Fri close $40,973.86 -> $6,834.00) vs -100% cap — no flatten.
 - EOD email sent (Resend c2e41d1f). Equity $6,834.00 all cash, day -39.70%, all-time -93.17%.
 - Book 0/1 going into 07-22 — CCK (7) re-scoreable at pre-market if still fresh.
+
+## 2026-07-22 pre-market raw Grok output
+
+### Query 1 — materially bullish large-cap news (24h)
+
+**Limited materially bullish company-specific news emerged for US large-cap equities (market cap >$2B) in the ~24 hours leading into July 22, 2026.** Markets closed lower on July 21 amid broader weakness in healthcare and industrials, with the S&P 500 down ~0.2%.
+
+Notable items with potential positive catalysts (all large-cap eligible unless noted):
+
+- **GM (General Motors)**: Revenue growth beat, ending a multi-quarter losing streak. Highlighted as a high-conviction bullish play. (Source: Trading Strategy Guides, ~July 21, 2026.)
+- **IX (ORIX Corp.)**: Zacks Rank #1 (Strong Buy); consensus EPS estimates rose sharply (~55.7% over prior 60 days). (Source: Yahoo Finance/Zacks, July 21 article.)
+- **FLNC (Fluence Energy)**: Zacks Rank #1 (Strong Buy); consensus EPS estimates increased (~18.2% over prior 60 days). (Source: Yahoo Finance/Zacks, July 21 article.)
+
+No major earnings beats, guidance raises, M&A announcements, or regulatory approvals for large-caps were prominently reported in the window. Big Tech earnings (e.g., Alphabet/GOOGL, TSLA) were slated for July 22 and not yet released in the prior 24 hours.
+
+### Query 2 — pre-market movers on news
+
+**SMCI (Super Micro Computer) +15.8% premarket (to ~$29.53), on record $60B+ backlog announcement tied to surging AI server demand (earnings-related catalyst).** [benzinga.com/premarket]
+
+Related leveraged ETFs also moved sharply on the same news: **SMCX +31.9%** and **SMCL +30.8%**.
+
+**HPE (Hewlett Packard Enterprise) +~3%+ premarket**, on surging AI server demand following SMCI earnings/backlog news.
+
+Many other premarket gainers (>2%, including several small-cap/OTC names like SXTC, INLF, CHAI, AEHL, ZCMD) appear in lists but lack clearly identified news catalysts in coverage and are more consistent with gap-fill, low-float, or speculative moves. Data drawn from Benzinga premarket movers (as of ~6 AM EDT July 22, 2026).
+
+### Query 3 — beat-and-raise after yesterday's close
+
+**3M (MMM)** reported Q2 2026 results "after the July 21, 2026 close" per initial response (CORRECTED by follow-up: actually BMO July 21, 6:30 AM EDT).
+
+- **Beat**: Adjusted EPS of $2.40 (beat estimates; GAAP sales $6.5B).
+- **Raise**: Full-year 2026 adjusted EPS guidance raised to $8.80–$8.95 (from prior $8.50–$8.70); also raised organic sales growth outlook to >3.5% (from ~3%) and free cash flow guidance. [prnewswire.com 302830119, seekingalpha.com/news/4615832]
+
+No other clear matches for reports released after the July 21 close that both beat and raised. Major names (TSLA/GOOGL) slated for July 22.
+
+### Query 4 — FDA / contracts / M&A (24h)
+
+**None identified in the last 24 hours (roughly July 21–22, 2026) based on available sources.** Recent FDA activity is from mid-July (July 16 oral PCSK9, July 14 selpercatinib); upcoming decisions July 23–24 but nothing new in the window. No new large public-company M&A; no >$100M contract wins; no FTC/SEC/DOJ decisions tied to US-listed names.
+
+### Follow-up A — MMM timing/reaction verification
+
+**3M (MMM) released Q2 2026 earnings BEFORE market open July 21 (press release 6:30 AM EDT, call 9:00 AM ET), with a +8–9% reaction during the July 21 session.** Pre-market +6.22% (~$169), intraday +8.72% (~$172.99), closed $170.72. [investors.3m.com press release Jul 21 6:30 AM EDT; benzinga.com 60572755; marketbeat.com]
+
+### Follow-up B — SMCI announcement detail
+
+**No full quarterly earnings; on July 21 after close SMCI issued a preliminary Q4 FY2026 business update (FY ended June 30); full results Aug 11.** [businesswire.com 20260721109492]
+- **Revenue**: estimated near LOW end of prior $11.0–12.5B guidance (consensus ~$11.73B) — described as "soft."
+- **Margins**: GAAP/non-GAAP gross margins estimated 15–17% vs prior 8.2–8.4% guidance — major beat on mix.
+- **Backlog**: record; >$60B in NEW orders received in Q4 alone, delivered over future quarters.
+- **Offsets**: soft revenue near low end; no new margin miss/dilution/accounting items flagged. Stock +20–25% after-hours.
+
+### Follow-up C — GM detail + CCK July 21 session
+
+**GM Q2 2026 (BMO July 21):** adj EPS $3.57 vs ~$3.15–3.19 consensus; revenue $48.03B vs $46.61B; FY26 adj EPS guidance RAISED to $12–14 from $11.50–13.50, FCF forecast raised. Closed July 21 $79.52, +4.9% vs $75.80 prior close. [cnbc.com gm-earnings-q2-2026; investor.gm.com]
+
+**CCK July 21 regular session (vs July 20 close $114.58):** opened $119.49 (+4.3% gap), intraday high $121.76 / low $114.75, closed $117.99 (+2.98%). The beat-and-raise (adj EPS $2.49 vs ~$2.16, rev $3.67B vs ~$3.37B, FY raised to $8.30–8.50) held a modest gain but faded off the highs. [finance.yahoo.com CCK history; crowncork.com]
+
+## 2026-07-22 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                            | source              |
+|--------|-------|--------------------------------------------------------------------------------|---------------------|
+| CCK    | 6     | Q2 beat-and-raise (EPS $2.49 vs $2.16, FY raised to $8.30-8.50), day-1 close only +2.98% — second-wave entry | crowncork.com / 247wallst |
+| SMCI   | 5     | Preliminary Q4 update: >$60B new orders in Q4, gross margin 15-17% vs 8.2-8.4% guided; +15.8% pre-market | businesswire.com 20260721109492 |
+| MMM    | 5     | Q2 beat (adj EPS $2.40) + FY26 raise to $8.80-8.95; already +6.8% on 07-21 | investors.3m.com |
+| GM     | 5     | Q2 beat (EPS $3.57 vs $3.17, rev $48.03B vs $46.61B) + FY raise to $12-14; already +4.9% on 07-21 | cnbc.com |
+
+Scoring detail:
+- CCK (re-score of yesterday's 7): strength 3 (unchanged — clean +15.3% EPS beat, +8.9% sales beat, FY26 raise). Novelty 1 (down from 2: catalyst is now ~40h old, and day-1 regular session consumed +2.98% while fading from a +6.3% intraday high ($121.76) to the close — sellers were active into every rally; not a UAL-style rejection, but the "still ahead" portion shrank). Confirmation 1 (price up on catalyst day; consolidated volume unverifiable — Alpaca bars lag at 07-17). Cleanliness 1 (no offsetting news). Total 6 — AT threshold, tradeable. Mkt cap ~$14B, ADV 1,196,720 ≥ 100k, active/tradable, not held. Sub-$100B + has_options → call path eligible per strategy.
+- SMCI: strength 4 (>$60B of new orders in ONE quarter vs ~$12B/qtr revenue ≈ 5x book-to-bill, plus gross margin guide nearly doubled — genuinely transformational forward numbers). Novelty 0 (+20-25% after-hours, +15.8% pre-market at ~$29.53 vs $25.5 close — blows through the 5% priced-in freshness bar; CDNA +19% precedent: the move already happened, we missed it). Confirmation 1 (up big, but extended-hours only — no regular session since the catalyst, volume unverifiable). Cleanliness 0 (revenue "soft" near the LOW end of guidance in the same release; numbers are preliminary/unaudited, full results Aug 11; SMCI's accounting history warrants the stricter read). Total 5 — below threshold.
+- MMM: strength 3 (beat + ~3% FY EPS raise + organic sales and FCF raises — solid turnaround print). Novelty 0 (reported BMO 07-21 — Grok query-3 initially claimed "after close," follow-up corrected it; +8.7% intraday move already done, now >24h stale; ~$90B near-mega-cap has no drift left after an 8.7% day-1). Confirmation 1 (up big on catalyst day; volume unverifiable, bars lag). Cleanliness 1. Total 5 — below threshold.
+- GM: strength 3 (large beat + FY raise). Novelty 0 (BMO 07-21, closed +4.9% same day — at the top of the 1-4% large-cap catalyst drift band, >24h stale). Confirmation 1 (up on catalyst day, volume unverifiable). Cleanliness 1. Total 5 — below threshold.
+
+Skipped (not qualifying / below threshold):
+- SMCI (score 5): +15.8% pre-market — move made, freshness gate failed; soft revenue offset.
+- MMM (score 5): +8.7% day-1 done, >24h stale.
+- GM (score 5): +4.9% day-1 done, >24h stale.
+- HPE (+3% pre-market): pure sympathy move on SMCI's news — no company-specific event (semicap-sympathy precedent 07-15).
+- IX, FLNC: Zacks rank / consensus-estimate revisions — analyst action with no new corporate news, strategy exclusion.
+- SMCX, SMCL: leveraged single-stock ETFs — disallowed_instruments.
+- SXTC, INLF, CHAI, AEHL, ZCMD: low-float/OTC speculation, no named catalyst.
+- GOOGL, TSLA: report AFTER today's close — tomorrow's pass catches any beat-and-raise.
+
+Tradeable: CCK (6 ≥ threshold 6). Note for market-open: book is EMPTY 0/1 and daily/weekly caps are clear — CCK is entry-eligible at the open. Honest conviction note: 6 is the floor score; the day-1 fade off $121.76 is the main risk signal. Sanity-check the gap at open (if CCK opens >5% above $117.99 the novelty argument is dead — skip). Grok 4/4 standard + 3 follow-ups first-try. Alpaca bars still lag (latest 07-17 on 07-22).
