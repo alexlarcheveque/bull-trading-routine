@@ -3920,3 +3920,12 @@ Skipped (not qualifying / below threshold):
 - GOOGL, TSLA: report AFTER today's close — tomorrow's pass catches any beat-and-raise.
 
 Tradeable: CCK (6 ≥ threshold 6). Note for market-open: book is EMPTY 0/1 and daily/weekly caps are clear — CCK is entry-eligible at the open. Honest conviction note: 6 is the floor score; the day-1 fade off $121.76 is the main risk signal. Sanity-check the gap at open (if CCK opens >5% above $117.99 the novelty argument is dead — skip). Grok 4/4 standard + 3 follow-ups first-try. Alpaca bars still lag (latest 07-17 on 07-22).
+
+## 2026-07-22 market-open execution
+Bought 57 CCK @ $116.99 (order 942f8346, market, filled in <3s; quoted $116.27 pre-order,
+fill +0.62%). Gap check passed ($116.27 < $117.99 prior close; skip trigger was >$123.89).
+NOTE for weekly review: Alpaca option-chain returned 0 CCK call contracts today (bare
+query AND 07-25..07-29 window), but the 07-21 pre-market block said CCK "has_options" —
+either contracts delisted or a chain-endpoint inconsistency. Rules were unambiguous
+(OPTIONABLE=0 → shares path), but worth checking whether the optionability probe is
+reliable. Book 1/1, day cap 1/1 — done for the day. Equity $6,793.66, cash $157.43.
