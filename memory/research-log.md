@@ -3929,3 +3929,73 @@ query AND 07-25..07-29 window), but the 07-21 pre-market block said CCK "has_opt
 either contracts delisted or a chain-endpoint inconsistency. Rules were unambiguous
 (OPTIONABLE=0 → shares path), but worth checking whether the optionability probe is
 reliable. Book 1/1, day cap 1/1 — done for the day. Equity $6,793.66, cash $157.43.
+
+## 2026-07-23 pre-market research (raw Grok output)
+
+### Query 1 — bullish large-cap news (24h)
+
+**AMD (AMD): Strategic partnership with Anthropic for up to 2 GW of MI450 GPUs (first GW deployment starting H1 2027), plus up to $5B equity investment by AMD in Anthropic.** [ir.amd.com press release 1292; cnbc.com 2026/07/22 amd-anthropic-ai-chip-investment]
+
+This is a major AI infrastructure win positioning AMD as a stronger Nvidia competitor. Announced July 22, 2026 (press release ~9 AM ET; widely reported same day).
+
+**AT&T (T): Q2 2026 earnings beat driven by strong wireless growth (432k postpaid phone net adds vs. 338.5k expected); stock rose ~3.5%.** [fool.com stock-market-today 2026/07/22]
+
+Revenue/service trends also supportive; results released pre-market July 22, 2026. [about.att.com 2q-earnings-reminder]
+
+Both companies have market caps far exceeding $2B. No other material company-specific bullish catalysts (e.g., major beats, upgrades, or deals) for additional large-cap names were identified in the ~last 24 hours from the searches. Broader chip/AI sector strength provided tailwinds but was not ticker-specific beyond the above.
+
+### Query 2 — pre-market movers 2026-07-23
+
+**SMCI (Super Micro Computer) stands out as the primary ticker meeting the criteria, surging ~14-24%+ in pre-market on July 23, 2026 (with some reports noting moves into the prior session's close), driven by actual news.** [finance.yahoo.com/quote/SMCI; investing.com pre-market]
+
+- **Catalyst**: Preliminary Q4 FY2026 business update (released ~July 21) highlighting a record >$60 billion backlog in new orders, strong AI server demand, and raised gross margin guidance to 15-17% (from prior ~8.2-8.4%). This offset softer revenue expectations near the low end of prior guidance. Multiple analyst notes and coverage followed on the positive backlog/margin outlook. [ir.supermicro.com; cnn.com/markets/stocks/SMCI]
+
+Other high-percentage pre-market gainers listed for July 23 (e.g., LGCL +127%, EHGO +44%, AEHL +30%, PLAG +24%, ZYBT +24%, plus NVEC, WBUY, DOMO) were primarily low-priced/speculative names with heavy volume but lacked clear, verifiable news catalysts tied to the move (more consistent with gap-fills, low-float volatility, or other factors). [stockanalysis.com/markets/premarket]
+
+No other major liquid tickers with confirmed >2% pre-market gains explicitly tied to fresh news catalysts (vs. gap-fill) were prominently identified in available sources for this date. Data reflects pre-market activity around the July 23 open; always verify real-time quotes and filings.
+
+### Query 3 — beat-and-raise after yesterday's close
+
+**GE Vernova (GEV)** reported Q2 2026 results on July 22, 2026 (with webcast in the morning, covered in after-hours/pre-market context relative to prior close). [barrons.com ge-vernova-earnings]
+
+- **Beat**: Revenue of $11.1 billion (up 22% YoY); adjusted metrics and orders/backlog growth exceeded expectations. [finance.yahoo.com ge-vernova-raises-2026-revenue]
+- **Raised guidance**: 2026 revenue outlook lifted to $45.5–46.5 billion (from prior $44.5–45.5 billion, +$1 billion); free cash flow raised to $11.5–12.5 billion (from $6.5–7.5 billion); adjusted EBITDA margin maintained at 12–14% (implying higher absolute EBITDA). [gevernova.com Q2 2026 results]
+
+No other major tickers (e.g., Alphabet/GOOGL or Tesla/TSLA, which reported after July 22 close) clearly met both criteria in available results—Alphabet had a revenue beat but slight EPS miss and higher capex (not a standard positive guidance raise); Tesla missed. Smaller reports like TowneBank (TOWN) on July 23 lacked confirmed beat+raise details in searches.
+
+### Query 4 — FDA / contracts / M&A (24h)
+
+**FDA approval (July 22, 2026):** The FDA approved Jideytro (zidesamtinib), a ROS1-selective tyrosine kinase inhibitor, for adults with locally advanced or metastatic ROS1-positive non-small cell lung cancer (NSCLC) after prior ROS1 kinase inhibitor treatment. [fda.gov novel-drug-approvals-2026; fiercepharma.com gsk-jideytro-nuvalent]
+
+This marks GSK's (NYSE: GSK) first approved lung cancer drug, stemming from its recent ~$10.6 billion acquisition of Nuvalent (NASDAQ: NUVL), which closed about a week prior; the approval came roughly two months ahead of the original PDUFA target date of September 18, 2026.
+
+No large contract wins (>$100M), M&A announcements, or other major regulator decisions (e.g., FTC/SEC actions with direct material impact on specific US-listed companies) were identified in the last 24 hours from available sources. Other recent or upcoming FDA actions (e.g., expected decisions around July 23) do not appear to have materialized into approvals in this timeframe.
+
+### Follow-up A — AMD 07-21 move attribution + pre-market
+
+**AMD's July 21 +8.1% (close $544.43) was a SEPARATE catalyst: expanded AMD-Microsoft partnership — Microsoft to deploy AMD Helios rack-scale systems on Azure for AI inference.** [fool.com why-amd-stock-jumped-today 07/21] The Anthropic deal did NOT leak on 07-21; it was announced 07-22 ~9 AM ET at the Advancing AI event (runs July 22–23). Day-1 reaction to Anthropic deal: only +1.45% (close $552.33) — partially anticipated (mid-May Citi note predicted the win; AMD VP's GitHub file listed Anthropic as customer ~July 19). No clear 07-23 pre-market print available in sources.
+
+## 2026-07-23 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                              | source              |
+|--------|-------|-----------------------------------------------------------------------------------|---------------------|
+| AMD    | 7     | Anthropic 2GW MI450 deal + $5B equity investment (07-22), stacked on 07-21 Microsoft Azure Helios expansion; day-1 reaction to Anthropic only +1.45% | ir.amd.com PR 1292 / cnbc.com |
+| T      | 5     | Q2 beat on 432k postpaid adds vs 338.5k expected; +3.5% on 2.4x ADV already done 07-22 | fool.com 07/22 |
+| GEV    | 4     | Q2 rev beat + FY rev/FCF guidance raise — but market REJECTED it, -8.7% on 1.5x ADV | gevernova.com / barrons.com |
+| GSK    | 4     | FDA approved Jideytro (ROS1+ NSCLC, 2mo early) — stock flat on approval day        | fda.gov / fiercepharma.com |
+
+Scoring detail (verified vs Yahoo consolidated dailies; Alpaca bars still lag at 07-17):
+- AMD: strength 4 (two stacked material deals in 48h: up-to-2GW Anthropic MI450 deployment from H1 2027 + up to $5B equity investment, plus Microsoft Azure Helios inference win 07-21 — multi-year forward-revenue repricing in the OpenAI-deal mold). Novelty 1 (Anthropic-deal day-1 move just +1.45%, under the 5% priced-in bar, and Advancing AI event continues today — but the 2-session stack is +9.7% (503.57→552.33) and mega-cap drift band is 1-4%, mostly consumed; deal partly anticipated per Citi note + GitHub leak). Confirmation 1 (up on catalyst day but 07-22 volume 24.7M BELOW 29.3M 30d ADV — weak tape conviction). Cleanliness 1 (no offsetting news; "circular deal" commentary is opinion, not corporate bad news). Total 7 — tradeable. Mkt cap ~$895B ≥ $100B → SHARES path per strategy (no calls on mega-caps). ADV 29.3M, active/tradable, not held.
+- T: strength 2 (postpaid-adds beat, no guidance raise cited — steady-state wireless, small cash-flow delta on ~$165B mega-cap). Novelty 0 (reported BMO 07-22, +3.5% day-1 done on the news, >24h stale at today's open — MMM/GM precedent). Confirmation 2 (up 3.5% on 187M vs 78.5M ADV = 2.4x, verified). Cleanliness 1. Total 5 — below threshold.
+- GEV: strength 3 (rev +22%, FY rev +$1B and FCF raised 6.5-7.5→11.5-12.5B — big print on paper). Novelty 1. Confirmation 0 (ANTI-confirmed: -8.7% on 1.5x ADV on catalyst day — market sold the beat, UAL-rejection precedent). Cleanliness 0 (the -8.7% reaction implies offsetting negatives inside the print). Total 4 — below threshold. Also $985 close sits 1.5% under the $1000 max_price_per_share cap — borderline universe even if it re-scored.
+- GSK: strength 2 (first-ever GSK lung-cancer approval, 2 months early — but 2L ROS1+ NSCLC is a niche indication on a ~$150B pharma; modest cash-flow delta, and the $10.6B Nuvalent price is already paid). Novelty 1 (approval 07-22, stock -0.04% — nothing consumed, but mega-pharma rarely drifts on niche approvals). Confirmation 0 (flat on ~average volume). Cleanliness 1. Total 4 — below threshold.
+
+Skipped (not qualifying / below threshold):
+- SMCI (DISQUALIFIED — freshness gate): catalyst first surfaced 07-21 after close (~55h old at today's open), +19.8% on 07-22 (25.50→30.56 on 162.7M = 2.5x ADV) and Grok reports ANOTHER +14-24% pre-market today. Composite would be 6 (strength 4, novelty 0, confirmation 2, cleanliness 0) but strategy.md requires material AND fresh AND directional — "if the move already happened, we missed it." Chasing a two-day +40% is the opposite of the second-wave thesis. Cleanliness stays 0: revenue soft at LOW end of guidance, numbers preliminary (full results Aug 11), accounting history.
+- T (score 5): day-1 move consumed, no raise, mega-cap drift done.
+- GEV (score 4): market rejected the print, -8.7%.
+- GSK (score 4): niche approval, no price confirmation.
+- LGCL, EHGO, AEHL, PLAG, ZYBT, NVEC, WBUY, DOMO: low-float/speculative pre-market gainers with no verifiable catalyst per Grok — no named corporate event.
+- GOOGL (rev beat but EPS miss + capex raise — mixed, not beat-and-raise), TSLA (missed): reported 07-22 AMC, neither qualifies.
+
+Tradeable: AMD (7 ≥ threshold 6). **BUT book is 1/1 FULL** — CCK held through 07-29 time stop, max_concurrent_positions=1 and max_new_positions_per_day would both block a new entry. Market-open should NOT buy AMD today unless CCK exits first (it won't — time stop is 07-29, ±100% stop/target far away). AMD noted for the record; if the thesis is intact when capacity frees up, re-score fresh that morning — do NOT trade today's score later. Shares path only (mega-cap). Grok 4/4 standard + 1 follow-up first-try. Alpaca bars lag persists (latest 07-17 on 07-23); confirmation scored from Yahoo consolidated dailies instead.
