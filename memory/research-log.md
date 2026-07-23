@@ -3999,3 +3999,15 @@ Skipped (not qualifying / below threshold):
 - GOOGL (rev beat but EPS miss + capex raise — mixed, not beat-and-raise), TSLA (missed): reported 07-22 AMC, neither qualifies.
 
 Tradeable: AMD (7 ≥ threshold 6). **BUT book is 1/1 FULL** — CCK held through 07-29 time stop, max_concurrent_positions=1 and max_new_positions_per_day would both block a new entry. Market-open should NOT buy AMD today unless CCK exits first (it won't — time stop is 07-29, ±100% stop/target far away). AMD noted for the record; if the thesis is intact when capacity frees up, re-score fresh that morning — do NOT trade today's score later. Shares path only (mega-cap). Grok 4/4 standard + 1 follow-up first-try. Alpaca bars lag persists (latest 07-17 on 07-23); confirmation scored from Yahoo consolidated dailies instead.
+
+## 2026-07-23 market-open execution
+
+- Exits: 0. CCK 57 sh @ 116.99 entry, now 115.08 (-1.63%) — ±100% stop/target clear,
+  thesis INTACT per Grok (no negative news 24h; Q2 beat + raised FY guidance coverage
+  still positive). Time stop 07-29 is EOD-enforced, not due.
+- Halt check: open positions 1 >= max_concurrent_positions 1 → NO new entries today.
+  AMD (score 7) not bought — book full, as pre-market flagged. Re-score fresh if/when
+  capacity frees; do not reuse today's score.
+- Day P&L computed vs 07-22 EOD equity $6,780.83 → -0.12% (Alpaca `last_equity`
+  returned "0" this morning — API anomaly, ignored; caps evaluated on EOD baseline).
+- No orders sent → no preflight runs required.
