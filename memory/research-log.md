@@ -4092,3 +4092,15 @@ Skipped (not qualifying / below threshold):
 - WBUY, PLAG, AEHL, LGCL, EHGO, ADVB: micro-cap/speculative movers, no qualifying corporate catalyst or below $5/$1B floors
 
 Tradeable: INTC (7 ≥ threshold 6). **BUT book is 1/1 FULL** — CCK held through its 07-29 time stop, so max_concurrent_positions=1 blocks any new entry at today's open (same situation as AMD on 07-23). Market-open should NOT buy INTC unless CCK exits first. If capacity frees later, re-score fresh that morning — do NOT reuse today's score (day-1 novelty decays fast on a mega-cap). Shares path only if it ever trades (≥$100B cap, no calls). Grok 4/4 standard + 1 follow-up first-try. AMD (07-23 score 7) is now >48h stale — dead unless re-scored from scratch on new news.
+
+## 2026-07-24 market-open execution
+
+- Exits: CCK checked — $114.28 at open pass (-2.32% vs $116.99 entry). Stop/target ±100% clear.
+  Thesis INTACT per Grok (NO material negatives 24h: Q2 beat + raised FY EPS guidance holding,
+  quarterly dividend declared 07-23, analyst PT increases; only "upside priced in" takes). No sell.
+  Time stop 07-29 enforced by EOD routine.
+- Halt check: open positions 1/1 >= max_concurrent_positions=1 → NO NEW ENTRIES.
+  INTC (score 7, only tradeable candidate) blocked — third consecutive session book-full
+  (AMD 07-23, INTC 07-24). Day P&L +0.19% and weekly cap both clear; the only gate is capacity.
+  Per pre-market note: if capacity frees before 07-29, INTC must be re-scored fresh, not reused.
+- Orders sent: 0 buys, 0 sells. Equity $6,696.46.
