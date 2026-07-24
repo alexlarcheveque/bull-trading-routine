@@ -4104,3 +4104,12 @@ Tradeable: INTC (7 ≥ threshold 6). **BUT book is 1/1 FULL** — CCK held throu
   (AMD 07-23, INTC 07-24). Day P&L +0.19% and weekly cap both clear; the only gate is capacity.
   Per pre-market note: if capacity frees before 07-29, INTC must be re-scored fresh, not reused.
 - Orders sent: 0 buys, 0 sells. Equity $6,696.46.
+
+## 2026-07-24 weekly review — strategy change record
+
+STRATEGY EDIT (reversible): added mega-cap freshness rule to strategy.md — for >=\$100B names
+the priced-in bar is 4% (not 5%); an overnight/pre-market move >=4% sets novelty=0 and
+disqualifies the name. Evidence: INTC scored 7 at +4.4% pre-market 07-24, closed -7.8% same
+day; AMD scored 7 on 07-23, -5.5% in 2 sessions. Neither was traded (capacity-blocked), so
+the edit changes no realized outcome this week. REVERT IF: next week a mega-cap gapped >=4%
+day-1 goes on to gain >4% more over the following 5 sessions while this rule skipped it.

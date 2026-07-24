@@ -34,6 +34,12 @@ A news item qualifies only if it is **all three**:
    regulator decision, secular demand shift, credible guidance change.)
 2. **Fresh** — first surfaced in the last 24 hours, not already 5%+ priced in
    intraday. If the move already happened, we missed it.
+   **Mega-caps (>= $100B): the priced-in bar is 4%, not 5%.** If the overnight/
+   pre-market move is already >= 4%, novelty = 0 AND the name does not qualify —
+   the 1–4% mega-cap drift band is consumed and there is no second wave to catch.
+   (INTC 07-24: scored 7 at +4.4% pre-market, closed -7.8% same day; AMD 07-23:
+   scored 7 after a +9.7% two-session stack, -5.5% two days later.) [added
+   2026-07-24 weekly review]
 3. **Directional** — clearly bullish for the named ticker (we do not short).
 
 Things that do NOT qualify, even if loud:
