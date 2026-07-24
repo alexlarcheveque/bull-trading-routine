@@ -4011,3 +4011,84 @@ Tradeable: AMD (7 ≥ threshold 6). **BUT book is 1/1 FULL** — CCK held throug
 - Day P&L computed vs 07-22 EOD equity $6,780.83 → -0.12% (Alpaca `last_equity`
   returned "0" this morning — API anomaly, ignored; caps evaluated on EOD baseline).
 - No orders sent → no preflight runs required.
+
+# 2026-07-24 pre-market research
+
+### Query 1 — bullish large-cap news (24h)
+
+**MEDP (Medpace Holdings, Inc.; ~$16.9B mkt cap)**: Q2 2026 earnings beat (revenue $707.3M vs. est. $689.7M, +17.2% YoY; GAAP EPS $4.25 vs. est. $3.99) with raised full-year 2026 revenue guidance to $2.85B midpoint (from prior $2.81B) and strong backlog/clinical trial momentum. Stock rose ~14.7% on July 23, 2026. [stockstotrade.com medpace 2026_07_23; finance.yahoo.com medpace-nasdaq-medp-exceeds-q2]
+
+**CLF (Cleveland-Cliffs Inc.; ~$6.25B mkt cap)**: Q2 2026 results showed revenue beat ($5.2B) and upbeat Q3/H2 2026 outlook (strongest profits in five years expected, improving steel demand, tariffs support). Stock rose ~16% on July 23, 2026. [finance.yahoo.com/quote/CLF/news; robinhood.com CLF]
+
+**NVCR (NovoCure Limited; ~$2.3B mkt cap)**: Q2 2026 earnings beat with record revenue ($183.6M) and narrower-than-expected loss, signaling path to profitability. Stock rose ~25-28% on July 23, 2026. [chartmill.com NVCR rallies on earnings beat]
+
+These represent the primary materially bullish catalysts (earnings beats + raised guidance/outlook) for qualifying large-caps in the period. Other large-cap gainers (e.g., LMT, URI) appeared in broad mover lists without specific standout catalysts identified in results.
+
+### Query 2 — pre-market movers 2026-07-24 (>2% on news)
+
+Key examples (gains approximate; focus on clear news links rather than unexplained gaps) [thestockcatalyst.com NYSEPMMovers; markets.businessinsider.com/premarket]:
+
+- **DOMO** (Domo): +~35% — Announced sale of operating business to Progress Software for $400M (plus tax benefits retention).
+- **MEDP** (Medpace Holdings): +~17% — Q2 2026 earnings beat (EPS $4.25 vs. est., revenue $707.3M beat).
+- **NVEC** (NVE): +~19% — Q2 earnings beat, 81% revenue growth on new products/semiconductor demand, $1.00 dividend, and leadership transition.
+- **WBUY** (Webuy Global): +~91% — AI travel card launch; expanded global tourism partnerships; WeTrip transaction value >10x prior levels.
+- **PLAG** (Planet Green Holdings): +~23% — Secured major digital marketing deal with iFLYTEK.
+- **RELL** (Richardson Electronics): +~16% — Q2 earnings beat, strong backlog cited by CEO, and $0.06 dividend.
+- **NVCR** (NovoCure): +~14% — Q2 2026 earnings beat (EPS beat by $0.20, revenue $183.6M beat).
+- **AEHL** (Antelope Enterprise): +~26% — Post-after-hours surge on volatility/news.
+
+Other notable movers (e.g., LGCL +78%, EHGO +57%, ADVB +21%) appeared in industrials/healthcare premarket lists, often linked to sector momentum or prior-day catalysts, though specific fresh news varied. [benzinga.com pre-market movers; rttnews.com morning-market-movers] Data as of ~9 AM ET July 24, 2026.
+
+### Query 3 — beat-and-raise after yesterday's close
+
+**United Rentals (URI)**: Q2 2026 earnings beat; raised FY2026 revenue guidance to $17.5B–$17.8B (from prior $16.9B–$17.4B) and adjusted EBITDA to $7.975B–$8.125B (from $7.625B–$7.875B). [stockstotrade.com united-rentals 2026_07_23]
+
+**Lockheed Martin (LMT)**: Q2 2026 earnings and revenue beat; raised full-year 2026 financial guidance/outlook. [schwab.com stock-market-update-open; finance.yahoo.com lockheed-martin-q2-2026-earnings]
+
+**ServiceNow (NOW)**: Q2/consensus beat; raised subscription guidance. [schwab.com stock-market-update-open (July 24 reference to prior day's results)]
+
+**Intel (INTC)**: Q2 2026 EPS beat by +$0.21 ($0.42 actual vs. $0.21 consensus) with revenue beat; beat its own guidance (7th straight quarter). Forward guidance raise not explicitly confirmed in results. [marketbeat.com 2026-7-23-intel-co-stock]
+
+Other July 23 reporters (e.g., RingCentral, SS&C Technologies) showed beats/raises per calendars, but specific beat/raise figures were not detailed in top results.
+
+### Query 4 — FDA / contracts / M&A (24h)
+
+**No FDA approvals, large contract wins (>$100M), or M&A announcements were identified from the last 24 hours (July 23–24, 2026) affecting US-listed companies.** [fda.gov press-announcements]
+
+**Notable related item (regulator decision):** On July 23, 2026, the DOJ Antitrust Division announced it has resumed targeted Second Request investigations to expedite merger reviews under HSR. Process change, no single-ticker impact. [justice.gov press release]
+
+Expected FDA PDUFA decisions around July 23–24 (e.g., Otsuka's centanafadine in ADHD, Elevar's rivoceranib + camrelizumab in HCC) have not yet resulted in public approvals. Searches yielded only earlier July approvals (e.g., July 22 GSK zidesamtinib). No qualifying contract wins or M&A deals surfaced. [drugs.com newdrugs]
+
+### Follow-up A — INTC / NOW report timing + reaction
+
+**INTC reported Q2 2026 AFTER CLOSE on 07-23** (call 2pm PDT). Beat huge: revenue $16.1B vs ~$14.4B expected (+12%), adj EPS $0.42 vs $0.21 (+100%), fastest YoY growth (+25%) since 2011, AI-driven. **Raised Q3 guidance** (rev $15.8–16.8B, adj EPS $0.38, above consensus). Offset: 2026 capex raised to >$20B, higher 2027 spend. Pre-market 07-24: ~+4.4% ($104.60 vs $100.23 close), later indications near +5%; first AH print spiked +9.6% ($109.86 on Alpaca IEX 20:57Z) before settling. [newsroom.intel.com Q2-2026; cnbc.com intel-intc-earnings-q2-2026; marketbeat.com 2026-7-23-intel]
+
+**NOW reported Q2 2026 AFTER CLOSE on 07-22** (not 07-23). Beat (subscription ~$3.88B, adj EPS $0.90 vs $0.86) and raised FY subscription guidance — but AH bounce (+4.75% to ~$100) fully reversed: closed 07-23 at $91.94, **-3.7% on catalyst day on 2.4x ADV**, with further pressure into 07-24. Offsets: subscription gross-margin guide cut to 81%, light Q3 cRPO step-down, federal on-prem timing. Market rejected the print — GEV precedent. [investors.com servicenow-q2-2026; za.investing.com transcript; newsroom.servicenow.com]
+
+## 2026-07-24 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                              | source              |
+|--------|-------|-----------------------------------------------------------------------------------|---------------------|
+| INTC   | 7     | Q2 rev $16.1B vs $14.4B est (+12% beat), adj EPS $0.42 vs $0.21; raised Q3 guide above consensus; reported 07-23 AMC, day-1 today, pre-market +4.4% | newsroom.intel.com / cnbc.com |
+
+Scoring detail (Alpaca bars STILL lag — latest 07-17 on 07-24, 5 sessions stale; confirmation scored from Yahoo consolidated dailies + pre-market, per 07-23 precedent):
+- INTC: strength 4 (double-the-consensus EPS, +12% rev beat, fastest growth since 2011, AND a Q3 guide above consensus — big forward delta even for a mega-cap). Novelty 1 (day-1: reported last night, but pre-market already +4.4–5% — right at the 5% priced-in bar, and mega-cap drift band is 1–4%, so most of the drift is consumed; first AH print touched +9.6%). Confirmation 1 (up in AH and pre-market on the news; no completed post-catalyst daily bar yet — direction positive, tape unproven). Cleanliness 1 (capex raise >$20B is a real offset but the market shrugged; no halts). Total 7 — tradeable. Universe: active/tradable, ADV 119.5M, price ~$105 within $5–1000, cap ~$460B ≥ $100B → SHARES path per strategy (no calls on mega-caps — MRK lesson). Not held.
+- NOW: strength 3 (beat + FY subscription raise, but gross-margin guide trimmed to 81% and Q3 cRPO light). Novelty 0 (reported 07-22 AMC — ~36h stale at today's open, fails the 24h freshness gate outright). Confirmation 0 (ANTI-confirmed: -3.7% on catalyst day on 2.4x ADV; AH pop fully reversed — market sold the beat, GEV precedent). Cleanliness 0 (offsetting negatives inside the print). Total 3 — not tradeable.
+- MEDP: strength 3 (EPS +6.5% beat, rev beat, FY raise only +1.4% at midpoint). Novelty 0 (+14.7% on 07-23 on 3.4x ADV — move done, way past the 5% bar; reported 07-22 AMC, >24h stale). Confirmation 2 (verified: 528.12→605.82 on 1.18M vs 351k ADV). Cleanliness 1. Total 6 — but DISQUALIFIED on the freshness gate (SMCI precedent: composite ≥6 does not override material-AND-fresh-AND-directional; chasing a +15% day-1 move is the opposite of the second-wave thesis).
+- LMT: strength 3 (Q2 beat + FY guidance raise). Novelty 0 (+10.5% on 07-23 on ~2.5x volume — mega-cap drift band 1–4% fully consumed same day). Confirmation 2 (verified: 514.36→568.59 on 3.27M vs 1.32M ADV). Cleanliness 1. Total 6 — DISQUALIFIED on freshness, same as MEDP.
+- URI: **universe FAIL — price $1,139.71 > max_price_per_share $1,000.** (Would also have been freshness-disqualified: +10.1% on 07-23, reported 07-22 AMC.) Not scored further.
+- CLF: strength 2 (rev beat + upbeat H2 outlook, but no formal guidance raise cited). Novelty 0 (+16% on 07-23 on 3.2x ADV — done). Confirmation 2 (verified: 9.45→10.96 on 67.3M vs 20.8M ADV). Cleanliness 1. Total 5 — below threshold.
+- NVCR: strength 2 (record revenue $183.6M, narrower loss — still unprofitable, "path to profitability" narrative). Novelty 0 (+28% on 07-23 on 4.9x ADV — done). Confirmation 2. Cleanliness 1. Total 5 — below threshold.
+
+Skipped (not qualifying / below threshold):
+- MEDP (6, freshness-disqualified): +14.7% day-1 move already done
+- LMT (6, freshness-disqualified): +10.5% day-1 move already done
+- CLF (5): +16% done, no formal raise
+- NVCR (5): +28% done, still unprofitable
+- NOW (3): market sold the beat-and-raise, -3.7% on catalyst day
+- URI: universe fail, $1,139.71 > $1,000 max_price_per_share
+- DOMO: $400M sale to Progress Software — deal value below $1B min_market_cap, and +35% arb move caps remaining upside
+- NVEC, RELL: sub-$1B market caps
+- WBUY, PLAG, AEHL, LGCL, EHGO, ADVB: micro-cap/speculative movers, no qualifying corporate catalyst or below $5/$1B floors
+
+Tradeable: INTC (7 ≥ threshold 6). **BUT book is 1/1 FULL** — CCK held through its 07-29 time stop, so max_concurrent_positions=1 blocks any new entry at today's open (same situation as AMD on 07-23). Market-open should NOT buy INTC unless CCK exits first. If capacity frees later, re-score fresh that morning — do NOT reuse today's score (day-1 novelty decays fast on a mega-cap). Shares path only if it ever trades (≥$100B cap, no calls). Grok 4/4 standard + 1 follow-up first-try. AMD (07-23 score 7) is now >48h stale — dead unless re-scored from scratch on new news.
