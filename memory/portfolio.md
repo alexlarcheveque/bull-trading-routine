@@ -23,3 +23,6 @@ per Grok (Q2 beat + raised FY guidance holding, dividend declared 07-23, PT incr
 INTC (7, day-1 beat-and-raise) blocked by book 1/1 FULL — third straight session capacity
 is the binding constraint. If CCK exits before 07-29, re-score INTC fresh (day-1 novelty
 decays fast on a mega-cap). Time stop for CCK fires EOD 2026-07-29.
+2026-07-24 midday: 0 exits. CCK $116.63 (-0.31% vs entry, +1.76% intraday) — ±100% clear,
+thesis intact per Grok (no negative news; Deutsche Bank PT raised to $140). Day P&L +1.71%,
+loss cap not in play.
