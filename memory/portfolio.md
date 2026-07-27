@@ -1,16 +1,16 @@
 # portfolio.md
-# Updated 2026-07-27 06:31 by market-open routine.
+# Updated 2026-07-27 15:56 by end-of-day routine.
 
 ## Account
-- equity: 6966.64
+- equity: 6912.49
 - cash: 157.42
-- buying_power: 19695.50
-- day_pnl_pct: +1.31  # vs last_equity 6876.58
+- buying_power: 19543.88
+- day_pnl_pct: +0.52  # vs last_equity 6876.58
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| CCK    | equity     | 57  | 116.99      | 2026-07-22 | 2026-07-29  | +2.11              |
+| CCK    | equity     | 57  | 116.99      | 2026-07-22 | 2026-07-29  | +1.44              |
 
 ## Notes
 2026-07-22 open: bought 57 CCK @ $116.99 (score 6, Q2 beat-and-raise day-2 second-wave
@@ -19,10 +19,13 @@ contracts; fell back to shares per entry rules. Flagged for weekly review.
 2026-07-24 open/midday: 0 exits, 0 entries. INTC (7) blocked by book 1/1 FULL. CCK
 thesis intact both passes; day closed +1.71% intraday on the position.
 2026-07-27 open: 0 exits, 0 entries. CCK $119.46 (+2.11%) — first session in the green;
-±100% clear, thesis intact per Grok (Q2 strength, positive analyst notes, no negatives).
-Watchlist had no score ≥6 (weekend tape, all movers stale) and book is 1/1 FULL anyway.
-CCK time stop fires EOD 2026-07-29. Heavy earnings week ahead (MSFT/AAPL/AMZN etc.) —
-expect real candidates Tue–Fri once CCK exits.
-2026-07-27 midday: 0 exits. CCK $118.285 (+1.11% vs entry), ±100% clear. Grok: no
-negatives, thesis intact (Q2 beat, dividend declared 07-23, RenTech added). Day P&L
--0.11%, cap clear.
+±100% clear, thesis intact per Grok. Watchlist had no score ≥6 (weekend tape) and book
+is 1/1 FULL anyway. Heavy earnings week ahead — expect real candidates Tue–Fri.
+2026-07-27 midday: 0 exits. CCK $118.285 (+1.11%), ±100% clear, thesis intact.
+2026-07-27 EOD: 0 exits. CCK closed ~$118.67 (+1.44%) — second green session. Time stop
+NOT due (fires EOD 2026-07-29, two sessions out); no options so expiry guard n/a;
+±100% clear; thesis INTACT per Grok safety-net (no negatives 24h, dividend + positive
+coverage). Weekly cap clear (Monday, WTD +0.52% vs -100%). Day +0.52% (equity 6912.49
+vs last_equity 6876.58). EOD email sent (Resend 7e87b152). 0 trades today → trade-log
+unchanged. Wednesday 07-29 EOD is the mandatory CCK time-stop sell — the slot frees
+into the heavy earnings tape (MSFT/AAPL/AMZN, PSA/ALGN 07-29, APD 07-30).

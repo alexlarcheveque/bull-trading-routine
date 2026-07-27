@@ -4200,3 +4200,11 @@ thesis intact per Grok (no negative news 24h; Q2 strength + positive analyst not
 Halt check: book 1/1 FULL (max_concurrent_positions) → no new entries; moot anyway,
 watchlist had no score ≥6 (weekend tape, all movers stale). Day P&L +1.31%
 (equity 6966.64 vs last_equity 6876.58). CCK time stop fires EOD 2026-07-29.
+
+## 2026-07-27 EOD
+
+0 exits. CCK closed ~$118.67 (+1.44% vs entry) — time stop not due (07-29), no options
+(expiry guard n/a), ±100% clear, thesis INTACT per Grok safety-net (no negatives 24h;
+dividend + positive coverage still holding). Weekly cap clear (Monday, WTD +0.52%).
+Day +0.52% (equity $6,912.49 vs last_equity $6,876.58). EOD email sent (Resend 7e87b152).
+Standing: Wednesday 07-29 EOD MUST fire the CCK time-stop sell.
