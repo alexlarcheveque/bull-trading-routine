@@ -4113,3 +4113,82 @@ disqualifies the name. Evidence: INTC scored 7 at +4.4% pre-market 07-24, closed
 day; AMD scored 7 on 07-23, -5.5% in 2 sessions. Neither was traded (capacity-blocked), so
 the edit changes no realized outcome this week. REVERT IF: next week a mega-cap gapped >=4%
 day-1 goes on to gain >4% more over the following 5 sessions while this rule skipped it.
+
+## 2026-07-27 pre-market — raw Grok output
+
+### Query 1 (bullish large-cap news, last 24h)
+
+**THC (Tenet Healthcare Corp., large-cap hospital operator):** Strong Q2 2026 earnings beat (adj. EPS $6.12 vs. ~$4.23–$4.26 consensus; revenue $5.63B vs. ~$5.42–$5.43B est.), with raised full-year 2026 guidance (adj. EPS to $20.30–$21.69 from prior $16.38–$18.68; revenue to $21.9–$22.5B). Stock rose sharply (~17–23% on/around July 24). [benzinga.com/markets/earnings/26/07/60678075, gurufocus.com/news/8978621]
+
+- **Source examples**: Benzinga (July 24, 2026 article on results/outlook upgrade); GuruFocus (July 24/25 coverage); company release context via investor sites.
+- **Timestamp**: Earnings released July 24, 2026 (pre-market), with immediate market reaction.
+
+No other major, materially bullish catalysts (e.g., significant earnings beats, guidance raises, upgrades, or M&A) for US large-caps (>$2B mkt cap) were prominently identified in the exact last 24 hours (July 26–27, 2026) across searches. Earnings season is ramping up with names like MSFT, AAPL, AMZN, and others scheduled later in the week, but those reports are pending. [cnbc.com 07-24 week-ahead]
+
+Note: Smaller or lower-cap movers appeared in some gainers lists but were excluded per the >$2B mkt cap filter. Real-time developments can shift quickly.
+
+### Query 2 (pre-market movers 2026-07-27)
+
+**Notable pre-market gainers (>2%) on July 27, 2026, tied to news or earnings catalysts (focusing on larger/more credible names; many small-cap/penny stock surges appear speculative or gap-related without clear catalysts).** [benzinga.com/premarket, stockanalysis.com/markets/premarket, investing.com/equities/pre-market]
+
+- **MU (Micron)**: +3.15% (pre-market). Surge linked to AI memory dominance despite China's CXMT IPO; analysts highlight MU's edge in high-growth segments.
+- **AMD**: +3.08%. Semiconductor/AI sector momentum.
+- **ORCL (Oracle)**: +2.97%. Sector strength in tech/cloud.
+- **INTC (Intel)**: +2.51%. Chip sector moves.
+- **PSA (Public Storage)**: +9.34%. Among top gainers (earnings/news likely driving REIT move).
+- **APD (Air Products)**: +8.81%. Notable industrial mover.
+- **ALGN (Align Technology)**: +6.97%. Health/tech-related gain.
+- Others in the 4%+ range include AMAT (+4.55%), LRCX (+4.26%), TER (+4.25%), WDC (+4.09%), KLAC (+3.97%), and ECL (+3.82%), largely semiconductor/industrial names with sector tailwinds.
+
+Many extreme movers (e.g., LGHL +121%, MTNB +80%+, FBRX +39%) listed on Benzinga/StockAnalysis appear low-float or speculative without major news catalysts cited. Earnings releases (e.g., ENSG, WELL) and economic data (durable goods) were also in focus. Data reflects early pre-market levels (~6-8 AM ET); moves can shift by open.
+
+### Query 3 (beat-and-raise after yesterday's close)
+
+**None identified that precisely match the criteria (earnings released after July 26, 2026 close, with both an EPS/revenue beat and raised guidance).** [digrin.com earnings calendar]
+
+Recent earnings calendars and news for July 26–27, 2026, show limited reports (e.g., one after-close release on July 26 per some calendars; CLS/Celestica, NUE, and others noted for July 27). No prominent results highlight simultaneous beats and guidance raises in post-July 26 timing.
+
+Earlier examples (e.g., Intel on July 23 after close: non-GAAP EPS $0.42 vs. ~$0.21–0.22 consensus, revenue $16.1B vs. ~$14.4B expected, with Q3 guidance above consensus) do not align with the date. [cnbc.com/2026/07/23/intel-intc-earnings-report-q2-2026]
+
+### Query 4 (FDA / contracts / M&A / regulators, last 24h)
+
+**No qualifying events (FDA approvals, >$100M contract wins, M&A announcements, or major regulator decisions) were identified in searches of recent web results for US-listed companies in the last 24 hours (approximately July 26–27, 2026).** [fda.gov novel approvals 2026, businesswire.com M&A newsroom]
+
+Key observations from available data:
+- **FDA approvals**: The most recent listed novel drug approval is Lytenava (bevacizumab-vikg) on July 24, 2026, for neovascular (wet) age-related macular degeneration. Earlier July 2026 approvals (e.g., atacicept on July 7) and expected PDUFA dates (including one around July 26) do not show new announcements in the target window.
+- **Contract wins**: No >$100M awards announced in the last 24 hours; recent examples (e.g., Orano ~€100M in early July, DOF Group $100–200M in mid-July) fall outside the period.
+- **M&A**: A Brown-Forman (NYSE: BFA/BFB) board statement was issued July 26, 2026, but details do not indicate a new announcement matching criteria. Other recent activity (e.g., Safety Insurance-Mapfre agreement ~July 23; Berkshire Hathaway-Taylor Morrison completion) is older.
+- **Regulator decisions**: FTC actions (e.g., settlements in mid-July) and other rulings predate the window; no new decisions noted.
+
+### Follow-up query (PSA / APD / ALGN / MU catalysts)
+
+**PSA (Public Storage):** The primary catalyst is the July 22, 2026, closing of its ~$10.5 billion acquisition of National Storage Affiliates Trust (NSA). This adds over 1,000 properties (expanding the portfolio to >4,500 properties and 327 million rentable sq ft), >500,000 new customers, and is expected to be accretive to FFO per share (with ~$0.35–$0.50 accretion upon realizing $110–$130M in run-rate synergies). News broke around July 22 (with related coverage on July 22–24); pre-market strength on July 27 reflects ongoing digestion of the deal ahead of Q2 earnings (expected July 29). [stocktitan.net/news/PSA]
+
+**APD (Air Products):** No single dominant breaking company-specific catalyst appears in the immediate pre-market window. The stock is positioned ahead of fiscal Q3 2026 earnings (July 30), with consensus EPS growth expectations (~8.7% YoY to $3.36). Supporting factors include a recently secured long-term semiconductor supply contract in Taiwan (noted in recent analyst/market commentary) and a consistent quarterly dividend declaration. Pre-market moves are likely tied to earnings anticipation rather than fresh news.
+
+**ALGN (Align Technology):** The key catalyst is the July 23, 2026, announcement of multiple new AI-powered innovations and features across its Align Digital Platform (including Align Oral Health Suite with X-ray Insights, Invisalign Outcome Simulator Pro, ClinCheck 3D Tissue Animation, iTero Design Suite, and Invisalign Smile Architect). These enhance Invisalign treatment planning, diagnostics, and patient engagement. News broke July 23; a related UBS price target raise (to $189) occurred around the same time. Earnings follow on July 29. [stocktitan.net/news/ALGN]
+
+**MU (Micron):** No major fresh company-specific news in the last ~24 hours. Recent coverage focuses on broader sector dynamics (AI/memory demand, hyperscaler earnings expectations, analyst commentary on buybacks/China exposure, and a rebound after prior selloffs). Pre-market moves appear driven by sector momentum rather than MU-specific developments. [cnn.com/markets/stocks/MU]
+
+## 2026-07-27 pre-market watchlist
+
+Weekend/Monday tape — no fresh qualifying catalyst anywhere in the 24h window. Scoring the notable names for the record:
+
+- THC: strength 4 (monster Q2 beat, adj EPS $6.12 vs ~$4.25, FY EPS guide raised ~+20% at midpoint). Novelty 0 (reported 07-24 pre-market, +17–23% same day — 3 days stale, way past the 5% bar; MEDP/LMT precedent). Confirmation n/a (Alpaca IEX bars stale past 07-22, but the move is documented in multiple sources). Cleanliness 1. Total ~5 and freshness-DISQUALIFIED regardless — the second wave already came and went.
+- PSA: catalyst is the NSA acquisition CLOSE on 07-22 (deal itself announced months ago) — 5 days stale, and +9.34% pre-market today is past the 5% bar. Novelty 0. Not qualifying.
+- ALGN: 07-23 product-suite announcement (AI features) + UBS PT raise — soft materiality (no cash-flow delta quantified), 4 days stale, +6.97% pre-market past the 5% bar. Not qualifying.
+- APD: +8.81% pre-market on NO fresh company news (earnings anticipation for 07-30). No named catalyst → not qualifying; also past the 5% bar.
+- MU: +3.15% on sector momentum, no company-specific news. Fails the material test (analyst narrative, no corporate event).
+- AMD / ORCL / INTC / AMAT / LRCX / TER / WDC / KLAC / ECL: sector tailwinds only, no name-specific catalyst. INTC's 07-23 beat-and-raise is 4 days stale (and closed -7.8% on 07-24 — the mega-cap 4% rule exists because of it).
+
+Skipped (not qualifying / below threshold):
+- THC (~5, freshness-disqualified): +17–23% move done 07-24
+- PSA: acquisition close 07-22, 5 days stale, +9.3% pre-market
+- ALGN: product PR 07-23, soft materiality, +7% pre-market
+- APD: no catalyst, earnings anticipation only
+- MU: sector momentum, no corporate event
+- LGHL/MTNB/FBRX etc.: low-float speculative movers, no qualifying catalyst / below universe floors
+
+No tradeable signal today.
+
+Book context: 1/1 FULL (CCK, time stop EOD 2026-07-29) — capacity was blocked anyway, but nothing scored ≥6 regardless. Grok 4/4 standard + 1 follow-up first-try. Heavy earnings week ahead (MSFT, AAPL, AMZN, CLS, NUE, WELL, PSA 07-29, APD 07-30) — expect real candidates Tue–Fri from fresh prints.
