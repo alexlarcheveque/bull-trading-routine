@@ -4192,3 +4192,11 @@ Skipped (not qualifying / below threshold):
 No tradeable signal today.
 
 Book context: 1/1 FULL (CCK, time stop EOD 2026-07-29) — capacity was blocked anyway, but nothing scored ≥6 regardless. Grok 4/4 standard + 1 follow-up first-try. Heavy earnings week ahead (MSFT, AAPL, AMZN, CLS, NUE, WELL, PSA 07-29, APD 07-30) — expect real candidates Tue–Fri from fresh prints.
+
+## 2026-07-27 market-open
+
+0 exits, 0 entries. CCK $119.46 (+2.11% vs entry 116.99) — ±100% stop/target clear,
+thesis intact per Grok (no negative news 24h; Q2 strength + positive analyst notes).
+Halt check: book 1/1 FULL (max_concurrent_positions) → no new entries; moot anyway,
+watchlist had no score ≥6 (weekend tape, all movers stale). Day P&L +1.31%
+(equity 6966.64 vs last_equity 6876.58). CCK time stop fires EOD 2026-07-29.
