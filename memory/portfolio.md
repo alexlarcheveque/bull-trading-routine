@@ -23,3 +23,6 @@ thesis intact both passes; day closed +1.71% intraday on the position.
 Watchlist had no score ≥6 (weekend tape, all movers stale) and book is 1/1 FULL anyway.
 CCK time stop fires EOD 2026-07-29. Heavy earnings week ahead (MSFT/AAPL/AMZN etc.) —
 expect real candidates Tue–Fri once CCK exits.
+2026-07-27 midday: 0 exits. CCK $118.285 (+1.11% vs entry), ±100% clear. Grok: no
+negatives, thesis intact (Q2 beat, dividend declared 07-23, RenTech added). Day P&L
+-0.11%, cap clear.
