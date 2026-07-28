@@ -4208,3 +4208,101 @@ watchlist had no score ≥6 (weekend tape, all movers stale). Day P&L +1.31%
 dividend + positive coverage still holding). Weekly cap clear (Monday, WTD +0.52%).
 Day +0.52% (equity $6,912.49 vs last_equity $6,876.58). EOD email sent (Resend 7e87b152).
 Standing: Wednesday 07-29 EOD MUST fire the CCK time-stop sell.
+
+# ==============================================================================
+# 2026-07-28 pre-market research
+# ==============================================================================
+
+## 2026-07-28 raw Grok output
+
+### Query 1 (bullish large-cap news, last 24h)
+
+**AAPL (Apple Inc.): +3.5% on July 27, 2026 close.**
+Catalyst: Boosted Dow Jones Industrial Average amid mixed market session (S&P 500 flat, Nasdaq lower on AI spending concerns); shares contributed positively ahead of July 30 earnings. [finance.yahoo.com/markets/stocks/articles/stock-market-news-july-27-132000679.html]
+
+**F (Ford Motor Co.): Jefferies upgrade to Buy (from Hold), PT raised to $17.50 (from $14.50) on July 27, 2026.**
+Catalyst: Improving U.S. auto fundamentals, stronger cash generation, and normalized valuation vs. peers; stock reacted positively ahead of Q2 earnings. [ca.finance.yahoo.com/news/ford-gm-upgraded-jefferies-improving-172500815.html, barrons.com/articles/ford-gm-stock-price-upgrades-stellantis-eb7b2eca]
+
+**GM (General Motors Co.): Jefferies upgrade to Buy (from Hold), PT raised to $99 (from $90) on July 27, 2026.**
+Catalyst: Stronger U.S. market position, expected >$10B free cash flow by 2027, and operational progress; paired with Ford upgrade, driving auto sector gains. [cnbc.com/2026/07/27/ford-and-general-motors-get-upgraded-by-jefferies-which-sees-sharp-gains-ahead.html]
+
+These were the primary individual large-cap (> $2B market cap) bullish catalysts identified in the ~last 24 hours (centered on July 27 trading). Broader market context included mixed closes and earnings anticipation, with no other major earnings beats, FDA approvals, or M&A announcements surfacing for large-caps in the window.
+
+### Query 2 (pre-market movers 2026-07-28 on news)
+
+**CISS (C3is Inc.) stands out with a clear news catalyst: the company priced a $6.0 million underwritten public offering of units (including shares/pre-funded warrants and warrants) on or around July 27/28, 2026, with closing expected around July 28.** It showed extreme premarket gains (e.g., +100%+ to ~$0.20-$0.22 range in early lists). [finance.yahoo.com/quote/CISS/, stockanalysis.com/markets/premarket/]
+
+**DFNS (T3 Defense Inc.)** also moved sharply higher in premarket (e.g., +25% to +60%+ ranges cited across sources) amid ongoing defense-sector developments, including recent subsidiary deliveries, acquisitions (e.g., majority stake in Project35), and filings. [cnn.com/markets/stocks/DFNS, chartmill.com/stock/markets/usa/movers/premarket-gainers]
+
+Other premarket gainers (>2%, often much higher) like FIRY, POLA, INLF, or GOSS appeared in lists but lacked prominent same-day or immediate news catalysts tied to the move (FIRY's rebrand occurred in June). [stockanalysis.com/markets/premarket/, benzinga.com/premarket]
+
+Data drawn from real-time premarket screens (TradingView, Chartmill, StockAnalysis, Benzinga) as of July 28, 2026; news from GlobeNewswire/TipRanks filings and reports. Low-float or micro-cap names can see volatile moves; always verify latest quotes and catalysts.
+
+### Query 3 (post-close beat-and-raise earnings)
+
+**Celestica (CLS) and Element Solutions (ESI) reported Q2 2026 earnings after the July 27, 2026 close that beat estimates and raised full-year guidance.**
+
+- **CLS (reported July 27, 2026)**: Adjusted EPS of $2.54 beat consensus $2.27 (by $0.27 / ~12%). Raised 2026 revenue outlook to $20.5B (from $19B) and adjusted EPS to $11.30 (from $10.15). Sources: Seeking Alpha, company release, Investing.com. [seekingalpha.com/news/4619062-celestica-jumps-on-strong-q2-results-guidance, stocktitan.net/news/CLS/celestica-announces-second-quarter-2026-financial-xdirb6rrw4sy.html]
+
+- **ESI (reported July 27, 2026)**: EPS of $0.47 beat consensus $0.43 (by $0.04 / ~9%); revenue also beat. Raised full-year 2026 adjusted EBITDA guidance to $690-710M (from prior range around $650-685M or lower). Sources: Chartmill, Yahoo Finance/Zacks, company updates. [chartmill.com/news/ESI/Chartmill-51755, finance.yahoo.com/markets/stocks/articles/element-solutions-esi-q2-earnings-213503700.html]
+
+No other major tickers matching the exact criteria (post-July 27 close reports with both a beat and raised guidance) appeared in recent searches. Schedules noted additional reports (e.g., OSK, BE) but without confirmed post-close beats + raises in available results.
+
+### Query 4 (FDA / contracts / M&A / regulators, last 24h)
+
+**No qualifying events (FDA approvals, >$100M contract wins, M&A announcements, or major regulator decisions) were published in the last 24 hours (July 27-28, 2026) affecting US-listed companies.**
+
+A notable recent FDA approval was for Outlook Therapeutics (Nasdaq: OTLK) on Lytenava (bevacizumab-vikg) for wet AMD (announced July 24, 2026; first ophthalmic bevacizumab formulation approved in the US after multiple CRLs). This falls outside the 24-hour window. [thepharmaletter.com/biotech-news/fda-nod-for-outlook-therapeutics-lytenava-at-last]
+
+Searches across web and X for the specified timeframe yielded no matches for the other categories.
+
+### Follow-up query (CLS / ESI reaction + market caps)
+
+**CLS (Celestica):** Up approximately 8% in after-hours trading on/after the July 27 close (to ~$343.75 from the $318.24 regular-session close on July 27), with pre-market on July 28 showing a more modest ~+0.56% move to ~$320. Market cap ~$36.7-37.1B (as of late July 2026 data). [public.com/stocks/cls/after-hours, finance.yahoo.com/quote/CLS/]
+
+**ESI (Element Solutions):** Up a modest ~0.8% in after-hours/extended trading on July 27 (to ~$38.14 from a ~$37.83 close), consistent with a small positive reaction to the earnings beat. Pre-market July 28 data is limited in results but aligns with limited movement around the prior close. Market cap ~$9.1-9.2B. [marketbeat.com/earnings/reports/2026-7-27-element-solutions-inc-stock/, companiesmarketcap.com/element-solutions/marketcap/]
+
+Both companies reported Q2 2026 results (beats) after the July 27 market close, with conference calls on July 28.
+
+### Local verification (Yahoo 1-min chart, includePrePost, ~06:15 CT)
+
+- CLS: 07-27 close $318.24 (note: +4.25% vs 07-26 prevClose $305.28 — ran into the print); latest extended print $318.04 = ~flat vs close. The +8% AH pop faded entirely overnight.
+- ESI: 07-27 close $37.84; latest extended print $38.20 = +0.95%.
+- Universe checks: CLS active/tradable NYSE, ADV 1,909,816 (volume.sh), has_options. ESI active/tradable NYSE, ADV 5,937,996, has_options. Both inside $5-$1000 price band, caps $37B / $9B (both < $100B mega-cap line → 5% priced-in bar, call-eligible at entry).
+- Alpaca IEX daily bars still lag (latest 07-23 on 07-28). Confirmation scored from Yahoo extended prints + sourced AH coverage.
+
+## 2026-07-28 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                 | source              |
+|--------|-------|-------------------------------------------------------------------------------------|---------------------|
+| CLS    | 8     | Q2 adj EPS $2.54 vs $2.27 (+12%); FY26 rev raised $19B→$20.5B, adj EPS $10.15→$11.30 | seekingalpha.com/news/4619062 |
+| ESI    | 7     | Q2 EPS $0.47 vs $0.43 (+9%) + rev beat; FY26 adj EBITDA guide raised to $690-710M    | chartmill.com/news/ESI/Chartmill-51755 |
+
+Scoring detail (honest-novelty notes):
+- CLS = strength 4 (biggest raise on the tape: FY rev +7.9%, FY EPS +11.3%) + novelty 2
+  (catalyst <12h old and pre-market ~FLAT vs 07-27 close — well under the 5% bar; but
+  docked a point: +10.7% anticipation pop 07-21 and +4.25% run INTO the print 07-27
+  pre-priced part of this, and the +8% AH spike faded entirely) + confirmation 1
+  (+8% AH on the print on real prints, but faded — mixed) + cleanliness 1 (no offsetting
+  news; call is this morning 07-28). CAUTION for entry day: if the open shows the market
+  actively rejecting the beat (red on volume, GEV 07-16 precedent), re-score before use.
+- ESI = strength 3 (solid but moderate beat-and-raise; EBITDA raise ~+4-5% at midpoint)
+  + novelty 2 (fresh <12h, only +0.95% moved — nearly all ahead, but the muted reaction
+  to a muted-size raise caps it) + confirmation 1 (+0.95% extended-hours on light prints)
+  + cleanliness 1.
+
+Skipped (not qualifying / below threshold):
+- F, GM: Jefferies upgrades only — pundit PT/rating action, no new corporate information (explicit non-qualifier in strategy.md)
+- AAPL: no corporate catalyst (index-strength narrative ahead of 07-30 earnings; mega-cap)
+- CISS (~$0.20): sub-$5 floor, micro-cap, and the "catalyst" is a dilutive unit offering — not bullish
+- DFNS: micro-cap defense momentum, no fresh single qualifying catalyst in 24h window
+- FIRY / POLA / INLF / GOSS: pre-market screen noise, no same-day news catalyst
+- OTLK: Lytenava FDA approval is 07-24 — 4 days stale, freshness-DQ; micro-cap besides
+
+BOOK CONTEXT: 1/1 FULL — CCK holds the only slot until its time stop fires EOD
+2026-07-29 (tomorrow). Market-open TODAY must NOT enter either name regardless of
+score (max_concurrent_positions=1). If the slot frees tomorrow, CLS/ESI must be
+RE-SCORED FRESH at 07-29 pre-market (day-2 novelty haircut, CCK-0722 precedent —
+do not reuse today's scores). MSFT/AAPL/AMZN + PSA/ALGN report 07-29, APD 07-30 —
+tomorrow's tape likely adds fresh candidates right as the slot frees.
+Grok 4/4 standard + 1 follow-up first-try.
