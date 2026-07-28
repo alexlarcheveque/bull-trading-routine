@@ -4306,3 +4306,12 @@ RE-SCORED FRESH at 07-29 pre-market (day-2 novelty haircut, CCK-0722 precedent �
 do not reuse today's scores). MSFT/AAPL/AMZN + PSA/ALGN report 07-29, APD 07-30 —
 tomorrow's tape likely adds fresh candidates right as the slot frees.
 Grok 4/4 standard + 1 follow-up first-try.
+
+## 2026-07-28 market-open
+
+HALT: book 1/1 FULL (max_concurrent_positions=1) — no new entries. CLS (8) and ESI (7)
+not traded; slot frees at CCK time-stop EOD 2026-07-29, both need fresh re-score then.
+Exits: none. CCK $119.60 (+2.23% vs 116.99 entry) — ±100% clear, thesis INTACT per Grok
+(Q2 beats, raised FY26 guidance, PT hikes from Citi/Deutsche Bank; no negatives 24h).
+Time stop not due (fires EOD 07-29). Day +1.28% (equity 6997.42 vs last 6909.07).
+0 orders sent, 0 preflights needed.
