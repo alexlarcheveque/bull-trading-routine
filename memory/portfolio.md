@@ -33,3 +33,6 @@ into the heavy earnings tape (MSFT/AAPL/AMZN, PSA/ALGN 07-29, APD 07-30).
 $120 (+2.57%), best mark of the hold; ±100% clear, thesis intact per Grok (PT hikes
 from Citi/Deutsche Bank on the Q2 beat-and-raise). Day +1.28%. CCK time-stop sell is
 tomorrow EOD 07-29; CLS/ESI need fresh 07-29 pre-market re-scores if still candidates.
+2026-07-28 midday: 0 exits. CCK $120.73 (+3.20%), new high of the hold; ±100% clear,
+thesis intact per Grok (no negatives 6h — RBC $135 Outperform 07-24, dividend declared).
+Day +1.44%, loss cap clear.
