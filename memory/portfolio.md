@@ -1,16 +1,16 @@
 # portfolio.md
-# Updated 2026-07-28 08:31 by market-open routine.
+# Updated 2026-07-28 15:57 by end-of-day routine.
 
 ## Account
-- equity: 6997.42
+- equity: 7072.09
 - cash: 157.42
-- buying_power: 19781.68
-- day_pnl_pct: +1.28  # vs last_equity 6909.07
+- buying_power: 19990.76
+- day_pnl_pct: +2.36  # vs last_equity 6909.07
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| CCK    | equity     | 57  | 116.99      | 2026-07-22 | 2026-07-29  | +2.57              |
+| CCK    | equity     | 57  | 116.99      | 2026-07-22 | 2026-07-29  | +3.69              |
 
 ## Notes
 2026-07-22 open: bought 57 CCK @ $116.99 (score 6, Q2 beat-and-raise day-2 second-wave
@@ -36,3 +36,10 @@ tomorrow EOD 07-29; CLS/ESI need fresh 07-29 pre-market re-scores if still candi
 2026-07-28 midday: 0 exits. CCK $120.73 (+3.20%), new high of the hold; ±100% clear,
 thesis intact per Grok (no negatives 6h — RBC $135 Outperform 07-24, dividend declared).
 Day +1.44%, loss cap clear.
+2026-07-28 EOD: 0 exits. CCK $121.31 (+3.69%), best close of the hold — third green
+session. Time stop NOT due (fires tomorrow EOD 07-29 — MANDATORY sell); no options →
+expiry guard n/a; ±100% clear; thesis INTACT per Grok safety-net (no negatives 24h,
+07-23 dividend + institutional buying). Weekly cap clear (WTD +2.36% vs -100%). Day
++2.36% (equity 7072.09 vs last_equity 6909.07). 0 trades → trade-log unchanged. EOD
+email sent (Resend 631e83d3). 07-29 pre-market must re-score CLS/ESI fresh alongside
+the MSFT/AAPL/AMZN + PSA/ALGN prints; slot frees at tomorrow's time-stop sell.
