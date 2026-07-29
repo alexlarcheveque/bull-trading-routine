@@ -4411,3 +4411,11 @@ after close 07-29, PSA / ALGN print today, APD 07-30. Tomorrow's 07-30 pre-marke
 is the pass that matters: fresh <24h prints with the slot OPEN for the first time
 in 8 days. No entry possible or warranted today: market-open must sit out.
 Grok 4/4 standard + 2 follow-ups, all first-try.
+
+## 2026-07-29 market-open
+
+0 sells, 0 buys. CCK held: $121.21 (+3.61%), ±100% clear, thesis intact per Grok
+(BMO/Truist PT raises, dividend ex-date Aug 6, no negatives 24h). Time stop is EOD's
+job — mandatory sell fires tonight (target_exit 2026-07-29). Entry halt: open positions
+1 >= max_concurrent_positions 1 (and watchlist had no score ≥6 regardless — TER/BE
+freshness-DQ'd, CLS consumed, ESI 5). Day P&L -1.12% vs last_equity 7065.82, caps clear.

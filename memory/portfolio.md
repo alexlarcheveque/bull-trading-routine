@@ -1,16 +1,16 @@
 # portfolio.md
-# Updated 2026-07-28 15:57 by end-of-day routine.
+# Updated 2026-07-29 06:30 by market-open routine.
 
 ## Account
-- equity: 7072.09
+- equity: 6986.59
 - cash: 157.42
-- buying_power: 19990.76
-- day_pnl_pct: +2.36  # vs last_equity 6909.07
+- buying_power: 19751.36
+- day_pnl_pct: -1.12  # vs last_equity 7065.82
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| CCK    | equity     | 57  | 116.99      | 2026-07-22 | 2026-07-29  | +3.69              |
+| CCK    | equity     | 57  | 116.99      | 2026-07-22 | 2026-07-29  | +3.61              |
 
 ## Notes
 2026-07-22 open: bought 57 CCK @ $116.99 (score 6, Q2 beat-and-raise day-2 second-wave
@@ -43,3 +43,9 @@ expiry guard n/a; ±100% clear; thesis INTACT per Grok safety-net (no negatives 
 +2.36% (equity 7072.09 vs last_equity 6909.07). 0 trades → trade-log unchanged. EOD
 email sent (Resend 631e83d3). 07-29 pre-market must re-score CLS/ESI fresh alongside
 the MSFT/AAPL/AMZN + PSA/ALGN prints; slot frees at tomorrow's time-stop sell.
+2026-07-29 open: 0 exits, 0 entries. CCK $121.21 (+3.61%); ±100% clear, thesis intact
+per Grok (BMO/Truist PT raises, dividend ex-date Aug 6, no negatives 24h). Time-stop
+sell fires TODAY at EOD (mandatory, target_exit 2026-07-29) — not enforced at open per
+routine. Watchlist: no score ≥6 (TER/BE freshness-DQ'd on +8% overnight pops, CLS
+day-2 consumed, ESI 5) and book 1/1 FULL anyway. Day -1.12% vs last_equity 7065.82,
+loss caps clear. Slot frees at today's EOD sell into tonight's MSFT/AAPL/AMZN prints.
