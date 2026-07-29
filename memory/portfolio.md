@@ -49,3 +49,7 @@ sell fires TODAY at EOD (mandatory, target_exit 2026-07-29) — not enforced at 
 routine. Watchlist: no score ≥6 (TER/BE freshness-DQ'd on +8% overnight pops, CLS
 day-2 consumed, ESI 5) and book 1/1 FULL anyway. Day -1.12% vs last_equity 7065.82,
 loss caps clear. Slot frees at today's EOD sell into tonight's MSFT/AAPL/AMZN prints.
+2026-07-29 midday: 0 exits. CCK $119.045 (+1.76%), pulled back intraday from yesterday's
+$121.31 close; ±100% clear, thesis intact per Grok (no negatives 6h — only PT raises,
+dividend ex Aug 6, stale Weiss Q1 stake-cut filing). Day -1.74%, loss cap clear.
+Mandatory time-stop sell still fires at today's EOD pass.
