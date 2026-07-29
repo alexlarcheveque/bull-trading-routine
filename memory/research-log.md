@@ -4315,3 +4315,99 @@ Exits: none. CCK $119.60 (+2.23% vs 116.99 entry) — ±100% clear, thesis INTAC
 (Q2 beats, raised FY26 guidance, PT hikes from Citi/Deutsche Bank; no negatives 24h).
 Time stop not due (fires EOD 07-29). Day +1.28% (equity 6997.42 vs last 6909.07).
 0 orders sent, 0 preflights needed.
+
+## 2026-07-29 pre-market research
+
+### Raw Grok output (query 1: bullish large-cap news 24h)
+
+**ITRI (Itron, Inc., ~$4.7B market cap):** Q2 2026 earnings release on July 28, 2026, drove a ~26% surge (top gainer among qualifying large-caps), reflecting strong demand for smart metering solutions. [finance.yahoo.com/markets/stocks/gainers/]
+
+- **Source**: Itron IR announcement and Yahoo Finance top gainers (earnings timing confirmed via company release and trading data). [investors.itron.com/news-releases/news-release-details/itron-announce-second-quarter-results-july-28-2026]
+- **Timestamp**: Earnings release ~8:30 a.m. ET July 28, 2026; price action on July 28–29, 2026.
+
+No other materially bullish, widely reported catalysts (e.g., major earnings beats, upgrades, M&A, or regulatory wins) for additional >$2B market-cap US equities were identified in the last 24 hours based on available search results. PYPL and SPGI reported earnings on July 28 but lacked specific positive outcome details in results. Smaller-cap gainers were excluded per the market-cap filter.
+
+### Raw Grok output (query 2: pre-market movers 2026-07-29)
+
+**Teradyne (TER) and AMD (AMD) stand out among pre-market movers on July 29, 2026, with gains driven by earnings-related news catalysts (rather than pure gap-fills or momentum).** [benzinga.com/premarket, stockanalysis.com/markets/premarket/]
+
+- **TER (Teradyne)**: Up significantly in pre-market (reports of strong moves, e.g., cited in contexts exceeding 2–7% ranges across trackers) after reporting Q2 earnings that beat estimates and Q3 guidance that topped Wall Street expectations.
+- **AMD**: Gaining modestly (over 1%) ahead of its Q2 earnings release, with analysts remaining bullish on AI-driven growth.
+
+Many other top pre-market gainers (e.g., DFNS/T3 Defense ~+60%, AMIX/Autonomix Medical ~+47–55%, STFS ~+41%, GMM ~+35%) show extreme percentage moves on low-float/micro-cap names but lack clear, fresh news catalysts tied specifically to the July 29 pre-market session — these appear more consistent with continuation, speculation, or gap dynamics from prior days.
+
+### Raw Grok output (query 3: beat-and-raise after yesterday's close)
+
+**Bloom Energy (BE) and PayPal (PYPL) reported after the July 28, 2026 close (or on/around July 28 post-market/before open in earnings calendars) and both beat estimates while raising guidance.**
+
+- **BE (Bloom Energy)**: Beat Q2 expectations (revenue surpassed $1B for the first time). Raised 2026 full-year revenue outlook to $3.9–$4.2 billion (from prior $3.4–$3.8 billion). [stocktwits.com BE-beats-q2 article; investor.bloomenergy.com press release "Record Second Quarter 2026 ... Raises Full-Year 2026 Guidance"]
+- **PYPL (PayPal)**: Non-GAAP EPS $1.38 vs. consensus $1.28 (+$0.10 beat); revenue $8.68B vs. ~$8.47–8.51B est. Raised FY2026 non-GAAP EPS guidance to ~$5.38 (from "low-single-digit decline to slightly positive" vs. $5.31 in 2025); raised transaction margin dollars guide to ~$15.6B. BUT: [seekingalpha.com/news/4619236] "PayPal trades lower despite Q2 beat amid soft Q3 guidance, absence of deal update."
+
+No other July 28 reports prominently matched both criteria (KLAC, NXPI, STX appeared on calendars but without confirmed beat + raise mentions).
+
+### Raw Grok output (query 4: FDA / contracts / M&A / regulatory)
+
+**Boeing (BA) large DoD contract win (>$100M):** On July 28, 2026, the U.S. Navy awarded Boeing a not-to-exceed $213 million modification (P00010) for non-recurring engineering to reconfigure four P-8A aircraft for an FMS customer. [war.gov contracts July 28 2026]
+
+**FDA:** July 28 — revised draft product-specific guidances for certain generic peptide products only; no new drug approvals for US-listed companies (Lytenava 07-24 outside window). **M&A:** none new. **Other DoD awards:** smaller/non-listed entities.
+
+### Raw Grok output (follow-up 1: pre-market moves, caps, CLS/ESI day-2)
+
+- **TER**: July 28 close $320.65 (−4.22%); market cap ~$50.2B. After-hours ~$345 area, +7.6%+ on the print. Reported after close July 28 (~4:35 p.m. EDT); call 8:30 a.m. EDT July 29.
+- **BE**: July 28 close $166.84 (−11.34%); market cap ~$47.5B. Reported after close July 28 (~4:05 p.m. EDT); call evening July 28. Volatile post-earnings.
+- **PYPL**: July 28 close $58.32 (+4.01%); market cap ~$50.3B.
+- **CLS**: July 28 close $350.20 (+10.04%); market cap ~$40.3B. No fresh PT changes surfaced in last 24h.
+- **ESI**: July 28 close $36.13 (−4.52%); market cap ~$8.8B. No fresh day-2 news surfaced.
+
+### Raw Grok output (follow-up 2: KLAC/NXPI/STX)
+
+- **KLAC**: fiscal Q4 after close 07-28 — rev $3.66B (~inline), non-GAAP EPS $1.05 (small beat); did NOT clearly raise guidance. Stock fell ~6–6.6% after hours amid broad semiconductor sector weakness. [ir.kla.com, chartmill.com]
+- **NXPI**: Q2 after close 07-28 — rev ~$3.496B inline, non-GAAP EPS $3.61 (inline/slight beat); no explicit raise. Stock −6% after hours. [chartmill.com]
+- **STX**: on calendars; no results/reactions reported in searches.
+
+### Local verification (Yahoo 1-min chart includePrePost ~03:40 CT + Alpaca + volume.sh)
+
+Overnight moves computed vs Grok's 07-28 closes (each cross-checked: exactly consistent
+with Yahoo's official 07-27 closes and the stated day-% moves; Yahoo daily feed had not
+yet posted the 07-28 bar at run time):
+
+- TER: pre-market $347.00 vs 07-28 close $320.65 = **+8.22% already moved** on the print. Active/tradable NASDAQ, ADV 4,764,840, has_options, cap ~$50B.
+- BE: pre-market $181.71 vs 07-28 close $166.84 = **+8.91% already moved** — and still -3.4% BELOW the 07-27 close $188.18 (stock dumped -11.3% into its own print, then bounced on it). Active/tradable NYSE, ADV 15,091,419, has_options, cap ~$47B.
+- PYPL: pre-market $57.82 vs 07-28 close $58.32 = -0.86% (day-2 fade). ADV 19,399,299.
+- CLS: pre-market $348.20 vs 07-28 close $350.20 = -0.57%; the day-2 second wave ALREADY RAN +10.04% on 07-28.
+- ESI: pre-market $36.50 vs 07-28 close $36.13 = +1.02%; but 07-28 the market SOLD the beat -4.52% on above-average volume (7.2M vs ~5M ADV).
+
+## 2026-07-29 pre-market watchlist
+
+No tradeable signal today.
+
+Skipped (not qualifying / below threshold):
+- TER (freshness-DQ): real beat + Q3 guide above street, but +8.22% already priced in
+  overnight vs the 5% bar — "if the move already happened, we missed it" (INTC/AMD
+  overnight-pop precedent). Would-be 4+0+2+1=7 but fails the Fresh gate before scoring.
+- BE (freshness-DQ): record Q2, first $1B rev quarter, FY rev raise +13% at midpoint —
+  strongest catalyst on the tape — but +8.91% already moved overnight, and the two-day
+  tape is net NEGATIVE (-3.4% vs 07-27): an 11% pre-print dump partially recovered, not
+  a clean second wave. Fails the Fresh gate; volatile AH prints faded from higher.
+- CLS (score ~3, day-2 consumed): yesterday's 8 is dead — the second wave we wanted
+  fired without us on 07-28 (+10.04% close $350.20) while the book was 1/1 FULL.
+  Novelty 0, catalyst now ~36h old. Do not chase.
+- ESI (score 5): market rejected the beat -4.52% on above-avg volume 07-28 (GEV 07-16
+  rejection precedent); confirmation 0, catalyst >24h old. Strength 3 + novelty 1 +
+  confirmation 0 + cleanliness 1 = 5, below threshold.
+- PYPL (score 4): day-2 (reported 07-28), +4.01% reaction already closed, pre-market
+  red -0.86%; soft Q3 guidance + no deal update = cleanliness 0. Strength 2 + novelty 1
+  + confirmation 1 + cleanliness 0 = 4.
+- KLAC (not qualifying): beat but NO raise; -6.5% AH on semi sector rout — wrong direction.
+- NXPI (not qualifying): inline, no raise; -6% AH.
+- ITRI (freshness-DQ): +26% move on 07-28 — entirely consumed.
+- AMD (not qualifying): reports TONIGHT 07-29 — anticipation, not a catalyst.
+- BA (not qualifying): $213M contract mod is immaterial at Boeing's scale.
+- DFNS / AMIX / STFS / GMM: micro-cap pre-market noise, no fresh qualifying catalyst.
+
+BOOK CONTEXT: CCK time-stop sell fires TODAY at EOD (mandatory, target_exit
+2026-07-29) — the slot frees into tonight's mega-tape: MSFT / AAPL / AMZN report
+after close 07-29, PSA / ALGN print today, APD 07-30. Tomorrow's 07-30 pre-market
+is the pass that matters: fresh <24h prints with the slot OPEN for the first time
+in 8 days. No entry possible or warranted today: market-open must sit out.
+Grok 4/4 standard + 2 follow-ups, all first-try.
