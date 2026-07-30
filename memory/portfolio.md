@@ -23,3 +23,6 @@ pre-market), MSFT (+9.03%), STX (+4.11% cumulative, mega-cap bar), F (~40h stale
 freshness-DQ'd; VTRS best qualifier at 4. Day -2.16% vs last_equity 7065.82 (CCK sold
 $118.52 vs $121.31 07-28 close accounts for most of it), loss caps clear. Slot is open
 for tomorrow's 07-31 pre-market: AAPL/AMZN report tonight, PBF printed this morning.
+2026-07-30 midday: 0 exits — book empty (Alpaca confirms 0 positions), nothing to
+check. Day -2.16% (all from this morning's CCK time-stop sell, locked at the open),
+daily loss cap clear. All cash into tomorrow's AAPL/AMZN/PBF pre-market pass.
