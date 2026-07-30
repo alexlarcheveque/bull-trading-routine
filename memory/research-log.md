@@ -4419,3 +4419,123 @@ Grok 4/4 standard + 2 follow-ups, all first-try.
 job — mandatory sell fires tonight (target_exit 2026-07-29). Entry halt: open positions
 1 >= max_concurrent_positions 1 (and watchlist had no score ≥6 regardless — TER/BE
 freshness-DQ'd, CLS consumed, ESI 5). Day P&L -1.12% vs last_equity 7065.82, caps clear.
+
+## 2026-07-30 pre-market research
+
+### Raw Grok output (query 1: bullish large-cap news 24h)
+
+**MSFT (Microsoft, market cap >>$2B):** Earnings beat (EPS $4.45 est. vs. street $4.24; revenue beat); stock +4.23% after-hours. Sources: Alphatica analysis/X post (Jul 29, 2026, ~22:03 GMT); CNBC live updates (Jul 29-30, 2026).
+
+**HOOD (Robinhood, large-cap):** Q2 earnings beat (EPS $0.62 vs. $0.42 expected); platform doubled on-chain stock token listings to 202 (added Pfizer, Adobe, IBM, etc.). Sources: X posts (Jul 29, 2026, ~23:48-23:52 GMT); related CNBC coverage.
+
+**HURN (Huron Consulting Group, ~$2.7B market cap):** +40.37% intraday gain (one of top movers). Source: Yahoo Finance gainers list (Jul 30, 2026).
+
+No other major large-cap (> $2B) specific bullish catalysts (e.g., upgrades, guidance raises) prominently surfaced in the last 24 hours amid broader market volatility from Fed decisions and yields.
+
+### Raw Grok output (query 2: pre-market movers 2026-07-30)
+
+- **NUWE (Nuwellis)**: +~95–102% (premarket prices around $3.68–$3.82). Catalyst: Preliminary Q2 2026 revenue results showing double-digit growth (announced ~July 27–28); pediatric footprint expansion and U.S. patent news.
+- **CORT (Corcept Therapeutics)**: +~23–24% (premarket ~$115). Catalyst: Q2 2026 financial results and corporate update released July 29, with positive earnings highlights.
+- Other pre-market gainers >2% (small-cap/penny, high volume): DFNS (+77–85%), SXTC (+53–58%), GCTK (+35–41%), STKH (+35–64%) — limited or no identifiable major news catalysts (gap-fill / low-float volatility).
+- "Earnings from companies like PBF Energy (strong beats) may have contributed to broader sentiment but did not appear among the top percentage gainers." [Benzinga premarket, StockAnalysis premarket]
+
+### Raw Grok output (query 3: beat-and-raise after yesterday's close)
+
+- **MANH**: Q2 2026 non-GAAP EPS $1.39 (beat $1.32 by ~6.11%); revenue $297.8M (beat ~3.76%). Raised FY26 adj EPS guide to $5.44–$5.50 (from $5.29–$5.37), rev to $1.16B–$1.166B. Sources: Zacks (Jul 29), company PR (Jul 28/29).
+- **CORT**: Q2 2026 revenue $256.1M (beat $224.4M consensus); EPS $0.36 (beat $0.01 consensus). Raised FY26 rev guide to $1.1B–$1.2B (vs prior ~$1.026B consensus). Sources: ChartMill (Jul 30), 8-K/PR (Jul 29, 5 PM call).
+
+### Raw Grok output (query 4: FDA/contracts/M&A/regulatory)
+
+- **VTRS (Viatris)**: U.S. FDA approval Jul 29 2026 for Gwyn Lo™ (norelgestromin/ethinyl estradiol transdermal system), once-weekly low-dose combined hormonal contraceptive patch for women with BMI <30. [newsroom.viatris.com 2026-07-29]
+- No other FDA approvals, >$100M contract wins, M&A, or major regulator decisions identified in the last 24 hours. Capricor adcomm occurred but no approval.
+
+### Raw Grok output (follow-up 1: mega-caps + HOOD/MANH reactions)
+
+- **AAPL / AMZN / META**: "have not yet reported ... as of July 30" per this pass — AAPL Q3 FY26 expected ~Jul 30, AMZN Q2 expected Jul 30 after close, META expected Jul 29 after close (unconfirmed at query time).
+- **HOOD**: beat (EPS $0.62 vs $0.41) but shares FELL ~3.1% after-hours, following a ~3% regular-session decline. [Barron's, public.com]
+- **MANH**: reported Jul 28; beat + raise; shares jumped ~10.5% with strong positive reaction. [Yahoo, MarketBeat]
+
+### Raw Grok output (follow-up 2: PBF timing, META actuals, other AH beat-and-raises)
+
+- **PBF**: has NOT reported — Q2 release is BEFORE market open TODAY Jul 30, call 8:30 a.m. ET. Earlier "strong beats" mention was preview noise. [investors.pbfenergy.com]
+- **META**: DID report Q2 on Jul 29 — revenue $60.80B (+28% YoY, beat); EPS $6.18 (MISS vs ~$7.13 consensus); narrowed FY26 capex to $130–145B, raised low end of expense guide. Mixed AH reaction. [investor.atmeta.com]
+- **F (Ford)**: Q2 EPS $0.42 (beat ~$0.33–0.35); revenue slight miss; raised FY26 adj EBIT guide to $10–11B (from $8.5–10.5B), adj FCF to $6–7B (from $5–6B). Reported "around July 28–29" (CNBC URL dated 07-28). Stock +2%+ on Jul 29.
+- **STX (Seagate)**: fiscal Q4 2026 strong beat (adj EPS ~$5.71 vs ~$5.09), revenue beat, Q1 FY27 guide ~$4.1B midpoint above expectations; positive reaction. [Yahoo, 247wallst]
+
+### Raw Grok output (follow-up 3: STX specifics)
+
+- **STX reported AFTER CLOSE JULY 28** (~4:05 p.m. ET, call 5:00 p.m. ET) — NOT July 29.
+- Q4 FY26: adj EPS $5.71 vs ~$5.09–5.10 consensus (+12%); revenue $3.629B (+49% YoY) vs ~$3.48–3.50B consensus. Non-GAAP gross margin 52.7%.
+- Q1 FY27 guide: revenue $4.0–4.2B, adj EPS $7.10–7.50 — well above street.
+- AH reaction Jul 28: +4.5–7.4%, initial ~5% pop to ~$785.60 after closing the regular session LOWER.
+- No negative items highlighted (AI/cloud storage demand, margin expansion, upbeat outlook).
+- Market cap: ~$173B (mega-cap, >= $100B).
+
+### Local verification (Yahoo consolidated daily + 1-min prepost ~05:20 CT + Alpaca + volume.sh)
+
+Book check first: **CCK STILL HELD** (Alpaca positions: 57 CCK @ $116.99, last $119.76,
++2.37%). The 07-29 EOD routine NEVER RAN (no EOD commit in git; portfolio.md last
+update is 07-29 midday). CCK's mandatory time-stop (target_exit 2026-07-29) is now
+OVERDUE — KMX 06-25 / PENG 07-15 precedent. Equity $6,983.74, cash $157.42.
+
+Candidate verification (all pass asset active/tradable + volume.sh ADV >= 100k):
+
+- CORT: 07-29 close $92.95 (report hit AFTER that close); pre-market $115.00 =
+  **+23.7% already moved**. ADV 1,123,896. Cap ~$10B.
+- MSFT: 07-29 close $390.54; pre-market $425.80 = **+9.03% already moved**. Mega-cap.
+- MANH: reported 07-28 AH; day-1 07-29 ran $168.17 → $204.02 = **+21.3% consumed in
+  one session**; pre-market $201.02 = fading -1.5%. ADV 789,906.
+- STX: reported 07-28 AH (follow-up 3 corrected follow-up 2's "after Jul 29 close").
+  07-28 close $747.30 → AH pop ~$785.60 → day-1 07-29 close $764.43 (+2.29% on 9.2M
+  vs 5.5M ADV, pop FADED intraday) → pre-market $778.00. Cumulative move since print:
+  **+4.11% >= the 4% mega-cap bar** (cap ~$173B). Two-session stack + fade = AMD/INTC
+  pattern exactly. Optionable (Jul 31 chain exists) but mega-caps take shares anyway —
+  moot, DQ.
+- F: reported 07-28 AH; day-1 07-29 +2.14% ($14.96 → $15.28) on 98M vs 56M ADV;
+  pre-market $15.30 = flat (+0.13%) — flat pre-market confirms the report was 07-28,
+  not last night. Catalyst ~40h old at today's open. ADV 55,653,906.
+- VTRS: approval announced 07-29 intraday; stock closed $17.82 vs $17.86 prior =
+  **-0.2% on approval day** — market judged it immaterial. ADV 9,909,400. $17.82 > $5 floor.
+- HOOD: 07-29 closed $89.84 (-3.1% day), fell another ~3% AH on the beat. ADV 26,501,220.
+- PBF: no results yet at scoring time (reports 8:30 a.m. ET today). 07-29 close $63.35.
+
+## 2026-07-30 pre-market watchlist
+
+No tradeable signal today.
+
+Skipped (not qualifying / below threshold):
+- CORT (freshness-DQ): strongest catalyst on the tape — huge Q2 beat ($256.1M rev vs
+  $224.4M, EPS $0.36 vs $0.01) + FY raise to $1.1–1.2B — but **+23.7% already moved
+  pre-market** vs the 5% bar. Would-be 4+0+2+1=7; fails the Fresh gate. TER/BE precedent.
+- STX (freshness-DQ, mega-cap): real beat-and-raise (+12% EPS beat, guide well above
+  street) but reported 07-28 AH (~41h old at entry) and the cumulative post-print move
+  is +4.11%, at/over the 4% mega-cap bar — the 1–4% drift band is consumed, and day-1
+  already FADED the AH pop ($785.60 → $764.43 close). INTC 07-24 (+4.4% pre-market →
+  -7.8% same day) and AMD two-session-stack precedents apply verbatim. Do not chase.
+- MSFT (freshness-DQ, mega-cap): FQ4 beat, but +9.03% pre-market vs the 4% mega bar —
+  more than double the band. No second wave to catch.
+- F (freshness-DQ): genuine beat + FY EBIT/FCF raise (would-be ~3+1+2+1=7 raw) but the
+  catalyst is ~40h old, day-1 (+2.14% on 1.75x volume) already traded, and pre-market
+  is flat — the second wave for a low-beta $60B value name is largely consumed.
+- MANH (score ~3, day-2 consumed): beat-and-raise died 07-29 with +21.3% in one
+  session; pre-market fading. CLS precedent — novelty 0, do not chase.
+- VTRS (score 4): FDA approval is real but minor (low-dose follow-on contraceptive
+  patch vs existing Xulane franchise). Strength 2 + novelty 1 + confirmation 0 (flat
+  -0.2% on approval day) + cleanliness 1 = 4.
+- HOOD (score ~2): market REJECTED the beat (-3% day, -3.1% AH) — ESI/GEV rejection
+  precedent; confirmation 0, direction wrong.
+- META (not qualifying): EPS MISS ($6.18 vs ~$7.13), mixed reaction; mega-cap anyway.
+- PBF (not qualifying): reports 8:30 a.m. ET TODAY — anticipation, not a catalyst.
+  Candidate for TOMORROW's pass if it beats-and-raises and the reaction stays < 5%.
+- HURN (freshness-DQ): +40.37% on 07-29 — entirely consumed.
+- NUWE (universe fail): sub-$5 ($3.68–3.82) and micro-cap, below $1B floor.
+- DFNS / SXTC / GCTK / STKH (universe fail / no catalyst): micro-cap pre-market noise.
+- AAPL / AMZN (not qualifying): report tonight 07-30 AH — anticipation, not a catalyst.
+
+BOOK CONTEXT — URGENT for market-open: **CCK time-stop is OVERDUE.** Target_exit was
+2026-07-29; the 07-29 EOD routine never ran (no commit, no sell — position still open
+on Alpaca, 57 shares, +2.37%). Market-open MUST sell CCK at today's open per the
+overdue-time-stop precedent (KMX 06-26, PENG 07-16), which frees the 1/1 slot — but
+with zero watchlist names >= 6, NO new entry follows today. Sell-only session.
+AAPL/AMZN print tonight; PBF prints this morning — tomorrow's 07-31 pre-market is the
+next live entry window. Grok 4/4 standard + 3 follow-ups, all first-try.
