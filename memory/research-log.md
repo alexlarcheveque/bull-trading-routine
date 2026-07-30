@@ -4539,3 +4539,14 @@ overdue-time-stop precedent (KMX 06-26, PENG 07-16), which frees the 1/1 slot �
 with zero watchlist names >= 6, NO new entry follows today. Sell-only session.
 AAPL/AMZN print tonight; PBF prints this morning — tomorrow's 07-31 pre-market is the
 next live entry window. Grok 4/4 standard + 3 follow-ups, all first-try.
+
+## 2026-07-30 market-open execution
+
+- EXIT: sold 57 CCK @ $118.52 (order cef5b8f3, preflight OK) — mandatory OVERDUE
+  time-stop (target_exit 2026-07-29, 07-29 EOD never ran). Ret +1.31% vs entry
+  $116.99, realized +$87.21. Slow drip fill ~3.5min (43→55→57 shares).
+- ENTRIES: none — watchlist had 0 scores >= 6 (all top catalysts freshness-DQ'd:
+  CORT +23.7%, MSFT +9.03%, STX +4.11% mega-cap, F ~40h stale; VTRS 4). Sell-only
+  session as pre-market flagged. Halt checks moot but clear (day -2.16%, WTD > -100%).
+- Book 0/1, 100% cash ($6,913.06). Next entry window: 07-31 pre-market (AAPL/AMZN
+  tonight, PBF this morning).
