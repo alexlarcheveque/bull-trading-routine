@@ -4550,3 +4550,148 @@ next live entry window. Grok 4/4 standard + 3 follow-ups, all first-try.
   session as pre-market flagged. Halt checks moot but clear (day -2.16%, WTD > -100%).
 - Book 0/1, 100% cash ($6,913.06). Next entry window: 07-31 pre-market (AAPL/AMZN
   tonight, PBF this morning).
+
+# ============================================================
+# 2026-07-31 pre-market research
+# ============================================================
+
+## Raw Grok output — query 1 (bullish news 24h)
+
+**Key materially bullish news for US large-cap equities (market cap >> $2B) in the ~last 24 hours (as of July 31, 2026) centers on Q2 earnings beats, strong cloud/AI growth, and raised guidance/outlooks.**
+
+- **AMZN (Amazon)**: Q2 earnings beat expectations; AWS posted fastest growth in 18 quarters with AI/chips revenue run rates >$25B; CEO highlighted case for AI investments. Shares surged ~12% intraday. Sources: CNBC, Yahoo Finance (reports ~July 30–31, 2026).
+- **MSFT (Microsoft)**: Strong Q2 results with record cloud revenue. Shares surged. Sources: Yahoo Finance (recent July 31 coverage).
+- **YUM (Yum Brands)**: Q2 adjusted EPS beat ($1.62 vs. $1.58 est.). Shares rose >1%. Source: CNBC (July 29–31, 2026 coverage).
+- **PWR (Quanta Services)**: Q2 earnings/revenue sharply higher; raised full-year 2026 guidance. Shares surged ~13.65%. Source: RTTNews (July 30–31, 2026).
+- **XRX (Xerox Holdings)**: Q2 turnaround to profit (vs. prior loss); raised FY2026 outlook. Shares rose ~26% premarket. Source: RTTNews (July 30–31, 2026).
+
+No other major US large-cap bullish catalysts (e.g., acquisitions, FDA approvals, or upgrades) stood out prominently in results from the period. Markets showed a tech/AI rebound with focus on these earnings. All listed companies have market caps far exceeding $2B.
+
+## Raw Grok output — query 2 (pre-market movers 2026-07-31)
+
+**AMZN (+12.83% pre-market to ~$265.72) on Q2 2026 earnings beat (strong AWS growth and AI momentum).**
+
+**MU (+4.15% pre-market to ~$910.98) amid broader tech/AI sector momentum and high pre-market volume (earnings-related context from recent quarters).**
+
+Other notable pre-market gainers >2% (as of ~6:30 AM ET data) include MPWR (+10.02%), DXCM (+8.13%), INTC (+5.59%), AMD (+4.14%), HWM (+6.20%), ETN (+5.46%), GLW (+5.31%), WDC (+5.11%), and GOOGL (+2.08%).
+
+These moves largely tie to earnings season (e.g., Amazon's report after July 30 close) and tech/AI rally rather than isolated gap-fills. Smaller or low-volume names (e.g., certain micro-caps on TradingView gappers lists) were excluded without clear news catalysts. Data from pre-market snapshots; always verify real-time quotes and full news.
+
+## Raw Grok output — query 3 (beat-and-raise after yesterday's close)
+
+**Pitney Bowes (PBI) and Bristol Myers Squibb (BMY) are among the notable examples from reports released around/after the July 30, 2026 close (or on July 29/30).**
+
+- **PBI (Q2 2026, reported ~July 29/30)**: Adj. EPS $0.43 vs. consensus ~$0.34 (beat by ~$0.09 or ~26-32%); revenue ~$451.5M (mixed/slight miss or beat depending on exact est.). Raised full-year 2026 guidance for adjusted EBIT, adjusted EPS, and adjusted free cash flow (revenue reaffirmed). Sources: BusinessWire press release, MarketBeat, Investing.com transcript.
+- **BMY (Q2 2026, reported July 30)**: Adj. EPS $2.04 vs. est. ~$1.59 (beat); revenue ~$13B (beat). Raised full-year 2026 non-GAAP revenue guidance to ~$49.0–50.0B (from ~$46.0–47.5B) and non-GAAP EPS to $6.75–7.00 (from $6.05–6.35). Sources: BMS press release, Barron's, Benzinga.
+
+Other mentions (e.g., PROG Holdings) also fit the pattern but had earlier or less prominent July timing. Apple and Amazon reported July 30 but specific "raise guidance" details were not highlighted in results. Data is time-sensitive; verify latest filings for precision.
+
+## Raw Grok output — query 4 (FDA / contracts / M&A / regulator, 24h)
+
+**No qualifying events were identified in the last 24 hours (approximately July 30–31, 2026).**
+
+Recent FDA activity includes the July 24, 2026, approval of Outlook Therapeutics' LYTENAVA (bevacizumab-vikg) for wet AMD and listings of other novel drug approvals on that date, but nothing new has surfaced in the immediate prior day.
+
+Searches for M&A announcements, large contract wins (>$100M), and regulator decisions (FTC, SEC, DOJ, etc.) affecting US-listed companies yielded no matching results from the past 24 hours.
+
+## Raw Grok output — follow-up 1 (AAPL + PBF detail)
+
+**Apple (AAPL) Q3 FY2026 (ended June 27, 2026) earnings (reported after close on July 30, 2026):**
+- **Revenue**: $109.4 billion (or $109.42B), +16% YoY (beat consensus of ~$108.96B–$109.04B).
+- **EPS**: $2.02 (beat consensus of $1.89 by $0.13); +29% YoY.
+- **Other**: Gross margin 50.1% (favorable ~2 pp impact from tariff refunds). New June-quarter records for total revenue, EPS, iPhone/Mac/Services revenue, and operating cash flow.
+- **Guidance/commentary**: Q4 revenue growth expected at 9–11% (missed Street expectations of ~12%); gross margin 47–48%; iPhone revenue impacted by FX headwinds (~2.5 pp drag) and supply constraints. Overall "weak forecast" and supply concerns noted despite the beat.
+- **Stock reaction**: Slid more than 6% in after-hours trading on July 30. Specific pre-market July 31 percentage not detailed in results.
+
+**PBF Energy (PBF) Q2 2026 results (reported morning of July 30, 2026):**
+- **Beat estimates significantly**: Adjusted EPS $6.22 (vs. consensus ~$3.49–$4.15); revenue $11.68B (vs. ~$9.67B–$9.92B). GAAP net income attributable to PBF ~$906.4M ($7.54/share).
+- **Guidance**: Reduced full-year 2026 capex guidance to $825–$875M (excluding Martinez rebuild capex).
+- **Stock reaction (July 30)**: Rose ~2.6–3.42% in pre-market/trading on the strong refining margins and beat.
+
+## Raw Grok output — follow-up 2 (BMY/PBI/PBF timing + reactions)
+
+**1) BMY Q2 2026 earnings (July 30, 2026):** Released before market open, with conference call at 8:15 a.m. ET.
+July 30 close: $64.86 (+$1.76 / +2.79%).
+July 31 pre-market: +$0.13 (after-hours/pre-market move noted).
+
+**2) PBI Q2 2026:** Reported after market close on July 29, 2026 (conference call July 30 at 8:00 a.m. ET). Beat estimates (adj. EPS $0.43 vs. ~$0.34 expected); stock rose ~2–5% post-release (trading in $17–18 range shortly after). Current market cap ~$2.39B (as of late July 29/30 data).
+
+**3) PBF Energy:** July 30 close ~$73.10 (sharp gain of ~$9.75 / +15.39% from prior ~$63.35 close). Pre-market July 31 move not clearly detailed in available data (mixed/inconsistent snippets; earnings context on/around July 30).
+
+## Raw Grok output — follow-up 3 (BMY cleanliness)
+
+**No major negative news, widespread analyst skepticism, or strong bearish commentary emerged in the ~24 hours after BMY's July 30, 2026 Q2 earnings release.** Coverage was predominantly positive, highlighting the earnings beat (revenue $12.97B vs. ~$11.7B est.; adj. EPS $2.04 vs. ~$1.60 est.), growth portfolio momentum (+15% YoY to $7.6B, now ~59% of total), and the sizable FY2026 guidance raise.
+
+Limited offsetting notes or concerns in available sources include:
+- **Eliquis concentration and legacy portfolio dynamics**: Eliquis (~$4.48B in Q2, +22% YoY, ~34-35% of total revenue) drove much of the upside and the raised outlook (now guiding 20-25% WW Eliquis growth). Legacy portfolio (ex-Eliquis) continued to decline (~4-6%). Some commentary flags this as a key tension ahead of its 2028 U.S. LOE.
+- **Growth portfolio/pipeline caveats**: Cobenfy (schizophrenia) came in below expectations (~$63M); certain pipeline readouts (e.g., Alzheimer's-related and milvexian) were delayed again.
+- **Analyst landscape**: Consensus remains a "Hold" (average price target ~$61-63, below or near recent trading levels around $64-65). No post-earnings cuts or widespread skepticism surfaced in the immediate coverage.
+- **Cash flow nuance**: GAAP profits jumped sharply (partly on lower non-cash amortization), but operating/free cash flow showed declines in the quarter.
+
+**On the FY2026 guidance raise:** Company materials and reporting frame it as driven by **ongoing/underlying strength** — broad portfolio momentum (especially growth assets and Eliquis demand/share gains) — not one-time or non-recurring items. The raise incorporates higher Eliquis expectations alongside continued growth portfolio expansion offsetting legacy erosion.
+
+## Verification notes (2026-07-31)
+
+- Grok 4/4 standard + 3 follow-ups, all first-try.
+- Alpaca IEX daily bars STALE again — latest bar 07-24 on 07-31 (5 trading days lag).
+  Confirmation scored from Yahoo consolidated dailies (query1 v8 chart).
+- BMY universe: active/tradable on Alpaca (NYSE, has_options), volume.sh ADV
+  12,628,160 >> 100k floor. Cap ~$132B ($64.86 × ~2.03B sh) → MEGA-CAP: 4% priced-in
+  bar applies; shares-only path at entry per 07-17 rule.
+- BMY confirmation (Yahoo): 07-30 closed $64.86 = +2.79% vs 07-29 $63.10, volume
+  18,021,300 vs 12.6M ADV = 1.43x — up on above-average volume. Confirmation 2/2.
+- BMY cumulative move at scoring: +2.79% day-1 close + ~+0.2% pre-market ≈ +3.0%,
+  UNDER the 4% mega bar → not auto-DQ'd; ~3/4 of the 1–4% mega drift band consumed
+  → novelty 1, not 0. Catalyst ~24h old (07-30 ~7:00 a.m. ET BMO release) — at the
+  freshness line, not past it; CCK 07-22 day-2 second-wave precedent applies.
+- PBI universe: active/tradable, ADV 2,420,473 > 100k, cap $2.39B ≥ $1B. But catalyst
+  surfaced 07-29 AH ≈ 36h old — past the 24h Fresh gate (F/STX 07-30 precedent).
+  Day-1 (07-30) already traded: +2.72% close-over-close on 3.4M vs 2.4M ADV.
+- PBF (Yahoo cross-check via Grok): 07-30 closed $73.10 = +15.39% — the entire move
+  fired on report day. CORT/TER/BE precedent: fails the Fresh gate outright.
+
+## 2026-07-31 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                        | source              |
+|--------|-------|----------------------------------------------------------------------------|---------------------|
+| BMY    | 7     | Q2 EPS $2.04 vs $1.59 (+28% beat); FY26 rev raised $46-47.5B→$49-50B, EPS $6.05-6.35→$6.75-7.00 (+11%); day-1 only +2.79% on 1.43x vol | bms.com / benzinga  |
+
+Scoring detail — BMY = 7: catalyst strength 3 (top-decile mega-pharma raise, docked
+1 for Eliquis concentration ~35% of rev + Cobenfy miss + pipeline delays inside the
+same print) + novelty 1 (day-1 traded; ~3/4 of the 1–4% mega drift consumed; day-2
+second wave is the remaining edge) + confirmation 2 (+2.79% on 1.43x ADV) +
+cleanliness 1 (no offsetting negative news, flat-positive pre-market, no halt).
+MEGA-CAP (~$132B) → SHARES ONLY at entry (no call path, per 07-17 rule). Market-open
+gap sanity: if BMY opens ≥4% above the 07-29 pre-catalyst close $63.10 (i.e. ≥$65.62),
+the drift band is consumed — skip, novelty dead (INTC 07-24 precedent).
+
+Skipped (not qualifying / below threshold):
+- AMZN (freshness-DQ, mega-cap): monster AWS quarter but +12.83% pre-market vs the
+  4% mega bar — 3x the band. No second wave to catch. MSFT 07-30 precedent.
+- AAPL (rejected catalyst): Q3 beat ($2.02 vs $1.89, rev record) but Q4 guide 9-11%
+  vs ~12% street → -6% after-hours. Market REJECTED the print; direction wrong.
+  HOOD/ESI/GEV precedent. Confirmation 0, do not touch.
+- PBF (freshness-DQ): would-be ~7 raw (adj EPS $6.22 vs ~$3.49-4.15 = monster beat)
+  but day-1 07-30 closed +15.39% — the whole move fired on report day vs the 5% bar.
+- PBI (freshness-DQ / score ~5): real beat + FY EBIT/EPS/FCF raise, but reported
+  07-29 AH ≈ 36h stale; day-1 traded (+2.72% on 1.4x vol); $2.4B declining-legacy
+  name. F 07-30 precedent (would-be catalyst, staleness kills it).
+- PWR (freshness-DQ): beat + FY raise but +13.65% already — move made.
+- XRX (freshness-DQ): +26% pre-market on the turnaround print — move made.
+- MPWR (+10.02%), DXCM (+8.13%), GLW (+5.31%), WDC (+5.11%) (freshness-DQ): earnings-
+  season movers all past the 5% bar at scoring time.
+- HWM (freshness-DQ): +6.20% pre-market vs 5% bar ($75B, not mega — bar is 5%).
+- ETN (freshness-DQ, mega-cap): +5.46% pre-market vs 4% mega bar.
+- MSFT (stale): 07-29 AH print, 2 days old, +9% consumed 07-30. Already DQ'd.
+- YUM (score ~4): thin beat ($1.62 vs $1.58, +2.5%), no raise cited, +1% reaction —
+  catalyst strength 1-2, not material enough.
+- INTC (+5.59%), AMD (+4.14%), MU (+4.15%), GOOGL (+2.08%) (no catalyst): tech/AI
+  sector momentum, no fresh company-specific corporate event in 24h.
+
+BOOK CONTEXT for market-open: book is EMPTY (0/1) and 100% cash ($6,913.06) after
+the 07-30 CCK time-stop sell — the slot is OPEN and caps are clear (0 new today,
+day/weekly loss caps far from -100%). BMY 7 ≥ 6 threshold → market-open SHOULD BUY
+BMY SHARES at the open (98% haircut sizing: floor(0.98 × equity ÷ quote)), subject
+to preflight + the ≥$65.62 gap sanity check above. No option path (mega-cap).
+Time stop would be 2026-08-07 (+7 days). NOTE: 08-07 is a Friday; EOD cron
+reliability (5 failures to date) matters again — caffeinate fix still uncommitted.
