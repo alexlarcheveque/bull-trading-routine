@@ -4704,3 +4704,14 @@ reliability (5 failures to date) matters again — caffeinate fix still uncommit
   the $64.72 quote). Gap sanity passed ($64.72 < $65.62 ceiling). Shares path only
   (mega-cap). Sized 98% haircut off equity $6,913.03. Book now FULL (1/1), cash $186.43.
 - Time stop 2026-08-07. Midday/EOD watch stop/target/thesis per strategy exits.
+
+## 2026-07-31 EOD
+
+- 0 exits: BMY time stop not due (2026-08-07), no options (expiry guard n/a),
+  ±100% clear (+1.15% at check, $65.42 vs $64.678846 entry), thesis INTACT per
+  Grok safety-net (no negatives 24h; BofA PT → $71, RBC PT raise).
+- Weekly cap clear: WTD +1.65% ($6,876.58 Mon baseline → $6,990.11) vs -100%.
+- Day +1.12% ($6,913.03 → $6,990.11). EOD email sent (Resend 1457fdba); EOD
+  cron RAN on time today.
+- STANDING: 08-07 Friday EOD must fire the BMY time stop — 5 EOD cron misses
+  to date, caffeinate fix still uncommitted; 08-10 Monday open is the fallback.
