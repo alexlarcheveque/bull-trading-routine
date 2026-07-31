@@ -1,16 +1,16 @@
 # portfolio.md
-# Updated 2026-07-31 06:36 by market-open routine.
+# Updated 2026-07-31 12:00 by midday routine.
 
 ## Account
-- equity: 6898.59
+- equity: 6918.87
 - cash: 186.43
 - buying_power: 19539.77
-- day_pnl_pct: -0.21  # vs last_equity 6913.03
+- day_pnl_pct: +0.08  # vs last_equity 6913.03
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | -0.22              |
+| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | +0.06              |
 
 ## Notes
 2026-07-31 open: BOUGHT 104 BMY @ $64.678846 (order bfff9d35, filled in one poll cycle,
