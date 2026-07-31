@@ -4715,3 +4715,16 @@ reliability (5 failures to date) matters again — caffeinate fix still uncommit
   cron RAN on time today.
 - STANDING: 08-07 Friday EOD must fire the BMY time stop — 5 EOD cron misses
   to date, caffeinate fix still uncommitted; 08-10 Monday open is the fallback.
+
+## 2026-07-31 weekly review
+
+WTD +1.65% vs SPY +1.08%; 1 closed trade (CCK +1.31% time-stop), 0 stop-outs,
+0 preflight rejections. **0 strategy edits** — rubric ordered the >=7 cohort
+correctly (CLS 8 > ESI 7). WATCH ITEM for next review: freshness gate went
+4-miss / 5-save this week — MSFT (+9.1% past its 07-30 DQ price by Friday),
+BE (+13.3%), STX (+12.0%), TER (+6.0%) all kept running after DQ, every one an
+AI-infra name in the 07-30/31 sector melt-up, while CORT/PBF/MANH/F/CLS-chase
+validated the gate. If next week repeats (DQ'd names >8% past rejection while
+saves stay flat), propose a sector-regime qualifier on the priced-in bar then.
+Biggest foregone gain was capacity, not scoring: CLS's +10% day-2 wave fired
+while max_concurrent_positions=1 held CCK at +2% (guardrails, human knob).
