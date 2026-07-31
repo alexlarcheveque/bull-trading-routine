@@ -4695,3 +4695,12 @@ BMY SHARES at the open (98% haircut sizing: floor(0.98 × equity ÷ quote)), sub
 to preflight + the ≥$65.62 gap sanity check above. No option path (mega-cap).
 Time stop would be 2026-08-07 (+7 days). NOTE: 08-07 is a Friday; EOD cron
 reliability (5 failures to date) matters again — caffeinate fix still uncommitted.
+
+## 2026-07-31 market-open execution
+
+- Exits: none — book was empty at the bell (Alpaca confirmed 0 positions).
+- Halt checks clear: day P&L 0.00% at check time, weekly cap clear, 0/1 positions open.
+- ENTERED BMY: 104 sh @ $64.678846 (order bfff9d35, filled first poll, -0.06% under
+  the $64.72 quote). Gap sanity passed ($64.72 < $65.62 ceiling). Shares path only
+  (mega-cap). Sized 98% haircut off equity $6,913.03. Book now FULL (1/1), cash $186.43.
+- Time stop 2026-08-07. Midday/EOD watch stop/target/thesis per strategy exits.

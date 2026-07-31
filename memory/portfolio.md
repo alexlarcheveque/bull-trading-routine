@@ -1,28 +1,24 @@
 # portfolio.md
-# Updated 2026-07-30 08:36 by market-open routine.
+# Updated 2026-07-31 06:36 by market-open routine.
 
 ## Account
-- equity: 6913.06
-- cash: 6913.06
-- buying_power: 27652.24
-- day_pnl_pct: -2.16  # vs last_equity 7065.82
+- equity: 6898.59
+- cash: 186.43
+- buying_power: 19539.77
+- day_pnl_pct: -0.21  # vs last_equity 6913.03
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| (none) | -          | -   | -           | -          | -           | -                  |
+| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | -0.22              |
 
 ## Notes
-2026-07-30 open: SOLD 57 CCK @ $118.52 — mandatory time-stop, OVERDUE (target_exit
-2026-07-29; the 07-29 EOD routine never ran, so the sell fired at today's open per the
-KMX 06-26 / PENG 07-16 precedent). Preflight OK, order cef5b8f3, slow drip fill ~3.5min
-(43→55→57). Return +1.31% vs entry $116.99, realized +$87.21 over the 8-day hold; the
-position peaked +3.69% at the 07-28 close and faded into the exit. Book now EMPTY (0/1),
-100% cash. NO entry today: 2026-07-30 watchlist had zero scores >= 6 — CORT (+23.7%
-pre-market), MSFT (+9.03%), STX (+4.11% cumulative, mega-cap bar), F (~40h stale) all
-freshness-DQ'd; VTRS best qualifier at 4. Day -2.16% vs last_equity 7065.82 (CCK sold
-$118.52 vs $121.31 07-28 close accounts for most of it), loss caps clear. Slot is open
-for tomorrow's 07-31 pre-market: AAPL/AMZN report tonight, PBF printed this morning.
-2026-07-30 midday: 0 exits — book empty (Alpaca confirms 0 positions), nothing to
-check. Day -2.16% (all from this morning's CCK time-stop sell, locked at the open),
-daily loss cap clear. All cash into tomorrow's AAPL/AMZN/PBF pre-market pass.
+2026-07-31 open: BOUGHT 104 BMY @ $64.678846 (order bfff9d35, filled in one poll cycle,
+-0.06% under the $64.72 quote). Score 7: Q2 EPS $2.04 vs $1.59 est + FY26 guidance raise
+(rev $46-47.5B→$49-50B, EPS $6.05-6.35→$6.75-7.00), day-2 second-wave entry per CCK
+07-22 precedent. Mega-cap (~$132B) → shares only, no call path (07-17 rule). Gap sanity
+check passed: quoted $64.72 < $65.62 ceiling (+2.6% cumulative vs pre-catalyst close
+$63.10, inside the 1-4% mega drift band). Sized with 98% haircut: floor(0.98 × 6913.03
+÷ 64.72) = 104 sh, ~$6,727 notional, cash remaining $186.43. Book now FULL (1/1).
+Time stop 2026-08-07 (Friday) — EOD cron reliability matters that day; caffeinate fix
+still uncommitted. No exits this morning (book was empty at the bell). Day -0.21%.
