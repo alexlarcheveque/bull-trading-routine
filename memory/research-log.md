@@ -4728,3 +4728,116 @@ validated the gate. If next week repeats (DQ'd names >8% past rejection while
 saves stay flat), propose a sector-regime qualifier on the priced-in bar then.
 Biggest foregone gain was capacity, not scoring: CLS's +10% day-2 wave fired
 while max_concurrent_positions=1 held CCK at +2% (guardrails, human knob).
+
+---
+
+# 2026-08-03 (Monday) pre-market research pass
+
+## Raw Grok output (verbatim)
+
+### Q1 — materially bullish news, US large-caps (>$2B), last 24h
+
+**MSFT (Microsoft, market cap >>$2B):** Record Q4 FY2026 profit/earnings beat with strong Azure growth (up ~43% YoY); shares jumped ~10-15% post-earnings, contributing to broader tech rebound.[[1]](https://support.trustwave.com/expert-time/Microsoft-Posts-Record-Profit-as-Shares-Jump-10-While-Meta-Faces-Cost-Pressures-56-6266)[[2]](https://www.mk.co.kr/en/stock/12114488)
+
+- **Source:** Trustwave/Market Analysis reports; Instagram/MK.co.kr summaries (published ~16 hours ago / Aug 2-3, 2026; earnings ~July 30).[[1]](https://support.trustwave.com/expert-time/Microsoft-Posts-Record-Profit-as-Shares-Jump-10-While-Meta-Faces-Cost-Pressures-56-6266)
+
+**AAPL (Apple, market cap >>$2B):** Q3 FY2026 earnings double beat (revenue $109.42B); tariff refunds and record active installed base cited as boosts.[[3]](https://robinhood.com/us/en/stocks/AAPL/)
+
+- **Source:** Robinhood/Benzinga/Investor's Business Daily notes (recent posts ~Aug 2-3, 2026; earnings late July).[[3]](https://robinhood.com/us/en/stocks/AAPL/)
+
+**AMZN (Amazon, market cap >>$2B):** Q2 2026 sales beat (~$200B+); AWS revenue surged 37% YoY (highest growth in 18 quarters); raised full-year capex guidance to $220B.[[2]](https://www.mk.co.kr/en/stock/12114488)
+
+- **Source:** MK.co.kr earnings recap (published ~1 day ago / Aug 2, 2026).[[2]](https://www.mk.co.kr/en/stock/12114488)
+
+**Broader context (multiple large-caps including GOOGL/AMZN/MSFT):** Added nearly $1.5T in market value amid earnings momentum.[[4]](https://support.levelblue.com/expert-time/Alphabet-Amazon-Microsoft-Add-Nearly-15-Trillion-in-Market-Value-This-Week-54-2269)
+
+- **Source:** LevelBlue/Vanhessen reports (~10-16 hours ago / Aug 2-3).[[4]](https://support.levelblue.com/expert-time/Alphabet-Amazon-Microsoft-Add-Nearly-15-Trillion-in-Market-Value-This-Week-54-2269)
+
+**Market-level bullish move (impacting large-caps):** US stocks extended rally early Aug 3, led by tech/Amazon; futures up (e.g., Nasdaq +0.7%+ intraday).[[5]](https://www.schwab.com/learn/story/stock-market-update-open)[[6]](https://tradingeconomics.com/united-states/stock-market)
+
+- **Source:** Schwab/CNBC/Trading Economics (Aug 3, 2026 reports).[[5]](https://www.schwab.com/learn/story/stock-market-update-open)
+
+No other major new earnings beats/upgrades for >$2B US large-caps specifically in the strict last 24 hours (focus remains on follow-through from late-July big-tech reports). Upcoming reports (e.g., PLTR, MAR) noted but not yet released.
+
+### Q2 — pre-market movers 2026-08-03, up >2% on real catalyst
+
+**ATKR (Atkore) +26.1%** to ~$92 in pre-market on Q2/FY2026 earnings beat (EPS $1.92 vs. $1.56 consensus; sales $794.8M vs. $761.2M est.).[[1]](https://www.benzinga.com/trading-ideas/movers/26/08/60864754/why-atkore-shares-are-trading-higher-by-26-here-are-20-stocks-moving-premarket)
+
+Other notable pre-market gainers (>2%) appeared on aggregator screens (e.g., Chartmill, Investing.com, Stockanalysis), including large moves in names like FCUV, REPL, AXTI, YYAI, HLT (+10.5%), EMR (+7.5%), BMY (+6.4%), and others, but these were predominantly low-float/penny-stock volatility or broad futures-driven without clearly attributed company-specific news catalysts in available reports.[[2]](https://www.chartmill.com/stock/markets/usa/movers/premarket-gainers)[[3]](https://www.investing.com/equities/pre-market)[[4]](https://stockanalysis.com/markets/premarket/)
+
+No additional high-conviction >2% movers tied explicitly to earnings, M&A, FDA, contracts, or similar catalysts were detailed in real-time coverage for Aug 3, 2026. Extreme percentage gainers were generally excluded per the "actual news vs. gap-fill" criterion. Data reflects pre-market activity as of ~Aug 3, 2026 open.
+
+### Q3 — beat AND raised guidance, released after yesterday's close
+
+**None identified in available sources.**[[1]](https://finance.yahoo.com/markets/stocks/articles/rtx-q2-beat-raised-outlook-220854563.html)[[2]](https://finance.yahoo.com/calendar/earnings/)
+
+Earnings calendars show numerous reports scheduled for or around August 3, 2026 (e.g., PLTR AMC, others before open), but no specific tickers with confirmed post-August 2 close releases that both beat EPS/revenue estimates *and* raised full-year or quarterly guidance appear in recent web or X results.[[3]](https://www.earningswhispers.com/calendar)[[4]](https://www.investing.com/earnings-calendar)
+
+Earlier examples (e.g., RTX Q2 beat + raised 2026 outlook) predate the period.[[1]](https://finance.yahoo.com/markets/stocks/articles/rtx-q2-beat-raised-outlook-220854563.html) New results may emerge later on August 3.
+
+### Q4 — FDA approvals / >$100M contracts / M&A / regulator decisions, last 24h
+
+**M&A Announcement (today, Aug 3, 2026):** Prysmian S.p.A. agreed to acquire Atkore Inc. (NYSE: ATKR) in an all-cash deal valued at approximately $3.8 billion enterprise value ($95 per share, ~30% premium to recent trading). Atkore is a US-listed manufacturer of electrical infrastructure products.[[1]](https://markets.ft.com/data/announce/detail?dockey=600-202608030101BIZWIRE_USPRX____20260802_BW368964-1)
+
+**Regulator Decision (Aug 2, 2026):** The FTC cleared IonQ's (NYSE: IONQ) proposed ~$1.8 billion acquisition of SkyWater Technology (NASDAQ: SKYT) without conditions, removing the final major regulatory hurdle.[[2]](https://www.pymnts.com/cpi-posts/ftc-clears-ionq-acquisition-of-skywater-without-conditions/)
+
+No major new FDA drug approvals, large contract wins (>$100M), or other regulator decisions affecting US-listed companies were identified in the last 24 hours based on available search results. Some biosimilar-related announcements (e.g., Fresenius Kabi/Dr. Reddy's rituximab) appeared but tied to prior approvals.
+
+### Q5 (clarifier) — HLT / EMR unattributed pre-market moves
+
+**No, neither Hilton (HLT) nor Emerson Electric (EMR) reported earnings or announced company-specific news on August 3, 2026.**[[1]](https://finance.yahoo.com/quote/EMR/)[[2]](https://ir.hilton.com/financial-reporting/quarterly-results/2026)
+
+- **Hilton (HLT)**: Reported Q2 2026 earnings on July 28, 2026 (beat EPS estimates slightly). Its next quarterly results are not scheduled for early August.[[3]](https://stories.hilton.com/releases/hilton-reports-2026-second-quarter-results)[[4]](https://www.marketbeat.com/stocks/NYSE/HLT/earnings/)
+- **Emerson Electric (EMR)**: Scheduled to report Q3 2026 earnings after market close on August 4, 2026 (analyst expectations around $1.68 EPS and ~$4.79–4.80B revenue). Its prior (Q2) results were released May 5, 2026.[[1]](https://finance.yahoo.com/quote/EMR/)[[5]](https://www.otcmarkets.com/stock/EMR/news/Emerson-Schedules-Third-Quarter-2026-Earnings-Release-and-Conference-Call?e&id=3501395)[[6]](https://www.emerson.com/en/corporate/news/2026/q3-2026-webcast-advisory)
+
+No web search results or news items reference any Hilton or Emerson announcements, filings, or catalysts on August 3, 2026, that would explain the reported pre-market gains (~+10% for HLT, ~+7% for EMR). Pre-market price references for EMR align with the described move but attribute it to no specific event.[[7]](https://public.com/stocks/emr/pre-market)
+
+Broader market factors or unrelated trading activity may be at play, but no sources confirm or explain a clear driver.
+
+## Universe filter results
+
+| ticker | in portfolio | asset status | 30d ADV (Yahoo) | verdict |
+|--------|--------------|--------------|-----------------|---------|
+| ATKR | no | active, tradable, us_equity | 370,373 | PASS → scored |
+| IONQ | no | active, tradable, us_equity | 21,335,886 | PASS → scored |
+| SKYT | no | **inactive, NOT tradable** | 827,550 | FILTERED — Alpaca asset inactive (deal closing) |
+| HLT | no | active, tradable | 2,536,186 | PASS universe → scored (no catalyst) |
+| EMR | no | active, tradable | 2,807,706 | PASS universe → scored (no catalyst) |
+| BMY | **YES (104 sh)** | — | — | FILTERED — already held, no adding to winners |
+| MSFT / AAPL / AMZN | no | — | — | FILTERED — catalysts are 07-30/07-31 prints, not fresh in 24h; mega-caps already +10-15%, past the 4% priced-in bar |
+
+## 2026-08-03 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                          | source          |
+|--------|-------|------------------------------------------------------------------------------|-----------------|
+| —      | —     | No candidate reached the score >= 6 entry threshold                          | —               |
+
+**No tradeable signal today.**
+
+Skipped (below threshold):
+- ATKR (score 5): Prysmian all-cash acquisition at $95/sh (~30% premium) — catalyst 4, novelty **0**, confirmation **0**, cleanliness 1. Pre-market already ~$92 vs $72.955 Friday close (+26%), so the entire move is consumed; a *cash* deal is a hard $95 ceiling, leaving ~3.3% that closes on a months-long deal timeline, not a 14-day second wave. Latest completed bar (07-29) is DOWN -6.6% on ~1.8x volume — no post-catalyst bar exists yet, so confirmation cannot be scored positive. This is the textbook "the move already happened" case in strategy.md.
+- IONQ (score 4): FTC cleared IonQ's $1.8B SkyWater acquisition without conditions — acquirer-side clearance of an already-announced deal, modest forward cash-flow delta (catalyst 2). Stock already ran $31.98 (07-29) → $36.42 (07-31) = +13.9%, novelty 1; latest completed bar down on elevated volume, confirmation 0; cleanliness 1.
+- HLT (score 0): aggregator screens show ~+10.5% pre-market, but targeted Grok confirms **no** Aug 3 earnings, filing, or announcement (Q2 reported 07-28). No named corporate catalyst = not tradeable per strategy.md. Treating the aggregator number as unverified.
+- EMR (score 0): aggregator screens show ~+7.5% pre-market; targeted Grok confirms no Aug 3 news. Q3 earnings are scheduled **after the close on 2026-08-04** — that is a future event, not a catalyst that has hit. Pass.
+- SKYT: not scored — Alpaca asset is inactive / non-tradable (IonQ deal closing), fails the universe filter outright.
+- MSFT / AAPL / AMZN: not scored — late-July prints, >24h old and already +10-15%. Mega-cap freshness bar is 4% (strategy.md, added 07-24); all three are far past it. MSFT was already disqualified on 07-30 for the same reason.
+
+## BOOK CONTEXT for market-open (2026-08-03)
+
+Book is **FULL: 1/1** — 104 BMY @ $64.678846, entered 07-31, time stop **2026-08-07**.
+`max_concurrent_positions: 1` and `max_new_positions_per_day: 1` mean there is **no free
+slot today even if a candidate had scored >= 6**. Nothing did, so market-open should:
+sit out on entries, run its normal exit checks on BMY (stop/target/thesis; time stop is
+NOT due until Friday 08-07), and log a no-trade session.
+
+Equity $6,990.11 / cash $186.43 as of 07-31 EOD. Day and weekly loss caps far from -100%.
+
+STANDING (carried from 07-31 EOD): the BMY time stop lands **Friday 2026-08-07**. EOD cron
+has 5 misses to date and the caffeinate fix is still uncommitted — if the 08-07 EOD run
+misses, the Monday 08-10 market-open must fire the overdue sell (KMX 06-26 / PENG 07-16 /
+CCK 07-30 precedent).
+
+WATCH ITEM (from 07-31 weekly review): freshness gate ran 4-miss / 5-save last week, all
+misses AI-infra names in the 07-30/31 melt-up. ATKR is a *cash M&A* rejection, not a
+momentum rejection — its $95 ceiling is structural, so it should NOT count toward that
+"DQ'd name kept running" tally at the next weekly review.
