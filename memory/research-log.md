@@ -4862,3 +4862,42 @@ the ATKR 08-03 logic applies — a cash deal is a hard price ceiling and the 14-
 second-wave thesis is void. Midday/EOD should treat a confirmed cash bid as a
 thesis-changed event and evaluate exiting rather than assuming further upside; a
 share/mixed offer or a continued auction is not the same case.
+
+## 2026-08-03 EOD
+
+**0 exits, 0 trades — quiet close, position held.**
+
+Time stop NOT due: BMY `target_exit` is Friday **2026-08-07**, 4 days out. Expiry guard
+n/a — the only position is `us_equity`, no options in the book. Safety-net re-check of the
+midday rules: BMY $65.51 vs entry $64.678846 = **+1.29%** (+$86.44), miles inside the ±100%
+FULL YOLO band; thesis **INTACT** per Grok (no material negative news in 24h).
+
+**WATCH item resolved for today — not tripped.** Targeted Grok follow-up confirms
+AstraZeneca has **not** made a firm offer for BMY: reporting still describes only
+preliminary/exploratory talks about a ~$400B combination, with **no** disclosed structure
+(cash/stock/mixed) and **no** price per share. The 08-03 market-open WATCH condition — a
+confirmed all-cash bid would impose an ATKR-style hard price ceiling and void the 14-day
+second-wave thesis — therefore does not apply. Position continues on its original catalyst
+(07-30 Q2 beat $2.04 vs $1.59 + FY26 rev guide raised to $49-50B).
+
+**The gap round-tripped in full.** Market-open marked BMY at $67.66 (+4.61%), midday $65.21
+(+0.82%), close $65.51 (+1.29%) — essentially flat against Friday's $65.31 close. The
++3.50% day P&L booked this morning was a pre-market print, never realized; equity finished
+$6,997.38, not the $7,223.06 stamped at the open. This is the merger-chatter second wave
+being consumed intraday, which is exactly what the WATCH note anticipated. Worth carrying
+into the weekly review: **deal-chatter pops are not the same animal as earnings second
+waves** — an unconfirmed M&A rumor has no cash-flow anchor, so it round-trips on the same
+session rather than drifting for days.
+
+Caps: day **+0.27%** vs last_equity $6,978.66; WTD **+0.27%** (Monday — the week opened at
+$6,978.66) against the -100% weekly cap. No flatten, no halt, `trading_blocked: false`.
+
+Entries: none possible — book FULL 1/1 all session, and the pre-market pass produced 0
+candidates ≥ 6 (top score 5, ATKR). EOD never opens positions regardless.
+
+EOD email sent (Resend c0c8bb97). **The EOD cron RAN on time today.**
+
+STANDING (unchanged, now 4 sessions out): BMY's time stop lands **Friday 2026-08-07**. The
+EOD cron has **5 misses** to date and the caffeinate fix in `scripts/run-routine.sh` is
+**still uncommitted**. If the 08-07 EOD run misses, the Monday **2026-08-10** market-open
+must fire the overdue sell (KMX 06-26 / PENG 07-16 / CCK 07-30 precedent).
