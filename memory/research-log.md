@@ -4841,3 +4841,24 @@ WATCH ITEM (from 07-31 weekly review): freshness gate ran 4-miss / 5-save last w
 misses AI-infra names in the 07-30/31 melt-up. ATKR is a *cash M&A* rejection, not a
 momentum rejection — its $95 ceiling is structural, so it should NOT count toward that
 "DQ'd name kept running" tally at the next weekly review.
+
+## 2026-08-03 market-open execution
+
+**0 sells, 0 buys — no-trade session.**
+
+Exits: BMY $67.66 vs entry $64.678846 = **+4.61%**. Stop/target (±100%) clear; time stop
+NOT due (2026-08-07); thesis INTACT — Grok returned no material negative news in 24h, and
+Bloomberg/Reuters (08-02) report AstraZeneca explored a BMY mega-merger. Held.
+
+Entries: none. Two independent blocks — (1) book FULL 1/1 per `max_concurrent_positions: 1`,
+(2) zero watchlist candidates at the score >= 6 threshold. Halt checks all clear: day P&L
++3.50% (cap -100%), WTD far from -100%, trading_blocked false, market open.
+
+Equity $7,223.06 / cash $186.42 at 06:32 PDT (day +3.50% vs last_equity $6,978.66) — the
+gain is BMY re-rating on the AZN deal chatter, not a new position.
+
+NEW WATCH ITEM: AZN-BMY talks are **preliminary**. If a firm all-cash offer is announced,
+the ATKR 08-03 logic applies — a cash deal is a hard price ceiling and the 14-day
+second-wave thesis is void. Midday/EOD should treat a confirmed cash bid as a
+thesis-changed event and evaluate exiting rather than assuming further upside; a
+share/mixed offer or a continued auction is not the same case.
