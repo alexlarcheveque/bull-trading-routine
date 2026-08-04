@@ -5081,3 +5081,41 @@ WATCH (carried from 08-03): AZN-BMY merger talks remain *preliminary* — no fir
 price, no structure. Today's Q1/Q4 sweeps surfaced **no** new AZN-BMY development in the last
 24 hours. If a firm all-cash bid lands, the ATKR logic applies (cash deal = hard price ceiling)
 and the second-wave thesis is done.
+
+## 2026-08-04 market-open execution pass
+- market: open (is_open=true, next_close 16:00 ET) | trading_blocked: false | account_blocked: false
+- positions reconciled (Alpaca): 1 (BMY 104 sh @ $64.678846) — matches portfolio.md, no drift
+- exits checked: 1 position (BMY)
+  - BMY: cur=$64.545  ret=-0.21%  stop=-100%→HOLD  target=+100%→HOLD
+  - time-stop: 2026-08-07 (today=2026-08-04) → HOLD (fires Friday; enforced by EOD)
+  - expiry guard: n/a (no options in the book)
+  - thesis check: INTACT — Grok found no material negative BMY news in last 24h. AZN-BMY talks
+    still PRELIMINARY (FT 08-02, widely picked up 08-03): "mull"/"considering a deal", ~$400B
+    hypothetical combined value, NO firm offer, NO price, NO structure, no company comment.
+    The 08-03 WATCH condition (firm cash offer → ATKR ceiling logic) has NOT tripped.
+- exits: 0
+- halt checks: day_pnl=-1.44% vs cap=-100% → CLEAR | WTD realized 0.00% (0 closed trades this
+  week; last SELL CCK 07-30) vs cap=-100% → CLEAR | open positions **1/1 → BLOCKED**, no free slot
+- entries: 0 — blocked on BOTH counts. (a) `max_concurrent_positions: 1` is full, so there was no
+  slot regardless. (b) Today's watchlist produced zero tradeable candidates anyway.
+  - **PLTR composite 7 was NOT treated as tradeable**, per the pre-market block's explicit
+    instruction: +16.09% pre-market ($125.65 → $145.87) on a $301B mega-cap is 4x past the 4%
+    mega-cap priced-in bar, and the 07-24 rule is a **gate, not a scoring input** — a mega-cap
+    gapping >= 4% "does not qualify". Market-open honored the gate over the arithmetic.
+  - AMRC 6 DQ'd on freshness (+35.3%); BLZE unscored (cap $936M < $1B floor); AMZN 4; NVS 4
+    (approval 4 days stale, price faded below the 07-30 close); KVUE 2; MSFT/GOOGL 0.
+- equity: $6,997.38 → $6,894.42 (-1.44% overnight). This is BMY giving back the last of the
+  08-03 AZN merger-chatter pop — the position is now back through its entry price. Sequence:
+  entry $64.678846 (07-31) → $67.66 (08-03 open, +4.61% on the chatter) → $65.21 midday →
+  $65.51 close → $64.545 now. The entire pop round-tripped in two sessions, and then some.
+  Exactly the second-wave decay the 08-03 WATCH note anticipated. The trade rides on its
+  original Q2 beat-and-raise thesis (rev guide $49-50B, EPS $6.75-7.00), not the deal chatter.
+- FRESHNESS-GATE TEST NOW LIVE: the pre-market block flagged four freshness rejections in one
+  session (PLTR +16.1%, AMRC +35.3%, BLZE +31.6%, AMZN +4.5%) as the largest single-day count so
+  far, and a direct test of the gate's 4-miss/5-save record. Whether those four keep running
+  today is the data point — the weekly review should score it. PLTR is the cleanest case: a
+  maximum-strength catalyst (catalyst strength 4) rejected purely on gap size.
+- STANDING (carried, now 3 sessions out): BMY time stop lands **Friday 2026-08-07**. EOD cron has
+  **5 misses** to date; the caffeinate fix in `scripts/run-routine.sh` is **still uncommitted**.
+  If the 08-07 EOD run misses, Monday **2026-08-10** market-open must fire the overdue sell
+  (KMX 06-26 / PENG 07-16 / CCK 07-30 precedent).
