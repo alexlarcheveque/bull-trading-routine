@@ -1,18 +1,28 @@
 # portfolio.md
-# Updated 2026-08-04 09:31 ET by market-open routine.
+# Updated 2026-08-04 12:00 CT by midday routine.
 
 ## Account
-- equity: 6894.42
+- equity: 6884.02
 - cash: 186.42
 - buying_power: 19528.08
-- day_pnl_pct: -1.44  # vs last_equity 6995.30
+- day_pnl_pct: -1.59  # vs last_equity 6995.30
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | -0.21              |
+| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | -0.47              |
 
 ## Notes
+2026-08-04 midday: 0 exits. BMY $64.37 = -0.47% vs entry $64.678846 — stop -100% / target +100%
+both nowhere near, so neither price gate fires. Thesis INTACT per Grok: no material negative BMY
+news in the last 6h (no guidance cut, recall, lawsuit, regulatory reversal, exec departure).
+AZN-BMY talks STILL PRELIMINARY — no firm offer, no price, no structure — so the WATCH condition
+has not tripped and the ATKR cash-deal-ceiling logic does not yet apply. Grok also surfaced an
+Aug 17 FDA PDUFA date for a BMY asset (neutral, noted for the 08-07 exit decision).
+Position reconciled against Alpaca: 104 sh, asset_class us_equity, entry 64.678846 — matches.
+Midday opens nothing by design; time stop (Friday 2026-08-07) still governs this exit.
+Halt check: day P&L -1.59% vs -100% daily cap → CLEAR, no halt, no cancel-all, no alert.
+
 2026-08-04 market-open: 0 sells, 0 buys. BMY $64.545 = -0.21% vs entry $64.678846. Exit checks
 all clear: stop -100% / target +100% nowhere near; time stop NOT due (fires Friday 2026-08-07);
 no options in the book so the expiry guard is n/a; thesis INTACT per Grok — no material negative
