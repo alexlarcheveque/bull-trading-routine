@@ -5119,3 +5119,76 @@ and the second-wave thesis is done.
   **5 misses** to date; the caffeinate fix in `scripts/run-routine.sh` is **still uncommitted**.
   If the 08-07 EOD run misses, Monday **2026-08-10** market-open must fire the overdue sell
   (KMX 06-26 / PENG 07-16 / CCK 07-30 precedent).
+
+## 2026-08-04 EOD
+
+- market: open at run time (is_open=true, next_close 16:00 ET); ran at 15:55 CT
+- positions reconciled (Alpaca): 1 (BMY 104 sh @ $64.678846, asset_class us_equity) — matches
+  portfolio.md, no drift
+- **time stops: 0 fired.** BMY target_exit 2026-08-07 vs today 2026-08-04 → NOT DUE (fires Friday)
+- **expiry guard: n/a** — no options in the book
+- safety-net re-checks (strategy.md stop/target/thesis, run again at EOD):
+  - BMY: cur=$66.055 ret=+2.13% | stop=-100%→HOLD | target=+100%→HOLD
+  - thesis: INTACT — Grok, last 8h: no guidance cut, drug failure, recall, lawsuit, regulatory
+    reversal or exec departure. AZN-BMY still **PRELIMINARY** (Reuters/CNBC/WSJ 08-03): no firm
+    offer, no price, no structure, analysts calling a deal unlikely. The 08-03 WATCH condition
+    (firm cash offer → ATKR ceiling logic) has **NOT** tripped.
+- exits: 0 | entries: 0 (EOD never opens by design)
+- halt checks: day_pnl=+0.87% vs cap=-100% → CLEAR | WTD=+0.94% (equity $7,056.14 vs Friday
+  07-31 close $6,990.11) vs cap=-100% → CLEAR. No flatten, no PAUSED marker.
+- equity: $6,894.42 (open) → **$7,056.14** (close), +0.87% on the day vs last_equity $6,995.30.
+  Cash $186.42.
+- EOD email sent (Resend 4a6d645d-e64f-4cd2-aa6c-293f7ed1f11c).
+
+**REVERSE ROUND TRIP.** This morning the note read "BMY unwinding the last of the 08-03 merger
+pop, now back through the entry price." By the close it had run $64.545 → $66.055 (+2.34%
+intraday) and the book swung +$161.72. Grok attributes it to *continued AstraZeneca merger
+speculation* — the identical fuel that popped +4.61% on 08-03 and fully round-tripped inside two
+sessions. So the +2.13% unrealized is deal chatter, not the Q2 beat-and-raise thesis (rev guide
+$49-50B, EPS $6.75-7.00) the entry was underwritten on. Two days, two full reversals, same
+driver. The Friday 08-07 time stop will exit whichever side of the chatter we happen to be on.
+
+**FRESHNESS-GATE TEST — RESULTS (this is the test the 08-04 pre-market block called for).**
+Four names were rejected this morning on gap size; scored against today's close using the
+reference prices recorded in that block:
+
+| ticker | reject reason | reference | 08-04 close | move since reject | verdict |
+|--------|---------------|-----------|-------------|-------------------|---------|
+| PLTR | freshness (+16.09% pre-mkt, $301B mega-cap vs 4% bar) | $145.87 | $162.46 | **+11.37%** | **GATE MISS (large)** |
+| AMRC | freshness (+35.3% after-hours vs 5% bar) | $28.50 | $27.79 | -2.49% | GATE SAVE |
+| BLZE | market cap $936M < $1B floor (freshness +31.6% secondary) | $18.05 | $19.89 | +10.19% | would-be winner, but cap-DQ'd first |
+| AMZN | freshness (+4.5% on 08-03, ~$3T name) | none logged | $277.26 | n/a | **not scoreable — no reference price was recorded this morning** |
+
+PLTR is the expensive data point and it cuts against the gate. Catalyst strength **4** (EPS
+$0.41 vs $0.34-0.35, rev $1.935B vs $1.81B +93% YoY, FY guide raised to ~$8.15B +82%, US
+commercial +134%) — as strong as a beat-and-raise gets — rejected purely on gap size, and it
+then added **another 11.4%** on top of the 16.1% gap we refused to pay. The premise of the
+mega-cap 4% rule is that a >= 4% gap means "the second wave is already consumed." PLTR consumed
+16% overnight and still had 11% left. That is the rule's own thesis failing on its cleanest test
+case.
+
+The 07-31 weekly review logged this gate at 4 misses / 5 saves. Today adds **1 clear miss
+(PLTR)** and **1 clear save (AMRC)** → roughly **5 misses / 6 saves**, i.e. a coin flip. BLZE
+would have been a +10.19% winner but was blocked by the $1B market-cap floor first, so it does
+not score the freshness gate either way — worth noting that the cap floor, not freshness, is
+what cost that one.
+
+**FOR THE WEEKLY REVIEW — three things this session surfaced:**
+1. The mega-cap freshness gate is at ~50/50 and just failed its cleanest test (max-strength
+   catalyst, largest available second wave). A coin-flip gate that blocks catalyst-strength-4
+   names is worth re-deriving from scratch, not just re-tuning. Consider whether *catalyst
+   strength* should be able to override the gap gate at strength 4, or whether the 4%/5% bars
+   should scale with the size of the beat rather than being flat.
+2. **Process defect:** AMZN was rejected on freshness with no reference price logged, so it
+   cannot be scored today or at the weekly review. Every freshness rejection needs its
+   reference price written into the pre-market block or the gate can never be audited. PLTR,
+   AMRC and BLZE were logged correctly; AMZN was not.
+3. BMY has now round-tripped twice in two sessions on the same unresolved merger chatter. The
+   entry thesis is doing none of the work. Worth asking whether "catalyst intact" should be
+   distinguished from "the *original* catalyst is what's moving the stock" in the thesis check.
+
+**STANDING (carried, now 4 sessions out):** BMY time stop lands **Friday 2026-08-07**. The EOD
+cron has **5 misses** to date and the caffeinate fix in `scripts/run-routine.sh` is **still
+uncommitted** (still showing as modified in git status this session). If the 08-07 EOD run
+misses, Monday **2026-08-10** market-open must fire the overdue sell — KMX 06-26 / PENG 07-16 /
+CCK 07-30 precedent. Three overdue sells in six weeks is a pattern, not bad luck.
