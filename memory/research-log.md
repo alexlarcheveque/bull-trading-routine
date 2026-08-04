@@ -4901,3 +4901,183 @@ STANDING (unchanged, now 4 sessions out): BMY's time stop lands **Friday 2026-08
 EOD cron has **5 misses** to date and the caffeinate fix in `scripts/run-routine.sh` is
 **still uncommitted**. If the 08-07 EOD run misses, the Monday **2026-08-10** market-open
 must fire the overdue sell (KMX 06-26 / PENG 07-16 / CCK 07-30 precedent).
+
+## 2026-08-04 pre-market research (raw Grok output)
+
+### Q1 — materially bullish news, US large-caps >$2B, last 24h
+
+**AMZN (Amazon.com Inc., market cap >>$2B)**: Q2 2026 adjusted EPS of $1.88 beat consensus by ~2.7%; net sales $200.6B beat estimates; AWS AI computing and semiconductors exceeded $25B annualized run-rate. Stock rose ~4.5% (market cap hit $3T).[[1]](https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-3-124000595.html)[[2]](https://www.youtube.com/watch?v=pfryf5yeP1M)
+
+- **Source**: Yahoo Finance / Zacks summary (published ~Aug 3, 2026); CNBC/YouTube market recaps (Aug 4, 2026).
+- **Timestamp**: Earnings release and initial reaction ~Aug 3, 2026 (market close); continued gains noted Aug 4.
+
+**MSFT (Microsoft) and GOOGL (Alphabet/Google)**: Post-earnings recovery with notable intraday gains (e.g., AMZN/MSTF/GOOGL rotation cited as driving broader index upside).[[2]](https://www.youtube.com/watch?v=pfryf5yeP1M)
+
+- **Source**: Japanese market commentary video (Aug 4, 2026); CNBC analyst/market outlook pieces.
+- **Timestamp**: Aug 3–4, 2026 trading session.
+
+Broader context includes S&P 500/Nasdaq closing higher on Aug 3 amid AI/big-tech strength and positive economic data, with momentum carrying into Aug 4.[[3]](https://www.cnbc.com/2026/07/31/stock-market-next-week-outlook-for-aug-3-7-2026.html)[[1]](https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-3-124000595.html) No other discrete, company-specific materially bullish catalysts (e.g., major M&A, FDA approvals, or guidance raises) for additional >$2B market-cap US names were identified in the last 24 hours from available sources. X chatter was largely macro/technical with limited new fundamental news.
+
+### Q2 — pre-market movers 2026-08-04, up >2% on real catalyst
+
+**Palantir Technologies (PLTR) was a notable pre-market gainer on August 4, 2026, surging ~16-17% (e.g., to ~$146+) after reporting strong Q2 2026 results after the close on August 3.**[[1]](https://stockanalysis.com/markets/premarket/)[[2]](https://finance.yahoo.com/quote/PLTR/)
+
+- Revenue reached $1.94B (+93% YoY), with U.S. commercial revenue growth of 149% YoY.
+- The company raised full-year 2026 revenue guidance to ~$8.15-8.16B (strong growth outlook).
+- This was an actual earnings catalyst (beat and raise), not a gap-fill.[[2]](https://finance.yahoo.com/quote/PLTR/)
+
+Smaller-cap/premarket gainers (>2%, often much higher) listed on aggregator sites included RAIN (~95%+), ELPW (~61%), ENSC (~45%), AMRC (~29%), VTGN (~25%), DXST (~22%), BLZE (~20%), and others.[[1]](https://stockanalysis.com/markets/premarket/)[[3]](https://www.benzinga.com/premarket) These frequently move on low-float dynamics, filings, or minor news, but specific widespread catalysts were not prominently detailed in major sources for most beyond PLTR's earnings-driven move.
+
+Data drawn from premarket gainers lists (e.g., StockAnalysis, Benzinga) as of early August 4, 2026; always verify real-time quotes and news.
+
+### Q3 — beat AND raised guidance, released after yesterday's close
+
+**PLTR (Palantir Technologies) – Q2 2026 earnings released after close on Aug 3, 2026.**[[1]](https://www.businesswire.com/news/home/20260802523449/en/Palantir-Reports-Q2-2026-U.S.-Comm-Revenue-Growth-of-149-YY-and-Revenue-Growth-of-93-YY-Raises-FY-2026-Revenue-Guidance-to-82-YY-Growth-and-U.S.-Comm-Revenue-Guidance-to-134-YY-Crushing-Consensus-Expectations)
+
+- **Beat**: Adjusted/GAAP EPS $0.41 (consensus ~$0.34–$0.35); revenue $1.935B (consensus ~$1.81B).[[2]](https://www.investors.com/news/technology/palantir-stock-palantir-earnings-news-q22026/)
+- **Raise**: FY2026 revenue guidance raised to $8.150–$8.158B (~82% Y/Y growth); U.S. commercial revenue guidance raised to >$3.424B (at least 134% Y/Y growth); also raised adjusted income from operations and free cash flow guidance.[[1]](https://www.businesswire.com/news/home/20260802523449/en/Palantir-Reports-Q2-2026-U.S.-Comm-Revenue-Growth-of-149-YY-and-Revenue-Growth-of-93-YY-Raises-FY-2026-Revenue-Guidance-to-82-YY-Growth-and-U.S.-Comm-Revenue-Guidance-to-134-YY-Crushing-Consensus-Expectations)
+
+**Source**: Official Palantir Q2 2026 earnings press release (BusinessWire, Aug 3, 2026, 4:05 PM ET).
+
+No other companies with confirmed post-Aug 3 close reports matching both an earnings beat and guidance raise were identified in available results as of Aug 4, 2026. Many reports are scheduled for Aug 4 or later.
+
+### Q4 — FDA approvals / >$100M contracts / M&A / regulator decisions, last 24h
+
+**FDA approvals (most relevant recent items affecting US-listed companies):**
+
+- **Novartis (NVS)**: FDA approved Pluvicto (lutetium Lu 177 vipivotide tetraxetan) in combination with an androgen receptor pathway inhibitor for PSMA-positive metastatic hormone-sensitive prostate cancer (mHSPC). This expands the eligible patient population.[[1]](https://www.novartis.com/news/media-releases/fda-approves-pluvicto-psma-metastatic-hormone-sensitive-prostate-cancer-mhspc-advancing-potential-new-standard-care-across-metastatic-disease)[[2]](https://www.webmd.com/drugs/updates/pluvicto-metastatic-prostate-cancer-fda)
+
+- **Kenvue (KVUE)**: FDA approved Tylenol with Naproxen (acetaminophen 325 mg/naproxen sodium 110 mg tablets), the first OTC fixed-dose combination of these ingredients for up to 12-hour pain relief (manufactured by Kenvue Brands LLC).[[3]](https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-nonprescription-fixed-dose-combination-acetaminophen-and-naproxen-sodium-12-hour)[[4]](https://www.kenvue.com/media/fda-approves-tylenol-with-naproxen)
+
+**Other notes:**
+- Otsuka's centanafadine (Simtriyo) received FDA approval for ADHD (first-in-class NDSRI), but Otsuka is not primarily US-listed.[[5]](https://www.pharmacytimes.com/view/fda-approves-first-in-class-centanafadine-for-adhd-in-adults-and-pediatric-patients)
+- No M&A announcements, large contract wins (>$100M), or other major regulator decisions (e.g., FTC/SEC) affecting US-listed companies were identified in results from the last 24 hours. Minor CFTC actions (e.g., fines) appeared but do not meet the criteria.[[6]](https://www.cftc.gov/)
+
+Dates cluster around late July 2026 announcements with some coverage extending into early August. No qualifying events were found strictly within the most recent 24-hour window beyond these.
+
+### Q5 (clarifier) — exact catalyst dates for NVS / KVUE, and the AMRC / BLZE moves
+
+**1. Pluvicto (Novartis) for mHSPC: July 31, 2026.**[[1]](https://www.novartis.com/news/media-releases/fda-approves-pluvicto-psma-metastatic-hormone-sensitive-prostate-cancer-mhspc-advancing-potential-new-standard-care-across-metastatic-disease)[[2]](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-lutetium-lu-177-vipivotide-tetraxetan-androgen-receptor-pathway-inhibitor-therapy)
+
+**2. Tylenol with Naproxen (Kenvue) OTC combination: July 24, 2026.**[[3]](https://www.fda.gov/drugs/news-events-human-drugs/fda-approves-first-nonprescription-fixed-dose-combination-acetaminophen-and-naproxen-sodium-12-hour)[[4]](https://www.kenvue.com/media/fda-approves-tylenol-with-naproxen)
+
+**3. Both companies reported Q2 2026 earnings on August 3, 2026 (after market close).**[[5]](https://ir.ameresco.com/news-events/press-releases/detail/762/ameresco-to-announce-second-quarter-2026-financial-results)[[6]](https://www.stocktitan.net/news/BLZE/backblaze-to-announce-second-quarter-2026-results-on-august-3-1qkhhio1q0mc.html)
+
+- **Ameresco (AMRC)**: Q2 revenue $515.5M (+9% YoY), beats on expectations, raised/affirmed guidance in some metrics. Stock closed $22.73 vs prior close $21.07 (~+7.9%).[[7]](https://www.stocktitan.net/sec-filings/AMRC/8-k-ameresco-inc-reports-material-event-c01f964fbe85.html)
+- **Backblaze (BLZE)**: Q2 EPS beat; revenue $42.7M beat. Also tied to a major AI storage deal. Stock closed $15.59 vs prior close $13.72 (+13.63%).[[9]](https://finance.yahoo.com/quote/BLZE/)
+
+### Q6 (clarifier) — verified prices and market caps, pre-market 2026-08-04
+
+**PLTR (Palantir):**
+- Pre-market (Aug 4): **$145.87 (+$20.22 / +16.09%)** as of 6:37:27 AM EDT.[[1]](https://finance.yahoo.com/quote/PLTR)
+- Aug 3 close: $125.65 (+2.10%).
+- Market cap: **$301.222 billion** → MEGA-CAP.
+
+**AMRC (Ameresco):**
+- Aug 3 close $22.73 (+7.88%); **after-hours $28.50 (+25.38%)**. Cumulative $21.07 → $28.50 = **+35.3%**.[[2]](https://finance.yahoo.com/quote/AMRC)
+- Market cap: **$1.204 billion**.
+
+**BLZE (Backblaze):**
+- Aug 3 close $15.59 (+13.63%); **after-hours $18.05 (+15.78%)**. Cumulative $13.72 → $18.05 = **+31.6%**.[[3]](https://finance.yahoo.com/quote/BLZE)
+- Market cap: **$935.63 million**.
+
+## Universe filter results (2026-08-04)
+
+Note: Alpaca daily bars are stale (IEX feed returns nothing past 2026-07-30), so confirmation
+was scored off live `quote` last-trade prints plus the verified Yahoo closes in Q6, not off bars.
+
+| ticker | in portfolio | asset status | 30d ADV (Yahoo) | mkt cap | verdict |
+|--------|--------------|--------------|-----------------|---------|---------|
+| PLTR | no | active, tradable, us_equity | 40,730,611 | $301.2B | PASS universe → scored |
+| AMRC | no | active, tradable, us_equity | 530,118 | $1.204B | PASS universe → scored |
+| BLZE | no | active, tradable, us_equity | 4,380,625 | **$935.6M** | **FILTERED — below `min_market_cap_usd: 1_000_000_000`** |
+| AMZN | no | active, tradable, us_equity | 58,940,170 | ~$3.0T | PASS universe → scored |
+| NVS | no | active, tradable, us_equity | 2,108,963 | ~$300B | PASS universe → scored |
+| KVUE | no | active, tradable, us_equity | 21,034,395 | ~$36B | PASS universe → scored |
+| MSFT / GOOGL | no | active, tradable | — | mega | PASS universe → scored (no discrete catalyst) |
+| BMY | **YES (104 sh)** | — | — | — | FILTERED — already held, no adding to winners |
+| RAIN / ELPW / ENSC / VTGN / DXST | no | not queried | not queried | — | FILTERED — see note below |
+
+Note on the aggregator movers (RAIN +95%, ELPW +61%, ENSC +45%, VTGN +25%, DXST +22%):
+individual Alpaca/volume filters were **not** run on these. They fail two independent gates
+before the universe filter even matters — (a) no verified corporate catalyst (Grok explicitly
+states "specific catalysts were not prominently detailed"), failing the *material* test, and
+(b) moves of +22% to +95% overnight, failing the *fresh* test by an order of magnitude. This
+is the same treatment HLT/EMR got on 08-03.
+
+## 2026-08-04 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                       | source         |
+|--------|-------|-----------------------------------------------------------|----------------|
+| —      | —     | No candidate cleared both the freshness gate and score >= 6 | —            |
+
+**No tradeable signal today.**
+
+Skipped (below threshold or disqualified):
+
+- **PLTR — composite 7 but DISQUALIFIED, NOT TRADEABLE.** Q2 blowout: EPS $0.41 vs $0.34-0.35
+  consensus, revenue $1.935B vs $1.81B (+93% YoY), FY26 rev guide raised to $8.150-8.158B
+  (~+82% YoY) and US commercial guide to >$3.424B (+134% YoY). Catalyst strength **4** — this
+  is as strong as a beat-and-raise gets. But novelty **0**: pre-market $145.87 vs $125.65 close
+  = **+16.09%** on a **$301B mega-cap**, which is 4x past the 4% mega-cap priced-in bar in
+  strategy.md. Confirmation 2, cleanliness 1. The composite arithmetic lands at 7, but the
+  mega-cap freshness rule (added 07-24 after INTC/AMD) states a mega-cap gapping >= 4%
+  **"does not qualify"** — the rule is a gate, not a scoring input. Market-open must NOT treat
+  this 7 as tradeable. Textbook "the move already happened": there is no second wave left when
+  16 points of it printed overnight.
+- **AMRC — composite 6 but DISQUALIFIED on freshness, NOT TRADEABLE.** Q2 revenue $515.5M
+  (+9% YoY) beat with guidance raised/affirmed. Catalyst strength 3 (solid but not spectacular
+  — single-digit revenue growth, vague "some metrics" guidance language), confirmation 2,
+  cleanliness 1, novelty **0**. Passes the universe filter ($1.204B cap > $1B floor, ADV 530k >
+  100k). The kill shot is freshness: $21.07 → $28.50 after-hours = **+35.3%**, seven times past
+  the 5% non-mega-cap priced-in bar. strategy.md gates a catalyst on material AND fresh AND
+  directional *before* scoring — AMRC fails "fresh," so the composite 6 never becomes an entry.
+- **BLZE (not scored)**: Q2 EPS + revenue beat ($42.7M) plus an AI storage deal — a genuinely
+  interesting catalyst — but market cap **$935.63M is below the `min_market_cap_usd` $1B
+  guardrail**, so it fails the universe filter outright. Would have failed freshness anyway
+  ($13.72 → $18.05 = +31.6%).
+- **AMZN (score 4)**: Q2 EPS $1.88, but only a **~2.7% beat** — catalyst strength 2. Already
+  moved +4.5% on Aug 3, past the 4% mega-cap bar on a ~$3T name → novelty 0. Confirmation 1,
+  cleanliness 1. Catalyst is also >24h old by this morning's open.
+- **NVS (score 4)**: FDA approved Pluvicto in combination with an ARPI for PSMA-positive mHSPC —
+  a real label expansion into a much larger patient population (catalyst 3). But the approval
+  is dated **July 31**, four days stale, so novelty **0**. Confirmation **0**: last trade $153.68
+  is *below* the 07-30 close of $158.51 — the stock has faded since the approval, which is the
+  opposite of second-wave confirmation. Cleanliness 1.
+- **KVUE (score 2)**: FDA approved Tylenol with Naproxen, first OTC fixed-dose combo of those
+  ingredients. Catalyst 1 — an OTC line extension is a marginal cash-flow delta for a ~$36B
+  consumer-health company. Approval dated **July 24**, eleven days stale → novelty 0.
+  Confirmation 0 ($19.00 last vs $19.295 on 07-30, drifting down). Cleanliness 1.
+- **MSFT / GOOGL (score 0)**: the only sourcing is "post-earnings recovery" and sector
+  "rotation" from a market-commentary video. No named, dated corporate event. This is the
+  generic-macro exclusion in strategy.md, not a catalyst.
+
+**Pattern worth carrying to the weekly review:** every named catalyst today failed on
+*freshness*, not on materiality — PLTR +16.1%, AMRC +35.3%, BLZE +31.6%, AMZN +4.5%. The news
+flow was strong and the market consumed all of it overnight. Four freshness rejections in one
+session is the largest single-day count so far; the 07-31 weekly review flagged a 4-miss/5-save
+record on this gate, so whether these four keep running today is a direct test of it. PLTR in
+particular is the cleanest available data point: a maximum-strength catalyst rejected purely on
+gap size.
+
+## BOOK CONTEXT for market-open (2026-08-04)
+
+Book is **FULL: 1/1** — 104 BMY @ $64.678846, entered 07-31, time stop **2026-08-07**.
+`max_concurrent_positions: 1` and `max_new_positions_per_day: 1` mean there is **no free slot
+today even if a candidate had qualified**. Nothing did, so market-open should: sit out on
+entries, run its normal exit checks on BMY (stop/target/thesis; the time stop is NOT due until
+Friday 08-07), and log a no-trade session.
+
+Equity $6,997.38 / cash $186.42 as of 08-03 EOD. Day P&L +0.27%, WTD +0.27% — both loss caps
+(-100%) far away, no halt.
+
+STANDING (carried from 08-03 EOD, now 3 sessions out): the BMY time stop lands **Friday
+2026-08-07**. The EOD cron has **5 misses** to date and the caffeinate fix in
+`scripts/run-routine.sh` is **still uncommitted**. If the 08-07 EOD run misses, the Monday
+**2026-08-10** market-open must fire the overdue sell (KMX 06-26 / PENG 07-16 / CCK 07-30
+precedent).
+
+WATCH (carried from 08-03): AZN-BMY merger talks remain *preliminary* — no firm offer, no
+price, no structure. Today's Q1/Q4 sweeps surfaced **no** new AZN-BMY development in the last
+24 hours. If a firm all-cash bid lands, the ATKR logic applies (cash deal = hard price ceiling)
+and the second-wave thesis is done.
