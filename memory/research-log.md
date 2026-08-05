@@ -5349,3 +5349,48 @@ enforce the cap, not the score.**
 **STANDING (carried, 5 sessions out):** BMY time stop lands **Friday 2026-08-07**. EOD cron has
 **5 misses** to date and the caffeinate fix in `scripts/run-routine.sh` is **still uncommitted**.
 If the 08-07 EOD run misses, Monday **2026-08-10** market-open must fire the overdue sell.
+
+### 2026-08-05 market-open execution
+
+**Result: 0 sells, 0 buys.** Market open (next_close 16:00 ET), `trading_blocked=false`.
+Equity $6,881.84 vs last_equity $7,038.98 = **-2.23%** on the day at the open.
+
+**Step 1 — exits.** BMY 104 sh, entry $64.678846 (07-31), target_exit 2026-08-07. Quote $64.375
+= **-0.47%**. Rules checked: target +100% no / stop -100% no / time stop 08-07 not due (today
+08-05) / thesis **INTACT**. Grok: no material negative BMY news in 24h. → **HOLD, no order.**
+
+**AZN-BMY watch condition resolved — chatter died, no deal.** Reuters 08-05, senior source:
+"There is no deal between AstraZeneca and BMS. There never was a deal to be done, and there are
+no discussions between the companies." The FT 08-02 ~$400B report and Reuters 08-03 confirmation
+are denied. The ATKR cash-deal-ceiling branch never applied (no firm offer, no price, no
+structure). Not scored as thesis-broken: the 07-31 entry thesis was the Q2 beat + FY26 guide
+raise, and the merger talk post-dates the entry by two sessions, so it was never underwritten.
+The +4.61% (08-03) and +2.13% (08-04) merger pops have now fully round-tripped for the second
+time — the "borrowed" gain flagged at 08-04 EOD is repaid, position back to ~flat.
+
+**Step 2 — halt checks.** Daily -2.23% vs `daily_loss_cap_pct: 100` → clear. WTD -1.55% vs
+Friday 07-31 close $6,990.11, `weekly_loss_cap_pct: 100` → clear. **Open positions 1 >=
+`max_concurrent_positions: 1` → NEW ENTRIES BLOCKED.**
+
+**Step 3 — entries: NONE. ADM (score 10) blocked by the position cap.** This is the highest
+composite score this book has recorded, and it was not a research or execution failure — the slot
+was occupied. No preflight was run because no order was eligible to be constructed. Exiting BMY
+to make room was considered and **rejected**: strategy.md's exit list is stop / target / thesis /
+time stop, and "a better candidate exists" is not among them. Rotating out of a non-triggered
+position would be inventing an exit rule at runtime, which decision.md forbids ("if anything is
+ambiguous, do nothing and log the ambiguity in research-log.md for the weekly review to
+address"). ADM's day-2 second-wave window will be gone by Friday when BMY's time stop frees the
+slot — this candidate is lost, and that loss is the cost of the current cap.
+
+**Escalated to the weekly review.** `max_concurrent_positions: 1` is now the binding constraint
+on the whole book and the only guardrail still contradicting the FULL YOLO posture (every other
+knob reads 100). Two candidate fixes, both exit-rule/guardrail changes that must NOT be applied
+mid-week: (a) raise the concurrent-position cap; or (b) add a bounded rotation rule — exit an
+open position when a watchlist name outscores it by >= N AND the position is within M sessions
+of its time stop AND is flat-to-red. Today's pair (ADM 10 vs BMY entered-at-7, -0.47%, 2 sessions
+to time stop) clears any reasonable setting of both, which is what makes it a useful test case.
+
+**Process/infra standing item (unchanged, now 5 EOD misses).** The `caffeinate` fix in
+`scripts/run-routine.sh` is still uncommitted. BMY's time stop is Friday 2026-08-07; if that EOD
+run misses, Monday 08-10 market-open must fire the overdue sell (KMX 06-26 / PENG 07-16 /
+CCK 07-30 precedent).
