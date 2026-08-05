@@ -1,18 +1,34 @@
 # portfolio.md
-# Updated 2026-08-05 08:40 CT by market-open routine.
+# Updated 2026-08-05 11:10 CT by midday routine.
 
 ## Account
-- equity: 6881.84
+- equity: 6820.58
 - cash: 186.42
 - buying_power: 19492.84
-- day_pnl_pct: -2.23  # vs last_equity 7038.98
+- day_pnl_pct: -3.10  # vs last_equity 7038.98
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | -0.47              |
+| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | -1.37              |
 
 ## Notes
+2026-08-05 MIDDAY: 0 exits. BMY reconciled against Alpaca (104 sh, asset_class=us_equity → shares
+path). $63.79 = -1.37% vs entry $64.678846. Target +100% / stop -100% (FULL YOLO) both nowhere
+near. Time stop 2026-08-07 is EOD's job, not midday's, and is not due anyway.
+
+Thesis check per Grok: NOT broken. The only BMY coverage in the last 6h is continued cleanup of the
+AstraZeneca merger denial ("There is no deal... there never was a deal to be done, and there are no
+discussions"). No guidance cut, recall, lawsuit, regulatory reversal, or exec departure. This is the
+same non-thesis item the market-open note already dispositioned: the merger chatter started 08-02,
+two sessions AFTER our 07-31 entry on the Q2 beat ($2.04 vs $1.59) + FY26 guide raise, so its
+removal deflates a premium we never underwrote. Per the hard rule, "uncertain" is not a sell —
+only concrete named negative news is, and there is none.
+
+Drift note: the position gave back another ~0.9pt since the 08:40 open pass (-0.47% → -1.37%) and
+equity is now $6,820.58, WTD -2.43% vs Friday 07-31 close $6,990.11. Still a slow bleed, not a
+break. Halt checks CLEAR: daily -3.10% vs -100% cap; no cancel-all, no notify, no halt marker.
+
 2026-08-05 MARKET-OPEN: 0 sells, 0 buys. Market open, trading_blocked=false.
 
 BMY HOLD — no exit rule fired. $64.375 = -0.47% vs entry $64.678846. Target +100% / stop -100%
