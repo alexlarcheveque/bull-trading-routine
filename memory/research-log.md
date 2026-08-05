@@ -5394,3 +5394,92 @@ to time stop) clears any reasonable setting of both, which is what makes it a us
 `scripts/run-routine.sh` is still uncommitted. BMY's time stop is Friday 2026-08-07; if that EOD
 run misses, Monday 08-10 market-open must fire the overdue sell (KMX 06-26 / PENG 07-16 /
 CCK 07-30 precedent).
+
+### 2026-08-05 end-of-day
+
+**Result: 0 exits, 0 time-stops, 0 trades.** Market closed on schedule (16:00 ET). EOD cron RAN
+on time. Equity **$6,804.46** vs last_equity $7,038.98 = **-3.33%** on the day; cash $186.42;
+all-time **-93.20%** vs the $100k start.
+
+**Step 1 — time stops + expiry guard.** BMY 104 sh, entry $64.678846 (07-31), target_exit
+**2026-08-07**. Today is Wednesday 08-05 → time stop **NOT due**, two sessions left (Thu 08-06,
+Fri 08-07). Alpaca `asset_class=us_equity` → shares path, so the **expiry guard is n/a** (no
+options in the book). Safety-net re-check of the midday rules: close $63.63 = **-1.62%**, target
++100% no / stop -100% no / thesis **INTACT**. Grok was asked an 8h question that explicitly
+*excluded* M&A speculation and its denial, analyst actions and macro, and enumerated what would
+count (guidance cut, restatement, recall, failed or halted trial, CRL/rejection, adverse ruling,
+litigation loss, exec departure, credit downgrade) — none present. → **HOLD, no order.**
+
+**Step 2 — weekly loss cap.** WTD **-2.66%** ($6,990.11 Friday 07-31 close → $6,804.46) vs
+cap=-100% → **CLEAR.** No flatten, no PAUSED marker.
+
+**Day shape — the third straight fade.** $64.375 at the open (-0.47%) → $63.79 midday (-1.37%) →
+$63.63 at the close (-1.62%); equity $6,881.84 → $6,820.58 → $6,804.46. The 08-03 (+4.61%) and
+08-04 (+2.13%) merger-chatter pops are now **both fully repaid** and the position is below entry
+for the first time since 08-02. Consistent with the 08-03 lesson already logged: deal-chatter pops
+have no cash-flow anchor and round-trip. The Q2 beat-and-raise thesis the entry was underwritten
+on is untouched, so this is a bleed, not a break.
+
+**ADM POSTSCRIPT — the position cap was worth +5.19% today.**
+ADM **opened $81.85 and closed $77.60 = -5.19% intraday** (Yahoo consolidated daily bar; -2.84%
+vs the 08-04 close of $79.87). The score-10 candidate that `max_concurrent_positions: 1` blocked
+this morning would be **down ~5.2% tonight** had market-open bought it at the open per the entry
+rule.
+
+This matters because this morning's pre-market and market-open notes both escalated the cap to the
+weekly review as "the binding constraint on the entire book" and "the ONLY guardrail still
+contradicting FULL YOLO", proposing either (a) raising it or (b) a bounded rotation rule — and
+noted ADM(10) vs BMY(7-at-entry, flat, 2 sessions left) "clears any reasonable setting of both,
+making it the cleanest test case yet". **On the one day it was actually tested, the cap was right
+and the proposed rotation would have cost 5.2%.** BMY closed -1.62%; rotating into ADM would have
+closed -5.19%, a 3.6pt worse outcome on the day.
+
+This is one session and it does not settle the question — a 7-day hold is the unit of measurement,
+not an intraday print, and ADM's thesis (a +27.8% beat and a second FY guide raise) is not
+invalidated by one red day. But the weekly review must weigh **both** entries, not just the
+morning's framing. Carry ADM forward and score it again at the 08-07 and 08-12 closes so the
+comparison is made over the actual holding period the rule would have implied.
+
+**FRESHNESS GATE SCORED — 4 DQs today, all 4 SAVES.**
+Scored against the pre-market reference we refused to pay (logged this morning per the 08-04
+process-defect fix, which is now paying for itself):
+
+| ticker | DQ ref (08-05 pre-mkt) | 08-05 close | move | verdict |
+|--------|------------------------|-------------|------|---------|
+| ANET | $219.49 | $197.13 | **-10.19%** | SAVE (large) |
+| INSP | $63.63  | $60.11  | **-5.53%**  | SAVE |
+| PLTR | $160.11 | $158.47 | **-1.02%**  | SAVE |
+| CAT  | $879.78 | $871.66 | **-0.92%**  | SAVE |
+
+Running record ≈ **5 misses / 10 saves** (weekly review owns the exact tally).
+
+**ANET is the headline reversal.** This morning's log called it "a direct re-run" of the PLTR test
+case that embarrassed the gate on 08-04, and predicted the weekly review should watch it — it was
+a maximum-strength catalyst (EPS +15% beat, revenue +7.3% beat, THIRD FY guide raise to $12.6B,
+zero offsetting content) rejected purely on a +15.21% gap. It then **fell 10.19% from the price we
+declined**. The gate's premise ("a large gap means the second wave is already consumed") held
+exactly as designed on its most demanding case of the week.
+
+**PLTR is the caution against reading any single day.** DQ'd 08-04 at $145.87 → closed $162.46 =
+**MISS**. DQ'd again 08-05 at $160.11 → closed $158.47 = **SAVE**. Same name, same gate, opposite
+verdicts on consecutive sessions. Yesterday's EOD wrote that the gate "was wrong" and proposed
+letting catalyst strength 4 override the gap gate, or scaling the 4%/5% bars to the size of the
+beat. Today, catalyst-strength-4 names (ANET, CAT) are exactly the two that would have been let
+through by that proposal, and both closed red — ANET badly. **The proposed override would have
+been net-negative today.** The weekly review should score the gate on the ≥4-strength cohort over
+full 7-day holds rather than on whichever name moved most yesterday.
+
+**Research recap:** 15 candidates scanned, 1 met the ≥6 threshold (ADM 10 — highest composite this
+book has recorded). ON 5 and RVTY 5 below threshold; ANET/CAT/PLTR/INSP DQ'd on freshness;
+CISS/ZJYL/BJDX/INLF/JLHL filtered on market cap / no catalyst / not directional; LNTH stale + cash
+ceiling; MCD no guidance raise; BMY already held.
+
+**Trades:** none. `memory/trade-log.md` unchanged — no rows to append.
+
+EOD email sent (Resend **e95a163d**).
+
+**STANDING:** BMY time stop lands **Friday 2026-08-07**. EOD cron has **5 misses** to date and the
+caffeinate fix in `scripts/run-routine.sh` is **still uncommitted** (now joined by untracked
+AGENTS.md, .agents/, _raw/, _edited/). If the 08-07 EOD run misses, Monday **2026-08-10**
+market-open must fire the overdue sell (KMX 06-26 / PENG 07-16 / CCK 07-30 precedent — all three
+landed positive, but that is luck, not process).

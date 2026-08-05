@@ -1,18 +1,59 @@
 # portfolio.md
-# Updated 2026-08-05 11:10 CT by midday routine.
+# Updated 2026-08-05 15:05 CT by end-of-day routine.
 
 ## Account
-- equity: 6820.58
+- equity: 6804.46
 - cash: 186.42
-- buying_power: 19492.84
-- day_pnl_pct: -3.10  # vs last_equity 7038.98
+- buying_power: 19311.14
+- day_pnl_pct: -3.33  # vs last_equity 7038.98
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | -1.37              |
+| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | -1.62              |
 
 ## Notes
+2026-08-05 EOD: 0 exits, 0 time-stops. Equity $6,804.46, day -3.33%, all-time -93.20% vs $100k start.
+
+BMY HOLD. Closed $63.63 = -1.62% vs entry $64.678846. Time stop 2026-08-07 NOT due — today is
+Wednesday 08-05, two sessions left (Thu 08-06, Fri 08-07). No options in the book → expiry guard
+n/a. Safety-net re-check of the midday rules: target +100% no, stop -100% no, thesis INTACT per
+Grok (8h window, explicitly excluding M&A speculation/denial and analyst actions — no guidance cut,
+restatement, recall, failed trial, CRL, adverse ruling, litigation loss, exec departure, or credit
+downgrade).
+
+Third straight fade: $64.375 at the open (-0.47%) → $63.63 at the close (-1.62%). Both the 08-03
+(+4.61%) and 08-04 (+2.13%) merger-chatter pops are now fully repaid and the position sits below
+entry. Slow bleed, not a break — the 07-31 entry thesis (Q2 beat $2.04 vs $1.59 + FY26 guide raise)
+is untouched.
+
+Weekly loss cap: WTD -2.66% vs Friday 07-31 close $6,990.11, cap -100% → CLEAR. No flatten, no
+PAUSED marker.
+
+**ADM POSTSCRIPT — the position cap was worth +5.19% today.** ADM opened $81.85 and closed $77.60
+= -5.19% intraday. The score-10 candidate that `max_concurrent_positions: 1` blocked this morning
+would be down ~5.2% tonight. This morning's note called the cap "the binding constraint on the
+entire book" and asked the weekly review to raise it or add a rotation rule; today's tape argues
+the other side. One session is not evidence either way, but the weekly review must see both halves
+of the question, not just the open note's framing.
+
+**FRESHNESS GATE — 4 DQs today, all 4 SAVES** (scored vs the pre-market price we refused to pay):
+ANET $219.49 → $197.13 = -10.19% SAVE (large); INSP $63.63 → $60.11 = -5.53% SAVE; PLTR $160.11 →
+$158.47 = -1.02% SAVE; CAT $879.78 → $871.66 = -0.92% SAVE. Running record ≈ 5 misses / 10 saves.
+ANET was logged this morning as "a direct re-run" of the PLTR case that embarrassed the gate on
+08-04 (+11.37% after DQ) and it ran the opposite way by 10 points. PLTR itself is the caution:
+DQ'd 08-04 at $145.87 → closed $162.46 (MISS), DQ'd again 08-05 at $160.11 → closed $158.47 (SAVE).
+Same name, same gate, opposite verdicts on consecutive days — weight the cohort, not the anecdote,
+including yesterday's anecdote that drove yesterday's recommendation.
+
+EOD email sent (Resend e95a163d). EOD cron RAN on time.
+
+STANDING: BMY time stop lands Friday 2026-08-07. The EOD cron has 5 misses to date and the
+caffeinate fix in `scripts/run-routine.sh` is STILL uncommitted (joined by untracked AGENTS.md,
+.agents/, _raw/, _edited/). If the 08-07 EOD run misses, Monday 2026-08-10 market-open must fire
+the overdue sell (KMX 06-26 / PENG 07-16 / CCK 07-30 precedent — all three overdue sells landed
+positive, but that is luck, not process).
+
 2026-08-05 MIDDAY: 0 exits. BMY reconciled against Alpaca (104 sh, asset_class=us_equity → shares
 path). $63.79 = -1.37% vs entry $64.678846. Target +100% / stop -100% (FULL YOLO) both nowhere
 near. Time stop 2026-08-07 is EOD's job, not midday's, and is not due anyway.
@@ -60,20 +101,3 @@ do nothing and log the ambiguity"), we held and logged.
 
 Halt checks all CLEAR (and none would have mattered — the position cap bound first):
 daily -2.23% vs -100% cap; WTD -1.55% vs Friday 07-31 close $6,990.11, cap -100%.
-
-STANDING: BMY time stop lands Friday 2026-08-07. The EOD cron has 5 misses to date and the
-caffeinate fix in `scripts/run-routine.sh` is STILL uncommitted (now also joined by untracked
-AGENTS.md, .agents/, _raw/, _edited/). If the 08-07 EOD run misses, Monday 2026-08-10 market-open
-must fire the overdue sell (KMX 06-26 / PENG 07-16 / CCK 07-30 precedent — all three overdue
-sells still landed positive, but that is luck, not process).
-
-FOR THE WEEKLY REVIEW — the real finding of this session: a 10-score candidate was blocked by a
-flat, decaying position that had 2 sessions left on its clock. `max_concurrent_positions: 1` is
-the binding constraint on this book, and it is the one guardrail still set to a value that
-contradicts "FULL YOLO" everywhere else in guardrails.md (every other knob is 100). Worth deciding
-deliberately: either (a) raise the cap so a top-decile catalyst is never blocked by a stale
-position, or (b) add an explicit, bounded rotation rule to strategy.md's exit list — e.g. allow
-exit when a watchlist name outscores the open position by >= N AND the open position is within M
-sessions of its time stop AND is flat-to-red. Today ADM(10) vs BMY(7-at-entry, -0.47%, 2 sessions
-left) would have cleared both. Do NOT bolt this on mid-week — it is an exit-rule change and
-belongs in the weekly review with the ATKR/MRK precedent set in view.
