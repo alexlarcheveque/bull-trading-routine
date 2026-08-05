@@ -5192,3 +5192,160 @@ cron has **5 misses** to date and the caffeinate fix in `scripts/run-routine.sh`
 uncommitted** (still showing as modified in git status this session). If the 08-07 EOD run
 misses, Monday **2026-08-10** market-open must fire the overdue sell — KMX 06-26 / PENG 07-16 /
 CCK 07-30 precedent. Three overdue sells in six weeks is a pattern, not bad luck.
+
+---
+
+# 2026-08-05
+
+## Raw Grok output (verbatim)
+
+### Q1 — materially bullish news, US large-caps, last 24h
+
+**PLTR (Palantir Technologies)**: Q2 2026 earnings beat with 93% YoY revenue growth ("otherworldly" quarter per CEO); raised full-year 2026 revenue outlook. Stock surged ~29-30%. [spectrumlocalnews.com] [investopedia.com/stock-market-today-...-08042026] [barrons.com/livecoverage/stock-market-news-today-080426] (News broke after Aug 3 close; major moves reported Aug 4, 2026.)
+
+**CAT (Caterpillar)**: Q2 2026 earnings beat (adjusted EPS $8.17 vs. $6.25 consensus); record quarterly revenue >$20B on higher volume/pricing/strong orders/backlog. Stock rose ~5.5-5.6%. [spectrumlocalnews.com] [investopedia.com] [finance.yahoo.com/.../cat-q2-earnings-beat-estimates-172300586.html] (Moves on Aug 4, 2026.)
+
+**ON (ON Semiconductor)**: Q2 2026 earnings beat (adj. EPS $0.74 vs. $0.71 consensus) driven by AI data center growth; revenue/gross margin/EPS above guidance midpoint. [finance.yahoo.com/.../semiconductor-q2-2026-earnings-beat-121519010.html] (Reported Aug 4, 2026 timeframe.)
+
+**Additional notable beats** (large-cap US names, all >$2B market cap):
+- **RVTY (Revvity)**: Q2 beat + raised 2026 view on diagnostics strength. [finance.yahoo.com/.../rvty-q2-earnings-beat-estimates-190900509.html]
+- **INSP (Inspire Medical)**: Q2 beat + raised 2026 view. [finance.yahoo.com/.../inspire-medical-q2-earnings-beat-165800783.html]
+- **ADM (Archer Daniels Midland)**: Q2 beat on crushing/ethanol/oilseeds strength. [finance.yahoo.com/.../archer-daniels-q2-earnings-beat-182000039.html]
+
+Broader context: S&P 500/Dow hit records on Aug 4 amid widespread earnings beats and easing oil/geopolitical factors.
+
+### Q2 — pre-market movers 2026-08-05, up >2% on a real catalyst
+
+**CISS (C3is Inc.), ZJYL (Jin Medical International Ltd.), and ANET (Arista Networks) stand out among pre-market movers on August 5, 2026**, with gains exceeding 2% tied to specific news catalysts (primarily earnings/financial results and operational updates). [thestockcatalyst.com/NYSEPMMovers] [tradingview.com/markets/stocks-usa/market-movers-pre-market-gainers/] [stockanalysis.com/markets/premarket/]
+
+- **CISS**: Surged ~35-69% pre-market (volatile small-cap mover). Catalyst: Q1 2026 earnings — voyage revenues up 34% YoY to $11.6M, adjusted net income +358%, plus fleet expansion via two new product tanker acquisitions.
+- **ZJYL**: Rose ~48-63%+ pre-market/after-hours. Catalyst: unaudited H1 FY2026 results (ended March 31) — revenue DOWN 9.7% YoY to $8.9M, but improved gross margins (26.9% vs 24.3%) and 9.9% growth in wheelchair component sales. [benzinga.com/.../jin-medical-international-shares-surge-after-hours-on-financial-results]
+- **ANET**: Up ~14% pre-market. Catalyst: Q2 results with record revenue of $3.04B (beat estimates) and raised full-year outlook, driving it to a 52-week high. [benzinga.com/premarket]
+
+Other high-percentage movers (BJDX, INLF, JLHL, often 40%+) appear driven more by low-float/speculative trading without prominent news catalysts. Larger names like PLTR showed significant prior-day momentum from Q2 earnings but mixed or less dominant pre-market action on the 5th.
+
+### Q3 — beat AND raised guidance, released after yesterday's close
+
+**PLTR (Palantir) and CAT (Caterpillar) are the primary matches.** [cnbc.com/2026/08/03/palantir-pltr-earnings-q2-2026.html] [cnbc.com/2026/08/04/caterpillar-cat-q2-2026-earnings.html]
+
+- **PLTR**: Q2 2026 after the bell Aug 3. Adj. EPS $0.41 vs $0.35 expected (beat ~$0.06). Revenue $1.94B vs $1.80B expected. Raised FY2026 revenue guidance to $8.15B-$8.16B (from prior ~$7.65B; ~82% YoY growth) plus higher U.S. commercial target (>$3.424B at >=134% growth).
+- **CAT**: Q2 2026 on Aug 4 (pre-market). Adj. EPS $8.17 vs ~$6.20 expected (beat ~$1.97). Revenue $20.5B vs ~$19B-$19.3B expected. Raised FY2026 sales/revenue growth outlook to mid-to-high teens (AI data center and other demand).
+
+Other recent reporters (e.g. MCD) showed beats but did not clearly raise guidance.
+
+### Q4 — FDA / >$100M contracts / M&A / regulator decisions, last 24h
+
+**No qualifying events were published in the last 24 hours (approx Aug 4-5, 2026) affecting US-listed companies.** [fda.gov/drugs/novel-drug-approvals-fda/novel-drug-approvals-2026] [businesswire.com/newsroom/subject/merger-acquisition]
+
+- **M&A**: Curium announced a definitive agreement on August 3 to acquire Lantheus Holdings (NASDAQ: LNTH) for up to ~$8 billion ($102.50/share cash + CVRs). Falls OUTSIDE the 24-hour window. [reuters.com/legal/transactional/curium-buy-lantheus-up-8-billion-deal-2026-08-03/]
+- **FDA/PDUFA**: Decisions expected around August 5 (e.g. Moderna's mRNA-1010 influenza vaccine), but no approvals published in the period.
+- **Contracts**: No new >$100M wins reported.
+- **Regulator decisions**: No new FTC, DOJ, SEC rulings tied to US-listed firms in the timeframe.
+
+### Q5 — follow-up detail on ADM / ON / ANET (scoring inputs)
+
+**ADM (reported Aug 4, 2026)** [investors.adm.com/news/news-details/2026/ADM-Reports-Second-Quarter-2026-Results/]
+- Adjusted EPS $1.84 (GAAP $1.87) vs consensus ~$1.44 — beat by ~$0.40.
+- Revenue beat consensus by ~1.37%.
+- **Raised FY2026 adjusted EPS guidance to ~$5.15-$5.60 from prior $4.15-$4.70 (second raise).**
+- No major negatives, caveats or segment weakness noted; broad-based strength across Ag Services & Oilseeds (crush margins), Carbohydrate Solutions (ethanol) and Nutrition, driven by biofuels policy (RVO) and execution. No analyst downgrades in results coverage.
+
+**ON (onsemi; reported Aug 3/4, 2026)** [investor.onsemi.com/news-releases/.../onsemi-reports-second-quarter-2026-results/]
+- Non-GAAP diluted EPS $0.74 vs consensus ~$0.71-$0.72 — beat by ~$0.02-$0.03.
+- Revenue $1.6035B vs consensus ~$1.59B (slight beat; some reports note ~inline vs higher estimates like $1.64B).
+- **No full-year guidance update or change (maintained prior outlook).** Q3 revenue guided $1.65-$1.75B. Positive commentary on AI data-center revenue expected to more than double in 2026.
+- Minor mixed segment notes (automotive down slightly sequentially in one view, planned non-core exits).
+
+**ANET (reported Aug 4, 2026)** [investors.arista.com/.../Arista-Networks-Inc--Reports-Second-Quarter-2026-Financial-Results/]
+- Non-GAAP diluted EPS $1.02 (GAAP $0.95) vs consensus ~$0.88-$0.89 — beat by ~$0.13-$0.14.
+- Revenue $3.036B vs consensus ~$2.83B (significant beat).
+- **Raised FY2026 revenue guidance to $12.6B (40% growth; third upward revision, up from ~$11.5B in May).**
+- No negatives, caveats or weakness noted; broad-based growth (AI/enterprise/data center), record $3B+ quarter.
+
+### Q6 — market caps (Grok, Yahoo key-statistics sourced)
+
+CAT $375B (~460M sh) | ON $32B (~389M sh) | RVTY $12.6B (112M sh) | INSP $1.45B (~29M sh) | ADM $38B (482M sh) | ANET $227B (1.26B sh) | PLTR $295-301B (2.3B sh)
+
+## 2026-08-05 pre-market watchlist
+
+**DATA NOTE:** `alpaca.sh bars` truncates ~2 sessions short of today (it returns the FIRST N bars
+from its computed start date), and its IEX daily volumes run ~3% of consolidated (CAT 99.8k IEX vs
+3.65M real ADV) — unusable for the "above-average volume" confirmation test. Closes/volumes below
+are consolidated from Yahoo (same source `volume.sh` uses), and pre-market prices are Yahoo 5m
+prepost bars timestamped 08-05 08:00Z-10:46Z. Alpaca `quote` was echoing the 08-04 close for every
+name (no IEX pre-market prints), so it was NOT used for freshness.
+
+| ticker | score | catalyst (one line)                                                                 | source |
+|--------|-------|-------------------------------------------------------------------------------------|--------|
+| ADM    | 10    | Q2 adj EPS $1.84 vs $1.44 (+27.8%); FY26 EPS guide raised to $5.15-5.60 from $4.15-4.70 (+23% mid, 2nd raise) | investors.adm.com Q2-2026 release |
+
+**ADM score breakdown:** catalyst strength 4 (+27.8% EPS beat AND +23% FY EPS guidance raise,
+second raise of the year, broad-based across all three segments, structural RVO biofuels driver —
+directly changes forward cash flows) + novelty 3 (only +3.43% priced in since the pre-catalyst
+08-03 close of $78.06 → $80.74 pre-market, against a 5% non-mega-cap bar; a 23% guidance raise
+against a 3.4% price move is a large unclosed gap) + confirmation 2 (08-04 bar UP +2.31%
+$78.06→$79.87 on 5.07M shares vs 3.62M 30-day ADV = 1.40x, above average) + cleanliness 1 (no
+offsetting news, no halt, active/tradable, $80.74 inside $5-$1000, ADV 3.62M >> 100k floor, mcap
+$38B >> $1B floor, earnings-proximity guardrail is 0).
+
+**ADM instrument note for market-open:** call path is **INELIGIBLE** — `option-chain ADM call`
+returns 0 contracts in the 3-7 DTE window (08-08..08-12); nearest listed expiries are 2026-08-21
+(16 DTE) and 2026-09-18, both outside `option_max_days_to_expiry: 7`. Falls back to **SHARES**
+per KMX 06-18 / PENG 07-08 / CCK 07-22 precedent. Mcap $38B is under $100B so the mega-cap
+shares-only rule is not what forces it — the missing weekly expiry is.
+
+**Timing note:** ADM's catalyst hit 08-04 pre-market, so it is ~28h old at this write — a *day-2
+second-wave* entry, the same shape as CCK 07-22 and BMY 07-31, and consistent with the thesis
+("early-but-not-first on the second wave, not front-running the headline").
+
+Skipped (below threshold):
+- **ON** (score 5): catalyst 2 + novelty 2 + confirmation 0 + cleanliness 1. Only a ~3% EPS beat
+  ($0.74 vs $0.71-0.72), revenue roughly in line (below the higher $1.64B estimates), and **no FY
+  guidance raise** — maintained. Does not materially change forward cash flows. Confirmation 0:
+  strategy.md defines it as "price up ... *since the catalyst hit*" and ON is **-0.10%** since its
+  pre-catalyst 08-03 close ($80.40 → $80.32 pre-market), having given back the +0.47% 08-04 close.
+  (The 08-04 daily bar alone was up on 1.97x volume, which would read as 2 by the step-3 mechanism;
+  the strategy.md criterion governs and it fails.) Automotive down sequentially, non-core exits.
+- **RVTY** (score 5): catalyst 3 (Q2 beat + raised 2026 view) + novelty 2 + confirmation 0 +
+  cleanliness 0. The market **sold a beat-and-raise**: $115.22 → $111.39 on 08-04 (-3.32%) on
+  2.59M vs 1.59M ADV (1.63x, above average) and another -0.33% pre-market to $111.02, -3.65%
+  cumulative. Price down on above-average volume = confirmation 0; a beat-and-raise the tape
+  rejects implies offsetting content in the report/call = cleanliness 0. Fails the "directional"
+  test.
+
+Disqualified on the freshness / priced-in gate (reference prices logged so the gate is auditable
+at the weekly review — per the 08-04 process defect note):
+
+| ticker | mcap | bar | pre-catalyst ref | 08-05 pre-market | move consumed | verdict |
+|--------|------|-----|------------------|------------------|---------------|---------|
+| ANET | $227B | 4% (mega) | $190.51 (08-04 close, pre-earnings) | $219.49 | **+15.21%** | DQ — novelty 0 |
+| CAT  | $375B | 4% (mega) | $830.03 (08-03 close) | $879.78 | **+5.99%** | DQ — novelty 0 |
+| PLTR | ~$298B | 4% (mega) | $125.65 (08-03 close) | $160.11 | **+27.44%** | DQ — novelty 0, and catalyst is ~36h old (fails the 24h freshness test outright) |
+| INSP | ~$1.5-1.9B | 5% (non-mega) | $52.22 (08-03 close) | $63.63 | **+21.85%** | DQ — novelty 0 |
+
+Had they qualified, ANET would have scored catalyst strength 4 (EPS $1.02 vs $0.885 = +15%, rev
+$3.036B vs $2.83B = +7.3%, FY guide raised to $12.6B from ~$11.5B = +9.6%, THIRD raise, zero
+offsetting content) and CAT 4 (+31% EPS beat, record >$20B revenue, FY raised to mid-to-high-teens
+growth). **Both are max-strength catalysts blocked purely on gap size — the exact pattern the
+08-04 review flagged when PLTR was gated at +16.09% and then added another +11.37%.** ANET at
++15.21% is a direct re-run of that test case; the weekly review should track where ANET and CAT
+close today and this week against these reference prices.
+
+Also considered and rejected before scoring:
+- **CISS, ZJYL, BJDX, INLF, JLHL** — micro-cap/low-float; fail `min_market_cap_usd` ($1B) and the
+  low-float names have no real catalyst. ZJYL's "catalyst" is revenue **down** 9.7% YoY — not
+  directional.
+- **LNTH** (Curium $8B cash+CVR takeout) — announced 08-03, outside the 24h window, and a cash
+  deal is a hard price ceiling (ATKR precedent), so there is no second wave to catch.
+- **MCD** — beat without a guidance raise.
+- **BMY** — already held (portfolio.md), time stop 2026-08-07. No adding to winners.
+
+**Tradeable today: ADM (score 10).** Note that `max_concurrent_positions: 1` and
+`max_new_positions_per_day: 1` are both satisfied only if BMY has exited — BMY's time stop is
+**2026-08-07**, so at the 08-05 open the book is still full and market-open cannot add ADM without
+breaching the concurrency cap. ADM is on the list as the ranked candidate; **market-open must
+enforce the cap, not the score.**
+
+**STANDING (carried, 5 sessions out):** BMY time stop lands **Friday 2026-08-07**. EOD cron has
+**5 misses** to date and the caffeinate fix in `scripts/run-routine.sh` is **still uncommitted**.
+If the 08-07 EOD run misses, Monday **2026-08-10** market-open must fire the overdue sell.
