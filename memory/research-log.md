@@ -5659,3 +5659,77 @@ review should judge the cap on 7-day outcomes across the whole blocked cohort (A
 **For tomorrow's gate scoring**, the 08-06 reference prices to mark against the 08-06 close are:
 PAYC $200.00, QLYS $182.06, MSI $460.00, LLY $1,178.00 (DQ'd), and AXON $588.00, ALAB $320.00,
 DIS $101.67, PLNT $56.84 (below-threshold skips).
+
+## 2026-08-06 market-open execution pass
+
+**Result: 0 sells, 0 buys. HALT — position cap.**
+
+Bail-out checks: `clock.is_open=true`, `account.trading_blocked=false`. Proceeded.
+
+### Step 1 — Exits (BMY, the only position)
+
+Reconciled against Alpaca: BMY, `asset_class=us_equity` (shares path), 104 sh, avg entry
+$64.678846, entry 2026-07-31, target_exit 2026-08-07. Open-pass quote **$64.69 = +0.02%**.
+
+| rule | threshold | reading | fires? |
+|------|-----------|---------|--------|
+| profit target | >= +100% (`per_trade_target_pct`) | +0.02% | no |
+| stop loss | <= -100% (`per_trade_stop_pct`) | +0.02% | no |
+| thesis broken | Grok, material negative news 24h | **NONE** | no |
+| time stop | today >= 2026-08-07 | today = 2026-08-06 | no (EOD's job; 1 session left) |
+
+Grok thesis query explicitly excluded M&A speculation and analyst actions and returned **NONE** —
+no guidance cut, restatement, recall, failed trial, CRL, adverse ruling, litigation loss, exec
+departure, or credit downgrade. Only coverage in the window: cleanup of the 08-05 AstraZeneca
+merger *denial* (both excluded terms) and an analyst upgrade. Entry thesis (Q2 beat $2.04 vs
+$1.59 + FY26 guide raise) intact. **HOLD.**
+
+The merger-chatter cycle has fully round-tripped: 08-03 +4.61% → 08-04 +2.13% → 08-05 -1.62% →
+08-06 open +0.02%. Flat to entry with one session to the time stop.
+
+### Step 2 — Halt checks
+
+- daily P&L **+1.54%** (equity $6,908.46 vs last_equity $6,803.94) vs `daily_loss_cap_pct` -100% → CLEAR
+- WTD **-1.17%** vs Friday 07-31 close $6,990.11 vs `weekly_loss_cap_pct` -100% → CLEAR
+- **open positions 1 >= `max_concurrent_positions: 1` → FIRED. No new entries.**
+
+Per market-open.md, a fired halt means log, commit, exit — Step 3 was not evaluated.
+
+### Step 3 — Entries: NONE (blocked)
+
+All three names that cleared the >=6 threshold were blocked by the cap: **ALB 9, YOU 8, TAK 7**.
+Third consecutive session where research cleared the bar and the cap bound (ADM 10 on 08-05).
+Blocked cohort for the weekly review's 7-day scoring is now: **ADM (08-05), ALB / YOU / TAK (08-06)**.
+
+**Open-pass reference prices marked for that scoring: ALB $127.635, YOU $56.41, TAK $17.19.**
+
+### ALB — a scoring-input defect the cap happened to mask
+
+ALB was scored **novelty 3** on an after-hours print of $120.12, +1.08% vs the $118.84 close —
+"an almost entirely unconsumed band." It **opened at $127.635: +7.40% vs the 08-05 close, and
++6.26% above the very print the score was computed on.**
+
+Had the slot been free, this routine would have sent a 100%-of-equity order into a name whose
+5% freshness band was already 148% consumed. The position cap blocked a trade **the freshness
+rule would have rejected on its own** — if that rule had been evaluated against the opening
+print instead of a stale overnight quote.
+
+This is **not** evidence for or against `max_concurrent_positions`. It is a defect in *when*
+novelty is measured. Recommendation for the weekly review, logged separately from the cap
+question: **re-measure novelty against the opening print immediately before sending any order,
+and DQ the candidate if the band is consumed by then** — the pre-market score is a screen, not
+a fill-time authorization. The 08-06 pre-market block itself flagged the general form of this
+risk for MSI ("the AH print is 11 hours stale with pre-market since to extend") but applied the
+caution only to a DQ candidate, not to the top-ranked buy.
+
+TAK cut the other way and validates the pre-market note: it opened **$17.19, below** the $17.45
+after-hours print, exactly the ADR/Tokyo arbitrage the note predicted ("the second wave this book
+is trying to catch may be arbitraged away before the bell"). Soft-7 call was correct.
+
+### Step 4/5 — portfolio.md refreshed from Alpaca, committed.
+
+Equity $6,908.46 / cash $186.42 / buying_power $19,567.39. No orders sent, so no trade-log rows.
+
+**STANDING (unchanged, now urgent): BMY time stop lands tomorrow, Friday 2026-08-07.** The EOD
+cron has 5 misses to date and the caffeinate fix in `scripts/run-routine.sh` is still uncommitted.
+If the 08-07 EOD run misses, Monday 2026-08-10 market-open must fire the overdue sell.
