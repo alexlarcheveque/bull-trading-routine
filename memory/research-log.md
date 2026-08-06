@@ -5733,3 +5733,55 @@ Equity $6,908.46 / cash $186.42 / buying_power $19,567.39. No orders sent, so no
 **STANDING (unchanged, now urgent): BMY time stop lands tomorrow, Friday 2026-08-07.** The EOD
 cron has 5 misses to date and the caffeinate fix in `scripts/run-routine.sh` is still uncommitted.
 If the 08-07 EOD run misses, Monday 2026-08-10 market-open must fire the overdue sell.
+
+---
+
+## 2026-08-06 MIDDAY (11:10 CT / 12:10 ET) — defense pass
+
+Clock `is_open=true`. Reconciled to Alpaca: 1 position, BMY 104 sh, `asset_class=us_equity`
+→ shares path. 0 open orders.
+
+### Step 1 — Per-position exit check: NO EXITS
+
+| ticker | entry | current | return | stop | target | action |
+|--------|-------|---------|--------|------|--------|--------|
+| BMY | $64.678846 | $63.535 | **-1.77%** | -100% | +100% | HOLD |
+
+Neither price band is live. Under FULL YOLO (`per_trade_stop_pct: 100`), a -1.77% drawdown is
+1.8% of the distance to a stop that only fires on a wipeout — the price rules are effectively
+inert for a shares position, and the thesis check is doing all the real work.
+
+**Thesis check — NOT BROKEN (Grok: NONE).** Prompt named the disqualifying event classes
+explicitly and excluded M&A rumor/denial and analyst actions by construction. Grok returned
+NONE with two citations, both in the excluded set: MarketScreener re-confirming there are **no**
+AstraZeneca/BMY discussions, and a MarketBeat consensus-rating note. Per the routine's hard rule,
+uncertainty does not sell — only concrete named negative news does, and there is none. The 07-31
+entry thesis (Q2 EPS $2.04 vs $1.59 consensus + FY26 guide raise) stands into session six.
+
+### Step 2 — Daily loss cap: CLEAR
+
+`day_pnl = (6797.70 - 6803.94) / 6803.94 = -0.09%` vs `daily_loss_cap_pct: 100`. No cancel-all,
+no notify, no halt marker. WTD -2.75% vs the 07-31 close $6,990.11 is likewise far inside the
+100% weekly cap.
+
+### The number worth flagging: a $110.76 mark-down with zero trades
+
+Equity went $6,908.46 (08:40 open pass) → $6,797.70 (midday) on no order flow. All of it is BMY
+marking from the $64.69 open print to $63.535. The open pass logged "day_pnl +1.54%", and that
+figure was never a realized gain — `last_equity` is the 08-05 close, so the same position now
+reads -0.09% on the day. **Intraday equity snapshots in these notes are marks, not P&L**; the
+weekly review should not read the open-pass +1.54% and the midday -0.09% as a 1.6pt intraday
+loss event. Today's actual BMY move is -0.15% vs the prior close. It is drift, not a break.
+
+The early-week merger-chatter pop is now fully repaid: 08-03 +4.61% → 08-04 +2.13% → 08-05
+-1.62% → 08-06 open -0.07% → midday -1.77%.
+
+### Not evaluated here, by design
+
+Time stop and expiry guard are the end-of-day routine's job. Midday opens nothing — the three
+names blocked this morning (ALB 9, YOU 8, TAK 7) stay blocked, and the cap question remains
+one for the weekly review's 7-day cohort scoring, not for a defense pass.
+
+**STANDING (unchanged, now one session out): BMY's time stop lands tomorrow, Friday 2026-08-07.**
+5 EOD cron misses to date; the caffeinate fix in `scripts/run-routine.sh` is still uncommitted.
+If the 08-07 EOD run misses, Monday 2026-08-10 market-open must fire the overdue sell.
