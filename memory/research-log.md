@@ -5785,3 +5785,35 @@ one for the weekly review's 7-day cohort scoring, not for a defense pass.
 **STANDING (unchanged, now one session out): BMY's time stop lands tomorrow, Friday 2026-08-07.**
 5 EOD cron misses to date; the caffeinate fix in `scripts/run-routine.sh` is still uncommitted.
 If the 08-07 EOD run misses, Monday 2026-08-10 market-open must fire the overdue sell.
+
+## 2026-08-06 EOD — DEGRADED RUN (no enforcement pass)
+
+launchd fired end-of-day at 13:00:33 PDT vs the scheduled 12:55. Market closed 13:00:00 PDT,
+so `clock.is_open` was `false` and the routine bailed out per its own rule. No time-stop,
+expiry-guard, stop/target, or thesis enforcement ran.
+
+Consequence today: **none.** No exit was due — BMY time stop is 08-07, no options held,
+-0.82% vs a -100% stop, thesis intact per midday. WTD -1.89% vs 100% cap → clear.
+Equity $6,858.02, day +0.79%, cash $186.42, 1 open position (BMY 104 sh).
+
+EOD email sent anyway, flagged DEGRADED (Resend 2ea883b2).
+
+**Full EOD reliability audit (59 runs, logs/end-of-day-*.log): 20 failures, ~34%.**
+Two distinct modes, and the standing note in portfolio.md had the attribution wrong:
+
+- Late start past close (11): 06-26, 06-29, 06-30, 07-01, 07-07, 07-08, 07-20, 07-23,
+  07-24, 07-30, 08-06. launchd defers the 12:55 job past the 13:00 close. `caffeinate`
+  does NOT fix this — it only holds the machine awake during a run.
+- Died mid-run (9): 05-14, 05-18, 05-29, 06-11, 06-25, 07-02, 07-03, 07-13, 07-15.
+  On-time start, no END line, killed on machine sleep. This IS the `caffeinate -is` mode,
+  and it caused all three overdue sells (06-25→KMX, 07-15→PENG, 07-29→CCK).
+
+Structural finding: market-open.md:29 and midday.md:23 both defer time stop + expiry guard
+to EOD, making EOD a **single point of failure** with a ~34% miss rate.
+
+NEXT SESSION RISK: 2026-08-07 is BMY's time-stop day. If EOD misses again, Monday 08-10
+market-open must fire the overdue sell.
+
+Recommended but NOT applied (outside EOD remit): commit the caffeinate fix in
+scripts/run-routine.sh; move the EOD plist to 12:40; drop ProcessType Background; add a
+market-open time-stop backstop.
