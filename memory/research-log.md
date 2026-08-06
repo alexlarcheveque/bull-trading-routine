@@ -5483,3 +5483,179 @@ caffeinate fix in `scripts/run-routine.sh` is **still uncommitted** (now joined 
 AGENTS.md, .agents/, _raw/, _edited/). If the 08-07 EOD run misses, Monday **2026-08-10**
 market-open must fire the overdue sell (KMX 06-26 / PENG 07-16 / CCK 07-30 precedent — all three
 landed positive, but that is luck, not process).
+
+---
+
+# 2026-08-06 pre-market research pass
+
+## Step 1 — raw Grok output (verbatim)
+
+### Q1: "What materially bullish news hit US large-cap equities (>$2B market cap) in the last 24 hours? Cite sources. List ticker, catalyst, source, timestamp."
+
+**LLY (Eli Lilly, ~$1T market cap):** Q2 2026 earnings beat (EPS $8.38 vs. consensus, revenue +47.7% YoY to $22.97B vs. $20.69B est.), with strong Mounjaro/Zepbound growth and raised FY2026 revenue guidance above consensus. Stock rose ~5% pre-open.[[1]](https://www.schwab.com/learn/story/stock-market-update-open) (Schwab stock market update, Aug 5, 2026).
+
+**DIS (Walt Disney, large-cap):** Q2 earnings beat (EPS +$0.20 vs. consensus), with revenues in line and fiscal 2026 guidance reaffirmed; entertainment/theme parks performed well. Stock rose ~3% pre-open.[[1]](https://www.schwab.com/learn/story/stock-market-update-open) (Schwab stock market update, Aug 5, 2026).
+
+**AXON (Axon Enterprise, ~$49B market cap):** Q2 2026 beat (revenue $904.3M vs. $876.5M est., +35% YoY; non-GAAP EPS $1.88 vs. $1.83 est.), with FY2026 revenue guidance raised to 32–34% YoY (from 30–32%). Strong backlog/ARR growth noted.[[2]](https://x.com/CrescensFuturum/status/2085312929704841275) (X post, Aug 6, 2026, ~10:32 GMT).
+
+**PLNT (Planet Fitness, ~$4.5B market cap):** Q2 beat (revenue $365.2M vs. $356M est.; adj. EPS $0.88 vs. $0.85 est.), with FY2026 EPS growth guide raised to ~6% (from ~4%) and share buybacks.[[3]](https://x.com/StocksDaily/status/2085313674391310434) (X post, Aug 6, 2026, ~10:35 GMT).
+
+Broader context: U.S. equities (including large-caps) closed sharply higher on Aug 5 amid AI/earnings momentum and lower oil/geopolitical easing, with Nasdaq +2.6%.[[4]](https://finance.yahoo.com/markets/stocks/articles/stock-market-news-aug-5-100300808.html) AMD/SpaceX showed mixed reactions (beats but stock pressure noted). No other major large-cap catalysts (> $2B mkt cap) stood out in results.
+
+### Q2: "Pre-market movers 2026-08-06: tickers up >2% in pre-market on actual news catalyst (not just gap-fill). Cite sources."
+
+**PAYC (Paycom) and MSI (Motorola Solutions) stand out as larger-cap pre-market gainers (>2%) on August 6, 2026, driven by Q2 2026 earnings beats and/or raised guidance reported after the prior close.**[[1]](https://www.investing.com/equities/pre-market)[[2]](https://finance.yahoo.com/quote/PAYC/)
+
+- **PAYC**: Up ~13% in pre-market (to ~$198). Delivered strong Q2 results with $531M revenue and $2.78 EPS, beating expectations.[[2]](https://finance.yahoo.com/quote/PAYC/)
+- **MSI**: Up ~9% in pre-market (to ~$479–480 range). Reported robust Q2 results (13% YoY revenue growth, adjusted EPS $4.41 beat) and raised full-year guidance.[[3]](https://finance.yahoo.com/quote/MSI/)[[4]](https://www.cnn.com/markets/stocks/MSI)
+
+Other notable pre-market gainers from aggregator lists (e.g., Investing.com, Benzinga, StockAnalysis) include NSC (~+11%), WST (~+8%), ALB (~+4.6%), and NWS (~+4%), alongside smaller/more volatile names like WYHG, CLRO, PAVS, and SURG (often 50–100%+ moves).[[1]](https://www.investing.com/equities/pre-market)[[5]](https://www.benzinga.com/premarket)[[6]](https://stockanalysis.com/markets/premarket/) These smaller names frequently lack clear, substantive news catalysts and are more prone to low-float volatility, pumps, or gap-filling rather than fundamental developments. Larger movers like NSC appear tied to recent or ongoing earnings/M&A context, but confirmation is strongest for the earnings-driven names above.[[7]](https://finance.yahoo.com/quote/NSC/)
+
+Data is time-sensitive and drawn from pre-market snapshots as of ~Aug 6, 2026 morning ET; always verify live quotes and full news releases. Sources include aggregator sites and direct earnings coverage.
+
+### Q3: "Earnings reports released after yesterday's close that beat AND raised guidance. Ticker, the beat number, the raise number, source."
+
+**ALAB (Astera Labs), QLYS (Qualys), and YOU (Clear Secure) reported Q2 2026 results around/after the Aug 5, 2026 close that beat estimates and included raised guidance.**[[1]](https://www.investors.com/news/technology/astera-labs-alab-stock-q2-2026-earnings/)[[2]](https://investor.qualys.com/static-files/47b96fd7-7199-450c-abab-bbbcbb22c56f)[[3]](https://www.marketbeat.com/stocks/NYSE/YOU/earnings/)
+
+- **ALAB**: Q2 non-GAAP EPS $0.80 (beat by +$0.11 vs. $0.69 est.); revenue $392.4M (beat by +$31.55M vs. ~$360.9M est.). Raised Q3 2026 guidance well above prior Street expectations (e.g., ~$550M rev / $1.19 EPS midpoint vs. ~$417M / $0.81 est.). Sources: Company IR release and Investor's Business Daily.[[1]](https://www.investors.com/news/technology/astera-labs-alab-stock-q2-2026-earnings/)[[4]](https://www.marketbeat.com/earnings/reports/2026-8-4-astera-labs-inc-stock/)
+- **QLYS**: Q2 non-GAAP EPS $1.98 (beat by +$0.20 vs. $1.78 est.); revenue $182.2M (beat vs. ~$178.6M est.). Raised FY2026 revenue guidance to $732–738M (from $721–727M) and non-GAAP EPS to $7.74–7.88 (from $7.44–7.65). Sources: Company IR and Yahoo Finance/Zacks.[[2]](https://investor.qualys.com/static-files/47b96fd7-7199-450c-abab-bbbcbb22c56f)[[5]](https://site.financialmodelingprep.com/market-news/qualys-qlys-q2-2026-earnings-beat-cybersecurity-growth-soars)
+- **YOU**: Q2 EPS $0.49 (beat by +$0.09 vs. $0.40 est.); revenue $277.8M (beat vs. $269.71M est.). Raised full-year guidance (details in earnings materials). Source: MarketBeat earnings report.[[3]](https://www.marketbeat.com/stocks/NYSE/YOU/earnings/)
+
+Other recent mentions (e.g., A10 Networks/ATEN or Chipotle/CMG) exist but had less precise timing confirmation relative to the Aug 5 close. No comprehensive list of all post-close releases was available in results; these are the clearest matches from recent coverage.
+
+### Q4: "FDA approvals, large contract wins (>$100M), M&A announcements, or regulator decisions published in the last 24 hours affecting any US-listed company."
+
+**FDA approvals (last ~24 hours, as of Aug 6, 2026):**
+
+- **Takeda (NYSE: TAK)**: FDA approved ORZEYFUL (oveporexton), an oral orexin receptor 2 agonist, for narcolepsy type 1 (NT1) in adults. This is the first approved medicine to treat the underlying cause of NT1 holistically (rather than symptoms only) and the first orexin agonist approved in the US for this indication.[[1]](https://www.businesswire.com/news/home/20260805760759/en/U.S.-FDA-Approves-Takedas-ORZEYFUL-oveporexton-the-First-and-Only-Medicine-to-Treat-the-Underlying-Cause-of-Narcolepsy-Type-1)[[4]](https://www.statnews.com/2026/08/05/takeda-narcolepsy-drug-fda-approval-orzeyful/)
+- **Reckitt**: FDA approved Mucinex 12HR Cold & Fever Multi-Symptom (OTC), the first new OTC innovation in the cold/flu category in 14 years.[[5]](https://www.reckitt.com/us/news/reckitt-announces-us-fda-approval-of-mucinex-12hr-cold-fever-multi-symptom-the-first-otc-innovation-in-the-cold-flu-category-in-14-years/)
+
+**M&A announcements:**
+
+- **Hearst to acquire Disney's (NYSE: DIS) 50% stake in A+E Global Media** for ~$1.2 billion in cash. The deal (announced ~Aug 4) gives Hearst full ownership of the parent of A&E, History, Lifetime, etc.; it is expected to close in September.[[2]](https://variety.com/2026/tv/news/hearst-ae-global-media-disney-purchase-complete-1236827794/)[[6]](https://www.reuters.com/legal/transactional/disney-exits-ae-media-conglomerate-hearst-gains-full-ownership-12-billion-deal-2026-08-04/)
+
+**Large contract wins (>$100M):** No qualifying announcements identified in the last 24 hours.
+
+**Regulator decisions:**
+
+- **SEC**: On Aug 5, established a new Financial Reporting and Accounting Unit within its Enforcement Division to focus on related matters affecting public companies.[[3]](https://www.sec.gov/newsroom/press-releases)
+
+Moderna's (NASDAQ: MRNA) mRNA-1010 influenza vaccine had a PDUFA target date of Aug 5, 2026, but no approval/rejection decision was confirmed in results. No other major events matching the criteria were identified.
+
+## Step 2–3 — filtering and scoring notes
+
+**Universe filters applied.** All 14 news-sourced tickers returned `active/tradable/us_equity` from
+`alpaca.sh asset` and cleared `min_avg_daily_volume_shares: 100_000` on real consolidated 30-day ADV
+(`volume.sh`): LLY 2.91M, DIS 11.64M, AXON 985k, PLNT 1.74M, PAYC 851k, MSI 945k, NSC 1.09M, WST 849k,
+ALB 2.36M, NWS 1.40M, ALAB 5.10M, QLYS 861k, YOU 1.43M, TAK 3.79M. BMY excluded (already held).
+Low-float names Grok itself flagged as pumps (WYHG, CLRO, PAVS, SURG) filtered on no-catalyst +
+market cap. Reckitt filtered (not US-listed). MRNA filtered (PDUFA date passed with NO confirmed
+decision — not directional). SEC enforcement-unit item is not a ticker.
+
+**LLY also fails a hard guardrail independent of freshness:** $1,169.86 > `max_price_per_share: 1000`.
+
+**Price data caveat — Alpaca IEX quotes were stale.** At 06:40 ET `alpaca.sh quote` returned the
+2026-08-05 regular closes for all 14 names (no pre-market prints). Yahoo returned NO 2026-08-06
+pre-market bars at any interval. **The freshness gate was therefore scored against the 2026-08-05
+after-hours prints (23:55Z / 19:55 ET)** — which for the after-close reporters (AXON, PAYC, MSI, ALB)
+IS the post-catalyst reaction, and is the best tape available. Grok's screener read of the live
+Aug-6 pre-market is logged alongside where it differs.
+
+**Catalyst timing verified before scoring** (this reordered the board):
+after Aug-5 close → AXON, PAYC, MSI, ALB. Aug-6 pre-open → PLNT. Aug-5 pre-open → LLY, DIS, YOU.
+Aug-4 after close → QLYS, ALAB. Aug-5 (FDA, evening) → TAK. NSC last reported Jul 23; WST last
+reported Apr 23.
+
+**Two scores moved materially on primary-source verification — the X-post numbers were misleading:**
+
+- **PLNT 8 → 5.** The X post's "FY26 EPS growth guide raised to ~6% from ~4%" is arithmetic, not a
+  raise. Per the company IR release: revenue growth ~7% and adj EBITDA growth ~6% were **REITERATED**;
+  the EPS-growth uptick comes entirely from a lower share count (~77M vs ~79M, i.e. buybacks); and
+  the underlying guidance got **worse** — adjusted net income decline deepened to ~3% (from ~2%) and
+  net interest expense rose to ~$115M (from ~$111M). No forward cash-flow delta; the delta is
+  negative. Strength 1, cleanliness 0.
+- **ALB 8 → 9.** Secondary sources (newsquawk/benzinga) said "FY sales reaffirmed $5.70–6.00B." The
+  primary IR release says otherwise: adj EBITDA **$858.1M, +155% YoY**; Specialties outlook **RAISED**
+  to $1.4–1.6B sales / $275–325M EBITDA (from $1.3–1.5B / $225–275M, +22% EBITDA at midpoint); capex
+  **CUT** ~15% to ~$500M on capital efficiency; $710M Q2 operating cash flow. No impairments,
+  restructuring, or curtailments. Only negative is a Talison CGP3 fire with stated minimal volume impact.
+
+**AXON scored 5 despite a maximum-strength print — the tape rejected it.** Revenue $904M (+35% YoY,
+10th straight quarter >30%), EPS $1.88 vs ~$1.52, ARR +39% to $1.6B, NRR 126%, FY guide raised to
+32–34%. It then fell ~3.5% into the evening (~6.5% at the after-hours low, ~$570) on near-term cost
+pressure and valuation concerns. Confirmation 0, cleanliness 0. Scoring the headline instead of the
+tape here is precisely the INTC 07-24 / MRK 07-17 failure mode; novelty on a print the market has
+already priced *downward* is 1, not 3.
+
+## 2026-08-06 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                              | source          |
+|--------|-------|--------------------------------------------------------------------------------------------------|-----------------|
+| ALB    | 9     | Q2 rev $1.743B +31% YoY (vs ~$1.61B est), adj EPS $3.75 vs ~$3.20, adj EBITDA $858.1M +155% YoY; Specialties guide RAISED to $275–325M EBITDA, capex CUT 15% | albemarle.com/prnewswire |
+| YOU    | 8     | Q2 EPS $0.49 vs $0.40 est (+22.5%), rev $277.8M vs $269.7M; FY26 free-cash-flow guide RAISED to ≥$480M from ≥$465M | prnewswire.com  |
+| TAK    | 7     | FDA approved ORZEYFUL (oveporexton) for narcolepsy type 1 — first and only medicine treating the underlying cause, first US orexin agonist | businesswire/statnews |
+
+Score detail (catalyst / novelty / confirmation / cleanliness):
+- **ALB 9** = 4 / 3 / 1 / 1. Beat both lines, segment guide raised, capex cut, EBITDA +155% → strength 4.
+  Only +1.08% priced in after hours ($118.84 → $120.12) against a 5% bar → novelty 3. Confirmation held
+  to 1: the 08-05 regular session was **-1.64% into the print** on 1.26x ADV, so the only post-catalyst
+  print is thin after-hours tape, not an up-move on above-average volume. Clean release → 1.
+- **YOU 8** = 3 / 3 / 1 / 1. Confirmed beat plus an FCF raise — free cash flow is a direct forward
+  cash-flow metric, which is what strategy.md calls material — but revenue and EBITDA guidance were
+  left unchanged and the raise is ~$15M on a ~$5B cap, so strength caps at 3. Novelty 3: **the beat is
+  ~24h old and the stock has moved only +1.31%** of a 5% band. Confirmation 1 and not 2: the +1.31%
+  came on **3.55x ADV** (3.99M vs 1.12M) — heavy two-sided churn, not clean accumulation — and it gave
+  back -0.60% after hours. No offsetting news → 1.
+- **TAK 7** = 4 / 1 / 1 / 1. First-in-class oral orexin agonist approval is a genuine strength-4
+  catalyst. Novelty only 1: **+4.37% is already in** ($16.72 → $17.45 after hours), consuming 87% of the
+  5% band. **Caveat the market-open pass must weigh: TAK is an ADR whose ordinary shares trade in Tokyo,
+  and the Tokyo session has already closed having repriced this approval.** The US open will gap to
+  parity with Tokyo, so the "second wave" this book is trying to catch may be arbitraged away before
+  the bell. Treat the 7 as soft.
+
+Skipped (below threshold):
+- **AXON (score 5)**: strength-4 print (rev +35%, FY guide raised to 32–34%) but the stock fell ~3.5%
+  after hours (~-6.5% at the low) on near-term cost pressure — confirmation 0, cleanliness 0.
+- **DIS (score 5)**: EPS beat +$0.20 but revenue only in line and FY26 guidance **reaffirmed, not
+  raised** → strength 2. Already +3.65% on 1.86x ADV, consuming 91% of the 4% mega-cap band → novelty 0.
+  The $1.2B A+E stake sale is ~0.7% of market cap — immaterial.
+- **ALAB (score 5)**: beat and a large Q3 raise (~$550M vs ~$417M est) reported 08-04, then **-11.96%**
+  on 08-05 on 2.03x ADV. A 2-day-old print the market rejected hard: novelty 1, confirmation 0,
+  cleanliness 0.
+- **PLNT (score 5)**: see above — revenue and EBITDA guidance reiterated, adj net income decline
+  deepened to ~3% from ~2%, interest expense raised; the "EPS raise" is buyback share-count math.
+- **NWS (unscoreable)**: reported 08-05 but no beat/miss figures or guidance action confirmable from
+  any source. Not scored rather than guessed.
+
+DQ'd on the freshness gate (reference price = last print at DQ time, for tomorrow's gate scoring):
+- **PAYC $200.00** (+14.42% vs $174.80 close) — Q2 beat, but ~3x past the 5% bar. Grok screener: ~+13% to ~$198.
+- **QLYS $182.06** (+13.78% on 08-05, $161.06 → $183.25, on 2.17x ADV) — real beat-and-raise, band fully consumed.
+- **MSI $460.00** (+4.99% vs $438.14 close) — **gate call, logged as such.** The after-hours print is
+  0.01pt under the 5% bar, but the independent screener read was ~+9% (~$479–480) and the AH print is
+  11 hours stale with pre-market since to extend. Two readings at or above the bar → DQ.
+- **LLY $1,178.00** (+5.59% vs pre-catalyst $1,115.68, mega-cap 4% bar) — **also fails
+  `max_price_per_share: 1000` outright**, so it is out on a hard guardrail regardless of the gate.
+
+Filtered before scoring (no catalyst):
+- **NSC, WST** — appeared on pre-market gainer screens at ~+11% and ~+8%, but Grok confirmed **NO
+  CATALYST**: NSC last reported Jul 23, WST last reported Apr 23, and neither published corporate news
+  in the last 24h. Both showed **0.00% after-hours movement** on the tape, contradicting the screener.
+  Aggregator noise, not signal — a useful reminder that gainer-list scraping is not a catalyst source.
+
+**Tradeable: 3 names clear the ≥6 threshold (ALB 9, YOU 8, TAK 7). Recommended rank: ALB > YOU > TAK.**
+ALB leads on primary-source confirmation, the largest verified forward delta, and an almost entirely
+unconsumed band. YOU is the cleaner "mispriced second wave" setup but a smaller raise. TAK is soft for
+the ADR/Tokyo reason above.
+
+**POSITION CAP — all three are blocked today.** `max_concurrent_positions: 1` and BMY holds the only
+slot until its time stop lands **Friday 2026-08-07**. This is the second consecutive session where
+research cleared the threshold and the cap bound (ADM 10 on 08-05). Logging both halves per the 08-05
+EOD instruction and explicitly **not** re-escalating on one day's framing: on 08-05 the cap was
+*correct* — ADM opened $81.85 and closed $77.60 (-5.19%) while BMY lost only 1.62%, so rotating would
+have cost ~3.6pt. Today's names are a fresh test, not additional evidence for either side. The weekly
+review should judge the cap on 7-day outcomes across the whole blocked cohort (ADM 08-05, ALB/YOU/TAK
+08-06), not on any single session.
+
+**For tomorrow's gate scoring**, the 08-06 reference prices to mark against the 08-06 close are:
+PAYC $200.00, QLYS $182.06, MSI $460.00, LLY $1,178.00 (DQ'd), and AXON $588.00, ALAB $320.00,
+DIS $101.67, PLNT $56.84 (below-threshold skips).
