@@ -6132,3 +6132,94 @@ cost. Separately, the position cap bound for a **fifth** straight session (08-05
 1-position book can absorb, and missed time stops extend the blockage.
 
 - EOD email sent (Resend `0ec81529-78da-45c9-bdd4-25d918b5cdb0`).
+
+---
+
+## 2026-08-07 weekly review
+
+WTD **-1.07%** ($6,990.11 -> $6,915.22) vs SPY **+3.53%** (746.79 -> 773.16) = **-4.60pp**.
+**0 trades closed**, 0 orders sent, 0 preflight rejections (no order was ever eligible to be
+*constructed* — the position cap blocked upstream of preflight all five sessions). The entire
+week's P&L is BMY drifting $65.42 -> $64.70. Win rate / avg winner / avg loser / avg hold: n/a.
+0 stop-outs (per_trade_stop_pct=100 is unreachable for shares). 0 time-stops fired — **1 OVERDUE**.
+
+**2 STRATEGY EDITS MADE** (the weekly maximum). Both reversible — revert these two blocks in
+`memory/strategy.md` if next week is worse:
+
+1. **`## Exit rules`** — added: an **overdue** time stop (`target_exit_date` strictly in the past)
+   is enforced by whichever routine sees it first, including market-open. Stops due *today* still
+   defer to EOD, so `market-open.md:29` / `midday.md:19` keep their carve-out and no routine faces
+   the ambiguity that produced today's do-nothing outcome. **This codifies existing precedent**
+   (KMX 06-26, PENG 07-16, CCK 07-30 were all sold at the next open on this logic) rather than
+   inventing a rule. Trigger: BMY 08-07 is the 4th overdue sell in seven weeks and the first to
+   carry a weekend at 97.3% of equity, because EOD fired at 13:05:18 PDT — 5 min past the close —
+   and bailed. **REVERT IF:** market-open starts firing time stops that EOD would have handled
+   better, or the earlier exit measurably costs return vs the EOD fill.
+
+2. **`## Signal scoring`** — added: verify candidates against the company's own IR release before
+   scoring anything >= 6. Evidence: PLNT 8 -> 5 on primary-source check (the "EPS raise" was
+   buyback share-count math; underlying guidance had *worsened*) then fell **-12.02%** — the best
+   decision of the week; ALB 8 -> 9 (secondaries said "reaffirmed", release showed a raised segment
+   guide + 15% capex cut) then rose **+4.24%**. The rule was in use since 08-06 but existed only as
+   a research-log note, never in strategy.md. **REVERT IF:** verification latency starts costing
+   fills at the open, or scores stop moving on the check.
+
+**REJECTED — the 08-04 EOD call to re-derive the mega-cap freshness bar "from scratch."** Full-week
+audit of every DQ with a logged reference price, marked to the 08-07 close: PLTR +17.91% (miss),
+AMRC -10.04%, ANET -14.06%, CAT -4.26%, INSP -5.33% (saves), PAYC +7.56% (miss), QLYS +0.72%,
+MSI +1.64% (marginal). **Mean outcome of a freshness DQ: -0.73%** — the gate is slightly ADDITIVE.
+3 misses / 5 saves; cumulative across three reviews ~7-8 misses / 10-11 saves. The 08-04 note was
+built on PLTR alone; re-deriving a rule from its single worst case is overfitting. **NO EDIT to the
+4%/5% bars.** (BLZE and LLY excluded from the tally — both failed a hard guardrail first, the $1B
+cap floor and `max_price_per_share: 1000` respectively, so neither scores the gate.)
+
+**VERDICT ON `max_concurrent_positions: 1`** (portfolio.md asked for one explicitly). Five straight
+sessions had a >= 6 candidate blocked. Marked from the signal-day open to the 08-07 close:
+ADM 10 **-5.68%**, ALB 9 +4.24%, YOU 8 **-9.33%**, LNG 8 -3.05%, TAK 7 +1.99%. **Cohort mean
+-2.37%**, or **-4.02%** excluding ALB (which the open-print re-check would have DQ'd anyway at
++7.40%). BMY, holding the slot, did -1.10%. **Rotating into any of them would have lost money** —
+ADM and YOU would have been the worst trades of the month. **The cap was correct this week; do not
+raise it on this evidence.** It is a guardrails knob and human-only regardless. What is actually
+costing this book is a 35%-failure-rate cron being the sole gate on the exit, not the cap.
+
+**Rubric ordering: unanswerable this week.** Score rank ADM 10 > ALB 9 > YOU 8 = LNG 8 > TAK 7 vs
+return rank ALB > TAK > LNG > ADM > YOU, Spearman **rho = -0.08** — top scorer 4th of 5, bottom
+scorer 2nd of 5. n=5 over 1-3 trading days, nowhere near the 5-session hold the review asks for.
+Noise, not signal. NO EDIT.
+
+**Rejections were sound.** 13 below-threshold skips averaged +2.51% (+0.70% ex-IONQ) against SPY's
++3.53% — *every* rejection bucket underperformed the index. ATKR pinned within 0.29% of its cash
+deal price for five sessions exactly as the 08-03 note predicted; AXON -2.76% (scored the tape, not
+the headline). **The one real miss: IONQ +24.18%** — scored 4 on 08-03 (acquirer-side FTC clearance
+= weak cash-flow delta, +13.9% already run, confirmation 0), then ripped on quantum momentum rather
+than on the catalyst we declined. Correctly-reasoned-but-wrong; a rubric that catches it also buys
+every momentum name with a press release. No rule change.
+
+**WATCH ITEM for next review — the novelty-3 fade.** The two worst blocked names both scored
+**novelty 3 on a small pre-market move and then gapped up and faded from the open** (ADM $81.19 ->
+$77.58 same session -4.4%; YOU $56.60 -> $52.99 same session -6.4%), while both positives had
+heavily-consumed bands (ALB opened +7.40% past its bar; TAK novelty 1, 87% consumed). That inverts
+the premise of novelty scoring — a small pre-market move may be the market *declining to pay up*
+rather than an unconsumed second wave. Two weeks running, the novelty/freshness axis is where the
+misses cluster. n=2, so no edit. **If next week repeats (novelty-3 names fading from the open while
+consumed-band names hold), propose an open-to-close confirmation requirement then.**
+
+**QUEUED EDIT FOR NEXT WEEK (wanted it this week, blocked by the max-two cap):** require every
+freshness DQ to log its reference price. **9 of 19 freshness DQs this week (47%) are unauditable** —
+AMZN on 08-04, then DOCS/TEAM/FIGS/NTRA/NET/AKAM/MCHP/ABNB on 08-07. The 08-04 EOD note flagged
+this exact defect; it recurred three days later at 8x the scale. The gate cannot be judged on data
+that was never written down.
+
+**ESCALATION — 4th consecutive session, still unapplied, needs a human.** Outside this routine's
+remit (weekly review may edit strategy.md only): (1) commit the `caffeinate -is` fix in
+`scripts/run-routine.sh`; (2) move the EOD launchd trigger 12:55 -> 12:40 PDT (absorbs every late
+start on record incl. today's 10m18s deferral); (3) drop `ProcessType Background` from
+`com.bull-trading.end-of-day.plist` — that key is what licenses the deferral; (4) add the matching
+time-stop backstop line to `routines/market-open.md` (edit 1 above gives it strategy.md's backing;
+the routine file still needs it).
+
+**MONDAY 2026-08-10 NEEDS NO DECISION: market-open must sell BMY.** `target_exit 2026-08-07` will
+be strictly in the past, and strategy.md now says so explicitly. Resume Monday with current
+strategy — no `weekly_loss_cap` flatten occurred (-1.07% vs a -100% cap).
+
+- Weekly review email sent (Resend `6097d61e-0da0-4d6e-904b-3dfb0ccdbae2`).

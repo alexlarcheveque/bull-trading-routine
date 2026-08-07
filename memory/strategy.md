@@ -58,6 +58,15 @@ Each candidate gets a composite score:
 - **Cleanliness** (0–1): no offsetting bad news, no halts, and passes the current
   earnings-proximity guardrail?
 
+**Verify against the company's own IR release before scoring.** Any candidate heading for
+a score ≥ 6 must have its beat/raise numbers confirmed against the primary source (company
+IR / Business Wire / PR Newswire release), not an X post, screener, or secondary aggregator.
+Score the primary source when they disagree. Two names moved materially on this check in one
+session: PLNT 8 → 5 (the "EPS guide raise" was buyback share-count math and the underlying
+guidance had gotten *worse*) and ALB 8 → 9 (secondaries said "reaffirmed"; the release showed
+a raised segment guide and a 15% capex cut). PLNT then fell -12.0% and ALB rose +4.2%. [added
+2026-08-07 weekly review]
+
 FULL YOLO paper-video threshold: score ≥ 6 trades. If nothing scores ≥ 6, **we do
 not trade today**. Cash is still a position when there is no named, directional
 corporate catalyst.
@@ -120,6 +129,16 @@ with a trailing `option` arg; shares use `quote` / `sell` and preflight `equity`
 
 The midday routine enforces stop / target / thesis (both instruments). The end-of-day
 routine enforces time stop + expiry guard, and re-checks the rest as a safety net.
+
+**OVERDUE time stops are enforced by whichever routine sees them first, including
+market-open.** If `target_exit_date` is **strictly in the past** (not merely due today),
+the position is sold at the first opportunity by any routine that runs — the end-of-day
+carve-out does not apply to a stop that is already late. A stop due *today* still defers
+to end-of-day as before. Rationale: EOD is a single point of failure with a ~35% miss
+rate (21 of 60 runs), and this is already the de-facto practice — KMX 06-26, PENG 07-16
+and CCK 07-30 were each sold at the next market-open on exactly this logic. BMY 08-07 is
+the fourth instance and the first to carry over a weekend at 97% of equity. [added
+2026-08-07 weekly review]
 
 ## What "best 14-day returns" means for journaling
 
