@@ -6010,3 +6010,60 @@ to accrue for the weekly review. The pattern now has enough samples to be worth 
 research is generating qualifying candidates faster than a 1-position book can absorb them, and
 the binding constraint is compounded by EOD's ~34% failure rate holding positions past their
 time stop. **Add LNG to the blocked cohort at $264.06 for 7-day scoring (through 2026-08-14).**
+
+---
+
+## 2026-08-07 midday — 0 exits, day_pnl +0.24%
+
+Market open (`is_open: true`). Reconciled clean: Alpaca shows the single BMY position that
+portfolio.md records — 104 sh @ $64.678846, `asset_class: us_equity` → shares path.
+
+### Step 1 — Per-position exit check: BMY holds
+
+- **Price $64.29**, trade timestamp `2026-08-07T16:07:39Z` — a genuine live print, not a stale
+  prior-close. (The ALB 08-06 / LNG 08-07 stale-quote discipline was applied before scoring.)
+- **Return = (64.29 - 64.678846) / 64.678846 = -0.60%.**
+  - Stop: -0.60% vs `per_trade_stop_pct: 100` → **no fire.**
+  - Target: -0.60% vs `per_trade_target_pct: 100` → **no fire.**
+- **Thesis: intact.** Grok's 6-hour scan returned no guidance cut, recall, lawsuit, regulatory
+  reversal, or exec departure. The one fresh BMY-adjacent headline is *bullish*: Replimune's
+  RP1 (Tudriqev) took FDA accelerated approval 08-06 **in combination with BMY's Opdivo**,
+  which supports Opdivo utilization. The AstraZeneca-merger-denial item is the Aug 5 story
+  already dispositioned at market-open — not new, and never part of the entry thesis (the
+  07-30 Q2 beat $2.04 vs $1.59 + FY26 guide raise is untouched).
+- Per the hard rule, no sell without a concrete named negative. **Held.**
+
+### Step 2 — Daily loss cap
+
+- Day P&L **+0.24%** (equity $6,874.66 vs last_equity $6,858.02) — cap is `daily_loss_cap_pct:
+  100`. **Clear, no halt marker.** Equity is up $43.94 since the 08-37 market-open snapshot.
+- No unfilled orders outstanding (all recent orders `filled`/`canceled`), so nothing for
+  `cancel-all` to do even had the cap fired.
+
+### Escalation carried forward, NOT actioned by midday
+
+**BMY's time stop (target_exit 2026-08-07) is due today and midday did not fire it.** This is
+deliberate, not an oversight: `routines/midday.md:19` states *"Time stop + expiry guard are
+end-of-day's job, not midday's"*, and `strategy.md:121-122` agrees. Midday's hard rule confines
+it to stop/target/thesis. Firing the time stop here would have been the same unilateral
+application of the 08-06 EOD recommendation #4 that market-open declined this morning — and
+that note is still marked *"NOT applied, needs a human."* Two routines have now deferred it on
+the same reasoning, which is consistent, but it means **nothing between now and the close will
+act on BMY except the EOD run.**
+
+Restating the risk with today's numbers, because the window has narrowed by half a session:
+- EOD has failed **20 of 59 runs (~34%)**, in two modes (late start past close; died mid-run).
+- Today is **Friday** — a miss costs **three calendar days**, not one.
+- **If the 08-07 EOD run misses, Monday 2026-08-10 market-open must fire the overdue BMY sell**
+  (KMX 06-26 / PENG 07-16 / CCK 07-30 precedent — all three closed positive, which is luck,
+  not process).
+- The four STANDING 08-06 EOD recommendations remain unapplied and still need a human:
+  commit the `caffeinate -is` fix in `scripts/run-routine.sh`; move the EOD launchd trigger
+  earlier (12:55, or 12:40 to absorb all 11 late starts); drop `ProcessType Background`; and
+  add a time-stop backstop to market-open.md.
+
+**Structural note for the weekly review:** the blocked-cohort tally is unchanged at five
+consecutive sessions (08-05 ADM 10, 08-06 ALB 9 / YOU 8 / TAK 7, 08-07 LNG 8). Midday adds no
+new candidate by design, but it is worth recording that the cap kept binding through midday —
+BMY sat at -0.60% consuming the entire book while LNG, which cleared its gap ceiling at
+$264.06 this morning, went untraded. LNG 7-day scoring runs through 2026-08-14.
