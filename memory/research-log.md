@@ -5938,3 +5938,75 @@ LNG's pre-catalyst reference is the **Aug 5 close $254.76**. The 5% priced-in ba
 ### Position-cap context (not a trade instruction)
 
 `max_concurrent_positions: 1` and BMY is still open, so a new LNG entry is only reachable if BMY's time stop (**due today, 2026-08-07**) actually fires first. If it clears, this would be the fourth consecutive session where research produced a >= 6 candidate; on 08-05 (ADM 10) and 08-06 (ALB 9 / YOU 8 / TAK 7) the cap bound and nothing was bought. Blocked-cohort 7-day scoring for the weekly review continues to accrue.
+
+## 2026-08-07 market-open execution
+
+**Result: 0 buys, 0 sells.** Market open (`is_open: true`, fired 08:30:14 CT), `trading_blocked: false`.
+
+### Step 1 — Exits: BMY held, no rule fired at market-open
+
+| check | threshold | actual | fires? |
+|-------|-----------|--------|--------|
+| profit target | >= +100% | -0.70% | no |
+| stop loss | <= -100% | -0.70% | no |
+| thesis broken | Grok on name | intact | no |
+| time stop | today >= 2026-08-07 | **TODAY** | **deferred to EOD** |
+
+BMY $64.225 vs entry $64.678846 = **-0.70%**, nowhere near the FULL YOLO +/-100% bands.
+
+**Thesis check (Grok):** the only negative in 24h is an Aug 6 report that BMY and AstraZeneca
+are **not** in merger talks, debunking an Aug 3 rumor (-1.4% pre-market on Aug 6). That rumor
+was **never part of our entry thesis** — we bought the 07-30 Q2 beat ($2.04 vs $1.59) + FY26
+guide raise (rev $49-50B, EPS $6.75-7.00). A merger we never underwrote failing to materialize
+does not break a fundamentals thesis. No lawsuits, FDA actions, or guidance cuts surfaced.
+**Thesis intact — no thesis-broken sell.**
+
+### ⚠️ ROUTINE CONFLICT LOGGED: BMY time stop is due TODAY and market-open did not fire it
+
+`target_exit_date = 2026-08-07` = today. The two governing documents disagree on who enforces it:
+
+- `routines/market-open.md:29` — *"(Time stop + expiry guard are enforced in end-of-day, not here.)"*
+- `.claude/skills/bull/prompts/decision.md:21` — Step 1 asks *"Hit stop, target, broken thesis, or time stop?"*
+- `memory/strategy.md:122` — *"The end-of-day routine enforces time stop + expiry guard."*
+
+Two of three sources put the time stop at EOD, and market-open's carve-out is explicit and
+specific to this routine. Per decision.md's own tiebreaker (*"If anything is ambiguous, do
+nothing and log the ambiguity in research-log.md for the weekly review"*), **market-open took
+no action and logged it here.** Firing the sell would have meant applying, unilaterally,
+recommendation #4 from the 08-06 EOD note — which that note explicitly marked *"NOT applied,
+needs a human."*
+
+**This is the exact single-point-of-failure the 08-06 EOD run escalated, now live:**
+- Today's EOD run must sell BMY on the time stop. EOD has failed **20 of 59 runs (~34%)**.
+- Today is **Friday**. A miss does not cost one session — BMY drifts through the weekend to
+  **Monday 2026-08-10 market-open**, per the KMX 06-26 / PENG 07-16 / CCK 07-30 overdue-sell
+  precedent (all three landed positive, but that is luck, not process).
+- **If the 08-07 EOD run misses, Monday 08-10 market-open must fire the overdue BMY sell.**
+
+### Step 2 — Halt checks
+
+- Day P&L **+0.11%** (equity $6,865.82 vs last_equity $6,858.02) — cap is -100%. Clear.
+- WTD **-1.85%** vs the 07-31 close $6,990.11 — cap is -100%. Clear.
+- **Open positions 1 >= `max_concurrent_positions: 1` → NO NEW ENTRIES.** This is the binding
+  constraint today.
+
+### Step 3 — Entries: LNG passed the freshness re-check but was blocked by the position cap
+
+LNG **survived** the gap-sanity ceiling that pre-market flagged as its most likely cause of death:
+
+- Opening print **$264.06** (09:31:22 ET) vs the hard ceiling **$267.50**. Band consumed =
+  ($264.06 - $254.76) / $254.76 = **+3.65%** against the 5% bar (market cap ~$57B < $100B, so
+  5% applies, not 4%). **~1.35pp of headroom left — it cleared with room to spare.**
+- Note the pre-market quote $265.41 was a **stale Aug 6 close print**; the first two polls
+  returned it before the tape updated. The ALB 08-06 discipline held: we re-polled until a
+  genuine 2026-08-07 timestamp appeared rather than scoring the stale print.
+
+So the score-8 candidate was **fully tradeable on its own merits and was not bought** — the
+only thing stopping it was `max_concurrent_positions: 1` with BMY still open on its time-stop day.
+
+**Fifth consecutive session where research produced a >= 6 candidate and the cap bound:**
+08-05 ADM 10, 08-06 ALB 9 / YOU 8 / TAK 7, 08-07 LNG 8. Blocked-cohort 7-day scoring continues
+to accrue for the weekly review. The pattern now has enough samples to be worth a real verdict:
+research is generating qualifying candidates faster than a 1-position book can absorb them, and
+the binding constraint is compounded by EOD's ~34% failure rate holding positions past their
+time stop. **Add LNG to the blocked cohort at $264.06 for 7-day scoring (through 2026-08-14).**

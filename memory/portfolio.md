@@ -1,59 +1,55 @@
 # portfolio.md
-# Updated 2026-08-06 13:05 PDT by end-of-day routine (DEGRADED — see notes).
+# Updated 2026-08-07 08:37 CT by market-open routine.
 
 ## Account
-- equity: 6858.02
+- equity: 6830.72
 - cash: 186.42
-- buying_power: 19426.16
-- day_pnl_pct: +0.79  # vs last_equity 6803.94
+- buying_power: 19349.72
+- day_pnl_pct: -0.40  # vs last_equity 6858.02
 
 ## Open positions
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | -0.82              |
+| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | -1.22              |
 
 ## Notes
-2026-08-06 EOD: **DEGRADED RUN — no enforcement pass executed.** 0 exits, 0 time-stops.
+2026-08-07 market-open: **0 buys, 0 sells.** Market open and healthy (`trading_blocked: false`).
 
-launchd fired end-of-day at **13:00:33 PDT** instead of the scheduled 12:55. The market
-closed at 13:00:00 PDT, so `clock.is_open` was already `false` and the routine's bail-out
-tripped 33 seconds too late. Time stop, expiry guard, and the stop/target/thesis safety net
-all skipped.
+**BMY held — no exit rule fired at market-open.** -1.22% is nowhere near the +/-100% FULL YOLO
+bands. Thesis intact: Grok's only 24h negative is an Aug 6 report that BMY and AstraZeneca are
+*not* in merger talks (debunking an Aug 3 rumor). We never underwrote that merger — the entry
+thesis is the 07-30 Q2 beat ($2.04 vs $1.59) + FY26 guide raise, which is untouched.
 
-**Nothing was lost today.** No exit was due: BMY's time stop is 08-07 (tomorrow, not today),
-no options are held so the expiry guard is n/a, -0.82% is nowhere near the -100% stop /
-+100% target, and midday confirmed the thesis intact. Weekly cap clear: WTD -1.89% vs the
-07-31 close $6,990.11, cap 100%.
+**⚠️ BMY'S TIME STOP IS DUE TODAY (target_exit 2026-08-07) AND MARKET-OPEN DID NOT FIRE IT.**
+`routines/market-open.md:29` explicitly carves the time stop out ("enforced in end-of-day, not
+here"), and `strategy.md:122` agrees; only `decision.md:21` includes it in the market-open step.
+Given the conflict, market-open followed decision.md's own tiebreaker — do nothing, log the
+ambiguity for the weekly review — rather than unilaterally applying recommendation #4 from the
+08-06 EOD note, which that note marked "NOT applied, needs a human."
 
-BMY closed **$64.15 vs entry $64.678846 = -0.82%**, recovering from the -1.77% midday mark.
-Day P&L is **+0.79%** (equity $6,858.02 vs last_equity $6,803.94) — the position marked back
-up into the close. Six sessions held, thesis (Q2 beat $2.04 vs $1.59 + FY26 guide raise)
-untouched.
+**TODAY'S EOD RUN IS THE ONLY THING STANDING BETWEEN BMY AND A WEEKEND OF UNMANAGED DRIFT.**
+EOD has failed **20 of 59 runs (~34%)**, in two modes (late start past close; died mid-run).
+Today is **Friday** — a miss costs three calendar days, not one. **If the 08-07 EOD run misses,
+Monday 2026-08-10 market-open must fire the overdue BMY sell** (KMX 06-26 / PENG 07-16 /
+CCK 07-30 precedent).
 
-**STANDING — CORRECTED ROOT CAUSE.** The prior note blamed the uncommitted `caffeinate` fix
-for the EOD misses. That is only half right, and the half it gets wrong is the half that hit
-today. Full log audit, 59 EOD runs, **20 failures (~34%)**, two distinct modes:
+**LNG (score 8) passed its freshness re-check and was still not bought.** It opened **$264.06**
+vs the hard gap ceiling **$267.50** — band consumed +3.65% against the 5% bar, ~1.35pp of
+headroom. Pre-market had flagged that ceiling as the most likely way the candidate would die;
+it cleared. The sole blocker was **`max_concurrent_positions: 1` with BMY still open.**
+(The first two quote polls returned a stale Aug 6 close print of $265.41 — the ALB 08-06
+discipline held and we re-polled to a genuine 08-07 timestamp before scoring.)
 
-- **Late start past close (11 runs):** 06-26, 06-29, 06-30, 07-01, 07-07, 07-08, 07-20,
-  07-23, 07-24, 07-30, 08-06. launchd defers the 12:55 job; anything past 13:00:00 PDT lands
-  after the close and force-bails. **`caffeinate` does NOT fix this mode** — it only holds the
-  machine awake *during* a run, it cannot make launchd fire on time.
-- **Died mid-run (9 runs):** 05-14, 05-18, 05-29, 06-11, 06-25, 07-02, 07-03, 07-13, 07-15.
-  Started on time, no END line — process killed when the machine slept. **This is the mode
-  `caffeinate -is` actually fixes**, and it is the mode behind all three overdue sells
-  (06-25→KMX 06-26, 07-15→PENG 07-16, 07-29→CCK 07-30).
+**Fifth consecutive session where a >= 6 candidate was produced and the position cap bound:**
+08-05 ADM 10, 08-06 ALB 9 / YOU 8 / TAK 7, 08-07 LNG 8. Research is generating qualifying
+candidates faster than a 1-position book absorbs them, and EOD's ~34% miss rate compounds it by
+holding names past their time stop. This deserves a real verdict at the weekly review, not
+another line in the blocked cohort.
 
-**EOD is a single point of failure for the time stop** — `routines/market-open.md:29` and
-`routines/midday.md:23` both explicitly defer time stop + expiry guard to EOD. A ~34% miss
-rate on the only routine that enforces exits is the standing structural risk in this system.
-
-**TOMORROW 2026-08-07 IS BMY'S TIME-STOP DAY.** Both failure modes are live. If the 08-07 EOD
-run misses, **Monday 2026-08-10 market-open must fire the overdue BMY sell** (KMX/PENG/CCK
-precedent — all three landed positive, but that is luck, not process).
-
-Recommended (NOT applied — outside EOD's remit, needs a human):
+**STANDING (unchanged from 08-06 EOD, still NOT applied — needs a human):**
 1. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` (still uncommitted).
-2. Move EOD earlier in `~/Library/LaunchAgents/com.bull-trading.end-of-day.plist` — 12:55
-   gives a 5-minute buffer; 12:40 would have absorbed all 11 late starts.
+2. Move EOD earlier in `~/Library/LaunchAgents/com.bull-trading.end-of-day.plist` — 12:55 gives
+   a 5-minute buffer; 12:40 would have absorbed all 11 late starts.
 3. Drop `ProcessType Background` from that plist (invites launchd throttling/deferral).
-4. Add a time-stop backstop to market-open.md so EOD stops being a single point of failure.
+4. Add a time-stop backstop to market-open.md so EOD stops being a single point of failure —
+   today is precisely the scenario that motivates it.
