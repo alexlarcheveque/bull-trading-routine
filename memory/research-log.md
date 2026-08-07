@@ -6067,3 +6067,68 @@ consecutive sessions (08-05 ADM 10, 08-06 ALB 9 / YOU 8 / TAK 7, 08-07 LNG 8). M
 new candidate by design, but it is worth recording that the cap kept binding through midday —
 BMY sat at -0.60% consuming the entire book while LNG, which cleared its gap ceiling at
 $264.06 this morning, went untraded. LNG 7-day scoring runs through 2026-08-14.
+
+## 2026-08-07 EOD — DEGRADED RUN (ran after the close; BMY time stop UNFIRED)
+
+**Bail-out taken.** `clock.is_open = false` at routine start. launchd fired
+**13:05:18 PDT = 16:05 ET**, five minutes after the 16:00 ET close. Per
+`routines/end-of-day.md` the routine exits without trading. **No orders placed, none
+possible.** This is failure mode #1 (late start past close) for the **21st time in 60
+runs (~35%)** — identical to 08-06.
+
+### The cushion was too thin, and that is measurable
+
+The 12:55 PDT trigger buys exactly a 5-minute cushion before the close. launchd deferred
+the job **10m18s** today, so the cushion was never going to hold. `ProcessType Background`
+in the plist is what licenses that deferral. Both were flagged on 08-06 and remain unapplied.
+
+### BMY: time stop due today, unfired, into a three-day weekend
+
+Every gate behaved correctly and every gate deferred to this run:
+- **market-open** declined — `routines/market-open.md:29` carves the time stop out.
+- **midday** declined — `routines/midday.md:19` + `strategy.md:121-122` scope it to EOD.
+- **end-of-day** could not act — market already closed when the routine started.
+
+No routine misbehaved. The *design* failed: an overdue-today time stop had exactly one
+gate with the authority to act, and that gate has a ~35% miss rate.
+
+- Position: **104 BMY @ $64.678846 → $64.70 (+0.03%)**, market value **$6,728.80 =
+  97.3% of equity**. Unmanaged, no stop, until Monday 2026-08-10 09:30 ET.
+- Account: equity **$6,915.22**, cash **$186.42**, day **+0.83%** (vs last_equity
+  $6,858.02), all-time **-93.08%** vs the $100k start.
+- Day P&L +0.83% vs `daily_loss_cap_pct: 100` — clear, no halt. WTD well inside
+  `weekly_loss_cap_pct` — no flatten. Step 2 not triggered.
+- Safety-net re-check not run against live quotes (market closed); last live read was
+  midday's -0.60%, and the 16:00 close print of $64.70 is +0.03% vs entry — nowhere near
+  the ±100% FULL YOLO bands. Nothing but the time stop was ever going to fire today.
+
+### Monday is unambiguous — no human decision required
+
+On **2026-08-10** `target_exit 2026-08-07` is strictly in the **past**. The
+market-open carve-out only defers stops due *today*; an **overdue** stop is covered by
+both `market-open.md` Step 1 and `decision.md:20-21`, which agree. **Monday market-open
+must fire the overdue BMY sell** — KMX 06-26 / PENG 07-16 / CCK 07-30 precedent. All
+three of those closed positive, which is luck, not process; this is the fourth time the
+book has been carried past a time stop by a missed EOD.
+
+### STANDING recommendations — third consecutive escalation, still NOT applied
+
+Items 2 and 3 would have prevented today outright. Out of EOD's mandate to self-apply
+(EOD trades and journals; it does not rewrite its own scheduler or routine specs), so
+these continue to need a human:
+
+1. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` — still uncommitted in the
+   working tree.
+2. **Move the EOD launchd trigger 12:55 → 12:40 PDT.** Absorbs every late start on
+   record including today's 10m18s. Highest value, lowest risk.
+3. **Drop `ProcessType Background`** from `com.bull-trading.end-of-day.plist`.
+4. Add a time-stop backstop to `market-open.md` so EOD is not a single point of failure.
+
+**Verdict for the weekly review:** at a ~35% EOD miss rate the 14-day time stop is not
+enforced, it is *approximated* — held roughly two sessions in three and patched by the
+next market-open. Four consecutive positive outcomes on those patches have hidden the
+cost. Separately, the position cap bound for a **fifth** straight session (08-05 ADM 10,
+08-06 ALB 9 / YOU 8 / TAK 7, 08-07 LNG 8) — research is qualifying names faster than a
+1-position book can absorb, and missed time stops extend the blockage.
+
+- EOD email sent (Resend `0ec81529-78da-45c9-bdd4-25d918b5cdb0`).
