@@ -5817,3 +5817,124 @@ market-open must fire the overdue sell.
 Recommended but NOT applied (outside EOD remit): commit the caffeinate fix in
 scripts/run-routine.sh; move the EOD plist to 12:40; drop ProcessType Background; add a
 market-open time-stop backstop.
+
+---
+
+# 2026-08-07 pre-market research pass
+
+## Raw Grok output (verbatim)
+
+### Q1 — materially bullish news, US large-caps, last 24h
+
+**Key materially bullish developments for US large-cap equities (market cap >>$2B) in the ~last 24 hours (primarily Aug 6, 2026, reports and reactions as of Aug 7):**
+
+- **NET (Cloudflare)**: Raised full-year 2026 revenue guidance to $2.86–2.87B (above prior guidance of $2.805–2.813B and consensus ~$2.81B) citing strong AI-driven demand; shares rose ~18% after hours. (reuters.com/business/cloudflare-raises-annual-outlook-above-market-estimates-ai-driven-demand-2026-08-06/) (Large-cap; AI/cloud infrastructure catalyst.)
+- **MCHP (Microchip Technology)**: Issued upbeat Q3 revenue forecast of $1.59–1.62B (above consensus ~$1.55B) on strong demand/bookings. (wtvbam.com/2026/08/06/microchip-tech-forecasts-upbeat-quarterly-revenue-on-strong-demand/) (Large-cap semiconductor; demand recovery/AI-related.)
+- **TEAM (Atlassian)**: Beat quarterly estimates, driven by strong cloud demand. (reuters.com) (Large-cap software/cloud; positive earnings reaction.)
+
+**Additional context from very recent (Aug 4–6) reports with ongoing market impact:**
+- **CAT (Caterpillar)**: Q2 2026 beat (sales +24% YoY to $20.5B; adjusted EPS $8.17) with raised full-year sales/revenue growth outlook (mid- to high-teens, aided by data center/AI power demand) and record backlog. (caterpillar.com/en/news/corporate-press-releases/h/2q26-results-caterpillar-inc.html; bloomberg.com/news/articles/2026-08-04/caterpillar-profit-tops-estimates-as-power-unit-extends-growth)
+- Mentions of strength in names like **NVDA** (SpaceX exclusive AI chip use) and earlier beats/upgrades in semis (e.g., MU, MRVL) and others (e.g., DOOR) appeared in coverage overlapping the period. (schwab.com/learn/story/stock-market-update-open)
+
+These are primarily earnings/guidance beats or AI/cloud/data-center demand catalysts. Broader market commentary noted strong earnings season momentum (majority of S&P 500 beats). (cnbc.com/2026/08/03/stock-market-today-live-updates.html)
+
+### Q2 — pre-market movers 2026-08-07, up >2% on a news catalyst
+
+**Notable pre-market gainers (>2%) on August 7, 2026, tied to news/earnings catalysts (primarily after-hours or overnight releases on Aug 6):** (investing.com/equities/pre-market)
+
+- **DOCS (Doximity)**: Up ~70-87% (various sources show ~$35–39 range pre-market). Reported fiscal Q1 2027 results (ended June 30, 2026) after close on Aug 6, with revenue of $156.6M (+7% YoY) and strong non-GAAP metrics/margins. (stocktitan.net/news/DOCS/; marketwatch.com/tools/screener/premarket)
+- **ABNB (Airbnb)**: Up ~8% (to ~$164). Beat Q2 2026 EPS ($1.37 vs. $1.26 est.) and revenue ($3.61B vs. $3.58B est.), with raised full-year guidance amid strong travel demand. (marketbeat.com/stocks/NASDAQ/ABNB/earnings/; finance.yahoo.com/quote/ABNB/)
+- **AKAM (Akamai Technologies)**: Up ~14% (to ~$136). Reported Q2 2026 results (revenue +5% YoY to $1.1B) and launched Workforce Protector AI security product. (finance.yahoo.com/quote/AKAM/)
+
+Other pre-market gainers cited in aggregate lists (e.g., MCHP, FSLR, AON, GLW) often reflect earnings reactions or sector moves but lack highly specific overnight catalysts in top results. (investing.com/equities/pre-market)
+
+**Notes**: Extreme movers (e.g., MB, NAMI, DSY up 70–300%+) typically involve smaller/micro-cap names reacting to announcements, filings, or speculation; these are frequently excluded here as lower-conviction or less "established news" driven. Pre-market data is volatile and time-sensitive; always verify real-time quotes and full news.
+
+### Q3 — beat AND raised guidance, released after yesterday's close
+
+**NTRA (Natera), DDOG (Datadog), CEG (Constellation Energy), FIGS, and LNG (Cheniere Energy)** reported Q2 2026 results on or around August 6, 2026 (after the prior close or morning release), with EPS/revenue beats and raised full-year guidance. (investing.com; marketbeat.com; public.com)
+
+- **NTRA**: Q2 revenue ~$753M vs. ~$662M consensus (~13.6% beat); raised FY 2026 revenue guidance to $2.85B–$2.91B. (seekingalpha.com/news/4628680-natera-outlines-2_85b-2_91b-2026-revenue-outlook-backed-by-31-percent-growth-ex-true-ups)
+- **DDOG**: Q2 EPS $0.65 vs. $0.58 consensus (beat by $0.07); revenue $1.12B vs. $1.08B; raised FY 2026 guidance (e.g., revenue). (marketbeat.com/stocks/NASDAQ/DDOG/earnings/)
+- **CEG**: Q2 adjusted EPS $2.55 vs. $2.37 consensus (beat by ~$0.18); raised full-year guidance. (public.com/stocks/ceg/earnings)
+- **FIGS**: Q2 EPS $0.15 vs. $0.07 consensus (beat by $0.08); revenue $196.62M vs. $186.17M; raised outlook. (marketbeat.com/stocks/NYSE/FIGS/earnings/)
+- **LNG**: Q2 EPS $14.65 vs. ~$3.03 consensus (large beat); revenue $5.73B vs. ~$4.84B; raised FY 2026 adjusted core profit guidance to $7.9B–$8.4B (from $7.25B–$7.75B). (reuters.com/business/energy/cheniere-energy-report-rise-second-quarter-profit-2026-08-06/)
+
+Exact prior guidance figures vary by source; verify latest filings for precision. Other names (e.g., MSI) reported earlier.
+
+### Q4 — FDA approvals, >$100M contracts, M&A, regulator decisions, last 24h
+
+- **FDA approval (Moderna, MRNA):** The FDA approved Moderna's mRNA-based seasonal flu vaccine (mFLUSIVA/mRNA-1010) for adults aged 50+, marking the first mRNA flu shot approved in the US. Standard approval for ages 50-64 and accelerated approval for 65+. The company announced it on or around August 5-6, 2026; it is expected to be available for the 2026-2027 season. (reuters.com/business/healthcare-pharmaceuticals/us-fda-approves-first-mrna-flu-shot-moderna-2026-08-06/)
+- **Large contract win (Huntington Ingalls Industries, HII):** HII (the largest US shipbuilder) awarded Path Robotics a long-term contract worth up to $600 million for AI-powered robotic welding systems to support naval ship production. Announced August 6, 2026. (bizjournals.com/columbus/news/2026/08/06/path-robotics-hii-shipbuilder-ai-welding-contract.html)
+- **M&A announcement (Pono Capital Four, PONO):** The Nasdaq-listed SPAC Pono Capital Four signed a definitive merger agreement with Blackstar Orbital Technologies (reusable spacecraft developer), valuing the target at $380 million. Announced August 6, 2026. (satellitetoday.com/finance/2026/08/06/blackstar-orbital-takes-spac-deal/)
+
+Other items (e.g., Boeing defense contract details, UK regulatory clearance for a Paramount Skydance-Warner Bros. Discovery deal) did not meet the strict criteria of new publication in the last 24 hours or the specified thresholds.
+
+## Primary-source verification (per the 08-06 rule: verify top candidates against company IR before scoring)
+
+**LNG — CONFIRMED, and it corrected the aggregator.** Business Wire / lngir.cheniere.com, "Cheniere Reports Second Quarter 2026 Results and Raises Full Year 2026 Financial Guidance," **Aug 6 2026 7:30 a.m. EDT (before open)**. Q2 Consolidated Adj EBITDA **$1.804B**. FY26 Consolidated Adj EBITDA guidance **RAISED $7.25–7.75B → $7.90–8.40B** (midpoint $7.50B → $8.15B = **+8.7%**). Distributable Cash Flow **RAISED $4.75–5.25B → $5.30–5.80B** (midpoint **+11%**). No offsetting negative in the release; the 1H26 net loss ($0.43B) is non-cash derivative fair-value movement. **The Q3 aggregator "EPS $14.65 vs $3.03 consensus" is not in the primary release — no EPS figure is provided. Scored on the EBITDA/DCF raise, not the phantom EPS line.**
+
+**CEG — CONFIRMED, and it kills the score.** constellationenergy.com press release **Aug 6 2026, before open**, call 10:00 a.m. ET. Q2 adj operating EPS **$2.55** (vs $1.91 YoY). FY26 adj operating guidance **RAISED $11.00–12.00 → $11.50–12.50** (+4.3% midpoint). But **revenue came in ~$7.50B, below estimates**, and the tape rejected the print: CEG **opened ~$277–280 (+6–7%), closed $261.10 = −1.52% on 146% of 30-day average volume.** A ~7% intraday fade on heavy volume is distribution, not accumulation.
+
+**MRNA — CONFIRMED, and the timing kills the novelty.** Access Newswire, **Aug 5 2026 10:15 PM** (after the Aug 5 close), so **Aug 6 was the reaction session**. mFLUSIVA (mRNA-1010) indicated for influenza A/B, **ages 50+**: full approval 50–64 on Phase 3 efficacy (~40,800 participants); **accelerated approval 65+ on immunogenicity only, confirmatory postmarketing trial required** — and 65+ is the largest flu-vaccine segment. **The PDUFA target date was Aug 5 — this approval was calendared, not a surprise.** Grok found no offsetting negative in the window (UNCONFIRMED); the −4.26% on Aug 6 reads as sell-the-news. Uptake still depends on an ACIP/CDC recommendation.
+
+## Universe filter results
+
+All 14 extracted candidates passed `alpaca.sh asset` (us_equity / active / tradable) and `volume.sh` (30-day consolidated ADV, all >= 1.3M vs the 100k floor). No disallowed-name substrings. BMY held → excluded from research by rule (no adding to winners). The binding filter today was **freshness, not liquidity.**
+
+Pre-market measured 2026-08-07 ~06:05–06:37 ET vs the **Aug 6 regular close** (Yahoo 5m bars, includePrePost; `chartPreviousClose` on a 2d range is the Aug 5 close and was NOT used as the reference):
+
+| ticker | Aug 6 close | pre-mkt 08-07 | move | gate |
+|--------|-------------|---------------|------|------|
+| DOCS | 20.66 | 38.82 | +87.9% | DQ |
+| TEAM | 110.17 | 145.80 | +32.3% | DQ |
+| FIGS | 11.24 | 13.95 | +24.1% | DQ |
+| NTRA | 265.38 | 308.00 | +16.1% | DQ |
+| NET | 284.43 | 330.00 | +16.0% | DQ |
+| AKAM | 118.55 | 134.48 | +13.4% | DQ |
+| MCHP | 74.36 | 80.95 | +8.9% | DQ |
+| ABNB | 151.64 | 163.34 | +7.7% | DQ |
+| CEG | 261.10 | 265.87 | +1.8% | scored |
+| MRNA | 53.86 | 54.60 | +1.4% | scored |
+| CAT | 856.96 | 862.92 | +0.7% | stale catalyst |
+| NVDA | 218.99 | 219.37 | +0.2% | no discrete catalyst |
+| LNG | 265.77 | 265.00 | −0.3% | scored |
+| DDOG | 229.29 | 231.81 | +1.1% | tape rejection |
+
+## 2026-08-07 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                 | source            |
+|--------|-------|-------------------------------------------------------------------------------------|-------------------|
+| LNG    | 8     | Q2 adj EBITDA $1.804B; FY26 EBITDA guide raised $7.25-7.75B -> $7.90-8.40B (+8.7% mid), DCF +11% | lngir.cheniere.com |
+
+Skipped (below threshold):
+- CEG (score 4): catalyst 3 + novelty 1 + confirmation 0 + cleanliness 0. Real beat-and-raise, but revenue missed (~$7.50B) and the tape rejected it — opened ~+7%, closed −1.52% on 146% of average volume. The AXON 08-06 discipline case repeating: score the tape, not the headline.
+- MRNA (score 4): catalyst 2 + novelty 1 + confirmation 0 + cleanliness 1. First US mRNA flu approval is genuinely material, but the **Aug 5 PDUFA date was calendared** (no novelty), 65+ is accelerated approval on immunogenicity pending a confirmatory trial, and the stock fell −4.26% on the news on *below*-average volume (78%).
+- DDOG (score 3): Grok reported a beat-and-raise, but DDOG **fell −19.0% on Aug 6** ($283.17 → $229.29). Whatever the headline said, the print was a repricing event to the downside. Not directional.
+- DOCS, TEAM, FIGS, NTRA, NET, AKAM, MCHP, ABNB: freshness DQ — all >= +7.7% pre-market, the 5% priced-in band is fully consumed before the bell. Second wave already gone.
+- CAT (score 4): catalyst is the **Aug 4** Q2 print — three days old, fails the "surfaced in the last 24 hours" test. Pre-market +0.7% is drift, not a fresh signal.
+- NVDA (score 3): "SpaceX exclusive AI chip use" appears only in a market-recap mention with no primary corporate release; unverified, and at ~$5T the mega-cap 4% bar applies to a name moving +0.2%.
+- HII: the $600M contract was **awarded BY** HII **TO** Path Robotics (private). HII is the payer, not the winner — this is a cost, not a bullish catalyst. Grok mis-framed it.
+- PONO: SPAC pre-merger — excluded instrument per strategy.md universe.
+- MB, NAMI, DSY: micro-caps below the $1B market-cap floor.
+
+### LNG scoring detail
+
+- **Catalyst strength 4/4** — FY26 Adj EBITDA guide +8.7% at the midpoint and DCF +11%, verified against the Business Wire primary release. A cash-flow guidance raise of that size on a ~$57B market cap is the strongest form of catalyst in the rubric.
+- **Novelty 1/3** — honest read: the catalyst hit Aug 6 at 7:30 a.m. ET, the stock rose **+4.32%** that session, and pre-market today is **−0.29%** (flat). Against the 5% priced-in bar (market cap < $100B, so 5% not 4%), **~80% of the band is already consumed.** This is a day-2 second-wave entry (the CCK 07-22 / BMY 07-31 shape), not a fresh move.
+- **Confirmation 2/2** — Aug 6 closed **+4.32% on 2.13M shares = 106% of the 30-day average.** Up on above-average volume, and it held the gain into the close rather than fading it (the exact opposite of CEG's behaviour the same session).
+- **Cleanliness 1/1** — no offsetting negative in the release, no halt, active/tradable, ADV 2.0M vs the 100k floor, $265 inside the $5–$1000 price band, `no_earnings_within_days: 0` so earnings proximity is permitted.
+
+**Total 8 — above the score >= 6 FULL YOLO entry threshold.**
+
+### ⚠️ Hard gap-sanity ceiling for market-open: $267.50
+
+Per the **ALB 08-06 open-print finding** (scored novelty 3 on a stale $120.12 after-hours print, opened $127.635 = band ~148% consumed): **novelty must be re-measured against the opening print immediately before any order, and the name DQ'd if the band is consumed by then. This pre-market score is a screen, not a fill-time authorization.**
+
+LNG's pre-catalyst reference is the **Aug 5 close $254.76**. The 5% priced-in bar sits at **$254.76 x 1.05 = $267.50**. At the current $265.00 pre-market there is only **~0.9pp of headroom left.**
+
+**If LNG opens above $267.50, the band is consumed — market-open must DQ it and sit out.** This is a genuinely tight margin and the most likely way this candidate should die.
+
+### Position-cap context (not a trade instruction)
+
+`max_concurrent_positions: 1` and BMY is still open, so a new LNG entry is only reachable if BMY's time stop (**due today, 2026-08-07**) actually fires first. If it clears, this would be the fourth consecutive session where research produced a >= 6 candidate; on 08-05 (ADM 10) and 08-06 (ALB 9 / YOU 8 / TAK 7) the cap bound and nothing was bought. Blocked-cohort 7-day scoring for the weekly review continues to accrue.
