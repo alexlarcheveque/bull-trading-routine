@@ -6388,3 +6388,87 @@ sub-$100B name consumes the 5% freshness band outright.
 First session after a weekend — the "last 24 hours" window covers Sunday only, so wire flow was
 structurally thin and Q4 returned no qualifying FDA / contract / M&A / regulator events at all.
 
+
+## 2026-08-10 market-open execution pass
+
+**Result: 1 sell (BMY, overdue time stop), 1 buy (RDNT, score 6). Equity $6,858.12, day -0.86%.**
+
+### Step 1 — Exits: BMY overdue time stop FIRED ✅
+
+`target_exit 2026-08-07` was strictly in the past, so the market-open carve-out (defers
+only stops due *today*) did not apply. No human decision required, as both the 08-07 EOD
+note and today's pre-market note specified.
+
+- Preflight OK → `sell BMY` → 104 shares @ **$64.695577** avg, ret **+0.03%** vs entry
+  $64.678846, realized **+$1.74**. Order `aca2f84a`.
+- 4th overdue-stop instance (KMX 06-26, PENG 07-16, CCK 07-30). All four positive — luck,
+  not process. The 3-day-weekend exposure at 97.3% of equity ended flat.
+
+**Open-print data outage — the sell sat unfilled ~3.3 minutes.** At 09:30:15 ET the latest
+trade print for *both* BMY and RDNT was Friday's `2026-08-07T19:59:59Z` close. Order
+submitted 09:31:08 into that gap, status `new` through 30 polls (30s). Feed recovered
+~09:32:25; order then drip-filled 58 → 104, complete 09:35:19.
+
+> ⚠️ **The spec's bounded fill poll would have abandoned this order.** `market-open.md`
+> Step D polls 10× / 30s then says "log the final status and move on." At the 30s mark this
+> order was `new` with 0 filled. Continuing to poll was a judgment call — the sell gated
+> both the guardrail obligation and the day's entry. **Recommend Step D distinguish
+> `new`/`partially_filled` (keep polling, order is live) from a terminal state, or give
+> exits a longer budget than entries.** A stale feed at 09:30 is now an observed condition,
+> not a hypothetical.
+
+### Step 2 — Halt checks: all clear
+
+| check | value | cap | verdict |
+|-------|-------|-----|---------|
+| day P&L at entry time | -0.04% | -100% | clear |
+| WTD | fresh week (Mon) | -100% | clear |
+| open positions | 0 after BMY exit | `max_concurrent_positions: 1` | clear |
+| `trading_blocked` | false | — | clear |
+
+### Step 3 — Entry: RDNT, 96 shares @ $72.30
+
+**Gap check PASSED — this was the decisive test and it was close to mattering.** Score 6
+sat exactly AT threshold, so the pre-market note made the open print dispositive: **>= $75.87
+(+5% over the $72.26 reference) → novelty 0, score 5, no trade.** Actual: opened ~$73.11
+(+1.17%), and **$71.78 (-0.66%)** at the size step. Band intact, score held at 6, tradeable.
+
+**Instrument: SHARES.** `option-chain RDNT call` returned **0 contracts** at runtime — not
+merely 0 in the 3-7 DTE window (pre-market had found monthlies 08-21 / 09-18). Call path
+ineligible either way; same outcome as CCK 07-22, which also saw a chain that had listed
+contracts the prior session return 0.
+
+Preflight OK (96 buy @ $70.48) → filled **$72.30**, order `16389080`. Target exit **2026-08-17**.
+
+### 🟠 `no_margin` breach — cash -$26.04 — REPEAT OF PENG 07-08
+
+Sized 96 shares at the $70.48 quote under the 98% haircut ($6,766 notional vs $6,914.76
+equity). Filled **$72.30 = +2.58% above the sizing quote** = $6,940.80, exceeding cash by
+$26.04.
+
+**The 2% haircut has now been overrun twice, by near-identical amounts: PENG 2026-07-08
+filled +2.6%, RDNT today +2.58%.** The haircut rule (strategy.md, 07-10 weekly review) was
+derived *from* the PENG fill and sized to exactly the move that caused it — so it carries
+zero margin against a recurrence of the same event. Both were opening market orders on
+gapping post-catalyst names, which is the only kind of order this book places.
+
+Not corrected intra-session, following PENG precedent (log it, fix the sizing rule at
+weekly review): `alpaca.sh sell` closes full positions only, so trimming 1 share would have
+required adding a partial-sell path mid-routine — outside market-open's mandate.
+
+**➡️ QUEUED FOR WEEKLY REVIEW: widen the entry haircut 98% → 96%, or size against the ask
+rather than the last trade.** At 96% today's sizing would have been 94 shares = $6,796,
+leaving ~$118 cash. A 2% buffer against a distribution whose two observed tail events are
++2.58% and +2.6% is not a buffer.
+
+### Standing infrastructure items — 4th escalation, still unapplied
+
+Today spent the BMY overdue stop that items 2-4 exist to prevent. Nothing has been fixed.
+
+1. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` (still uncommitted).
+2. **Move the EOD launchd trigger 12:55 → 12:40 PDT.** Highest value, lowest risk.
+3. **Drop `ProcessType Background`** from `com.bull-trading.end-of-day.plist`.
+4. **Reconcile `market-open.md` with `strategy.md` on time stops.** Today's sell was correct
+   per strategy.md's overdue carve-out, but `market-open.md:29` still reads "Time stop +
+   expiry guard are enforced in end-of-day, not here." The two specs contradict each other;
+   the routine executed correctly only because strategy.md was read first.

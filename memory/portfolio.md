@@ -1,57 +1,69 @@
 # portfolio.md
-# Updated 2026-08-07 13:10 CT by end-of-day routine (DEGRADED — ran after the close).
+# Updated 2026-08-10 08:38 by market-open routine.
 
 ## Account
-- equity: 6915.22
-- cash: 186.42
-- buying_power: 19586.32
-- day_pnl_pct: +0.83  # vs last_equity 6858.02
+- equity: 6858.12
+- cash: -26.04
+- buying_power: 19171.49
+- day_pnl_pct: -0.86  # vs last_equity 6917.30
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| BMY    | equity     | 104 | 64.678846   | 2026-07-31 | 2026-08-07  | +0.03              |
+| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | -0.82              |
 
 ## Notes
 
-2026-08-07 EOD: **DEGRADED — bail-out taken, no orders placed or possible.** launchd
-fired **13:05:18 PDT = 16:05 ET**, five minutes *after* the 16:00 ET close, so
-`clock.is_open` was already `false` at routine start. 21st failed EOD in 60 runs (~35%),
-same mode as 08-06: the 12:55 trigger buys a 5-minute cushion and launchd deferred the
-job 10m18s.
+2026-08-10 market-open: **1 sell, 1 buy. The overdue BMY stop fired as required.**
 
-**🔴 BMY'S TIME STOP WAS DUE TODAY AND IS UNFIRED GOING INTO A THREE-DAY WEEKEND.**
-104 shares = **$6,728.80 = 97.3% of equity**, unmanaged with no stop until Monday
-2026-08-10 09:30 ET. Every gate behaved correctly and every gate deferred to EOD —
-market-open (`market-open.md:29` carve-out), midday (`midday.md:19`), then EOD couldn't
-act. No routine misbehaved; the design put one gate with a ~35% miss rate in front of an
-overdue-today time stop.
+**✅ BMY OVERDUE TIME STOP CLEARED.** 104 shares sold @ $64.695577 avg, ret **+0.03%**
+vs entry $64.678846 (realized **+$1.74**). `target_exit 2026-08-07` was strictly in the
+past, so the market-open carve-out did not apply and no human decision was needed —
+exactly as the 08-07 EOD note and today's pre-market note both directed. 4th instance
+after KMX 06-26 / PENG 07-16 / CCK 07-30; all four closed positive, still luck rather
+than process. The three-day-weekend exposure at 97.3% of equity ended flat.
 
-**➡️ MONDAY 2026-08-10 MARKET-OPEN MUST FIRE THE OVERDUE BMY SELL. This requires no
-human decision.** On Monday `target_exit 2026-08-07` is strictly in the *past*; the
-market-open carve-out only defers stops due *today*, and both `market-open.md` Step 1 and
-`decision.md:20-21` cover an overdue one. Precedent: KMX 06-26 / PENG 07-16 / CCK 07-30 —
-all three closed positive, which is luck, not process. This is the fourth time.
+**Open-print data outage delayed the sell ~3.3 minutes.** At 09:30:15 ET both BMY and
+RDNT returned Friday's 15:59:59 close print as the latest trade. The sell was submitted
+09:31:08 into that gap and sat `new` through 30 polls; the feed caught up ~09:32:25 and
+the order drip-filled 58 → 104, completing 09:35:19. Worth noting the routine's bounded
+10-poll/30s fill loop would have abandoned this order as "unfilled" had it not been the
+gating trade — the extended poll was a judgment call, not spec.
 
-Day P&L +0.83% vs the -100% cap — clear, no halt. WTD inside `weekly_loss_cap_pct`, no
-flatten. Safety-net stop/target/thesis re-check could not use live quotes (market shut);
-the 16:00 close print $64.70 is +0.03% vs entry, nowhere near the ±100% bands — only the
-time stop was ever going to fire today.
+**RDNT entered at threshold — gap check passed on the decisive test.** Score 6 = entry
+threshold exactly. The pre-market note made the open print decisive: >= $75.87 (+5% over
+the $72.26 reference) would have consumed the freshness band, dropped novelty to 0 and
+killed the trade. RDNT opened ~$73.11 and was **$71.78 (-0.66%)** at the size step —
+nowhere near the ceiling, so the score held. Call path was ineligible: `option-chain RDNT
+call` returned **0 contracts** at runtime (not just 0 in the 3-7 DTE window), so shares.
 
-**LNG (score 8) blocked again — fifth consecutive session the position cap bound**
-(08-05 ADM 10, 08-06 ALB 9 / YOU 8 / TAK 7, 08-07 LNG 8). LNG cleared its $267.50 gap
-ceiling at $264.06 this morning; sole blocker was `max_concurrent_positions: 1` with BMY
-open. Missed time stops extend the blockage — BMY has now consumed the entire book two
-sessions past where it should have been released. LNG 7-day scoring runs through
-2026-08-14.
+**🟠 `no_margin` BREACH — cash is -$26.04.** Sized 96 shares against a $70.48 quote using
+the 98% haircut ($6,766 notional vs $6,914.76 equity), but the market order filled at
+**$72.30 = +2.58% above the sizing quote**, for $6,940.80 — $26.04 more cash than existed.
+**This is the second time the 2% haircut has been overrun by an opening fill on a gapping
+catalyst name, and the two are near-identical: PENG 2026-07-08 filled +2.6%, today +2.58%.**
+The haircut rule (strategy.md, added 07-10 weekly review) was written *from* the PENG
+incident and sized to exactly the move that caused it, leaving no margin for a repeat.
 
-**STANDING — third consecutive escalation, still NOT applied, needs a human.**
-Items 2 and 3 would have prevented today outright. Out of EOD's mandate to self-apply
-(EOD trades and journals; it does not rewrite its own scheduler or routine specs):
+Not corrected intra-session, following PENG precedent (logged, fixed at weekly review):
+`alpaca.sh sell` closes full positions only — there is no partial-sell path, and trimming
+1 share would have meant adding one mid-routine. Flagged for the human instead:
+
+- **Widen the entry haircut 98% → 96%** (or size on the ask, not the last trade). A 2%
+  buffer against a fill distribution whose two observed tail events are +2.58% and +2.6%
+  is not a buffer. 96% would have sized 94 shares = $6,796 and left ~$118 cash.
+
+Halt checks all clear at entry time: day P&L -0.04% vs the -100% cap, 0 open positions
+after the BMY exit vs `max_concurrent_positions: 1`, fresh week so no WTD cap pressure,
+`trading_blocked: false`. `max_new_positions_per_day: 1` consumed by RDNT.
+
+**STANDING — fourth consecutive escalation, still NOT applied, needs a human.** Today
+consumed the BMY overdue stop that items 2-4 exist to prevent, but nothing was fixed:
 1. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` (still uncommitted).
-2. **Move the EOD launchd trigger 12:55 → 12:40 PDT** — absorbs every late start on
-   record including today's 10m18s. Highest value, lowest risk.
-3. **Drop `ProcessType Background`** from `com.bull-trading.end-of-day.plist` — it is
-   what licenses launchd's deferral.
+2. **Move the EOD launchd trigger 12:55 → 12:40 PDT** — absorbs every late start on record.
+3. **Drop `ProcessType Background`** from `com.bull-trading.end-of-day.plist`.
 4. Add a time-stop backstop to `market-open.md` so EOD is not a single point of failure.
+   (Today this worked *because strategy.md documents the overdue carve-out* — market-open.md
+   itself still says time stops are "enforced in end-of-day, not here." The two files
+   disagree; the routine spec should be brought in line.)
