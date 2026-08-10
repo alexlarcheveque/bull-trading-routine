@@ -6530,3 +6530,70 @@ files still contradict each other; (5) `alpaca.sh` lacks limit-order support.
 **Today's EOD has real work:** RDNT is the entire book at +6%, and the 08-17 time stop is
 live from here on. A missed EOD leaves a 100%-of-equity position unmanaged overnight — the
 exact shape of the BMY failure this morning's sell just finished cleaning up.
+
+## 2026-08-10 eod — 0 exits, 0 time-stops, equity $7,392.84 (+6.87%)
+
+Ran 15:55:30 ET (`is_open: true`, next_close 16:00 ET) and **completed on time**. Settled
+numbers taken at the 16:00:03 ET close rather than journaling a 15:57 mark.
+
+**RDNT 96 sh @ $72.30 → close $77.28 = +6.89%.** HELD. One position, six gates, none fired.
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| time stop | exit 2026-08-17 (5 sessions out) | today >= target_exit | no |
+| expiry guard | n/a — `asset_class: us_equity` | within 2 trading days | n/a |
+| profit target | +6.89% | +100% (`per_trade_target_pct`) | no |
+| stop loss | +6.89% | -100% (`per_trade_stop_pct`) | no |
+| thesis broken | Grok: **NO NEWS** ×10 classes | concrete named event | no |
+| weekly loss cap | WTD +6.87% | -100% (`weekly_loss_cap_pct`) | no |
+
+**Weekly cap check is trivially clear because today is Monday** — WTD == day P&L. Monday's
+opening equity is Friday's close ($6,917.30), equity closed $7,392.84 = +6.87% against a
+-100% cap. No flatten, no `PAUSED` marker written.
+
+**Thesis check, per the standing prompt pattern.** Enumerated ten disqualifying classes
+(guidance cut/withdrawal, CMS/reimbursement or payor reversal, lawsuit/investigation/short
+report, restatement or filing delay, exec departure, offering/dilution, analyst downgrade,
+breach, halt, recall/facility closure), explicitly excluded M&A rumor/denials and non-downgrade
+price-target changes, and demanded a literal NO NEWS per class. Returned **NO NEWS on all ten**
+with citations to the company IR release and earnings-reaction coverage. Note the one genuinely
+new event since midday — the **Q2 call at 10:30 ET today** — produced nothing disqualifying.
+Grok 1/1 first-try; 8/8 across the session.
+
+**The close is a MARK, not a result.** RDNT entered at exactly the score-6 threshold with
+novelty 1 (+15.2% six-session run-up into the print, incl. +6.2% Friday closing at the session
+high on 2.8x median volume) and cleanliness 0 (GAAP net income halved YoY, adj EPS -14.7% YoY,
+cash interest expense guide raised $45-50M → $48-53M against a ~1% guidance bump). +6.89% on
+day 1 is the second wave the thesis called for. The verdict on this entry belongs to the
+2026-08-17 close, and the weekly review should not read a green day-1 mark as vindication of a
+threshold entry — that is precisely the inference the 08-07 review flagged.
+
+**Day's realized result vs the mark.** The only closed trade today was BMY at +0.03%
+(+$1.74 realized) on an overdue time stop. The +6.87% equity move is essentially all RDNT
+unrealized. Nothing was banked today.
+
+### EOD reliability — this run completing does not retire the risk
+
+EOD has failed **21 of 60 runs (~35%)** in two modes: late start past the close, and dying
+mid-run on machine sleep. This morning's BMY sell existed *only* because the 08-07 EOD fired
+5 minutes after the close, could not act, and carried a 97.3%-of-equity position across a
+three-day weekend. Tonight has the same shape: **RDNT is 100% of equity with a live time stop
+from here on.** Today's success postpones the exposure by one session; it does not fix it.
+
+### Carried forward, unchanged by this run
+
+**🟠 `no_margin` breach: cash -$26.04, carried into the overnight.** Structurally unfixable at
+EOD for the same reason midday gave — `alpaca.sh sell` closes full positions only, so the only
+lever was liquidating a +6.89% position that is 100% of the book to cure a $26 overdraft. Third
+consecutive routine to log it without a fix.
+
+**Ops items — 7th consecutive escalation, all still need a human.** EOD can apply none of them:
+(1) commit the `caffeinate -is` fix in `scripts/run-routine.sh`; (2) **move the EOD launchd
+trigger 12:55 → 12:40 PDT** — still highest value; (3) drop `ProcessType Background` from
+`com.bull-trading.end-of-day.plist`; (4) reconcile `market-open.md:29` with strategy.md's
+overdue-time-stop carve-out — the two files still contradict each other; (5) `alpaca.sh` lacks
+limit-order support and any partial-close path; (6) **widen the entry haircut 98% → 96%, or size
+on the ask** — two observed tail fills, PENG 07-08 +2.6% and RDNT 08-10 +2.58%; at 96% RDNT
+would have been 94 sh = $6,796 with ~$118 cash left instead of -$26.04.
+
+**EOD email sent** (Resend id 87fa29f6-2f38-4d22-b338-d31a4689e1c6), one attempt, delivered.
