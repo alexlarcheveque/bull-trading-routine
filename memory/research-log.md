@@ -6472,3 +6472,61 @@ Today spent the BMY overdue stop that items 2-4 exist to prevent. Nothing has be
    per strategy.md's overdue carve-out, but `market-open.md:29` still reads "Time stop +
    expiry guard are enforced in end-of-day, not here." The two specs contradict each other;
    the routine executed correctly only because strategy.md was read first.
+
+## 2026-08-10 midday — 0 exits, day_pnl +6.01%
+
+Ran 12:02 ET (clock `is_open: true`, next_close 16:00 ET). One position, one decision.
+
+**RDNT 96 sh @ $72.30 → last $76.68 = +6.06%.** HELD.
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| profit target | +6.06% | +100% (`per_trade_target_pct`) | no |
+| stop loss | +6.06% | -100% (`per_trade_stop_pct`) | no |
+| thesis broken | Grok: **NO NEWS** | concrete named event | no |
+| daily loss cap | +6.01% | -100% (`daily_loss_cap_pct`) | no |
+
+Time stop (2026-08-17) and expiry guard are EOD's job and are 4 sessions out regardless.
+
+**At FULL YOLO ±100% thresholds, midday's price gates are decorative.** A shares position
+would have to double or go to zero between the open and 12:00 ET to trigger either one. That
+leaves the Grok thesis check as the *only* live midday exit path on this configuration —
+worth stating plainly because a "0 exits" line reads like four checks passed when in practice
+one check ran and three were arithmetically unreachable. Not proposing a change: the ±100%
+band is a deliberate human operator policy (2026-07-03), and tightening it is a guardrails
+knob, not a routine decision.
+
+**Thesis check, per the standing prompt pattern.** Enumerated the disqualifying classes
+(guidance cut/withdrawal, recall, lawsuit filed, regulatory or CMS/reimbursement reversal,
+exec departure, restatement, offering/dilution, credit downgrade, breach, halt), explicitly
+excluded analyst actions and M&A rumor/denials, and demanded a literal NO NEWS or UNCONFIRMED.
+Returned **NO NEWS** with two citations, both earnings-reaction coverage of Sunday's Q2 print.
+Nothing concrete and named → no sell, per the hard rule that uncertainty is not a sell signal.
+Grok 1/1 first-try today; 7/7 across the session.
+
+**The mark is not a verdict on the entry.** RDNT went in at exactly the score-6 threshold with
+novelty 1 (a +15.2% run-up into the print) and cleanliness 0 (GAAP net income halved YoY, adj
+EPS -14.7% YoY, cash interest expense guide raised $45-50M → $48-53M against a ~1% guidance
+bump). +6% by lunch is the second wave the thesis predicted — it does not retire those quality
+concerns, and it is 100% of the book with 4 sessions to the time stop. Do not let a green
+intraday mark become the weekly review's evidence that a threshold entry was a good entry;
+that judgment belongs to the close on 08-17.
+
+### Carried forward, unchanged by this run
+
+**🟠 `no_margin` breach: cash -$26.04.** Structurally unfixable at midday — `alpaca.sh sell`
+has no partial-close path, so the only lever available was liquidating a +6% winner to cure a
+$26 overdraft. Left alone. Fix remains queued for weekly review: widen the entry haircut
+98% → 96%, or size against the ask rather than the last trade (two observed tail fills:
+PENG +2.6%, RDNT +2.58%).
+
+**Ops items — 6th consecutive escalation, all still need a human.** Midday cannot apply any
+of them: (1) commit the `caffeinate -is` fix in `scripts/run-routine.sh`; (2) **move the EOD
+launchd trigger 12:55 → 12:40 PDT** — still the highest-value item, EOD has failed 21 of 60
+runs (~35%); (3) drop `ProcessType Background` from `com.bull-trading.end-of-day.plist`;
+(4) reconcile `market-open.md:29` with `strategy.md`'s overdue-time-stop carve-out — the two
+files still contradict each other; (5) `alpaca.sh` lacks limit-order support.
+
+**Today's EOD has real work:** RDNT is the entire book at +6%, and the 08-17 time stop is
+live from here on. A missed EOD leaves a 100%-of-equity position unmanaged overnight — the
+exact shape of the BMY failure this morning's sell just finished cleaning up.

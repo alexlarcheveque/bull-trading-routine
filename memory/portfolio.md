@@ -1,19 +1,39 @@
 # portfolio.md
-# Updated 2026-08-10 08:38 by market-open routine.
+# Updated 2026-08-10 09:05 by midday routine.
 
 ## Account
-- equity: 6858.12
+- equity: 7333.32
 - cash: -26.04
-- buying_power: 19171.49
-- day_pnl_pct: -0.86  # vs last_equity 6917.30
+- day_pnl_pct: +6.01  # vs last_equity 6917.30 — a MARK, not realized P&L
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | -0.82              |
+| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | +6.03              |
 
 ## Notes
+
+2026-08-10 midday: **0 exits. RDNT held.** Last $76.68 vs entry $72.30 = **+6.06%**, inside
+the ±100% FULL YOLO band on both sides, so neither the target nor the stop is live — at these
+thresholds price alone can essentially never trigger a midday exit; thesis is the only real
+midday gate. Grok returned an explicit **NO NEWS** against the enumerated disqualifying classes
+(guidance cut, recall, lawsuit, CMS/reimbursement reversal, exec departure, restatement,
+dilution, downgrade, breach, halt), with coverage still pointing at Sunday's Q2 beat. No sell.
+
+Day P&L **+6.01%** vs the -100% daily cap — no halt, nothing to log. `trading_blocked: false`.
+`max_new_positions_per_day: 1` was consumed by RDNT at the open; midday never opens anyway.
+
+**The +6.06% is a mark, not a result** — RDNT is 100% of the book and 4 sessions from its
+2026-08-17 time stop. Worth noting the entry thesis explicitly priced this move as *already
+partly consumed*: score 6 came with novelty 1 on a +15.2% six-session run-up, and cleanliness
+0 (adj EPS -14.7% YoY, interest-expense guide raised). Today's move is the second wave the
+thesis called for; it is not evidence the quality concerns were wrong.
+
+**🟠 `no_margin` breach unchanged — cash still -$26.04.** Not fixable at midday: `alpaca.sh
+sell` closes full positions only, and selling RDNT outright to cure a $26 overdraft would
+liquidate a +6% winner over a rounding error. Stays queued for weekly review (widen the entry
+haircut 98% → 96%, or size on the ask). Unchanged from the market-open entry below.
 
 2026-08-10 market-open: **1 sell, 1 buy. The overdue BMY stop fired as required.**
 
