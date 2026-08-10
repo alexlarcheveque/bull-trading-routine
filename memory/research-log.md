@@ -6223,3 +6223,168 @@ be strictly in the past, and strategy.md now says so explicitly. Resume Monday w
 strategy — no `weekly_loss_cap` flatten occurred (-1.07% vs a -100% cap).
 
 - Weekly review email sent (Resend `6097d61e-0da0-4d6e-904b-3dfb0ccdbae2`).
+
+# ==============================================================================
+# 2026-08-10 (Monday) pre-market research pass
+# ==============================================================================
+# Run 05:46 CT. First session after a weekend — the "last 24 hours" window
+# covers Sun Aug 9 only, so wire flow is structurally thin.
+
+### Raw Grok output (verbatim)
+
+**Q1 — "What materially bullish news hit US large-cap equities (>$2B market cap) in the last 24 hours? Cite sources. List ticker, catalyst, source, timestamp."**
+
+**AMZN (Amazon.com Inc., market cap >>$2B): Cloud/AWS sales acceleration drove strong Q2 results and a ~15% single-session stock jump; AI/cloud demand highlighted.**[[1]](https://finance.yahoo.com/markets/stocks/articles/earnings-beats-ease-concerns-over-070820398.html)[[1]](https://finance.yahoo.com/markets/stocks/articles/earnings-beats-ease-concerns-over-070820398.html)
+
+**MSFT (Microsoft Corp., market cap >>$2B): Strong results (including Azure/cloud performance) eased AI capex/return concerns and added a record ~$450B in market value.**[[1]](https://finance.yahoo.com/markets/stocks/articles/earnings-beats-ease-concerns-over-070820398.html)[[1]](https://finance.yahoo.com/markets/stocks/articles/earnings-beats-ease-concerns-over-070820398.html)
+
+**PLTR (Palantir Technologies), CAT (Caterpillar), DIS (Walt Disney): Upbeat Q2 results contributed to broad S&P 500 index gains (strongest weekly advance since April); ~86% of reporting S&P 500 firms beat estimates overall, supporting double-digit blended earnings growth.**[[1]](https://finance.yahoo.com/markets/stocks/articles/earnings-beats-ease-concerns-over-070820398.html)[[1]](https://finance.yahoo.com/markets/stocks/articles/earnings-beats-ease-concerns-over-070820398.html)
+
+**XOM (Exxon Mobil), CVX (Chevron): Record/strongly doubled profits in energy sector, aided by higher oil prices.**[[1]](https://finance.yahoo.com/markets/stocks/articles/earnings-beats-ease-concerns-over-070820398.html)
+
+**Broader/market-level: Cantor Fitzgerald reiterated bullish AI/semiconductor infrastructure view, calling recent selloff "overdone" and recommending aggressive adds (impacting names like NVDA, AVGO, AMD, MU, etc.).**[[2]](https://x.com/AIStockSavvy/status/2086764566927528128)
+
+**JPMorgan strategists raised S&P 500 targets citing strong corporate earnings and AI spending payoffs (contextual market support).**[[3]](https://finance.yahoo.com/)
+
+These items reflect earnings momentum and AI-related commentary surfacing or summarized around Aug 9-10, 2026. Earnings for several names (e.g., AMZN/MSFT) occurred slightly earlier in the season but drove notable moves referenced in recent coverage. No major new M&A or other catalysts dominated the exact 24-hour window in results. Sources include WSJ via Yahoo Finance (Aug 9 article) and contemporaneous X/market commentary.
+
+---
+
+**Q2 — "Pre-market movers 2026-08-10: tickers up >2% in pre-market on actual news catalyst (not just gap-fill). Cite sources."**
+
+**Notable pre-market gainers (>2%) on August 10, 2026, drawn from aggregator sites (primarily larger or more liquid names; microcap moves often lack transparent catalysts or may reflect low-float volatility).**[[1]](https://www.investing.com/equities/pre-market)[[1]](https://www.investing.com/equities/pre-market)
+
+Specific news catalysts tied directly to the Aug 10 pre-market session are not prominently detailed in available sources for most names. Many appear to reflect sector sentiment, prior earnings reactions, or general market flows rather than fresh standalone announcements. Here are the standout movers (>2%) from pre-market leaderboards:
+
+- **TROW (T. Rowe Price)**: +8.10% (around $123.26).[[1]](https://www.investing.com/equities/pre-market)
+- **STLD (Steel Dynamics)**: +6.43% (around $279.32).[[2]](https://www.marketwatch.com/tools/screener/premarket)
+- **BG (Bunge)**: +5.92% (around $114.80).[[1]](https://www.investing.com/equities/pre-market)
+- **LYV (Live Nation Entertainment)**: +5.57% (around $190.72).[[3]](https://pro.thestreet.com/markets/stocks/premarket)
+- **HUBB (Hubbell)**: +4.38%.[[1]](https://www.investing.com/equities/pre-market)
+- **A (Agilent Technologies)**: +3.69%.[[1]](https://www.investing.com/equities/pre-market)
+
+**Higher-percentage microcap/OTC-style movers** (often >50-200%, e.g., STKH/Steakholder Foods +172%, JWEL/Jowell Global +125%, ZJYL +101%, plus names like MB, NAMI, DOCS from other lists) frequently appear on low-volume or speculative news/flow but are typically excluded here due to the "actual news catalyst (not gap-fill)" filter and higher risk of illiquidity or unsubstantiated moves.[[4]](https://www.benzinga.com/premarket)[[4]](https://www.benzinga.com/premarket)
+
+**Sources**: Aggregated primarily from Investing.com pre-market, MarketWatch pre-market screener, Benzinga pre-market, StockAnalysis.com, TradingView, and TheStreet Pro (data snapshots as of ~Aug 10, 2026 pre-market hours). Cross-check real-time platforms (e.g., Benzinga, Yahoo Finance, or broker feeds) for any intraday news updates, as catalysts can emerge quickly. Pre-market data is often delayed or indicative only.
+
+---
+
+**Q3 — "Earnings reports released after yesterday's close that beat AND raised guidance. Ticker, the beat number, the raise number, source."**
+
+**RDNT (RadNet)**: Q2 2026 earnings beat Wall Street estimates on both revenue (up 25% YoY to a record) and EPS; raised full-year 2026 Imaging Center revenue guidance to $2.37B-$2.42B (from prior ~$2.355B-$2.405B range).[[1]](https://seekingalpha.com/news/4629678-radnet-beats-q2-estimates-raises-outlook-as-imaging-demand-surges)[[1]](https://seekingalpha.com/news/4629678-radnet-beats-q2-estimates-raises-outlook-as-imaging-demand-surges)
+
+Source: Seeking Alpha (Aug 9, 2026, ~4:44 PM ET report on results released after close).[[1]](https://seekingalpha.com/news/4629678-radnet-beats-q2-estimates-raises-outlook-as-imaging-demand-surges)
+
+No other companies with confirmed post-Aug 9 close (AMC) reports that both beat estimates *and* raised guidance appeared in results. Earlier examples (e.g., SEZL on Aug 6) do not qualify.
+
+---
+
+**Q4 — "FDA approvals, large contract wins (>$100M), M&A announcements, or regulator decisions published in the last 24 hours affecting any US-listed company."**
+
+**No major qualifying events (new FDA approvals, >$100M contract wins, M&A announcements, or regulator decisions) were published in the exact last 24 hours (Aug 9-10, 2026) based on available search results.**[[1]](https://za.investing.com/news/earnings/replimune-in-the-spotlight-earnings-loom-days-after-fda-approval-93CH-4417858)[[2]](https://www.businesswire.com/newsroom/subject/merger-acquisition)
+
+### Notable Related Items Near This Window
+- **FDA-related**: A report published ~16 hours ago references a recent FDA accelerated approval for Replimune's melanoma drug (Tudriqev/vusolimogene oderparepvec with nivolumab) for advanced melanoma after anti-PD-1 therapy. Replimune is a US-listed biotech (NASDAQ: REPL). This aligns with a prior PDUFA date around early August but lacks confirmation of an exact publication timestamp in the results.[[1]](https://za.investing.com/news/earnings/replimune-in-the-spotlight-earnings-loom-days-after-fda-approval-93CH-4417858)[[3]](https://lifesciencedaily.news/fda-drug-approval-decisions/)
+- **Sunscreen ingredient (bemotrizinol)**: The FDA's final administrative order adding this as a permitted OTC sunscreen active ingredient (first new one in ~20 years, up to 6% concentration) became effective on August 9, 2026. Announced earlier (June 2026); impacts US OTC sunscreen makers/distributors.[[4]](https://www.spencerfane.com/insight/fdas-first-new-sunscreen-active-ingredient-in-decades-regulatory-exclusivity-and-commercial-implications/)[[5]](https://www.fda.gov/news-events/press-announcements/fda-expands-sunscreen-options-first-time-20-years)
+- **M&A**: I Squared Capital announced the ~$898 million acquisition of oOh!media (Australian out-of-home media firm) on August 9, 2026. No direct US-listed target noted. Earlier August 3 announcements (e.g., Prysmian-Atkore ~$3.8B, KKR-Integer ~$5.7B) fall outside the 24-hour window.[[2]](https://www.businesswire.com/newsroom/subject/merger-acquisition)[[6]](https://www.listingtrack.io/mergers/active-ma)
+- **Contracts/Regulator decisions**: No new >$100M contract awards or major FTC/SEC/DOJ rulings published in the window. Recent FTC actions (e.g., policy statement on Aug 7) predate it.[[7]](https://www.ftc.gov/news-events/news/press-releases)
+
+Upcoming PDUFA dates in mid-to-late August 2026 (e.g., Bristol Myers Squibb's iberdomide on Aug 17) may generate future news.[[8]](https://www.infectiousdiseaseadvisor.com/news/fda-drug-approval-decisions-expected-in-august-2026/)
+
+Sources are primarily from business/financial news aggregators and FDA-related sites; real-time monitoring of wire services (e.g., BusinessWire, GlobeNewswire) or company filings would provide the most current updates.
+
+## 2026-08-10 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                              | source                    |
+|--------|-------|--------------------------------------------------------------------------------------------------|---------------------------|
+| RDNT   | 6     | Q2 rev $622.7M +25.0% YoY record vs $611.9M cons; adj EPS $0.29 vs ~$0.18-0.20 cons (+45-61% beat); FY26 Imaging Ctr rev/EBITDA/FCF guides revised UP | radnet.com IR (GlobeNewswire 2026-08-09) |
+
+**RDNT score breakdown — 6, exactly AT the entry threshold. Verified against the company's own
+release per the 08-07 strategy.md rule, and the primary source moved the score.**
+
+- **Catalyst strength 3/4.** Real and material: revenue $622.7M (+25.0% YoY, record) beat the
+  $611.91M consensus; adjusted EPS $0.29 vs ~$0.18-0.20 consensus is a +45-61% beat; Imaging Center
+  FY26 guides revised up on revenue ($2,355-2,405M -> $2,370-2,420M), adj EBITDA ($340-353M ->
+  $345-358M) and FCF ($112-122M -> $115-125M). Held to 3, not 4, because the *guidance* delta —
+  the part that actually moves forward cash flows — is only **+0.6% revenue / +1.4% EBITDA**, and
+  the raise cadence is **decelerating** (+$30M after Q1, +$15M after Q2). Compare PENG's +14% or
+  SMTC's +9.2%. Digital Health, the AI growth-narrative segment, was **reaffirmed flat — no raise**.
+- **Novelty 1/3.** The release is genuinely untraded (published Sunday 08-09; today is the first
+  session on the numbers) — that is the bull case for novelty. Against it: the tape ran hard INTO
+  the print. **07-30 close $62.705 -> 08-07 close $72.26 = +15.2% over six sessions**, including
+  **+6.2% on Friday 08-07, closing at the session high ($72.26 vs a $72.27 high) on 98,248 IEX
+  shares — 2.8x the ~35k median of the window.** At $5.69B cap the 5% priced-in bar applies and the
+  run-up is 3x that. A name that closes on its high at peak volume the session before a Sunday
+  release has been positioned in. Scored down deliberately: the 08-07 weekly review found this
+  book's misses cluster on the novelty axis.
+- **Confirmation 2/2.** Latest bar (08-07) up +6.2% on 2.8x median volume, closed at the high.
+  **Caveat: that bar PRE-dates the catalyst** — it confirms anticipation, not reaction. No
+  post-catalyst bar exists yet, so strictly this axis is unmeasurable; scored 2 per the literal
+  Step 3 rubric ("latest bar up on above-average volume").
+- **Cleanliness 0/1.** Genuine offsetting negatives inside the same release: **GAAP net income
+  halved YoY** ($7.5M / $0.10 vs $14.5M / $0.19); **adjusted EPS down 14.7% YoY** ($0.29 vs $0.34);
+  **cash interest expense guidance RAISED** $45-50M -> $48-53M, a $3M headwind that eats essentially
+  all of the $3M FCF raise; Digital Health flat. No halt, and `no_earnings_within_days: 0` so
+  earnings proximity is fine — but "no offsetting bad news" is not satisfied.
+
+**Universe filters — RDNT passes all:** active + tradable on NASDAQ; last $72.26 (inside $5-$1000);
+30-day consolidated ADV **871,503** (>= 100,000); market cap **~$5.69B** / ~77.06M shares (>= $1B);
+not held; no disallowed substring.
+
+**Instrument: SHARES, not a call.** RDNT is optionable but lists **monthly expiries only — 2026-08-21
+(11 DTE) and 2026-09-18 (39 DTE)**. Zero contracts in the 3-7 DTE window (`option-chain RDNT call
+2026-08-13 2026-08-17` -> 0). Call path ineligible; falls back to shares. Same precedent as
+PENG 07-08 (9 DTE nearest) and KMX 06-18.
+
+### Notes for market-open (research pass does NOT execute)
+
+1. **BMY's overdue time stop fires FIRST — no human decision required.** `target_exit 2026-08-07`
+   is now strictly in the past, so the market-open carve-out (which defers only stops due *today*)
+   does not apply. strategy.md `## Exit rules` and decision.md:20-21 both cover it. 4th instance
+   after KMX 06-26 / PENG 07-16 / CCK 07-30.
+2. **`max_concurrent_positions: 1` means RDNT is buyable only after BMY is sold.** 104 BMY shares
+   are 97.3% of equity; the cash to size RDNT does not exist until that sell fills.
+   `max_new_positions_per_day: 1` permits the single RDNT entry.
+3. **GAP CHECK IS DECISIVE — the score is at threshold, not above it.** Reference close
+   **$72.26 (08-07)**. Novelty is already scored 1 on a +15.2% six-session run-up. **If RDNT opens
+   >= +5% over $72.26 (i.e. >= $75.87), the freshness band is consumed, novelty goes to 0, the score
+   falls to 5, and the name is NOT tradeable.** Re-check the open print before sizing.
+
+### Skipped (below threshold / disqualified)
+
+**Grok Q2's six "pre-market movers" — ALL DQ'd: no company-specific catalyst.** A targeted
+follow-up asked Grok for the news behind each and it returned an explicit **NO NEWS** for all six.
+Six unrelated large-caps up 3.7-8.1% pre-market on a Monday with zero news each is not a plausible
+market state — these read as stale or erroneous screener rows. Reference prices logged per the
+08-07 weekly review's queued audit rule (Friday close vs the pre-market print Grok claimed):
+
+- **TROW** (no catalyst): ref $114.035, claimed pre-mkt $123.26 (+8.10%). Q2 was 07-31; dividend declared 08-06.
+- **STLD** (no catalyst): ref $262.48, claimed $279.32 (+6.43%). Q2 was 07-20.
+- **BG** (no catalyst): ref $108.30, claimed $114.80 (+5.92%). Q2 was 07-29.
+- **LYV** (no catalyst): ref $180.61, claimed $190.72 (+5.57%). Q2 was 07-30.
+- **HUBB** (no catalyst): ref $514.25, claimed +4.38%. Q2 + raised guide was 07-28 — 13 days stale.
+- **A** (no catalyst): ref $146.085, claimed +3.69%. Next earnings 08-26.
+
+Note the double disqualification: even if those prints are real, a +3.7-8.1% pre-market move on a
+sub-$100B name consumes the 5% freshness band outright.
+
+- **AMZN, MSFT, PLTR, CAT, DIS, XOM, CVX (score 0-2): stale.** Grok's Q1 recycled earnings from
+  earlier in the reporting season — it conceded these "occurred slightly earlier in the season."
+  Nothing inside the 24-hour window. Fails the freshness test.
+- **NVDA, AVGO, AMD, MU (score 1): sell-side commentary only.** Cantor Fitzgerald reiterating a
+  bullish AI/semis view and calling the selloff "overdone" is exactly the "pundit price targets /
+  analyst upgrades with no new information" exclusion in strategy.md. Same for the JPMorgan S&P
+  target raise — generic macro.
+- **REPL (score 3): catalyst not fresh.** FDA accelerated approval of Tudriqev (vusolimogene
+  oderparepvec + nivolumab) for advanced melanoma is real, but it predates the window — the source
+  is a look-back article ("earnings loom **days after** FDA approval") tied to an early-August PDUFA,
+  not a 24-hour event. Ref: 08-07 close $12.07, ADV 6,174,133.
+- **Bemotrizinol OTC sunscreen order (no ticker):** FDA final order effective 08-09 but announced
+  June 2026, and no named US-listed beneficiary. Not fresh, not directional to a specific name.
+- **oOh!media / I Squared Capital ~$898M (no ticker):** Australian target, no US-listed company.
+  Outside the universe.
+
+**Nothing else in the four Grok passes carried a named, fresh, directional corporate catalyst.**
+First session after a weekend — the "last 24 hours" window covers Sunday only, so wire flow was
+structurally thin and Q4 returned no qualifying FDA / contract / M&A / regulator events at all.
+
