@@ -6597,3 +6597,214 @@ on the ask** — two observed tail fills, PENG 07-08 +2.6% and RDNT 08-10 +2.58%
 would have been 94 sh = $6,796 with ~$118 cash left instead of -$26.04.
 
 **EOD email sent** (Resend id 87fa29f6-2f38-4d22-b338-d31a4689e1c6), one attempt, delivered.
+
+---
+
+## 2026-08-11 pre-market raw Grok output
+
+Grok **4/4 first-try, no retries.** All four queries returned. Raw output verbatim below.
+
+### Q1 — materially bullish news, US large-caps (>$2B), last 24h
+
+**NVDA (Nvidia)**: Partnership with major Wall Street firms (including Apollo, Blackstone, BlackRock, Brookfield, Goldman Sachs, and KKR) to launch financing platforms aimed at raising over $500 billion in third-party capital for AI infrastructure buildout. Nvidia has the option to backstop up to 25% of deals. This facilitates customer purchases of its chips and underscores massive AI demand.[[1]](https://www.reuters.com/technology/wall-street-giants-partner-with-nvidia-500-billion-ai-financing-deal-ft-reports-2026-08-10/)[[2]](https://news.bloomberglaw.com/ip-law/nvidia-to-team-with-wall-street-on-500-billion-package-ft-says)
+
+**INTC (Intel)**: Announced plans for a $15 billion common stock offering (upsized toward ~$20 billion with greenshoe option) to fund capex and AI-related growth, citing "unprecedented investment in AI compute" and strong customer demand. Shares initially dipped on dilution concerns but highlight the company's turnaround momentum and AI positioning.[[3]](https://finance.yahoo.com/markets/stocks/articles/intel-launches-15-billion-share-120506693.html)[[4]](https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-08-10-2026/card/intel-to-offer-15-billion-of-common-stock-jbaIHQuW7KAFHsgE1FWd)
+
+These appear to be the primary materially bullish large-cap developments in the ~last 24 hours (centered on August 10, 2026 reporting). Broader market context included strong ongoing Q2 earnings beats across many S&P 500 names, but no other company-specific catalysts of comparable scale were prominently reported for >$2B market-cap US equities.
+
+### Q2 — pre-market movers 2026-08-11, up >2% on an actual catalyst
+
+**Notable pre-market gainers (>2%) on August 11, 2026, with apparent news or earnings catalysts (per Benzinga, StockAnalysis, and related reports) include:**[[1]](https://www.benzinga.com/premarket)[[2]](https://stockanalysis.com/markets/premarket/)
+
+- **RIOT Platforms (RIOT)**: ~19–20% higher. Rose on strong Q2 financial results (Bitcoin mining company).[[1]](https://www.benzinga.com/premarket)
+- **Babcock & Wilcox (BW)**: ~35% higher (listed among top movers).[[1]](https://www.benzinga.com/premarket)
+- **FutureFuel (FF)**: ~20% higher (listed among top movers).[[1]](https://www.benzinga.com/premarket)
+
+**Smaller/micro-cap movers** (often low-float or recent listings) showing extreme gains (e.g., WXM +128%, WYHG +45–50%, ELPW +47–49%, WAFU +43–46%) appear driven by recent corporate actions like share consolidations, offerings, or speculative trading rather than fresh major catalysts.[[3]](https://finance.yahoo.com/quote/ELPW/latest-news/)[[4]](https://www.marketbeat.com/stocks/NASDAQ/ELPW/news/)
+
+Larger names like AVB, AOS, CINF, or BG showed notable pre-market gains (~12–19%) in some screeners but lack prominent highlighted news catalysts in the primary reports reviewed.[[5]](https://www.investing.com/equities/pre-market)[[6]](https://www.marketwatch.com/tools/screener/premarket)
+
+Data is time-sensitive and reflects pre-market activity as of ~6–10 AM ET on August 11, 2026; always verify latest news and volume for any ticker. Sources primarily include Benzinga premarket coverage and StockAnalysis movers.
+
+### Q3 — post-close beat AND raise
+
+**None identified that clearly match the criteria (earnings released after Aug. 10, 2026 market close, with both an EPS/revenue beat and raised guidance).**[[1]](https://capis.com/capis-morning-note-08-10-26-stock-indexes-mixed/)[[2]](https://finance.yahoo.com/calendar/earnings/)
+
+- A market note covering Aug. 10 after-close reports explicitly stated "Beats: None of note" (with similar for misses/flat).[[1]](https://capis.com/capis-morning-note-08-10-26-stock-indexes-mixed/)
+- Major earnings calendars show heavy reporting volume on/around Aug. 10–11 (hundreds of companies), but no specific post-close Aug. 10 releases highlighted as simultaneous beat + raise in available sources.[[2]](https://finance.yahoo.com/calendar/earnings/)[[3]](https://www.earningswhispers.com/calendar)
+- Earlier or same-week examples (e.g., iRhythm raising 2026 revenue guidance to $880–890M after a beat) occurred outside the exact window.[[4]](https://www.zacks.com/stock/news/2972250/irhythm-q2-earnings-beat-estimates-on-volume-growth-26-view-raised)
+
+For the most current details, check real-time sources like Earnings Whispers, Yahoo Finance earnings calendar (with actual vs. estimate columns), or company press releases on Aug. 11.
+
+### Q4 — FDA approvals, >$100M contract wins, M&A, regulator decisions, last 24h
+
+**M&A announcements (published/announced August 10, 2026) affecting US-listed companies:**
+
+- **Archer Aviation (NYSE: ACHR) and The Boeing Company (NYSE: BA)**: Archer signed definitive agreements to acquire Boeing subsidiaries Wisk Aero (eVTOL/autonomy), SkyGrid (air traffic management), and Insitu (unmanned systems/defense). Boeing will receive a ~19.75–20% equity stake in Archer (plus board seat rights) and become a strategic partner. The deal combines capabilities in physical AI, eVTOL, and UAS; it is subject to regulatory approvals (including HSR) and expected to close by year-end 2026.[[1]](https://boeing.mediaroom.com/2026-08-10-Archer-to-Shape-Physical-AI-Future-of-Aerospace-and-Defense-with-Acquisition-of-Boeings-Wisk-Aero,-Insitu-and-SkyGrid-Subsidiaries-Boeing-to-Invest-in-Archer-and-Collaborate)[[2]](https://www.reuters.com/business/aerospace-defense/archer-acquire-boeings-wisk-two-subsidiaries-near-20-equity-stake-2026-08-10/)
+
+- **Kyndryl Holdings (NYSE: KD)**: Announced intent to acquire Healthcare IT Leaders, LLC (private healthcare IT services provider focused on hospitals/health systems). The deal aims to bolster Kyndryl's AI-led modernization, applications, infrastructure, and consulting offerings for U.S. healthcare clients. Expected to close in fiscal Q2 2027.[[3]](https://www.kyndryl.com/us/en/about-us/news/2026/08/kyndryl-purchase-healthcare-it-leaders-llc)
+
+- **SAIHEAT Limited (Nasdaq: SAIH)**: Entered a definitive merger agreement with Canopy Wave (AI inference and GPU cloud company). The combined entity will be renamed Canopy Wave Holdings Inc. and trade on Nasdaq as "CWAV." Pre-transaction valuation: Canopy Wave ~$60M, SAIHEAT ~$40M.[[4]](https://www.prnewswire.com/news-releases/saiheat-enters-into-definitive-merger-agreement-with-canopy-wave-to-build-a-global-ai-inference-platform-302847471.html)
+
+- **LiveRamp Holdings (NYSE: RAMP)**: Filed supplemental proxy disclosures on August 10 regarding its pending all-cash merger (originally announced May 2026) with MMS USA Holdings (a Publicis Groupe subsidiary) at $38.50/share (~$2.2B enterprise value). The update addresses stockholder lawsuits/demand letters; the deal remains subject to shareholder vote (special meeting Aug 17) and regulatory approvals.[[5]](https://x.com/USCorpFilings/status/2086811249573233106)
+
+**Other categories:** No new FDA drug/device approvals, large contract wins (>$100M), or major regulator decisions (e.g., FTC/DOJ/SEC blocks, approvals, or rulings directly impacting listed companies' M&A or operations) were identified in announcements from the last 24 hours. Recent SEC and FTC actions were primarily enforcement-related (e.g., fraud charges or scheme shutdowns) without notable ties to the specified events.[[6]](https://www.sec.gov/newsroom/press-releases)[[7]](https://www.ftc.gov/news-events/news/press-releases)
+
+These are based on press releases and news published or dated August 10, 2026.
+
+## 2026-08-11 pre-market watchlist
+
+**No tradeable signal today.**
+
+Top score **5 (NVDA)**, below the score-6 entry threshold in strategy.md. Nothing is passed to
+market-open. Cash is a position when there is no named, directional, *un-priced* corporate catalyst.
+
+| ticker | score | catalyst (one line) | source |
+|--------|-------|---------------------|--------|
+| — | — | nothing reached the score-6 threshold | — |
+
+### Skipped (below threshold or disqualified at a gate)
+
+- **NVDA (score 5)** — $500B AI-infrastructure financing platform with Apollo/Blackstone/BlackRock/Brookfield/Goldman/KKR; NVDA may backstop up to 25% of deals. Best name on the board and the *only* strong catalyst that survives the freshness gate, but it does not reach 6. Breakdown below.
+- **ACHR (raw 7 — DISQUALIFIED at the freshness gate)** — acquires Boeing's Wisk Aero, SkyGrid and Insitu; Boeing takes a ~19.75–20% stake and a board seat. Genuinely transformative for a ~$4B company, and this is the highest raw composite on the board. **It fails strategy.md's qualifying test 2: the move already happened.** 08-07 close $5.58 → 08-10 open $6.41 (+14.9% gap) → 08-10 close $6.26 = **+12.2% on the catalyst session, 2.4x the 5% priced-in bar**, on 5.98M IEX shares vs a ~1.2M five-session norm (~5x). Pre-market today $6.27 = **+0.2%**, i.e. the second wave is not starting — the tape already spent it, and the name *faded 8.8% off its $6.865 intraday high* into the close. Buying this is buying the exhaustion bar. This is the exact shape of AMD 07-23 (scored 7 on a +9.7% two-session stack, -5.5% two days later).
+- **RIOT (DISQUALIFIED at the freshness gate)** — Q2 results; Grok's "+19–20% pre-market" is **confirmed against the tape**: pre-market $23.02 vs 08-10 close $19.37 = **+18.8%**, ~3.8x the 5% bar. Novelty 0. Secondary concern had it survived: a Bitcoin miner's "strong Q2" is usually dominated by mark-to-market gains on held BTC rather than operating cash flow, so it would have needed IR verification before scoring — moot at this gate.
+- **IRTC (DISQUALIFIED — stale, not last-24h)** — Q2 beat with FY26 revenue guide raised to $880–890M. Grok itself flags it as "outside the exact window," and the tape agrees: the reaction bar is **08-07** (gap to $131.955, 143k shares vs a ~35–45k norm, ~3.5x). That is 2 sessions old, not 24 hours. **The move has fully round-tripped** — $124.78 now vs a $128.17 pre-catalyst 08-06 close, i.e. below where it started. No second wave to catch.
+- **INTC (DISQUALIFIED — fails the directional test)** — Grok filed the $15B (upsizing to ~$20B) common stock offering under "materially bullish." It is not. An equity raise is **dilutive**, and "offering/dilution" is an explicit disqualifying class in our own thesis-broken list. Grok's own text concedes "shares initially dipped on dilution concerns." Not a bullish catalyst; not scored.
+- **BA (score 5)** — the sell side of the Archer deal. Receives ~20% of a ~$4B company ≈ **$800M of illiquid equity against a ~$175B market cap = ~0.45%** — it does not move forward cash flows for a company this size. Catalyst strength 1, novelty 3, confirmation 0 (**-0.7% on the news day on 194k IEX shares vs a ~300k norm — below-average volume**), cleanliness 1. Mega-cap, so shares-only per the 07-17 MRK rule had it qualified.
+- **KD (score 5)** — tuck-in acquisition of Healthcare IT Leaders LLC. **No deal value disclosed, no accretion guidance, and it does not close until fiscal Q2 2027** (over a year out). Catalyst strength 1, novelty 3, confirmation 0 (**-2.8% on the news day**), cleanliness 1.
+- **SAIH (DISQUALIFIED — market cap)** — Canopy Wave merger. Pre-transaction valuations ~$60M + ~$40M ≈ **$100M combined, ~10x below the $1B `min_market_cap_usd` floor**.
+- **RAMP (DISQUALIFIED — novelty 0)** — supplemental proxy disclosures on a merger **announced back in May 2026** at a fixed **$38.50/share all-cash** price. No new information, and an all-cash deal caps upside at the deal price by construction. Not a second-wave setup.
+- **BW, FF** — Grok listed them among top pre-market movers (+35%, +20%) but supplied **no named catalyst for either** ("listed among top movers"). Fails qualifying test 1 (material). Both also trade far below the $1B cap floor.
+- **WXM, WYHG, ELPW, WAFU** — micro-cap; Grok attributes the moves to share consolidations, offerings and speculative trading, i.e. no corporate catalyst. Fails the market-cap floor and the material test.
+- **RDNT** — held (96 sh, target_exit 2026-08-17). Skipped per the universe filter; we do not add to winners.
+
+### 🔴 Grok data-quality failure caught this pass — AVB / AOS / CINF / BG
+
+Grok reported these four as "notable pre-market gains (~12–19%) in some screeners." **All four are
+false.** Verified against the tape, last price vs previous close:
+
+| ticker | Grok claim | actual | verdict |
+|--------|-----------|--------|---------|
+| AVB  | +12–19% | **-1.98%** | false |
+| AOS  | +12–19% | **-2.45%** | false |
+| CINF | +12–19% | **-1.70%** | false |
+| BG   | +12–19% | **+3.94%** | false (and no catalyst) |
+
+A REIT, an industrial, an insurer and an ag-trader all gapping 12–19% overnight with no news is a
+screener artifact, not a market event. Grok hedged correctly ("lack prominent highlighted news
+catalysts"), and the Step 2 requirement to confirm every mover against real price data is what
+caught it. **Worth noting the asymmetry: Grok was exactly right on RIOT (+18.8% vs "+19–20%") in
+the same response that was wrong on four names.** The lesson is not "Grok is unreliable" — it is
+that the price check is load-bearing and must never be skipped for a name that looks liquid.
+
+### NVDA score breakdown — 5, one point short
+
+- **Catalyst strength 2/4.** Headline size is enormous ($500B) but the mechanism is indirect: it
+  finances *customers'* purchases rather than changing NVDA's own forward cash flows, and the
+  **25% backstop transfers credit risk onto NVDA's balance sheet**. This is vendor-financing-adjacent
+  — the structure is the substance of the bear case, not incidental to it. Held to 2. Also note the
+  sourcing is **"FT reports," relayed via Reuters/Bloomberg Law — not an NVDA IR release.** Under the
+  08-07 primary-source rule, a name heading for ≥6 on secondhand reporting would need company
+  confirmation before entry; it did not reach 6, so the question stays moot.
+- **Novelty 2/3.** Mega-cap (~$5T), so the **4%** bar applies, not 5%. NVDA is nowhere near it —
+  pre-market $219.79 vs the pre-catalyst 08-07 close of $223.93 is **-1.85%**, a net *negative* move
+  on the news. So the drift is genuinely unspent. Not 3, because the tape had a full session to price
+  this and chose to sell it; unspent-because-rejected is weaker than unspent-because-undiscovered.
+- **Confirmation 0/2.** The rubric asks: price up on above-average volume since the catalyst hit?
+  **No — down.** 08-10 opened $223.39, closed **$217.49 (-2.88%)** on 4.59M IEX shares vs a 4.01M
+  five-session average (~1.14x). Above-average volume with a red close is distribution, not
+  confirmation. Pre-market $219.79 recovers only ~+1.1% of it.
+- **Cleanliness 1/1.** No separate offsetting corporate event, no halt, and `no_earnings_within_days: 0`.
+
+**2 + 2 + 0 + 1 = 5.** One short of the threshold, and the missing point is confirmation — the axis
+where the market actively disagreed with the catalyst. That is the right reason to sit out.
+
+### Capacity note — the watchlist is moot for execution today regardless
+
+Even a score-6+ name could not have been entered at today's open:
+
+| guardrail | value | current | headroom |
+|-----------|-------|---------|----------|
+| `max_concurrent_positions` | 1 | 1 (RDNT) | **0** |
+| `max_new_positions_per_day` | 1 | 0 used | 1 |
+
+RDNT's time stop is **2026-08-17**, four sessions out, so no slot frees up on schedule before then.
+The book is 100% RDNT with cash at **-$26.22**. A qualifying candidate today would have forced the
+choice between skipping it and liquidating a winner early to fund it — worth flagging to the weekly
+review as a live cost of `max_concurrent_positions: 1`, but **not a cost paid today**, since nothing
+qualified. The two constraints happened to agree.
+
+### Universe filter results (all candidates that got as far as the filters)
+
+| ticker | active/tradable | last px (in $5–$1000) | 30d consolidated ADV (≥100k) | cap ≥$1B | held? | verdict |
+|--------|-----------------|------------------------|------------------------------|----------|-------|---------|
+| NVDA | ✅ | $217.49 | 130,818,530 | ✅ ~$5T | no | passed → scored 5 |
+| ACHR | ✅ | $6.26 | 35,382,253 | ✅ ~$4B | no | passed filters, failed freshness gate |
+| RIOT | ✅ | $19.37 | 18,030,110 | ✅ ~$7B | no | passed filters, failed freshness gate |
+| BA | ✅ | $232.80 | 5,916,886 | ✅ ~$175B | no | passed → scored 5 |
+| KD | ✅ | $13.64 | 4,363,010 | ✅ ~$3B | no | passed → scored 5 |
+| IRTC | ✅ | $124.78 | 631,126 | ✅ ~$4B | no | passed filters, failed staleness gate |
+
+All six cleared `min_avg_daily_volume_shares` comfortably on real consolidated Yahoo ADV.
+
+### 🟠 `alpaca.sh bars` cannot return recent bars — KNOWN since 08-10, now with a measured cost
+
+`./scripts/alpaca.sh bars <T> 1Day 5` — the exact call Step 3 prescribes for the confirmation
+check — **returned data ending 2026-08-06, silently omitting the two most recent sessions
+(08-07 and 08-10), including the catalyst bar itself.**
+
+Cause, at `scripts/alpaca.sh:105`: `back_days=$(( lim * 8 / 5 + 3 ))`. The window is set to
+`limit × 1.6 + 3` calendar days, but 1 trading day ≈ 1.45 calendar days, so the start date is
+**always further back than `limit` bars can span**. Alpaca returns the *first* `limit` bars from
+`start`, ascending — so the tail is always truncated, and the shortfall **grows with `limit`**:
+
+| call | window starts | bars returned | last bar | sessions missing |
+|------|---------------|---------------|----------|------------------|
+| `bars T 1Day 5` | 07-31 | 5 | 08-06 | 2 |
+| `bars T 1Day 20` | ~06-27 | 20 | 08-03 | 5 |
+
+Raising `limit` makes it **worse**, so there is no parameter that fixes it. The failure is silent —
+well-formed JSON, plausible dates, no error.
+
+**Impact: this defect is capable of inverting a trade decision.** Confirmation is scored off "the
+latest bar." Had ACHR been scored on what the prescribed call returned, its latest bar would have
+been 08-06 (+0.8%, quiet) — the +12.2% catalyst session and the 5x volume spike would have been
+invisible, and the freshness gate that disqualified it would never have fired. **A raw-7 name would
+have gone to market-open as tradeable.** Today's pass avoided that only because the truncation was
+noticed and the recent window was re-pulled directly from the data API.
+
+**This was already known — and that is the more serious finding.** The 08-10 EOD recorded it
+("`alpaca.sh bars` is unusable for recent bars — use curl directly"), so this pass rediscovered a
+documented defect rather than finding a new one. **The knowledge lived only in the operator's memory
+notes, not in `routines/pre-market.md`, which still instructs Step 3 to call the broken command
+verbatim.** Any routine run that follows its own instructions and does not happen to carry that
+memory forward will score confirmation off truncated data and never know. Today it would have sent
+a raw-7 ACHR to market-open.
+
+**Fix (one line):** pass an explicit `start` and drop `limit` as the window driver, or invert to
+request `limit` bars ending *today*. Untested here — this routine may not edit scripts, and it is
+`alpaca.sh`, not a memory file. **Escalated for a human. Two things need to change, not one:** fix
+`alpaca.sh`, *and* correct the Step 3 instruction in `routines/pre-market.md` so the workaround is
+in the routine rather than depending on memory surviving.
+
+### Ops carry-forward — 8th consecutive escalation, still unapplied
+
+Unchanged from yesterday's EOD; pre-market can apply none of them. Re-listed so the count stays honest:
+
+1. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` (still uncommitted, with untracked
+   `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`, `memory/guardrails.md.conservative.bak`).
+2. **Move the EOD launchd trigger 12:55 → 12:40 PDT** — still the highest-value single change.
+3. **Drop `ProcessType Background`** from `com.bull-trading.end-of-day.plist`.
+4. Reconcile `routines/market-open.md:29` with strategy.md's overdue-time-stop carve-out — the two
+   files still contradict each other.
+5. `alpaca.sh` lacks limit-order support and any partial-close path.
+6. **Widen the entry haircut 98% → 96%, or size on the ask** (PENG 07-08 +2.6%, RDNT 08-10 +2.58%).
+7. **`alpaca.sh bars` window bug above** (logged 08-10, still open, now with a measured near-miss).
+   Ranks with #2 in value: #2 protects exits, this one protects entries, and it has been silently
+   corrupting the confirmation axis on every scoring pass. Fix the script **and** the Step 3
+   instruction in `routines/pre-market.md`.
+
+**`no_margin` still breached: cash -$26.22** (was -$26.04 at yesterday's EOD; drift is RDNT mark
+accrual, not new activity). 4th consecutive routine to log it without a fix — structurally uncurable
+while `alpaca.sh sell` closes full positions only and the only position is 100% of the book.
+
