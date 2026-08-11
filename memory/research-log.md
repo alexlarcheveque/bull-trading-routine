@@ -6808,3 +6808,57 @@ Unchanged from yesterday's EOD; pre-market can apply none of them. Re-listed so 
 accrual, not new activity). 4th consecutive routine to log it without a fix — structurally uncurable
 while `alpaca.sh sell` closes full positions only and the only position is 100% of the book.
 
+
+## 2026-08-11 market-open execution
+
+**0 exits, 0 entries. No orders sent — preflight was not invoked, `trade-log.md` unchanged.**
+
+Started late: `is_open: true` at **09:47 ET**, 17 minutes past the open. Cost nothing today
+(no exit due, no entry permitted), but the same launchd deferral class as the standing EOD
+escalation — on a day carrying an overdue time stop it would have mattered.
+
+### Step 1 — exits: RDNT held
+
+Only position. `asset_class: us_equity`, 96 sh @ $72.30, entry 2026-08-10, target_exit 2026-08-17.
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| time stop | 2026-08-17, 4 sessions out | today >= target_exit | no |
+| overdue carve-out | not past due | target_exit strictly in past | no |
+| expiry guard | n/a (equity) | within 2 trading days | n/a |
+| profit target | +6.34% | +100% | no |
+| stop loss | +6.34% | -100% | no |
+| thesis broken | **NO NEWS ×10 classes** | concrete named event | no |
+
+Thesis check repeated the 10-class enumeration with M&A rumor/denial and non-downgrade PT
+changes excluded, demanding a literal `NO NEWS` per class. All ten clean. Grok 1/1 first-try.
+
+### Step 2 — halt checks: none fired, but entries blocked anyway
+
+- Day P&L **-0.52%** (equity $7,354.26 vs last_equity $7,392.66) against a -100% cap.
+- WTD **+6.01%** vs Monday's opening equity $6,917.30, against a -100% cap. No flatten, no `PAUSED`.
+- **Open positions 1 >= `max_concurrent_positions: 1` → no new entries.**
+
+### Step 3 — entries: none, blocked on two independent gates
+
+Today's watchlist top score is **5 (NVDA)**, below the strategy threshold of 6, so pre-market
+had already concluded nothing qualified. The capacity cap therefore **cost nothing today** —
+the two constraints agreed, as pre-market predicted they would. NVDA's missing point was
+confirmation (0/2): 08-10 closed -2.88% on ~1.14x volume, i.e. the tape priced the $500B
+financing headline and rejected it. Sitting out on the axis where the market disagreed with
+the catalyst is the rubric working.
+
+The unpaid cost stands: a 6+ candidate today would have forced skip-it-or-liquidate-a-winner.
+`max_concurrent_positions: 1` has not yet been charged for that, and RDNT's stop (08-17) frees
+no slot before then.
+
+### Standing items
+
+`no_margin` still breached, cash **-$26.22**, unchanged (no orders). 5th consecutive routine to
+log it without a fix; uncurable while `alpaca.sh sell` is full-position-only and the single
+position is 100% of equity.
+
+Ops escalations **unchanged and unapplied for the 9th consecutive routine** — full list in
+`memory/portfolio.md`. Note #4 again: `routines/market-open.md:29` still says time stops are
+"enforced in end-of-day, not here," contradicting strategy.md's overdue carve-out. This pass
+resolved it correctly only because strategy.md was read first.
