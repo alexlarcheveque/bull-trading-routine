@@ -6862,3 +6862,56 @@ Ops escalations **unchanged and unapplied for the 9th consecutive routine** — 
 `memory/portfolio.md`. Note #4 again: `routines/market-open.md:29` still says time stops are
 "enforced in end-of-day, not here," contradicting strategy.md's overdue carve-out. This pass
 resolved it correctly only because strategy.md was read first.
+
+---
+
+## 2026-08-11 — end-of-day (15:00 CT / 16:00 ET) — 🟠 DEGRADED (started 15:59 ET)
+
+**Bail-out:** clock `is_open: true` at `2026-08-11T15:59:02-04:00`. Proceeded with
+~60 seconds of open market. No gate fired, so no order was owed — but the margin was
+one minute, not a design choice. Same failure class as the 08-06 / 08-07 DEGRADED runs,
+landing just inside the bell instead of just outside it.
+
+### Step 1 — time stops + expiry guard
+
+Single position, RDNT 96 sh, `asset_class: us_equity`. `target_exit 2026-08-17`, four
+sessions out — **no time stop, no overdue carve-out, no expiry guard (equity)**.
+
+Safety-net re-check of the midday gates: stop loss +5.74% vs -100% (no), profit target
++5.74% vs +100% (no), thesis broken (no). Thesis ran the 10-class enumeration demanding a
+literal `NO NEWS` per class — guidance cut, recall, litigation, CMS/regulatory adverse
+decision, exec departure, rating downgrade only, restatement, dilution, short report,
+contract loss. **All ten clean, Grok 1/1 first-try.**
+
+Grok attributed the day to post-earnings momentum plus a **Truist PT hike**. Per strategy.md
+a price-target change is explicitly not a catalyst and not new information; logged as tape
+colour, not confirmation. The 08-10 entry keeps its original scorecard — score 6 with
+novelty 1 and cleanliness 0, because adj EPS was -14.7% YoY and the cash-interest guide rose
+underneath a good headline. Three green sessions do not upgrade an at-threshold entry
+retroactively. Verdict belongs to 08-17.
+
+### Step 2 — weekly loss cap: not hit
+
+WTD **+5.72%** ($7,312.98 vs Monday 08-10 opening equity $6,917.30) against a -100% cap.
+No flatten, no `PAUSED`. At 100% the gate is decorative — only a near-total wipeout fires it.
+
+### Step 3/4 — EOD summary emailed
+
+Equity **$7,312.98**, day **-1.08%** (vs last_equity $7,392.66), all-time **-92.69%** vs the
+$100k start. Cash -$26.22. One position: RDNT 96 @ 72.30 → 76.45 (+5.74%), exit by 08-17.
+Zero trades today; zero time stops. Email sent, Resend id `74458344-02fd-4ff9-a0c6-9e8118809aa1`.
+
+The whole day's -1.08% is RDNT, which is 100% of equity — it faded from +6.34% at the open
+to +5.74% at the bell.
+
+### Standing items
+
+`no_margin` still breached, cash **-$26.22**, unchanged (no orders). **7th consecutive
+routine** to log it without a fix; uncurable while `alpaca.sh sell` is full-position-only
+and the single position is 100% of equity — the only lever is liquidating a winner to cure
+a $26 overdraft.
+
+Ops escalations **unchanged and unapplied for the 11th consecutive routine** — full list in
+`memory/portfolio.md`. Escalation #2 (move the EOD trigger 12:55 → 12:40 PDT) is the one
+today argued for directly: this run had one minute of market left, and RDNT's time stop on
+08-17 is EOD's to enforce.
