@@ -7151,3 +7151,51 @@ Ops escalations **unchanged and unapplied for the 12th consecutive routine** —
 
 Grok **4/4 first-try** on the four standard queries, plus 2/2 on the CAH and FRNM primary-source
 follow-ups. **6/6 total, no retries.** API healthy.
+
+---
+
+## 2026-08-12 end-of-day (15:58:44 ET start — DEGRADED, ~76s of open market)
+
+**0 time-stops, 0 exits, 0 orders.** RDNT closed marked **+6.42%** (76.94 vs 72.30 entry),
+equity **$7,360.02** (+0.79% day). Email sent (id c5ade8cd), 1 attempt, delivered.
+
+### Gates
+
+Time stop **08-17, 3 sessions out** — did not fire. Overdue carve-out n/a. Expiry guard n/a
+(`asset_class: us_equity`, no options held). Safety-net re-check of midday's gates: target
++6.42% vs +100% no, stop +6.42% vs -100% no, thesis **Grok NO NEWS ×10 classes, 1/1 first
+try** no. Weekly loss cap **WTD +6.40%** ($7,360.02 vs Monday 08-10 open $6,917.30) vs -100%
+— not hit, no flatten, **no PAUSED marker**.
+
+The Grok thesis check was the only gate that could have fired. At ±100% the price gates are
+unreachable, so "0 exits" means **one** real check ran, not four.
+
+### 🟠 Second consecutive degraded EOD — the diagnostic is now clean
+
+Started **15:58:44 ET** against a 15:55 ET plist (12:55 PDT): **3m44s late**, ~76 seconds of
+open market. 08-11 started 15:59 ET. Both completed only because nothing was owed.
+
+This morning's market-open fired at **09:30:16 ET, 16 seconds after the bell**. Two on-time
+market-opens and two degraded EODs inside 48 hours isolates the fault to the **end-of-day job
+specifically** — not the harness, not `run-routine.sh`, not the machine being asleep. That
+makes escalation **#2 (move the trigger 12:55 → 12:40 PDT)** and **#3 (drop `ProcessType
+Background`, the key that licenses the deferral)** a two-line fix with a named cause.
+
+**RDNT's time stop lands Monday 2026-08-17 — on this routine.** It is 100% of equity. The
+08-07 EOD fired 5 minutes after the close and could not act, which carried BMY across a
+3-day weekend at 97.3% of equity and forced a market-open cleanup on 08-10. Same shape,
+same routine, 3 sessions out. EOD's failure rate is 21 of 60 runs (~35%).
+
+### Standing items
+
+Account cash **−$26.22** — `no_margin` breached, **10th consecutive routine** to log it
+without a fix. Unchanged (no orders sent). Uncurable while `alpaca.sh sell` is
+full-position-only and the single position is 100% of equity.
+
+Ops escalations **unchanged and unapplied for the 13th consecutive routine** — full list in
+`memory/portfolio.md`. None were exercised today beyond #2/#3 above; the entry-side hazards
+(#7 `bars` window bug, the >=5d reference-close rule) were not touched because EOD sends no
+entries.
+
+No new positions — **EOD never opens positions.** Pre-market's 0-of-16 at threshold stands
+as the day's research result; nothing was re-scored at the close.
