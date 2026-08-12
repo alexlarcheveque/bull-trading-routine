@@ -6915,3 +6915,239 @@ Ops escalations **unchanged and unapplied for the 11th consecutive routine** —
 `memory/portfolio.md`. Escalation #2 (move the EOD trigger 12:55 → 12:40 PDT) is the one
 today argued for directly: this run had one minute of market left, and RDNT's time stop on
 08-17 is EOD's to enforce.
+
+---
+
+## 2026-08-12 — pre-market research (06:30 ET)
+
+### Step 1 — raw Grok output (verbatim, 4/4 first-try)
+
+#### Q1: materially bullish news, US large-caps >$2B, last 24h
+
+**Lumentum (LITE) – Strong Q4/FY2026 earnings beat + raised guidance on AI demand (Aug 11, 2026).**[1](https://finance.yahoo.com/markets/stocks/articles/lite-stock-gains-then-fades-211630012.html)[2](https://www.marketbeat.com/stocks/NASDAQ/LITE/earnings/)
+
+- Catalyst: Revenue $1.01B (+109% YoY, beat estimates); adj. EPS $3.23 (beat); Q1 FY2027 revenue guide $1.225–1.275B with strong non-GAAP margins. Driven by surging AI/optical components demand. Stock rose ~3% after-hours.[3](https://investor.lumentum.com/quarterly-results/default.aspx)
+- Source: Company earnings release (investor.lumentum.com); Yahoo Finance/MarketBeat coverage (Aug 11).
+
+**CoreWeave (CRWV) – Q2 2026 earnings beat with record revenue/backlog (Aug 11, 2026).**[4](https://investors.coreweave.com/news/news-details/2026/CoreWeave-Reports-Strong-Second-Quarter-2026-Results/default.aspx)
+
+- Catalyst: Strong revenue growth, ~$104B revenue backlog highlighting AI cloud demand; positive pre-market reaction (+19% cited in real-time posts); raised capex/guidance context.[5](https://x.com/timoassi/status/2087463026240712978)
+- Source: CoreWeave investor relations release (Aug 11); earnings call/webcast same day.
+
+**MarineMax (HZO) – Definitive $1.5B all-cash acquisition by Blackstone Infrastructure/Safe Harbor (announced Aug 10, 2026; impacted Aug 11 trading).**[7](https://www.businesswire.com/news/home/20260809836761/en/MarineMax-Enters-into-Definitive-Agreement-to-be-Acquired-by-Blackstone-Infrastructure-Portfolio-Company-Safe-Harbor-in-a-%241.5-Billion-All-Cash-Transaction)
+
+- Catalyst: $53/share cash deal (46%+ stock surge); expected close by end-2026. Bullish exit premium for shareholders.
+- Source: Joint press release/BusinessWire (Aug 10); CNBC/SEC filings coverage.
+
+**Notes**: Focus is on announcements/results from ~Aug 10–11, 2026 (impacting last 24 hours as of Aug 12). Buyout targets (HZO, VREX) delivered large premiums but pre-deal market caps were closer to or below typical large-cap thresholds. LITE and CRWV are clearer large-cap (> $2B) examples with operational beats. Broader market context included energy/oil rebounds and AI-related gains, but these are the most specific material positive catalysts. No other major large-cap earnings beats, upgrades, or approvals stood out in the window.
+
+#### Q2: pre-market movers 2026-08-12, up >2% on actual news catalyst
+
+**Key pre-market gainers (>2%) on August 12, 2026, driven by news/earnings catalysts (per Benzinga coverage):**[1](https://www.benzinga.com/news/26/08/61133967/why-coreweave-shares-are-trading-higher-by-over-17-here-are-20-stocks-moving-premarket)
+
+- **CRWV (CoreWeave)**: +17.4% on Q2 earnings beat (adjusted loss of $1.03/share vs. $1.22 expected; revenue $2.58B vs. $2.56B expected).
+- **BAOS**: +181% (to ~$2.05) after SEC filing on termination of securities purchase agreement with High West Partners LLC.
+- **BOXL**: +97% (to ~$5.77) after closing private placement of up to $7.5M in Series D Convertible Preferred Stock.
+- **DOGZ**: +70.9% (listed among movers; specific catalyst details limited in coverage).
+- **DRMA**: +33.3% (listed; followed prior decline).
+- **ZBAO**: +21.8% (listed; followed prior decline).
+- **HYLN**: +20.2% on Q2 sales beat, above-estimate FY26 guidance, and $41.7M U.S. Navy contract.
+- **VELO**: +18.2% on Q2 beat and raised FY26 sales guidance.
+- **HRB**: +15.1% on Q4 beat and above-estimate FY26 guidance.
+
+**Notes**: Focus is on explicit news/earnings drivers from the Benzinga pre-market report (small-cap moves like BAOS/BOXL often tied to financings/filings). Pure gap-fills or low-volume technical moves excluded where possible. Data is pre-market snapshot; actual opens can vary. Sources primarily Benzinga (real-time movers + catalysts). Other sites (e.g., Investing.com, TradingView) showed general pre-market activity but lacked detailed catalysts.
+
+#### Q3: earnings after yesterday's close that beat AND raised
+
+**CoreWeave (CRWV), Super Micro Computer (SMCI), and Cardinal Health (CAH) reported results tied to the Aug 11, 2026 close that included earnings/revenue beats and raised or improved guidance.**[1](https://www.cnbc.com/earnings-announcements/)[2](https://seekingalpha.com/news/4631186-coreweave-expects-12_4b-13_2b-of-2026-revenue-while-raising-year-end-active-power-target-to)
+
+- **CRWV (reported Aug 11 after close)**: Q2 revenue $2.6B (up 112% YoY; beat expectations). Raised FY2026 revenue guidance to $12.4B–$13.2B (from prior levels) and adjusted operating income guidance to $960M–$1.15B. Sources: Seeking Alpha/MarketBeat earnings call highlights and company release.
+- **SMCI (reported Aug 11 after close)**: Q4 FY2026 adjusted EPS $1.70 (beat consensus ~$0.68–$0.92). Revenue near low end of prior range but issued Q1 FY2027 guidance well above Wall Street views (strong revenue and margin outlook). Sources: MarketBeat, Zacks, and earnings reports.
+- **CAH (reported Aug 11 bmo)**: Q4 FY2026 adjusted EPS $2.91 (beat $2.42 estimate by +20%). Issued rosy FY2027 profit guidance (EPS growth 13–15%). Sources: Zacks, Investors.com, and company results.
+
+Other mentions (e.g., Lumentum) were less clearly tied to both a beat and raise on the exact timing. Data drawn from real-time financial news around Aug 11–12, 2026.
+
+#### Q4: FDA approvals, >$100M contract wins, M&A, regulator decisions, last 24h
+
+**M&A announcements (last 24 hours):**
+
+- **Nasdaq (NDAQ)** announced a definitive agreement on August 11, 2026, to acquire LeveL Markets, LLC (a leading U.S. off-exchange equity ATS/execution venue), advancing its always-on markets strategy. Terms were not disclosed.[1](https://ir.nasdaq.com/news-releases/news-release-details/nasdaq-announces-definitive-agreement-acquire-level-markets)
+- **Joby Aviation (JOBY)** announced an agreement on August 11, 2026, to acquire Resonant Sciences (aerospace/defense tech firm specializing in RF/sensor systems) for ~$500 million in cash and stock. This expands Joby's defense business; Resonant has >$100M trailing revenue and classified U.S. government programs.[2](https://techcrunch.com/2026/08/11/joby-aviation-builds-out-defense-business-with-500m-acquisition/)
+
+**FDA approvals (last 24 hours):**
+
+- **Freenome (FRNM, Nasdaq-listed)**: FDA approved its SimpleScreen CRC blood-based colorectal cancer screening test (second such test authorized; detected ~80% of cancers in trials). Abbott will commercialize in the U.S.[3](https://news.gastro.org/issues/2026/august-2026/fda-approves-second-bloodbased-colorectal-cancer-screening-test/)
+
+No large contract wins (>$100M) or other major regulator decisions (e.g., FTC/SEC/DOJ) matching the criteria were identified in recent results. Other FDA items (e.g., PGDx/Labcorp companion diagnostic) had earlier approval dates or were not strictly within the window.
+
+### Step 2/3 — candidate extraction, universe filters, scoring
+
+16 tickers extracted across the four responses. Every price claim re-checked against the tape
+per the standing rule (`chart?includePrePost=true`, latest 08-12 print vs the **08-11 regular
+close**, not vs 08-10).
+
+⚠️ **Reference-close trap, caught mid-run.** A 2-day `chartPreviousClose` returns the **08-10**
+close, which made CAH look like +0.89% and CRWV like +21.03%. Re-anchoring on `regularMarketPrice`
+from a 5-day window (= the 08-11 close) gives the correct −0.40% and +18.2%. Both readings happened
+to disqualify or spare the same names today, but on a borderline name this would invert a novelty
+score. Use a >=5d window and anchor on the prior regular close.
+
+#### Tape check vs Grok's claimed pre-market moves
+
+| ticker | Grok claimed | actual vs 08-11 close | verdict |
+|--------|--------------|------------------------|---------|
+| CRWV   | +17.4%       | **+18.2%**             | accurate |
+| HYLN   | +20.2%       | **+21.9%**             | accurate |
+| VELO   | +18.2%       | **+18.0%**             | accurate |
+| HRB    | +15.1%       | **+13.1%**             | close |
+| BAOS   | +181%        | **+105%**              | overstated 1.7x |
+| BOXL   | +97%         | **+59%**               | overstated 1.6x |
+| DOGZ   | +70.9%       | **+42.9%**             | overstated 1.7x |
+| ZBAO   | +21.8%       | **−3.5%**              | **sign wrong** |
+
+Same split as 08-11 (n=3): **the liquid names were accurate, the sub-$5 micro-caps were junk**,
+including one outright sign error. The price check remains load-bearing.
+
+#### Universe filter results
+
+- **Sub-$5 price floor kills five outright** (`min_price_per_share: 5`): BAOS $0.71, DOGZ $0.93,
+  DRMA $1.12, ZBAO $0.21, BOXL $2.97 — all also below the $1B cap floor. Their "catalysts" are a
+  **private placement** (BOXL) and a **terminated securities purchase agreement** (BAOS) — dilution-class
+  events, which our own thesis-broken list treats as *disqualifying*, not bullish. HYLN $3.92 also fails
+  the floor independently of its gap.
+- **CAH**: NYSE active/tradable, ADV **2,226,993**, ~233M diluted shares × $240.26 ≈ **$56.0B** — passes
+  every filter. Not a mega-cap, so the **5%** priced-in bar applies, not the 4% bar.
+- **FRNM**: NASDAQ active/tradable, ADV **548,379**, $12.00 — passes the mechanical filters, fails on
+  freshness (below).
+
+#### 🔴 Freshness gate — six names disqualified, no scoring required
+
+Per strategy.md a catalyst qualifies **only if all three** of material/fresh/directional hold;
+">=5% already priced in" fails the *gate*, it is not merely a novelty penalty (ACHR 08-11 precedent,
+AMD 07-23 two-session stack).
+
+| ticker | consumed | bar | multiple |
+|--------|----------|-----|----------|
+| HYLN   | +21.9%   | 5%  | 4.4x |
+| CRWV   | +18.2%   | 5%  | 3.6x |
+| VELO   | +18.0%   | 5%  | 3.6x |
+| HRB    | +13.1%   | 5%  | 2.6x |
+| SMCI   | +9.0%    | 5%  | 1.8x |
+| LITE   | +7.7%    | 5%  | 1.5x |
+
+**CRWV was the best story on the board and is the trade the gate is for.** Q2 revenue $2.6B +112% YoY,
+FY26 guide raised to $12.4–13.2B, ~$104B backlog — a genuine catalyst-4. At **+18.2% pre-market** we
+would be buying the entire second wave at its top. Identical shape to ACHR 08-11 (+12.2%, disqualified)
+and AMD 07-23 (+9.7% stack, −5.5% two days later). Note also SMCI's revenue came in **near the low end**
+of its prior range — a mixed print, not a clean beat, on top of a 1.8x-consumed band.
+
+#### 🔴 FRNM — DISQUALIFIED, catalyst is 16 days stale (new Grok failure mode)
+
+Grok Q4 filed Freenome's SimpleScreen CRC approval under "**last 24 hours**." The primary sources —
+Freenome's own press release **and its SEC 8-K** — are both dated **2026-07-27**. Grok dated the
+catalyst by the *republication* date of a trade newsletter (`news.gastro.org`, "August 2026 issue"),
+not the announcement. Sixteen days stale; the 07-30 → 08-10 drift ($9.99 → $11.62) *is* the reaction,
+already over.
+
+Two further disqualifiers had it been fresh: the economics are a **one-time $100M milestone** with
+**Abbott booking all product revenue** (not a recurring stream to FRNM), and it is the **second**
+approval in the category — Guardant's Shield has held the first since July 2024.
+
+**➡️ STANDING (new): Grok will date a catalyst by its secondary republication, not the primary
+announcement.** Always demand the primary release/8-K date, as strategy.md's >=6 rule already requires
+for numbers — this run shows the same check is needed on *dates*. Today it was cheap (FRNM's +3.2%
+pre-market drift would not have scored anyway); on a name gapping into the bar it would manufacture
+a phantom fresh catalyst.
+
+#### Scored survivors
+
+**CAH — score 3** (catalyst 2 + novelty 1 + confirmation 0 + cleanliness 0)
+
+Primary source pulled per the >=6 rule (PR Newswire / newsroom.cardinalhealth.com, **08-11 06:45 ET**,
+pre-open). Q4 FY26: revenue **$63.7B +6% YoY**, GAAP diluted EPS **$1.70 vs $1.00 (+70%)**, adjusted
+diluted EPS **$2.91 vs $2.08 (+40%)**.
+
+Two corrections the primary release forced on Grok's framing — the fourth consecutive session this
+check has moved a top candidate (after PLNT 8→5, ALB 8→9, LNG, RDNT):
+
+1. **The headline beat is inflated by a one-time item.** $0.31 of the $2.91 is an **IEEPA tariff
+   refund**; ex-item adjusted EPS is **$2.60**. Against the $2.42 consensus Grok cited, the clean beat
+   is **+7.4%, not the +20%** reported. This is the PLNT pattern exactly — the rule exists for this.
+2. **There is no "raise."** Grok Q3 listed CAH under "beat AND raised guidance." The release contains
+   **initial FY2027 guidance** ($12.40–$12.60 non-GAAP EPS, +13–15% off the ex-IEEPA base) with **no
+   prior FY27 number to raise from** — Grok returned UNCONFIRMED on the prior guide because it does not
+   exist. Initial guidance is not a raise.
+
+**Confirmation is 0, and it is the decisive axis.** The 08-11 catalyst session: open $243.00 (+2.45%),
+high **$258.30 (+8.90%)**, low $236.48, close **$240.26 (+1.30%)** on **3,007,600 shares = 1.35x ADV**.
+The stock gave back **−7.0% from its high** and closed in the **bottom 17% of its range**, then printed
+**−0.40%** in pre-market today. Per the NVDA 08-11 precedent — above-average volume with a rejected
+close is *distribution*. The market took a full session and 1.35x volume to look at this print and
+declined to pay for it.
+
+Novelty 1, not 3, for the same reason: the price band is nearly unconsumed (+0.89% retained vs the
+pre-catalyst $237.18), but an unconsumed band that has **already been tested and rejected** is not the
+same as one still ahead of the market. Cleanliness 0 on the one-time-item inflation.
+
+⚠️ **Rubric gap surfaced (does not change today's decision).** CAH printed **+8.90% intraday** on the
+catalyst session — strictly, "already 5%+ priced in **intraday**" fails the freshness gate. But it
+round-tripped to +1.30%, so the price is available again at +0.89%. The rubric does not say whether the
+gate reads the **intraday high** or the **retained close**. It is moot today — CAH scores 3 under the
+lenient reading and is disqualified under the strict one, both below threshold — but a *clean* report
+with this same round-trip shape would land on the ambiguity. **➡️ WEEKLY REVIEW: specify which print
+the freshness gate measures.**
+
+#### Not scored — fail a qualifying test outright
+
+- **HZO (structure)** — $53.00/share **all-cash** deal, trading $52.72. Upside to the deal price is
+  **+0.53%** against a close expected **end-2026**. The deal price is a hard ceiling: there is no second
+  wave to catch, by construction. Merger arb, not a catalyst trade.
+- **JOBY (directional)** — the **acquirer**, paying ~$500M cash+stock for Resonant Sciences, and it
+  closed **−4.43%** ($8.81 → $8.42) on its own announcement. Down on its own news fails both the
+  directional test and confirmation.
+- **NDAQ (material)** — **undisclosed terms** on a tuck-in ATS against a ~$55B company, and it closed
+  **−0.63%**. Cannot be scored material with no consideration disclosed.
+
+## 2026-08-12 pre-market watchlist
+
+**No tradeable signal today.**
+
+Top score **3 (CAH)** against an entry threshold of **6**.
+
+Skipped (below threshold / disqualified):
+- CRWV (cat-4 story): **+18.2% pre-market**, 3.6x the 5% freshness bar — the whole second wave is gone
+- SMCI: +9.0% consumed (1.8x bar); revenue also near the low end of the prior range
+- LITE: +7.7% consumed (1.5x bar)
+- HRB (+13.1%), VELO (+18.0%), HYLN (+21.9%): 2.6–4.4x the bar; HYLN also fails the $5 price floor
+- FRNM: catalyst **16 days stale** (8-K 07-27, not 24h); one-time $100M milestone, Abbott books revenue
+- CAH (score 3): headline beat inflated by a one-time $0.31 tariff refund; "raise" is *initial* FY27
+  guidance; +8.9% intraday high round-tripped to a +1.3% close in the bottom 17% of range on 1.35x volume
+- HZO (3): all-cash deal, +0.53% to a capped $53.00 price closing end-2026
+- JOBY (2): acquirer, closed −4.4% on its own news
+- NDAQ (2): undisclosed terms, immaterial tuck-in, closed −0.6%
+- BAOS / BOXL / DOGZ / DRMA / ZBAO: all sub-$5 and sub-$1B; catalysts are dilution-class financings
+
+### Capacity note — moot again, but the cost stays unpaid
+
+`max_concurrent_positions: 1` is fully consumed by **RDNT** (96 sh, exit **08-17**), so nothing could
+have been bought today regardless of score. **Third consecutive session** where the threshold and the
+capacity cap agree. As on 08-11, the agreement is coincidence, not evidence the cap is free — CRWV was
+a genuine catalyst-4 that only the freshness gate turned away, and no slot opens before 08-17.
+
+### Standing items
+
+Account **equity $7,302.42**, cash **−$26.22** — `no_margin` still breached, **8th consecutive routine**
+to log it without a fix. Unchanged (research pass, no orders). Uncurable while `alpaca.sh sell` is
+full-position-only and the single position is 100% of equity.
+
+Ops escalations **unchanged and unapplied for the 12th consecutive routine** — full list in
+`memory/portfolio.md`. Two bit again today:
+- **#0 (`alpaca.sh bars` window bug):** Step 3 of this routine still prescribes `bars <T> 1Day 5`, which
+  truncates recent sessions. **Not used** — went direct to Yahoo `chart?interval=1d&range=1mo`. Had the
+  prescribed call been used on CAH, the 08-11 catalyst bar carrying the entire +8.9%→+1.3% rejection
+  could have been outside the window, and CAH's confirmation would have been scored blind.
+- **New, ranks with #0:** the reference-close trap at the top of this section. Any price check must use
+  a >=5d window; a 2d window silently anchors on the wrong session.
+
+Grok **4/4 first-try** on the four standard queries, plus 2/2 on the CAH and FRNM primary-source
+follow-ups. **6/6 total, no retries.** API healthy.
