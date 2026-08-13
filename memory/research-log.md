@@ -7199,3 +7199,228 @@ entries.
 
 No new positions — **EOD never opens positions.** Pre-market's 0-of-16 at threshold stands
 as the day's research result; nothing was re-scored at the close.
+
+## 2026-08-13 — pre-market research (06:36 ET start)
+
+Run started **03:36 PDT / 06:36 ET**. Grok **7/7 calls succeeded, zero retries** (4 mandated
+queries + 3 primary-source verification calls). Held position: **RDNT, 96 sh @ $72.30, time
+stop 2026-08-17** — excluded from candidates per "skip names we own."
+
+### Raw Grok output (verbatim)
+
+#### Q1 — materially bullish large-cap news, last 24h
+
+> **Key materially bullish news (Aug 12–13, 2026) centered on AI infrastructure demand, with strong earnings beats and guidance from related firms lifting sentiment alongside tame CPI data.**
+>
+> - **CRWV (CoreWeave)**: Impressive quarterly revenue growth beating forecasts, narrower-than-expected loss, better-than-expected guidance, and $100B backlog. Stock surged ~18%. (Market cap qualifies as large-cap post-moves.) Sources: Schwab, WSJ, Bloomberg. Timestamp: Earnings after Aug 12 close; positive impact Aug 13 open/trading.
+> - **SMCI (Super Micro Computer)**: EPS beat estimates with guidance exceeding analyst ranges, driven by AI demand and new customers. Stock climbed ~10–19%. Sources: Schwab, WSJ, Yahoo Finance/Morningstar. Timestamp: Earnings after Aug 12 close; positive impact Aug 13.
+> - **NBIS (Nebius Group)**: Reported 514% jump in AI cloud sales amid booming demand. Stock surged ~34%. Sources: Bloomberg, Google Finance/Yahoo. Timestamp: Results around Aug 12; gains on Aug 13.
+>
+> These moves rekindled the AI trade and supported broader equity gains (e.g., S&P 500/Nasdaq higher), with NVDA also lifting modestly. No other major large-cap (> $2B mkt cap) catalysts dominated in the period.
+
+#### Q2 — pre-market movers >2% on a real catalyst
+
+> **Notable pre-market gainers (>2%) on Aug 13, 2026, tied to news/earnings catalysts (per available data from pre-market screens and reports):**
+>
+> - **GXAI (Gaxos.ai)**: +72% (to ~$1.50). Driven by record Q2 revenue (up 35.8% sequentially, 1,337% YoY) and a $1M share repurchase authorization (announced Aug 12).
+> - **IVDA (Iveda Solutions)**: +39% (to ~$0.51). Catalyst: Strategic government partnership with GlobalMed (digital health firm with federal contracts), announced after-hours Aug 12.
+> - **CURI (CuriosityStream)**: +34% (to ~$3.75). Volume-driven mover in pre-market screens (specific catalyst details limited in results).
+> - **HLIT (Harmonic Inc.)**: +23% (to ~$14.78). Appears on pre-market gainers lists.
+> - **OMER (Omeros)**: +19% (to ~$16.37). Q2 2026 earnings beat referenced in coverage.
+>
+> Larger/more liquid names like **HRB (+13%)**, **SMCI (+9%)**, and **CAVA (+17%)** showed strong pre-market moves in screens (updated around Aug 12–13), largely extending from prior earnings/forecast beats (e.g., HRB full-year outlook, SMCI AI backlog/orders).
+>
+> Many other high-percentage movers (e.g., micro-caps like FRGT) lacked clear, immediate news catalysts in results and may reflect low-float volume or gap activity.
+
+#### Q3 — beat AND raised guidance after yesterday's close
+
+> **Harmonic Inc. (HLIT) and American Electric Power (AEP) are among the clearest matches from available reports; CoreWeave (CRWV) and Super Micro Computer (SMCI) results were primarily released after the Aug 11 close (impacting Aug 12 trading) with beats and raised outlooks.**
+>
+> - **HLIT (Harmonic)**: Q2 2026 earnings beat with strong broadband growth; raised full-year 2026 broadband revenue guidance to $505–525 million (up from prior $475–495 million range) and Non-GAAP EPS to $0.67–$0.75. Source: Investing.com / company filings (reported ~Aug 12).
+> - **AEP**: Q2 2026 earnings reported with raised full-year 2026 operating earnings guidance to $6.25–$6.55 per share. Source: AEP investor site (updated ~Aug 12).
+>
+> **CRWV and SMCI (reported primarily Aug 11 after hours)**:
+> - CRWV beat on Q2 revenue ($2.58B vs. ~$2.56B expected; smaller adjusted loss than expected) and raised FY2026 revenue guidance to $12.4–13.2B (from prior $12–13B) plus adjusted operating income.
+> - SMCI beat Q4/FY2026 EPS (e.g., $1.70 non-GAAP vs. lower estimates like ~$0.96) with strong margins and raised FY2027 revenue guidance to $65–72B range.
+
+#### Q4 — FDA / contracts >$100M / M&A / regulator decisions, last 24h
+
+> **FDA approvals (limited new activity in the exact 24-hour window):**
+> Replimune Group, Inc. (NASDAQ: REPL) received FDA accelerated approval for RP1 (vusolimogene oderparepvec-wtpg, branded Tudriqev) in combination with nivolumab for unresectable advanced cutaneous melanoma in patients who progressed on prior anti-PD-1 therapy. Approval granted August 6, 2026 (with related coverage and summaries appearing around August 12).
+>
+> Bracco Imaging received FDA 510(k) clearance (and Health Canada authorization) for its VueJect ultrasound contrast delivery system (August 12, 2026 announcement).
+>
+> No other major novel drug approvals or clearances tied specifically to US-listed companies were published in the narrow window.
+>
+> **Large contract wins (>$100M):** No qualifying announcements identified in results for the period.
+>
+> **M&A announcements:**
+> - Bowman Consulting Group Ltd. (NASDAQ: BWMN) entered a definitive agreement to be acquired by Bernhard Capital Partners for $43.00 per share in cash (~$1 billion enterprise value). Announced August 10, 2026. Expected close in Q4 2026 or Q1 2027, subject to approvals.
+> - HBT Financial, Inc. (NASDAQ: HBT) announced a definitive merger agreement to acquire Tri-County Financial Group, Inc. (OTC: TYFG) in a cash-and-stock deal valued at ~$204.6 million. Announced August 10, 2026. Expected close in Q1 2027.
+>
+> **Regulator decisions:**
+> FinCEN issued a final rule (announced August 12, 2026) permanently eliminating beneficial ownership information (BOI) reporting requirements for US companies and US persons under the Corporate Transparency Act.
+
+#### Verification call A — HLIT release timing + primary-source numbers
+
+> **Press release: August 12, 2026, after market close (4:05 p.m. ET / 16:05 ET per PR Newswire; conference call at 5:00 p.m. ET).**
+>
+> "SAN JOSE, Calif., Aug. 12, 2026 /PRNewswire/ -- Harmonic Inc. (Nasdaq: HLIT) today announced its unaudited results for the second quarter ended July 3, 2026."
+> Broadband (continuing operations) Q2 2026: Net revenue $133.5 million; Non-GAAP net income per share $0.21 (GAAP $0.16). Total company net revenue $173.0 million; Non-GAAP EPS $0.24 (GAAP $(0.02)).
+>
+> The release highlights "Broadband revenue increased 54% year over year" and notes the company "raises full-year outlook to reflect Broadband revenue of $505 million - $525 million." (Prior FY2026 Broadband revenue guidance was $475 million - $495 million, per the Q1 2026 release; new guidance is raised.) (The release does not quote consensus estimates.)
+>
+> **Stock performance:** On Aug. 12, 2026, HLIT closed at $12.00 (up ~4.8% from the prior close of $11.45). In Aug. 13 pre-market, it traded around $15.10 (up ~$3.00 or ~25% from the Aug. 12 close).
+
+#### Verification call B — OMER market cap + release
+
+> **As of August 13, 2026:** Market capitalization is approximately $992 million (stock ~$13.60–$13.71). Shares outstanding approximately 72.38 million.
+>
+> **Q2 2026 earnings:** press release August 12, 2026, after market close, call 4:30 p.m. ET.
+> From the company's IR release: Net revenue $28.5 million (YARTEMLEA gross revenues $32.2 million). GAAP net income $13.2 million ($0.18 per share). Non-GAAP adjusted net income $1.8 million ($0.02 per share). External reports indicate this beat consensus (Zacks consensus around a $0.27 loss per share). **No guidance was raised or provided in the release** (one summary explicitly notes the company is not providing revenue guidance).
+>
+> **Stock action:** On August 12, OMER released earnings after the close and the stock surged sharply in after-hours (~24%). In pre-market on August 13, the stock continued higher (~$16).
+
+#### Verification call C — AEP release date
+
+> **Q2 2026 earnings press release: July 30, 2026** (AEP's own site and PR Newswire).
+> **FY2026 operating EPS guidance: Raised.** Prior range (reaffirmed after Q1): $6.15–$6.45. New range (Q2 release): $6.25–$6.55.
+> **No new AEP announcements/press releases dated Aug 12 or 13, 2026.**
+> **AEP stock on Aug 12, 2026:** Closed ~124.26–124.65, up ~0.5%.
+
+#### Verification call D — Aug 13 pre-market vs Aug 12 CLOSE (the decisive call)
+
+> **CRWV:** Aug 12 close ≈ $106.20; Aug 13 pre-market ≈ $104.32 (**down ~1.8%**). Earnings release: August 11, 2026 (call 5:00 pm ET).
+> **SMCI:** Aug 12 close = $37.61; Aug 13 pre-market ≈ $34.98 (**down ~7.0%**). Earnings release: August 11, 2026 (Q4 FY2026, call 5:00 pm ET).
+> **NBIS:** Aug 12 close = $259.20; Aug 13 pre-market ≈ $249.55 (**down ~3.7%**). Earnings release: August 12, 2026, **before market open** (call 8:00 am ET).
+> **HRB:** Aug 12 close = $54.18; Aug 13 pre-market data limited. Earnings release: August 11, 2026, after market close.
+> **CAVA:** Aug 12 close ≈ $69.34–$69.47; Aug 13 pre-market data limited. Earnings release: August 11, 2026.
+
+### Universe filtering
+
+14 tickers extracted with a positive catalyst: CRWV, SMCI, NBIS, GXAI, IVDA, CURI, HLIT, OMER,
+HRB, CAVA, AEP, REPL, BWMN, HBT. None held (RDNT not among them).
+
+| ticker | asset | ADV (volume.sh, real 30d consolidated) | verdict |
+|--------|-------|----------------------------------------|---------|
+| CRWV | active/tradable | 29,629,683 | pass → score |
+| SMCI | active/tradable | 48,464,180 | pass → score |
+| NBIS | active/tradable | 23,428,006 | pass → score |
+| HLIT | active/tradable | 1,483,660 | pass → score |
+| OMER | active/tradable | 1,497,936 | pass → score |
+| HRB | active/tradable | 2,308,333 | pass → score |
+| CAVA | active/tradable | 3,712,810 | pass → score |
+| AEP | active/tradable | 4,282,556 | pass → score |
+| REPL | active/tradable | 6,303,673 | pass → score |
+| BWMN | active/tradable | 261,826 | pass → score |
+| HBT | active/tradable | 143,936 | pass → score |
+| GXAI | — | — | **SKIP: ~$1.50 < `min_price_per_share: 5`** |
+| IVDA | — | — | **SKIP: ~$0.51 < `min_price_per_share: 5`** |
+| CURI | — | — | **SKIP: ~$3.75 < `min_price_per_share: 5`** |
+
+All 11 survivors cleared the 100,000-share ADV floor. No disallowed-instrument substrings, no
+halts, no non-tradable assets.
+
+### ⚠️ `alpaca.sh bars` window bug hit again — worked around, escalation #7 confirmed reproducible
+
+`./scripts/alpaca.sh bars <T> 1Day 12` returned bars ending **2026-08-06** — it silently dropped
+08-07, 08-10, 08-11 and **08-12, the single session every catalyst in this pass landed on**.
+Scoring off that output would have rated every name as if the gap-ups never happened.
+
+The bug is now characterized precisely, not just observed. `scripts/alpaca.sh:98` sets
+`back_days = lim*8/5 + 3`, then passes `limit=$lim` with `start=<back_days ago>`. Alpaca returns
+the **oldest** `lim` bars from `start`, so the window always holds ~`1.14*lim + 2` sessions while
+only `lim` are returned. **Truncation is unconditional — no value of `lim` returns the current
+session**, and the shortfall grows with `lim` (~4 sessions at `lim=12`, ~3 at `lim=5`). The
+Step 3 instruction in `routines/pre-market.md` (`bars <TICKER> 1Day 5`) is therefore never
+correct as written.
+
+Worked around by calling the bars endpoint directly with `start=2026-08-04` and no `limit`.
+All confirmation/novelty numbers below come from that call. Bar volumes are IEX-feed only and
+are compared **within** the series, never against `volume.sh` consolidated ADV.
+
+### Scoring — the gate that decided this session
+
+Every candidate died on the same gate: **strategy.md's "Fresh" test** (a catalyst qualifies only
+if Material AND Fresh AND Directional). Two distinct failure modes:
+
+**Group 1 — catalyst real, move already consumed on 08-12, now reversing.** CRWV/SMCI/HRB/CAVA
+reported after the **08-11** close; NBIS reported **08-12 before the open**. All five gapped at
+the 08-12 open and ran, then faded overnight. Verified per-name from the direct bars call:
+
+| ticker | 08-11 close | 08-12 open | 08-12 close | 08-12 move | 08-13 pre-mkt vs 08-12 close |
+|--------|-------------|------------|-------------|------------|------------------------------|
+| NBIS | 192.90 | 226.29 | 259.14 | **+34.3%** | **−3.7%** |
+| CRWV | 90.30 | 108.52 | 107.69 | **+19.3%** | **−1.8%** |
+| SMCI | 31.69 | 34.76 | 37.58 | **+18.6%** | **−7.0%** |
+| HRB | 46.73 | 54.99 | 54.185 | **+16.0%** | n/a |
+| CAVA | 60.85 | 67.55 | 69.515 | **+14.2%** | n/a |
+
+Every one is 3–7x the 5% priced-in bar, and the three with readable pre-market are **down**.
+This is the exact shape strategy.md already paid for: INTC 07-24 (scored 7 at +4.4% pre-market,
+closed −7.8% same day) and AMD 07-23 (scored 7 on a +9.7% two-session stack, −5.5% two days
+later). Confirmation scores 0 for the faders — "price up on above-average volume since the
+catalyst" is false when the name is red.
+
+**Group 2 — catalyst genuinely fresh (after the 08-12 close), but the move is happening right now
+in pre-market.** HLIT (+25%) and OMER (+19–24%). Fresh by the clock, not fresh by the rule: "not
+already 5%+ priced in intraday. If the move already happened, we missed it."
+
+**Group 3 — stale.** AEP's raise is from **July 30** (14 days old; Grok Q3 misfiled it as
+post-close news — caught by verification call C, and there is no 08-12/08-13 AEP release at all).
+REPL's FDA approval is **August 6** (7 days old); its +11.6% on 08-12 tracks follow-on coverage
+(the AABB summary is dated 08-12), which is the second wave *closing*, not opening — the stock is
+already ~+185% off its 07-28 base of $5.34.
+
+**Group 4 — wrong catalyst type.** BWMN is a cash takeout at a fixed **$43.00**, last $42.22:
+maximum upside +1.8% to deal price, no forward cash-flow delta available to us. HBT is the
+**acquirer** in its deal. Neither is a directional second-wave setup.
+
+## 2026-08-13 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                        | source          |
+|--------|-------|----------------------------------------------------------------------------|-----------------|
+| —      | —     | **No tradeable signal today.**                                             | —               |
+
+**No tradeable signal today.** 0 of 11 scored candidates reached the entry threshold of 6.
+
+Skipped (below threshold):
+- **REPL (score 4)**: FDA accelerated approval of RP1/Tudriqev for advanced melanoma — but approval was **Aug 6, 7 days old**, not fresh. Strength 4, novelty 0 (+185% off the 07-28 base of $5.34; 08-12's +11.6% is follow-on coverage of a week-old event), confirmation 2 (up on rising volume), cleanliness −2 applied as a hard fail of the Fresh gate. Scored on strength+confirmation alone it would read 7; **it does not qualify**, because Fresh is a gate on the catalyst, not a term in the sum. Logging the tension explicitly so the arithmetic is never mistaken for permission.
+- **CRWV (score 5)**: Q2 rev $2.58B beat, FY26 guide raised $12–13B → $12.4–13.2B, $100B backlog. Strength 4, novelty 0 (**+19.3% consumed 08-12**), confirmation 0 (**−1.8% pre-market**), cleanliness 1.
+- **SMCI (score 5)**: Q4 FY26 non-GAAP EPS $1.70 vs ~$0.96, FY27 rev guide $65–72B. Strength 4, novelty 0 (**+18.6% consumed**), confirmation 0 (**−7.0% pre-market**, the sharpest fade on the board), cleanliness 1.
+- **NBIS (score 5)**: AI cloud sales +514% YoY. Strength 4, novelty 0 (**+34.3% consumed**), confirmation 0 (**−3.7% pre-market**), cleanliness 1.
+- **HLIT (score 5)**: Q2 Broadband rev $133.5M **+54% YoY**, FY26 Broadband guide raised $475–495M → **$505–525M (+6.2% midpoint)**, non-GAAP EPS guide $0.67–0.75 — **verified against the company's own PR Newswire/IR release, released 08-12 16:05 ET**. Strength 3, novelty **0 (+25% in pre-market)**, confirmation 1, cleanliness 1. Note on confirmation: the 08-12 +5.0% on 99,891 IEX shares (~2x the prior-session average) came **before** the 16:05 ET release, so it cannot confirm this catalyst; only the unverifiable pre-market print is post-catalyst. Scoring it 2 would have produced a false 6. **The best-quality catalyst of the session, and still untradeable — 25% of it is gone before the bell.**
+- **HRB (score 5)**: FY26 Q4 results/outlook (08-11 after close). Strength 3, novelty 0 (**+16.0% consumed**), confirmation 1, cleanliness 1.
+- **CAVA (score 5)**: Q2 2026 results (08-11 after close). Strength 3, novelty 0 (**+14.2% consumed**), confirmation 1, cleanliness 1. Prior CAVA trade stopped out −12.18% on 2026-06-02.
+- **AEP (score 3)**: FY26 operating EPS guide raised $6.15–6.45 → $6.25–6.55 — but the release is **July 30, 14 days old**, and there is **no AEP announcement dated 08-12 or 08-13**. Strength 2, novelty 0, confirmation 0 (+0.9% on 08-12, IEX volume 145,376 vs a 114k–322k recent range = unremarkable), cleanliness 1. Grok Q3 misattributed this as post-close news; verification call C caught it.
+- **OMER (score 3)**: Q2 net revenue $28.5M, GAAP net income $13.2M ($0.18/sh) vs a ~$0.27 loss consensus — but **no guidance raised or provided** (company explicitly not guiding revenue). Strength 2, novelty 0 (**+19–24% already**), confirmation 1, cleanliness 0 — **market cap ~$992M is below `min_market_cap_usd: 1_000_000_000`** at the pre-catalyst price. Fails on both the size floor and the Fresh gate.
+- **BWMN (score 2)**: cash takeout at $43.00/sh by Bernhard Capital (announced 08-10), last $42.22. Upside capped at **+1.8%** to deal price; merger arb is not this strategy's edge. Strength 1, novelty 0, confirmation 0, cleanliness 1.
+- **HBT (score 1)**: **acquirer** in a $204.6M cash-and-stock purchase of Tri-County Financial (08-10). Wrong side of the deal for a bullish catalyst. ADV 143,936 clears the floor but only barely.
+- **GXAI / IVDA / CURI**: rejected pre-scoring at $1.50 / $0.51 / $3.75 — all below `min_price_per_share: 5`.
+
+### The session in one line
+
+**A loud tape and nothing to buy.** Eleven candidates cleared liquidity and eight had a genuinely
+material catalyst — the failure was uniformly **timing**, not quality. Five names' moves were
+fully spent on 08-12 and are already fading; the two freshest catalysts (HLIT, OMER) are giving
+away 19–25% before the bell; two more are 1–2 weeks stale. This is the correct outcome of the
+freshness rule, not a research shortfall.
+
+### Capacity note — threshold and cap agree for a 5th consecutive session
+
+`max_concurrent_positions: 1` is filled by **RDNT** (96 sh @ $72.30, +6.42% at last mark, time
+stop **08-17**). Even a score-8 name could not have been bought today. As on 08-10/08-11/08-12,
+**the agreement between the entry threshold and the capacity cap is coincidence** — today the
+threshold did the rejecting on its own and the cap was never consulted. The cap's cost stays
+unpaid, not retired. No slot opens before 08-17.
+
+### 🟠 Standing items (unchanged — pre-market can fix none of them)
+
+- Account cash **−$26.22**, `no_margin` breached, **11th consecutive routine** to log it. No
+  orders sent today, so unchanged.
+- Ops escalations **unapplied for the 14th consecutive routine** (full list in
+  `memory/portfolio.md`). Today exercised **#7** (the `bars` window bug) live and upgraded it
+  from "observed" to "characterized with a root cause and a proof it can never return the current
+  session" — see above. Escalation **#2/#3** (EOD launchd trigger 12:55 → 12:40 PDT, drop
+  `ProcessType Background`) remains the highest-value fix: **RDNT's 08-17 time stop is EOD's to
+  enforce**, it is 100% of equity, and EOD has missed 21 of 60 runs.
