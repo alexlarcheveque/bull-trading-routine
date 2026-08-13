@@ -7424,3 +7424,19 @@ unpaid, not retired. No slot opens before 08-17.
   session" — see above. Escalation **#2/#3** (EOD launchd trigger 12:55 → 12:40 PDT, drop
   `ProcessType Background`) remains the highest-value fix: **RDNT's 08-17 time stop is EOD's to
   enforce**, it is 100% of equity, and EOD has missed 21 of 60 runs.
+
+### 2026-08-13 market-open execution (09:30:16 ET, on time)
+
+**0 buys, 0 sells, 0 orders. No preflight invoked.**
+
+- **Exits:** RDNT (96 sh, us_equity) +7.03% @ $77.38 vs $72.30 entry. No gate fired —
+  target +100%, stop -100%, time stop 08-17 (2 sessions out, not overdue), thesis **NO NEWS
+  ×10 classes** (Grok 1/1 first try). Thesis is the only reachable gate before 08-17.
+- **Halts:** daily +0.56% and weekly +7.01% both far inside their 100% caps; **open positions
+  1 >= `max_concurrent_positions: 1` halted entries.**
+- **Entries:** blocked twice over — the pre-market watchlist had **0 candidates >= 6** (top 5),
+  so threshold and capacity cap agreed for a **5th consecutive session**. Still coincidence:
+  the cap has not been tested by a qualifying name since it was set. No slot before 08-17.
+- **Standing:** cash -$26.22, `no_margin` breached, **12th consecutive routine**. Ops
+  escalations unapplied for the **15th**; #2/#3 (EOD launchd 12:55 → 12:40 PDT, drop
+  `ProcessType Background`) remain highest-value — RDNT's 08-17 stop is EOD's to enforce.
