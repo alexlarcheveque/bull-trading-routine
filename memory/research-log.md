@@ -7440,3 +7440,26 @@ unpaid, not retired. No slot opens before 08-17.
 - **Standing:** cash -$26.22, `no_margin` breached, **12th consecutive routine**. Ops
   escalations unapplied for the **15th**; #2/#3 (EOD launchd 12:55 → 12:40 PDT, drop
   `ProcessType Background`) remain highest-value — RDNT's 08-17 stop is EOD's to enforce.
+
+### 2026-08-13 end-of-day execution (15:55:12 ET, on time)
+
+**0 time-stops, 0 exits, 0 orders. No preflight invoked.**
+
+- **Run quality:** clock read **15:55:12 ET**, at the trigger — **first on-time EOD after two
+  consecutive degraded runs** (08-12 started 15:58, 08-07 fired after the close). Does not
+  retire escalations #2/#3: the plist still carries `ProcessType Background`.
+- **Time stops / expiry guard:** RDNT (96 sh, `us_equity`) exit **2026-08-17**, 2 sessions out,
+  not overdue → nothing due. No options open, so the expiry guard is n/a.
+- **Safety net (stop/target/thesis):** RDNT +7.47% @ $77.70 vs $72.30 entry. Target +100%,
+  stop -100%, thesis **NO NEWS ×10 classes** (Grok 1/1 first try, verdict THESIS INTACT).
+  Thesis-broken remains the only reachable gate before 08-17.
+- **Weekly cap:** WTD **+7.44%** (vs Mon 08-10 open $6,917.30) against a -100% cap — no flatten,
+  no `PAUSED` marker. Daily **+0.97%**, also far inside its cap.
+- **EOD email:** sent, one attempt, Resend `b8c92ada-d210-4659-a1fa-e1fd07d656b1`.
+- **Close:** equity **$7,432.02**, day **+0.97%** (vs last_equity $7,360.98), all-time
+  **-92.57%** vs the $100k start. Position 100.4% of the book. Intraday recovery off the midday
+  $7,334.58 low, closing above the $7,402.26 open — all RDNT mark-to-market (76.65 → 77.70).
+- **Standing:** cash -$26.22, `no_margin` breached, **14th consecutive routine**. Ops escalations
+  unapplied for the **17th**; #2/#3 (EOD launchd 12:55 → 12:40 PDT, drop `ProcessType Background`)
+  now have a deadline — **08-17 is a Monday and RDNT's time stop is EOD's to enforce at 100% of
+  equity.**

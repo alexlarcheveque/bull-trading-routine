@@ -1,19 +1,102 @@
 # portfolio.md
-# Updated 2026-08-13 11:02 CT (12:02 ET) by midday routine.
+# Updated 2026-08-13 14:55 CT (15:55 ET) by end-of-day routine.
 
 ## Account
-- equity: 7334.58
+- equity: 7432.02
 - cash: -26.22
-- buying_power: 20501.33
-- day_pnl_pct: -0.36  # vs last_equity 7360.98
+- buying_power: 20778.19
+- day_pnl_pct: +0.97  # vs last_equity 7360.98
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | +6.02              |
+| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | +7.47              |
 
 ## Notes
+
+2026-08-13 end-of-day: **0 time-stops, 0 exits, 0 orders.** No preflight invoked,
+`memory/trade-log.md` unchanged. RDNT marked 77.70 vs 72.30 entry = **+7.47%**, up from
++6.02% at the 12:02 ET midday mark and +7.03% at the open. Market value $7,458.24 on
+$7,432.02 equity — still **100.4% of the book**.
+
+### 🟢 RUN QUALITY: ON TIME — clock read 15:55:12 ET, at the 15:55 ET trigger
+
+**First on-time EOD after two consecutive degraded runs** (08-12 started 15:58, 08-07 fired
+after the close). One clean run does not retire escalations #2/#3 — the plist still carries
+`ProcessType Background`, which is what licenses the deferral. **08-17 is the run that
+matters**: RDNT's time stop is EOD's to enforce, at 100% of equity, on a Monday.
+
+### Step 1 — time stops + expiry guard: nothing due
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| time stop | exit 2026-08-17 (2 sessions out) | today >= target_exit | no |
+| overdue carve-out | not past due | target_exit strictly in past | no |
+| expiry guard | n/a — no options open | within 2 trading days of expiry | n/a |
+| profit target (safety net) | +7.47% | +100% (`per_trade_target_pct`) | no |
+| stop loss (safety net) | +7.47% | -100% (`per_trade_stop_pct`) | no |
+| thesis broken (safety net) | Grok **NO NEWS ×10 classes** | concrete named event | no |
+
+Instrument detected live off Alpaca `asset_class: us_equity` — shares path, `quote`/`sell`,
+no expiry guard applicable. Same 10-class enumeration as 08-11 through 08-13-midday (guidance
+cut, recall, litigation, CMS/regulatory adverse decision, exec departure, rating **downgrade
+only**, restatement, dilution/offering, short report, contract/payer-network loss), demanding a
+literal `NO NEWS` per class. All ten clean, **Grok 1/1 first-try**, verdict THESIS INTACT.
+
+At ±100% the price gates are unreachable, so thesis-broken stays the **only exit gate that can
+fire** before the 08-17 time stop.
+
+### Step 2 — weekly loss cap: not hit
+
+| check | value | cap | action |
+|-------|-------|-----|--------|
+| weekly P&L | **+7.44%** (vs Mon 08-10 open $6,917.30) | -100% (`weekly_loss_cap_pct`) | none |
+| daily P&L | **+0.97%** | -100% (`daily_loss_cap_pct`) | none |
+
+No flatten, no `notify.sh` alert, no `PAUSED` marker written to `memory/research-log.md`.
+Intraday recovery off the midday low: $7,334.58 → $7,432.02 (**+$97.44**), entirely RDNT
+mark-to-market (76.65 → 77.70), reversing the morning give-back and closing above the open.
+
+### Step 3/4 — EOD email sent
+
+Resend id `b8c92ada-d210-4659-a1fa-e1fd07d656b1`, one attempt, delivered. Body in
+`/tmp/bull-eod.txt`. Pre-market scanned **11 candidates, 0 reached the threshold of 6** (top
+score 5: CRWV/SMCI/NBIS/HLIT/HRB/CAVA, all rejected on novelty). **Sixth consecutive session**
+where the entry threshold and the capacity cap agree — still **coincidence, not vindication**;
+the cap has not been tested by a qualifying name since it was set.
+
+### 🟠 `no_margin` still breached — cash -$26.22, 14th consecutive routine
+
+Unchanged (no orders sent). Still structurally uncurable by any routine: `alpaca.sh sell` closes
+full positions only, and the only position is >100% of equity, so the sole lever is liquidating a
++7.47% winner to cure a $26 overdraft. Needs the partial-close path (escalation #5) or the wider
+entry haircut (#6).
+
+### Ops carry-forward — 17th consecutive escalation, still unapplied
+
+EOD can apply none of these (exits, journaling and notification only). Re-listed so the count
+stays honest. Nothing new today; **#2/#3 now have a deadline**: 08-17.
+
+1. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` (still uncommitted, with untracked
+   `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`, `memory/guardrails.md.conservative.bak`).
+2. **Move the EOD launchd trigger 12:55 → 12:40 PDT** — highest-value single change. **RDNT's
+   08-17 time stop is EOD's to enforce**, it is 100% of equity, and EOD has missed 21 of 60 runs.
+   08-17 is a Monday: the first EOD of next week, the exact shape of the 08-07 failure that forced
+   the 08-10 BMY cleanup at market-open. Today's on-time run does not retire this.
+3. **Drop `ProcessType Background`** from `com.bull-trading.end-of-day.plist` — that key licenses
+   the deferral that produces the 3-4 minute late starts.
+4. Reconcile `routines/market-open.md:29` with strategy.md's overdue-time-stop carve-out — the two
+   files still contradict each other. **Will be read live on 08-18 if EOD misses 08-17.**
+5. `alpaca.sh` lacks limit-order support and any partial-close path.
+6. **Widen the entry haircut 98% → 96%, or size on the ask** (PENG 07-08 +2.6%, RDNT 08-10 +2.58%).
+7. **`alpaca.sh bars` window bug** (`scripts/alpaca.sh:105`, `back_days=$(( lim * 8 / 5 + 3 ))`)
+   silently truncates the most recent sessions. Fix the script **and** the Step 3 instruction in
+   `routines/pre-market.md`. Characterized with a root cause on 08-13 pre-market.
+8. **`routines/midday.md:1` header is wrong by an hour** — confirmed live 08-13 midday (fired
+   12:02 ET, header claims 1:00 PM ET). Docs-only fix — do NOT "correct" the plist to match.
+
+---
 
 2026-08-13 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md`
 unchanged. RDNT marked 76.65 vs 72.30 entry = **+6.02%**, down from +7.03% at the 09:31 ET
