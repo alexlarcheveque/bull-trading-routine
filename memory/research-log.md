@@ -7749,3 +7749,34 @@ threshold rejected on its own and the cap was never consulted.
 - **#7 exercised again this pass:** `routines/pre-market.md` Step 3 still instructs
   `alpaca.sh bars <TICKER> 1Day 5`, which can never return the current session. Worked around with Yahoo
   for the 3rd consecutive session. The routine file is still wrong as written.
+
+---
+
+## 2026-08-14 end-of-day — 🔴 MISSED RUN (post-close bail-out)
+
+launchd fired **13:10:13 PDT = 16:10 ET**, 15m13s after the 12:55 PDT trigger and **10 minutes
+after the 16:00 ET close**. `clock.is_open` = `false` → Step-0 bail-out. **0 exits, 0 orders, no
+preflight, no EOD email.** Miss **#22 of 62 runs (~35%)**.
+
+**Root cause observed live, not inferred.** The plist time is correct (12:55 PDT = 15:55 ET); the
+job was *deferred*. `weekly-review` started at `13:10:13 PDT` — the same second, from a different
+trigger — which is launchd batch-releasing coalesced `ProcessType Background` jobs. Escalation #3
+is the cause; escalation #2 (12:55 → 12:40 PDT) is the safety margin behind it.
+
+Reference: 08-13 EOD started `12:55:04 PDT` (+4s) off the identical plist. The scheduler is not
+consistently late — it is **unpredictably** late, which is worse for a deadline-driven routine.
+
+**Cost today: zero trades.** RDNT's `target_exit` is 2026-08-17, one session out, and both price
+gates are ±100% away (+5.60%). Nothing was due. That is the calendar's doing, not the scheduler's.
+
+**Cost Monday: potentially the whole book.** 08-17 EOD is the run that must sell RDNT at **100.4%
+of equity** on its time stop. Today's run proves that routine can fire after the close. If it does,
+08-18 market-open inherits the sale under the strategy.md overdue carve-out (5th instance after
+KMX 06-26, PENG 07-16, CCK 07-30, BMY 08-10) — into the stale 09:30 IEX feed of escalation #9.
+
+**For the weekly review (which also fired late today, same batch):** escalations #2/#3 are now 21
+routines unapplied and their stated deadline is **Monday 2026-08-17**. Recommend they are applied
+before Monday's open rather than re-listed a 22nd time.
+
+Closing marks: equity **$7,303.38** (day **-1.25%**, week **+5.58%** vs Mon 08-10 open $6,917.30),
+cash **-$26.22** (`no_margin` breached, 18th consecutive routine), RDNT 96 @ 72.30 → 76.35 (+5.60%).
