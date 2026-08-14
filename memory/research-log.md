@@ -7868,3 +7868,29 @@ under review, so SPY was sourced from Yahoo.
 
 **VERDICT: RESUME MONDAY WITH CURRENT STRATEGY.** No `weekly_loss_cap` flatten occurred
 (+5.58% vs a -100% cap). The only Monday decision that matters is EOD firing on time.
+
+### 2026-08-14 weekly review — CORRECTION appended post-hoc (EOD miss observed mid-run)
+
+The above was computed before the 08-14 EOD result was visible. **08-14 EOD MISSED**: fired
+13:10:13 PDT = **16:10 ET, 10 minutes past the close**, `is_open = false`, Step-0 bail-out, 0
+exits, no preflight, no EOD email (commit `a5b44a3`). **Miss #22 of 62 (~35%)** — the escalation
+figures in the entry above ("21 of 61") were current when written and are now stale by one.
+Cost today **zero**: RDNT's stop is 08-17 and the ±100% price gates are unreachable.
+
+**The mechanism is now OBSERVED rather than inferred, and this routine is the witness.** This
+weekly review started at the **identical second (13:10:13 PDT) off a different trigger**. Two
+unrelated launchd jobs releasing in the same instant is a batch flush of deferred
+`ProcessType Background` work. Escalation #3 has asserted for weeks that this key "licenses the
+deferral"; that is no longer a hypothesis. The plist time (12:55 PDT = 15:55 ET) is **correct** —
+the job was **deferred, not misconfigured** — and 08-13 fired at 12:55:04 off the identical
+plist. The scheduler is not consistently late; it is **unpredictably** late, which is the worse
+failure mode for a deadline-driven routine.
+
+**Revised Monday risk — worse than the entry above states.** RDNT's time stop lands 2026-08-17 at
+100.4% of equity, EOD owns it, and **the run immediately before it failed**. Escalations #2/#3 are
+now **21 routines unapplied** with a **Monday deadline**. Verdict is unchanged in substance —
+**RESUME MONDAY WITH CURRENT STRATEGY** — but the ops risk attached to it is now demonstrated
+rather than projected.
+
+No strategy edit follows from this. It is an ops defect, not a rubric defect, and `guardrails.md`
+and the plists are both outside this routine's remit.
