@@ -7463,3 +7463,289 @@ unpaid, not retired. No slot opens before 08-17.
   unapplied for the **17th**; #2/#3 (EOD launchd 12:55 → 12:40 PDT, drop `ProcessType Background`)
   now have a deadline — **08-17 is a Monday and RDNT's time stop is EOD's to enforce at 100% of
   equity.**
+
+---
+
+## 2026-08-14 — pre-market research (06:32 ET start)
+
+### Step 1 — raw Grok output (verbatim, 8/8 first-try: 4 standard + 4 verification)
+
+#### Q1 — materially bullish news, US large-caps (>$2B), last 24h
+
+**WDAY (Workday, ~$43–51B market cap)**: Shares surged as much as 21% (halted for volatility) on
+reports that private equity firm Silver Lake is in talks to acquire the company.
+- Source: Yahoo Finance (citing Reuters); Schwab Network.
+- Timestamp: August 13, 2026 (reports and surge during trading hours).
+
+**RDDT (Reddit, ~$30B market cap)**: Shares rose 11–12%+ in after-hours/extended trading on news of
+S&P 500 inclusion (effective before market open on August 18, replacing AvalonBay Communities).
+- Source: Yahoo Finance, Morningstar/Dow Jones, TradingKey.
+- Timestamp: August 13, 2026 (announcement and reaction on/after close).
+
+These were the most prominent materially bullish catalysts for qualifying US large-caps in the period.
+Other earnings-related moves were noted but less uniformly highlighted as driving significant
+single-day reactions.
+
+#### Q2 — pre-market movers 2026-08-14, >2%, on news (endpoints pinned: 08-14 pre-market vs 08-13 REGULAR close)
+
+**CAPR (Capricor Therapeutics): Aug 13, 2026 regular-session close ≈ $4.21; Aug 14, 2026 pre-market
+≈ $8.05 (+91%).** Driven by an actual news catalyst: Q2 2026 financial results and corporate update
+(including positive HOPE-3 Phase 3 trial data and ongoing FDA BLA review for Deramiocel) released
+after the Aug 13 close, with an associated conference call.
+
+Other prominent pre-market gainers on Aug 14 (e.g., WETO, AKAN, and various low-float names showing
+30–129% moves per Benzinga, StockAnalysis, MarketBeat) appear primarily speculative or
+momentum-driven without clear, contemporaneous news catalysts tied to the Aug 13 close.
+
+#### Q3 — earnings released after the 2026-08-13 close (16:00 ET) that beat AND raised
+
+**AMAT (Applied Materials)**: Beat on adjusted EPS of $3.50 vs. $3.40 estimate (beat by $0.10) and
+revenue of $9.115B vs. $8.991B estimate. Significantly raised calendar year 2026 outlook.
+- Primary company press release: August 13, 2026, after market close (post-4:00 PM ET; earnings call
+  at 4:30 PM ET). Source: ir.appliedmaterials.com.
+
+No other companies were identified with primary releases strictly after 2026-08-13 16:00 ET meeting
+both criteria. Earlier reports (e.g., Cisco/CSCO on Aug 12) were excluded per the query.
+
+#### Q4 — FDA approvals, >$100M contract wins, M&A, regulator decisions, last 24h (primary-release dates demanded)
+
+**Bristol Myers Squibb (BMY)** – FDA approval of Zenbexus (CELMoD therapy, in combination with
+daratumumab and dexamethasone). Primary company press release: August 13, 2026, ~5:12 PM ET.
+
+**Accelerant Holdings (ARX)** – Definitive agreement to be acquired by Thoma Bravo in all-cash deal
+with >$4 billion enterprise value. Primary press release (joint with Thoma Bravo): August 13, 2026
+(Business Wire, ATLANTA).
+
+**Global Net Lease (GNL)** – Completion of previously announced acquisition of Modiv Industrial.
+Primary press release and 8-K: August 13, 2026 (announcing mergers closed on August 12).
+
+**Digital Asset Acquisition Corp. (DAAQ)** – Mutual termination of business combination agreement
+with Old Glory Holding Company. Primary 8-K: August 13, 2026.
+
+**Western Union (WU) / International Money Express (IMXI)** – Receipt of NYDFS regulatory approval
+for pending acquisition. Primary press release: August 14, 2026 (or late August 13 ET).
+
+No large contract wins (>$100M) or additional qualifying FDA approvals, M&A announcements, or
+regulator decisions with primary releases on/after August 13, 2026 ~06:00 ET were identified.
+
+#### Verification call 1 — AMAT primary IR release
+
+Primary source: Applied Materials Q3 FY2026 earnings release, **Aug. 13, 2026 at 4:01 PM EDT**
+(GLOBE NEWSWIRE timestamp on the IR page).
+- Non-GAAP EPS **$3.50** (record; +41% YoY). Revenue **$9.115B** (record; +25% YoY). Consensus figures:
+  **UNCONFIRMED** (not stated in the primary release).
+- Q4 FY2026 guidance (exact): total revenue **$10,250M ± $500M**; non-GAAP diluted EPS **$4.02 ± $0.20**.
+  Consensus comparison: **UNCONFIRMED** (not compared in the primary release).
+- Segments: Semiconductor Systems $7,040M (67% foundry/logic, 26% DRAM, 7% flash; non-GAAP GM 55.4%);
+  AGS $1,781M (non-GAAP GM 35.6%). China/export-control commentary: **UNCONFIRMED** (none in release).
+- Release contains no consensus references, no "beat-and-raise" language, no market-reaction drivers.
+  Highlights record results, 13th straight YoY non-GAAP GM expansion, raised calendar-2026 Semi Systems
+  expectations, positive 2027 commentary. "Any negative pre-market reaction (~5.5% down on Aug. 14) is
+  external to this release."
+
+#### Verification call 2 — BMY primary release
+
+- **(1)** Primary release: **August 13, 2026** (Business Wire, Princeton NJ); exact time not stated in
+  the primary release itself (Q4 gave ~5:12 PM ET).
+- **(2)** ZENBEXUS (iberdomide) + daratumumab and hyaluronidase-fihj + dexamethasone (ZDd), for adult
+  multiple myeloma patients with **at least one prior line of therapy** including a proteasome inhibitor
+  and an immunomodulatory agent. **Accelerated approval based on MRD-negative CR; confirmatory trial(s)
+  required for full approval.**
+- **(3)** **First-in-class** — first FDA-approved CELMoD (cereblon-modulating protein degrader).
+- **(4)** Peak sales / revenue estimate: **UNCONFIRMED** (none stated in the primary release).
+- **(5)** Expected in the sense of following prior **NDA acceptance (February 17, 2026)** and
+  **Breakthrough Therapy designation**, reviewed under **Project Orbis**; no specific PDUFA/target action
+  date disclosed in this release.
+- **Offsetting negative news:** **Yes** — reports of a **$6.7B lawsuit over drug approvals and a related
+  appellate court filing (UMB Bank v. Bristol-Myers) on or around August 13, 2026.**
+
+#### Verification call 3 — why is AMAT down 5.5% on a beat-and-raise?
+
+**Q4 FY2026 guidance was ABOVE Wall Street consensus** (revenue midpoint ~$10.25B vs ~$9.5B consensus;
+EPS midpoint $4.02 vs ~$3.65–3.68 consensus). Q4 Semi Systems ~$7.9B (+62% YoY), AGS ~$1.84B; revenue
++51% YoY, EPS +85% YoY. Q3 also beat (rev $9.115B vs ~$9.0B; EPS $3.50 vs ~$3.38–3.40).
+
+**The selloff appears driven by guidance and outlook details "not exceeding high expectations enough,"
+including a relatively flat gross margin outlook pressuring near-term profitability views**, despite
+strong AI/foundry-logic/DRAM/advanced-packaging demand (expected to drive ~80% of WFE growth in
+2026–2027). Shares have often declined post-earnings recently amid elevated valuations (~200% rally
+into the print). No major red flags on China restrictions or DRAM order timing emerged as primary
+drivers; no negative large-customer callouts.
+
+#### Verification call 4 — ARX deal terms, CAPR size
+
+- **ARX:** exact per-share cash consideration **$20.25** in cash per Class A and Class B share (all-cash,
+  >$4B EV), ~49% premium to the Aug 12 close. Primary source: Thoma Bravo press release, Aug 13, 2026.
+- **CAPR:** market cap **~$244 million**, ~57.91M shares outstanding. Q2 2026 released after close
+  Thursday Aug 13, call 4:30 PM ET. HOPE-3 Phase 3 (Deramiocel in DMD): primary endpoint (PUL 2.0) met
+  with statistical significance (p=0.029); published in *The Lancet* July 2026.
+
+### Step 2 — universe filtering
+
+9 tickers extracted with a positive catalyst (DAAQ excluded pre-filter: SPAC, and the event is a
+*termination* — not directional). None are held (portfolio: RDNT only).
+
+| ticker | class | tradable | 30d ADV (Yahoo consolidated) | price | verdict |
+|--------|-------|----------|------------------------------|-------|---------|
+| AMAT | us_equity | active | 8,218,360 | 534.54 | pass |
+| BMY  | us_equity | active | 11,821,823 | 64.65 | pass |
+| WDAY | us_equity | active | 4,785,873 | 206.45 | pass |
+| RDDT | us_equity | active | 5,315,063 | 158.12 | pass |
+| ARX  | us_equity | active | 4,427,810 | 19.51 | pass |
+| IMXI | us_equity | active | 380,080 | 11.70 | pass |
+| WU   | us_equity | active | 11,465,933 | 7.49 | pass |
+| GNL  | us_equity | active | 2,582,353 | 9.02 | pass |
+| CAPR | us_equity | active | 5,034,993 | 4.21 | **REJECT** — mkt cap ~$244M < `min_market_cap_usd: 1B`, AND $4.21 < `min_price_per_share: 5` |
+
+8 candidates cleared the universe filters and were scored.
+
+### ⚠️ The reference-close trap fired again — and it was decisive on every name
+
+Per the 08-12 standing item, `alpaca.sh bars` was **not** used (Step 3 of `routines/pre-market.md` is
+still wrong as written — escalation #7). Yahoo was used instead, and the trap appeared anyway in a
+**new position**: on a pre-market morning, `chart?interval=1m&range=1d&includePrePost=true` returns
+`previousClose` = the **08-12** close, not the 08-13 close. Naively differencing against it gave:
+
+| ticker | naive (vs 08-12 close) | CORRECT (vs 08-13 regular close) | delta |
+|--------|------------------------|----------------------------------|-------|
+| AMAT | **-7.92%** | **-5.58%** | 2.3pt |
+| BMY  | +1.49% | **0.00%** | 1.5pt |
+| WDAY | +20.45% | **+2.27%** | 18.2pt |
+| RDDT | +15.58% | **+12.33%** | 3.3pt |
+| ARX  | +43.30% | **-0.04%** | 43.3pt |
+| IMXI | +29.07% | **+25.21%** | 3.9pt |
+| CAPR | +114.68% | **+111.88%** | 2.8pt |
+
+The correct anchor is `meta.regularMarketPrice` with `meta.regularMarketTime` verified to be
+**2026-08-13T20:00Z = 16:00 ET**, and the intraday bar timestamps verified to start
+**2026-08-14T08:00Z = 04:00 ET**. Both were checked explicitly this pass rather than assumed.
+**On ARX the naive read is off by 43 points and would have inverted the entire read of the name**
+(from "flat, arb spread intact" to "+43% and running"). Generalizes the 08-12 rule: it is not just
+the `range=2d` window — **any** window's `previousClose` is relative to that window, so anchor on
+`regularMarketPrice` and verify its timestamp.
+
+### Step 3 — scoring
+
+**AMAT — 4 + 1 + 0 + 0 = 5.** The session's headline case, and the most instructive.
+Strength **4**: primary-source-verified record quarter (EPS $3.50 +41% YoY, rev $9.115B +25% YoY) and a
+Q4 guide **~8% above consensus revenue** ($10.25B vs ~$9.5B) and ~10% above on EPS ($4.02 vs ~$3.65-3.68),
++51%/+85% YoY. This is a real, large, verified beat-and-raise — not a phantom one.
+Novelty **1**: the band is unconsumed *to the upside* only in the trivial sense — price discovery has
+run, and it ran **against** the news.
+Confirmation **0**: the 08-13 session was **-2.48%** (548.15 → 534.54) on **12.8M shares vs a ~4-7M
+recent average (~2x)** — and that bar is **PRE-catalyst** (release 16:01 ET), so per the 08-13 standing
+rule it cannot confirm the release either way. The only post-catalyst print is **-5.58%**.
+Cleanliness **0**: a -5.6% adverse reaction to the catalyst *itself* is offsetting information.
+
+**➡️ NEW (08-14) — a verified, above-consensus beat-and-raise can still be rejected by the market. The
+"beat and raise" label is not the catalyst; the price reaction is.** Every prior lesson in this log
+concerned catalysts that were weaker than reported (PLNT's buyback math, CAH's phantom raise, AEP's
+stale raise). AMAT is the opposite failure mode: **the numbers verified clean and the stock fell anyway**
+on valuation/margin-mix ("not good enough" after a ~200% rally). Primary-source verification protects
+against a fake catalyst; it does **not** establish that a real one will be paid for. Buying AMAT here is
+mean-reversion on a gap-down, which is **not** our thesis — the second-wave trade requires the first wave
+to be positive.
+
+**BMY — 3 + 2 + 0 + 0 = 5.** The only name with an unconsumed band, and the closest call of the session.
+Strength **3**: first-in-class CELMoD approval is genuinely material, but it is an **accelerated** approval
+on an MRD-negative CR **surrogate** endpoint (confirmatory trials required, withdrawable), the regimen
+rides on **daratumumab, a competitor's backbone drug**, **no peak-sales figure** is disclosed, and it lands
+on a ~$49-50B revenue base. Material, not transformative.
+Novelty **2**: **0.00%** consumed against the 4% mega-cap bar (~$131B cap) — novelty **3** by the letter of
+the rubric. Marked down one point because the approval was **anticipated**: NDA accepted **2026-02-17**,
+Breakthrough Therapy designation, Project Orbis review. The market had ~6 months to price it and its
+verdict at 06:34 ET is **exactly zero**. That is the 08-07 novelty-3 fade watch item (n=2, ADM -4.4% /
+YOU -6.4%) in its sharpest form: a zero pre-market move on a real catalyst is at least as likely to be the
+market **declining to pay up** as an unconsumed second wave.
+Confirmation **0**: release ~17:12 ET on 08-13, so the 08-13 bar (+1.49%, 10.5M vs ~9M avg) is
+**pre-catalyst** — the HLIT 08-13 rule, applied for the second consecutive session. The only post-catalyst
+print is flat (0.00%, 15 prints).
+Cleanliness **0**: concurrent **$6.7B UMB Bank v. Bristol-Myers** appellate matter dated 08-13.
+strategy.md lists lawsuits as asymmetric downside.
+
+**➡️ AUDIT NOTE — BMY is the one name where the scoring choice was decision-relevant.** At novelty 3 it
+scores **6 and is tradeable**. Both readings are recorded deliberately so the weekly review can grade the
+call. Even at 6 it would be an at-threshold entry with **confirmation 0 and cleanliness 0** — the exact
+profile of the RDNT 08-10 entry, which this log has already flagged as low-quality and not to be
+relitigated by green marks.
+
+**WDAY — 3 + 0 + 2 + 0 = 5, and GATE-DISQUALIFIED.** Silver Lake acquisition **talks** (a Reuters report,
+not a definitive agreement). +17.79% on 08-13 (175.29 → 206.45) on **16.3M vs ~3.5M avg = 4.7x volume**,
+plus +2.27% pre-market = a **+20.5% two-session stack** against a 5% bar. Textbook **AMD 07-23** shape.
+Cleanliness 0: buying a takeout *rumor* at 100% of book means catastrophic downside from a +20% base if
+talks break. **Freshness is a gate, not a term in the sum (REPL 08-13) — WDAY fails it 4x over.**
+
+**RDDT — 2 + 0 + 2 + 1 = 5, and GATE-DISQUALIFIED.** S&P 500 inclusion effective 08-18. Strength **2**:
+index inclusion is a **flow** event — it changes no forward cash flow, demand, supply, regulation or
+competitive position, which is what strategy.md's "material" test actually asks for. Forced index buying
+is real but it is not our edge. **+12.33% pre-market** (plus +3.04% on 08-13) = ~2.5x the 5% bar.
+
+**ARX — 2 + 0 + 2 + 0 = 4.** Thoma Bravo all-cash at **$20.25/share**; closed **$19.51**, pre-market
+**-0.04%**. **Maximum remaining upside is +3.79%** to the deal price. Merger arb is not our edge —
+identical to **BWMN 08-13** ($43.00 takeout trading $42.22, +1.8% capped). Risking 100% of the book for a
+capped +3.79% with deal-break downside is the wrong side of the payoff.
+
+**IMXI — 2 + 0 + 2 + 0 = 4.** The **target** of the WU acquisition converging on the deal price after NYDFS
+approval; **+25.21%** pre-market. Merger arb, and the move is spent.
+
+**WU — 1 + 1 + 1 + 1 = 4.** The **acquirer**. A regulatory clearance to complete its own acquisition is an
+M&A milestone, not new forward cash flow. Already +4.90% on 08-13 (7.14 → 7.49); +0.27% pre-market.
+
+**GNL — 1 + 1 + 0 + 1 = 3.** **Completion** of a *previously announced* acquisition — by definition not a
+fresh catalyst. -0.71% pre-market, and the 08-13 session was down.
+
+**CAPR — rejected pre-scoring.** Market cap **~$244M < `min_market_cap_usd: 1B`** AND close **$4.21 <
+`min_price_per_share: 5`**. Double-rejected on universe filters before scoring. Had it been eligible,
+**+111.88%** pre-market is novelty 0 regardless — 22x the freshness bar. Same shape as **OMER 08-13**.
+
+**DAAQ — rejected pre-scoring.** SPAC (disallowed pre-merger), and the event is a **termination** of a
+business combination — not directional.
+
+## 2026-08-14 pre-market watchlist
+
+**No tradeable signal today.**
+
+Top score **5**, against an entry threshold of **6**. 9 tickers extracted, 8 cleared universe filters,
+**0 reached the threshold.**
+
+| ticker | score | catalyst (one line) | source |
+|--------|-------|---------------------|--------|
+| — | — | no candidate reached the entry threshold of 6 | — |
+
+Skipped (below threshold or disqualified at a gate):
+- **AMAT (5)**: verified record Q3 + Q4 guide ~8% above consensus — and the stock is **-5.58%** pre-market. Confirmation 0, cleanliness 0. The market rejected a real beat-and-raise.
+- **BMY (5)**: first-in-class CELMoD FDA accelerated approval (08-13 ~17:12 ET), band **0.00%** consumed — but the approval was anticipated (NDA accepted 02-17, Breakthrough, Orbis), confirmation 0 (pre-catalyst bar only), and a concurrent **$6.7B** UMB Bank appellate matter. Scores 6 at novelty 3; recorded for audit.
+- **WDAY (5)**: Silver Lake takeover **talks**; **+20.5% two-session stack** vs a 5% bar. Freshness **gate** failed.
+- **RDDT (5)**: S&P 500 inclusion — a flow event, not a cash-flow catalyst; **+12.33%** pre-market. Gate failed.
+- **ARX (4)**: $20.25 cash takeout trading $19.51 — upside capped at **+3.79%**. Merger arb is not our edge.
+- **IMXI (4)**: acquisition target converging on deal price post-NYDFS; **+25.21%** already.
+- **WU (4)**: the acquirer; regulatory milestone, not new cash flow.
+- **GNL (3)**: completion of a previously announced deal — not fresh.
+- **CAPR (n/a)**: mkt cap ~$244M < $1B floor AND $4.21 < $5 floor; +111.88% pre-market regardless.
+- **DAAQ (n/a)**: SPAC, and a business-combination **termination** — not directional.
+
+### The session in one line
+
+**Every name failed on the reaction, not the research.** Two catalysts verified clean against primary
+sources — AMAT's above-consensus beat-and-raise and BMY's first-in-class approval — and the market paid
+for **neither** (-5.58% and 0.00%). The rest were either spent (WDAY +20.5%, RDDT +12.33%, IMXI +25.21%,
+CAPR +111.88%) or structurally capped (ARX +3.79% to the deal, WU/GNL milestones). This is the first
+session in the log where **primary-source verification passed and the trade still failed** — a different
+failure mode from the six sessions before it.
+
+### Capacity note — threshold and cap agree for a 6th consecutive session
+
+`max_concurrent_positions: 1` is held by **RDNT until 08-17**, so no slot exists today regardless of the
+watchlist. As logged 08-10 through 08-13: this remains **coincidence, not vindication.** The cap has still
+not been tested by a qualifying name since it was set, so its cost is **unpaid, not retired**. Today the
+threshold rejected on its own and the cap was never consulted.
+
+### 🟠 Standing items (unchanged — pre-market can fix none of them)
+
+- `no_margin` breached, cash **-$26.22**, **15th consecutive routine**. Uncurable without a partial-close path.
+- Ops escalations unapplied for the **18th**. **#2/#3 (EOD launchd 12:55 → 12:40 PDT, drop
+  `ProcessType Background`) are now 1 session from their deadline — RDNT's time stop lands Monday 08-17
+  on the EOD routine at 100% of equity**, and EOD has missed 21 of 61 runs.
+- **#7 exercised again this pass:** `routines/pre-market.md` Step 3 still instructs
+  `alpaca.sh bars <TICKER> 1Day 5`, which can never return the current session. Worked around with Yahoo
+  for the 3rd consecutive session. The routine file is still wrong as written.
