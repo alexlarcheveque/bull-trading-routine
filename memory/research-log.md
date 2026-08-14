@@ -7780,3 +7780,91 @@ before Monday's open rather than re-listed a 22nd time.
 
 Closing marks: equity **$7,303.38** (day **-1.25%**, week **+5.58%** vs Mon 08-10 open $6,917.30),
 cash **-$26.22** (`no_margin` breached, 18th consecutive routine), RDNT 96 @ 72.30 → 76.35 (+5.60%).
+
+---
+
+## 2026-08-14 weekly review
+
+WTD **+5.58%** ($6,917.30 -> $7,303.38) vs SPY **+0.40%** (773.26 -> 776.32) = **+5.19pp**.
+**1 trade closed** (BMY, +0.03%), 2 orders sent, **0 preflight rejections**, 0 stop-outs
+(-100% stop unreachable), 0 time-stops fired. Avg hold 10 calendar days vs a 7-day target —
+BMY ran 3 days overdue. Week peaked Thursday at +7.44% and gave back 1.86pp Friday, all RDNT
+mark-to-market (77.31 -> 76.35). All-time **-92.70%** vs the $100k start.
+
+**1 STRATEGY EDIT MADE** (below the weekly maximum of 2). Reversible — revert this block in
+`memory/strategy.md` if next week is worse:
+
+1. **`## What "best 14-day returns" means for journaling`** — added: the rejection audit must
+   mark every skipped candidate **from the OPEN of the session it would have been bought, never
+   from the prior close.** Evidence: HLIT 08-13 returns **+16.00%** measured from the 08-12
+   close and **-3.87%** measured from the 08-13 open — a **19.9pp swing** that inverted the
+   sign of this review's largest finding. Entries fill at the open, so the gap is return no
+   order of ours could earn. The 08-07 review marked its capacity-cap cohort from the signal-day
+   open (correct) but its freshness-DQ tally from logged pre-market reference prices, so the two
+   tallies were never comparable. **REVERT IF:** opens prove unavailable for a material share of
+   DQ'd names, forcing the audit dark rather than merely re-based.
+
+**NO EDIT to the freshness / novelty gate — the 08-07 watch item did NOT cleanly repeat.**
+That review pre-committed to proposing an open-to-close confirmation requirement "if next week
+repeats (novelty-3 names fading from the open while consumed-band names hold)." It did not.
+The novelty-3 side is **n=1** (BMY, -0.44% from the open). The consumed-band side is
+**non-monotone**, which kills the hypothesis outright: the two most-consumed names were among
+the worst (HLIT +25% consumed -> **-3.87%**; WDAY +20.5% -> **-4.40%**) while the single most
+consumed was the best (NBIS +34.3% -> **+8.69%**). Full cohort, marked open-of-rejection-session
+to the 08-14 close: ACHR +6.10%, NBIS +8.69%, CAVA +5.30%, SMCI +4.08%, RDDT +1.25%,
+REPL -0.20%, HRB -0.57%, CRWV -1.75%, HLIT -3.87%, WDAY -4.40% — **mean +1.46%** vs SPY ~+0.2%.
+So the gate cost ~1.3pp, on 1-4 sessions where the review asks for 5. The 08-07 review measured
+-0.73% (gate additive). Two reviews, opposite signs, both small. Default to no edit.
+
+**Confirmation-0 rejections were sound**: AMAT +1.75%, NVDA +1.35%, BMY -0.44%, CRWV -1.75%,
+mean +0.23%. AMAT is the interesting one — a verified record Q3 and a Q4 guide ~8% above
+consensus that the market sold **-5.58%** pre-market. Passing on confirmation 0 neither helped
+nor hurt.
+
+**BMY SCORING DISPUTE — SETTLED, the downgrade was correct.** Routines flagged it twice for this
+review: 08-14 pre-market logged BMY as "scores 6 at novelty 3; recorded for audit" but ranked it
+**5**, reasoning the CELMoD approval was widely anticipated. BMY opened 64.13 and closed 63.85 =
+**-0.44%**. The judgment call held. No rule change.
+
+**THE ONE REAL MISS: ACHR.** Raw score 7, disqualified purely at the freshness gate on 08-11
+(+12.2% on the catalyst session, 2.4x the 5% bar). **+6.10%** from the 08-11 open, +11.9% at its
+08-13 peak. The catalyst — Boeing folds Wisk Aero/SkyGrid/Insitu into ACHR for a ~20% stake and a
+board seat — is a **structural** change to a $4B company, not a quarterly print, and our gate
+applies the same 5% bar to both. n=1, so watch item, not rule.
+
+**REJECTED — the 08-07 queued edit** ("require every freshness DQ to log its reference price").
+Obsolete: 47% of DQs were unauditable on 08-07; this week the routines logged a consumed-% for
+essentially every one unprompted. The practice self-corrected. Edit 1 supersedes it and fixes the
+deeper defect — the DQs *were* auditable, they were being audited against the wrong price.
+
+**NO threshold change (score >= 6).** Six consecutive sessions of 0 tradeable candidates is
+conspicuous, but `max_concurrent_positions: 1` was full with RDNT from Monday, so the threshold
+was never tested against an open slot. Changing an untested knob on the strength of its
+inactivity is overfitting.
+
+**Rubric ordering: unanswerable for a third consecutive review.** The rubric produced exactly one
+name >= 6 in five sessions (RDNT, at 6, Monday) and that trade is still open. No cohort to rank.
+
+**WATCH ITEMS for next review:**
+1. Do structural / M&A catalysts deserve a wider freshness bar than earnings prints? (ACHR, n=1.)
+2. Freshness-DQ mean, marked correctly from the open, over a full 5 sessions. Two reviews now
+   disagree in sign at small magnitude (-0.73% vs +1.46%); a third clean read decides it.
+3. Does the score-6 threshold ever bind when a slot is actually open? Untested since it was set.
+
+**ESCALATION — deadline is MONDAY, 20 routines unapplied, needs a human.** Outside this
+routine's remit (weekly review may edit strategy.md only). RDNT's time stop lands **2026-08-17 at
+100.4% of equity** and it is **EOD's to enforce** — on a cron that has missed **21 of 61 runs**.
+If EOD misses, the 08-18 market-open liquidates the entire book into the stale-at-the-bell IEX
+feed (escalation #9). This is the exact shape of the 08-07 failure that forced the 08-10 BMY
+cleanup, one week later and at 100% of equity instead of 97.3%. Two plist lines close it:
+(#2) move the EOD launchd trigger 12:55 -> 12:40 PDT; (#3) drop `ProcessType Background` from
+`com.bull-trading.end-of-day.plist`. Also open: (#1) commit the `caffeinate -is` fix in
+`scripts/run-routine.sh`; (#4) reconcile `routines/market-open.md:29` with strategy.md's overdue
+carve-out — **it will be read live on 08-18 if EOD misses**; (#5) no partial-close path in
+`alpaca.sh`, which is why cash **-$26.22** / `no_margin` has been breached 17 consecutive
+routines; (#6) widen the entry haircut 98% -> 96%; (#7) the `bars` window bug, exercised again
+this review — `alpaca.sh bars SPY 1Day 10` returned 07-27..08-07 and omitted the entire week
+under review, so SPY was sourced from Yahoo.
+
+**VERDICT: RESUME MONDAY WITH CURRENT STRATEGY.** No `weekly_loss_cap` flatten occurred
+(+5.58% vs a -100% cap). The only Monday decision that matters is EOD firing on time.

@@ -146,3 +146,14 @@ the fourth instance and the first to carry over a weekend at 97% of equity. [add
 hypothetical 14-day return if we had held to the time stop. The weekly review uses
 this to detect whether stops are too tight (lots of stop-outs that would have been
 winners) or too loose (winners we should have let run).
+
+**Auditing rejected candidates: mark from the OPEN of the session we would have bought,
+never from the prior close.** Entries happen at the open following the research pass, so
+the overnight gap is return no order of ours could have earned; crossing it inflates the
+apparent cost of every rejection. HLIT 08-13 is the proof: from the 08-12 close it returned
++16.0% and read as the week's worst miss; from the 08-13 open — the only price available to
+us — it returned **-3.87%**, and the rejection was correct. A 19.9pp swing that inverted the
+sign of the largest finding in that review. Prior audits were inconsistent on this (the
+08-07 review marked its capacity-cap cohort from the signal-day open but its freshness-DQ
+tally from logged pre-market reference prices, so the two were never comparable). [added
+2026-08-14 weekly review]
