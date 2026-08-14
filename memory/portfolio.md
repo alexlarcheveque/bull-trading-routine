@@ -1,19 +1,114 @@
 # portfolio.md
-# Updated 2026-08-14 06:31 CT (09:31 ET) by market-open routine.
+# Updated 2026-08-14 11:03 CT (12:03 ET) by midday routine.
 
 ## Account
-- equity: 7393.62
+- equity: 7422.42
 - cash: -26.22
-- buying_power: 20670.67
-- day_pnl_pct: -0.03  # vs last_equity 7395.54
+- buying_power: 20751.31
+- day_pnl_pct: +0.36  # vs last_equity 7395.54
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | +6.90              |
+| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | +7.32              |
 
 ## Notes
+
+2026-08-14 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md`
+unchanged. RDNT marked 77.59 vs 72.30 entry = **+7.32%**, up from +6.90% at the 09:31 ET
+market-open mark. Market value $7,448.64 on $7,422.42 equity — still **100.4% of the book**.
+
+### 🟢 RUN QUALITY: ON TIME — clock read 12:03:09 ET, ~3 min after the 12:00 ET trigger
+
+Second consecutive live confirmation of **escalation #8**: the plist fires 09:00 PDT =
+**12:00 ET / 11:00 CT**, not the `12:00 PM Central / 1:00 PM Eastern` claimed in
+`routines/midday.md:1`. The header is the wrong artifact — do NOT move the plist to match it.
+
+### Step 1 — exits: no gate fired
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| profit target | +7.32% | +100% (`per_trade_target_pct`) | no |
+| stop loss | +7.32% | -100% (`per_trade_stop_pct`) | no |
+| thesis broken | Grok **NO NEWS ×10 classes** | concrete named event | no |
+
+Instrument detected live off Alpaca `asset_class: us_equity` — shares path, `quote`/`sell`.
+Time stop (08-17) and expiry guard are end-of-day's, not midday's; neither is due today.
+
+Same 10-class enumeration as 08-11 through 08-14-open (guidance cut, recall, litigation,
+CMS/regulatory adverse decision, exec departure, rating **downgrade only**, restatement,
+dilution/offering, short report, contract/payer-network loss), demanding a literal `NO NEWS`
+per class. All ten clean, **Grok 1/1 first-try**, verdict THESIS INTACT. At ±100% the price
+gates are unreachable, so thesis-broken remains the **only exit gate that can fire** before
+the 08-17 time stop.
+
+### Step 2 — daily loss cap: not hit
+
+| check | value | cap | action |
+|-------|-------|-----|--------|
+| daily P&L | **+0.36%** | -100% (`daily_loss_cap_pct`) | none |
+
+No `cancel-all`, no `notify.sh` alert, no halt marker written to `memory/research-log.md`.
+Weekly P&L **+7.30%** (vs Mon 08-10 open $6,917.30) — logged for continuity, not a midday gate.
+The cap is decorative at 100%; the binding constraint remains `max_concurrent_positions: 1`,
+which market-open already enforced this morning. No slot opens before **08-17**.
+
+Intraday gain since the open: equity $7,393.62 → $7,422.42 (**+$28.80**), entirely RDNT
+mark-to-market (77.29 → 77.59). Nothing actionable — the stop is 100 points away.
+
+### ⚠️ Last midday before the 08-17 time stop — and a weekend sits in between
+
+Today's EOD is the last routine of the week. RDNT's `target_exit` is **Monday 2026-08-17** at
+**100.4% of equity**, so the position carries a full weekend and the stop is due on the first
+EOD of next week. Per strategy.md a stop due *today* still defers to end-of-day, so 08-17 EOD
+owns it; only if that run misses does the **08-18 market-open** pick it up under the overdue
+carve-out — which would be the **5th** such instance after KMX 06-26, PENG 07-16, CCK 07-30,
+BMY 08-10. EOD has missed **21 of 61 runs (~34%)**, and 08-07 → 08-10 was this exact shape.
+Escalations #2/#3 exist to prevent it and their deadline is now **two sessions out**.
+
+### 🟢 Data note — IEX quote feed recovered since the open
+
+`alpaca.sh quote RDNT` returned `t=2026-08-14T15:56:44Z` (11:56 ET, ~6 min lag) — normal IEX
+behaviour, **not** the ~17.5-hour-stale print that escalation #9 recorded at this morning's bell.
+So #9 looks specific to the 09:30 open, not an all-session condition. Keeping it on the list:
+the run that matters (an 08-18 market-open forced sale of RDNT at 100% of equity) would happen
+at exactly the bell where it does reproduce. Marks above use `positions.current_price` (77.59);
+`trade.p` was 77.865 = +7.70%, and neither is within 92 points of a gate.
+
+### 🟠 `no_margin` still breached — cash -$26.22, 17th consecutive routine
+
+Unchanged (no orders sent). Still structurally uncurable by any routine: `alpaca.sh sell` closes
+full positions only, and the only position is >100% of equity, so the sole lever is liquidating a
++7.32% winner to cure a $26 overdraft. Needs the partial-close path (escalation #5) or the wider
+entry haircut (#6).
+
+### Ops carry-forward — 20th consecutive escalation, still unapplied
+
+Midday can apply none of these (exits and notifications only). Re-listed so the count stays
+honest. Nothing new today.
+
+1. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` (still uncommitted, with untracked
+   `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`, `memory/guardrails.md.conservative.bak`).
+2. **Move the EOD launchd trigger 12:55 → 12:40 PDT** — highest-value single change, and **its
+   deadline is 08-17**. RDNT's time stop lands Monday at 100% of equity; EOD has missed 21 of 61 runs.
+3. **Drop `ProcessType Background`** from `com.bull-trading.end-of-day.plist` — that key licenses
+   the deferral that produces the 3-4 minute late starts. Same deadline as #2.
+4. Reconcile `routines/market-open.md:29` with strategy.md's overdue-time-stop carve-out — the two
+   files still contradict each other. **Will be read live on 08-18 if EOD misses 08-17.**
+5. `alpaca.sh` lacks limit-order support and any partial-close path.
+6. **Widen the entry haircut 98% → 96%, or size on the ask** (PENG 07-08 +2.6%, RDNT 08-10 +2.58%).
+7. **`alpaca.sh bars` window bug** (`scripts/alpaca.sh:105`, `back_days=$(( lim * 8 / 5 + 3 ))`)
+   silently truncates the most recent sessions. Fix the script **and** the Step 3 instruction in
+   `routines/pre-market.md`. Worked around with Yahoo for a 3rd session on 08-14 pre-market.
+8. **`routines/midday.md:1` header is wrong by an hour** — **re-confirmed live this run** (fired
+   12:03 ET, header claims 1:00 PM ET). Docs-only fix — do NOT "correct" the plist to match.
+9. **IEX `quote` feed is stale at the 09:30 open** (`trade.p` carried yesterday's 15:59 ET print
+   across 3 polls on 08-14 market-open). Scoped narrower this run: the feed is normal by midday,
+   so this is an open-bell condition. Prefer `positions.current_price` for marks at the bell, and
+   expect slow fills on any open-bell order.
+
+---
 
 2026-08-14 market-open: **0 buys, 0 sells, 0 orders.** No preflight invoked,
 `memory/trade-log.md` unchanged. RDNT marked 77.29 vs 72.30 entry = **+6.90%**, down from
