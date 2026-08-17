@@ -8189,3 +8189,67 @@ from a hard deadline. EOD was the only job whose jitter crossed one.
 6. **IEX `quote` stale at the bell again** — `.trade.p` 76.245 stamped Friday 19:59:48Z, ~17.6h
    old. `positions` was live; all P&L this run came from `positions`. Standing lesson: at the
    open, timestamp-check `quote` before using it for any gate.
+
+### 2026-08-17 end-of-day execution (15:55:35 ET, ON TIME)
+
+**1 time-stop, 1 exit, 1 order. RDNT sold @ 75.67, +4.66%, realized +$323.52.** Book flat:
+0 positions, $7,238.10 all cash.
+
+| step | result |
+|------|--------|
+| bail-out | `is_open=true`, `next_close` 16:00 ET — proceeded |
+| Step 1 time stop | **FIRED** — RDNT `target_exit` 2026-08-17 = today |
+| preflight | `OK RDNT sell 96 @ 75.75 (equity=7248.18, open=1, day_pnl=-0.7558%)` |
+| order | `a70fcfe9` submitted 15:55:52 ET, **FILLED 15:55:56 @ 75.67** (4.6s) |
+| Step 2 weekly cap | +4.64% WTD vs -100% cap — not hit, no flatten |
+| Steps 3/4 | EOD email sent, Resend `8e712824-768f-472c-a811-3728a74c1f10` |
+| Step 5 | `portfolio.md` rewritten, `trade-log.md` appended, committed |
+
+#### ✅ The plist repair is verified EFFECTIVE
+
+Escalation #3 (`ProcessType Background`) was deleted at this morning's market-open after 21
+consecutive runs of being logged and ignored. Midday flagged that `runs = 0` meant the fix was
+verified *present* but untested. **This run was the test.** First EOD under the repaired plist
+started 12:55:35 PDT = 15:55:35 ET — on the trigger second, 4m 25s before the close. The two
+prior misses (08-07 16:05 ET, 08-14 16:10 ET) were both post-close and both cost an enforcement.
+
+Counterfactual, stated plainly: a deferral of 08-14's size (+15m 13s) carries RDNT — **100.4% of
+equity** — past its stop into an 08-18 market-open forced sale. That would have been the 5th
+overdue carve-out instance, executed into the stale open-bell IEX feed of escalation #8.
+
+#### Breaks a 4-run streak of late enforcement
+
+KMX 06-26, PENG 07-16, CCK 07-30, BMY 08-10 all exited the morning *after* their stop because EOD
+did not run. RDNT is the **first position since A on 06-11** to exit on its own scheduled day. The
+strategy.md overdue carve-out went unused for the first time in four stops.
+
+#### Sold on the clock, not on news
+
+Thesis was intact at exit — midday's 10-class Grok enumeration returned clean and surfaced only
+positive context (08-09 Q2 record revenue/EBITDA, raised FY26 guides). At ±100% the price gates
+were unreachable all week, so the time stop was always going to be the exit. The 7-day hold is the
+edge; we did not extend it for a winner. Position gave back from +5.66% at midday to +4.77% at the
+sell, and the day closed -0.89% on that mark — but the gain is now **realized**, not marked.
+
+#### `no_margin` cured after 21 routines
+
+Cash **-$26.22 → +$7,238.10**. The breach dated to the 08-10 RDNT entry (+2.58% fill slippage) and
+was uncurable by any routine while the only position exceeded 100% of equity. The time stop cured
+it as a side effect, as midday predicted. Escalations #4/#5 still matter so the next entry doesn't
+reopen it.
+
+#### Open for weekly-review
+
+1. **Escalation #2 (EOD 12:55 → 12:40 PDT) still not applied, deliberately.** Removing Background
+   removed coalescing, not jitter — 08-11 and 08-12 cleared the bell by ~1 min with a healthy
+   plist. Today drew 4 minutes. An earlier EOD changes the fill price of every future time-stop,
+   so it stays a human decision. De-escalated in urgency (book is flat), not resolved.
+2. **The capacity cap gets its first real test tomorrow.** 08-18 opens with 0 positions and 100%
+   cash. Every prior session logged the threshold/cap agreement as *coincidence, not vindication*
+   because the cap was always already full. It isn't now — pre-market's score alone decides.
+3. **Entry sizing haircut (98% → 96%)** is the live risk on the next buy: it is what reopens the
+   `no_margin` breach if unchanged.
+4. `alpaca.sh bars` window bug — 6th consecutive session on the Yahoo workaround.
+5. `routines/market-open.md:29` still contradicts strategy.md on the overdue carve-out.
+6. Doc headers wrong: `routines/midday.md:1` (off by an hour), `routines/end-of-day.md:1`
+   (self-contradictory). The live plists are correct — **today proved EOD's is** — do not move them.
