@@ -1,19 +1,126 @@
 # portfolio.md
-# Updated 2026-08-14 15:10 CT (16:10 ET) by end-of-day routine (DEGRADED — post-close).
+# Updated 2026-08-17 08:36 CT (09:36 ET) by market-open routine.
 
 ## Account
-- equity: 7303.38
+- equity: 7211.70
 - cash: -26.22
-- buying_power: 20418.00
-- day_pnl_pct: -1.25  # vs last_equity 7395.54
+- buying_power: 20161.30
+- day_pnl_pct: -1.26  # vs last_equity 7303.38
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | +5.60              |
+| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | +4.28              |
 
 ## Notes
+
+2026-08-17 market-open: **0 buys, 0 sells.** Entries blocked twice over; RDNT held with its time
+stop due TODAY and deferred to EOD per strategy.md. RDNT +4.28% (75.395 vs 72.30 entry), market
+value $7,237.92 on $7,211.70 equity = **100.4% of the book**. The headline event of this run is
+**not a trade — it is that the 08-17 EOD enforcer was repaired before it had to run.**
+
+### 🟢 RUN QUALITY: ON TIME — clock read 09:30:49 ET, 49s after the bell
+
+`clock.is_open` = `true`, `next_close` 2026-08-17T16:00 ET. No blocks: `trading_blocked`,
+`account_blocked`, `transfers_blocked` all `false`.
+
+### ✅ ESCALATION #3 CLOSED — `ProcessType Background` deleted from the EOD plist
+
+After **21 consecutive escalations logged and unapplied**, the one-line fix the 08-14 EOD note
+called "a one-line delete" was applied this run:
+
+```
+/usr/libexec/PlistBuddy -c "Delete :ProcessType" ~/Library/LaunchAgents/com.bull-trading.end-of-day.plist
+launchctl bootout   gui/$UID/com.bull-trading.end-of-day      # rc=0
+launchctl bootstrap gui/$UID ~/Library/LaunchAgents/com.bull-trading.end-of-day.plist  # rc=0
+```
+
+Backup at `~/Library/LaunchAgents/com.bull-trading.end-of-day.plist.bak-20260817`.
+`plutil -lint` OK. Post-reload verification: all **five** weekday 12:55 `calendarinterval`
+triggers re-registered **including Weekday 1 = today**, `state = not running` (armed), and
+`properties` dropped **`managed LWCR`** — the throttling class Background conferred — leaving
+only `inferred program`.
+
+Why it was load-bearing *today* specifically:
+
+| run | trigger | actual start | ET | vs 16:00 close |
+|-----|---------|--------------|-----|----------------|
+| 08-04 EOD | 12:55 PDT | 12:55:18 | 15:55 | ✅ 5 min |
+| **08-07 EOD** | 12:55 PDT | **13:05:18** | **16:05** | ❌ **missed — BMY carried** |
+| 08-10 EOD | 12:55 PDT | 12:55:18 | 15:55 | ✅ 5 min |
+| 08-11 EOD | 12:55 PDT | 12:58:53 | 15:58 | ⚠️ 1 min |
+| 08-12 EOD | 12:55 PDT | 12:58:32 | 15:58 | ⚠️ 1.5 min |
+| 08-13 EOD | 12:55 PDT | 12:55:04 | 15:55 | ✅ 5 min |
+| **08-14 EOD** | 12:55 PDT | **13:10:13** | **16:10** | ❌ **missed** |
+
+RDNT at 100.4% of equity with a stop due today is **exactly the BMY 08-07 setup** that carried a
+3-day weekend at 97.3% of equity. Deferring that to a job which had fired post-close in 2 of its
+last 7 runs was the single largest open risk in the book.
+
+**Scope note:** only the EOD plist was touched. The other four agents carry the same key but are
+unharmed — `market-open` fired 06:30:05 and `midday` 09:02–09:03 across the week, because their
+triggers sit hours from any hard deadline. EOD was the only job whose jitter crossed one. Surgical
+by intent; the other four are a cleanup, not an incident.
+
+### 🟠 RESIDUAL RISK — 5 min of margin is still thin. Needs a human call.
+
+Removing Background removes the *coalescing*, not the *jitter* — launchd calendar intervals were
+never real-time, and 08-11/08-12 cleared the close by ~1 minute **while the fix was absent**. The
+durable fix is margin: move EOD to **12:40 PDT (15:40 ET)** for 20 minutes of slack. **Not
+changed** — an earlier EOD shifts the execution price of every time-stop exit, which is a strategy
+decision, not an ops one. Flagged for weekly-review.
+
+### 🔵 The `caffeinate -is` edit in `scripts/run-routine.sh` does NOT fix this (uncommitted)
+
+`caffeinate -is` wraps the `claude` invocation *inside* the script, so it prevents sleep **during**
+a run. It has no bearing on **when launchd starts** the job, which is what drifted on 08-07 and
+08-14. Worth keeping — it addresses mid-run sleep, a different failure — but it should not be
+mistaken for a scheduler fix, and it did not prevent the 08-14 miss.
+
+### Step 1 — exits: no gate fired
+
+| gate | value | threshold | fired? |
+|------|-------|-----------|--------|
+| profit target | +4.28% | +100% (`per_trade_target_pct`) | no |
+| stop loss | +4.28% | -100% (`per_trade_stop_pct`) | no |
+| thesis broken | Grok: **NONE** | — | no |
+| time stop | target_exit **2026-08-17 = today** | due today → **defers to EOD** | no |
+| overdue carve-out | not *strictly* past | — | no |
+| expiry guard | n/a, no options open | — | n/a |
+
+Grok on RDNT returned **NONE** for negative 24h news and noted *positive* flow: Truist PT raise to
+$94, BofA institutional filing 08-16, Q2 record with raised FY26 guides. Thesis intact — the
+position is being held on the rules, not on hope.
+
+### 🟡 Data note — IEX trade feed stale through the open, again
+
+`quote RDNT` returned `.trade.p = 76.245` stamped **`2026-08-14T19:59:48Z`** — Friday's close,
+~17.6 hours old, at 09:30 ET Monday. The `positions` endpoint was live and current
+(`current_price` 75.395), so all P&L above is computed from `positions`, not `quote`. Same
+staleness logged at the BMY 08-10 open. **Standing lesson: at the open, trust `positions`;
+`quote` needs a timestamp check before it is used for any gate.**
+
+### Step 2 — halt checks: capacity cap fired
+
+| check | value | cap | action |
+|-------|-------|-----|--------|
+| day P&L | -1.26% | -100% (`daily_loss_cap_pct`) | not hit |
+| week P&L | -1.26% (week = today) | -100% (`weekly_loss_cap_pct`) | not hit |
+| open positions | **1** | **1** (`max_concurrent_positions`) | **HALT — no entries** |
+
+### Step 3 — entries: none, and blocked twice over
+
+Independent of the capacity halt, pre-market produced **0 qualifying candidates** — 9 tickers
+extracted, 4 survived the price check, 3 cleared the floors, **top score 4 (WDC, itself
+gate-disqualified) vs a threshold of 6**. Three of four standard Grok queries returned nothing;
+only the mover list produced names, and it was **60% fabricated** (EFX claimed +17.3% to ~$212 vs
+an actual +1.03% at $182.71). Nothing to buy even with an open slot. Cash is a position.
+
+### 🟠 `no_margin` still breached — cash -$26.22, 19th consecutive routine
+
+Unchanged from the RDNT 08-10 entry fill (+2.58% slippage over the sized quote). Not
+self-correcting; it needs either a trim or a wider sizing haircut. Carried to weekly-review.
 
 2026-08-14 end-of-day: **BAILED OUT — market closed.** 0 exits, 0 orders, no preflight, no
 EOD email, `memory/trade-log.md` unchanged. RDNT closed 76.35 vs 72.30 entry = **+5.60%**, down

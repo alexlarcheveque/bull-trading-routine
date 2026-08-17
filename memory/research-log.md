@@ -8130,3 +8130,62 @@ and are still not applied. Also still open: the `alpaca.sh bars` window bug — 
 `routines/pre-market.md` instructs `bars <TICKER> 1Day 5` verbatim and it is never correct as written**;
 today's confirmation bars came from Yahoo `chart?interval=1d&range=1mo`, the 4th consecutive session
 using the workaround.
+
+### 2026-08-17 market-open execution (09:30:49 ET, on time)
+
+**0 buys, 0 sells.** Entries blocked twice over. RDNT held — its time stop is due **today** and
+defers to EOD per strategy.md. The material outcome of this run is not a trade: **escalation #3
+was applied, closing a defect that had been logged and ignored 21 consecutive times, on the one
+session where it was load-bearing.**
+
+| step | result |
+|------|--------|
+| bail-out | `is_open=true`, `next_close` 16:00 ET; no account/trading/transfer blocks |
+| Step 1 exits | no gate fired (see below) |
+| Step 2 halts | **capacity cap fired** — open 1 >= `max_concurrent_positions` 1 |
+| Step 3 entries | none — 0 candidates >= 6 (top score 4, WDC, gate-DQ'd) |
+| Step 4 portfolio | rewritten from `account` + `positions` |
+| preflight | not invoked — **zero orders sent**, so nothing to gate |
+
+**Exit gates on RDNT** (96 sh @ 72.30, entry 08-10, target_exit **2026-08-17**): +4.28% against a
++100% target and -100% stop — neither reachable; thesis **intact** (Grok: `NONE` on 24h negative
+news; Truist PT → $94, BofA filing 08-16). Time stop is due **today**, and strategy.md's overdue
+carve-out applies only when `target_exit_date` is *strictly* in the past. Due-today still defers
+to end-of-day. **Held, correctly, on the rules.**
+
+#### ✅ Escalation #3 CLOSED — `ProcessType Background` removed from the EOD plist
+
+`PlistBuddy -c "Delete :ProcessType"` → `plutil -lint` OK → `launchctl bootout` (rc=0) →
+`bootstrap` (rc=0). Verified after reload: five weekday 12:55 `calendarinterval` triggers
+re-registered **including Weekday 1 = today**, `state = not running` (armed), and `properties`
+lost **`managed LWCR`** — the throttling class the key conferred. Backup:
+`~/Library/LaunchAgents/com.bull-trading.end-of-day.plist.bak-20260817`.
+
+This is the fix the 08-14 EOD note itself called "a one-line delete." EOD had fired **post-close
+on 08-07 (16:05 ET) and 08-14 (16:10 ET)**, and cleared the bell by only ~1 minute on 08-11 and
+08-12. With RDNT at **100.4% of equity** and its stop due today, deferring to that job unrepaired
+was the largest open risk in the book — the precise shape of the BMY 08-07 failure.
+
+Only the EOD plist was touched. The other four agents carry the same key but are **not** at risk:
+`market-open` fired 06:30:05 and `midday` 09:02–09:03 all week, because their triggers sit hours
+from a hard deadline. EOD was the only job whose jitter crossed one.
+
+#### Still open (carried to weekly-review)
+
+1. **Escalation #2 — move EOD 12:55 → 12:40 PDT.** NOT applied, deliberately. Removing Background
+   removes coalescing, not jitter; 5 min of margin before a hard close is still thin. But an
+   earlier EOD changes the fill price of every time-stop exit, so it is a **strategy** decision
+   and needs a human. This is now the top residual risk.
+2. **`caffeinate -is` in `scripts/run-routine.sh` (uncommitted) is not a scheduler fix.** It
+   prevents sleep *during* a run; it cannot change *when launchd starts* the job. Keep it for the
+   failure it does address, but it did not and could not have prevented the 08-14 miss.
+3. **`alpaca.sh bars` window bug** — `routines/pre-market.md` Step 3 still says `bars <T> 1Day 5`
+   verbatim, never correct as written; 5th consecutive session on the Yahoo workaround.
+4. **`routines/market-open.md:29` still contradicts strategy.md** on the overdue carve-out (the
+   routine says time stops are EOD-only; strategy.md says market-open enforces *strictly past*
+   ones). It did not bite today — RDNT is due-today, which both readings defer — but it will the
+   next time a stop actually goes overdue.
+5. **`no_margin` breached, cash -$26.22, 19th consecutive routine.** Not self-correcting.
+6. **IEX `quote` stale at the bell again** — `.trade.p` 76.245 stamped Friday 19:59:48Z, ~17.6h
+   old. `positions` was live; all P&L this run came from `positions`. Standing lesson: at the
+   open, timestamp-check `quote` before using it for any gate.
