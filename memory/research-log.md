@@ -7894,3 +7894,239 @@ rather than projected.
 
 No strategy edit follows from this. It is an ops defect, not a rubric defect, and `guardrails.md`
 and the plists are both outside this routine's remit.
+
+---
+
+## 2026-08-17 — pre-market research (06:46 ET start)
+
+**Grok 7/7 first-try** (4 standard + 3 verification). **Three of the four standard queries returned
+NOTHING** — a first. The only query that produced names was the mover list, which is the one query the
+standing lesson says cannot be trusted without a price check. **9 tickers extracted, 4 survived the
+price check, 3 cleared the price/liquidity floors, 0 reached the threshold of 6. Top score 4 (WDC),
+and WDC is gate-disqualified anyway.**
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+
+**No materially bullish news items were identified for US large-cap equities (market cap >$2B) in the
+last 24 hours (roughly Aug 16–17, 2026).** Earnings season is largely complete, with no major reports
+or beats scheduled for Aug 17 among large caps. Broader market coverage (e.g., CNBC live updates)
+noted mixed futures and a quiet start to the week following prior gains, without highlighting
+company-specific positive catalysts. Recent or pending items (e.g., FDA decisions or analyst notes)
+fell outside the 24-hour window or involved smaller/micro-cap names. General positive sentiment around
+AI/Big Tech persists from earlier periods but lacks fresh triggers. Sources checked include major
+financial news aggregators, earnings calendars, FDA trackers, and real-time X searches; none surfaced
+qualifying large-cap bullish developments.
+(cnbc.com/2026/08/16/stock-market-today-live-updates-.html; finance.yahoo.com/calendar/earnings/;
+schwab.com/learn/story/stock-market-update-open; nasdaq.com/market-activity/earnings)
+
+### Grok raw output — Query 2: Pre-market movers >2% on news (2026-08-17)
+
+Notable pre-market gainers (>2%) on August 17, 2026, tied to news catalysts rather than pure gap-fills:
+- **HIVE (HIVE Digital Technologies)**: Up ~8%+ (to ~$2.92) after its subsidiary BUZZ HPC signed a
+  five-year GPU cloud services agreement (reported as potentially worth ~$350M) with an
+  investment-grade enterprise customer. (benzinga.com/.../61239591; hivedigitaltechnologies.com/news/)
+- **EFX (Equifax)**: Up ~17.3% (to ~$212). Large move amid earnings-related sentiment and recent
+  company developments. (investing.com/equities/pre-market)
+- **BR (Broadridge Financial Solutions)**: Up ~14.4% (to ~$196).
+- **EG (Everest Group)**: Up ~8.3% (to ~$401).
+- **DLR (Digital Realty Trust)**: Up ~6.8% (to ~$214).
+- **EXR (Extra Space Storage)**: Up ~6.4% (to ~$157).
+- **DRI (Darden Restaurants)**: Up ~6.3%.
+- **DGX (Quest Diagnostics)**: Up ~6.0%.
+- **WDC (Western Digital)**: Up ~3.7% among more active names.
+- **INTC (Intel)**: Up ~2.4% among active names.
+Smaller/micro-cap names (IVF/INVO Fertility, IPST, TRUG, MYSZ, XPON) showed extreme gains (often
+20–160%), many low-float/volatility-driven. Data reflects pre-market activity as of ~6 AM ET; moves
+can shift by open. No major broad earnings calendar items drove the session.
+
+### Grok raw output — Query 3: Beat-AND-raise after yesterday's close
+
+**None identified.** Earnings calendars (EarningsWhispers, Yahoo Finance) show limited releases on or
+after August 16, 2026, such as Fabrinet (FN, after-market on Aug 17), H World Group (HTHT), and others
+like BHP. No reports from these or other tickers were found matching both an EPS/revenue beat *and*
+raised full-year or quarterly guidance in post-close releases. Major anticipated reports (WMT, HD,
+ADI) are scheduled later in the week. Earlier Q2 2026 reports with beats + raises (e.g., HALO)
+predate this window.
+
+### Grok raw output — Query 4: FDA / contracts >$100M / M&A / regulator decisions (last 24h)
+
+**No qualifying events were identified as published in the last 24 hours (roughly Aug 16–17, 2026).**
+- FDA approvals: recent approvals (iberdomide/Zenbexus, BMY, Aug 13; Tauklarify, Lantheus, Aug 14;
+  LYTENAVA, Outlook Therapeutics, July 2026) fall outside the 24-hour window. No new PDUFA decisions
+  or approvals reported for Aug 16–17.
+- Large contract wins (>$100M): Skanska announced sizable US projects (~$957M light rail, $238M data
+  center additions) with press activity around Aug 13–14, but Skanska AB is listed on Nasdaq Stockholm,
+  not a primary US exchange, so it does not qualify. No other >$100M wins tied to US-listed companies.
+- M&A: a Ferrero Group acquisition of Purely Elizabeth was announced Aug 16, but the target is private
+  and the acquirer is not US-listed. Other recent deals predate the window.
+- Regulator decisions: SEC and FTC press releases from Aug 12–14 cover enforcement actions or older
+  matters; none newly published in the last 24 hours affecting US-listed companies.
+
+### Grok raw output — Verification Query 5: weekend announcement sweep
+
+Asked specifically for M&A / definitive takeovers / FDA approvals / major contract awards / guidance
+raises announced between the **Friday Aug 14 close and Monday Aug 17 6am ET** for NYSE/Nasdaq names
+>$1B market cap. **Answer: NONE.** "Relevant searches across business wires, FDA resources, and news
+aggregators returned only pre-weekend items (e.g., Aug 14 approvals or updates), earlier events, or
+non-qualifying/smaller/private deals."
+
+### Verification Query 6: explain the EXR move
+
+**NO CATALYST FOUND.** "No acquisition, merger, takeover bid, earnings release, guidance change, or
+other named corporate event explains the pre-market move. Q2 2026 results (with guidance) were
+released July 28, 2026; the next earnings are estimated for November 2026. A minor local development
+announcement (new facility financing in Glen Rock, NJ) occurred on or around August 14 but is not
+material enough to drive a ~6.4% move. No relevant 8-K, press release on PR Newswire/Business Wire,
+or company IR items match the timing."
+
+### Verification Query 7: explain WDC and INTC; INTC primary-source check
+
+**WDC** — analyst upgrades to Strong Buy (Zacks ~2 days prior) plus SanDisk's disclosed ~$93.9B
+multi-year backlog from its Investor Day, **stock reaction noted around Aug 13**. "No new corporate
+event (e.g., fresh earnings/guidance/contract) on or immediately before Aug 17."
+
+**INTC** — the secondary-source story was a CEO Lip-Bu Tan $10M open-market purchase (105,263 shares
+at $95 via family trust), Form 4 coverage published Aug 15 (24/7 Wall St./Yahoo). **The primary-source
+check refuted it:** "No primary sources confirm a Form 4 filing by Intel CEO Lip-Bu Tan for an
+open-market purchase of Intel shares in August 2026." What *is* confirmed from Intel IR: a **$20B
+common stock offering**, upsized from $15B, priced **Aug 11, 2026** — **210,526,315 new shares at $95**,
+closing Aug 12, **dilutive to existing shareholders** (intc.com/news-events/press-releases/detail/1779).
+New guidance / contract award / product announcement between Aug 14–17: **UNCONFIRMED** (none found).
+
+### 🔴 The mover list was junk again — 6 of 10 names fabricated (n=5 for the standing lesson)
+
+Every name price-checked against Yahoo with **both endpoints pinned** (Monday 08-17 pre-market vs the
+**Friday 08-14 regular close**, anchored on `meta.regularMarketPrice` with `meta.regularMarketTime`
+verified = 2026-08-14T20:00Z and intraday bars verified to start 08:00Z):
+
+| ticker | Grok claimed | actual vs 08-14 close | verdict |
+|--------|--------------|------------------------|---------|
+| EFX  | **+17.3% to ~$212** | $182.71 = **+1.03%** | ❌ fabricated |
+| BR   | **+14.4% to ~$196** | $170.99 = **-0.01%** | ❌ fabricated |
+| EG   | **+8.3% to ~$401**  | $371.00 = **+0.24%** | ❌ fabricated |
+| DLR  | **+6.8% to ~$214**  | $200.15 = **0.00%**  | ❌ fabricated |
+| DRI  | **+6.3%**           | $225.22 = **-0.02%** | ❌ fabricated |
+| DGX  | **+6.0%**           | $234.40 = **0.00%**  | ❌ fabricated |
+| EXR  | +6.4% to ~$157      | $157.34 = **+6.38%** | ✅ matches — but see below |
+| HIVE | ~+8% to ~$2.92      | $2.87 = **+6.67%**   | ✅ roughly right |
+| WDC  | +3.7%               | $529.08 = **+3.99%** | ✅ roughly right |
+| INTC | +2.4%               | $104.83 = **+2.27%** | ✅ roughly right |
+
+Six of ten were **flat or unchanged names reported as 6–17% movers**. This is not the sub-$5
+micro-cap junk mode of 08-12 or the yesterday's-moves-relabelled mode of 08-13 — **these are large,
+liquid, correctly-named S&P constituents with entirely invented prices.** The claimed *price levels*
+(not just the percentages) are wrong: EFX "$212" against a real $182.71. Whatever investing.com column
+Grok read, it was not the pre-market change column. **The price check remains load-bearing on every
+single name; it eliminated 60% of today's board in one pass.**
+
+### 🔴 NEW DATA HAZARD — EXR's "+6.38%" is a FROZEN ERRONEOUS PRINT, not a move
+
+EXR was the one name where Grok's number matched Yahoo's, which is exactly why it needed a second look.
+The Yahoo pre-market series is **11 bars, and the price has been pinned at $157.3402 to the
+four-decimal since 08:52Z** (04:52 ET) — over an hour of identical prints:
+
+```
+08:00Z 147.90   <- Friday close
+08:05Z 147.21
+08:20Z 147.21
+08:25Z 147.21
+08:50Z 157.34   <- single 6.9% jump, no intermediate ticks
+08:52Z .. 09:56Z  157.3402 x7, identical to 4dp
+```
+
+Corroboration: **Alpaca's last trade for EXR is `147.875` stamped `2026-08-14T19:59:33Z`** — Friday's
+close. There is no Alpaca print anywhere near $157. Liquid names (WDC/INTC/HIVE) returned **35 bars**
+with continuously varying prices over the same window; EXR returned 10–11 with one discontinuity.
+**A single unrepeated jump that then freezes to four decimals is a bad tick, not price discovery.**
+
+Note the vol=0 test does **not** discriminate here: Yahoo reports zero volume on *every* pre-market bar
+for *every* ticker in the `chart` endpoint, including WDC/INTC/HIVE. The usable signals are **bar count,
+price variation, and cross-checking the last Alpaca trade.** Moot today (EXR has no catalyst and scores
+1 regardless) — but on a name with a real catalyst this would have inflated novelty and, worse, would
+have been the reference price a gap-sanity check measured against.
+
+### Universe filters
+
+| ticker | active/tradable | ADV30 (Yahoo consolidated) | price | verdict |
+|--------|-----------------|----------------------------|-------|---------|
+| HIVE | active, tradable | 16,532,190 | **$2.69 close** | ❌ **REJECTED PRE-SCORING — below `min_price_per_share: 5`** |
+| EXR  | active, tradable | 1,146,570  | $147.90 | ✅ passes, scored below |
+| WDC  | active, tradable | 7,951,350  | $508.80 | ✅ passes, scored below |
+| INTC | active, tradable | 114,534,460| $102.50 | ✅ passes, scored below |
+
+RDNT held in `memory/portfolio.md` — not a candidate (no adding to winners). No disallowed-instrument
+substrings matched. HIVE's BUZZ HPC GPU-cloud agreement is the only genuinely *fresh, named, material*
+contract on the whole board (~$350M, five-year, investment-grade counterparty) — and it is
+**unreachable**: $2.69 is below the $5 floor. Logged so the weekly review can see the floor's cost,
+consistent with CAPR 08-14 and GXAI/IVDA/CURI 08-13.
+
+## 2026-08-17 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                       | source         |
+|--------|-------|-----------------------------------------------------------|----------------|
+| —      | —     | **No tradeable signal today.**                            | —              |
+
+**No tradeable signal today.** Top score 4 against a threshold of 6.
+
+Skipped (below threshold):
+- **WDC (score 4, and GATE-DISQUALIFIED):** strength 1 + novelty 0 + confirmation 2 + cleanliness 1.
+  The "catalyst" is a **Zacks Strong Buy upgrade** — strategy.md excludes "pundit price targets /
+  analyst upgrades with no new information" *by class*, so it never qualifies regardless of the sum
+  (**REPL 08-13 rule: Fresh/Material is a gate on the catalyst, not a term in the addition**). The
+  SanDisk ~$93.9B backlog is real but is **Investor Day material from ~Aug 13, 4 days stale**, and it
+  is SanDisk's disclosure post-spin, not a WDC corporate event. Novelty 0 on its own merits: WDC ran
+  **438.34 → 437.93 → 454.10 → 487.29 → 508.80 across Aug 10–14 = +16.1% in three sessions**, and is
+  +3.99% again pre-market. That is the AMD 07-23 / INTC 07-24 stacked-run shape — the move is behind us.
+- **INTC (score 1):** strength 0 + novelty 0 + confirmation 0 + cleanliness 0. **The primary-source
+  check destroyed the catalyst.** The reported CEO $10M open-market buy is **UNCONFIRMED against SEC
+  primary sources**; the only verified Intel event in the window is the **$20B upsized offering priced
+  Aug 11 — 210.5M new shares at $95, explicitly dilutive**. Cleanliness 0 on confirmed dilution. Note
+  the tell: the secondary story's "105,263 shares **at $95**" is the offering's exact price, so the
+  bullish insider-buy framing looks like a **retelling of the dilution as a purchase**. Mega-cap
+  (>$100B) so the 4% bar applies; +2.27% is inside the band, but a band is only worth something with a
+  qualifying catalyst behind it, and there is none.
+- **EXR (score 1):** strength 0 + novelty 0 + confirmation 0 + cleanliness 1. Grok returned an explicit
+  **NO CATALYST FOUND** on a targeted explain-the-move call; last earnings July 28, next ~November.
+  Daily bars are flat and *quiet* — 146–149 all week on **0.45–0.70x relative volume**, the opposite of
+  confirmation. And the +6.38% that put it on the list is the frozen bad tick documented above.
+- **HIVE:** rejected pre-scoring on `min_price_per_share: 5` ($2.69).
+- **EFX, BR, EG, DLR, DRI, DGX:** rejected — **fabricated moves**, all flat to -0.02% on the price check.
+
+### ➡️ STANDING (new 08-17) — a matching number is not a verified number
+
+EXR is the trap this session was built to catch. It was the **only** name where Grok's claimed move
+survived the price check, which read as corroboration — two independent-seeming sources agreeing.
+They were not independent: Grok scraped the same broken quote Yahoo was serving. **Agreement between
+a news source and a price feed is not confirmation when the news source's number came from that feed.**
+The thing that broke it was the third source — Alpaca's last trade, stamped Friday. Corollary for the
+routine: when a mover survives the price check, the **next** call is the explain-the-move query, not
+the scoring step. Today that call returned NO CATALYST FOUND, which is the correct answer for a tick.
+
+### ➡️ STANDING (new 08-17) — the primary-source rule earns its keep BELOW the ≥6 trigger
+
+strategy.md mandates primary-source verification only for candidates "heading for a score ≥ 6." INTC
+was heading for ~4 and would have been rejected without the call. Running it anyway **inverted the
+sign of the catalyst**: not a weaker-than-reported bull item (PLNT's buyback math, CAH's phantom raise)
+but an outright **bear event wearing a bull headline** — $20B of dilution reported as a CEO vote of
+confidence, and the two share the same $95 price. **Sixth consecutive session where the primary-source
+call moved or killed a top candidate** (PLNT 8→5, ALB 8→9, LNG, RDNT, CAH, now INTC). Worth the weekly
+review considering whether the trigger should be "any name that reaches the watchlist," not "any name
+reaching 6."
+
+### Context for market-open
+
+`max_concurrent_positions: 1` and **RDNT holds the slot** (`target_exit 2026-08-17` = today; the stop
+is EOD's to enforce, not market-open's, and not this routine's). So entries were blocked twice over
+again — **seventh consecutive session** where the threshold and the capacity cap agree. As logged every
+session since 08-10: **coincidence, not vindication.** The cap has still not been tested by a
+qualifying name, so its cost remains unpaid rather than retired. Today the threshold rejected on its
+own and the cap was never consulted.
+
+**Ops carry-forward unchanged and unapplied (22nd consecutive escalation).** This routine can apply
+none of them. The one that matters today: **RDNT's time stop is due at today's EOD, at ~100% of equity,
+and the run immediately before it (08-14) fired 10 minutes after the close.** Escalations #2 (move the
+EOD trigger 12:55 → 12:40 PDT) and #3 (drop `ProcessType Background`) had **today** as their deadline
+and are still not applied. Also still open: the `alpaca.sh bars` window bug — **Step 3 of
+`routines/pre-market.md` instructs `bars <TICKER> 1Day 5` verbatim and it is never correct as written**;
+today's confirmation bars came from Yahoo `chart?interval=1d&range=1mo`, the 4th consecutive session
+using the workaround.
