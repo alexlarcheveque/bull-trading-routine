@@ -1,19 +1,136 @@
 # portfolio.md
-# Updated 2026-08-17 08:36 CT (09:36 ET) by market-open routine.
+# Updated 2026-08-17 11:03 CT (12:03 ET) by midday routine.
 
 ## Account
-- equity: 7211.70
+- equity: 7307.70
 - cash: -26.22
-- buying_power: 20161.30
-- day_pnl_pct: -1.26  # vs last_equity 7303.38
+- buying_power: 20430.10
+- day_pnl_pct: +0.06  # vs last_equity 7303.38
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | +4.28              |
+| RDNT   | equity     | 96  | 72.30       | 2026-08-10 | 2026-08-17  | +5.66              |
 
 ## Notes
+
+2026-08-17 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md`
+unchanged. RDNT marked 76.395 vs 72.30 entry = **+5.66%**, up from +4.28% at the 09:36 ET
+market-open mark. Market value $7,333.92 on $7,307.70 equity — still **100.4% of the book**.
+
+### 🟢 RUN QUALITY: ON TIME — clock read 12:03:07 ET, ~3 min after the 12:00 ET trigger
+
+Third consecutive live confirmation of **escalation #8**: the plist fires 09:00 PDT =
+**12:00 ET / 11:00 CT**, not the `12:00 PM Central / 1:00 PM Eastern` claimed in
+`routines/midday.md:1`. The header is the wrong artifact — do NOT move the plist to match it.
+
+### Step 1 — exits: no gate fired
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| profit target | +5.66% | +100% (`per_trade_target_pct`) | no |
+| stop loss | +5.66% | -100% (`per_trade_stop_pct`) | no |
+| thesis broken | Grok **NO NEWS ×10 classes** | concrete named event | no |
+| time stop | target_exit **2026-08-17 = today** | due today → **defers to EOD** | **not midday's** |
+| expiry guard | n/a — no options open | — | n/a |
+
+Instrument detected live off Alpaca `asset_class: us_equity` — shares path, `quote`/`sell`.
+Same 10-class enumeration as 08-11 onward (guidance cut, recall, litigation, CMS/regulatory
+adverse decision, exec departure, rating **downgrade only**, restatement, dilution/offering,
+short report, contract/payer-network loss), demanding a literal `NO NEWS` per class. All ten
+clean, **Grok 1/1 first-try**, verdict THESIS INTACT. A second free-form 6-hour query returned
+the same and surfaced only *positive* context (08-09 Q2: record revenue/EBITDA, upwardly revised
+FY26 guidance). At ±100% the price gates are unreachable, so thesis-broken was the **only exit
+gate that could have fired** today.
+
+### 🔴 THE TIME STOP IS DUE TODAY — and midday is not allowed to enforce it
+
+RDNT's `target_exit` is **2026-08-17 = today**, at **100.4% of equity**. Per strategy.md a stop
+due *today* defers to end-of-day; the overdue carve-out needs `target_exit` **strictly** in the
+past, and it is not. So midday correctly did nothing. **Today's 15:55 ET EOD is the run that
+sells RDNT**, and it is the single point of failure the last three weeks of notes have been
+pointing at.
+
+### 🟢 Escalation #3 verified still applied, 2.5 hours before it matters
+
+This morning's market-open closed #3. Re-verified live this run rather than trusted:
+
+| check | result |
+|-------|--------|
+| `PlistBuddy Print :ProcessType` | `Does Not Exist` ✅ |
+| `launchctl print … \| grep properties` | `inferred program` — **no `managed LWCR`** ✅ |
+| `state` | `not running` (armed) ✅ |
+| `StartCalendarInterval` | all 5 weekdays at 12:55, **including Weekday 1 = today** ✅ |
+
+**Caveat — `runs = 0`.** The counter reset when the job was bootstrapped this morning, which
+means **today's 15:55 ET EOD is the first run under the repaired plist**. The fix is verified
+*present*, not yet verified *effective*. Removing Background removes launchd's coalescing, not
+its jitter — 08-11 and 08-12 still cleared the close by only ~1 minute. If today's EOD defers
+anyway, RDNT carries past its stop and 08-18 market-open picks it up under the overdue carve-out
+(the 5th instance after KMX 06-26, PENG 07-16, CCK 07-30, BMY 08-10) — into the stale open-bell
+feed of escalation #9. The durable fix remains moving the trigger to 12:40 PDT (escalation #2),
+still **not applied** because it changes every time-stop's execution price — a strategy call.
+
+### Step 2 — daily loss cap: not hit
+
+| check | value | cap | action |
+|-------|-------|-----|--------|
+| daily P&L | **+0.06%** | -100% (`daily_loss_cap_pct`) | none |
+
+No `cancel-all`, no `notify.sh` alert, no halt marker written to `memory/research-log.md`.
+Weekly P&L **+5.64%** (vs Mon 08-10 open $6,917.30) — logged for continuity, not a midday gate.
+The cap is decorative at 100%; the binding constraint remains `max_concurrent_positions: 1`,
+which market-open already enforced this morning.
+
+Intraday recovery since the open: equity $7,211.70 → $7,307.70 (**+$96.00**), entirely RDNT
+mark-to-market (75.395 → 76.395; $1.00 × 96 shares reconciles to the cent). The morning's
+-1.26% day P&L has been fully erased — the day is now flat at +0.06%.
+
+### 🟢 Data note — IEX quote feed healthy at midday, again
+
+`quote RDNT` returned `t=2026-08-17T15:48:42Z` (11:48 ET, ~15 min lag) — normal IEX behaviour,
+**not** the ~17.6-hour-stale print escalation #9 recorded at this morning's 09:30 bell. Third
+session confirming #9 is an **open-bell** condition, not an all-session one. Marks above use
+`positions.current_price` (76.395) per the standing lesson; `trade.p` was 76.625 = +5.98%, and
+neither is within 94 points of a gate.
+
+### 🟠 `no_margin` still breached — cash -$26.22, 20th consecutive routine
+
+Unchanged (no orders sent). Still structurally uncurable by any routine: `alpaca.sh sell` closes
+full positions only, and the only position is >100% of equity, so the sole lever is liquidating a
++5.66% winner to cure a $26 overdraft. **Self-curing tonight** if EOD's time-stop sale fills —
+the position closes and cash goes positive. Otherwise it needs the partial-close path
+(escalation #5) or the wider entry haircut (#6).
+
+### Ops carry-forward — still unapplied, but **#3 is now CLOSED**
+
+Midday can apply none of these (exits and notifications only). Re-listed so the count stays
+honest. **The former #1 (drop `ProcessType Background`) was applied at market-open and
+re-verified live this run — removed from the list.** Renumbered:
+
+1. **Move the EOD launchd trigger 12:55 → 12:40 PDT** — now the top item and the only remaining
+   defence for **tonight's** time stop. Buys 20 min of slack; jitter survives the #3 fix.
+   Strategy call (shifts every time-stop's execution price), so it needs a human.
+2. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` (still uncommitted, with untracked
+   `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`, `memory/guardrails.md.conservative.bak`).
+3. Reconcile `routines/market-open.md:29` with strategy.md's overdue-time-stop carve-out — the two
+   files still contradict each other. **Will be read live tomorrow 08-18 if tonight's EOD misses.**
+4. `alpaca.sh` lacks limit-order support and any partial-close path.
+5. **Widen the entry haircut 98% → 96%, or size on the ask** (PENG 07-08 +2.6%, RDNT 08-10 +2.58%).
+6. **`alpaca.sh bars` window bug** (`scripts/alpaca.sh:105`, `back_days=$(( lim * 8 / 5 + 3 ))`)
+   silently truncates the most recent sessions. Fix the script **and** the Step 3 instruction in
+   `routines/pre-market.md`.
+7. **`routines/midday.md:1` header is wrong by an hour** — **re-confirmed live this run** (fired
+   12:03 ET, header claims 1:00 PM ET). Docs-only fix — do NOT "correct" the plist to match.
+8. **IEX `quote` feed is stale at the 09:30 open.** Prefer `positions.current_price` for marks at
+   the bell. **Directly compounds item #1**: an 08-18 forced sale of RDNT would sell into this.
+9. **`routines/end-of-day.md:1` header is self-contradictory** — reads `55 15 * * 1-5 (3:55 PM
+   Central / 4:55 PM Eastern — 5 minutes before close)`. 3:55 PM CT **is** 4:55 PM ET, 55 min
+   *after* the close, and "5 minutes before close" implies 15:55 **ET**. The live plist (12:55
+   PDT = 15:55 ET) is right; the header is wrong twice over. Docs-only — do NOT move the plist.
+
+---
 
 2026-08-17 market-open: **0 buys, 0 sells.** Entries blocked twice over; RDNT held with its time
 stop due TODAY and deferred to EOD per strategy.md. RDNT +4.28% (75.395 vs 72.30 entry), market
