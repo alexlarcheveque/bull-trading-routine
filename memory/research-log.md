@@ -8253,3 +8253,183 @@ reopen it.
 5. `routines/market-open.md:29` still contradicts strategy.md on the overdue carve-out.
 6. Doc headers wrong: `routines/midday.md:1` (off by an hour), `routines/end-of-day.md:1`
    (self-contradictory). The live plists are correct — **today proved EOD's is** — do not move them.
+
+---
+
+# 2026-08-18 pre-market
+
+Book opened **flat — 0 positions, $7,238.10 all cash** after the RDNT time-stop sale. First
+session in weeks where `max_concurrent_positions` is NOT binding, so the score alone decides.
+
+## Step 1 — raw Grok output (verbatim)
+
+### Query 1 — "What materially bullish news hit US large-cap equities (>$2B market cap) in the last 24 hours? Cite sources. List ticker, catalyst, source, timestamp."
+
+**Key materially bullish developments (last ~24 hours, as of Aug 18, 2026) for US large-cap equities (market cap >$2B) include analyst upgrades and earnings beats, primarily in AI/semiconductors and related sectors.**[[1]](https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-17-2026)[[2]](https://www.cnbc.com/markets/us-market-movers/)
+
+- **ALAB (Astera Labs)**: Northland Capital Markets upgraded to Outperform (from Market Perform) with a $350 price target. Catalyst: Expectations for positive earnings revisions, rising content per rack in AI infrastructure, and a longer-than-expected AI spending cycle.[[3]](https://fintel.io/news/northland-capital-markets-upgrades-astera-labs-alab-558)[[4]](https://www.tipranks.com/news/one-of-the-fastest-growing-ai-chip-plays-five-star-northland-analyst-upgrades-astera-labs-alab-to-buy-at-350)[[5]](https://www.streetinsider.com/AI/Northland+Upgrades+Astera+Labs+%28ALAB%29+to+Outperform%2C+Right+Time%2C+Customers%2C+and+Products/26934545.html) Timestamp: Reports published ~Aug 17, 2026 (14–23 hours prior). (Large-cap AI connectivity/semiconductor name.)
+
+- **SNDK (SanDisk)**: Shares rose ~8–9% amid broader memory/storage sector strength. Catalyst: Momentum from the company's Aug 13 Investor Day (long-term growth targets for FY2028–2030, including mid-to-high teens revenue growth) plus recent positive analyst notes (e.g., new Buy recommendations).[[1]](https://www.thestreet.com/stock-market-today/stock-market-today-dow-jones-sp-500-nasdaq-updates-aug-17-2026)[[2]](https://www.cnbc.com/markets/us-market-movers/) Timestamp: Moves and coverage on Aug 17–18, 2026. (Major data storage/memory name.)
+
+- **FN (Fabrinet)**: Q4 FY2026 earnings beat (revenue $1.32B vs. ~$1.27B est.; adj. EPS $4.10 vs. ~$3.82 est.). Catalyst: Strong results with ~45% YoY revenue growth and significant EPS outperformance.[[6]](https://finance.yahoo.com/markets/stocks/articles/fabrinet-fn-q4-earnings-revenues-214001832.html)[[7]](https://x.com/wallstengine/status/2089446579388477491) Timestamp: Earnings release and highlights ~Aug 17–18, 2026. (Optical/electronics manufacturing services name.)
+
+Additional context includes sector-wide lifts in tech/AI names (e.g., mentions of Anthropic revenue growth supporting capex views) and other movers like WDC or COHR, but the above have the clearest company-specific catalysts.[[8]](https://www.youtube.com/watch?v=Ni8vrDCrhdo) Market caps were verified via context in large-cap mover discussions; smaller or micro-cap gainers (e.g., AXTI) were excluded. Sources include financial news aggregators, analyst reports, and market recaps.
+
+### Query 2 — "Pre-market movers 2026-08-18: tickers up >2% in pre-market on actual news catalyst (not just gap-fill). Cite sources."
+
+**Limited verifiable news-driven movers >2% in pre-market on Aug 18, 2026; most extreme gainers appear speculative/low-float with unclear or prior catalysts (e.g., reverse splits).**[[1]](https://stockanalysis.com/markets/premarket/)[[2]](https://www.benzinga.com/premarket)
+
+Prominent pre-market gainers (from aggregator data updated ~Aug 18) include micro-cap names like:
+- **XOS (Xos, Inc.)**: +~103% (to ~$4.24). Catalyst appears tied to Aug 17 announcement of U.S. Air Force contract for deployable mobile charging systems (defense market entry).[[3]](https://www.stocktitan.net/overview/XOS/)[[1]](https://stockanalysis.com/markets/premarket/)
+- **PFSA (Profusa, Inc.)**: +~99% (to ~$9). Recent 1-for-4 reverse split effective Aug 17; prior acquisition/news flow (e.g., option for G3 Vision Labs) but no clear new positive catalyst for the surge—prior trading halts noted.[[4]](https://investors.profusa.com/press-releases)[[5]](https://www.cnn.com/markets/stocks/PFSA)
+- Others like **SGLY**, **WETO**, **EJH** showed large % gains but lack immediately identifiable fresh news catalysts in results (likely speculative or gap-related).[[1]](https://stockanalysis.com/markets/premarket/)
+
+More established names with moderate gains (~3%+) included **JKHY** (+3.53%), **HST** (+3.29%), **LYB** (+3.15%), and **CE** (+3.13%); **Bath & Body Works** noted rising on a Citi upgrade.[[6]](https://www.investing.com/equities/pre-market)
+
+Data from pre-market sessions can be volatile and volume-dependent; always verify latest filings/news. Sources primarily include stockanalysis.com, Benzinga, Investing.com, and company announcements via Yahoo/GlobeNewswire.
+
+### Query 3 — "Earnings reports released after yesterday's close that beat AND raised guidance. Ticker, the beat number, the raise number, source."
+
+**HTHT (H World Group): EPS beat of $0.04 (actual $0.78 vs. consensus ~$0.72–$0.74); revenue beat (actual RMB 7.12B / ~$1.05B vs. ~RMB 6.78B estimate); raised full-year 2026 revenue growth guidance to 4–8% (from prior 2–6%).**[[1]](https://finance.yahoo.com/markets/stocks/articles/h-world-group-shares-rise-134950742.html)[[2]](https://ir.hworld.com/news-releases/news-release-details/h-world-group-limited-reports-second-quarter-and-interim-2026)
+
+This report was released on August 17, 2026 (before US market open, after the prior close). No other companies from the anticipated earnings list for the week of August 17 (e.g., HD, WMT, ADI) showed matching results in available data for releases specifically after the August 17 close.[[3]](https://www.youtube.com/watch?v=mZJSRUKWWyM)
+
+Sources include Yahoo Finance/Investing.com articles and the company's IR/press releases.
+
+### Query 4 — "FDA approvals, large contract wins (>$100M), M&A announcements, or regulator decisions published in the last 24 hours affecting any US-listed company."
+
+**No qualifying events were identified in the last 24 hours (roughly August 17–18, 2026) for US-listed companies.**[[1]](https://www.facebook.com/TeamHII/posts/hiis-missiontechnologies-division-has-been-awarded-a-22-billion-task-order-to-de/1496002025898741/)[[2]](https://www.ftc.gov/news-events/news/press-releases?page=7)
+
+- **FDA approvals/clearances or designations**: Recent activity includes a Fast Track designation granted around August 17 for an investigational oral combination (sapanisertib + serabelisib + paclitaxel) in advanced endometrial cancer (Faeth Therapeutics). Earlier August approvals (e.g., BMS Zenbexus accelerated approval on ~August 13) fall outside the 24-hour window. No new full approvals or clearances for listed companies were reported.[[3]](https://www.onclive.com/view/fda-grants-fast-track-designation-to-sapanisertib-and-serabelisib-plus-paclitaxel-in-advanced-endometrial-cancer)
+- **Large contract wins (>$100M)**: Mentions of HII (NYSE: HII) contracts (e.g., multi-billion dollar or $2.2B task orders) refer to announcements from earlier dates (e.g., around August 11 or prior). No new >$100M wins were published in the window.[[4]](https://hii.com/newsroom)
+- **M&A announcements**: No announcements identified.
+- **Regulator decisions**: The OCC granted preliminary conditional approval for a national trust bank charter to World Liberty Financial (crypto/DeFi project with WLFI token trading; Trump family-linked). This was announced earlier (late the prior week) and involves a non-traditional listed equity company. An FTC final order against NextMed was also noted but does not appear to involve a major listed company positively.[[5]](https://www.cnn.com/2026/08/17/investing/trump-crypto-bank-world-liberty)
+
+Searches across news sources, company releases, and regulatory sites yielded no additional matches meeting the strict criteria and timeframe.
+
+### Follow-up queries (primary-source verification per strategy.md)
+
+**FN earnings timing + IR verification:** Released **Aug 17 after market close** (call 5:00pm ET). Primary IR: https://investor.fabrinet.com/news-releases/news-release-details/fabrinet-announces-fourth-quarter-and-fiscal-year-2026-financial — Revenue "$1,315.8 million, compared to $909.7 million" (+44.6% YoY); non-GAAP diluted EPS "$4.10, compared to $2.65"; GAAP "$3.83". Consensus non-GAAP EPS ~$3.81–3.85, revenue ~$1.28B — **beat both**. Q1 FY2027 guide: revenue "$1.375 billion to $1.425 billion", non-GAAP EPS "$4.10 to $4.25" vs prior consensus rev ~$1.32–1.33B / EPS ~$3.95–4.02 — **a genuine raise**.
+
+**HD guidance verification:** **REAFFIRMED, numerically identical to Q1.** Verbatim from the 08-18 release: *"The Company reaffirms its fiscal 2026 guidance. Guidance includes IEEPA tariff refunds, which are expected to partially offset unplanned fuel, energy, and other product input costs throughout the fiscal year."* Total sales growth ~2.5–4.5%, comps ~flat to 2.0%, adj EPS growth ~flat to 4.0% from $14.69. The May 19 Q1 release carried the identical list with no changes. Market cap ~**$337B** (mega-cap). Primary IR: https://ir.homedepot.com/news-releases/2026/08-18-2026-110040463
+
+**Second pre-market sweep:** "No US-listed stocks with market cap >$1B fully match all criteria (up >3% in pre-market on Aug 18, 2026, driven by a company-specific event ... announced in the prior 24 hours)."
+
+## Step 2 — universe filters
+
+All 12 extracted tickers returned `us_equity / active / tradable` from `alpaca.sh asset` and cleared
+the 100k `min_avg_daily_volume_shares` floor via `volume.sh` (real consolidated 30-day ADV):
+
+| ticker | ADV (30d) | price | verdict |
+|--------|-----------|-------|---------|
+| FN   | 796,335    | 598.58 | pass filters |
+| HTHT | 1,509,747  | 46.61  | pass filters |
+| SNDK | 16,169,664 | 1786.85| pass filters |
+| ALAB | 4,610,204  | 320.17 | pass filters |
+| JKHY | 1,042,041  | 149.87 | pass filters |
+| HST  | 9,696,303  | 22.81  | pass filters |
+| LYB  | 4,837,256  | 64.73  | pass filters |
+| CE   | 1,933,012  | 44.99  | pass filters |
+| BBWI | 5,033,859  | 18.81  | pass filters |
+| WDC  | 7,982,514  | 536.01 | pass filters |
+| COHR | 6,196,162  | 351.22 | pass filters |
+| HD   | (mega-cap) | 337.88 | pass filters |
+| XOS  | 229,178    | **2.09** | **REJECTED — `min_price_per_share: 5`, and sub-$1B cap** |
+
+Portfolio is empty, so no holdings were skipped. No disallowed name substrings matched.
+
+### 🔴 Grok's pre-market mover list was fabricated again — 2nd consecutive session
+
+Every claimed mover in Query 2 was checked against Yahoo intraday (`includePrePost=true`). Most
+were wrong, several inverted:
+
+| claim (Grok) | actual (verified) | error |
+|--------------|-------------------|-------|
+| XOS +103% to ~$4.24 | **$2.09**, down | price off by 2x, direction wrong |
+| JKHY +3.53% | **+0.01%** | fabricated |
+| HST +3.29% | **-0.92%** | sign inverted |
+| LYB +3.15% | **+0.82%** | 4x overstated |
+| CE +3.13% | **+2.98%** | ~accurate |
+
+This repeats the 08-17 finding (EFX claimed +17.3% vs an actual +1.03%). **Standing lesson: the
+mover query is not a usable source without independent price verification.** Query 1 (news) and the
+targeted IR follow-ups were reliable; Query 2 was not.
+
+## Step 3 — scoring
+
+Confirmation was measured from Yahoo daily bars + verified pre-market ticks, not `alpaca.sh bars`
+(window bug, 7th consecutive session on the workaround).
+
+**The decisive fact of this session: the 08-17 close is already in the past, and the AI-hardware
+complex is selling off hard pre-market.** FN -10.29%, WDC -5.95%, COHR -5.96%, SNDK -5.83%,
+ALAB -5.43%, BIDU -5.21%. Every name Grok surfaced as "materially bullish" is red this morning.
+
+## 2026-08-18 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                              | source          |
+|--------|-------|----------------------------------------------------------------------------------|-----------------|
+| HD     | 5     | Q2 beat (adj EPS $4.92 vs ~$4.72, rev $47.9B vs ~$47.4B, comps +1.7%) — guide REAFFIRMED, not raised | ir.homedepot.com |
+| FN     | 4     | Q4 beat-and-raise (rev $1,315.8M, non-GAAP EPS $4.10 vs ~$3.83; Q1 guide above consensus) — but **-10.29% pre-market** | investor.fabrinet.com |
+| HTHT   | DQ    | Q2 beat + FY26 rev growth guide raised 2–6% → 4–8% — but **+11.29% already spent on 08-17** | ir.hworld.com   |
+| SNDK   | 3     | Aug 13 investor day targets + analyst notes; +8.88% on 08-17, now -5.83% pre-market | thestreet.com   |
+| ALAB   | 1     | Northland upgrade to Outperform, $350 PT — analyst action only                    | fintel.io       |
+
+**No tradeable signal today.**
+
+### Why the top name did not clear the bar
+
+**HD scored 5 (threshold 6):**
+- *Catalyst strength 2* — a real beat on both lines, but FY26 guidance is **verbatim identical** to
+  the Q1 release. The forward cash-flow delta is ~zero: they beat the quarter and told you the year
+  is unchanged. Every 6+ this system has traded (CCK 6, RDNT 6, BMY 7, PENG 8) was a beat **and** a
+  raise. This is not one.
+- *Novelty 1* — mega-cap at ~$337B, and per strategy.md the mega-cap drift band is 1–4%. HD is
+  already **+2.04%** pre-market, so roughly half the band is gone before the bell. We buy at the
+  **open**, and opening fills on catalyst names have run +2.6% (PENG 07-08) and +2.58% (RDNT 08-10)
+  above the pre-open quote. Realistically we would enter at the top of the band with nothing left.
+- *Confirmation 1* — pre-market up, but no consolidated volume confirmation yet; 08-17 was a drift
+  into the print.
+- *Cleanliness 1* — no offsetting news, no halt, `no_earnings_within_days: 0` allows it.
+
+**FN scored 4 and fails a qualifying gate outright.** Its catalyst is the strongest on the board —
+a verified beat-and-raise, +44.6% YoY revenue, guidance above consensus, confirmed against the
+primary IR release. And the market sold it **-10.29%**. Strategy.md requires a catalyst be
+*Material, Fresh, **and Directional*** — "clearly bullish for the named ticker." A double-digit
+decline on the company's own print is the market rejecting the release, not mispricing it. Buying
+it would be contrarian dip-catching, which is not this strategy. Catalyst 4 + novelty 0 +
+confirmation 0 + cleanliness 0.
+
+**HTHT is disqualified on freshness, not scored.** The beat-and-raise is real and verified, but the
+stock moved **+11.29% on 08-17** — more than double the 5% priced-in bar. Per strategy.md, "if the
+move already happened, we missed it," and freshness is a *qualifying gate*, not merely a novelty
+input. This is the INTC 07-24 / AMD 07-23 lesson exactly. It is now -0.88% pre-market with the
+second wave already gone.
+
+### 🟢 The capacity cap got its first real test — and the threshold answered on its own
+
+Every session since 08-10 logged the threshold/cap agreement as **"coincidence, not vindication,"**
+because `max_concurrent_positions: 1` was always already full. Today it was **not**: the book opened
+flat at 100% cash with a free slot, and pre-market was the only thing standing between the account
+and a trade. It said **no** — top score 5 against a threshold of 6.
+
+That makes this the first honest datapoint on the entry threshold in weeks. **Ninth consecutive
+session with no qualifying name.** The nine-session drought is now a real finding for weekly-review
+rather than an artifact of a full book: either the catalyst supply is genuinely dry, or the rubric
+is mis-calibrated for a tape where beat-and-raises (FN) sell off and reaffirms (HD) rally.
+
+### Carry-forward for weekly-review
+
+1. **Nine sessions, zero entries — and the last four were cap-blocked for unrelated reasons.** Now
+   that the cap is not binding, the threshold is the only gate and it is worth asking whether a
+   score of 6 is reachable in this tape. Not a routine's call to change.
+2. **FN is the cleanest counterexample the log has produced**: a fully verified beat-and-raise that
+   fell 10%. Worth auditing at the 08-25 review from the **08-18 open** (per the HLIT 08-13 marking
+   rule) to see whether the directional gate saved us money or cost us a reversal.
+3. **Grok Query 2 (movers) is unreliable two sessions running** — 4 of 5 claims wrong today, one
+   sign-inverted. Recommend the query be reworked or dropped; the news query and targeted IR
+   follow-ups carried this session.
+4. Entry sizing haircut (98% → 96%) is still the live risk on the **next** buy — untested today
+   because no order was sent.
+5. `alpaca.sh bars` window bug — 7th consecutive session on the Yahoo workaround.
+6. `routines/market-open.md:29` still contradicts strategy.md on the overdue carve-out.
+7. Doc headers wrong: `routines/midday.md:1`, `routines/end-of-day.md:1`. Live plists are correct.
