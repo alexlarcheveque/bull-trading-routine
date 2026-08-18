@@ -1,5 +1,5 @@
 # portfolio.md
-# Updated 2026-08-18 08:34 CT (09:34 ET) by market-open routine.
+# Updated 2026-08-18 11:02 CT (12:02 ET) by midday routine.
 
 ## Account
 - equity: 7237.92
@@ -12,6 +12,67 @@
 _None — flat, 100% cash._
 
 ## Notes
+
+2026-08-18 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md` unchanged.
+Book is **flat: 0 positions, $7,237.92 all cash**, third consecutive routine at 100% cash since the
+RDNT time stop. Reconciled against Alpaca: `positions` returned `[]` and `orders open` returned 0,
+matching this file — no drift. Equity **$7,237.92**, unchanged to the cent from this morning's
+market-open reading and from `last_equity`.
+
+### 🟢 RUN QUALITY: ON TIME — clock read 12:02:32 ET, ~2.5 min after the 12:00 ET trigger
+
+`clock.is_open` = `true`, `next_close` 2026-08-18T16:00 ET. Account `ACTIVE`, `trading_blocked` and
+`account_blocked` both `false`. Fourth consecutive live confirmation of the header bug in
+`routines/midday.md:1` (carry-forward #7): the plist fires 09:00 PDT = **12:00 ET / 11:00 CT**, not
+the `12:00 PM Central / 1:00 PM Eastern` the header claims. **The header is the wrong artifact — do
+NOT move the plist to match it.**
+
+### Step 1 — exits: nothing to evaluate
+
+Zero open positions, so no gate could fire — no stop, no target, no thesis check. **Grok was not
+called this run**, deliberately: with no position there is no underlying to query, and midday opens
+nothing. Second consecutive routine with no exit to reason about.
+
+### Step 2 — daily loss cap: not hit
+
+| check | value | cap | action |
+|-------|-------|-----|--------|
+| daily P&L | **0.00%** (equity == last_equity) | -100% (`daily_loss_cap_pct`) | none |
+| weekly P&L | **+0.36%** (vs Mon 08-17 open $7,211.70) | -100% (`weekly_loss_cap_pct`) | none |
+
+No `cancel-all`, no `notify.sh` alert, no halt marker in `memory/research-log.md`. Day P&L is exactly
+0.00% because the book holds nothing to mark — there is no position to move it, not because the
+market was still. The cap is decorative at 100% regardless.
+
+### 🟢 `no_margin` COMPLIANT — 3rd consecutive routine
+
+Cash **+$7,237.92**, no leverage, buying power $28,951.68. Unchanged since the RDNT sale cured the
+21-routine breach. **Still untested — it reopens on the next buy if the 98% sizing haircut is
+unchanged** (carry-forward #5; overrun twice by PENG 07-08 +2.6% and RDNT 08-10 +2.58%).
+
+### The HD question from this morning is still open — and midday cannot touch it
+
+Market-open logged HD at score 5 with a novelty penalty scored off a pre-market print (+2.04%) that
+evaporated by the bell (HD opened -0.33%), noting the ALB 08-06 open-print re-measurement rule would
+have *raised* the score for the first time. **Midday opens nothing** — that is the routine's first
+hard rule — so this remains a weekly-review question for 08-25, not an action. Recorded here only so
+the thread survives to that review; no rescoring was attempted.
+
+### Ops carry-forward — unchanged from market-open, nothing applied
+
+Midday can apply none of these (exits and notifications only). Re-listed by reference so the count
+stays honest: **#1** EOD trigger 12:55 → 12:40 PDT (not urgent while flat, re-arms on the next
+entry); **#2** commit the `caffeinate -is` fix in `scripts/run-routine.sh` — **verified still
+uncommitted this run**, alongside untracked `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`,
+`.env.bak.broken`, `memory/guardrails.md.conservative.bak`; **#3** `routines/market-open.md:29` vs
+strategy.md's overdue carve-out, still contradictory, still unexercised only because the book is
+flat; **#4** no limit-order or partial-close path in `alpaca.sh`; **#5** widen the entry haircut
+98% → 96%; **#6** `alpaca.sh bars` window bug (fix via #10); **#7** this file's header, re-confirmed
+live above; **#8** IEX open-bell staleness (intermittent, not observed this run — midday is not the
+bell); **#9** `routines/end-of-day.md:1` header; **#10** switch bars/volume to `feed=sip` with an
+explicit `start=` and no `limit=` — **highest-value data-side change on the board**, and it stays
+cheapest to apply exactly while the book is flat and nothing is scored against it; **#11** the HD
+novelty-at-the-open question above.
 
 2026-08-18 market-open: **0 buys, 0 sells, 0 orders.** No preflight invoked, `memory/trade-log.md`
 unchanged. Book is **flat: 0 positions, $7,237.92 all cash**, second consecutive routine at 100% cash
