@@ -1,5 +1,5 @@
 # portfolio.md
-# Updated 2026-08-18 11:02 CT (12:02 ET) by midday routine.
+# Updated 2026-08-18 15:04 CT (16:04 ET) by end-of-day routine — POST-CLOSE, bail-out path.
 
 ## Account
 - equity: 7237.92
@@ -12,6 +12,17 @@
 _None — flat, 100% cash._
 
 ## Notes
+
+2026-08-18 EOD: **🔴 MISSED — started 13:03:59 PDT = 16:03:59 ET, 4 min past the close.**
+`clock.is_open` = `false` → Step-0 bail-out. 0 exits, 0 orders, no preflight, no EOD email.
+Miss #23 of 64 (~36%). **Cost today zero — the book is flat, so there was nothing to time-stop, no
+options to expiry-guard, and WTD +0.36% is nowhere near the cap.** Equity **$7,237.92**, cash
+$7,237.92, day **0.00%**, unchanged to the cent from market-open and midday; `positions` `[]`
+reconciles to this file with no drift. **The plist is HEALTHY** — `ProcessType` still absent,
+`properties = inferred program`, all five 12:55 triggers present — **so the 08-17 fix held and the
+job was late anyway. This is jitter, not coalescing, and 5 minutes of margin does not cover it.**
+➡️ Escalation #2 (move the trigger 12:55 → 12:40 PDT) is now the top item on the board. Full
+diagnosis in `memory/research-log.md`.
 
 2026-08-18 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md` unchanged.
 Book is **flat: 0 positions, $7,237.92 all cash**, third consecutive routine at 100% cash since the

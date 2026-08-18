@@ -8522,3 +8522,67 @@ which is a strategy decision, and nothing holds a position on it today. Recommen
   exercised today only because the book is flat.
 - Equity $7,237.92 vs $7,238.10 in last night's EOD snapshot; Alpaca `last_equity` confirms 7237.92.
   Alpaca wins, $0.18, not material.
+
+## 2026-08-18 EOD: 🔴 MISSED — launchd fired 13:03:59 PDT = 16:03:59 ET, 4 min AFTER the close
+
+`clock.is_open` = `false` (`next_open` 2026-08-19T09:30 ET) → **Step-0 bail-out.** 0 exits, 0 orders,
+no preflight, no EOD email. **Miss #23 of 64 runs (~36%).**
+
+### 🔴 THE HEADLINE: THE PLIST IS HEALTHY AND THE JOB STILL LANDED PAST THE CLOSE
+
+`logs/end-of-day-2026-08-18.log` → `START 13:03:59 PDT`. Trigger is `12:55` → **8m 59s of drift**,
+**3m 59s past the 16:00 ET close.** Verified live this run:
+
+```
+launchctl print gui/501/com.bull-trading.end-of-day
+  properties = inferred program          <- no `managed LWCR`, no throttling class
+  runs = 2 ; last exit code = 0
+PlistBuddy -c "Print :ProcessType"  ->   Entry ":ProcessType", Does Not Exist
+StartCalendarInterval                ->   Hour 12 / Minute 55, Weekdays 1-5 (all present)
+```
+
+**Escalation #3 (`ProcessType Background`) is fixed, verified present, verified effective on 08-17 —
+and it was NOT enough.** 08-17 started +30s; today drew +8m59s off the identical, repaired plist.
+The 08-14 failure mode (launchd batch-releasing coalesced Background jobs, observed via
+`weekly-review` starting the same second) is **not** what happened here — there is no coalescing left
+to do. **This is pure jitter, and jitter alone is sufficient to blow the deadline.**
+
+➡️ **This converts escalation #2 from "residual risk" to "demonstrated necessary."** The argument for
+holding 12:55 was that removing Background had cured the lateness. One session of evidence said yes;
+this session says no. **5 minutes of margin does not cover the observed jitter distribution**
+(+30s on 08-17, +8m59s today, +15m13s on 08-14, +3m44s on 08-12). Moving the trigger to **12:40 PDT
+(15:40 ET) buys 20 minutes** and absorbs every late start on record.
+
+### Cost today: ZERO — and that is luck, not design
+
+| check | state |
+|-------|-------|
+| open positions | **0** (`positions` → `[]`) |
+| time stops due | none — nothing held |
+| expiry guard | n/a — no options open |
+| weekly loss cap | **+0.36%** WTD vs Mon 08-17 open $7,211.70, cap -100% |
+| equity | **$7,237.92**, cash $7,237.92, day **0.00%** (equity == `last_equity`) |
+
+The book has been flat and 100% cash for four consecutive routines since the RDNT time stop. **There
+was nothing for this routine to do, so missing it cost nothing.** That is the entire reason today is
+cheap — not any property of the fix. **The next entry re-arms the deadline**: the run that misses
+is the run that must sell a position sized at ~100% of equity, and it hands the sale to the next
+market-open under the overdue carve-out, into the stale-at-the-bell IEX feed.
+
+### Reconciliation
+
+No drift. `positions` `[]` and `portfolio.md` agree; equity unchanged to the cent from market-open
+and midday ($7,237.92). `trade-log.md` unchanged — no BUY or SELL rows today, third consecutive
+session with no trades. Account `ACTIVE`, `trading_blocked`/`account_blocked` false, `no_margin`
+compliant (cash +$7,237.92), **3rd consecutive compliant routine**.
+
+### Carry-forward
+
+Unchanged from the 08-18 market-open block, with #2 promoted: **(2) move the EOD trigger 12:55 →
+12:40 PDT — now the top item on the board, with today as direct evidence**; (0) `feed=sip` closes the
+`alpaca.sh bars` window bug + the Yahoo splice hazard + the IEX-volume caveat in one change
+(`scripts/alpaca.sh:104` hardcodes `feed=iex`); (1) commit `caffeinate -is` in `run-routine.sh`;
+(4) `routines/market-open.md:29` still contradicts strategy.md's overdue carve-out; (6) widen the
+entry haircut 98% → 96%; (7) `routines/midday.md:1` header is an hour wrong; (10)
+`routines/end-of-day.md:1` header is self-contradictory ("3:55 PM Central / 4:55 PM Eastern — 5
+minutes before close"; 3:55 CT *is* 4:55 ET = 55 min after the close). Docs-only — the plist is right.
