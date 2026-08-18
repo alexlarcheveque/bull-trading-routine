@@ -1,17 +1,189 @@
 # portfolio.md
-# Updated 2026-08-17 14:56 CT (15:56 ET) by end-of-day routine.
+# Updated 2026-08-18 08:34 CT (09:34 ET) by market-open routine.
 
 ## Account
-- equity: 7238.10
-- cash: 7238.10
-- buying_power: 28952.40
-- day_pnl_pct: -0.89  # vs last_equity 7303.38
+- equity: 7237.92
+- cash: 7237.92
+- buying_power: 28951.68
+- day_pnl_pct: 0.00  # vs last_equity 7237.92
 
 ## Open positions
 
 _None — flat, 100% cash._
 
 ## Notes
+
+2026-08-18 market-open: **0 buys, 0 sells, 0 orders.** No preflight invoked, `memory/trade-log.md`
+unchanged. Book is **flat: 0 positions, $7,237.92 all cash**, second consecutive routine at 100% cash
+since the RDNT time stop. Reconciled against Alpaca: `positions` returned `[]` and `orders open`
+returned 0, matching this file — no drift. Equity reads **$7,237.92** vs the $7,238.10 recorded at last
+night's EOD; Alpaca's own `last_equity` is 7237.92, so the broker's official close is $0.18 below the
+EOD snapshot. Alpaca wins per the routine; noted, not material.
+
+### 🟢 RUN QUALITY: ON TIME — clock read 09:30:30 ET, 30s after the bell
+
+`clock.is_open` = `true`, `next_close` 2026-08-18T16:00 ET. No blocks: `trading_blocked` and
+`account_blocked` both `false`, status `ACTIVE`. **Fifth consecutive on-time market-open.**
+
+### Step 1 — exits: nothing to evaluate
+
+Zero open positions, so no gate could fire. No time stop, no expiry guard, no overdue carve-out, no
+Grok thesis check needed. **This is the first market-open in weeks that did not have to reason about
+an exit** — a direct consequence of last night's on-time EOD selling RDNT on its scheduled day.
+
+Note for the record: because the book is flat, `routines/market-open.md:29` (which says time stops are
+"enforced in end-of-day, not here") did **not** get exercised against strategy.md's overdue carve-out
+again today. The contradiction is still unreconciled and still live the next time a stop goes overdue.
+
+### Step 2 — halt checks: NONE fired, and this is the point
+
+| check | value | cap | halts entries |
+|-------|-------|-----|---------------|
+| day P&L | **0.00%** | -100% (`daily_loss_cap_pct`) | no |
+| week P&L | **+0.36%** (vs Mon 08-17 open $7,211.70) | -100% (`weekly_loss_cap_pct`) | no |
+| open positions | **0** | 1 (`max_concurrent_positions`) | **no — slot FREE** |
+| new positions today | **0** | 1 (`max_new_positions_per_day`) | no |
+
+**Every halt was clear and entries were fully authorized.** For the first time in nine sessions
+nothing structural stood between the account and a trade — the score was the only gate.
+
+### Step 3 — entries: none. Top score 5 vs threshold 6.
+
+Today's watchlist: **HD 5, FN 4, SNDK 3, ALAB 1, HTHT DQ**. Nothing reached 6, so per strategy.md
+("if nothing scores >= 6, we do not trade today") no order was constructed and preflight was never
+invoked. Cash is a position.
+
+### 🟢 THE DIRECTIONAL GATE PAID FOR ITSELF TODAY — measured at the open, not the pre-market print
+
+Per the 08-14 marking rule (audit rejections from the **open** we'd have bought, never the prior
+close), measured off the **sip** consolidated tape:
+
+| ticker | score | 08-17 close | 08-18 open | gap at open | last (09:34) | vs 08-17 close |
+|--------|-------|-------------|------------|-------------|--------------|----------------|
+| **FN** | 4 | 598.58 | **513.70** | **-14.18%** | 508.82 | **-15.00%** |
+| SNDK | 3 | 1786.85 | 1677.54 | -6.12% | 1714.85 | -4.03% |
+| ALAB | 1 | 320.17 | 304.00 | -5.05% | 303.00 | -5.36% |
+| HD | 5 | 337.88 | 336.78 | -0.33% | 336.75 | -0.33% |
+| HTHT | DQ | 46.61 | 46.51 | -0.21% | 46.44 | -0.36% |
+
+**FN opened -14.18% — worse than the -10.29% pre-market read that drove the rejection.** It was the
+strongest verified catalyst on the board (Q4 rev +44.6% YoY, EPS $4.10 vs ~$3.83 consensus, a genuine
+Q1 raise, all confirmed against primary IR) and it is the session's worst name by a factor of two.
+This is the **third consecutive instance** of the 08-14 standing lesson — *verification proves the
+catalyst is real, it does not prove the market will pay for it* — and the first where the gate's
+saving is large enough to matter: at `target_position_pct: 100` a buy would have put the entire
+$7,237.92 book into a -14% gap. **The directional gate is now n=3 and has moved from a plausible rule
+to a measured one.**
+
+### 🔴 HD's NOVELTY PENALTY WAS SCORED ON A PRE-MARKET PRINT THAT DID NOT SURVIVE TO THE BELL
+
+**This is the most important thing this run found, and it is a weekly-review question, not a routine's
+call to act on.** Pre-market marked HD *novelty 1* explicitly because it was "**already +2.04%**
+pre-market against the 4% mega-cap bar — roughly half the band gone before the bell," and reasoned we
+would "enter at the top of the band with nothing left."
+
+**HD opened -0.33%.** The entire pre-market gain evaporated into the auction. The band was **not**
+half-consumed at the only price we could have transacted at; it was **fully intact**.
+
+Consequences, stated precisely and left for 08-25:
+
+- strategy.md's **open-print re-measurement rule (ALB 08-06)** exists for exactly this and says to
+  re-measure novelty against the opening print *before sending any order*. Every prior application has
+  been **defensive** (ALB gapped +7.40% and consumed ~148% of its band, killing a buy). **Today is the
+  first observed case running the other way** — the rule would have *raised* a score, not lowered one.
+- Arithmetic, for the audit only: HD at novelty 2 scores **6**; at novelty 3 it scores **7**. Either
+  clears the threshold. The novelty term was the swing factor, not catalyst strength.
+- **The counter-argument is still strong and is not resolved by today's open.** Catalyst strength 2 was
+  independently justified — FY26 guidance is verbatim identical to the Q1 (May 19) release, so the
+  forward cash-flow delta is ~zero, and every 6+ this system has traded (CCK 6, RDNT 6, BMY 7, PENG 8)
+  was a beat **and** a raise. A reaffirm-only print arguably *should* fail regardless of novelty.
+- HD is currently **336.75, flat to its open** — so this is a live, honest question rather than a
+  hindsight complaint about a missed run. Nothing has run away.
+
+**No action taken.** Per decision.md's non-negotiable — *"if anything is ambiguous, do nothing and log
+the ambiguity in research-log.md for the weekly review to address"* — market-open executes the score
+pre-market wrote; it does not rescore a name at the bell to manufacture a trade. Logged, not traded.
+
+### 🔴 NEW DATA HAZARD — Yahoo NULLED the entire 2026-08-17 session and shifted its labels
+
+Discovered while pulling the audit prints above, and it is worse than a gap:
+
+- `chart?interval=1d&range=10d` returned **`open=null, close=null` for 2026-08-17 on all five
+  tickers** — HD, FN, HTHT, SNDK, ALAB. A whole trading session missing, uniformly.
+- The session's data was **not lost, it was mislabelled onto 08-18**: Yahoo's "08-18 open" of
+  **HD 334.71 / FN 583.15** are Alpaca's **08-17** opens exactly. Yahoo's 08-18 *close* field is the
+  live 08-18 price. **Each 08-18 bar is a splice of 08-17's open and 08-18's live price.**
+- Reading it naively gives **FN -13.0% and HD +0.2% intraday** — both fabrications. The real numbers
+  are FN **-15.00%** and HD **-0.33%** from the 08-17 close.
+
+**Why this matters more than a normal data bug:** Yahoo `chart?interval=1d` is the documented
+workaround for the `alpaca.sh bars` window bug and has been load-bearing for **7 consecutive
+sessions** of confirmation-bar scoring. The workaround has its own silent failure mode, and it is the
+same *class* of error as the reference-close trap (08-12/08-14): a plausible number anchored to the
+wrong session. Caught here only because Alpaca disagreed.
+
+### 🟢 THE FIX FOR BOTH — the `sip` feed is available on this account and was never being used
+
+Verified live this run:
+
+```
+GET data.alpaca.markets/v2/stocks/HD/bars?timeframe=1Day&start=2026-08-13&feed=sip&adjustment=raw
+  -> 08-17 o=334.71 c=337.88 v=5,585,138     # correct session, consolidated volume
+GET ...&feed=iex   -> 08-17 o=334.15 c=338.315 v=271,897   # same session, 4.9% of the volume
+```
+
+`scripts/alpaca.sh:104` hardcodes **`feed=iex`** on the bars call. The consolidated tape works on these
+credentials, returns the correct sessions with no truncation when called with an explicit `start=` and
+**no `limit=`**, and carries real volume (5.58M vs IEX's 272k — the 20-40x IEX undercount this log has
+recorded since 08-11). **One endpoint fixes three open escalations at once:** the bars window bug, the
+Yahoo dependency it forced, and the IEX-volume caveat that `scripts/volume.sh` exists to work around.
+
+**Not applied this run.** It changes the data source every candidate is scored against, which is a
+strategy-surface change rather than an ops repair — unlike the 08-17 plist fix, which was pure
+scheduling and load-bearing that same session. Nothing is holding a position on it today. **Escalated
+with the evidence above; recommend the 08-25 review apply it.**
+
+### 🟢 IEX quote feed was HEALTHY at the bell — escalation #8 did not reproduce
+
+`quote` timestamps at 09:31 ET were **~1 minute old** across all five names (e.g. HD `t=13:31:17Z`,
+FN `t=13:31:17Z`), not the ~17.6-hour-stale prints logged at the 08-14 and 08-17 opens. Two on-time
+opens in a row with a live feed. **The hazard is intermittent, not retired** — it is still the
+condition any forced open-bell sale would execute into, and the book being flat is what makes it
+harmless today.
+
+### 🟢 `no_margin` COMPLIANT — 2nd consecutive routine
+
+Cash **+$7,237.92**, no leverage, buying power $28,951.68. The 21-routine breach stayed cured because
+no order was sent. **It reopens on the next buy if the sizing haircut is unchanged** — 98% has been
+overrun twice by near-identical fills (PENG 07-08 +2.6%, RDNT 08-10 +2.58%), and the rule was derived
+from PENG and sized to exactly the move that caused it, so it has zero margin against a repeat.
+Untested again today.
+
+### Ops carry-forward — #10 is new and supersedes part of #6
+
+1. **Move the EOD launchd trigger 12:55 → 12:40 PDT.** Jitter survives the #3 fix; 08-17 drew a
+   4-minute margin, which was a good draw, not a guarantee. Strategy call (shifts every time-stop's
+   execution price), needs a human. **Not urgent while flat — the next entry re-arms it.**
+2. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` (still uncommitted, with untracked
+   `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`, `memory/guardrails.md.conservative.bak`).
+3. Reconcile `routines/market-open.md:29` with strategy.md's overdue-time-stop carve-out — still
+   contradictory, not exercised today only because the book is flat.
+4. `alpaca.sh` lacks limit-order support and any partial-close path.
+5. **Widen the entry haircut 98% → 96%, or size on the ask.** Still the live risk on the next buy.
+6. **`alpaca.sh bars` window bug** (`scripts/alpaca.sh:98-104`) — and note the Yahoo workaround it
+   forced is **itself now proven unsafe** (#10). Fix via #10.
+7. `routines/midday.md:1` header wrong by an hour. Docs-only — do NOT move the plist.
+8. **IEX `quote` stale at the 09:30 open** — did NOT reproduce today; intermittent, keep on the list.
+9. `routines/end-of-day.md:1` header self-contradictory. Docs-only — do NOT move the plist.
+10. **NEW — switch bars/volume to `feed=sip` with an explicit `start=` and no `limit=`.** Verified
+    working on these credentials this run. Fixes #6, removes the Yahoo dependency that produced today's
+    session-shift hazard, and supplies real consolidated volume. Highest-value data-side change on the
+    board.
+11. **NEW — weekly-review question: should novelty be re-measured at the open before a name is
+    discarded, not only before an order is sent?** HD is the first case where the ALB 08-06 rule would
+    have raised a score. See the HD section above; deliberately not acted on.
+
+---
 
 2026-08-17 end-of-day: **1 time-stop, 1 exit, 1 order — RDNT SOLD ON TIME.** Preflight passed,
 `memory/trade-log.md` appended. RDNT 96 sh sold @ **75.67** vs 72.30 entry = **+4.66%**, realized
