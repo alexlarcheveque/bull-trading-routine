@@ -1,19 +1,137 @@
 # portfolio.md
-# Updated 2026-08-19 08:37 CT (09:37 ET) by market-open routine.
+# Updated 2026-08-19 11:01 CT (12:01 ET) by midday routine.
 
 ## Account
-- equity: 7180.93
+- equity: 6810.71
 - cash: 421.91
 - buying_power: 20612.90
-- day_pnl_pct: -0.79  # vs last_equity 7237.92
+- day_pnl_pct: -5.90  # vs last_equity 7237.92
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -0.84              |
+| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -6.26              |
 
 ## Notes
+
+2026-08-19 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md` unchanged.
+KEYS 20 sh marked **319.44** vs 340.8005 entry = **-6.26%**, down from -0.84% at the 09:37 ET
+market-open mark. Market value $6,388.80 on $6,810.71 equity = **93.8% of the book**. Reconciled
+against Alpaca: `positions` returns 1 (`asset_class: us_equity`), `orders open` returns 0, matching
+this file — no drift. **20 × 319.44 + 421.91 cash = $6,810.71 = equity, to the cent.**
+
+### 🟢 RUN QUALITY: ON TIME — clock read 12:01:07 ET, ~1 min after the 12:00 ET trigger
+
+`clock.is_open` = `true`. Account `ACTIVE`, `trading_blocked` `false`. **Fifth consecutive live
+confirmation of the header bug in `routines/midday.md:1`** (carry-forward #7): the plist fires
+09:00 PDT = **12:00 ET / 11:00 CT**, not the `12:00 PM Central / 1:00 PM Eastern` the header
+claims. **The header is the wrong artifact — do NOT move the plist to match it.**
+
+### Step 1 — exits: no gate fired. Thesis-broken was the only one that could, and it didn't.
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| profit target | -6.26% | +100% (`per_trade_target_pct`) | no |
+| stop loss | -6.26% | **-100%** (`per_trade_stop_pct`) | **no — 93.7pp of room left** |
+| thesis broken | Grok **NO NEWS ×10 classes**, confirmed twice | concrete named event | no |
+| time stop | target_exit **2026-08-26** | 7 days out | not due, and not midday's |
+| expiry guard | n/a — shares, no options open | — | n/a |
+
+Instrument detected live off Alpaca `asset_class: us_equity` → shares path, `quote`/`sell`,
+preflight `equity`. Quote was **live** (`t=2026-08-19T16:01:16Z`, ~1 min old) — no staleness, as
+expected away from the bell. Mark used is `positions.current_price` (319.44) per the standing
+lesson; `trade.p` was 319.31 = -6.30%, and neither is within 93 points of a gate.
+
+**Grok, run twice, both clean.** The 10-class enumeration (guidance cut, recall, litigation,
+regulatory/export-control, exec departure, downgrade-only, restatement, dilution, short report,
+contract/customer loss) returned a literal **NO NEWS on all ten**, sourced to Keysight's own IR
+release. A second free-form "why is KEYS down 6%" query independently returned **no named negative
+corporate event** and surfaced only *positive* flow — Baird raising its PT to **$410**, bullish
+post-print analyst reaction. Verdict **THESIS INTACT**; per the routine's hard rule (sell only on
+concrete, named negative news) the position is held.
+
+### 🔴 THE NOVELTY GATE PASSED THIS MORNING AND THE TRADE WENT AGAINST US ANYWAY
+
+This is the finding of the run, and it is a weekly-review question — **midday cannot act on it.**
+
+Market-open set a falsifiable pre-order kill condition (">= +5% gap at the open kills the name"),
+measured **+1.76%** against the 08-18 close of $341.00, and passed it — the first time the ALB
+08-06 open-print rule ever *cleared* a trade rather than blocking one. The fill at **$340.8005**
+was six cents *below* the pre-catalyst close. On the rule's own terms that was a clean entry.
+
+Today's tape, off the sip consolidated feed:
+
+| session | open | high | low | close/last |
+|---------|------|------|-----|------------|
+| 2026-08-17 | 360.00 | 366.41 | 358.01 | 361.15 |
+| 2026-08-18 (pre-print) | 350.00 | 350.90 | 332.64 | **341.00** |
+| **2026-08-19** | **349.00** | 352.00 | **317.48** | **319.84** |
+
+KEYS opened +2.35%, printed its high in the first minutes, and has fallen **~9.0% off the open**
+to sit near the session low. It is now **-6.36% below the 08-18 close** — the denominator the
+entire novelty gate was measured against. The band the gate certified as "intact" did not just
+fail to pay; it inverted.
+
+**This is the 08-14 standing lesson in its fourth consecutive instance — *verification proves the
+catalyst is real, it does not prove the market will pay for it*** — and the first instance where
+we were **holding the position** rather than watching a rejected candidate. FN (08-18, -14.18% at
+the open) was the gate *saving* us. KEYS is the gate clearing a trade that then went -6.3% in
+four hours. The catalyst itself is not in dispute: Q3 adj. EPS **$3.07 vs ~$2.48** consensus,
+revenue **$1.85B vs ~$1.74B**, record orders >$2B, raised FY26 guide, all verified against primary
+IR both last night and again this run. **The market is selling a verified beat-and-raise on
+valuation (>55x forward, ~77-100% run into the print).** Logged for 08-25, not traded on.
+
+### 🟠 AND THIS IS WHAT `per_trade_stop_pct: 100` ACTUALLY MEANS — there is no stop
+
+Stated plainly because today is the first session where it is not hypothetical: at a 100% stop the
+shares gate **cannot fire above $0.00**. A -6.26% position has 93.7 percentage points of room
+before the rule notices. With `target_position_pct: 100` putting 94% of the book into one name, the
+**only** exits that exist for KEYS are (a) concrete negative news, which Grok says does not exist,
+and (b) the **2026-08-26 time stop**. That is the FULL YOLO configuration working exactly as
+written, not a malfunction — but it means the 08-26 EOD run is now carrying the entire downside
+control for this position, and EOD has missed **23 of 64 runs (~36%)**.
+**➡️ This is escalation #1 (move the EOD trigger 12:55 → 12:40 PDT) and it is now the most
+consequential open item on the board.** Still a human call.
+
+### Step 2 — daily loss cap: NOT hit
+
+| check | value | cap | action |
+|-------|-------|-----|--------|
+| daily P&L | **-5.90%** (6810.71 vs last_equity 7237.92) | -100% (`daily_loss_cap_pct`) | none |
+| weekly P&L | **-5.56%** (vs Mon 08-17 open $7,211.70) | -100% (`weekly_loss_cap_pct`) | none |
+
+No `cancel-all` (0 open orders anyway), no `notify.sh` alert, no halt marker written to
+`memory/research-log.md`. **-5.90% is the largest single-day drawdown this account has taken since
+the book stopped being flat**, and it clears the cap by 94 percentage points — the cap is
+decorative at 100%, as every prior note has said. The binding constraint remains
+`max_new_positions_per_day: 1`, already consumed by this morning's buy, so no entry was possible
+today regardless.
+
+### 🟢 `no_margin` COMPLIANT — the entry did not reopen the breach, and it still hasn't
+
+Cash **+$421.91**, unchanged from the fill (mark-to-market moves equity, not cash). Buying power
+$20,612.90, no leverage. The 98% haircut plus the integer floor at a $347 share price left +4.30%
+of headroom this morning and the fill came in -1.78%. **Still not stress-tested** — carry-forward
+#5 (widen 98% → 96%) stays open on its own merits.
+
+### Ops carry-forward — unchanged, nothing applied
+
+Midday can apply none of these (exits and notifications only). Re-listed by reference so the count
+stays honest: **#1** EOD trigger 12:55 → 12:40 PDT — **now the top item and load-bearing**, it is
+the only thing standing between KEYS and an unenforced 08-26 time stop; **#2** commit the
+`caffeinate -is` fix in `scripts/run-routine.sh` — **verified still uncommitted this run**,
+alongside untracked `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`,
+`memory/guardrails.md.conservative.bak`; **#3** `routines/market-open.md:29` vs strategy.md's
+overdue carve-out — **now exercisable, a position exists**; **#4** no limit-order or partial-close
+path in `alpaca.sh`; **#5** widen the entry haircut 98% → 96%; **#6** `alpaca.sh bars` window bug
+(fix via #10); **#7** this file's header, re-confirmed live above; **#8** IEX open-bell staleness —
+not observed this run, midday is not the bell, and the **snapshot** endpoint remains the better
+bell-time source; **#9** `routines/end-of-day.md:1` header; **#10** `feed=sip` for bars/volume —
+**used successfully again this run** for the daily bars above, still unapplied to
+`scripts/alpaca.sh:104`; **#11** the HD novelty-at-the-open question; **#12** the 3-7 DTE option
+window that killed 4 of 5 option-eligible setups; **#13** the bounded fill poll being too short for
+opening-auction market orders.
 
 2026-08-19 market-open: **1 buy, 0 sells — KEYS 20 sh @ $340.8005.** Preflight passed
 (`preflight OK KEYS buy 20 @ 346.99 (equity=7237.92, open=0, day_pnl=0.0000%)`),
