@@ -1,19 +1,161 @@
 # portfolio.md
-# Updated 2026-08-19 11:01 CT (12:01 ET) by midday routine.
+# Updated 2026-08-19 14:59 CT (15:59 ET) by end-of-day routine.
 
 ## Account
-- equity: 6810.71
+- equity: 6810.91
 - cash: 421.91
-- buying_power: 20612.90
+- buying_power: 19576.84
 - day_pnl_pct: -5.90  # vs last_equity 7237.92
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -6.26              |
+| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -6.27              |
 
 ## Notes
+
+2026-08-19 EOD: **0 time-stops, 0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md`
+unchanged. KEYS 20 sh marked **319.45** vs 340.8005 entry = **-6.27%**, essentially flat to the
+-6.26% midday mark (319.44). Equity **$6,810.91**, cash **$421.91**, day **-5.90%**. Reconciled
+against Alpaca: `positions` returns 1 (`asset_class: us_equity`), `orders open` returns 0 —
+no drift. **20 × 319.45 + 421.91 = $6,810.91 = equity, to the cent.**
+
+### 🔴 RUN QUALITY: LATE — started 15:59:16 ET, 4m16s past the 15:55 trigger. The close landed mid-run.
+
+`clock.is_open` was `true` at 15:59:16 (`next_close` 16:00:00 ET) so **Step-0 did not bail** — this
+is not a miss in the 08-18 sense, it is worse-shaped: the routine ran, but with **44 seconds of
+market left**. The clock re-read at 15:59:37 still showed open; by the time account/positions/
+guardrails were pulled, 16:00 had passed. **Any sell this run decided to place would have had
+roughly half a minute to be constructed, preflighted and submitted.**
+
+**Cost today: ZERO, and only by luck of the calendar.** No time stop was due (KEYS → 08-26), no
+options were open to expiry-guard, and the weekly cap was nowhere near. Nothing needed to be sold,
+so nothing was lost by having no time to sell it. That is a fortunate draw, not a working system.
+
+Tally: this is **late-or-missed #24 of 65 (~37%)**. The 08-17 plist repair (dropping `ProcessType
+Background`) removed launchd's *coalescing* and it is still holding — but today re-proves what the
+08-18 note concluded: **removing coalescing did not remove jitter, and a 5-minute margin does not
+cover it.** 08-17 drew 4m25s of margin, 08-18 drew -4m (missed), today drew 44s.
+
+| run | trigger | start (ET) | margin to close | result |
+|-----|---------|------------|-----------------|--------|
+| 08-11 | 12:55 PDT | 15:58 | ~2 min | ⚠️ |
+| 08-12 | 12:55 PDT | 15:58 | ~1.5 min | ⚠️ |
+| 08-14 | 12:55 PDT | 16:10 | **-10 min** | ❌ missed |
+| 08-17 | 12:55 PDT | 15:55:35 | 4m 25s | ✅ sold RDNT |
+| 08-18 | 12:55 PDT | 16:03:59 | **-4 min** | ❌ missed |
+| **08-19** | 12:55 PDT | **15:59:16** | **44 sec** | ⚠️ **ran, but unusable for an order** |
+
+**➡️ Escalation #1 (move the EOD trigger 12:55 → 12:40 PDT) is now the load-bearing item on the
+board and today is its third consecutive piece of evidence.** There is a live position with a
+**2026-08-26 time stop** that only this routine can enforce, and at `per_trade_stop_pct: 100` it is
+the *only* scheduled exit that exists. On today's distribution, that stop has roughly a 1-in-3
+chance of being enforced late or not at all. Still a human call — it shifts every time-stop's
+execution price — but the deadline is now dated.
+
+### Step 1 — time stops + expiry guard: nothing fired, safety net re-run clean
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| **time stop** | target_exit **2026-08-26** | today >= target_exit | **no — 5 sessions out** |
+| expiry guard | n/a — shares, no options open | within 2 trading days | n/a |
+| profit target (safety net) | -6.27% | +100% (`per_trade_target_pct`) | no |
+| stop loss (safety net) | -6.27% | **-100%** (`per_trade_stop_pct`) | **no — 93.7pp of room** |
+| thesis broken (safety net) | Grok **NO NEWS ×10 classes** | concrete named event | no |
+
+Instrument detected live off Alpaca `asset_class: us_equity` → shares path, `quote`/`sell`,
+preflight `equity`. Mark used is `positions.current_price` (319.45) per the standing lesson.
+
+**Grok re-run as the safety net and returned clean — second consecutive session.** Same 10-class
+enumeration midday used (guidance cut, recall, litigation, regulatory/export-control, exec
+departure, downgrade-only, restatement, dilution, short report, contract/customer loss): a literal
+**NO NEWS on all ten**. Asked directly why KEYS fell ~6% on a beat-and-raise, it returned
+**sell-the-news profit-taking on valuation after the run into the print** — no corporate event —
+and cited Baird *raising* its PT to **$410** today. Verdict **THESIS INTACT**. Per the hard rule
+(sell only on concrete, named negative news) the position is held.
+
+### 🔴 The day's real number: -5.90% is the largest single-session drawdown this book has taken
+
+KEYS was bought this morning at **$340.8005** — six cents *below* the pre-catalyst 08-18 close —
+after the ALB 08-06 open-print novelty gate ran as a pre-order check and **passed** (+1.76% vs a
++5% kill bar). It closed the session at **319.45**, **-6.27%** from entry and **-6.32%** below the
+08-18 close that the entire novelty gate was measured against.
+
+| session | open | high | low | close |
+|---------|------|------|-----|-------|
+| 2026-08-17 | 360.00 | 366.41 | 358.01 | 361.15 |
+| 2026-08-18 (pre-print) | 350.00 | 350.90 | 332.64 | **341.00** |
+| **2026-08-19** | **349.00** | 352.00 | **317.48** | **~319.45** |
+
+KEYS printed its high in the opening minutes and spent the session walking down to close near the
+low. **This is the 08-14 standing lesson in its fourth consecutive instance — *verification proves
+the catalyst is real, it does not prove the market will pay for it*** — and the first instance where
+we were **holding** rather than watching a rejected candidate. The pre-market note logged the
+counter-argument before the fact and it was correct: *"the options-implied move into the print was
+~7-8% and the market has so far paid +2.3% for a 24.8% EPS beat. That is a shrug."* We bought the
+shrug. **Nothing about the entry violated a rule** — score 8, primary-source verified, novelty gate
+passed at the open, sizing haircut respected, preflight clean. The rules permitted a trade the tape
+then punished. That is the 08-25 review's question, not a routine's.
+
+### Step 2 — weekly loss cap: NOT hit
+
+| check | value | cap | action |
+|-------|-------|-----|--------|
+| weekly P&L | **-5.56%** (6810.91 vs Mon 08-17 open $7,211.70) | -100% (`weekly_loss_cap_pct`) | none |
+| daily P&L | **-5.90%** (vs last_equity 7237.92) | -100% (`daily_loss_cap_pct`) | none |
+
+No flatten, no `notify.sh` alert, no `PAUSED` marker written to `memory/research-log.md`. The cap
+is decorative at 100% — the worst day this account has had clears it by 94 percentage points. Worth
+stating plainly for the 08-25 review: **a "weekly loss cap" that only fires on a total wipeout is
+not a loss cap**, and with `per_trade_stop_pct: 100` there is no per-trade stop either, so the book
+currently has **no drawdown control of any kind** other than the 7-day time stop.
+
+### 🟢 `no_margin` COMPLIANT — cash +$421.91, unchanged since the fill
+
+Mark-to-market moved equity, not cash. Buying power $19,576.84, no leverage. The 98% haircut plus
+the integer floor left +4.30% of headroom this morning and the fill came in -1.78% favorable, so
+**the haircut still has not been stress-tested** — carry-forward #5 (widen 98% → 96%) stays open on
+its own merits.
+
+### Steps 3/4 — EOD email SENT
+
+Resend id `af2db36f-3f57-4444-afff-8792337f0f46`, one attempt, delivered. Body in `/tmp/bull-eod.txt`.
+Pre-market scanned **11 names** (5 scored: KEYS 8, SYK 5, TOL 5, HD 4, JKHY 4; 6 disqualified:
+ZTO, BMY, WEAV, AWK, WTRG, FHTX), **1 met the threshold of 6**.
+
+### Ops carry-forward — #1 hardened by today's 44-second margin
+
+1. **Move the EOD launchd trigger 12:55 → 12:40 PDT — NOW LOAD-BEARING WITH A DATED DEADLINE.**
+   Third consecutive session of evidence (08-17 4m25s, 08-18 missed, 08-19 44s). It is the only
+   thing standing between KEYS and an unenforced **2026-08-26** time stop, which at
+   `per_trade_stop_pct: 100` is the position's only scheduled exit. Needs a human.
+2. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` — **still uncommitted**, alongside
+   untracked `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`,
+   `memory/guardrails.md.conservative.bak`.
+3. `routines/market-open.md:29` vs strategy.md's overdue carve-out — still contradictory, and
+   **now genuinely exercisable**: if the 08-26 EOD misses, 08-27 market-open reads both files.
+4. **No limit-order or partial-close path in `alpaca.sh`** — bit this morning (12%-wide opening book).
+5. Widen the entry haircut 98% → 96%. Still untested; today's fill was favorable.
+6. `alpaca.sh bars` window bug — fix via #10.
+7. `routines/midday.md:1` header wrong by an hour. Docs-only.
+8. IEX open-bell staleness — not applicable this run (EOD is not the bell); **snapshot** endpoint
+   remains the better bell-time source.
+9. **`routines/end-of-day.md:1` header** — reads `55 15 * * 1-5 (3:55 PM Central / 4:55 PM Eastern
+   — 5 minutes before close)`, which is self-contradictory twice over. The live plist (12:55 PDT =
+   15:55 ET) is right. Docs-only — do NOT move the plist *to match the header*; #1 is a separate,
+   deliberate change.
+10. `feed=sip` for bars/volume — historical/daily only, still unapplied to `scripts/alpaca.sh:104`.
+11. The HD novelty-at-the-open question — partially answered 08-19 (the rule ran as a pre-order
+    gate and passed). Still open for the discard-side case.
+12. The 3-7 DTE option window has killed **4 of 5** option-eligible setups (KMX, PENG, CCK, KEYS)
+    because it admits only names carrying weeklies. Needs an explicit 08-25 decision.
+13. The bounded fill poll (10×3s) is too short for opening-auction market orders — expired at
+    12/20 filled this morning.
+14. **NEW — the 08-25 review owes an answer on KEYS.** A rule-perfect entry (score 8, primary-source
+    verified, novelty gate passed at the open) lost 6.3% in one session, and neither the 100% stop
+    nor the 100% daily cap can respond. The question is not "was the process followed" — it was —
+    but whether `per_trade_stop_pct: 100` + `target_position_pct: 100` is a survivable pairing.
 
 2026-08-19 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md` unchanged.
 KEYS 20 sh marked **319.44** vs 340.8005 entry = **-6.26%**, down from -0.84% at the 09:37 ET
