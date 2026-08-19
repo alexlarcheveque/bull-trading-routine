@@ -1,17 +1,191 @@
 # portfolio.md
-# Updated 2026-08-18 15:04 CT (16:04 ET) by end-of-day routine — POST-CLOSE, bail-out path.
+# Updated 2026-08-19 08:37 CT (09:37 ET) by market-open routine.
 
 ## Account
-- equity: 7237.92
-- cash: 7237.92
-- buying_power: 28951.68
-- day_pnl_pct: 0.00  # vs last_equity 7237.92
+- equity: 7180.93
+- cash: 421.91
+- buying_power: 20612.90
+- day_pnl_pct: -0.79  # vs last_equity 7237.92
 
 ## Open positions
 
-_None — flat, 100% cash._
+| ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
+|--------|------------|-----|-------------|------------|-------------|--------------------|
+| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -0.84              |
 
 ## Notes
+
+2026-08-19 market-open: **1 buy, 0 sells — KEYS 20 sh @ $340.8005.** Preflight passed
+(`preflight OK KEYS buy 20 @ 346.99 (equity=7237.92, open=0, day_pnl=0.0000%)`),
+`memory/trade-log.md` appended. **First entry in 9 sessions** — the book was flat since the
+RDNT time stop. Equity **$7,180.93**, cash **+$421.91**, day **-0.79%**.
+
+### 🟢 RUN QUALITY: ON TIME — clock read 09:30:12 ET, 12s after the bell
+
+`clock.is_open` = `true`, `next_close` 2026-08-19T16:00 ET. `trading_blocked` and
+`account_blocked` both `false`. **Sixth consecutive on-time market-open.**
+
+### Step 1 — exits: nothing to evaluate
+
+Zero open positions at the bell, so no gate could fire. Third consecutive routine with no exit
+to reason about. Grok was not called — no underlying to query.
+
+### Step 2 — halt checks: ALL CLEAR, entries fully authorized
+
+| check | value | cap | halts entries |
+|-------|-------|-----|---------------|
+| day P&L | **0.00%** (equity == last_equity at the bell) | -100% (`daily_loss_cap_pct`) | no |
+| week P&L | **+0.36%** (vs Mon 08-17 open $7,211.70) | -100% (`weekly_loss_cap_pct`) | no |
+| open positions | **0** | 1 (`max_concurrent_positions`) | **no — slot FREE** |
+| new positions today | **0** | 1 (`max_new_positions_per_day`) | no |
+
+### Step 3 — entries: KEYS, score 8 vs threshold 6
+
+Watchlist: **KEYS 8**, SYK 5, TOL 5, HD 4, JKHY 4; ZTO/BMY/WEAV/AWK/WTRG/FHTX DQ. KEYS was the
+only name at or above threshold.
+
+### 🟢 THE OPEN-PRINT NOVELTY RE-MEASUREMENT PASSED — and this is the first time it CLEARED a trade
+
+Pre-market set an explicit, falsifiable kill condition before the fact: *"if KEYS gaps >= +5% at
+the open, the band is consumed and the name no longer qualifies."* Measured live against the
+08-18 close of **$341.00** (confirmed off sip daily bars, not Yahoo):
+
+| time (ET) | print | vs 08-18 close |
+|-----------|-------|----------------|
+| 09:31:02 | 348.51 | +2.20% |
+| 09:31:33 | 345.56 | +1.34% |
+| 09:32:52 | **346.99** (sizing mark) | **+1.76%** |
+| **fill 09:35:10** | **340.8005** | **-0.06%** |
+
+**+1.76% against a +5% bar — the band was intact, and by the fill it was fully intact.** The
+pre-market gain (+2.34% at $348.99) evaporated into the auction exactly as HD's did on 08-18, but
+this time the rule ran *in favour of* the trade rather than against it. **We paid $340.80 — six
+cents BELOW the pre-catalyst close, for a verified 24.8% EPS beat and a Q4 guide 26% above
+consensus.** That is the second-wave shape strategy.md is built around, bought at a better price
+than pre-market modelled.
+
+Precedent note: every prior application of the ALB 08-06 rule was **defensive** (ALB gapped +7.40%
+and killed a buy; HD 08-18 was logged as the first case that would have *raised* a score but was
+correctly not acted on). **Today is the first time the rule was run as a pre-order gate and
+returned PASS.** n=1 for the constructive direction.
+
+### 🔴 CALL PATH INELIGIBLE — KEYS has monthly-only expiries. 4th instance of this fallback.
+
+Score 8 >= 6 and KEYS is optionable (239 call contracts) with market cap ~$61B < $100B, so
+strategy.md pointed at the **long-call** path. It could not be constructed inside the guardrails:
+
+| expiry | DTE | in `[option_min_days_to_expiry:3, option_max_days_to_expiry:7]`? |
+|--------|-----|------------------------------------------------------------------|
+| 2026-08-21 | **2** | ✗ below the floor — and it would be inside the 2-day expiry guard **on day one** |
+| 2026-09-18 | 30 | ✗ far above the ceiling |
+| 10-16 / 11-20 / 12-18 | 58/93/121 | ✗ |
+
+`option-chain KEYS call 2026-08-22 2026-08-26` returned **0 contracts**. KEYS lists third-Friday
+monthlies only — no weeklies. Buying the 08-21 would have tripped strategy.md's expiry guard
+("option-sell now regardless of P&L") at the very next routine, which is self-evidently wrong.
+**Fell back to shares**, matching KMX 06-18, PENG 07-08 and CCK 07-22 exactly. This is now the
+**4th of 5 option-eligible setups killed by the 3-7 DTE window** — the window is narrow enough
+that it only ever admits names carrying weeklies, and that is a real, repeated constraint worth
+the 08-25 review's attention, not a one-off.
+
+### 🟢 `no_margin` HELD — the breach did NOT reopen, and this was the run that was supposed to reopen it
+
+Escalation #5 named today's buy specifically: *"a KEYS buy at `target_position_pct: 100` is exactly
+the order that reopens the `no_margin` breach."* It did not.
+
+| step | value |
+|------|-------|
+| 98% haircut notional | 0.98 × 7237.92 = **$7,093.16** |
+| sized at $346.99 mark | floor(7093.16 / 346.99) = **20 sh** |
+| headroom before cash < 0 | fill up to **$361.90** = **+4.30%** vs mark |
+| actual fill | **$340.8005** = **-1.78%** (favorable) |
+| cash after | **+$421.91** ✅ |
+
+Two things protected it, and only one was the rule: the 98% haircut contributed ~$145, but the
+**integer floor at a $347 share price contributed far more** (21 shares would have cost $7,286 >
+equity). +4.30% of headroom comfortably cleared both prior overruns (PENG 07-08 +2.6%, RDNT 08-10
++2.58%). **Honest read: the haircut was not actually stress-tested today — the favorable fill meant
+it was never called on.** Escalation #5 (widen 98% → 96%) should stay open; a low-priced name at
+100% sizing still has thin cover.
+
+### 🟡 IEX quote was STALE AT THE BELL then self-healed ~90s later — escalation #8 reproduced
+
+First `alpaca.sh quote KEYS` at 09:31 returned `p=345, t=2026-08-18T20:05:39Z` — **yesterday's
+after-hours print, ~17.4 hours old**, the exact signature logged at the 08-14 and 08-17 opens. By
+09:31:33 the same endpoint returned a live `t=13:31:33Z`. **The hazard is real but transient at the
+open**, and the sizing mark used (09:32:52) was live. Had this been a forced *sale* at 09:30 it
+would have executed against a stale reference.
+
+**New workaround found and worth keeping:** the **snapshot** endpoint
+(`/v2/stocks/KEYS/snapshot?feed=iex`) returned a **live** `latestTrade` (13:31:02Z) at the same
+moment `/trades/latest?feed=iex` was serving the 17-hour-old print. Same feed, same credentials,
+different staleness. Snapshot is the better bell-time source than `alpaca.sh quote`.
+
+### 🔴 sip does NOT cover recent data — escalation #10 is narrower than 08-18 concluded
+
+The 08-18 EOD note called `feed=sip` the fix for three escalations at once. Tested live this run:
+
+```
+/v2/stocks/KEYS/snapshot?feed=sip     -> {"message":"subscription does not permit querying recent SIP data"}
+/v2/stocks/KEYS/bars?...1Min&today    -> 0 bars
+/v2/stocks/KEYS/bars?...1Day&historic -> works, correct sessions (08-18 o=350 c=341 v=3,526,271)
+```
+
+**sip works for historical/daily bars only — it is delayed and returns nothing for the current
+session.** Pre-market already found it fails on `/quotes/latest` and `/trades/latest`. So #10 is
+still worth applying to `scripts/alpaca.sh:104` (daily bars, confirmation scoring, real consolidated
+volume) but it is **not** a live-quote fix and cannot replace IEX at the bell. Today's 08-18 close
+of $341.00 — the denominator of the entire novelty gate — came from sip and was correct.
+
+### ⚠️ Fill took 1m35s and drip-filled 12 → 15 → 20 against a 12%-wide book
+
+Submitted 09:33:35, filled 09:35:10. IEX top-of-book at submission was **bid 326.32 / ask 366.45**
+— a ~12% spread, i.e. an unusable opening book. The routine's 30s bounded poll expired at
+`partially_filled 12/20`; polling was extended rather than walking away mid-fill, since abandoning a
+working market order would have left the position and `portfolio.md` mismatched. **The routine's
+10×3s poll is too short for an opening-auction market order** — 3 of the last 5 entries (PENG,
+BMY, CCK) also drip-filled over ~3 minutes. Escalation #4 (no limit-order path in `alpaca.sh`)
+is what forces a market order into a book this wide.
+
+### Position now — and the time stop is armed
+
+KEYS 20 sh, entry **$340.8005**, `target_exit` **2026-08-26**, 94.2% of equity at entry. Currently
+**337.951 = -0.84%**. At `per_trade_stop_pct: 100` / `per_trade_target_pct: 100` the price gates are
+unreachable, so **thesis-broken (midday) and the 08-26 time stop are the only exits that can fire.**
+
+**➡️ Escalation #1 (move the EOD trigger 12:55 → 12:40 PDT) is now LIVE again.** It has been parked
+as "not urgent while flat" for 9 sessions. The book is no longer flat: there is a time stop dated
+2026-08-26 and EOD has missed **23 of 64 runs (~36%)**, including 08-18. Still a human/strategy call
+(it shifts every time-stop execution price), but it is no longer theoretical.
+
+### Ops carry-forward
+
+1. **Move the EOD launchd trigger 12:55 → 12:40 PDT — RE-ARMED TODAY** by the KEYS entry. Deadline
+   is effectively 2026-08-26 (the time stop). Needs a human.
+2. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` — **still uncommitted**, alongside
+   untracked `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`,
+   `memory/guardrails.md.conservative.bak`.
+3. `routines/market-open.md:29` vs strategy.md's overdue carve-out — still contradictory. **Now
+   exercisable**: a position exists again.
+4. **No limit-order or partial-close path in `alpaca.sh`** — directly bit today (12%-wide book,
+   market order the only option).
+5. Widen the entry haircut 98% → 96%. **Not disproven today — untested**, the fill came in -1.78%.
+6. `alpaca.sh bars` window bug — fix via #10.
+7. `routines/midday.md:1` header wrong by an hour. Docs-only.
+8. **IEX open-bell staleness — REPRODUCED this run** (17.4h stale at 09:31, healed by 09:31:33).
+   Use the **snapshot** endpoint at the bell, not `trades/latest`.
+9. `routines/end-of-day.md:1` header. Docs-only.
+10. **`feed=sip` — SCOPE CORRECTED.** Historical/daily bars only; the subscription refuses recent
+    sip data entirely. Still apply to `scripts/alpaca.sh:104`, but it is not a live-quote fix.
+11. HD novelty-at-the-open question — **partially answered today**: the open-print rule ran as a
+    pre-order gate and passed. Still open for the discard-side case.
+12. **NEW — the 3-7 DTE option window has now killed 4 of 5 option-eligible setups** (KMX, PENG,
+    CCK, KEYS) because it admits only names with weekly expiries. Monthly-only names can never
+    take the call path. Worth an explicit 08-25 decision: widen the window, or state that
+    monthly-only names are shares-by-design.
+13. **NEW — the bounded fill poll (10×3s) is too short for opening-auction market orders.** Expired
+    at 12/20 filled today. Should be widened, or the routine should state that a working order must
+    be tracked to terminal state before `portfolio.md` is written.
 
 2026-08-18 EOD: **🔴 MISSED — started 13:03:59 PDT = 16:03:59 ET, 4 min past the close.**
 `clock.is_open` = `false` → Step-0 bail-out. 0 exits, 0 orders, no preflight, no EOD email.
