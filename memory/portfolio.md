@@ -17,9 +17,17 @@
 
 2026-08-19 EOD: **0 time-stops, 0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md`
 unchanged. KEYS 20 sh marked **319.45** vs 340.8005 entry = **-6.27%**, essentially flat to the
--6.26% midday mark (319.44). Equity **$6,810.91**, cash **$421.91**, day **-5.90%**. Reconciled
-against Alpaca: `positions` returns 1 (`asset_class: us_equity`), `orders open` returns 0 —
-no drift. **20 × 319.45 + 421.91 = $6,810.91 = equity, to the cent.**
+-6.26% midday mark (319.44). Equity **$6,810.91**, cash **$421.91**, day **-5.90%**, WTD **-5.56%**,
+all-time **-93.19%** from the $100,000 open (2026-05-14). Reconciled against Alpaca: `positions`
+returns 1 (`asset_class: us_equity`), `orders open` returns 0 — no drift.
+**20 × 319.45 + 421.91 = $6,810.91 = equity, to the cent.**
+
+⚠️ **Correction to the EOD email sent this run:** it quoted all-time as **-92.42%** against the
+earliest equity figure found in `research-log.md` ($89,894.55), because no seed value was located
+before send. The correct basis is the **$100,000 open** recorded in the 08-14 review line, giving
+**-93.19%**. The email stated its basis explicitly so it was not misleading, but this file is the
+source of truth and -93.19% is the number. Day, WTD, position and exit figures in the email are all
+correct and unaffected.
 
 ### 🔴 RUN QUALITY: LATE — started 15:59:16 ET, 4m16s past the 15:55 trigger. The close landed mid-run.
 
