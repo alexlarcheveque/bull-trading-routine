@@ -8586,3 +8586,231 @@ Unchanged from the 08-18 market-open block, with #2 promoted: **(2) move the EOD
 entry haircut 98% → 96%; (7) `routines/midday.md:1` header is an hour wrong; (10)
 `routines/end-of-day.md:1` header is self-contradictory ("3:55 PM Central / 4:55 PM Eastern — 5
 minutes before close"; 3:55 CT *is* 4:55 ET = 55 min after the close). Docs-only — the plist is right.
+
+---
+
+## 2026-08-19 pre-market research pass
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+**Home Depot (HD)**: Q2 FY2026 earnings beat with revenue of $47.9B (+5.7% YoY), adjusted EPS of
+$4.92 (vs. consensus ~$4.73), and comparable sales +1.7% (U.S. +1.3%). Reaffirmed full-year guidance
+amid resilient demand for smaller projects. Shares rose ~1.7-2% premarket.
+[1] https://ir.homedepot.com/news-releases/2026/08-18-2026-110040463
+[2] https://www.investing.com/news/earnings/home-depot-beats-estimates-reaffirms-fiscal-2026-guidance-4864717
+[3] https://finance.yahoo.com/markets/stocks/articles/home-depot-q2-2026-earnings-111100114.html
+(Reported pre-market Aug 18, 2026; sources: company IR, Investing.com, Yahoo Finance/Quartz.)
+
+Broader context on Aug 18 included S&P 500 records on optimism around memory chipmakers (e.g.,
+references to Micron-related developments), though no new large-cap-specific catalysts beyond HD were
+prominently reported in the window. [4] Other movers (e.g., certain smaller names like HAE) were noted
+but fall outside the >$2B market cap focus or lacked material large-cap impact. No additional major US
+large-cap earnings beats, upgrades, or acquisitions were highlighted in results for the exact 24-hour
+period.
+
+### Grok raw output — Query 2: Pre-market movers >2% on news (2026-08-19)
+**Few or no clear examples of established tickers with fresh news catalysts driving >2% premarket
+gains on Aug 19, 2026; top % movers are predominantly low-float/small-cap names likely driven by
+volume, liquidity, or technical factors rather than identifiable news.**
+[1] https://stockanalysis.com/markets/premarket/
+
+Top premarket gainers (as of ~Aug 19 data from stockanalysis.com) included:
+- **RDAC** (Rising Dragon Acquisition Corp.): +205% (very low float/SPAC-like activity).
+- **TNON** (Tenon Medical): +81% (prior reverse split in early August; no fresh catalyst identified for the 19th).
+- **ZNB** (Zeta Network Group): +65%.
+- **YJ** (Yunji Inc.): +63%.
+- **BIVI** (BioVie Inc.): +56%.
+
+These appear to be gap/volume-driven moves common in microcaps, without prominent news releases tied
+to the session. [2] https://www.rttnews.com/3678117/tenon-medical-implements-1-for-35-reverse-stock-split-today.aspx
+
+More moderate movers (often >2-4%) on sites like MarketWatch included names such as **BBWI**, **INTU**,
+**AS**, and **TRGP**, but no specific fresh catalysts were detailed in available premarket coverage for
+Aug 19. [3] https://www.marketwatch.com/tools/screener/premarket
+
+**AMLX** saw substantial prior moves (e.g., +27%+ in earlier premarket sessions) linked to positive
+Phase 3 LUCIDITY trial results for avexitide, but this was not a new Aug 19 catalyst.
+[4] https://www.benzinga.com/trading-ideas/movers/26/08/61269727/12-health-care-stocks-moving-tuesday-s-pre-market-session
+[5] https://www.amylyx.com/news
+
+Benzinga and similar premarket hubs showed limited or no movers flagged with news on the date. [6]
+Overall, premarket activity on this session was dominated by speculative small-cap flow rather than
+news-driven moves in larger names.
+
+### Grok raw output — Query 3: Earnings beat AND raised guidance (after yesterday's close)
+**None identified based on available web search results.**
+[1] https://www.prnewswire.com/news-releases/zto-reports-second-quarter-2026-unaudited-financial-results-302854342.html
+[2] https://www.tradingview.com/news/urn:summary_document_report:quartr.com:3349223:0-keys-record-revenue-strong-segment-growth-and-raised-outlook-highlight-robust-q2-2026-performance/
+
+Key companies scheduled to report after the August 18, 2026 close included ZTO (reported results
+showing revenue +23% YoY to ~RMB 14.55B and adjusted net income +50.3% to RMB 3.1B, but no confirmed
+analyst beat or raised guidance noted), along with KEYS, TOL, and JKHY.
+[3] https://www.marketbeat.com/earnings/reports/2026-8-18-zto-express-cayman-inc-stock/
+
+Searches for beats + raised guidance/outlook tied to these or other Aug 18/19 reports yielded no
+qualifying examples (most relevant hits were from prior quarters or unrelated dates). Home Depot
+(reported earlier on Aug 18) reaffirmed but did not raise guidance. [4] https://www.cnbc.com/earnings/
+
+>>> ROUTINE NOTE: Query 3 answered "None identified" but its own citation [2] is a Quartr summary
+>>> headlined "KEYS: record revenue, strong segment growth and RAISED OUTLOOK." The query contradicted
+>>> its own source. Followed up directly against Keysight IR — see Query 5 below. Grok's summary layer
+>>> missed the single tradeable name on the board today.
+
+### Grok raw output — Query 4: FDA / contracts >$100M / M&A / regulator decisions (last 24h)
+**M&A announcements (published ~Aug 18, 2026):**
+- Weave Communications (NASDAQ: WEAV) announced an Agreement and Plan of Merger with affiliates of
+  Francisco Partners (Willow Parent, LLC). [1] https://www.sec.gov/Archives/edgar/data/1609151/000160915126000083/weav-20260818.htm
+- American Water Works (NYSE: AWK) and Essential Utilities (NYSE: WTRG) merger advanced after the
+  Hart-Scott-Rodino waiting period expired. [2] https://www.roi-nj.com/2026/08/18/industry/energy-utilities/american-water-essential-utilities-merger-advances-as-hart-scott-rodino-waiting-period-expires/
+- Slate Medicines to merge with Fulcrum Therapeutics (likely NASDAQ: FHTX). [3] https://www.cooley.com/news/coverage/2026/2026-08-18-slate-medicines-to-merge-with-fulcrum-therapeutics
+
+**Large contract wins (>$100M, announced/published ~Aug 18, 2026):**
+- Stryker (NYSE: SYK) unit won a $100 million contract modification from the U.S. Defense Logistics
+  Agency. [4] https://www.marketscreener.com/news/stryker-unit-wins-100-million-contract-modification-from-us-defense-logistics-agency-ce7859dddc81fe22
+
+**FDA approvals and regulator decisions:**
+No major new full FDA drug/device approvals were published in the exact last 24 hours (recent ones
+like Takeda's Orzeyful/oveporexton or Moderna's mRNA flu vaccine were approved earlier in August).
+[5] https://time.com/article/2026/08/18/fda-approves-first-drug-to-treat-narcolepsy/
+[6] https://www.bigmoleculewatch.com/2026/08/18/fda-approves-modernas-mflusiva-mrna-1010-seasonal-influenza-vaccine/
+A Bristol Myers Squibb (NYSE: BMY) multiple myeloma treatment approval was noted around Aug 18.
+[7] https://x.com/adamfeuerstein
+
+On the regulator side, the SEC proposed new crypto asset rules on Aug 18, 2026, including exemptions
+for certain offerings (impacting crypto-related public companies).
+[8] https://www.reuters.com/world/us-sec-proposes-new-rules-crypto-assets-2026-08-18/
+[9] https://www.bloomberg.com/news/articles/2026-08-18/sec-proposes-some-registration-exemptions-for-crypto-offerings
+
+No other qualifying large contract wins, M&A, or regulator actions meeting the criteria were
+identified in the results.
+
+### Grok raw output — Query 5 (follow-up): KEYS Q3 FY2026 primary-source verification
+**Primary source: Keysight Technologies Reports Third Quarter 2026 Results press release (August 18,
+2026)** https://investor.keysight.com/investor-news-and-events/financial-press-releases/press-release-details/2026/Keysight-Technologies-Reports-Third-Quarter-2026-Results/default.aspx (also via Business Wire).
+
+**(1) Reported results:**
+- Revenue: $1.846 billion (vs. $1.352 billion in Q3 FY2025).
+- Adjusted (non-GAAP) EPS: $3.07 (vs. $1.72 in Q3 FY2025).
+
+**(2) Guidance (verbatim from the releases):**
+- **Prior guidance** (Q3 FY2026, from the Q2 FY2026 release): Revenue "in the range of $1.730 billion
+  to $1.750 billion"; non-GAAP EPS "in the range of $2.43 to $2.49."
+- **New guidance** (Q4 FY2026, from the Q3 FY2026 release): Revenue "expected to be in the range of
+  $1.930 billion to $1.950 billion. The mid-point of the revenue range represents year-over-year
+  growth of approximately 37%." Non-GAAP EPS "expected to be in the range of $3.34 to $3.40."
+- This constitutes a **raise** for both the quarter and the full year (explicitly noted as
+  improved/raised in the release headline and commentary).
+
+The release also notes record orders (> $2 billion for the second consecutive quarter) and strong
+segment growth. Analyst consensus figures are not included in the company's release.
+
+### Grok raw output — Query 6 (follow-up): KEYS consensus + post-print reaction
+**Q3 FY2026 consensus (pre-print):** Revenue ~$1.75B (FactSet/Zacks/MarketBeat) and adjusted EPS
+$2.46-$2.48 (Zacks ~$2.46; FactSet/Newsquawk/MarketBeat ~$2.48).
+**Q4 FY2026 consensus:** Revenue ~$1.83B and adjusted EPS ~$2.68 (Newsquawk).
+[4] https://www.newsquawk.com/headlines/newsquawk-daily-us-earnings-estimates---18th-august-2026-hd-keys
+**Stock reaction:** KEYS closed regular trading Aug 18 at $341.00 (down 5.58%). It rose in after-hours
+to ~$350.20 (+~2.7%). Pre-market Aug 19 it traded around $348-$350 (+~2.1-2.6% from prior close).
+
+### Grok raw output — Query 7 (follow-up): KEYS offsetting-negative check
+**No company-specific negative news, downgrade, short report, guidance warning, or sector selloff
+appears to have driven the Aug 18 pre-earnings drop in KEYS** (which occurred on ~4x volume amid a
+strong YTD rally of ~+77%). Searches for analyst actions, shorts, or negative catalysts on Aug 17-18
+turned up nothing material. Short interest low (~1.88% of float as of late July). The decline aligns
+with typical pre-earnings profit-taking for a high-flying stock, with elevated options-implied moves
+(~7-8%).
+**Q3 results had no notable negative elements.** Adjusted EPS $3.07 vs ~$2.48 consensus (+24.8%
+surprise); revenue $1.85B vs ~$1.75B expected (+5.55% surprise), up ~36% YoY. Record orders >$2B for
+the second straight quarter; Q4 guide $1.93-1.95B revenue and $3.34-3.40 adj EPS (well above ~$2.68
+consensus). No mentions of margin pressure, order weakness, China/tariff issues, one-time EPS gains,
+or segment misses.
+
+### Grok raw output — Query 8 (follow-up): BMY approval primary-source check
+**YES, primary sources confirm an FDA accelerated approval — dated August 13, 2026.**
+- **Drug**: ZENBEXUS (iberdomide) + daratumumab and hyaluronidase-fihj + dexamethasone (ZDd).
+- **Indication**: adult multiple myeloma, >=1 prior line of therapy. First CELMoD approval.
+- **Approval date**: **August 13, 2026** — NOT Aug 18.
+- BMY newsroom: https://news.bms.com/news/corporate-financial/2026/U-S--FDA-Grants-Accelerated-Approval-to-Bristol-Myers-Squibbs-First-CELMoD-Therapy-ZENBEXUS-in-Combination-with-Daratumumab-and-Hyaluronidase-fihj-and-Dexamethasone-ZDd-for-Patients-with-Multiple-Myeloma-as-Early-as-First-Relapse/default.aspx
+- FDA: https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-iberdomide-daratumumab-and-hyaluronidase-fihj-and-dexamethasone
+
+>>> ROUTINE NOTE: Query 4 dated this "around Aug 18" citing only an X post. The primary sources date it
+>>> **Aug 13 — six days old**. Freshness fails; BMY is disqualified, not scored. The strategy.md
+>>> primary-source rule caught a 5-day dating error that would otherwise have entered a mega-cap on a
+>>> stale catalyst.
+
+---
+
+## 2026-08-19 pre-market watchlist
+
+**Universe filters applied to all 10 extracted tickers.** All returned `status=active tradable=true
+class=us_equity` from `alpaca.sh asset`. 30-day consolidated ADV via `scripts/volume.sh` (Yahoo):
+KEYS 1,271,276 | TOL 877,120 | JKHY 1,041,533 | ZTO 1,676,290 | BMY 11,650,880 | SYK 2,398,710 |
+HD 3,799,286 — all clear the 100,000-share floor. Portfolio is flat (0 positions), so no
+already-held skips applied. No disallowed instrument substrings matched.
+
+| ticker | score | catalyst (one line)                                                              | source          |
+|--------|-------|----------------------------------------------------------------------------------|-----------------|
+| KEYS   | **8** | Q3 adj EPS $3.07 vs ~$2.48 cons (+24.8%), rev $1.846B vs ~$1.75B; Q4 guide raised to $3.34-3.40 EPS vs ~$2.68 cons (+26%) and $1.93-1.95B rev (+37% YoY); record orders >$2B 2nd straight qtr | investor.keysight.com (primary IR, 08-18) |
+
+**KEYS is the only tradeable name (threshold 6).** Score breakdown, scored honestly:
+
+| term | pts | reasoning |
+|------|-----|-----------|
+| catalyst strength | **4/4** | Beat its OWN prior guide ($1.730-1.750B rev / $2.43-2.49 EPS) on both lines, then guided Q4 **26% above consensus EPS** and +37% YoY revenue. Record orders >$2B for a second consecutive quarter. Verified verbatim against the company IR release per strategy.md, not a secondary aggregator. |
+| novelty | **2/3** | Pre-market **$348.99 vs $341.00 close = +2.34%**. Market cap **~$61B < $100B**, so the **5% bar applies, not the 4% mega-cap bar** — roughly half the band still open. Not 3: the after-hours pop (+2.7%) and pre-market gain have held for 6+ hours, so part of the move is spent. |
+| confirmation | **1/2** | Directionally confirmed — up ~2.3-2.7% consistently across after-hours and pre-market, holding the gain. **But no volume confirmation**: pre-market volume is ~5,000 shares (~0.4% of ADV), and the last completed daily bar (08-18) is **down -5.58% on 3.53M shares = 4x average** — that bar is pre-catalyst and tests nothing. Half credit, not full. |
+| cleanliness | **1/1** | No offsetting bad news, no halt, no downgrade or short report found on 08-17/18. Short interest ~1.88% of float. `no_earnings_within_days: 0`, so earnings proximity is permitted in FULL YOLO mode. |
+
+**The setup, stated plainly:** KEYS fell **-5.58% on 08-18 into the print** on 4x volume (profit-taking
+after a ~+77% YTD run), then beat by 24.8% on EPS and guided Q4 26% above consensus. At $348.99 it is
+still **-3.4% below the 08-17 close of $361.15** — the stock has not recovered its pre-earnings level
+despite the beat. That is the second-wave shape strategy.md is built around.
+
+**The honest counter-argument, logged before the fact:** the options-implied move into the print was
+**~7-8%** and the market has so far paid **+2.3%** for a 24.8% EPS beat. That is a shrug. This is the
+FN 08-18 lesson verbatim — *verification proves the catalyst is real, it does not prove the market will
+pay for it* — and FN was itself a verified beat-and-raise that opened **-14.18%**. KEYS is a
+`target_position_pct: 100` all-in bet on a name that just fell 5.6% in a session. Market-open must
+re-measure novelty against the **opening print** per the ALB 08-06 rule before sending anything: if
+KEYS gaps **>= +5%** at the open, the band is consumed and the name no longer qualifies.
+
+Skipped (below threshold):
+- **SYK (score 5):** $100M Defense Logistics Agency contract modification — immaterial at ~0.4% of annual revenue on a ~$140B+ mega-cap. Catalyst strength 1; the high novelty only reflects that nobody cared.
+- **TOL (score 5):** Q3 EPS $2.97, exceeded its own guidance midpoint, but **REAFFIRMED** FY guidance rather than raising it; the only increase was the buyback target $650M -> $700M, which is share-count math, not forward cash flow (the PLNT 08-07 trap). Confirmation 0 — closed -1.85% and is in a 10-session downtrend ($152.50 -> $142.86); pre-market +0.40% on 140 shares. Every 6+ this system has traded was a beat **and** a raise.
+- **HD (score 4, down from 5 yesterday):** catalyst is now **~25 hours old** — reported 08-18 pre-market, so freshness has decayed past the 24h window. Reaffirm-only (FY26 guidance verbatim identical to the Q1 release). The predicted second wave never came: closed 08-18 at $337.49 (+0.21%) and is **-0.27% pre-market today**. Scoring it lower than yesterday is the correct decay, not a reversal.
+- **JKHY (score 4):** FY2026 results, not a beat-and-raise. **Q4 GAAP EPS $1.57 vs $1.75 prior year — down YoY.** FY27 revenue guide $2,684-2,709M is a routine initiation, not a raise. Confirmation 0 — no pre-market prints at all this morning.
+
+Disqualified (failed a gate outright, not scored):
+- **ZTO — DQ, not directional.** Q2 revenue +23% YoY looks good, but the company **LOWERED** FY parcel-volume growth guidance to 6-10% citing slowing industry growth. A guidance cut fails strategy.md test #3 (clearly bullish). Query 3 called this "no confirmed beat or raise" — the primary release shows it is worse than that.
+- **BMY — DQ, stale catalyst.** The ZENBEXUS multiple-myeloma approval is real and verified against BMY's newsroom and the FDA site, but it is dated **August 13**, six days ago. Query 4 mis-dated it "around Aug 18" on the strength of an X post. Fails freshness.
+- **WEAV — DQ.** Francisco Partners take-private. A cash merger target trades pinned to the deal price; there is no second wave to catch, only a merger-arb spread. Not our strategy.
+- **AWK / WTRG — DQ.** Hart-Scott-Rodino waiting-period expiry on an **already-announced** merger is a procedural milestone, not new material information. Novelty ~0 by construction.
+- **FHTX — DQ.** Slate Medicines reverse merger into a micro-cap biotech; fails the market-cap floor and the same merger-pinning logic as WEAV.
+
+### Data-source note — escalation #10 used deliberately, and the IEX feed would have been unusable here
+
+All bars and pre-market prints above come from **`feed=sip` with an explicit `start=` and no `limit=`**,
+called directly rather than through `alpaca.sh bars` (which hardcodes `feed=iex` at `scripts/alpaca.sh:104`).
+This was necessary, not optional: `alpaca.sh quote` returned **null bid/ask on every candidate** with a
+last trade stamped 20:05Z = yesterday's close, which cannot measure a pre-market novelty gap. The sip
+minute bars resolved KEYS's +2.34% cleanly. **Two live findings for the 08-25 review:**
+1. **sip works for `/bars` but NOT for `/quotes/latest` or `/trades/latest`** — both returned all-null
+   on sip for all five tickers. So escalation #10's fix covers the bars path only; the quote path has
+   no sip fallback on these credentials.
+2. **The Yahoo session-shift hazard logged on 08-18 was avoided entirely** by not using Yahoo for
+   confirmation bars this pass. `scripts/volume.sh` still uses Yahoo, but only for a 30-day ADV
+   average, which is robust to a single mislabelled session.
+
+### Ops carry-forward — unchanged, nothing applied (research pass cannot apply any of these)
+
+#1 EOD trigger 12:55 -> 12:40 PDT (**re-arms tonight if market-open buys KEYS** — a new position means a
+new time stop); #2 commit the `caffeinate -is` fix in `scripts/run-routine.sh`, still uncommitted alongside
+untracked `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`, `memory/guardrails.md.conservative.bak`;
+#3 `routines/market-open.md:29` vs strategy.md's overdue carve-out; #4 no limit-order or partial-close path
+in `alpaca.sh`; **#5 widen the entry haircut 98% -> 96% — directly live today**: a KEYS buy at
+`target_position_pct: 100` is exactly the order that reopens the `no_margin` breach, and KEYS at ~$349 is a
+high-priced share where one tick of slippage is material (PENG 07-08 +2.6%, RDNT 08-10 +2.58% both overran
+98%); #6 `alpaca.sh bars` window bug (fix via #10); #7 `routines/midday.md:1` header; #8 IEX open-bell
+staleness; #9 `routines/end-of-day.md:1` header; **#10 switch bars/volume to `feed=sip`** — used manually
+this pass, see the data-source note above, now with the new caveat that it does not extend to the quote
+endpoints; #11 the HD novelty-at-the-open question from 08-18 (HD scored 4 today on freshness decay, which
+does not resolve it).
