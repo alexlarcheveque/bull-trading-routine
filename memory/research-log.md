@@ -8814,3 +8814,264 @@ staleness; #9 `routines/end-of-day.md:1` header; **#10 switch bars/volume to `fe
 this pass, see the data-source note above, now with the new caveat that it does not extend to the quote
 endpoints; #11 the HD novelty-at-the-open question from 08-18 (HD scored 4 today on freshness decay, which
 does not resolve it).
+
+---
+
+## 2026-08-20 pre-market research pass
+
+Run started 06:39 ET (05:39 CT), ~20 min ahead of the 06:00 CT cron. `clock.is_open=false`,
+`next_open` 2026-08-20T09:30 ET. **Run extended past 07:00 ET deliberately to capture the WMT
+release**, which lands at exactly the cron minute — see the WMT note below.
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+
+**Target (TGT)**: Q2 2026 earnings beat (sales +5.3%), raised full-year EPS guidance to $9.90–$10.90
+(including tariff refund benefit). Stock rose ~4.3%. (CNBC/Quartz/WSJ, Aug 19, 2026 earnings release
+and coverage.) **Marvell (MRVL)**: agreement with Google on TPUs/AI chips; issued Alphabet (GOOGL) a
+warrant to buy up to $12.2B of MRVL stock. Shares gained ~10%. (CNBC, Aug 19.) **Estée Lauder (EL)**:
+fiscal Q4 earnings and revenue beat; FY2027 EPS guidance $3.10–$3.35 (in line with or slightly above
+consensus). Stock rose >7%. (CNBC, Aug 19.) **Analog Devices (ADI)**: fiscal Q3 adjusted
+earnings/revenue beat; current-quarter guidance above expectations; non-GAAP gross margin 72.5%.
+Stock rose >3%. (CNBC, Aug 19.) **Moderna (MRNA) and Merck (MRK)**: positive Phase 3 results for
+mRNA melanoma vaccine (reduced risk of recurrence/spread); MRNA surged sharply (reports of +96% or
+more intraday). (Bloomberg/Open Interest/CNBC, Aug 19.) **Honeywell (HON)**: Morgan Stanley upgraded
+to overweight from equal weight, $205 PT (~28% upside). (CNBC, Aug 19.) Broader backdrop: Treasury
+bond-buyback ramp lowering yields — macro, not company-specific.
+
+### Grok raw output — Query 2: Pre-market movers >2% on news (2026-08-20)
+
+**MRNA** surged dramatically (+80% to over +100%, some lists ~83–177%) on positive Phase 3 results
+for its personalized mRNA cancer vaccine with Merck. (Yahoo Finance, Investopedia.) **HOOD** rose
+~4.7–5.7% amid optimism / retail sentiment, with mentions of record Q2 results in related coverage.
+(Investing.com.) Other gainers cited from Benzinga/Stockanalysis/Investing.com: **RITR** (+80–140%,
+partnership/deal), **BTCT** (+100%), **LOOP** (+75%), **BEEM** (+31%), **SGLY** (+117%), and larger
+names **JCI (+9%)**, **NDSN (+9%)**, **EMR (+5.6%)**. Grok caveat: "Many small-cap surges lack
+clearly detailed fresh catalysts... may reflect momentum/gap dynamics rather than specific news."
+
+### Grok raw output — Query 3: Earnings beat AND raised guidance (after yesterday's close)
+
+**Target (TGT) and Analog Devices (ADI) are the primary matches** from reports released around/after
+the Aug 19 close. TGT Q2: adj EPS $4.11 vs consensus ~$2.30–2.35 (beat ~$1.76; **includes $1.65
+tariff refund benefit**; ex-refund +20% YoY). Revenue $26.5B (+5.3%), comps +3.8%. Raised FY net
+sales growth ~5% (+1pp); FY EPS $9.90–$10.90 (includes ~$1.65 tariff benefit; **ex-refund midpoint
+raised ~$0.75** from prior $7.50–$8.50). ADI Q3: EPS $3.45 vs consensus $3.34 (+$0.11); revenue
+$4.02B vs ~$3.92B. Q4 outlook above consensus (adj EPS midpoint ~$3.86 vs ~$3.54 est). "No other
+clear matches... appeared in results for post-Aug 19 close with both a beat and raised guidance."
+
+### Grok raw output — Query 4: FDA / large contracts / M&A / regulator (last 24h)
+
+**FDA approvals (Aug 19):** Pasatru (garetosmab-grts) for fibrodysplasia ossificans progressiva
+(FOP); and the first therapy for patients aged 8+ with glycogen storage disease type Ia.
+**Large contracts:** a North Texas (Westlake) aviation company awarded ~$10B long-term US military
+contract for Army helicopter pilot training; reports of **RTX** winning a multi-year Tomahawk
+contract ~$22.9B (published in the prior 1–3 days). **M&A:** no major new deals >$100M in the exact
+last 24h; recent activity includes Stripe/OpenRouter (~$7–8B, announced ~Aug 16–17, private).
+**Regulator decisions:** none significant identified.
+
+### Follow-up Grok queries (required by strategy.md primary-source rule)
+
+- **Q5 (JCI/NDSN/EMR):** "**JCI and EMR did not report earnings around August 19–20**; their most
+  recent quarterly results were from late July/early August. The moves appear tied to positive
+  sentiment spillover from NDSN's beat-and-raise." NDSN Q3 FY26 reported **after the Aug 19 close**.
+- **Q6 (NDSN primary source, Business Wire via FT + 8-K):** adj diluted EPS **$3.25** (record, +19%
+  YoY vs $2.73) vs consensus **$3.09**; revenue record **$817.667M** (+10% YoY vs $741.509M, ~12%
+  organic). **FY26 guidance RAISED on both lines** — sales $2,930–3,010M → **$3,035–3,075M**; adj EPS
+  $11.30–11.80 → **$11.80–12.00**. After-hours Aug 19: **+7.1–7.4% to ~$332** from the $309.92 close.
+- **Q7 (ADI timing):** ADI released **August 19 at 7:01 a.m. EDT — BEFORE the market open**, call
+  10:00 a.m. same day. Q4 FY26 guide revenue $4.3B ±$100M, adj EPS **$3.86 ±$0.15 vs consensus
+  ~$3.53**. Grok claimed "shares rose ~2% premarket Aug 19" — **contradicted by the tape, see below.**
+- **Q8 (after-close 8/19 + pre-open 8/20 reporters):** ADI, TJX (met EPS, guidance raised), **LOW
+  (beat EPS, full-year guidance LOWERED)**, TGT, EL on Aug 19; **WMT, DE**, AAP, BILL, ZIM, OPRA,
+  FLNG, BABA, NTES on Aug 20; NDSN noted.
+- **Q11 (DE primary source):** Grok **could not retrieve** Deere's Q3 FY26 release from company
+  channels. Confirmed prior guidance only, from Deere's own Q2 release: "*Net income attributable to
+  Deere & Company for fiscal 2026 is forecasted to be in a range of $4.5 billion to $5.0 billion.*"
+- **Q12 (DE consensus + beat quality):** consensus **~$4.75–4.80 EPS (Zacks $4.79)**, revenue
+  **~$10.78B**. On the tariff item: prior-quarter coverage "frequently flagged one-time tariff
+  recoveries/refunds (such as a $272M IEEPA-related item) as **inflating margins and contributing to
+  the headline beat**." On guidance: "**typically described as a narrowing of the range with an
+  upward bias (raising the lower end)**... ceiling stayed the same."
+- **Q13 (WMT reaction + GSD1a issuer):** WMT FQ2 FY27 adj EPS **81c vs ~74c consensus**, revenue
+  **$187.94B vs ~$186.77B**, but **US comps +2.6% vs ~3.5% expected**. "Why the stock fell ~5–6%: the
+  U.S. comp sales miss." GSD1a approval → **Ultragenyx (RARE)**, GENGLYCOS (DTX401), accelerated
+  approval, first therapy for GSDIa age 8+.
+
+### 🔴 DE PRIMARY SOURCE RETRIEVED DIRECTLY (Grok could not — PR Newswire fetched by hand)
+
+`prnewswire.com/news-releases/deere-reports-third-quarter-net-income-of-1-379-billion-302856316.html`
+
+> "Net income guidance improved to $4.75 billion to $5.00 billion."
+> Q3 (ended Aug 2, 2026) net income **$1.379B, $5.10/share**, vs $1.289B / $4.75 year-ago.
+> "Worldwide net sales and revenues increased 5 percent, to **$12.608 billion**... Net sales were
+> **$10.999 billion** for the quarter."
+> "The company recorded **tariff recoveries in the third quarter... of $110 million**."
+> Production & Precision Agriculture: net sales **$3,998M, -6%**; operating profit **$527M, -9%**;
+> operating margin **13.2% vs 13.6%**.
+
+**The beat is the tariff recovery.** $110M pre-tax ≈ $86M after tax ≈ **$0.32/share** on ~270M
+diluted shares. **$5.10 − $0.32 = $4.78 vs the $4.79 consensus — in line, not a beat.** The
+guidance change lifts the floor only ($4.50→$4.75B); the $5.00B ceiling is unchanged, so the
+midpoint moves +2.6% and the *top* of the range moves 0%. Core large-ag is contracting: PPA sales
+-6%, operating profit -9%, margin -40bp. Note also that Grok's "substantial revenue beat" compared
+$12.608B (net sales **and revenues**, incl. financial services) against a ~$10.78B consensus struck
+on the **equipment net sales** line — apples to oranges. Correct comparison: **$10.999B vs $10.78B
+= +2.0%.** This is the PLNT 08-07 pattern exactly: the headline says "raise", the primary source
+says the underlying is thinner.
+
+### 🔴 GROK WAS WRONG ON FOUR NAMES — the tape (sip consolidated, `feed=sip`) disagrees
+
+| ticker | Grok claim | actual 08-19 session (sip) | verdict |
+|--------|-----------|-----------------------------|---------|
+| **ADI** | "Stock rose >3%" (Q1); "rose ~2% premarket" (Q7) | o=378.55 **c=373.26** vs 08-18 c=376.63 = **-0.90%** on 6.31M vs 3.77M ADV | **FALSE — ADI FELL on its beat-and-raise, on 1.7x volume** |
+| **JCI** | "+9% pre-market" | 08-19 **c=144.94 vs 149.68 = -3.17%**; no earnings (Grok Q5 confirms) | **FALSE — no catalyst, and it fell** |
+| **EMR** | "+5.6% pre-market" | 08-19 **c=157.60 vs 157.78 = -0.11%**; no earnings | **FALSE — no catalyst** |
+| **TJX** | "met EPS, guidance raised" | 08-19 o=144.14 **c=144.50 vs 150.85 = -4.21%** on 12.9M | catalyst real, **reaction sharply negative** |
+
+Grok's pre-market percentages in Query 2 appear to be scraped from a stale or mislabelled screener
+row: it reported JCI/NDSN/EMR "+9/+9/+5.6%" as a single cluster, but only NDSN had a catalyst and
+only NDSN was actually up. **Two of the three were fabrications with the wrong sign.** This is the
+same failure class as the 08-18 Yahoo session-shift hazard — a plausible number anchored to the
+wrong thing — and it was caught only because the sip tape was pulled independently. **Standing
+lesson reinforced: never score a novelty penalty or a confirmation bar off a Grok-quoted percentage.**
+
+### The structural fact of today's board: almost every catalyst already had its reaction session
+
+Only three names carried a catalyst into *today's* session — NDSN (after the 08-19 close), DE and
+WMT (both pre-open today). Everything else in Queries 1/3/4 was an **Aug 19 pre-open release that
+traded all day Aug 19**. Measured against each name's own **pre-catalyst** close (not a blanket
+"yesterday's close"), off sip daily bars plus live Yahoo pre-market at ~07:02 ET:
+
+| ticker | catalyst timing | pre-catalyst close | pre-mkt 07:02 ET | move vs pre-catalyst | bar | novelty |
+|--------|-----------------|--------------------|------------------|----------------------|-----|---------|
+| **MRNA** | 08-19 intraday | 62.96 (08-18) | 174.38 → ~ | **+177.0%** | 5% | **0 — hard DQ** |
+| **EL** | 08-19 pre-open | 84.27 (08-18) | 98.01 → ~ | **+16.3%** | 5% | **0 — hard DQ** |
+| **MRK** | 08-19 intraday | 135.17 (08-18) | 152.20 → ~ | **+12.6%** | 4% (mega) | **0 — hard DQ** |
+| **RARE** | 08-19 | 25.49 (08-18) | **28.73** | **+12.7%** | 5% | **0 — hard DQ** |
+| **MRVL** | 08-19 | 216.00 (08-18) | 237.27 → ~ | **+9.85%** | 5% | **0 — hard DQ** |
+| **NDSN** | after 08-19 close | **309.92 (08-19)** | **336.67** | **+8.63%** | 5% | **0 — hard DQ** |
+| **TGT** | 08-19 pre-open | 152.48 (08-18) | 158.79 | +4.14% (was +7.6% o→c) | 5% | 0 |
+| **DE** | **08-20 pre-open** | **580.63 (08-19)** | **598.99** | **+3.16%** (peaked +4.7% @608) | 4% (mega) | 1 |
+| **ADI** | 08-19 pre-open | 376.63 (08-18) | 377.05 | +0.11% net | 4% (mega) | 1 |
+| **REGN** | 08-19 | 810.24 (08-18) | 833.11 | +2.82%, **fading -0.92% today** | 5% | 1 |
+| **WMT** | **08-20 pre-open** | **114.30 (08-19)** | **107.89** | **-5.61%** | — | **not directional** |
+
+Six names fail strategy.md's **hard freshness gate** ("*Fresh — first surfaced in the last 24 hours,
+not already 5%+ priced in... If the move already happened, we missed it*"). That test is a
+**qualifying gate, not a scoring input** — a name that fails it does not qualify regardless of how
+the rubric would otherwise total. MRNA in particular would score well on catalyst strength (Phase 3
+readout, enormous) and confirmation (199M shares), but at **+177%** there is no second wave left to
+catch; it is the most consumed move this book has ever looked at.
+
+### Universe filters (Step 2)
+
+Portfolio holds **KEYS** (20 sh, target_exit 2026-08-26) — not on today's board, no conflict.
+All scored survivors checked live: `alpaca.sh asset` **active + tradable**, `us_equity`, and real
+consolidated 30-day ADV via `scripts/volume.sh` (Yahoo, not IEX):
+
+| ticker | tradable | ADV (30d) | vs 100k floor | price | cap (approx) |
+|--------|----------|-----------|---------------|-------|--------------|
+| DE | ✓ active | 1,021,273 | ✓ 10.2x | 580.63 | ~$160B (mega) |
+| NDSN | ✓ active | 339,463 | ✓ 3.4x | 309.92 | ~$19B |
+| TGT | ✓ active | 4,006,153 | ✓ 40x | 159.00 | ~$72B |
+| ADI | ✓ active | 3,768,560 | ✓ 38x | 373.26 | ~$185B (mega) |
+| REGN | ✓ active | 769,210 | ✓ 7.7x | 840.84 | ~$88B |
+| RARE | ✓ active | 1,877,136 | ✓ 19x | 26.24 | ~$2.5B |
+| WMT | ✓ active | 21,085,156 | ✓ 211x | 114.30 | ~$915B (mega) |
+
+No disallowed-instrument substrings matched. No halts. `no_earnings_within_days: 0`, so
+earnings proximity blocks nothing.
+
+## 2026-08-20 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                            | source         |
+|--------|-------|--------------------------------------------------------------------------------|----------------|
+| ADI    | 5     | FQ3 EPS $3.45 vs $3.34, Q4 guide $3.86 vs $3.53 cons (+9.3%) — market sold it   | investor.analog.com |
+| MRVL   | 5     | Google TPU agreement + $12.2B GOOGL warrant (dilutive) — already +9.85%         | cnbc.com/08-18 |
+| EL     | 5     | FQ4 beat, FY27 EPS guide $3.10–3.35 only in line — already +16.3%               | cnbc.com/08-18 |
+| DE     | 4     | FQ3 EPS $5.10 vs $4.79 — but $110M tariff recovery ≈ $0.32/sh IS the beat       | prnewswire.com/…302856316 |
+| NDSN   | 4     | FQ3 $3.25 vs $3.09 + FY26 raised both lines — but +8.63% pre-market, gone       | investors.nordson.com |
+| TGT    | 4     | Q2 beat + FY raise, $1.65 of it tariff refund; WMT -5.6% reads across           | corporate.target.com |
+| REGN   | 4     | FDA approved Pasatru (garetosmab) for FOP — ultra-rare, ~small revenue line     | fda.gov / 08-19 |
+| RARE   | 3     | FDA accelerated approval GENGLYCOS (DTX401) for GSD1a — but +12.7% already      | ir.ultragenyx.com |
+
+**Top score 5 (ADI) vs entry threshold 6 → No tradeable signal today.**
+
+Score detail for the two names that came closest:
+
+- **ADI 5** = catalyst 3 (genuine beat AND a Q4 guide 9.3% above consensus — the real thing)
+  + novelty 1 (the market had a full session with this and **closed it -0.90%**; the band is not
+  unspent, it was spent in the wrong direction) + confirmation **0** (the completed post-catalyst
+  bar is **down** on **1.7x average volume** — that is explicit disconfirmation, not absence of
+  confirmation) + cleanliness 1.
+- **DE 4** = catalyst 2 (ex-tariff EPS $4.78 vs $4.79 consensus = in line; guidance floor-lift with
+  an unchanged ceiling; core PPA sales -6% / operating profit -9%) + novelty 1 (+3.16% into a 4%
+  mega-cap bar = ~79% consumed pre-bell, and it printed +4.7% at 608 an hour ago) + confirmation 0
+  (no completed post-catalyst bar exists; the last completed bar, 08-19, is **-1.37%** pre-catalyst)
+  + cleanliness 1.
+
+Skipped (below threshold / disqualified):
+
+- **MRNA (hard DQ, freshness):** Phase 3 melanoma vaccine readout is the strongest catalyst on the
+  board by a wide margin, but **+177%** on 199M shares. Fails the "not already 5%+ priced in" gate
+  by ~35x. There is no second wave to be early to.
+- **MRK (hard DQ, freshness):** same trial as partner; **+12.6%** vs a 4% mega-cap bar.
+- **EL (score 5, also fails freshness at +16.3%):** and the FY27 guide is only "in line with or
+  slightly above" consensus — a beat without a real raise.
+- **MRVL (score 5, also fails freshness at +9.85%):** and the $12.2B warrant issued to Alphabet is
+  a direct offset for existing holders — cleanliness 0.
+- **RARE (score 3):** real FDA approval, correct catalyst class, passes every universe filter — but
+  **+12.7%** from the pre-catalyst close (only +2.94% on 08-19, then +9.5% pre-market today, so the
+  bulk of the repricing is happening right now, above our entry). GSD1a is ultra-rare; the revenue
+  line is small against a ~$2.5B cap, so catalyst strength is 1.
+- **WMT (DQ, not directional):** beat on EPS (81c vs 74c) and revenue ($187.94B vs $186.77B) but
+  **US comps +2.6% vs ~3.5% expected**, and the stock is **-5.61%**. Strategy trades bullish
+  catalysts only; a beat the market reads as a miss is not one.
+- **LOW (DQ, not directional):** beat EPS but **lowered** full-year guidance.
+- **TJX (DQ, not directional):** met EPS with raised guidance, and closed **-4.21%** on 12.9M shares.
+- **HON (DQ, catalyst class):** Morgan Stanley upgrade to overweight, $205 PT. strategy.md excludes
+  "pundit price targets / analyst upgrades with no new information" explicitly. It also **closed
+  -2.63%**.
+- **RTX (DQ, freshness + class):** ~$22.9B Tomahawk award, but published 1–3 days ago and **closed
+  -2.28%** on 08-19.
+- **HOOD (DQ, catalyst class):** "optimism around the stock and broader retail sentiment" — no named
+  corporate event. Closed +4.63% on nothing citable.
+- **JCI, EMR (DQ, no catalyst):** Grok reported both up 9% / 5.6% pre-market; **neither reported
+  earnings** and both were **down** on 08-19 (-3.17%, -0.11%). Fabricated movers.
+- **RITR, BTCT, LOOP, BEEM, SGLY (DQ, universe):** micro-caps below the $1B cap floor with no
+  verified catalyst; Grok itself flagged them as momentum/gap dynamics.
+- **"Westlake" ~$10B Army helicopter pilot training award (DQ, unverifiable):** the source names a
+  privately-held North Texas aviation company, not a resolvable US-listed ticker. Not scoreable.
+- **Stripe/OpenRouter ~$7–8B (DQ, universe):** both private.
+
+### ⚠️ Note for the 08-25 review — ADI is the KEYS shape again, and it is now n=5
+
+ADI delivered a verified beat with a Q4 guide **9.3% above consensus** and the market closed it
+**-0.90% on 1.7x volume**. TJX raised guidance and closed **-4.21%**. WMT beat on EPS and revenue
+and is **-5.6%**. That is three names in two sessions where a verified, primary-source-confirmed
+beat was sold. **This is the 08-14 standing lesson — *verification proves the catalyst is real, it
+does not prove the market will pay for it* — in its fifth consecutive instance**, and it is the
+exact mechanism currently costing the book 6.3% on KEYS (score 8, primary-source verified, novelty
+gate passed at the open, -6.27% anyway). Today the threshold held us out; that is the rule working.
+But the pattern now has enough instances that "beat-and-raise → buy" is not obviously the edge
+strategy.md assumes, and carry-forward #14 should be read alongside this.
+
+### 🟢 A note in the other direction: the freshness gate did the work today, not the threshold
+
+Six names were killed by the "already 5%+ priced in" test before scoring, including the single
+biggest catalyst on the board (MRNA, +177%). Had the gate not existed, MRNA would have scored ~7 on
+catalyst strength and confirmation and gone into a **100%-of-book** position at the top of a 177%
+two-day move. The gate is cheap, mechanical, and it is the reason today is flat instead of
+catastrophic. Worth stating because most log entries only record the gate when it costs us.
+
+### Ops carry-forward — nothing applied (research routine; no strategy/guardrail edits permitted)
+
+Unchanged from the 08-19 EOD list. Two items were exercised again this run and are worth re-flagging:
+**#10 (`feed=sip` for bars/volume)** was used throughout and was **load-bearing today** — it is what
+exposed the four Grok errors above; still unapplied to `scripts/alpaca.sh:104`. **#8 (IEX
+staleness)** reproduced in a new form: at 06:46 ET the `snapshot` endpoint returned **yesterday's
+15:59 ET closing prints for every name** with no pre-market data at all, so all pre-market
+measurement in this block came from Yahoo 5m bars with `includePrePost=true`, cross-checked against
+sip closes (which agreed to the cent on all nine names — no repeat of the 08-18 session-shift bug).
+**#1 (EOD trigger 12:55 → 12:40 PDT) remains the load-bearing open item**: KEYS carries a
+**2026-08-26** time stop and at `per_trade_stop_pct: 100` it is that position's only scheduled exit.
+
