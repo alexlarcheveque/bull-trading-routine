@@ -1,19 +1,183 @@
 # portfolio.md
-# Updated 2026-08-20 11:00 CT (12:00 ET) by midday routine.
+# Updated 2026-08-20 15:06 CT (16:06 ET) by end-of-day routine — AFTER THE CLOSE (missed run).
 
 ## Account
-- equity: 6702.00
+- equity: 6752.30
 - cash: 421.90
-- buying_power: 19271.88
-- day_pnl_pct: -1.60  # vs last_equity 6810.90
+- buying_power: 19412.72
+- day_pnl_pct: -0.86  # vs last_equity 6810.90
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -7.86              |
+| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -7.12              |
 
 ## Notes
+
+2026-08-20 EOD: **🔴 MISSED — started 13:05:59 PDT = 16:05:59 ET, 5m59s past the close.**
+`clock.is_open` = `false` → Step-0 bail-out. **0 exits, 0 orders, no preflight**, `memory/trade-log.md`
+unchanged. KEYS 20 sh marked **316.52** vs 340.8005 entry = **-7.12%**, recovered from the -7.86%
+midday mark. Equity **$6,752.30**, cash **$421.90**, day **-0.86%**, WTD **-6.37%**, all-time
+**-93.25%** from the $100,000 open. Reconciled against Alpaca: `positions` returns 1
+(`asset_class: us_equity`), `orders open` returns 0 — no drift.
+**20 × 316.52 + 421.90 = $6,752.30 = equity, to the cent.**
+Late-or-missed **#25 of 66 (~38%)**. EOD email **SENT** anyway (id `6de7f00c-93e5-4f66-93e8-7de32c187c93`)
+— the session data is final and the root cause below is what the human needs; one attempt, delivered.
+
+### 🔴🔴 ROOT CAUSE FOUND — IT IS **NOT JITTER**, IT IS **SLEEP DEFERRAL**. Four sessions of notes were wrong.
+
+Every prior note (08-14, 08-18, 08-19) diagnosed this as "launchd jitter" and concluded "a 5-minute
+margin does not cover it." **That diagnosis is incorrect.** From `pmset -g log` for today:
+
+```
+12:36:04  Sleep    (Maintenance Sleep, 1048 secs)
+12:53:32  DarkWake (rtc/Maintenance, 61 secs)
+12:54:33  Sleep    (Maintenance Sleep, 686 secs)   <-- 27 SECONDS BEFORE THE TRIGGER
+12:55:00  [ EOD trigger fires into a sleeping machine — job DEFERRED, not run ]
+13:05:59  DarkWake (rtc/Maintenance) -> launchd runs the deferred job immediately
+```
+
+**`StartCalendarInterval` does not wake a sleeping Mac.** The job is queued and runs at the next
+wake, whenever that happens to be. The machine slept 27 seconds before the trigger and did not wake
+for **11m26s**. That is the whole mechanism, and it retro-explains every late/missed run: the delay
+is not bounded jitter around the trigger, it is **unbounded deferral to the next opportunistic wake**.
+
+Confirming settings, read live this run:
+
+| setting | value | meaning |
+|---------|-------|---------|
+| `pmset sleep` | **1** | idles to sleep after 1 minute |
+| `pmset powernap` | 1 | wakes only on Apple's own maintenance cadence (~10-18 min today) |
+| `pmset -g sched` | **no bull wake** | only `calaccessd.travelEngine` and `osanalytics` alarms |
+
+**The plist is HEALTHY** — `ProcessType` absent, all five 12:55 weekday triggers present,
+`launchctl list` showed the job live under PID 61833 with exit status 0. The 08-17 coalescing repair
+still holds. **The scheduler was never the problem. The machine is asleep.**
+
+### 🔴 THIS INVALIDATES ESCALATION #1 AS WRITTEN — 12:55 → 12:40 PDT DOES NOT FIX IT
+
+Escalation #1 has been the top item on the board for four sessions and it is **the wrong fix**. A
+12:40 trigger fired into a sleeping machine defers identically. It would have "worked" today only
+because the 12:53:32 wake happened to land before the close — **luck, not margin**. You cannot buy
+protection with a wider margin when the failure mode is unbounded deferral.
+
+**Two real fixes. I applied NEITHER — both are machine-wide power changes and #1 was always flagged
+as a human call. The exact commands:**
+
+1. **PREFERRED — schedule a real RTC wake before the trigger** (needs sudo):
+   ```
+   sudo pmset repeat wake MTWRF 12:50:00
+   ```
+   Physically wakes the Mac at 12:50 PDT on weekdays, 5 min before the EOD trigger, so launchd fires
+   on time. One command, addresses the actual cause. Caveat: `pmset repeat` holds **one** repeating
+   wake, so the 06:25 / 09:00 PDT routines are not covered by it — use option 2 for the full day.
+2. **NO-SUDO ALTERNATIVE — a LaunchAgent running `caffeinate -s`** across the trading day
+   (~06:20–13:10 PDT) so the machine never sleeps while any routine is scheduled. Covers pre-market,
+   market-open, midday and EOD at once.
+
+**⚠️ Correction to carry-forward #2:** the uncommitted `caffeinate -is` fix in
+`scripts/run-routine.sh` **does not solve this and never could.** It holds the machine awake only
+*while the routine runs*; it cannot help a routine that never started because the machine was asleep
+at the trigger. #2 is still worth committing on its own merits (it prevents mid-run sleep), but it
+must stop being counted as mitigation for #1.
+
+### Run-quality history, re-read through the sleep-deferral lens
+
+| run | trigger | start (ET) | delay | result |
+|-----|---------|------------|-------|--------|
+| 08-11 | 12:55 PDT | 15:58 | ~3 min | ⚠️ |
+| 08-12 | 12:55 PDT | 15:58 | ~3 min | ⚠️ |
+| 08-14 | 12:55 PDT | 16:10 | ~15 min | ❌ missed |
+| 08-17 | 12:55 PDT | 15:55:35 | 35 s | ✅ sold RDNT |
+| 08-18 | 12:55 PDT | 16:03:59 | ~9 min | ❌ missed |
+| 08-19 | 12:55 PDT | 15:59:16 | 4m16s | ⚠️ ran, unusable (44s of market) |
+| **08-20** | 12:55 PDT | **16:05:59** | **10m59s** | ❌ **missed** |
+
+The delays cluster at 0–15 minutes because that is the maintenance-wake cadence, not because the
+scheduler drifts. **Three of the last five EOD runs started after the close.** 08-17 succeeded
+because the machine happened to be awake — the only run that proves the plist works.
+
+### Step 1 — time stops + expiry guard: bail-out, and nothing was due regardless
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| **time stop** | target_exit **2026-08-26** | today >= target_exit | **no — 4 sessions out, not overdue** |
+| expiry guard | n/a — shares, no options open | within 2 trading days | n/a |
+| profit target (safety net) | -7.12% | +100% (`per_trade_target_pct`) | no |
+| stop loss (safety net) | -7.12% | **-100%** (`per_trade_stop_pct`) | **no — 92.9pp of room** |
+| thesis broken (safety net) | **not re-run** | concrete named event | n/a |
+
+Instrument detected live off Alpaca `asset_class: us_equity`. **Grok was deliberately NOT called.**
+The market was closed, so no verdict could produce an action; midday ran two independent queries
+~4 hours earlier (both literal **NONE**, including a dated "what happened TODAY" query), and both
+pre-market and market-open re-check tomorrow before any order is possible. Recording the omission
+explicitly rather than implying a clean check that did not happen.
+
+**Cost of the miss today: ZERO, for the third time, and again by luck of the calendar** — no time
+stop due, no options open, weekly cap 94pp away. Nothing needed selling, so nothing was lost by
+having no market in which to sell it. That is a fortunate draw, not a working system.
+
+### Step 2 — weekly loss cap: NOT hit
+
+| check | value | cap | action |
+|-------|-------|-----|--------|
+| weekly P&L | **-6.37%** (6752.30 vs Mon 08-17 open $7,211.70) | -100% (`weekly_loss_cap_pct`) | none |
+| daily P&L | **-0.86%** (vs last_equity 6810.90) | -100% (`daily_loss_cap_pct`) | none |
+
+No flatten, no `notify.sh` alert, no `PAUSED` marker in `memory/research-log.md`. Decorative at 100%,
+as every prior note has said.
+
+### The tape: a third consecutive high-early, close-weak session — but it closed off the low
+
+IEX daily bar for today (sip refuses the current session — carry-forward #10's known scope limit);
+prior sessions from sip:
+
+| session | open | high | low | close |
+|---------|------|------|-----|-------|
+| 2026-08-17 | 360.00 | 366.41 | 358.01 | 361.15 |
+| 2026-08-18 (pre-print) | 350.00 | 350.895 | 332.64 | **341.00** |
+| 2026-08-19 | 349.00 | 352.00 | 314.52 | **319.45** |
+| **2026-08-20** | **316.71** | **322.69** | **313.43** | **316.46** |
+
+KEYS closed **-0.94%** vs yesterday, recovering from the 314.005 midday mark. Note the 08-20 open
+reads 316.71 on IEX vs the 314.66 midday logged off sip — IEX is a tape fragment and its open print
+differs; the high (322.69) agrees exactly. Third straight session printing the high early, though
+today it closed in the lower-middle of the range rather than on the low. Logged, not acted on.
+
+### 🟢 `no_margin` COMPLIANT — cash +$421.90, unchanged since the 08-19 fill
+
+No order was sent, so nothing could move cash. Buying power $19,412.72, no leverage. The 98% haircut
+remains **not stress-tested** (carry-forward #5).
+
+### Ops carry-forward — #1 REWRITTEN, #2 DEMOTED
+
+1. **🔴 EOD misses are SLEEP DEFERRAL, not jitter. The fix is `sudo pmset repeat wake MTWRF
+   12:50:00` (or a market-hours `caffeinate -s` LaunchAgent) — NOT moving the trigger to 12:40.**
+   Needs a human; deadline is the KEYS **2026-08-26** time stop, **4 sessions out**, which at
+   `per_trade_stop_pct: 100` is that position's only scheduled exit on 93.8% of the book.
+2. Commit the `caffeinate -is` fix in `scripts/run-routine.sh` — **still uncommitted**, alongside
+   untracked `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`,
+   `memory/guardrails.md.conservative.bak`. **DEMOTED: this does not mitigate #1** — see correction
+   above. Worth committing only to prevent mid-run sleep.
+3. `routines/market-open.md:29` vs strategy.md's overdue carve-out — still contradictory, still
+   unexercised (stop is in the future). Goes live if the 08-26 EOD misses.
+4. No limit-order or partial-close path in `alpaca.sh`.
+5. Widen the entry haircut 98% → 96%. Still untested.
+6. `alpaca.sh bars` window bug — fix via #10.
+7. `routines/midday.md:1` header wrong by an hour. Docs-only.
+8. IEX staleness — not applicable this run (EOD is not the bell).
+9. **`routines/end-of-day.md:1` header** — reads `3:55 PM Central / 4:55 PM Eastern`, self-
+   contradictory twice over. The live plist (12:55 PDT = 15:55 ET) is right. Docs-only.
+10. `feed=sip` for bars/volume — used again for the session table, **still unapplied** to
+    `scripts/alpaca.sh:104`. Re-confirmed it returns nothing for the current session.
+11. The HD novelty-at-the-open discard-side question.
+12. The 3-7 DTE option window that killed 4 of 5 option-eligible setups.
+13. The bounded fill poll being too short for opening-auction market orders.
+14. Whether `per_trade_stop_pct: 100` + `target_position_pct: 100` is survivable — **KEYS is the
+    live case, -7.12% and 4 sessions from its only exit.**
+15. "Guidance raised BUT capacity-constrained" as thesis-broken — judged no twice; 08-25 should rule.
+16. Make the dated "what happened TODAY" Grok query standard in `routines/midday.md`.
 
 2026-08-20 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md` unchanged.
 KEYS 20 sh marked **314.005** vs 340.8005 entry = **-7.86%**, down from -6.19% at the 09:32 ET

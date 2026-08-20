@@ -9181,3 +9181,78 @@ discard-side question. **#12** the 3-7 DTE option window (4 of 5 setups killed).
 poll too short for opening-auction market orders. **#14** whether `per_trade_stop_pct: 100` +
 `target_position_pct: 100` is survivable — **KEYS is the live case, 4 sessions from its only exit.**
 **#15 NEW** — does "guidance raised BUT capacity-constrained" count as thesis-broken? See above.
+
+## 2026-08-20 end-of-day — MISSED (16:05:59 ET start) + ROOT CAUSE OF ALL EOD MISSES
+
+**Outcome: 0 exits, 0 orders, no preflight.** `clock.is_open` = `false` at 16:06:05 ET →
+Step-0 bail-out. Equity $6,752.30, cash $421.90, day -0.86%, WTD -6.37%, all-time -93.25%.
+KEYS 20 sh @ 340.8005 → 316.52 = -7.12%, target_exit 2026-08-26 (not due). Late-or-missed
+**#25 of 66 (~38%)**. Cost today zero — nothing was due to be sold. EOD email sent
+(`6de7f00c-93e5-4f66-93e8-7de32c187c93`).
+
+### The diagnosis in every prior note was WRONG. This is not launchd jitter.
+
+08-14, 08-18 and 08-19 each concluded "removing coalescing did not remove jitter, and a
+5-minute margin does not cover it," and escalated "move the trigger 12:55 → 12:40 PDT."
+**The mechanism is sleep deferral. `StartCalendarInterval` does not wake a sleeping Mac** —
+the job is queued and runs at the next wake, whenever that is.
+
+Evidence, `pmset -g log` for 2026-08-20:
+
+```
+12:36:04  Sleep    (Maintenance Sleep, 1048 secs)
+12:53:32  DarkWake (rtc/Maintenance, 61 secs)
+12:54:33  Sleep    (Maintenance Sleep, 686 secs)   <-- 27 SECONDS BEFORE THE TRIGGER
+12:55:00  [ trigger fires into a sleeping machine — DEFERRED ]
+13:05:59  DarkWake (rtc/Maintenance) -> launchd runs the deferred job immediately
+```
+
+`ps` confirms PID 61833 (`run-routine.sh end-of-day`) STARTED at 13:05:59 PDT — the same
+second as the wake, i.e. launchd ran it the instant the machine came back.
+
+Live settings: `pmset sleep = 1` (idles to sleep after one minute), `powernap = 1`,
+and `pmset -g sched` shows **no scheduled wake for any bull routine** — only Apple's
+`calaccessd.travelEngine` and `osanalytics` alarms. Maintenance-wake cadence today ran
+roughly every 10–18 minutes, which is exactly the observed spread of EOD start times.
+
+**The plist is healthy**: `ProcessType` absent, all five 12:55 weekday triggers present,
+`launchctl list` shows the job with exit status 0. The 08-17 coalescing repair still holds.
+The scheduler was never the problem.
+
+### Consequence: escalation #1 as written would not have fixed anything
+
+A 12:40 PDT trigger fired into a sleeping machine defers identically. It would have caught
+today only because the 12:53:32 wake happened to precede the close — luck, not margin. A
+wider margin cannot protect against unbounded deferral.
+
+**Correct fixes (neither applied — machine-wide power change, human call):**
+
+1. `sudo pmset repeat wake MTWRF 12:50:00` — real RTC wake 5 min before the EOD trigger.
+   Caveat: `pmset repeat` holds one repeating wake, so pre-market/market-open/midday are
+   not covered by it.
+2. A LaunchAgent running `caffeinate -s` across ~06:20–13:10 PDT — no sudo, covers all four
+   weekday routines at once.
+
+**Correction to carry-forward #2:** the uncommitted `caffeinate -is` change in
+`scripts/run-routine.sh` does **not** mitigate this — it holds the machine awake only while
+the routine runs, and cannot start a routine whose trigger landed during sleep. Still worth
+committing to prevent mid-run sleep, but it must stop being counted against #1.
+
+### Why it matters now
+
+KEYS carries a **2026-08-26** time stop, 4 sessions out, on 93.8% of the book. At
+`per_trade_stop_pct: 100` there is no price stop, so that time stop is the position's only
+scheduled exit, and only the EOD routine enforces it — a routine that currently fails ~38%
+of the time for a reason one `pmset` command addresses.
+
+### Step 2 — weekly loss cap not hit
+
+WTD -6.37% (vs Mon 08-17 open $7,211.70) against a -100% cap. No flatten, **no `PAUSED`
+marker**. Daily -0.86%, also far inside its cap.
+
+### Thesis check deliberately skipped
+
+Grok was **not** called. Market closed → no verdict could produce an action; midday ran two
+independent queries ~4h earlier (both literal NONE, including a dated "what happened TODAY"
+query); pre-market and market-open both re-check tomorrow before any order is possible.
+Recorded explicitly rather than implying a clean check that did not happen.
