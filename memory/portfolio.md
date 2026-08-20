@@ -1,19 +1,157 @@
 # portfolio.md
-# Updated 2026-08-19 14:59 CT (15:59 ET) by end-of-day routine.
+# Updated 2026-08-20 08:32 CT (09:32 ET) by market-open routine.
 
 ## Account
-- equity: 6810.91
-- cash: 421.91
-- buying_power: 19576.84
-- day_pnl_pct: -5.90  # vs last_equity 7237.92
+- equity: 6815.90
+- cash: 421.90
+- buying_power: 19590.80
+- day_pnl_pct: +0.07  # vs last_equity 6810.90
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -6.27              |
+| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -6.19              |
 
 ## Notes
+
+2026-08-20 market-open: **0 buys, 0 sells, 0 orders.** No preflight invoked, `memory/trade-log.md`
+unchanged. KEYS 20 sh held, marked **319.70** vs 340.8005 entry = **-6.19%**, a touch better than the
+-6.27% EOD mark. Equity **$6,815.90**, cash **+$421.90**, day **+0.07%**. Reconciled against Alpaca:
+`positions` returns 1 (`asset_class: us_equity`), `orders open` returns 0 — no drift.
+**20 × 319.70 + 421.90 = $6,815.90 = equity, to the cent.**
+
+### 🟢 RUN QUALITY: ON TIME — clock read 09:30:12 ET, 12s after the bell
+
+`clock.is_open` = `true`, `next_close` 2026-08-20T16:00 ET. `trading_blocked` and `account_blocked`
+both `false`, status `ACTIVE`. **Seventh consecutive on-time market-open.** The morning trigger
+remains the reliable one; escalation #1 is about the *EOD* trigger and is untouched by this.
+
+### Step 1 — exits: no gate fired, and only thesis-broken could have
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| profit target | -6.19% | +100% (`per_trade_target_pct`) | no |
+| stop loss | -6.19% | **-100%** (`per_trade_stop_pct`) | **no — 93.8pp of room** |
+| thesis broken | Grok **NO NEWS ×10 classes** | concrete named event | no |
+| time stop | target_exit **2026-08-26** | today >= target_exit | **no — 4 sessions out, not overdue** |
+| expiry guard | n/a — shares, no options open | within 2 trading days | n/a |
+
+Instrument detected live off Alpaca `asset_class: us_equity` → shares path, `quote`/`sell`, preflight
+`equity`. Mark used is `positions.current_price` (319.70) per the standing lesson; `trade.p` was
+317.74 = -6.77%, and neither is within 93 points of a gate. The overdue carve-out did **not** apply —
+`target_exit` is in the future, not the past — so `routines/market-open.md:29` and strategy.md's
+carve-out still have not been forced to disagree (carry-forward #3, still unexercised).
+
+### 🟢 Grok clean a THIRD consecutive session — and it named the mechanism this time
+
+Same 10-class enumeration (guidance cut, recall, litigation, regulatory/export-control, exec
+departure, downgrade-only, restatement, dilution, short report, contract/customer loss): a literal
+**NO NEWS on all ten**, sourced to Keysight's own IR release. Positive flow only — Morgan Stanley PT
+to **$425**, UBS to **$440**, both post-print raises, on top of Baird's $410 logged yesterday.
+
+**New and worth recording:** asked again why KEYS fell from $341 to ~$317, Grok this time surfaced a
+*specific* cause it did not give on 08-19 — **management's earnings-call commentary that supply-chain
+constraints are limiting conversion of record (AI-driven) demand into revenue, expected to persist a
+couple of quarters** — alongside the sell-the-news/valuation explanation. That is a real, named
+negative disclosure, and it is a closer call than yesterday's "pure profit-taking" read.
+
+**It was judged NOT thesis-broken, deliberately, and here is the reasoning:** it is not a guidance
+cut — the Q4 guide was *raised* to $3.34–3.40 vs ~$2.68 consensus in the same release, and the
+constraint is a ceiling on upside conversion, not a reduction of the forward numbers we bought. The
+routine's hard rule is to sell only on a **concrete, named negative event**; a qualifier attached to
+a raised guide, disclosed in the very release that formed the thesis, is a reason the market re-rated
+the multiple, not a reversal of the catalyst. Verdict **THESIS INTACT**, position held. Flagged here
+because it is the first time the thesis check has returned something with real content rather than a
+clean sweep, and the 08-25 review should decide whether "raise, but capacity-constrained" belongs in
+the thesis-broken class.
+
+### Step 2 — halt checks: entries HALTED, and the position cap binds for the first time
+
+| check | value | cap | halts entries |
+|-------|-------|-----|---------------|
+| day P&L | **+0.07%** (6815.90 vs last_equity 6810.90) | -100% (`daily_loss_cap_pct`) | no |
+| week P&L | **-5.49%** (vs Mon 08-17 open $7,211.70) | -100% (`weekly_loss_cap_pct`) | no |
+| open positions | **1** | **1** (`max_concurrent_positions`) | ✅ **YES — slot FULL** |
+| new positions today | 0 | 1 (`max_new_positions_per_day`) | no |
+
+**`max_concurrent_positions: 1` fired today — the first time this cap has actually been the binding
+constraint on a session.** Every prior note has called the cap untested, because the entry threshold
+and the cap always said no together and the cap was never the reason. That is *still* true in
+substance: top score today was **5 against a threshold of 6**, so no entry existed for the cap to
+block. **Both gates said no independently.** The cap is binding on paper and free in practice —
+recording it as the first instance, not as vindication.
+
+### Step 3 — entries: none. Top score 5 (ADI) vs threshold 6.
+
+Watchlist: **ADI 5, MRVL 5, EL 5, DE 4, NDSN 4, TGT 4, REGN 4, RARE 3**; MRNA/MRK/WMT/LOW/TJX/HON/
+RTX/HOOD/JCI/EMR and five micro-caps disqualified. Nothing reached 6, so per strategy.md ("if nothing
+scores >= 6, we do not trade today") no order was constructed and preflight was never invoked. Cash
+is a position — though with 93.8% of the book in KEYS, "cash" is $421.90 of it.
+
+### Open-print audit of today's rejections — marked from the OPEN per the 08-14 rule
+
+Recorded at **09:31 ET, ~2 minutes into the session**, so these are markers for the 08-25 review, not
+conclusions. Two minutes of tape settles nothing; the KEYS lesson is precisely that the open print
+does not predict the close.
+
+| ticker | score | 08-19 close | 08-20 open | gap at open | last (09:31) | vs open |
+|--------|-------|-------------|------------|-------------|--------------|---------|
+| ADI  | 5 | 373.22 | 376.915 | +0.99% | 381.645 | **+1.25%** |
+| MRVL | 5 | 237.35 | 237.19  | -0.07% | 245.54  | **+3.52%** |
+| REGN | 4 | 810.38 | 815.925 | +0.68% | 840.935 | **+3.07%** |
+| TGT  | 4 | 159.14 | 156.91  | -1.40% | 158.46  | +0.99% |
+| EL   | 5 | 98.04  | 97.20   | -0.86% | 96.90   | -0.31% |
+| NDSN | 4 | 309.78 | 315.00  | +1.69% | 314.18  | -0.26% |
+| DE   | 4 | 580.64 | 591.17  | +1.81% | 588.40  | -0.47% |
+| RARE | 3 | 26.25  | 28.39   | **+8.15%** | 27.61 | **-2.75%** |
+
+Two things are worth the review's attention. **RARE gapped +8.15% at the open and is already -2.75%
+off it** — pre-market scored it 3 partly *because* the repricing was happening above our entry, and
+the first two minutes are consistent with that. And **ADI, the name the threshold kept us out of, is
++1.25%** — a live, honest counter-datapoint to the "verified beats get sold" pattern, logged now so
+the 08-25 review does not get only the instances that flatter the rule. Neither is actionable and
+neither was acted on.
+
+### 🟢 IEX feed HEALTHY at the bell — escalation #8 did not reproduce
+
+`trades/latest` returned `t=2026-08-20T13:30:45Z` at 09:31 ET, **~1 minute old**, and the `snapshot`
+endpoint agreed to the cent (317.74). No repeat of the 17.4-hour-stale print logged at the 08-19,
+08-17 and 08-14 opens. **The hazard remains intermittent, not retired.** Note the *pre-market*
+failure mode logged in today's research block — snapshot serving yesterday's 15:59 closes at 06:46 ET
+with no pre-market data — is a different, earlier-in-the-session symptom and is unaffected by this.
+
+`feed=sip` daily bars were used again for the session table above and were correct (08-19
+o=349 h=352 l=314.52 c=319.45 v=3,875,269). **Still unapplied to `scripts/alpaca.sh:104`** —
+carry-forward #10, now used successfully in five consecutive runs while remaining uncommitted.
+
+### 🟢 `no_margin` COMPLIANT — cash +$421.90, unchanged since the 08-19 fill
+
+No order was sent, so nothing could move cash; mark-to-market moves equity only. Buying power
+$19,590.80, no leverage. The 98% haircut is **still not stress-tested** (carry-forward #5) — it has
+not been called on since the 08-19 fill came in favorable.
+
+### Ops carry-forward — nothing applied this run
+
+Market-open can apply none of these; they are strategy/ops changes, and #1 needs a human. **#1** EOD
+trigger 12:55 → 12:40 PDT — **still the load-bearing item**, and the KEYS **2026-08-26** time stop is
+now **4 sessions out**; at `per_trade_stop_pct: 100` it is that position's only scheduled exit and
+EOD has been late-or-missed 24 of 65 runs (~37%). **#2** commit the `caffeinate -is` fix in
+`scripts/run-routine.sh` — **verified still uncommitted this run**, alongside untracked `AGENTS.md`,
+`.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`, `memory/guardrails.md.conservative.bak`.
+**#3** `routines/market-open.md:29` vs strategy.md's overdue carve-out — still contradictory, **not
+exercised today** (stop is in the future); it becomes live if the 08-26 EOD misses. **#4** no
+limit-order or partial-close path in `alpaca.sh`. **#5** widen the entry haircut 98% → 96%, still
+untested. **#6** `alpaca.sh bars` window bug (fix via #10). **#7** `routines/midday.md:1` header
+wrong by an hour. **#8** IEX open-bell staleness — **did not reproduce at the bell today**; keep on
+the list, and note the separate pre-market symptom above. **#9** `routines/end-of-day.md:1` header.
+**#10** `feed=sip` for bars/volume — used again, still unapplied. **#11** the HD novelty-at-the-open
+discard-side question. **#12** the 3-7 DTE option window that killed 4 of 5 option-eligible setups.
+**#13** the bounded fill poll being too short for opening-auction market orders. **#14** whether
+`per_trade_stop_pct: 100` + `target_position_pct: 100` is a survivable pairing — **KEYS is the live
+case and it is now 4 sessions from its only exit.** **#15 NEW** — does "guidance raised BUT
+capacity-constrained" (today's Grok finding on KEYS) count as thesis-broken? Judged no this run; the
+08-25 review should make it explicit rather than leaving it to each routine's reading.
 
 2026-08-19 EOD: **0 time-stops, 0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md`
 unchanged. KEYS 20 sh marked **319.45** vs 340.8005 entry = **-6.27%**, essentially flat to the
