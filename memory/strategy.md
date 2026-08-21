@@ -58,14 +58,28 @@ Each candidate gets a composite score:
 - **Cleanliness** (0–1): no offsetting bad news, no halts, and passes the current
   earnings-proximity guardrail?
 
-**Verify against the company's own IR release before scoring.** Any candidate heading for
-a score ≥ 6 must have its beat/raise numbers confirmed against the primary source (company
+**Verify against the company's own IR release before scoring.** **Any candidate that reaches
+the watchlist** must have its beat/raise numbers confirmed against the primary source (company
 IR / Business Wire / PR Newswire release), not an X post, screener, or secondary aggregator.
 Score the primary source when they disagree. Two names moved materially on this check in one
 session: PLNT 8 → 5 (the "EPS guide raise" was buyback share-count math and the underlying
 guidance had gotten *worse*) and ALB 8 → 9 (secondaries said "reaffirmed"; the release showed
 a raised segment guide and a 15% capex cut). PLNT then fell -12.0% and ALB rose +4.2%. [added
 2026-08-07 weekly review]
+
+**Trigger widened from "heading for a score ≥ 6" to "any watchlist candidate."** The old trigger
+would have skipped the most valuable instance the log has produced: INTC 08-17 was heading for
+~4, and the primary-source call did not weaken its catalyst but **inverted its sign** — the
+reported "CEO $10M open-market buy" was the $20B upsized offering priced Aug 11 (210.5M dilutive
+shares at $95; the bull story and the dilution share the same $95 price). INTC then fell -13.02%
+over the next five sessions. The check moved or killed a candidate in *every* session of the
+week of 08-17: INTC (sign inverted), ZTO (secondaries said "no beat or raise"; the release showed
+a **lowered** FY volume guide), BMY (Grok dated an approval Aug 18 off an X post; the newsroom
+said Aug 13 — stale), DE (~$110M tariff recovery ≈ $0.32/sh *was* the beat) and ROST (~$0.60 of
+a $2.66 quarter and ~$0.60 of a $1.11 FY raise were an IEEPA tariff refund). The pre-market
+routine had already been doing this voluntarily; this closes the gap between the written rule
+and live practice. The cost is tokens per pass, not risk — the call only adds information before
+scoring and never forces a trade. [added 2026-08-21 weekly review]
 
 FULL YOLO paper-video threshold: score ≥ 6 trades. If nothing scores ≥ 6, **we do
 not trade today**. Cash is still a position when there is no named, directional

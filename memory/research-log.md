@@ -9666,3 +9666,116 @@ sudo pmset repeat wake MTWRF 12:50:00
 or, without sudo, a market-hours `caffeinate -s` LaunchAgent (~06:20–13:10 PDT) covering all four
 weekday routines at once. **Moving the trigger 12:55 → 12:40 PDT is not a substitute** — a 12:40
 trigger fired into a sleeping machine defers identically.
+
+---
+
+## 2026-08-21 weekly review — week of 08-17 to 08-21
+
+**WTD -7.65%** (08-14 close $7,303.38 → 08-21 close $6,744.50, -$558.88) vs **SPY -1.38%**
+(776.34 → 765.64) = **-6.27pp**. 1 trade closed (RDNT 08-17, +4.66%, on time), win rate 100%,
+avg hold 7d, 0 stop-outs (impossible at `per_trade_stop_pct: 100`), 0 time-stops closed red,
+**0 preflight rejections** (2 invocations, both OK). All-time **-93.26%** from the $100k open.
+
+**76% of the week's loss landed on 08-19**, the session KEYS was bought at 100% of equity
+(-$427.02 of -$558.88). The only closed trade of the week was a winner and the week was still
+-7.65%. That is what `target_position_pct: 100` does — one entry *is* the week.
+
+### Rubric audit — 26 candidates, marked from the signal-day OPEN per the 08-14 HLIT rule
+
+| cohort | n | mean → 08-21 close |
+|--------|---|--------------------|
+| score 8 | 1 | **-9.42%** (KEYS, the only name over threshold) |
+| score 5 | 6 | +0.58% |
+| score 4 | 10 | -1.35% |
+| score ≤3 | 6 | -5.20% |
+
+Monotone from 1 through 5 — **the rubric is not mis-weighted**, it ranked the board correctly and
+the low scorers really were bad. The finding is the inverse of the one the template looks for:
+the only name that cleared ≥6 was the worst tradeable outcome of the week. n=1; fifth instance of
+the standing lesson that *verification proves the catalyst is real, not that the market will pay
+for it.* The 08-19 pre-market note called it in writing before the fact ("the market has paid
++2.3% for a 24.8% EPS beat — that is a shrug") and the trade was taken anyway on the composite.
+
+### Rejection audit — ZERO rejected candidates returned >+10%
+
+Best missed: DE +5.95%, HTHT +5.70%, TGT +5.36%, NDSN +5.14%, EL +4.64% (all ≤4 sessions).
+Worst avoided: FN **-15.00%**, INTC **-13.02%**, WDC **-12.57%**, RARE -9.02%, ALAB -6.26%.
+**The gates were strongly net positive and none was too aggressive. The problem this week was on
+the approval side, not the rejection side.** No rejection rule loosened.
+
+Tariff-refund adjustment re-checked at n=4 and it is **NOT actionable**: it cut DE (+5.95%) and
+TGT (+5.36%) but also ROST (-1.97%) and PLNT 08-07 (-12.0%). Split 2-2. Recorded so a future
+review does not read the two winners alone.
+
+### ✅ STRATEGY EDIT APPLIED (1) — primary-source trigger widened to any watchlist candidate
+
+`memory/strategy.md`: **"Any candidate heading for a score ≥ 6" → "Any candidate that reaches the
+watchlist."** Driven by INTC 08-17 — heading for ~4, below the old trigger, and the primary-source
+call **inverted the catalyst's sign** ($20B dilutive offering reported as a CEO insider buy, same
+$95 price); INTC then -13.02%. The check moved or killed a candidate in every session this week
+(INTC, ZTO, BMY, DE, ROST). Closes the gap between the written rule and what pre-market has been
+doing voluntarily for weeks. Cost is tokens, not risk — it only adds information before scoring.
+
+**TO REVERT:** restore "heading for a score ≥ 6" in the verification paragraph of `strategy.md`
+and delete the `[added 2026-08-21 weekly review]` block beneath it.
+
+### ❌ STRATEGY EDIT REJECTED BY ITS OWN BACKTEST — the pre-catalyst down-bar gate
+
+**PROPOSED:** DQ any name whose last completed daily bar before entry is down ≥3% on ≥2x average
+volume, regardless of composite score. Looked like the week's best finding at n=3 — KEYS 08-19
+(-5.58% on 3.22x → -7.24%), ROST 08-21 (-2.43% on ~2.5x), FN 08-18 (-10.29% → -15.00%) — and KEYS
+had been given confirmation **1/2** despite the pre-market note explicitly recording no volume
+confirmation against a 4x-volume down bar.
+
+**Backtested against all 13 entries ever made. It would have killed three:**
+
+| entry | prev bar | rel vol | outcome |
+|-------|----------|---------|---------|
+| KMX 2026-06-18 | -8.98% | 2.78x | **KILLED a +8.46% winner** |
+| PENG 2026-07-08 | -7.38% | 2.36x | **KILLED a +2.74% winner** |
+| KEYS 2026-08-19 | -5.58% | 3.22x | avoided -7.24% |
+
+Net **+11.20pp of realized gains destroyed to avoid -7.24pp — the edit would have made the record
+worse.** Not made, per the hard rule. The deeper reason matters more than the arithmetic: **a
+heavy-volume selloff into a print followed by a beat IS the second-wave shape strategy.md is built
+around.** KMX and PENG are two of the three cleanest winners in the log and both had it. What
+looked like a warning sign at n=3 in one week is the setup itself at n=13 across the full history.
+KEYS is a drawdown inside a thesis that works, not evidence the thesis is broken.
+
+**⚠️ FUTURE REVIEWS: do not re-propose this. Re-run the 13-entry backtest before overriding.**
+
+### Not touched (human-only, correctly)
+
+All of `guardrails.md` — position size, stop width, `max_concurrent_positions`, loss caps,
+universe. The time stop was not weakened. Flagged for the human, not changed: at
+`per_trade_stop_pct: 100` the shares stop cannot fire above $0.00, so KEYS sits -7.24% on 93.7%
+of the book with **no price-based exit of any kind**. Carry-forward #14 now has a live test case.
+
+### 🔴 Operational headline — EOD ran usably 1 of 5 times this week
+
+| run | start (ET) | result |
+|-----|------------|--------|
+| 08-17 | 15:55:35 | ✅ ON TIME — sold RDNT |
+| 08-18 | 16:03:59 | ❌ missed |
+| 08-19 | 15:59:16 | ⚠️ ran with 44s of market — unusable |
+| 08-20 | 16:05:59 | ❌ missed |
+| 08-21 | 16:00:01 | ❌ **missed by one second** |
+
+KEYS's **2026-08-26** time stop is the only scheduled exit on 93.7% of the book and only EOD can
+enforce it. Root cause (found 08-20, re-confirmed 08-21) is **sleep deferral, not launchd jitter**:
+`StartCalendarInterval` does not wake a sleeping Mac, so the job defers to the next opportunistic
+maintenance wake — unbounded. Moving the trigger earlier cannot fix it. The 08-21 EOD added that
+the `caffeinate -is` wrapper is **dead as mitigation** — it held two live `PreventSystemSleep`
+assertions across the window and the run missed anyway.
+
+**Fix (human, needs sudo):** `sudo pmset repeat wake MTWRF 12:50:00`, or a no-sudo market-hours
+`caffeinate -s` LaunchAgent (~06:20–13:10 PDT) covering all four routines.
+
+**Honest mitigation, so this is not overstated:** if the 08-26 EOD misses, strategy.md's overdue
+carve-out sells KEYS at the 08-27 open. That backstop has fired four times (KMX 06-26, PENG 07-16,
+CCK 07-30, BMY 08-10) and worked every time. Cost is one session of slippage on a 94%-of-book
+position, not a stranded trade.
+
+### Disposition: **RESUME MONDAY WITH CURRENT STRATEGY**
+
+Weekly loss cap not hit (100%, decorative), nothing flattened, no pause required.
