@@ -9607,3 +9607,62 @@ setups. **#13** the bounded fill poll being too short for opening-auction market
 3 sessions from its only exit.** **#15** "guidance raised BUT capacity-constrained" as thesis-broken —
 judged no three times now; 08-25 should rule. **#16** the dated "what happened TODAY" Grok query —
 **applied by market-open this run**; should be written into both routine files at the 08-25 review.
+
+---
+
+## 2026-08-21 end-of-day — 🔴 MISSED by ONE SECOND (16:00:01 ET start), 0 exits
+
+**Bail-out.** `clock.is_open` = `false` (`next_open` 2026-08-24T09:30 ET). No orders, no preflight,
+`memory/trade-log.md` unchanged. Late-or-missed **#26 of 67 (~39%)**, and **4 of the last 5**.
+
+| item | value |
+|------|-------|
+| trigger | 12:55:00 PDT (plist `StartCalendarInterval`, = 15:55 ET) |
+| DarkWake | **12:59:51 PDT** — `DarkWake from Deep Idle [CDNPB] ... rtc/Maintenance`, on AC @100% |
+| process start | **`Fri Aug 21 12:59:51 2026`** — same second as the wake (`ps -eo lstart`) |
+| deferral | **4m 51s** |
+| clock read | 13:00:01 PDT = **16:00:01 ET** — 1 second past the bell |
+| equity | $6,744.50 (day **-0.11%**, WTD **-6.48%**, all-time **-93.26%**) |
+| positions | KEYS 20 sh @ 340.8005 → **316.13** = **-7.24%**, target_exit 2026-08-26 |
+| time stops | **0** — nothing due |
+| email | **SENT** (`c605a487-6f19-40cb-a5b3-68f1fff56ec7`) despite the bail-out, per 08-20 precedent |
+
+**Cause is unchanged and was re-confirmed live: macOS sleep deferral, not launchd jitter.** See the
+08-20 root-cause block above. `pmset -g sched` **still shows no bull wake** — only Apple's
+`calaccessd.travelEngine` (15:11:18) and `osanalytics.hardhighengagementtimer` (16:59:19). The plists
+remain healthy; the 08-17 `ProcessType` repair holds. `weekly-review` starting `13:00:04` is the usual
+coalescing signature of a second job released just after the same wake.
+
+**New evidence this run — carry-forward #2 is dead as mitigation.** `caffeinate` held two live
+`PreventSystemSleep` assertions (pids 49371, 49514) across this window and **the run still missed**.
+It cannot start a routine whose trigger landed during sleep. Commit it to prevent *mid-run* sleep;
+stop counting it against escalation #1.
+
+**The margin is now the entire safety system.** 08-19 deferred 4m16s and enforced the RDNT-style time
+stop with 44s to spare; 08-21 deferred 4m51s and bailed. **35 seconds separated working enforcement
+from a bail-out.**
+
+**Cost of today's miss: zero.** Time stop 2026-08-26 is 3 sessions out; no options open so no expiry
+guard; price gates 92.76pp away at `per_trade_stop_pct: 100`. The thesis re-check was **skipped, not
+dropped** — market already closed so nothing was actionable, and midday's two queries (standard
+10-class enumeration + the dated 08-21 query) both returned literal **NONE**. Monday's market-open
+re-derives it across the full weekend.
+
+**Weekly loss cap not hit:** WTD -6.48% vs -100% `weekly_loss_cap_pct`. No flatten, no `PAUSED` marker.
+
+### 🔴 Escalation #1 — second day un-applied, and now the most time-critical item on the board
+
+KEYS is **93.74% of the book** and the **2026-08-26 time stop is its only exit**. Three sessions
+remain (08-24, 08-25, 08-26). On the current base rate the 08-26 EOD fires in time with probability
+**~61%**. If it misses, strategy.md's overdue carve-out sells at the 08-27 market-open (precedent
+KMX 06-26 / PENG 07-16 / CCK 07-30 / BMY 08-10) — a one-session overshoot, no weekend attached.
+
+Fix, human call, needs sudo:
+
+```
+sudo pmset repeat wake MTWRF 12:50:00
+```
+
+or, without sudo, a market-hours `caffeinate -s` LaunchAgent (~06:20–13:10 PDT) covering all four
+weekday routines at once. **Moving the trigger 12:55 → 12:40 PDT is not a substitute** — a 12:40
+trigger fired into a sleeping machine defers identically.
