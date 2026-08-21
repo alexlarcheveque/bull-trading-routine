@@ -9256,3 +9256,199 @@ Grok was **not** called. Market closed → no verdict could produce an action; m
 independent queries ~4h earlier (both literal NONE, including a dated "what happened TODAY"
 query); pre-market and market-open both re-check tomorrow before any order is possible.
 Recorded explicitly rather than implying a clean check that did not happen.
+
+## 2026-08-21 pre-market research pass
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+**ROST (Ross Stores, market cap >>$2B):** Strong Q2 2026 earnings beat (EPS $2.66 vs. consensus
+~$1.82–$1.95, a ~37–46% beat) with sales +13% YoY to $6.3B, comparable store sales +10%, net income
+surge, and raised full-year/2H outlook (including tariff refund benefits). Source: Ross Stores investor
+relations press release (via Yahoo Finance/MarketBeat); earnings released after market close on Aug 20,
+2026. [public.com/stocks/rost/earnings; finance.yahoo.com; marketbeat.com; investors.rossstores.com]
+
+**BLSH (Bullish, market cap ~$4B):** Positive momentum tied to Bitcoin/crypto rally (BTC >$72k), with
+intraday gains on Aug 20 amid tokenized stock trading developments and broader sector strength (despite
+earlier Q2 net loss). Source: Yahoo Finance/related coverage; trading activity noted on Aug 20, 2026.
+
+"Limited other major company-specific bullish catalysts (e.g., earnings beats or approvals) were
+prominently reported in the exact 24-hour window for additional >$2B market-cap names. Broader
+market/crypto tailwinds supported select names like BLSH. Market context included mixed broader equity
+moves on Aug 20."
+
+### Grok raw output — Query 2: Pre-market movers >2% on news (2026-08-21)
+- **ROST (Ross Stores)**: +~9% (to ~$249–250). Q2 beat (revenue ~$6.27B vs. $6.18B est.; EPS $2.66 vs.
+  $1.94 est.) with raised full-year outlook. [benzinga.com/news/26/08/61349777; ts2.tech]
+- **HOWL (Werewolf Therapeutics)**: +~67–71%. Sold pre-clinical INDUCER/INDUKINE platforms to EMD Serono.
+- **SUGP (SU Group Holdings)**: +~43–53%. Regained Nasdaq minimum bid price compliance. [stocktitan.net]
+- **ZKH (ZKH Group)**: +~17%. Reporting Q2 results later that day.
+- **BTAI (BioXcel Therapeutics)**: +~12–15%. "Rebound move tied to recent trading."
+"Other notable movers (e.g., RFAI/SPAC-related surges or smaller names like SDEV) appeared on news or
+prior momentum but were more speculative/volatile. Data aggregated from real-time pre-market snapshots
+around 4–9 AM ET." Sources: Benzinga pre-market reports, stockanalysis.com.
+
+### Grok raw output — Query 3: Earnings beat AND raised guidance (after the 2026-08-20 close)
+**Ross Stores (ROST)** is the primary match identified.
+- Report timing: Q2 2026 earnings released after market close on August 20, 2026 (~4:00 p.m. ET).
+- Beat: EPS of $2.66 (vs. consensus ~$1.82–$1.94; beat of ~37–46%). Revenue also beat (~$6.30B vs ~$6.15B).
+- Raised guidance: Raised second-half and full fiscal 2026 outlook (including EPS guidance).
+- Source: Ross Stores investor relations press release (Aug. 20, 2026); stocktitan.net.
+"No other companies reporting after the Aug. 20, 2026 close were clearly confirmed in results to have
+both beaten estimates and raised guidance. Related mentions (e.g., TGT on Aug. 19 or earlier ENTG
+reports) fall outside the exact timing window."
+
+### Grok raw output — Query 4: FDA / contracts >$100M / M&A / regulator decisions (last 24h)
+"**No major FDA approvals, M&A announcements, or regulator decisions matching the criteria were
+published in the exact last 24 hours (roughly Aug 20–21, 2026).**"
+
+**Notable item (large contract-related):** On Aug 20, 2026, the U.S. Department of Defense published
+contracts awarded Aug 19, including modifications to the Next Generation Delivery Service-2 program.
+FedEx (FDX), UPS (UPS), and Polar Air Cargo received modifications with estimated face values of
+~$2.72B each for FedEx/UPS (and ~$272M for Polar), contributing to a combined cumulative program value
+of ~$5.72B. These cover express/ground small package delivery services through 2030.
+[war.gov/News/Contracts/Contract/Article/4578834]
+
+Other recent/nearby items (not strictly last 24 hours):
+- FDA press announcements dated Aug 19 included approval of the first therapy (Ultragenyx gene therapy
+  Genglycos/pariglasgene brecaparvovec) for glycogen storage disease type Ia (patients aged 8+) and
+  authorization of a robotic blood draw device.
+- Minor M&A on/around Aug 20 involved smaller or non-public deals (526 Media Group, Willdan Group/WLDN
+  asset purchase, PE-backed firms). A larger closing (Charter/Cox) occurred but was pre-announced.
+- "Regulator items were limited to routine FTC/DOJ updates or settlements without major new impacts."
+
+### Primary-source verification — ROST (required by strategy.md before any score >= 6)
+
+Pulled the company's own Aug 20 release. **The verification materially cut the catalyst, exactly as the
+strategy.md rule is designed to catch:**
+
+| item | headline number | what the release actually says |
+|------|-----------------|-------------------------------|
+| Q2 EPS | $2.66 vs ~$1.82–1.94 cons = **+37–46% beat** | "$2.66, which includes an approximate **$0.60 per share benefit from the tariff refunds**" → ex-item **~$2.06**, a **~6–13%** beat |
+| FY26 EPS guide | raised to **$8.61–8.77** from $7.50–7.74 (+$1.11/+$1.03) | raise "again **includes an approximate $0.60** EPS benefit from IEEPA tariff refunds recognized in the second quarter" → underlying raise **~$0.43–0.51** |
+| operating margin | **+610 bps** | "**or 205 bps excluding the tariff-refund benefit**" |
+| Q2 comps | +10%, traffic-driven | ✅ clean, no adjustment — this part is genuinely strong |
+| Q3/Q4 guide | — | Q3 EPS $1.75–1.83, Q4 $2.17–2.26; Q3 comps +6–7% |
+| negative commentary | — | none found; tariffs referenced only positively |
+
+Roughly **half the headline beat and half the headline raise are a one-time IEEPA tariff refund.** The
+underlying business is genuinely good (+10% comps on traffic, 205 bps of real margin expansion, a
+~$0.45 real guide raise) — but this is the **PLNT 08-07 pattern** (headline raise that is an accounting
+artifact, 8 → 5, then -12.0%) and the **DE / TGT 08-20 pattern** (tariff recovery *is* the beat) for the
+third and fourth time in three sessions. Catalyst strength scored on the ex-item numbers: **3, not 4.**
+
+### Price verification (Yahoo 5m `includePrePost=true`, cross-checked vs Yahoo daily closes)
+
+⚠️ **IEX pre-market staleness reproduced again** (carry-forward #8): `alpaca.sh quote ROST` returned
+`p=245.05` stamped `2026-08-20T20:40:21Z` = **16:40 ET yesterday, ~17.8 hours stale**. Same failure mode
+as the 08-20 pre-market run. All pre-market measurement below is from Yahoo.
+⚠️ **`alpaca.sh bars` returned bars ending 2026-08-14** — a full week stale (carry-forward #6/#10). The
+`feed=sip` direct call returned `"bars": null` for every name this run, so the daily table below is Yahoo.
+
+| ticker | 08-19 c | **08-20 c (pre-catalyst ref)** | 08-20 vol | pre-market 06:31 ET | **vs pre-catalyst close** |
+|--------|---------|-------------------------------|-----------|---------------------|---------------------------|
+| ROST | 234.69 | **228.99** (-2.43%) | **6.25M ≈ 2.5x avg** | **~249.18** | **+8.77%** |
+| FDX  | 328.38 | 326.04 (-0.71%) | 1.67M ≈ avg | 326.05 (stale) | ~0% |
+| UPS  | 102.86 | 102.58 (-0.27%) | 3.74M < avg | 102.55 (stale) | ~0% |
+| BLSH | 26.92  | 28.44 (+5.65%) | 1.78M | — | — |
+
+## 2026-08-21 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                           | source         |
+|--------|-------|-------------------------------------------------------------------------------|----------------|
+| ROST   | 4     | Q2 beat + FY raise — but ~$0.60 of both is a one-time IEEPA tariff refund, and +8.77% pre-market | investors.rossstores.com / benzinga.com/…n61343436 |
+| FDX    | 4     | DoD NGDS-2 contract modification ~$2.72B face through 2030 (<1%/yr of revenue) | war.gov/…Article/4578834 |
+| UPS    | 4     | Same DoD NGDS-2 modification, ~$2.72B face, same materiality problem           | war.gov/…Article/4578834 |
+| BLSH   | 2     | Crypto-beta move on BTC >$72k — no named corporate event                       | finance.yahoo.com |
+
+**Top score 4 (ROST/FDX/UPS) vs entry threshold 6 → No tradeable signal today.**
+
+Score detail:
+
+- **ROST 4** = catalyst **3** (real beat-and-raise, but scored on the ex-item numbers: ~6–13% EPS beat
+  and a ~$0.45 FY guide raise once the $0.60 tariff refund is removed, not the 37–46%/+$1.11 headline;
+  the +10% traffic-driven comp and 205 bps of clean margin expansion are what earn the 3)
+  + novelty **0** (**+8.77%** vs the 08-20 close of $228.99, against a **5%** bar for a sub-$100B name —
+  the freshness gate is failed by ~1.75x, and it was already +7.01% in yesterday's after-hours)
+  + confirmation **0** (no completed post-catalyst bar exists — the print landed after the 08-20 close;
+  the last completed bar is **-2.43% on ~2.5x average volume**, i.e. a heavy pre-print selloff, which is
+  disconfirmation, not absent confirmation) + cleanliness **1** (no offsetting bad news, no halt,
+  `no_earnings_within_days: 0` permits earnings proximity).
+- **FDX 4 / UPS 4** = catalyst **1** (a **modification to an existing program**, not a new win; ~$2.72B
+  of face value spread through 2030 ≈ **<1% of annual revenue** for either name — both run ~$90B/yr)
+  + novelty **2** (genuinely unpriced — but "unpriced" here reads as *immaterial*, not as opportunity)
+  + confirmation **0** (both **down** on 08-20 — FDX -0.71%, UPS -0.27% — on average-or-below volume;
+  UPS traded 3.74M vs a ~4.4M average) + cleanliness **1**.
+
+Skipped (below threshold / disqualified):
+
+- **BLSH (score 2, catalyst class):** Grok's own framing is "Bitcoin/crypto rally… broader sector
+  strength (**despite earlier Q2 net loss**)." strategy.md excludes generic macro/sector takes with no
+  named corporate event. It is also already **+14.1% over two sessions** (24.90 → 28.44), so freshness
+  would fail even if the catalyst class qualified.
+- **HOWL (hard DQ, universe):** $0.4312/share — fails `min_price_per_share: 5` by 11x, and the market
+  cap is far below the $1B floor. The EMD Serono platform sale is a real corporate event and the
+  cleanest catalyst *class* on the board, but the name is uninvestable under guardrails. Also **+67–71%**.
+- **ZKH (hard DQ, universe):** $2.90/share, below the $5 floor; ADR, sub-$1B cap. And "reporting Q2
+  results later that day" is an *upcoming* event, not a catalyst that has occurred.
+- **BTAI (hard DQ, universe + catalyst):** $0.7985/share, below the $5 floor. Grok's stated catalyst is
+  a "rebound move tied to recent trading" — that is not a catalyst at all. The stock is also **-29%**
+  vs its prior close on the daily tape (1.13 → 0.7985), so the pre-market pop is off a collapse.
+- **SUGP (hard DQ, universe + catalyst):** $2.775/share, below the $5 floor. "Regained Nasdaq minimum
+  bid price compliance" is the *absence* of a delisting, not a change to forward cash flows. 52-week
+  range 1.165–55.00 tells the rest of the story.
+- **RARE (DQ, stale + already assessed):** the Genglycos/GSD1a approval is dated **08-19**, outside the
+  24-hour window, and was already scored **3** in yesterday's pass at +12.7%. It gapped **+8.15%** at
+  the 08-20 open and was **-2.75% off that open** within two minutes. Nothing new.
+- **FDX/UPS "Polar Air Cargo" leg (DQ, universe):** privately held, no resolvable US-listed ticker.
+- **Charter/Cox (DQ, freshness):** Grok flags the closing as pre-announced. No new information.
+- **KEYS — not evaluated, held.** Skipped per the "no adding to winners" rule (it is a loser, but the
+  rule is positional): `memory/portfolio.md` shows 20 sh @ $340.8005, target_exit **2026-08-26**.
+
+### Both entry gates say no independently, again — and the position cap is the harder one today
+
+| gate | value | threshold | blocks entry |
+|------|-------|-----------|--------------|
+| top score | **4** | >= 6 (`strategy.md`) | ✅ yes |
+| open positions | **1** (KEYS) | 1 (`max_concurrent_positions`) | ✅ yes — slot FULL |
+
+As on 08-20, the score gate and the capacity gate both refuse independently, so the cap is binding on
+paper and free in practice. Recording it so the 08-25 review does not read the cap as untested *or* as
+load-bearing — it has now been nominally binding two sessions running while never being the reason.
+
+### ⚠️ The tariff-refund adjustment is now n=4 in three sessions, and it is worth a review item
+
+DE (08-20, $110M tariff recovery ≈ $0.32/sh **was** the beat), TGT (08-20, $1.65 of the FY raise was a
+tariff refund), PLNT (08-07, buyback share-count math, 8 → 5, then **-12.0%**) and now ROST (08-21,
+~$0.60 of a $2.66 quarter *and* ~$0.60 of a $1.11 FY raise). **In every instance the primary-source
+check cut the catalyst by roughly half, and in every instance the secondary aggregators reported the
+headline number without the adjustment.** The strategy.md verification rule added on 08-07 has now paid
+for itself four times. Suggest the 08-25 review consider making "is the beat/raise an IEEPA tariff
+refund or other one-timer?" an explicit line in the scoring rubric rather than a judgment call.
+
+### 🟢 And the freshness gate did the work again — ROST is the only name it had to kill, and it did
+
+ROST is a genuinely good quarter: +10% comps on traffic, 205 bps of *real* margin expansion, a real
+(if smaller) guide raise, no negative commentary anywhere in the release. On catalyst strength and
+cleanliness alone it would sit at 4/5 and be a legitimate candidate. **It is disqualified on price, not
+on quality** — +8.77% against a 5% bar means the second wave strategy.md hunts for has already been paid
+out overnight, above any entry we could get at the 09:30 open. INTC 07-24 (scored 7 at +4.4%, closed
+**-7.8%** the same day) and RARE 08-20 (+8.15% gap, **-2.75%** off the open in two minutes) are the two
+most recent instances of what buying through that gate costs. Logged in the constructive direction
+because this is a name we would have wanted.
+
+### Ops carry-forward — nothing applied (research routine; no strategy/guardrail edits permitted)
+
+Unchanged from the 08-20 EOD list. Three items were exercised this run:
+**#8 (IEX staleness) REPRODUCED** — `alpaca.sh quote` served a **17.8-hour-stale** 16:40 ET print for
+every name at 06:30 ET; all pre-market measurement came from Yahoo `includePrePost=true`.
+**#6/#10 (`alpaca.sh bars` window + `feed=sip`) BOTH BIT** — `bars` returned data ending **2026-08-14**,
+a week stale, and the direct `feed=sip` call that has worked in the last five runs returned
+`"bars": null` for all four names this run. The daily tape above is Yahoo-sourced as a result. **This is
+the first run where the sip workaround itself failed**, which matters: carry-forward #10 has been
+proposed as the fix for #6, and today it was not available. Worth re-checking before the 08-25 review
+treats it as a solution.
+**#1 (EOD sleep deferral — `sudo pmset repeat wake MTWRF 12:50:00`) remains the load-bearing open item
+and is now URGENT**: KEYS carries a **2026-08-26** time stop, at `per_trade_stop_pct: 100` it is that
+position's only scheduled exit on ~94% of the book, and after today there are only **3 sessions**
+(08-24, 08-25, 08-26) left. Still a human call — see the 08-20 EOD root-cause block. Note the fix
+identified there is a *power-management* change, **not** the trigger-time change that headed this list
+for four sessions.
