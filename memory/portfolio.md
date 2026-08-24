@@ -1,19 +1,165 @@
 # portfolio.md
-# Updated 2026-08-24 08:32 CT (09:32 ET) by market-open routine.
+# Updated 2026-08-24 11:02 CT (12:02 ET) by midday routine.
 
 ## Account
-- equity: 6663.60
+- equity: 6674.00
 - cash: 421.90
-- buying_power: 19164.36
-- day_pnl_pct: -1.20  # vs last_equity 6744.50
+- buying_power: 19193.48
+- day_pnl_pct: -1.05  # vs last_equity 6744.50
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -8.43              |
+| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -8.27              |
 
 ## Notes
+
+2026-08-24 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md` unchanged.
+KEYS 20 sh marked **312.605** vs 340.8005 entry = **-8.27%**, recovering 0.16pp off the -8.43% market-open
+mark. Market value **$6,252.10** on $6,674.00 equity = **93.68% of the book**. Equity **$6,674.00**, cash
+**+$421.90**, day **-1.05%**, WTD **-1.05%** (Monday), all-time **-93.33%** from the $100,000 open.
+Reconciled against Alpaca: `positions` returns 1 (`asset_class: us_equity`), `orders open` returns **0** —
+no drift. **20 × 312.605 + 421.90 = $6,674.00 = equity, to the cent.**
+
+### 🟢 RUN QUALITY: ON TIME — clock read 12:01:47 ET, 1m47s after the 12:00 ET trigger
+
+`clock.is_open` = `true`, `next_close` 2026-08-24T16:00 ET. Account `ACTIVE`, `trading_blocked` and
+`account_blocked` both `false`. **Eighth consecutive live confirmation of the header bug in
+`routines/midday.md:1`** (carry-forward #7): the plist fires 09:00 PDT = **12:00 ET / 11:00 CT**, not the
+`12:00 PM Central / 1:00 PM Eastern` the header claims. **The header is the wrong artifact — do NOT move
+the plist to match it.** Margin is slightly wider than 08-21's 1m24s but well inside the window; the
+midday trigger sits in the machine's active period and has never been hit by the sleep-deferral mechanism
+the 08-20 EOD run root-caused.
+
+### Step 1 — exits: no gate fired. Thesis-broken was again the only one that could.
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| profit target | -8.27% | +100% (`per_trade_target_pct`) | no |
+| stop loss | -8.27% | **-100%** (`per_trade_stop_pct`) | **no — 91.7pp of room** |
+| thesis broken | Grok **NONE ×10 classes** + dated 08-24 query **NONE** | concrete named event | no |
+| time stop | target_exit **2026-08-26** | 2 sessions out | not due, and not midday's |
+| expiry guard | n/a — shares, no options open | — | n/a |
+
+Instrument detected live off Alpaca `asset_class: us_equity` → shares path, `quote`/`sell`, preflight
+`equity`. Mark used is `positions.current_price` (312.605) per the standing lesson; `trade.p` was
+**312.51** = -8.30% and the two agree to nine cents — no staleness, as expected away from the bell
+(`t=2026-08-24T16:01:42Z`, ~5s old). **Carry-forward #8 did NOT reproduce**, consistent with every prior
+midday: the IEX bell-staleness failure is specific to the 09:30 ET run, where it cost 1.26pp this morning.
+Neither mark is within 91 points of a gate.
+
+### 🟢 Grok clean an EIGHTH consecutive session — #16 applied a fourth time
+
+Two independent queries, both literal **NONE**:
+
+1. **Standard 10-class enumeration** (guidance cut, recall, litigation, regulatory/export-control, exec
+   departure, downgrade-only, restatement, dilution, short report, contract/customer loss) — **NONE on
+   every class**, with coverage Aug 18–23 characterised as beats, raised guidance and AI-driven demand,
+   and analyst flow all on the *raise* side (Morgan Stanley, UBS, Truist, Baird $410 PT 08-19).
+2. **Dated 08-24 query**, instructed to ignore the 08-18 print — **NONE**. Today's KEYS coverage is
+   routine 13F institutional-ownership disclosures (Meiji Yasuda Asset Management, a ~$7.38M **purchase**)
+   plus the SVP Form 4 already dispositioned by market-open (Ingrid Estrada, 2,000 sh sold 08-20 under a
+   pre-arranged **10b5-1** plan).
+
+Verdict **THESIS INTACT**; per the hard rule (sell only on concrete, named negative news) the position is
+held. **Four consecutive sessions of dated queries have now returned Form 144, 13F *purchases*, a 10b5-1
+Form 4, and today a 13F purchase + the same 10b5-1 — filings, never events.** The dated query remains the
+only version of the check falsifiable against the current session; write it into both routine files at the
+08-25 review.
+
+### 🟠 Carry-forward #15 re-tested a FIFTH time: still not thesis-broken
+
+Neither query surfaced the "guidance raised BUT capacity-constrained" framing as a *new* negative today —
+the standard query returned it under raised-guidance/AI-demand coverage, not as a fundamental negative.
+Judged **not thesis-broken** on the same reasoning as the four prior runs: the Q4 guide was *raised*
+($3.34–3.40 vs ~$2.68 consensus) and a ceiling on upside conversion is not a reduction of the forward
+numbers we bought. **#15 now has five consistent readings and the 08-25 review should rule** rather than
+leaving it to each routine to re-derive.
+
+### 🟢 The tape INVERTED: KEYS made its low early and recovered — first break in the four-session pattern
+
+Off the sip consolidated feed:
+
+| session | open | high | low | close/last | volume |
+|---------|------|------|-----|------------|--------|
+| 2026-08-18 (print) | 350.00 | 350.895 | 332.64 | **341.00** | 3,526,271 |
+| 2026-08-19 | 349.00 | 352.00 | 314.52 | **319.45** | 3,875,269 |
+| 2026-08-20 | 314.66 | 322.69 | 313.195 | **316.51** | 1,905,031 |
+| 2026-08-21 | 319.22 | 322.73 | 310.27 | **316.13** | 1,201,274 |
+| **2026-08-24** | **311.09** | **313.35** | **306.8517** | **312.605** | 246,114 |
+
+Four consecutive sessions printed the high in the opening minutes and walked down. **Today did the
+opposite**: the low **306.8517** came early — a level that would have marked the position **-9.96%**, the
+worst it has ever been — and KEYS has since recovered to **312.605**, within 0.75 of the session high and
+**+1.87% off the low**. Also note **08-21's true close is 316.13, not the 313.59 the 08-21 midday note
+logged** (that was an intraday partial; `lastday_price` 316.13 confirms) and its true volume 1,201,274,
+not 467,092. Logged, not acted on — no rule reads intraday shape and inventing one at the terminal is what
+decision.md forbids. But the shape is the first counter-evidence in five sessions and the 08-25 review
+should read it alongside the four-session pattern rather than after it.
+
+### Step 2 — daily loss cap: NOT hit
+
+| check | value | cap | action |
+|-------|-------|-----|--------|
+| daily P&L | **-1.05%** (6674.00 vs last_equity 6744.50) | -100% (`daily_loss_cap_pct`) | none |
+| weekly P&L | **-1.05%** (Monday; week opens at Friday's $6,744.50) | -100% (`weekly_loss_cap_pct`) | none |
+
+No `cancel-all` (0 open orders anyway), no `notify.sh` alert, no halt marker written to
+`memory/research-log.md`. The cap is decorative at 100%, as every prior note has said. The binding
+constraint on entries today is `max_concurrent_positions: 1` — and this morning it had a **real cost for
+the first time** (GSK scored 6, passed the gate, blocked solely by the cap). Midday opens nothing
+regardless.
+
+### 🔴 TWO SESSIONS TO THE TIME STOP — still the only exit KEYS has
+
+**93.68%** of the book in one name whose only remaining exit is the **2026-08-26 time stop**. At
+`per_trade_stop_pct: 100` the price gate cannot fire above $0.00; thesis-broken denied **eight consecutive
+sessions**. Sessions left: **08-25, 08-26**. The enforcing routine is late-or-missed **26 of 67 (~39%)**
+and **4 of the last 5** → naive odds it fires in time ~**61%**. If it misses, the overdue carve-out sells
+at the 08-27 market-open (precedent KMX 06-26, PENG 07-16, CCK 07-30, BMY 08-10) — a one-session overshoot
+on a Thursday, so no weekend risk.
+
+**➡️ ESCALATION #1, THIRD DAY RUNNING and now with two sessions of runway:**
+`sudo pmset repeat wake MTWRF 12:50:00`, or a market-hours `caffeinate -s` LaunchAgent (~06:20–13:10 PDT,
+no sudo, covers all four routines). Moving the trigger 12:55 → 12:40 PDT is **not** a substitute — a 12:40
+trigger fired into a sleeping machine defers identically. Carry-forward #2 is **not** mitigation; it held
+live assertions through the 08-21 miss.
+
+### 🟢 `no_margin` COMPLIANT — cash +$421.90, unchanged since the 08-19 fill
+
+No order was sent, so nothing could move cash; mark-to-market moves equity only. `long_market_value`
+$6,252.10, `initial_margin` $3,126.05, `maintenance_margin` $1,875.63, `sma` $6,752.10, buying power
+$19,193.48 — no leverage, cash positive a 7th consecutive session. The 98% haircut remains **not
+stress-tested** (#5).
+
+### 🟠 Carry-forward #10: sip returned the current session a THIRD consecutive time
+
+The 08-24 bar came back live (o=311.09, h=313.35, l=306.8517, c=312.605, v=246,114) alongside history, as
+on 08-21 and at this morning's market-open. Three runs now contradict the "sip refuses the current session"
+limit recorded 08-19 — **treat it as a delay, not a refusal, and drop the caveat at the 08-25 review.**
+**Tenth consecutive run calling `feed=sip` out-of-band** while `scripts/alpaca.sh:104` ships `feed=iex`;
+load-bearing again today for the entire session table. Note the raw call also needs
+`ALPACA_SECRET_KEY` (not `ALPACA_SECRET`) per `scripts/alpaca.sh:29` — the first attempt this run failed on
+that. Not applied — midday's remit is exits and notifications, not tooling.
+
+### Ops carry-forward — nothing applied
+
+Midday can apply none of these (exits and notifications only). By reference so the count stays honest:
+**#1** 🔴🔴 EOD sleep-deferral — **TIME-CRITICAL, 2 sessions to the KEYS 08-26 stop**, human call,
+un-applied 3rd day. **#2** `caffeinate -is` still uncommitted (with `AGENTS.md`, `.agents/`, `_raw/`,
+`_edited/`, `.env.bak.broken`, `memory/guardrails.md.conservative.bak`); not mitigation for #1.
+**#3** `routines/market-open.md:29` vs the overdue carve-out — 2 sessions left. **#4** no
+limit-order/partial-close path. **#5** haircut 98% → 96%. **#6/#10** `feed=sip` — **tenth use**,
+load-bearing, still unapplied; its "no current session" limit has now failed three consecutive runs.
+**#7** `routines/midday.md:1` header — **re-confirmed live this run, eighth time**. **#8** IEX bell
+staleness — **did not reproduce** (midday is not the bell); it cost 1.26pp at this morning's open, so
+promote it to a written rule. **#9** `routines/end-of-day.md:1` header. **#11** novelty-at-the-open —
+this morning added GSK on the accept side plus TGT/MRNA/ROST discards. **#12** the 3–7 DTE option window.
+**#13** the bounded fill poll. **#14** `per_trade_stop_pct: 100` + `target_position_pct: 100`
+survivability — **KEYS at -8.27%, 2 sessions from its only exit, and it traded -9.96% intraday today.**
+**#15** "raised but capacity-constrained" — **judged no a fifth time; 08-25 should rule.** **#16** the
+dated Grok query — **applied a fourth time**; write it into both routine files at the 08-25 review.
 
 2026-08-24 market-open: **0 buys, 0 sells, 0 orders.** No preflight invoked, `memory/trade-log.md`
 unchanged. KEYS 20 sh held, marked **312.085** vs 340.8005 entry = **-8.43%**, a new low-water mark for
