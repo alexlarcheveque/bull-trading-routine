@@ -9779,3 +9779,293 @@ position, not a stranded trade.
 ### Disposition: **RESUME MONDAY WITH CURRENT STRATEGY**
 
 Weekly loss cap not hit (100%, decorative), nothing flattened, no pause required.
+
+## 2026-08-24 pre-market research pass
+
+Clock read **06:45:49 ET** (`is_open: false`, `next_open` 09:30 ET). Equity **$6,645.50**, cash
+**$421.90**, 1 open position (**KEYS** 20 sh @ 340.8005, marked 311.1802 = **-8.69%**, a new
+low-water mark for the trade). `max_concurrent_positions: 1` → **the slot is FULL before research
+even starts.** Research-only pass; no orders, per this routine's hard rules.
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+
+> **Limited company-specific materially bullish catalysts emerged for US large-cap equities (market
+> cap >$2B) in the precise last 24 hours (roughly Aug 23 evening through Aug 24, 2026)**, based on
+> available reports. Broader market participation and sector moves (e.g., crypto-related, materials)
+> drove gains for several names amid an overall positive session for major indices.
+> [trefis.com/stock/spy/articles/612519/...2026-08-24] [reuters.com/business/us-stock-futures-rise-after-sharp-losses-prior-session-2026-08-21]
+>
+> Key examples from recent sessions/movers (with timestamps around the period):
+> - **HOOD (Robinhood Markets)**: +13.7% (strongest S&P 500 gainer in the session). Catalyst tied to
+>   Bitcoin surge (crypto platform exposure). Source: Trefis S&P 500 movers report (Aug 24, 2026).
+> - **COIN (Coinbase Global)**: +8.2%. Catalyst: Bitcoin rally to multi-month highs. Source:
+>   Trefis/Briefing.com market updates (Aug 21–24 context).
+> - **MRNA (Moderna)**: +8.9%. Catalyst: Follow-through from prior positive Phase 3 melanoma vaccine
+>   trial data (with Merck partnership). Source: Trefis movers and earlier Deutsche Bank/FXStreet
+>   notes (Aug 20–24).
+> - **FCX (Freeport-McMoRan)**: +7.6%. Catalyst: Strength in materials/commodities (copper/gold
+>   prices). Source: Trefis/Briefing.com (Aug 24 session context).
+>
+> **Other context**: Earlier in the week (Aug 19–21), notable beats/raises included ROST (Ross
+> Stores: earnings beat + raised annual profit guidance, ~8–9% move) and TGT (Target: beat + raised
+> full-year outlook). Analyst upgrades (e.g., ADI, MRK) and AI-related momentum also supported
+> sentiment but were not new in the exact 24-hour window. **No major new large-cap earnings, deals,
+> or trial results were prominently reported in the immediate period**; focus was shifting to
+> upcoming reports (e.g., NVDA). Market sources note broader drivers like yields, crypto, and
+> healthcare/materials rotation rather than isolated catalysts.
+
+### Grok raw output — Query 2: Pre-market movers >2% on news (2026-08-24)
+
+> **SUGP (SU Group Holdings), RITR (Reitar Logtech Holdings), PLAG (Planet Green Holdings), and
+> TDTH (Trident Digital Tech Holdings) stand out among pre-market gainers (>2%) with specific news
+> catalysts on August 24, 2026.** [benzinga.com/news/26/08/61375718/...]
+> - **SUGP**: Up ~23–42% pre-market after subsidiary Shine Union (Macao) secured exclusive Macao
+>   distribution rights for Green Light Multiplex's Inspec Spider high-mast inspection robot.
+>   [geneonline.com] [wfmz.com/news/pr_newswire/...]
+> - **RITR**: Up ~23–45% after announcing a $3 million share repurchase program.
+> - **PLAG**: Up ~11–18% after Curvature Securities announced termination of its sales agreement.
+> - **TDTH**: Up ~6% after announcing a JV with Digital Innovations Group to deploy the IRMA AI
+>   engine across three continents/markets.
+>
+> Other top pre-market gainers (PMI, SDOT, CYPH, OLOX per stockanalysis.com and Benzinga) showed
+> large moves but were primarily attributed to prior-day momentum, Friday gains, or earnings/loss
+> reports **without fresh catalysts specified for August 24**. [stockanalysis.com/markets/premarket/gainers/]
+
+### Grok raw output — Query 3: Earnings beat AND raised guidance (after yesterday's close)
+
+> **None identified.** [kiplinger.com/investing/stocks/17494/next-week-earnings-calendar-stocks]
+>
+> Earnings calendars and recaps for the period around August 23–24, 2026 show limited or no major
+> U.S. reports released after the August 23 close that both beat estimates and raised guidance.
+> [finance.yahoo.com/calendar/earnings/] [nasdaq.com/market-activity/earnings]
+> - Scheduled reports for August 24 (before market open) included **PDD Holdings (PDD)** and
+>   **XPeng (XPEV)**, but no actual results confirming beats + raised guidance were available in
+>   contemporaneous sources.
+> - Broader previews noted no noteworthy after-hours reports on or immediately around those dates,
+>   with larger names (NVDA, CRM) slated for later in the week.
+
+### Grok raw output — Query 4: FDA / >$100M contracts / M&A / regulator decisions (last 24h)
+
+> **No major new FDA approvals, >$100M contract wins, or completed M&A announcements were identified
+> in the last 24 hours (Aug 23–24, 2026) for US-listed companies.**
+> Notable related developments published in this window include:
+> - **GSK (GSK)**: On Aug 24, 2026, Reuters reported GSK received its first global approval (in
+>   Japan) for an experimental chronic hepatitis B drug. Separately, the US FDA granted priority
+>   review to dostarlimab (Jemperli) for a type of rectal cancer (action date Feb 2027).
+>   [reuters.com/business/healthcare-pharmaceuticals/gsk-scores-regulatory-wins-chronic-hepatitis-b-drug-cancer-therapy-2026-08-24]
+> - **Paramount Skydance (PSKY) / Warner Bros. Discovery (WBD)**: On Aug 24, 2026, California's
+>   Attorney General canceled a scheduled meeting with Paramount to discuss settling a lawsuit by
+>   multiple states seeking to block the ~$110–111B Paramount-WBD merger.
+>   [nytimes.com/2026/08/24/us/california-bonta-paramount-warner-settlement-talks.html]
+>   [reuters.com/legal/litigation/california-cancels-talks-with-paramount-over-warner-bros-merger-nyt-reports-2026-08-24]
+>
+> Earlier or non-qualifying items (Philip Morris FDA nod for nicotine pouches on Aug 21; various
+> non-US or pre-Aug 23 items) were excluded. No large US contract awards met the criteria.
+
+### Grok raw output — Query 5 (extra): PDD / XPEV this-morning prints
+
+Run because Query 3 was inconclusive on the only two large-caps scheduled to report before today's open.
+
+> **PDD Holdings (PDD): Reported (before open on Aug 24, 2026).**
+> [investor.pddholdings.com/news-releases/news-release-details/pdd-holdings-announces-second-quarter-2026-unaudited-financial]
+> - **Revenue**: RMB 112.4B (US$16.6B), +8% YoY. Consensus ~US$16.94–17.12B (**slight miss**).
+> - **EPS**: GAAP diluted US$2.72/ADS (basic $2.85); non-GAAP diluted $2.85. Consensus ~$2.73–2.74
+>   (**slight miss or in-line**).
+> - **Other**: Net income attributable to ordinary shareholders RMB 27.2B (US$4.0B), **-12% YoY**.
+>   **No guidance issued or updated** in the release.
+>
+> **XPeng (XPEV): NOT REPORTED.** Q2 2026 results were scheduled for Aug 24 before the open, but no
+> actual release or numbers were available on IR or primary newswires as of this pass.
+
+---
+
+## 🔴 The headline finding: every "last 24 hours" mover Grok returned is Friday's tape
+
+The four names in Query 1 were checked against consolidated (`feed=sip`) daily bars. All four moves
+are the **2026-08-21 session** — already closed, already banked, three calendar days old:
+
+| ticker | 08-20 close | 08-21 close | actual 08-21 move | Grok's claim |
+|--------|-------------|-------------|-------------------|--------------|
+| HOOD   | 95.10       | 108.13      | **+13.70%**       | "+13.7%"     |
+| COIN   | 172.44      | 186.49      | **+8.15%**        | "+8.2%"      |
+| MRNA   | 133.32      | 145.13      | **+8.86%**        | "+8.9%"      |
+| FCX    | 71.22       | 76.66       | **+7.64%**        | "+7.6%"      |
+
+The match is exact to a tenth of a point on all four. The Trefis article carries an **Aug 24 publish
+date** but describes the **Aug 21 session** — Grok read the URL date as the event date. This is
+precisely the novelty trap strategy.md names ("if Grok says AAPL +6% on iPhone news and the bar shows
+the stock already up 6%, novelty is 0–1, not 3"). **Novelty = 0 on all four**, and the date-vs-dateline
+confusion is the same failure mode as BMY 08-18 (Grok dated an FDA approval Aug 18 off an X post; the
+newsroom said Aug 13). Worth noting the check that caught it was a bar pull, not a second Grok query.
+
+## Step 2 — universe filters
+
+Every large-cap candidate cleared `asset` and `volume.sh`; none were rejected on liquidity or
+tradability. Nothing was skipped for being held — **KEYS was not named by any query**.
+
+| ticker | asset status | tradable | 30-day ADV (Yahoo consolidated) | vs 100k floor |
+|--------|--------------|----------|--------------------------------|---------------|
+| HOOD   | active       | true     | 19,886,953                     | ✅ pass |
+| COIN   | active       | true     |  8,625,320                     | ✅ pass |
+| MRNA   | active       | true     | 17,683,590                     | ✅ pass |
+| FCX    | active       | true     | 13,964,760                     | ✅ pass |
+| ROST   | active       | true     |  2,523,396                     | ✅ pass |
+| TGT    | active       | true     |  4,153,970                     | ✅ pass |
+| GSK    | active       | true     |  4,167,580                     | ✅ pass |
+
+**Rejected before scoring:**
+- **SUGP, RITR, PLAG, TDTH** — all four Query-2 movers are micro-caps far below
+  `min_market_cap_usd: 1_000_000_000`. Also note RITR's catalyst is a $3M buyback and PLAG's is a
+  *sales-agreement termination* read as bullish; neither is a material forward-cash-flow event under
+  strategy.md even setting the size floor aside.
+- **PDD** — reported this morning, so it is genuinely fresh, but the print is a **revenue miss, an
+  in-line-to-slightly-missed EPS, net income -12% YoY, and no guidance**. Fails **Directional**. Not
+  a bullish catalyst; not scored.
+- **XPEV** — had not reported at the time of this pass. Nothing to score.
+- **PSKY / WBD** — the only other Query-4 item, and it is *negative* (a state AG walking away from
+  merger-settlement talks). Fails Directional. Strategy.md also puts litigation in the explicit
+  do-not-qualify list.
+
+## Step 3 — scoring the seven survivors
+
+Catalyst strength 0–4 · novelty 0–3 · confirmation 0–2 · cleanliness 0–1.
+
+| ticker | cat | nov | conf | clean | **score** | gate (Material/Fresh/Directional) |
+|--------|-----|-----|------|-------|-----------|-----------------------------------|
+| **GSK**  | 2 | 3 | 0 | 1 | **6** | ✅ **passes all three** |
+| TGT    | 3 | 0 | 2 | 1 | **6** | ❌ fails **Fresh** |
+| MRNA   | 4 | 0 | 0 | 1 | **5** | ❌ fails **Fresh** |
+| HOOD   | 1 | 0 | 2 | 1 | **4** | ❌ fails **Material** |
+| COIN   | 1 | 0 | 2 | 1 | **4** | ❌ fails **Material** |
+| FCX    | 1 | 0 | 2 | 1 | **4** | ❌ fails **Material** |
+| ROST   | 2 | 0 | 1 | 1 | **4** | ❌ fails **Fresh** |
+
+**The gate is not the score.** strategy.md: "A news item qualifies only if it is **all three**."
+TGT composites to 6 and is still not tradeable, because a catalyst that surfaced on 08-19 and has
+since run +8.5% is not fresh. Recording the composite anyway so the weekly review can audit both the
+number and the gate independently.
+
+### Primary-source verification (strategy.md, widened 2026-08-21 to *any* watchlist candidate)
+
+Two names carried catalysts material enough to be worth the call. Both were checked against the
+company's own newsroom, not the aggregator.
+
+**GSK — CONFIRMED, and the dateline is genuinely today.** Both items are GSK's own releases,
+"Issued: London, UK," dated **2026-08-24**:
+1. *"Hibsago (bepirovirsen) approved in Japan as first and only functional cure for chronic hepatitis
+   B"* — first **global** approval, in eligible adults with ≥6 months prior nucleos(t)ide analogue
+   therapy; supported by the B-Well phase 3 programme, accelerated under Japan's SENKU designation.
+   [gsk.com/en-gb/media/press-releases/hibsago-bepirovirsen-approved-in-japan-...]
+2. *"Jemperli (dostarlimab) accepted for priority review by the US FDA"* for previously untreated
+   stage II/III dMMR/MSI-H locally advanced rectal cancer, on AZUR-1 data. **PDUFA action date
+   February 2027**, with possible earlier decision via National Priority Voucher / Project Orbis.
+   [gsk.com/en-gb/media/press-releases/jemperli-dostarlimab-accepted-for-priority-review-by-the-us-fda/]
+
+No earlier announcement of either event exists on gsk.com — this is not a restatement of old news.
+
+**MRNA — CONFIRMED, and the confirmation is what disqualifies it.** The joint Merck/Moderna release
+*"Phase 3 INTerpath-001 Trial of Intismeran Autogene Plus KEYTRUDA Met Endpoints of RFS and DMFS…"*
+is datelined **August 19, 2026, 6:45 a.m. EDT** — five days ago, not "the last 24 hours."
+[news.modernatx.com/merck-and-moderna-announce-phase-3-interpath-001-...] [merck.com/news/...]
+1,137 patients, stage IIB–IV resected melanoma; met primary RFS and key secondary DMFS endpoints;
+prior Phase 2b showed HR 0.51 recurrence / HR 0.41 distant metastasis. Genuinely a catalyst-strength-4
+event — the first positive Phase 3 for an individualized neoantigen therapy. It is also **completely
+spent**: 62.96 → 174.38 on the day (**+177%**, 199M shares), and MRNA now sits at 145.13, still
+**+130%** above the pre-catalyst close but **-16.8% off the catalyst close**. Grok found no negative
+or qualifying news Aug 20–24 and attributes the give-back to profit-taking. Confirmation scored **0**
+— "price up since the catalyst hit" is false; the name is unwinding, not confirming.
+
+### Why GSK scores what it does — and why the 6 is soft
+
+- **Catalyst 2, not 3–4.** Real regulator decisions in-class per strategy.md, but the cash-flow delta
+  is small against a ~£31B revenue base: a *Japan-only* launch, and a priority-review **acceptance**
+  is a procedural milestone with no US revenue possible before Feb 2027 and approval not assured.
+- **Novelty 3.** Verified today's dateline, and nothing is in the price.
+- **Confirmation 0 — and this is the honest problem with the name.** GSK is trading **$51.81–51.94
+  pre-market, -0.9% to -1.14%** vs the 08-21 close of $52.41; London-listed shares are down ~0.5%.
+  [public.com/stocks/gsk/pre-market] [marketscreener.com/news/gsk-says-jemperli-accepted-for-priority-review-...]
+  The market has read a double dose of pipeline good news and **sold it**. The 08-21 bar (+0.87% on
+  2.41M shares vs ~4.17M ADV — below average) predates the news and confirms nothing either.
+- **Cleanliness 1.** No offsetting bad news, no halt, `no_earnings_within_days: 0`.
+
+**Mega-cap:** GSK's ADR market cap is **~$104.97B** at the 08-21 close [financecharts.com] —
+**over the $100B line**, so the 07-17 rule applies: **shares only, never a call**, and the freshness
+bar is 4% rather than 5%. At -1.1% pre-market it passes that bar comfortably; the objection to GSK is
+zero confirmation, not staleness.
+
+## 2026-08-24 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                  | source |
+|--------|-------|--------------------------------------------------------------------------------------|--------|
+| GSK    | 6     | Hibsago (bepirovirsen) first global approval (Japan) as first functional cure for chronic hep B; Jemperli granted US FDA priority review in dMMR/MSI-H rectal cancer, PDUFA Feb 2027 — both GSK releases datelined 08-24 | gsk.com media releases (primary); reuters.com/...2026-08-24 |
+
+**GSK is the only candidate that passes the Material/Fresh/Directional gate, and it lands exactly on
+the threshold at 6.** It is tradeable on paper.
+
+**Entry is nonetheless BLOCKED today, and not by the score.** `max_concurrent_positions: 1` and KEYS
+is open (20 sh, -8.69%, target_exit **2026-08-26**). The slot is full, so market-open cannot enter
+GSK regardless of what this pass concluded. **Fourth consecutive session the position cap is the
+binding constraint** — and the first session in that run where it is binding on something that would
+otherwise have qualified. On 08-20 (top score 5) and 08-21 (top score 4) both gates refused
+independently and the cap was free in practice; today it is not. Recording that distinction plainly,
+because it is the first real cost the FULL YOLO `max_concurrent_positions: 1` setting has imposed.
+
+Skipped (below threshold or gate-failed):
+- **TGT (score 6): DQ'd on freshness.** Beat + raised FY outlook, but reported **08-19**; the stock
+  has run 152.48 → 165.44 = **+8.5%** across three sessions and made new highs Friday. Composites to
+  6 on genuine confirmation (2), but there is no second wave left to catch. Already scored 4 on the
+  08-20 watchlist.
+- **MRNA (score 5): DQ'd on freshness.** Phase 3 INTerpath-001 win verified at the primary source and
+  worth a 4 on catalyst strength — but datelined 08-19 and **+130%** above the pre-catalyst close,
+  while trading **-16.8% below** the catalyst-day close. Confirmation 0: it is unwinding.
+- **HOOD (score 4): not a corporate catalyst.** +13.7% Friday on a Bitcoin rally = sector beta. The
+  volume was real (50.4M vs ~19.9M ADV) but strategy.md excludes generic macro; there is no named
+  event at Robinhood.
+- **COIN (score 4): not a corporate catalyst.** Same Bitcoin rally; +27.5% across three sessions
+  (146.23 → 186.49). Beta, not news, and thoroughly priced.
+- **FCX (score 4): not a corporate catalyst.** Copper/gold strength; +15.6% across three sessions.
+  Commodity macro.
+- **ROST (score 4): DQ'd on freshness, and the beat is still low-quality.** Reported 08-20, gapped to
+  243.85 on 08-21 and **faded to 239.04** — closed below its open. Our own 08-21 primary-source check
+  found ~$0.60 of the $2.66 quarter and ~$0.60 of the $1.11 FY raise were an **IEEPA tariff refund**,
+  i.e. non-operating. Scored 4 on 08-21; unchanged at 4 today, now with the added evidence that the
+  gap did not hold.
+- **PDD: revenue miss, in-line EPS, net income -12% YoY, no guidance.** Fresh but not directional.
+- **XPEV:** had not reported at the time of this pass.
+- **PSKY / WBD:** merger-settlement talks *cancelled* — negative, and litigation is excluded outright.
+- **SUGP / RITR / PLAG / TDTH:** micro-caps below the $1B market-cap floor.
+
+### 🟠 Carry-forward #10 re-confirmed, and the IEX default cost real accuracy this run
+
+`scripts/alpaca.sh:104` still hardcodes `feed=iex`. Every bar in this pass came from an out-of-band
+`feed=sip` call — **eighth consecutive run doing this**. It mattered today: the Grok-vs-tape check that
+killed HOOD/COIN/MRNA/FCX on novelty depends on having accurate 08-20 and 08-21 closes, which the IEX
+default does not reliably return. Still the only carry-forward a routine could safely apply without a
+human, and pre-market's remit is research, not tooling — not applied here.
+
+Also worth logging: the Alpaca `snapshot` endpoint returned **all-null** fields for every ticker during
+this pre-market window (`latestTrade.p`, `prevDailyBar.c` all `null`), so GSK's pre-market mark above
+comes from Grok-cited public sources rather than Alpaca. Market-open should re-measure GSK's novelty
+off the actual open per the ALB 08-06 / KEYS 08-19 rule if the position cap ever clears.
+
+### Ops carry-forward — nothing applied (research-only routine)
+
+**#1** 🔴🔴 **EOD sleep-deferral — `sudo pmset repeat wake MTWRF 12:50:00` or a market-hours
+`caffeinate -s` LaunchAgent. NOW TWO SESSIONS FROM THE KEYS 08-26 TIME STOP** (08-25, 08-26 remain),
+which at `per_trade_stop_pct: 100` is the only exit that exists on 93.7% of the book. Missed 4 of the
+last 5. Human call, un-applied for a third day. **#2** `caffeinate -is` in `scripts/run-routine.sh`
+still uncommitted (with `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`,
+`memory/guardrails.md.conservative.bak`); empirically **not** mitigation for #1. **#3**
+`routines/market-open.md:29` vs strategy.md's overdue carve-out — still contradictory, **2 sessions
+left in which it could ever matter**, and it goes live if the 08-26 EOD misses. **#4** no limit-order
+or partial-close path in `alpaca.sh`. **#5** widen the entry haircut 98% → 96%, untested. **#6/#10**
+`feed=sip` — **used an eighth time, load-bearing this run** (see above), still unapplied.
+**#7** `routines/midday.md:1` header wrong by an hour. **#9** `routines/end-of-day.md:1` header.
+**#11** the HD novelty-at-the-open discard-side question — **TGT and MRNA are today's instances**;
+mark both from tomorrow's *open*, not from Friday's close, per the 08-14 rule. **#12** the 3–7 DTE
+option window. **#13** the bounded fill poll. **#14** `per_trade_stop_pct: 100` +
+`target_position_pct: 100` survivability — **KEYS at -8.69%, a new low, 2 sessions from its only
+exit**. **#15** "raised but capacity-constrained" as thesis-broken — 08-25 should rule. **#16** the
+dated "what happened TODAY" Grok query — **this pass is a fifth argument for it**: the canned
+"last 24 hours" phrasing returned Friday's session as though it were overnight news on all four names.
+Write it into the routine files at the 08-25 review.
