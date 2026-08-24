@@ -10236,3 +10236,41 @@ its only exit, and today the same config's position cap also blocked a qualifyin
 "raised but capacity-constrained" as thesis-broken — surfaced a **fifth** time (Motley Fool 08-22), judged
 no again; **08-25 should rule**. **#16** the dated "what happened TODAY" Grok query — **applied a third
 time by market-open**; write it into both routine files at the 08-25 review.
+
+## 2026-08-24 end-of-day pass
+
+**🟢 ON TIME — `run-routine.sh end-of-day` started 12:55:04 PDT, 4 seconds after the 12:55:00 trigger;
+`clock.is_open` = `true`, clock read 15:55:11 ET with 4m49s of market left.** First on-time EOD since
+08-17 and the tightest margin on record. **0 exits, 0 orders, preflight not invoked.**
+
+**This is luck, not a fix.** `pmset -g sched` read live shows **no bull wake event** (only
+`osanalytics.hardhighengagementtimer` 16:57:44 and `calaccessd.travelEngine` 17:08:21), and `pmset sleep`
+is still 1 minute. The machine happened to be awake at the trigger. Escalation #1 is **un-applied for a
+fourth day**, and only **one** enforcing run (08-26 EOD) remains before the KEYS time stop.
+Late-or-missed holds at **26 of 68 (~38%)**.
+
+**Exits:** time stop not due (`target_exit` 2026-08-26, 2 sessions out, not overdue); expiry guard n/a
+(shares only). Safety net re-run in full **with the market open**, unlike 08-20/08-21: profit target
+-8.84% vs +100% no; stop loss -8.84% vs -100% no; thesis-broken **NONE** on both Grok queries (10-class
+enumeration + dated 08-24 query) — **ninth consecutive clean session**, verdict THESIS INTACT.
+
+**Weekly loss cap:** NOT hit — daily -1.62%, weekly -1.62% (Monday), both against a -100% cap. No
+flatten, no `cancel-all`, no `PAUSED` marker.
+
+**Close:** equity **$6,635.10**, cash $421.90, day **-1.62%**, WTD -1.62%, all-time -93.36%. KEYS 20 sh
+marked **310.66** = **-8.84%**, 93.64% of the book. EOD email sent
+(id `655bad87-254f-4b48-ac4d-26ac150178fc`).
+
+### Candidate closes — marked from the OPEN per the 08-14 rule
+
+| ticker | score | open | close | return | disposition |
+|--------|-------|------|-------|--------|-------------|
+| **GSK** | **6** | **51.54** | **51.80** | **+0.50%** | **passed the gate; blocked solely by `max_concurrent_positions: 1`** |
+| TGT | 6 | 166.06 | 169.90 | +2.31% | DQ'd on freshness (reported 08-19, +8.5% over three sessions) |
+| MRNA | <6 | 142.70 | 138.89 | **-2.67%** | below threshold — validated |
+| ROST | <6 | 238.075 | 241.62 | +1.49% | below threshold |
+
+GSK **+0.50%** vs KEYS **-1.75%** close-to-close: **the position cap cost roughly 2.2pp today** — the
+first measurable cost the FULL YOLO `max_concurrent_positions: 1` setting has imposed. GSK's score of 6
+carried confirmation of 0 and it duly went nowhere, so one session is not an indictment; the 08-25 weekly
+review should price it against carry-forward #14 rather than treat it as settled either way.

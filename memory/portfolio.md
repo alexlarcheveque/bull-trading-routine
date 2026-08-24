@@ -1,19 +1,207 @@
 # portfolio.md
-# Updated 2026-08-24 11:02 CT (12:02 ET) by midday routine.
+# Updated 2026-08-24 15:00 CT (16:00 ET) by end-of-day routine.
 
 ## Account
-- equity: 6674.00
+- equity: 6635.10
 - cash: 421.90
-- buying_power: 19193.48
-- day_pnl_pct: -1.05  # vs last_equity 6744.50
+- buying_power: 19084.56
+- day_pnl_pct: -1.62  # vs last_equity 6744.50
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -8.27              |
+| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -8.84              |
 
 ## Notes
+
+2026-08-24 EOD: **🟢 ON TIME — started 12:55:04 PDT, 4 SECONDS after the trigger; clock read 15:55:11 ET
+with 4m49s of market left.** First on-time EOD since 08-17, breaking a streak of 4 misses in 5 runs.
+**0 exits, 0 orders, no preflight**, `memory/trade-log.md` unchanged. KEYS 20 sh marked at the close
+**310.66** vs 340.8005 entry = **-8.84%**, a 0.57pp improvement on the -9.41% intraday worst. Market value
+**$6,213.20** on $6,635.10 equity = **93.64% of the book**. Equity **$6,635.10**, cash **+$421.90**, day
+**-1.62%**, WTD **-1.62%** (Monday), all-time **-93.36%** from the $100,000 open. Reconciled against
+Alpaca: `positions` returns 1 (`asset_class: us_equity`), `orders open` returns **0** — no drift.
+**20 × 310.66 + 421.90 = $6,635.10 = equity, to the cent.** EOD email **SENT**
+(id `655bad87-254f-4b48-ac4d-26ac150178fc`).
+
+### 🟢 RUN QUALITY: ON TIME — but it is LUCK, not the fix. Escalation #1 is still un-applied.
+
+`ps -eo lstart` shows `run-routine.sh end-of-day` started **`Mon Aug 24 12:55:04 2026`** against a
+12:55:00 PDT trigger — **+4s, the tightest margin on record**, beating 08-17's +35s.
+
+| run | trigger | actual start | delta | outcome |
+|-----|---------|--------------|-------|---------|
+| 08-17 EOD | 12:55 PDT | `12:55:35` | +35s | ✅ ON TIME — RDNT time-stop filled 15:55:56 ET |
+| 08-18 EOD | 12:55 PDT | `13:04` | +9m | 🔴 missed |
+| 08-19 EOD | 12:55 PDT | `12:59:16` | +4m 16s | 🟠 LATE but acted, 44s to spare |
+| 08-20 EOD | 12:55 PDT | `13:05:59` | +10m 59s | 🔴 missed |
+| 08-21 EOD | 12:55 PDT | `12:59:51` | +4m 51s | 🔴 missed by 1 second |
+| **08-24 EOD** | 12:55 PDT | **`12:55:04`** | **+4s** | ✅ **ON TIME** |
+
+**Do not read this as a fix.** `pmset -g sched` read live this run shows **NO bull wake event** — only
+`com.apple.osanalytics.hardhighengagementtimer` (16:57:44) and `com.apple.calaccessd.travelEngine`
+(17:08:21), the same two Apple alarms as every prior run. `pmset sleep` is still **1 minute**. The
+machine simply happened to be **awake** at 12:55:00 (`sleep prevented by caffeinate, caffeinate,
+mds_stores`), so launchd fired immediately instead of deferring. **The sleep-deferral mechanism the
+08-20 run root-caused is untouched; today just didn't roll into it.** Note the `caffeinate` assertions
+visible here include this run's own (`pid 95016`, started `12:55:04`, the same second) — a consequence
+of the run, not a cause of it, exactly as the 08-21 note established. Late-or-missed count holds at
+**26 of 68 (~38%)**.
+
+### 🔴 ONE SESSION TO THE TIME STOP — and it is still the only exit KEYS has
+
+**93.64%** of the book in one name whose only remaining exit is the **2026-08-26 time stop**. At
+`per_trade_stop_pct: 100` the price gate cannot fire above $0.00; thesis-broken has now been denied
+**nine consecutive sessions**. Sessions left: **08-25, 08-26** — but only the **08-26 EOD** can enforce
+the stop, so it is a single run against a ~38% historical miss rate → naive odds it fires in time ~**62%**.
+Today's on-time run does not improve those odds: nothing about the machine changed.
+
+**➡️ ESCALATION #1, FOURTH DAY RUNNING, now with ONE enforcing run left:**
+`sudo pmset repeat wake MTWRF 12:50:00`, or a market-hours `caffeinate -s` LaunchAgent (~06:20–13:10 PDT,
+no sudo, covers all four routines). Moving the trigger 12:55 → 12:40 PDT is **not** a substitute — a 12:40
+trigger fired into a sleeping machine defers identically. Carry-forward #2 is **not** mitigation.
+If 08-26 EOD misses, the overdue carve-out sells at the 08-27 market-open (precedent KMX 06-26,
+PENG 07-16, CCK 07-30, BMY 08-10) — a one-session overshoot on a Thursday, so no weekend risk.
+
+### Step 1 — time stops + expiry guard: nothing due. Safety net re-run in full.
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| **time stop** | target_exit **2026-08-26** | today >= target_exit | **no — 2 sessions out, not overdue** |
+| overdue carve-out | not past due | strictly in the past | no |
+| expiry guard | n/a — shares, no options open | within 2 trading days | n/a |
+| profit target | -8.84% | +100% (`per_trade_target_pct`) | no |
+| stop loss | -8.84% | **-100%** (`per_trade_stop_pct`) | **no — 91.2pp of room** |
+| thesis broken | Grok **NONE ×10 classes** + dated 08-24 query **NONE** | concrete named event | no |
+
+Instrument detected live off Alpaca `asset_class: us_equity` → shares path, `quote`/`sell`, preflight
+`equity`. Unlike 08-20 and 08-21, **the thesis check was actually run this time** — the market was open
+with ~4 minutes left, so a verdict could have produced an order. It did not.
+
+### 🟢 Grok clean a NINTH consecutive session — #16 applied a fifth time
+
+Two independent queries, both literal **NONE**:
+
+1. **Standard 10-class enumeration** (guidance cut, recall, litigation, regulatory/export-control, exec
+   departure, downgrade-only, restatement, dilution, short report, contract/customer loss) — **NONE on
+   every class.** Only qualifications offered were the pre-existing Centripetal matters (old, no new
+   filings) and the already-dispositioned 10b5-1 SVP sale; analyst flow characterised as upgrades/PT
+   raises. Grok itself attributed the drawdown to earnings-call supply-chain commentary — i.e. #15,
+   which the query explicitly excluded.
+2. **Dated 08-24 query**, instructed to ignore the 08-18 print — replied the single word **NONE**.
+
+Verdict **THESIS INTACT**; per the hard rule (sell only on concrete, named negative news) the position is
+held into its final session. **Five consecutive dated queries have returned Form 144, 13F *purchases*, a
+10b5-1 Form 4, a 13F purchase, and now nothing at all — filings, never events.** #16 has earned its place;
+write it into both routine files at the 08-25 review.
+
+### 🟠 Carry-forward #15 re-tested a SIXTH time: still not thesis-broken
+
+The 10-class query surfaced the supply-chain/capacity framing only as unprompted colour on the drawdown,
+not as a new negative in any of the ten classes. Judged **not thesis-broken** on the same reasoning as the
+five prior runs: the Q4 guide was *raised* ($3.34–3.40 vs ~$2.68 consensus) and a ceiling on upside
+conversion is not a reduction of the forward numbers we bought. **#15 now has six consistent readings and
+the 08-25 review should rule** — this is its last chance to matter for KEYS.
+
+### The tape: KEYS made its low early a second day and closed mid-range
+
+Off the sip consolidated feed:
+
+| session | open | high | low | close | volume |
+|---------|------|------|-----|-------|--------|
+| 2026-08-18 (print) | 350.00 | 350.895 | 332.64 | **341.00** | 3,526,271 |
+| 2026-08-19 | 349.00 | 352.00 | 314.52 | **319.45** | 3,875,269 |
+| 2026-08-20 | 314.66 | 322.69 | 313.195 | **316.51** | 1,905,031 |
+| 2026-08-21 | 319.22 | 322.73 | 310.27 | **316.13** | 1,201,274 |
+| **2026-08-24** | **311.09** | **313.82** | **306.8517** | **310.59** | **733,309** |
+
+The inversion midday flagged **held**: the session low **306.8517** (which would have marked the position
+**-9.96%**) came early, and KEYS closed **+1.22% off it**. But it also gave back the midday recovery —
+midday marked 312.605, the close is 310.59 — so the day is better described as *low-early, chop, close
+soft* than as a clean reversal. Close-to-close **-1.75%** vs the 316.13 prior close. Two sessions now
+counter the four-session high-early/walk-down pattern; **the 08-25 review should read all six together.**
+Logged, not acted on — no rule reads intraday shape.
+
+### 🟢 Carry-forward #8 did NOT reproduce at the close — staleness is a 09:30 phenomenon
+
+`./scripts/alpaca.sh quote KEYS` returned `p=310.66` at `t=2026-08-24T19:59:52Z` = **15:59:52 ET, 8
+seconds before the bell** — matching `positions.current_price` (310.66) **exactly**. Contrast this
+morning, where the same call returned Friday's 15:59:48 print and would have overstated the position by
+**1.26pp**. Two data points now bracket it: **IEX is stale at the 09:30 open and live at the 16:00 close.**
+That is a sharper rule than "prefer `positions.current_price`" and should be written up as such at the
+08-25 review alongside #16. (sip closed at **310.59** on 733,309 shares vs Alpaca's 310.66 mark — a
+7-cent spread between consolidated tape and Alpaca's mark, immaterial and not staleness.)
+
+### Step 2 — weekly loss cap: NOT hit
+
+| check | value | cap | action |
+|-------|-------|-----|--------|
+| daily P&L | **-1.62%** (6635.10 vs last_equity 6744.50) | -100% (`daily_loss_cap_pct`) | none |
+| weekly P&L | **-1.62%** (Monday; week opens at Friday's $6,744.50) | -100% (`weekly_loss_cap_pct`) | none |
+
+No flatten, no `cancel-all` (0 open orders anyway), no `notify.sh` alert, no `PAUSED` marker in
+`memory/research-log.md`. The cap is decorative at 100%, as every prior note has said.
+
+### 🔴 The position cap's cost, now measured at the close: ~2.2pp in one session
+
+Market-open recorded the first session on which `max_concurrent_positions: 1` was the **sole** reason no
+trade happened — GSK scored **6** against a threshold of 6, passed Material/Fresh/Directional with both
+catalysts verified against GSK's own 08-24 newsroom releases, and was blocked only by the full slot.
+Marking from the open per the 08-14 rule:
+
+| ticker | open | close | return | disposition |
+|--------|------|-------|--------|-------------|
+| **GSK** | **51.54** | **51.80** | **+0.50%** | **cap-blocked (accept side)** |
+| TGT | 166.06 | 169.90 | +2.31% | DQ'd on freshness |
+| MRNA | 142.70 | 138.89 | **-2.67%** | below threshold |
+| ROST | 238.075 | 241.62 | +1.49% | below threshold |
+
+GSK **+0.50%** against KEYS **-1.75%** close-to-close: the cap cost roughly **2.2pp today**. One session
+is not an indictment — GSK's score of 6 came with confirmation of 0, and it duly went nowhere — but the
+**08-25 review should price this against #14**: the same FULL YOLO config that put 93.6% of the book into
+one name is what blocked the diversifier. Carry-forward #11 gets a fourth discard-side instance (MRNA is
+the useful one — a **-2.67%** day validates the below-threshold call) plus the accept-side GSK mark.
+
+### 🟢 `no_margin` COMPLIANT — cash +$421.90, unchanged since the 08-19 fill
+
+No order was sent, so nothing could move cash; mark-to-market moves equity only. `long_market_value`
+$6,213.20, `initial_margin` $3,106.60, `maintenance_margin` $1,863.96, `sma` $6,752.10, buying power
+$19,084.56 — no leverage, cash positive an 8th consecutive session. Account `ACTIVE`, `trading_blocked`
+and `account_blocked` both `false`. The 98% haircut remains **not stress-tested** (#5).
+
+### 🟠 Carry-forward #10: sip returned the current session a FOURTH consecutive time
+
+The 08-24 bar came back live intraday (c=310.545, v=649,427 at 15:56 ET) and again final after the close
+(c=310.59, v=733,309), as on 08-21, at this morning's open, and at midday. **Four runs now contradict the
+"sip refuses the current session" limit recorded 08-19 — it is a delay, not a refusal; drop the caveat at
+the 08-25 review.** **Eleventh consecutive run calling `feed=sip` out-of-band** while
+`scripts/alpaca.sh:104` ships `feed=iex`; load-bearing again today for the session table and every
+rejection mark. Not applied — EOD's remit is exits, journaling and notification, not tooling.
+
+### Ops carry-forward — nothing applied
+
+**#1** 🔴🔴 EOD sleep-deferral — **TIME-CRITICAL, ONE enforcing run left before the KEYS 08-26 stop**;
+today ran on time on luck, `pmset -g sched` still shows no bull wake. Human call, un-applied 4th day.
+**#2** `caffeinate -is` still uncommitted (with `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`,
+`.env.bak.broken`, `memory/guardrails.md.conservative.bak`); not mitigation for #1. **#3**
+`routines/market-open.md:29` vs the overdue carve-out — **1 session left in which it could ever matter**,
+and it becomes live the moment 08-26 EOD misses. **#4** no limit-order/partial-close path. **#5** haircut
+98% → 96%, still not stress-tested. **#6/#10** `feed=sip` — **eleventh use**, load-bearing, still
+unapplied; its "no current session" limit has now failed four consecutive runs. **#7**
+`routines/midday.md:1` header — not exercised this run. **#8** IEX bell staleness — **did NOT reproduce at
+the close** (quote matched to the cent at 15:59:52 ET); combined with this morning's 1.26pp error this
+resolves into a sharper written rule: *stale at the open, live at the close.* **#9**
+`routines/end-of-day.md:1` header claims `3:55 PM Central / 4:55 PM Eastern` — internally contradictory
+(15:55 CT = 16:55 ET, after the close) and wrong on both counts; the live plist is 12:55 PDT = **15:55 ET
+/ 14:55 CT**. Docs-only fix, do NOT move the plist. **#11** novelty-at-the-open — **closes measured**:
+GSK +0.50% (accept side, cap-blocked), MRNA -2.67%, ROST +1.49%, TGT +2.31%. **#12** the 3–7 DTE option
+window — the reason KEYS is shares at 93.6% of the book with no premium-decay exit. **#13** the bounded
+fill poll. **#14** `per_trade_stop_pct: 100` + `target_position_pct: 100` survivability — **KEYS closed
+-8.84%, one enforcing run from its only exit, and the same config cost ~2.2pp by blocking GSK today.**
+**#15** "raised but capacity-constrained" — **judged no a sixth time; 08-25 is its last chance to matter.**
+**#16** the dated Grok query — **applied a fifth time**; write it into both routine files at the 08-25
+review.
 
 2026-08-24 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md` unchanged.
 KEYS 20 sh marked **312.605** vs 340.8005 entry = **-8.27%**, recovering 0.16pp off the -8.43% market-open
