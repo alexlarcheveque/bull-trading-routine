@@ -10475,3 +10475,99 @@ run misses again), by which point NVT's novelty will have to be re-measured from
 on-time EOD was luck (machine happened to be awake), not a fix. Un-applied for a fifth day:
 `sudo pmset repeat wake MTWRF 12:50:00`, or a market-hours `caffeinate -s` LaunchAgent (~06:20–13:10 PDT,
 no sudo). Research routine cannot apply either — human call.
+
+## 2026-08-25 market-open execution
+
+Run started 06:30 PDT / 09:30 ET; `clock.is_open` = `true`, clock read **09:30:16 ET**, 16s after the
+bell — tenth consecutive on-time market-open. Account `ACTIVE`, `trading_blocked` = `false`.
+
+**Result: 0 buys, 0 sells, 0 orders, preflight never invoked.** `memory/trade-log.md` unchanged.
+
+### Step 1 — exits: no gate fired
+
+KEYS 20 sh, entry 340.8005 (2026-08-19), target_exit **2026-08-26**. Marked **318.175** off
+`positions.current_price` = **-6.64%**, a 2.20pp improvement on the 08-24 EOD -8.84%.
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| profit target | -6.64% | +100% | no |
+| stop loss | -6.64% | -100% | no — 93.4pp of room |
+| thesis broken | Grok NONE x10 classes; dated 08-25 query = a 13F **purchase** | concrete named event | no |
+| time stop | target_exit 2026-08-26 | today >= target_exit | **no — due TOMORROW** |
+| overdue carve-out | not past due | strictly in the past | no |
+| expiry guard | n/a — shares | — | n/a |
+
+Grok, two queries: (1) ten-class enumeration returned literal **NONE** on every class, analyst flow on
+the upgrade side; (2) dated 08-25 query returned one item — **Sanctuary Advisors LLC disclosed a NEW
+$7.62M stake (21,782 sh, Q2 2026) via 13F**. A purchase. **THESIS INTACT**, position held into its final
+session. Sixth consecutive dated query returning a filing rather than an event; five of six on the buy side.
+
+### Step 2 — halt: entries HALTED on `max_concurrent_positions: 1` (slot full, KEYS held)
+
+Day P&L **+2.27%** and week P&L **+0.61%** are both far from the -100% caps. The position cap is the
+sole binding constraint, for the second consecutive session.
+
+### Step 3 — entries: NVT (score 7) qualified at the open and was CAP-BLOCKED
+
+Novelty re-measured at the open exactly as this morning's pre-market pass instructed:
+
+| reference | price |
+|-----------|-------|
+| pre-catalyst close 08-21 | 151.98 |
+| catalyst-day close 08-24 | 153.35 |
+| **08-25 open** | **157.68 = +2.82% vs catalyst-day close** |
+| pre-market kill threshold | 161.02 (+5%) — **not breached** |
+
+**NVT's novelty was NOT consumed; the name still qualified at the bell and we could not buy it.** The
+score gate said yes (7 vs a threshold of 6), the config said no. Yesterday the cap blocked a 6 (GSK,
+which went on to close +0.50%); today it blocked a **7** whose entry condition was verified live. This
+is the cleanest measurement of the cap's cost in the log. **The 08-26 review must price it against #14.**
+The slot frees tomorrow on the KEYS time stop, at which point NVT's novelty needs a third re-measure.
+
+Rejection open-marks (sip, per the 08-14 rule — from the open, never the prior close):
+
+| ticker | 08-24 close | 08-25 open | gap | disposition |
+|--------|-------------|------------|-----|-------------|
+| **NVT** | 153.35 | **157.68** | **+2.82%** | **cap-blocked (accept side, score 7)** |
+| JNJ | 273.04 | 271.00 | -0.75% | below threshold (5) |
+| BA | 210.46 | 212.495 | +0.97% | below threshold (3) |
+| BJ | 98.49 | 97.63 | -0.87% | DQ freshness |
+| ROST | 241.52 | 241.50 | -0.01% | DQ freshness |
+| Z | 37.05 | 37.48 | +1.16% | DQ Directional |
+| ESTC | 83.24 | 82.98 | -0.31% | DQ Material |
+
+**The primary-source rule defended the answer again.** Grok query 2 this morning called ROST "a clear
+pre-market mover (>2% up)... gapped higher ~6%+ in pre-market (~$243 area)" on an 08-25 catalyst.
+Pre-market DQ'd it on freshness after finding the release dated 08-21. **ROST opened 241.50 vs a 241.52
+close — a gap of -0.01%.** No 6% gap, no 08-25 catalyst. Seventh consecutive session in which the 08-21
+rule changed or defended the answer; log this one as a **defend**.
+
+### Data-quality findings this run
+
+1. **🔴 Carry-forward #8 reproduced, at 2.20pp — the largest yet and the FIRST against us.**
+   `alpaca.sh quote KEYS` returned `p=310.66 @ 2026-08-24T19:59:52Z` (yesterday's close). It would have
+   marked the position **-8.84%** instead of the true **-6.64%**. On 08-24 the same bug ran +1.26pp in our
+   favour. **The sign is just the overnight move — staleness is not a one-way bias.** Refined rule, three
+   data points: *IEX `quote` is stale at the 09:30 open and live at the 16:00 close.*
+2. **🔴 `feed=sip` entitlement pinned down.** `/v2/stocks/snapshots?feed=sip` returns
+   `{"message":"subscription does not permit querying recent SIP data"}`, while daily **sip bars** return
+   the current session fine (NVT's 08-25 bar came back live). The account has **delayed SIP bars, not
+   real-time SIP quotes/trades.** This retires the "sip refuses the current session" caveat carried since
+   08-19 — it was always a delay on the bars endpoint. Thirteenth out-of-band `feed=sip` call;
+   `scripts/alpaca.sh:104` still ships `feed=iex`.
+3. **🆕 A sip bar pulled intraday is a PARTIAL, not a close.** The 08-24 EOD note recorded the close as
+   310.59 on 733,309 shares and blamed a 7-cent tape-vs-mark spread. The completed bar is
+   **310.66 on 1,038,616** — Alpaca's mark was right, the sip read was ~4 minutes early. Second instance
+   (08-21 midday was the first: 313.59/467,092 -> 316.13/1,201,274). **Re-pull sip bars after the close
+   before writing a session close down.**
+
+### 🔴 One session to the KEYS time stop — escalation #1 has zero slack left
+
+93.78% of the book sits in KEYS, whose only remaining exit is the **2026-08-26 time stop**, enforceable
+only by the **08-26 EOD run** — one run against a ~38% historical miss rate (~62% naive odds). Today's
++2.27% improves the mark, not the exit path. `sudo pmset repeat wake MTWRF 12:50:00`, or a market-hours
+`caffeinate -s` LaunchAgent (~06:20-13:10 PDT, no sudo), un-applied for a fifth day. **Human call — no
+routine can apply either.** If 08-26 EOD misses, the overdue carve-out sells at the 08-27 market-open
+(precedent KMX 06-26, PENG 07-16, CCK 07-30, BMY 08-10); 08-27 is a Thursday, so no weekend risk.
+Carry-forward **#3** (`routines/market-open.md:29` contradicting that carve-out, verified still present
+this run) has exactly **one morning left** in which it could ever matter.
