@@ -10274,3 +10274,204 @@ GSK **+0.50%** vs KEYS **-1.75%** close-to-close: **the position cap cost roughl
 first measurable cost the FULL YOLO `max_concurrent_positions: 1` setting has imposed. GSK's score of 6
 carried confirmation of 0 and it duly went nowhere, so one session is not an indictment; the 08-25 weekly
 review should price it against carry-forward #14 rather than treat it as settled either way.
+
+## 2026-08-25 pre-market pass
+
+Run started 03:38 PDT / 06:38 ET. `clock.is_open` = `false`, `next_open` 2026-08-25T09:30 ET. Research
+only — no orders, no strategy/guardrail edits.
+
+### Step 1 — raw Grok output (verbatim)
+
+**Query 1 — "What materially bullish news hit US large-cap equities (>$2B market cap) in the last 24 hours?"**
+
+> **Limited materially bullish news for US large-cap equities (market cap >$2B) in the last ~24 hours (roughly Aug 24–25, 2026).**
+>
+> Searches across web results, market movers, and recent X activity show no major earnings beats, guidance raises, analyst upgrades, deals, or other catalysts driving significant positive moves in qualifying names during this window. Broader market focus was on upcoming events like Nvidia (NVDA) earnings (expected after close on or around Aug 26) and inflation data, with futures mixed and caution prevailing.
+>
+> Notable intraday/after-hours gainers on Aug 24–25 (from sources like Yahoo Finance, Morningstar, and StockAnalysis) included smaller or borderline names such as:
+> - **GENB** (Generate Biomedicines, ~$2.27B market cap): +~9.9% (closed ~$17.72). No new catalyst identified in the last 24 hours; prior Q2 results and pipeline updates were from early/mid-August.
+> - **SA** (Seabridge Gold, ~$3.56B): +~9.5% (closed ~$33.03). Recent coverage/filings (e.g., Q2 report, credit facility) from mid-to-late August, not tied to a fresh bullish trigger in the window.
+> - **EZPW** (EZCORP, ~$2.15B): +~8.8%. No specific new news in results.
+>
+> Other mentions (e.g., older earnings from BJ's, Pagaya, or general sector commentary) predate the 24-hour period. X activity highlighted NVDA anticipation but no fresh large-cap positives.
+>
+> **Sources**: Primarily aggregated from real-time market mover lists (Yahoo Finance, Morningstar, CNBC, StockAnalysis) and news searches dated around Aug 24–25, 2026. No comprehensive list of qualifying bullish events emerged.
+
+**Query 2 — "Pre-market movers 2026-08-25: tickers up >2% on actual news catalyst"**
+
+> **ROST (Ross Stores) stands out as a clear pre-market mover (>2% up) driven by an actual news catalyst on August 25, 2026.**
+>
+> - **ROST**: Reported strong Q2 results (sales up 13% to ~$6.27B, beating estimates; EPS beat), raised full-year EPS guidance (to $8.61–$8.77), citing traffic gains, comparable-store sales growth (~10%), tariff refunds, and store expansion. Shares gapped higher ~6%+ in pre-market (e.g., ~$243 area).
+>
+> Larger/more liquid names like HOOD (~+6% in some snapshots), LH, ALB, FCX, and MSCI also appeared on pre-market gainers lists, but specific fresh news catalysts tied directly to the Aug 25 session were not prominently detailed in results (HOOD moves have been linked to broader crypto/fintech sentiment or prior data releases).
+>
+> Microcap or low-float gainers (e.g., AIXI +267%, SDOT +72%, various others) frequently topped raw lists but typically lack verifiable fundamental news and are more prone to gap-fills, speculation, or low-volume activity.
+>
+> Data drawn from pre-market screener snapshots and earnings/news coverage around the date. Pre-market moves can be volatile and volume-dependent; always verify real-time sources.
+
+**Query 3 — "Earnings released after yesterday's close that beat AND raised guidance"**
+
+> **BJ (BJ's Wholesale Club Holdings)** reported after the August 24, 2026 close.
+>
+> - **Beat**: Adjusted EPS of $1.36 (beat consensus $1.16 by $0.20 or ~17%); revenue of $6.227 billion (beat consensus ~$5.883 billion by ~$0.344 billion or ~3.5%).
+> - **Raise**: Full-year FY2026 adjusted EPS guidance raised to $4.60–$4.80 (from prior $4.40–$4.60).
+>
+> **Source**: Zacks.com earnings report summary (Aug 24, 2026).
+>
+> No other companies were prominently identified in recent searches as having released earnings specifically after the Aug 24 close with both an EPS/revenue beat and raised guidance. Earlier reports (e.g., Target, ADI on Aug 19; Ross Stores ~Aug 21) do not match the timing.
+
+**Query 4 — "FDA approvals, contract wins >$100M, M&A, regulator decisions in the last 24 hours"**
+
+> **Recent events (published/announced ~Aug 24-25, 2026) matching the criteria:**
+>
+> - **FDA approval**: Johnson & Johnson (JNJ) received FDA approval for IMAAVY® (nipocalimab-aahu) as the first treatment for warm autoimmune hemolytic anemia (wAIHA).
+> - **Large contract win**: Boeing (BA) was awarded a sole-source IDIQ contract with a $131.23 billion ceiling value to support the F-15 Eagle Crest program (production, upgrades, sustainment; work through 2037).
+> - **M&A announcements/completions** (Aug 24):
+>   - nVent Electric (NVT) agreed to acquire Maverick Power for up to $2.3 billion (data center power infrastructure).
+>   - Elastic (ESTC) completed its acquisition of Deductive AI (AI-powered investigation platform).
+>   - Real completed its business combination with RE/MAX Holdings (forming Real REMAX Group; shares to trade under REAX).
+>   - Bernhard Capital Partners agreed to take Bowman Consulting Group private in a ~$1 billion deal.
+> - **Regulator decision**: The FTC secured a stipulated order on Aug 24 resolving antitrust concerns in the Zillow (Z)-Redfin agreement, restoring competition in online rental platforms (joined by five states).
+>
+> No other major FDA approvals, >$100M contracts, M&A announcements, or regulator decisions fitting the exact timeframe and criteria were identified in the results. Smaller or earlier-dated items (e.g., pre-Aug 24 approvals or sub-$100M deals) were excluded.
+
+### Step 2 — universe filters
+
+Seven names carried a *named* corporate catalyst and went to the technical screen. All seven returned
+`active / tradable=true / us_equity` from `alpaca.sh asset` and all cleared
+`min_avg_daily_volume_shares: 100_000` on real consolidated 30-day ADV (`volume.sh`, Yahoo):
+
+| ticker | status | 30-day consolidated ADV | volume gate |
+|--------|--------|--------------------------|-------------|
+| BJ | active/tradable | 1,770,193 | pass |
+| JNJ | active/tradable | 7,509,223 | pass |
+| BA | active/tradable | 5,828,403 | pass |
+| ROST | active/tradable | 2,537,790 | pass |
+| NVT | active/tradable | 2,095,866 | pass |
+| Z | active/tradable | 3,680,066 | pass |
+| ESTC | active/tradable | 2,042,976 | pass |
+
+Dropped before the technical screen for failing **Material** (no named corporate event — gainer-list
+entries only, and Grok explicitly recorded "no catalyst identified" for the first three):
+**GENB, SA, EZPW, HOOD, LH, ALB, FCX, MSCI**. **KEYS** skipped — already held (`portfolio.md`).
+
+### 🔴 Step 3 — the primary-source check moved or killed FOUR of seven, and INVERTED TWO
+
+Sixth consecutive session in which the 08-21 rule ("any watchlist candidate must be verified against the
+primary source") changed the answer. Two of today's changes are sign inversions, not downgrades.
+
+**1. BJ — Grok's date is WRONG. The release is dated August 21, not August 24. DQ on freshness.**
+Grok query 3 sourced Zacks and said "reported after the August 24 close." BJ's own IR release
+(`investors.bjs.com/press-releases/.../BJs-Wholesale-Club-Holdings-Inc--Announces-Second-Quarter-Fiscal-2026-Results`)
+is dated **August 21, 2026**. The consolidated tape corroborates the release, not Grok: BJ opened
+**93.98 on 08-21 against a 91.30 close (+2.9% gap) on 4.18M shares vs a ~1.4M prior session**, then ran
+again on 08-24. The catalyst is **three sessions old** and the name is **+7.87% off the pre-catalyst
+91.30 close** — past the 5% priced-in bar. Novelty 0, does not qualify.
+Separately, the release itself discloses the beat is contaminated: **"tariff refund benefits recognized"**
+(gross margin), **"a gain recognized in connection with a sale-leaseback transaction"** (SG&A offset), and
+**3.5M shares repurchased YTD** (share-count math). That is the PLNT 08-07 pattern and the ROST/DE 08-21
+pattern in one name. It would have been discounted hard even if it had been fresh.
+
+**2. Z (Zillow) — the FTC order runs AGAINST Zillow. Sign inverted. Fails Directional.**
+Grok framed it as "resolving antitrust concerns... restoring competition," which reads as clearance.
+FTC.gov says the opposite: it is a **stipulated final order for equitable relief** resolving FTC
+litigation over the 2025 Zillow-Redfin agreement. Zillow paid Redfin **$100M** to exit internet listing
+services, repost Zillow listings exclusively and stay out of the ILS market for up to nine years; the
+order **eliminates those provisions and requires Redfin to re-enter the ILS rental market as a
+competitor**. Zillow loses the $100M of exclusivity it bought and gains a competitor. That is a negative,
+not a catalyst. **DQ — fails Directional.** (Z nonetheless closed +3.33% on 08-24 on 3.16M vs ~1.9M —
+the tape read it the way Grok did. We are not trading it.)
+
+**3. BA — $131.23B is a ceiling, not an award. Obligated at award: $343,740.**
+The DoD contract announcement (war.gov, 08-24) gives the ceiling as $131.23B for the F-15 Eagle Crest
+IDIQ through 2037, with the **initially obligated amount $343,740 in FY2026 RDT&E funds** — three hundred
+forty-three thousand dollars, four orders of magnitude below the headline and below the >$100M contract
+bar outright. Strategically real (sole-source position to 2037); a forward cash-flow event today, no.
+
+**4. JNJ — genuinely fresh and correctly dated, but it is a label expansion, not a new drug.**
+J&J newsroom release dated **08-24**, first-ever approved treatment for wAIHA. But **nipocalimab/IMAAVY
+has been FDA-approved since April 30, 2025** for generalized myasthenia gravis. This is an added
+indication in a rare disease for a ~$650B mega-cap. Catalyst confirmed as stated; materiality is the
+problem, not accuracy.
+
+**5. NVT — verified UP. Grok's "up to $2.3 billion" is the earnout-inclusive number.**
+nVent's own release (`investors.nvent.com/press-releases/.../nVent-to-Acquire-Maverick-Power`) gives a
+**$1.75B purchase price** plus **up to $550M** contingent on 2027–2028 performance metrics. Maverick Power
+has **~$700M estimated 2026 revenue** (~19% of nVent's revenue base), is an engineered power-distribution
+manufacturer **for data centers**, priced at **~11.5x anticipated 2026 adj. EBITDA (~10.5x tax-adjusted)**,
+funded with **cash on hand plus new debt**, and nVent states it expects the deal **"to be accretive to
+adjusted earnings per share in the first year following completion"** (close expected Q4 2026, subject to
+regulatory approval).
+NVT's four-session **-14.2%** drawdown (177.21 on 08-17 → 151.98 on 08-21) was checked separately and
+returned **no discrete negative** — no guidance change, downgrade, filing or executive event; sources
+characterise it as profit-taking after a strong run, with the late-July Q2 guidance raise still standing.
+Recorded so cleanliness is scored on evidence rather than on the chart.
+
+### Step 3b — confirmation, off the consolidated (sip) tape
+
+Twelfth consecutive run calling `feed=sip` out-of-band; `scripts/alpaca.sh:104` still ships `feed=iex`
+(carry-forward #6/#10). Also note `bars` silently truncates at `limit` — an 8-bar request from 08-12
+stopped at 08-21 and hid the 08-24 session entirely on the first pass. Load-bearing again today.
+
+| ticker | 08-24 close | vs prior close | 08-24 volume | 5-session avg vol | confirmation |
+|--------|-------------|----------------|--------------|-------------------|--------------|
+| **NVT** | **153.35** | **+0.90%** | **2,573,262** | **1,984,946** | **up on +30% volume — yes, weakly** |
+| JNJ | 273.04 | +1.04% | 5,480,516 | 6,384,388 | up on BELOW-average volume |
+| Z | 37.05 | +3.33% | 3,164,628 | 3,168,170 | up, but DQ'd on Directional |
+| BA | 210.46 | **-1.75%** | 7,147,768 | 5,940,648 | **DOWN on above-average volume** |
+| ESTC | 83.24 | **-3.14%** | 2,169,811 | 2,587,964 | down |
+| BJ | 98.49 | +2.15% | 2,872,952 | 2,903,262 | catalyst 3 sessions stale |
+| ROST | 241.52 | +1.04% | 2,736,684 | 4,634,374 | catalyst 3 sessions stale |
+
+No pre-market print was obtainable: sip `trades/latest` and `quotes/latest` both returned `null` pre-open,
+and `alpaca.sh quote` returned the **08-24 15:59:50 ET close** for every name — **carry-forward #8 again**
+(IEX stale before the open). Every number above is a completed-session mark.
+
+## 2026-08-25 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                 | source |
+|--------|-------|--------------------------------------------------------------------------------------|--------|
+| NVT    | 7     | Definitive agreement to acquire Maverick Power (data-center power distribution) for $1.75B + up to $550M earnout; ~$700M 2026 revenue ≈ +19% of base, ~11.5x EBITDA, company states accretive to adj. EPS in year one | investors.nvent.com press release 2026-08-24 |
+
+**Score detail — NVT 7/10:** catalyst strength **3** (adds ~19% to the revenue base in the hottest capex
+vertical, management-stated year-one EPS accretion, verified against the primary release; held to 3 rather
+than 4 because an acquisition funded with cash+debt at 11.5x is closer to value-neutral at announcement
+than an organic beat-and-raise, and it does not close until Q4 2026 subject to regulatory approval) +
+novelty **2** (announced 08-24, name closed **+0.90%** — essentially nothing priced in against the 5%
+bar for a sub-$100B name, so the second wave is available; docked one point because the market had a full
+session and chose +0.9%, which is as consistent with "judged neutral" as with "pending") + confirmation
+**1** (up on volume ~30% above the 5-session average, but only +0.90% and off a downtrend) + cleanliness
+**1** (no offsetting bad news found on direct search, not halted, `no_earnings_within_days: 0`).
+
+**⚠️ Two things market-open must do before acting on NVT:**
+1. **Re-measure novelty at the open** per the ALB 08-06 / KEYS 08-19 rule. Pre-catalyst reference close
+   **151.98** (08-21); catalyst-day close **153.35** (08-24). If NVT opens **≥ $161.02** (+5% vs the
+   catalyst-day close) the novelty is consumed and the name does not qualify — kill it, do not re-score.
+2. **Weigh the -14.2% four-session drawdown into the catalyst.** No discrete negative explains it, which
+   is why cleanliness scored 1, but an unexplained -14% is the single largest risk on this name and it is
+   not captured anywhere in the rubric.
+
+Skipped (below threshold):
+- **JNJ (score 5):** catalyst 1 (IMAAVY wAIHA approval is a **label expansion** — nipocalimab already approved for gMG since 2025-04-30 — into a rare indication for a ~$650B mega-cap; immaterial vs ~$90B revenue) + novelty 2 (dated 08-24, +1.04%, under the 4% mega-cap bar) + confirmation 1 (up on **below**-average volume) + cleanliness 1.
+- **BA (score 3):** catalyst 1 (headline $131.23B is an IDIQ **ceiling**; obligated at award **$343,740**) + novelty 2 (nothing priced in) + confirmation 0 (**down -1.75% on above-average volume** on the news day, sixth down session in a row, -9% over the stretch) + cleanliness 0.
+
+Disqualified before scoring:
+- **BJ:** fails **Fresh** — IR release dated **08-21**, not 08-24 as Grok claimed; +7.87% off the pre-catalyst close, past the 5% bar. Beat also carries tariff refunds, a sale-leaseback gain and buyback share-count math.
+- **ROST:** fails **Fresh** — gapped **08-21** (o=243.85 vs 228.99 close), three sessions old, +5.47% off the pre-catalyst close. Grok reported this as a live 08-25 pre-market catalyst; the tape says otherwise. Already scored below threshold on 08-24.
+- **Z:** fails **Directional** — the FTC stipulated order is an enforcement remedy **against** Zillow (unwinds the $100M ILS exclusivity, forces Redfin back in as a competitor), not a clearance.
+- **ESTC:** fails **Material** — undisclosed tuck-in (Deductive AI) for a ~$8B company; closed -3.14%.
+- **GENB, SA, EZPW, HOOD, LH, ALB, FCX, MSCI:** fail **Material** — gainer-list entries with no named corporate event.
+
+### 🔴 Context market-open needs: the slot is almost certainly still full
+
+`max_concurrent_positions: 1` and KEYS is held to its **2026-08-26** time stop, so a qualifying NVT will
+most likely be **cap-blocked exactly as GSK was on 08-24** — the second measurable cost of the cap in two
+sessions, and the second consecutive session where the score gate said yes and the config said no. Unlike
+08-24, note the reverse is *also* true of the calendar: the slot frees on **08-26** (or 08-27 if the EOD
+run misses again), by which point NVT's novelty will have to be re-measured from scratch.
+
+**Escalation #1 is now at its last enforcing run.** The KEYS time stop is **tomorrow, 08-26**, and only the
+08-26 EOD routine can enforce it. `pmset -g sched` showed no bull wake as of last night's run; the 08-24
+on-time EOD was luck (machine happened to be awake), not a fix. Un-applied for a fifth day:
+`sudo pmset repeat wake MTWRF 12:50:00`, or a market-hours `caffeinate -s` LaunchAgent (~06:20–13:10 PDT,
+no sudo). Research routine cannot apply either — human call.
