@@ -10571,3 +10571,71 @@ routine can apply either.** If 08-26 EOD misses, the overdue carve-out sells at 
 (precedent KMX 06-26, PENG 07-16, CCK 07-30, BMY 08-10); 08-27 is a Thursday, so no weekend risk.
 Carry-forward **#3** (`routines/market-open.md:29` contradicting that carve-out, verified still present
 this run) has exactly **one morning left** in which it could ever matter.
+
+## 2026-08-25 end-of-day pass
+
+Run started **12:56:16 PDT / 15:56:25 ET**, **+1m 16s** past the 12:55:00 trigger. `clock.is_open` =
+`true`, **3m 35s** of market left — the run acted in time. **0 exits, 0 time-stops, 0 orders**, preflight
+not invoked, `memory/trade-log.md` unchanged. Equity **$6,824.30**, day **+2.85%**, WTD **+1.18%**.
+EOD email SENT (`2647db1b-9aa8-4442-b213-f734f4e54f69`).
+
+### Rejection-cohort audit — all seven marks were correct, and the CAP SAVED 3.93pp
+
+Marked from the **open** per the 08-14 rule (the only price we could have paid), not the prior close:
+
+| ticker | 08-25 open | 08-25 close | return | disposition |
+|--------|------------|-------------|--------|-------------|
+| **NVT** | **157.68** | **151.49** | **-3.93%** | **cap-blocked (accept side, score 7)** |
+| JNJ | 271.00 | 273.16 | +0.80% | below threshold (score 5) |
+| BA | 212.495 | 211.09 | -0.66% | below threshold (score 3) |
+| BJ | 97.63 | 94.37 | **-3.34%** | DQ — freshness (release 08-21) |
+| ROST | 241.50 | 241.11 | -0.16% | DQ — freshness (gapped 08-21) |
+| Z | 37.48 | 36.11 | **-3.66%** | DQ — Directional (FTC order runs against it) |
+| ESTC | 82.98 | 80.40 | **-3.11%** | DQ — Material |
+
+Six of seven fell or went nowhere; the one positive (JNJ +0.80%) was a score-5 we passed. KEYS returned
+**+0.69%** from its own 318.22 open over the same hours, so `max_concurrent_positions: 1` was worth about
+**+4.6pp** today against the switch it prevented.
+
+**This inverts the framing this morning's market-open and midday notes both carried.** Market-open called
+the NVT block *"the cleanest measurement of the cap's cost the log has"* and *"the cap's second and larger
+cost in two sessions."* The close says the cap *saved* us. Against 08-24 — where the cap cost ~2.2pp (GSK
++0.50% vs KEYS -1.75%) — the running sample is **two sessions with opposite signs**. **The honest reading
+is that the cap's cost is unmeasured at n=2, not an established drag.** The confident cost framing was
+premature and the 08-26/weekly review should record it that way rather than carry it forward.
+
+### 🆕 Carry-forward #17 — the rubric has no term for a tape already rejecting the name
+
+Pre-market flagged NVT's **-14.2% four-session drawdown into its own catalyst** as *"the single largest
+risk on this name and it is not captured anywhere in the rubric,"* and scored it **7** anyway (cleanliness
+still took a 1 because no discrete negative explained the selling). The name then fell another **-3.93%**
+on announcement day. Catalyst strength, novelty, confirmation and cleanliness all price the *news*; none
+of them price a name the market has been dumping for four sessions without a reason. **Propose a rubric
+term (or a hard DQ) for this at the weekly review.** Note this is independent of the cap question — had
+the slot been open, the gate would have bought NVT at 157.68.
+
+### Primary-source rule — a defend, extended
+
+The 08-21 primary-source rule killed **BJ** on freshness (IR release dated **08-21**, not 08-24 as Grok
+claimed) and inverted **Z** on Directional (the FTC order runs *against* Zillow). Both closed sharply
+lower today — **BJ -3.34%, Z -3.66%**. **ROST**, DQ'd on the same rule after Grok claimed a *"~6%+
+pre-market gap on an 08-25 catalyst"*, closed **-0.16%** against a fictional gap that never existed.
+Eighth consecutive session in which the rule changed or defended the answer; three defends today.
+
+### Ops — nothing applied; escalation #1 is now at zero slack
+
+`pmset -g log` shows the machine entered Maintenance Sleep at **12:44:47** for 690 secs; the 12:55:00
+trigger landed into a sleeping machine and the routine started in the same second as an **incidental**
+`smc.sysState.Wake ... wifibt` DarkWake at **12:56:17**. **The earliest scheduled wake in the 12:44:50
+Wake Requests block was `powerd` CSPNEvaluation at `12:59:08` PDT = `15:59:08` ET — 52 seconds before
+the close.** No bull wake event appears in the block, or in `pmset -g sched`, for the **seventh**
+consecutive day. `pmset -g` still reports `sleep 1`.
+
+**The 08-26 EOD is the only run that can enforce the KEYS time stop**, and today was its dress rehearsal:
+on the scheduled-wake path it would have had **52 seconds** to read memory, detect the instrument, run
+preflight and fill a 20-share market order. **The KEYS entry itself took 1m 35s to drip-fill** (order
+27f26670, 12→15→20). The fix — `sudo pmset repeat wake MTWRF 12:50:00`, or a market-hours `caffeinate -s`
+LaunchAgent (~06:20–13:10 PDT, no sudo, covering all four routines) — is a **human call** that no routine
+can apply. Late-or-missed now **28 of 71 (~39%)**. If 08-26 EOD misses, the overdue carve-out sells at
+the 08-27 market-open (precedent KMX 06-26, PENG 07-16, CCK 07-30, BMY 08-10); 08-27 is a Thursday, so
+no weekend risk.
