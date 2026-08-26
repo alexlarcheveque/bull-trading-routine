@@ -10639,3 +10639,322 @@ LaunchAgent (~06:20–13:10 PDT, no sudo, covering all four routines) — is a *
 can apply. Late-or-missed now **28 of 71 (~39%)**. If 08-26 EOD misses, the overdue carve-out sells at
 the 08-27 market-open (precedent KMX 06-26, PENG 07-16, CCK 07-30, BMY 08-10); 08-27 is a Thursday, so
 no weekend risk.
+
+## 2026-08-26 pre-market pass
+
+Run started **`Wed Aug 26 03:39:02 2026`** PDT against an **03:30:00 PDT** trigger — **deferral +9m 02s**.
+Clock read `2026-08-26T06:42:18-04:00`, market closed, next_open 09:30 ET. Account not queried this pass
+(research only). 7 candidates scored, top score **9 (SMTC)** — the highest score the watchlist has
+produced since the log began tracking, and the third consecutive session whose top name is blocked
+before it can be bought. See the cap note at the bottom.
+
+### 🔴🔴 RUN QUALITY: THE SLEEP-DEFERRAL MECHANISM HIT **PRE-MARKET** — THIRD DISTINCT TRIGGER
+
+`ps -eo lstart` shows `run-routine.sh pre-market` started **03:39:02 PDT** against a 03:30:00 trigger.
+From `pmset -g log`:
+
+```
+2026-08-26 03:22:37 -0700  Sleep          Entering Sleep state due to 'Sleep Service Back to Sleep' ... 985 secs
+2026-08-26 03:22:39 -0700  Wake Requests  [dasd SleepService wakeAt=03:40:24 chronod.nextScheduledTimelineRefresh]
+                                          [*dasd TimerPlugin wakeAt=03:39:01 spotlightknowledge.task.receiver]
+                                          [mDNSResponder Maintenance wakeAt=05:22:37] [powerd CSPNEvaluation wakeAt=05:54:36]
+                                          [powerd UserWake wakeAt=10:13:25 calaccessd.travelEngine]
+2026-08-26 03:39:02 -0700  DarkWake       DarkWake from Deep Idle [CDNPB] : due to NUB.SPMI0.SW3 ... rtc/Maintenance
+```
+
+The machine slept at **03:22:37**, the 03:30:00 trigger landed **into a sleeping machine**, and the
+routine started in the **same second** as the 03:39:02 wake. **Nothing bull owns appears in the Wake
+Requests block** — the run was carried by `dasd TimerPlugin`'s spotlight maintenance wake (`*` = the
+chosen earliest, 03:39:01), an Apple housekeeping timer.
+
+**This is the third distinct trigger the mechanism has now hit** — EOD (08-18 through 08-25, repeatedly),
+midday (08-25, +3m50s), and now pre-market (08-26, +9m02s). The 08-25 midday note said the mechanism is
+"trigger-agnostic, and we only ever *noticed* it at EOD because EOD is the one routine with ~5 minutes of
+slack instead of hours." **Today confirms that on the one remaining untested trigger.** All four routines
+are exposed; only EOD has a deadline tight enough for it to cost anything.
+
+**Cost today: ZERO.** Pre-market has ~5h 51m of slack to the 09:30 ET bell.
+Late-or-missed **29 of 72 (~40%)** — and this is the **second** entry in that tally contributed by a
+routine other than end-of-day, both inside 24 hours.
+
+### 🔴🔴 ESCALATION #1 — EIGHTH DAY, AND **TODAY IS THE KEYS ENFORCING RUN**
+
+`pmset -g sched` read live this run:
+
+```
+[0]  wake at 08/26/2026 10:13:25 by 'com.apple.alarm...calaccessd.travelEngine.periodicRefreshTimer'
+[1]  wake at 08/26/2026 16:54:30 by 'com.apple.alarm...osanalytics.hardhighengagementtimer'
+```
+
+**Still no bull wake event**, eighth consecutive day. `pmset -g` reports `sleep 1` (one minute).
+**Neither scheduled wake is anywhere near the 12:55:00 PDT EOD trigger** — 10:13:25 is 2h42m early and
+16:54:30 is 3h59m late. If the machine is asleep at 12:55:00 today, the KEYS time stop depends once again
+on an incidental wake, exactly as it did at 12:56:17 yesterday and 09:03:50 at midday.
+
+**➡️ THE FIX, unchanged and still a human call:**
+`sudo pmset repeat wake MTWRF 12:50:00`, or a market-hours `caffeinate -s` LaunchAgent (~06:20–13:10 PDT,
+no sudo, covers all four routines — and with pre-market now on the board, all four have demonstrably been
+hit). Moving the trigger 12:55 → 12:40 PDT is **not** a substitute: a 12:40 trigger fired into a sleeping
+machine defers identically. **Pre-market cannot apply either fix — both are human calls.**
+
+If 08-26 EOD misses, the overdue carve-out sells KEYS at the 08-27 market-open (precedent KMX 06-26,
+PENG 07-16, CCK 07-30, BMY 08-10); 08-27 is a Thursday, so no weekend risk — but see the cap note, because
+a miss also blocks the 08-27 open for new entries.
+
+### Grok raw output — Query 1: Materially bullish large-cap news (last 24h)
+
+**Moderna (MRNA)**: Barclays hiked its price target (following late-stage trial results with Merck for a personalized skin cancer vaccine the prior week); stock surged ~12-13.4%. (Reuters, Motley Fool; ~Aug 25, 2026, midday reports.) reuters.com/business/us-stock-futures-rise-tech-rebound-before-nvidia-inflation-tests-2026-08-25/
+
+**Advanced Micro Devices (AMD)**: Raymond James analyst upgrade; stock rose ~4.4% amid broader chip/tech rebound. (Reuters, Markets Insider; Aug 25, 2026.)
+
+**Other notable movers** (sector/macro-driven, large-cap >$2B mcap):
+- **Super Micro Computer (SMCI)**: +8.08% (top gainer list).
+- **Robinhood Markets (HOOD)**: +7.78% (Bitcoin surged above $80k for the first time in ~3 months on Treasury bond-buyback news).
+- **Nvidia (NVDA)**, **Meta (META)**, **Micron (MU)**: +1-2%+ on tech/AI rebound ahead of NVDA earnings (Aug 26 after close).
+
+**Broader context** (supportive but not ticker-specific): Tech rebound, oil prices dropping sharply (~3-4%), Treasury yields falling, easing inflation concerns ahead of PCE data and Jackson Hole.
+
+These reflect Aug 25, 2026, trading-session developments (last ~24 hours as of Aug 26). No major new earnings beats or regulatory approvals stood out in results for the exact window. All tickers are large-cap.
+
+### Grok raw output — Query 2: Pre-market movers >2% on news (2026-08-26)
+
+**Key pre-market gainers (>2%) on August 26, 2026, with explicit news catalysts (primarily from Benzinga and stock data aggregators like StockAnalysis/StockTitan):** benzinga.com/news/26/08/61427373/why-joyy-shares-are-trading-higher-here-are-20-stocks-moving-premarket ; stocktitan.net/rankings/stock-movers-today
+
+- **JOYY** (JOYY Inc.): Up ~3.6% to ~$77.70. Catalyst: Q2 earnings (EPS miss but sales beat; Q3 sales guidance above estimates).
+- **YYGH** (YY Group Holding Limited): Up ~74–81% (to ~$2.00–2.08). Catalyst: Announcement canceling a $5.94M second financing tranche and all outstanding warrants.
+- **FGL** (Founder Group Limited): Up ~17.8–29% (to ~$0.25–0.27). Catalyst: Completion of acquisition of 19.90% equity interest in Nichcom Go Sdn. Bhd. (announced prior day).
+- **BHVN** (Biohaven Ltd.): Up ~12.7% (to ~$16.20). Catalyst: Strategic global licensing agreement with SK Biopharmaceuticals for Kv7 ion channel platform and Opakalim (epilepsy candidate).
+
+Many other listed gainers (e.g., RDIB, DAIC, LGCL, various microcaps like SMTK/TRUG/XPON) showed large moves but lacked clear same-day news catalysts in reports, often appearing as extensions of prior-day volatility or speculative activity (potential gap-fills).
+
+Data drawn from pre-market snapshots around 5–9 AM ET on Aug 26, 2026; moves can change rapidly. Sources include Benzinga pre-market roundups and aggregator screens.
+
+### Grok raw output — Query 3: Beat AND raised guidance after yesterday's close
+
+**SMTC (Semtech Corp.), fiscal Q2 2027 (ended July 26, 2026).** 247wallst.com/companies/smtc/earnings ; investing.com/news/stock-market-news/semtech-surges-on-strong-q2-beat-and-upbeat-q3-guidance-4875892
+
+- **Beat**: Adjusted EPS of $0.71 (vs. consensus ~$0.61, beat of ~15-16%); revenue of $341.9 million (vs. consensus ~$328.7 million, beat of ~4%; +33% YoY, record quarter).
+- **Raised guidance**: Q3 FY2027 outlook of ~$410 million revenue (midpoint; vs. consensus ~$380 million or lower) and adjusted EPS of ~$1.05 (vs. consensus ~$0.73), with strong implied margin expansion.
+
+**Sources**: Company results and guidance via Zacks, RTTNews, Investing.com, and related coverage (reported after market close on August 25, 2026).
+
+No other companies prominently matched both criteria (EPS/revenue beat *and* raised guidance) for reports released after the August 25 close based on available results. Intuit (INTU) and Zoom (ZM) had mixed or underwhelming guidance despite beats or in-line results in some cases.
+
+### Grok raw output — Query 4: FDA approvals / >$100M contracts / M&A / regulator decisions (last 24h)
+
+**FDA Approvals (Aug 25, 2026 publications):**
+
+- Jazz Pharmaceuticals (NASDAQ: JAZZ) received FDA approval for Ziihera (zanidatamab-hrii) regimens (with/without Tevimbra + chemotherapy) as first-line treatment for HER2-positive unresectable locally advanced or metastatic gastroesophageal adenocarcinoma. This also triggers a $250M milestone payment to partner Zymeworks (NASDAQ: ZYME).
+- Johnson & Johnson (NYSE: JNJ) subsidiary received approval for Imaavy (nipocalimab-aahu) as the first treatment for warm autoimmune hemolytic anemia (in patients aged 12+).
+- ViiV Healthcare (GSK) received approval for Tivicay PD (dolutegravir) to treat HIV in newborns.
+
+**Large Contract Wins (>$100M, reported Aug 25–26, 2026):**
+
+- Parsons (publicly traded) awarded a potential $665M Army IDIQ for technical/logistics support.
+- Multiple firms (including publicly traded Booz Allen Hamilton (NYSE: BAH) and Lockheed Martin (NYSE: LMT)) selected for the Air Force's $920M NGAGE multiple-award contract.
+- Elbit Systems of America (NASDAQ: ESLT) secured a $112M USMC delivery order for night vision goggles.
+- Additional defense/ID contracts (e.g., Peraton $280M DISA IDIQ) reported but involve non-public or smaller entities.
+
+**M&A Announcements (Aug 25, 2026 publications):**
+
+- McKesson (NYSE: MCK) agreed to acquire privately held Precision Medicine Group for ~$2.25B (clinical research/biopharma services).
+- AstroNova (NASDAQ: ALOT) shareholders approved acquisition by Arcline Investment Management.
+
+**Regulator Decisions (Aug 25, 2026):**
+
+- FTC finalized consent order in Ascension Health-AmSurg ($3.9B) acquisition (requires divestitures to address antitrust concerns).
+
+No other major qualifying events (e.g., additional FDA nods, >$100M public-company contract wins, or regulator rulings) were identified in the exact 24-hour window. Most results reflect defense/government contracting activity or pharma regulatory updates.
+
+### 🟢 THE PRIMARY-SOURCE RULE MOVED THREE NAMES TODAY — a NINTH consecutive session
+
+Per the 08-21 rule (widened to *any* watchlist candidate), every survivor was checked against the
+company's own IR release / SEC filing before scoring. Three names moved:
+
+| ticker | secondary said | primary source said | effect |
+|--------|----------------|---------------------|--------|
+| **SMTC** | "Q3 guide ~$410M vs consensus ~$380M, EPS ~$1.05 vs ~$0.73" | 8-K Ex-99.1 (filed **08-25 ~4:06 PM ET**): Q3 net sales **$410.0M ±$5.0M**, non-GAAP EPS **$1.05 ±$0.03**; prior Q3 consensus **~$359.3M / ~$0.69** | **raise is BIGGER than reported** — +14.1% rev, **+52% EPS** (vs +7.9%/+44% on the secondary numbers) |
+| **JAZZ** | "received FDA approval for Ziihera" | Jazz PRNewswire (DUBLIN, Aug 25): approval is a **first-line GEA label EXPANSION**; Ziihera was **first approved 2024-11-20** (accelerated, 2L biliary tract cancer) | **not a new-drug approval** — catalyst 4 → 3 |
+| **ZYME** | "$250M milestone payment" | Zymeworks GlobeNewswire (Vancouver, Aug 25): **$250M earned**, total from Jazz now **$650M**, eligible for **up to $1.3B more + tiered royalties to 20.0%** | catalyst **confirmed and larger** — but the tape rejected it (see below) |
+
+Ninth consecutive session in which the rule changed or defended the answer. Note the direction is not
+one-way: SMTC's raise was **understated** by the secondaries, which is the first time the check has made
+a candidate materially *stronger* since ALB 08-07 (8 → 9).
+
+### 🔴 ZYME: the cleanest "tape rejects the news" instance the log has — carry-forward #17
+
+ZYME earned a **$250M cash milestone** — **11.5% of its ~$2.17B market cap** — plus eligibility for $1.3B
+more and up to 20% royalties on a drug that just got a much larger label. Off the sip consolidated feed:
+
+| session | open | high | low | close | volume |
+|---------|------|------|-----|-------|--------|
+| 2026-08-24 | 28.68 | 28.83 | 27.01 | **28.77** | 821,162 |
+| **2026-08-25** *(catalyst)* | **28.86** | **30.50** | **25.6095** | **27.47** | **2,075,286** |
+
+It spiked **+6.0%** to 30.50, then reversed to a 25.61 low and **closed -4.52%** on **3.8× ADV**. Up-spike
+into heavy distribution on the single best piece of news the company could receive. Confirmation scores
+**0/2** and the name lands at **5**, below threshold.
+
+**This is carry-forward #17 (proposed at yesterday's close after NVT) with the sign made explicit.** NVT
+carried a -14.2% four-session drawdown *into* its catalyst and fell another -3.93%; ZYME's rejection is
+compressed into the catalyst session itself and is visible in the bar. **The rubric already handled ZYME
+correctly** — the confirmation term (0/2) did the work and dropped it from 7 to 5 without any new rule.
+That is evidence the review should weigh against #17: the gap NVT exposed may be that NVT's confirmation
+was scored on the *catalyst-day* bar (+0.90%, up) while the *four sessions before it* were ignored.
+**A narrower proposal than #17: extend the confirmation lookback beyond the latest bar.**
+
+### 🔴 BHVN: best catalyst of the day, DQ'd on freshness by 2× the bar
+
+Biohaven's release is genuinely fresh — **PR Newswire, 2026-08-26 at 02:36 ET**, ~4 hours old at scoring
+time, the only candidate whose catalyst broke *after* yesterday's close in the strict sense. And it is
+enormous for the size of the company: Biohaven is the **licensor**, receiving **$400M near-term cash**
+($350M at closing + $50M in 2027) + $150M development/regulatory milestones + **mid-teens to low-twenties
+US royalties** on opakalim, against a **~$2.17B market cap** — the cash alone is **18.4% of the company**.
+
+**It fails the Fresh test on the second clause.** Pre-market prints **$15.89–$16.12** vs the 08-25 close of
+**14.38** = **+10.5% to +12.1%**, more than **double** the 5% priced-in bar for a sub-$100B name. Per
+strategy.md a catalyst qualifies only if Material **and** Fresh **and** Directional; Material and
+Directional are unambiguous here and Fresh is not. **The move already happened. DQ.**
+
+Logged prominently because this is the *expensive* kind of DQ — a correct rejection of a genuinely great
+catalyst — and the 08-26/weekly review should mark its close per the 08-14 rule (from the **08-26 open**,
+never the 08-25 close) to see what the freshness bar actually cost or saved today.
+
+### Universe filters applied (guardrails.md)
+
+Every ticker with a positive catalyst from the four queries, deduplicated, then filtered. Nothing is in
+`memory/portfolio.md` except KEYS (not a candidate). ADV is **real consolidated 30-day** via
+`scripts/volume.sh` (Yahoo), never Alpaca IEX.
+
+| ticker | asset status | 30-day ADV | ADV >= 100k | verdict |
+|--------|--------------|-----------|-------------|---------|
+| SMTC | active / tradable / us_equity | 2,512,333 | ✅ | scored |
+| JAZZ | active / tradable / us_equity | 744,546 | ✅ | scored |
+| ZYME | active / tradable / us_equity | 550,200 | ✅ | scored |
+| BHVN | active / tradable / us_equity | 1,958,116 | ✅ | scored → DQ freshness |
+| PSN  | active / tradable / us_equity | 1,667,546 | ✅ | scored |
+| BAH  | active / tradable / us_equity | 2,125,743 | ✅ | scored |
+| LMT  | active / tradable / us_equity | 1,194,096 | ✅ | scored |
+| JOYY | active / tradable / us_equity | 291,236 | ✅ | scored |
+| MCK  | active / tradable / us_equity | 980,853 | ✅ | scored |
+| **ESLT** | active / tradable / us_equity | **83,450** | ❌ | **DQ — below `min_avg_daily_volume_shares: 100_000`** |
+
+**ESLT note:** `routines/pre-market.md` cites ESLT as a name Alpaca's IEX feed historically *false*-rejected.
+Today's rejection is **not** that error — this is the real Yahoo consolidated tape and 83,450 is genuinely
+below the 100k floor. Correct reject.
+
+Rejected before the filters (no qualifying catalyst):
+- **MRNA** — Barclays **price-target hike**. strategy.md: "Pundit price targets / analyst upgrades with no new information" do NOT qualify. And the underlying trial data is from *the prior week*.
+- **AMD** — Raymond James **upgrade only**. Same rule. (Also the 07-23 AMD precedent: scored 7 on a stacked move, -5.5% two days later.)
+- **SMCI / HOOD / NVDA / META / MU** — no named corporate event. SMCI +8.08% off a gainer screen; HOOD +7.78% on *Bitcoin* > $80k (macro, and not HOOD's own cash flows); NVDA/META/MU +1-2% on sector rebound. All fail Material.
+- **YYGH ($2.00–2.08) / FGL ($0.25–0.27)** — below `min_price_per_share: 5`, and micro-cap. YYGH's catalyst (cancelling a $5.94M financing tranche) is a dilution *avoidance* on a nano-cap.
+- **ALOT** — shareholders **approved** an already-announced acquisition; the event is consummated, no second wave. Also far below `min_market_cap_usd`.
+- **JNJ** — Imaavy approved in warm autoimmune hemolytic anemia. A rare indication on a ~$400B+ mega-cap; immaterial to forward cash flows. Fails Material.
+- **GSK** — Tivicay PD pediatric/newborn HIV label extension. Line-extension on a mega-cap; immaterial. Fails Material.
+- **Peraton / Precision Medicine Group / Ascension-AmSurg** — not US-listed equities (private, or the FTC order runs against private parties).
+
+### Scoring detail (strategy.md rubric: catalyst 0–4, novelty 0–3, confirmation 0–2, cleanliness 0–1)
+
+**SMTC = 9** — catalyst **4**, novelty **2**, confirmation **2**, cleanliness **1**
+- *Catalyst 4/4*: Q2 FY27 record net revenue **$341.9M** (+33% YoY, +17% sequential) vs ~$328.7M consensus; non-GAAP EPS **$0.71** vs ~$0.61 (+16%). Q3 FY27 guide **$410.0M ±$5.0M** vs prior consensus **~$359.3M** = **+14.1% revenue raise**, non-GAAP EPS **$1.05 ±$0.03** vs **~$0.69** = **+52% EPS raise**, with margin expansion and record backlog/bookings. Verified against the 8-K Ex-99.1 on EDGAR and investors.semtech.com, **not** the aggregators — which understated it.
+- *Novelty 2/3*: release hit **08-25 ~4:06 PM ET, after the close**, so the pre-catalyst reference is the **08-25 close 127.52**. Pre-market prints **$133.06–$133.30 = +4.34% to +4.53%**. Inside the 5% bar for a sub-$100B name — **but only just.** See the kill threshold below.
+- *Confirmation 2/2*: 08-25 closed **127.52, +5.47%** on **8,905,042 shares = 3.5× ADV**. Up on massively above-average volume. (That bar *precedes* the release — it is a pre-print bounce off the sector selloff, not a reaction to the news.)
+- *Cleanliness 1/1*: no offsetting item in the release — no exec change, no going-concern, no dilution, net leverage 1.1×. The **-21.6% slide 08-17 → 08-24** (154.22 → 120.91) traces to **broad AI/semi profit-taking**, not company news; the 08-13 sale of the cellular module business (~$62M to Compal) is framed as margin-accretive and non-GAAP-EPS-neutral. `no_earnings_within_days: 0` so earnings proximity is allowed.
+- ⚠️ *Flagged, not scored*: **GAAP diluted EPS $1.59 exceeds non-GAAP $0.71** because of a **~$101.4M one-time income-tax benefit** (~$115.6M associated tax effect in the reconciliation). Headline GAAP numbers are flattered. The guide and the non-GAAP line — which is what we scored — are unaffected.
+
+**JAZZ = 8** — catalyst **3**, novelty **2**, confirmation **2**, cleanliness **1**
+- *Catalyst 3/4*: FDA approved **two Ziihera (zanidatamab-hrii) regimens in first-line HER2+ gastroesophageal adenocarcinoma** (± Tevimbra + fluoropyrimidine/platinum chemo). Material — 1L GEA is a far larger population than the existing label. **Held to 3, not 4, by the primary source:** this is a **label expansion**, not a new approval — Ziihera was first approved **2024-11-20** for previously-treated HER2+ biliary tract cancer, so approval was a modelled event, not a surprise.
+- *Novelty 2/3*: catalyst dated **08-25** (Jazz PRNewswire, Dublin). Pre-catalyst reference is the **08-24 close 254.47**; 08-25 closed **260.23 = +2.26%**. Well inside the 5% bar. Day-2 second-wave entry, the CCK 07-22 / BMY 07-31 shape.
+- *Confirmation 2/2*: 08-25 up **+2.26%** on **1,560,396 vs 744,546 ADV = 2.1×**. Note it printed a **266.375 high** and gave back **2.3pp** into the close — a partial fade, but the gate is "up on above-average volume" and that is met.
+- *Cleanliness 1/1*: no offsetting news surfaced.
+
+**JOYY = 6** — catalyst **2**, novelty **2**, confirmation **2**, cleanliness **0**
+- *Catalyst 2/4*: Q2 revenue **$590.8M, +16.3% YoY** vs ~$569.85M consensus = **+3.7% beat**; Q3 guide **$602–622M**; FY26 non-GAAP operating income growth revised up to **~20% YoY**. A real beat-and-raise but a modest one.
+- *Novelty 2/3*: release **08-25 ~7:00 PM ET**; reference is the **08-25 close 75.00**, pre-market ~**$77.70 = +3.6%**. Inside the 5% bar.
+- *Confirmation 2/2*: 08-25 up **+2.08%** on **1,036,869 vs 291,236 ADV = 3.6×**.
+- *Cleanliness 0/1*: **EPS missed** while revenue beat — an offsetting negative inside the same release. ⚠️ **Caveat: the EPS miss is Benzinga's framing and I could NOT confirm a consensus EPS figure from the primary source** (the JOYY release gives $1.01 diluted / $1.24 non-GAAP per ADS but no consensus). Scored 0 conservatively; if the review finds no miss, JOYY is a 7.
+
+Below-threshold names, scored in full:
+
+**MCK = 4** — catalyst **2**, novelty **1**, confirmation **0**, cleanliness **1**. Signed a definitive agreement to acquire **Precision Medicine Group for ~$2.25B cash** (McKesson newsroom, 08-25). That is **~2.1% of a ~$105.5B market cap** — an acquirer buying a services business is not a clear forward-cash-flow delta. Already **+3.58%** on 08-25, and **MCK is a mega-cap (≥$100B), so its bar is 4%, not 5%** — it sits **0.42pp from outright disqualification**. Confirmation **0/2**: the +3.58% came on **883,457 shares vs 980,853 ADV = 0.90×, BELOW average**. A 3.6% move on below-average volume is not confirmation.
+
+**PSN = 4** — catalyst **1**, novelty **2**, confirmation **0**, cleanliness **1**. A **$665M Army IDIQ** is a **ceiling, not booked revenue**, against ~$6.5–7B annual revenue. The tape says the same: 08-25 closed **48.04, -1.58%**, on **601,891 vs 1,667,546 ADV = 0.36×**. Down on a third of normal volume.
+
+**BAH = 4** — catalyst **1**, novelty **2**, confirmation **0**, cleanliness **1**. The **$920M NGAGE** award is a **multiple-award** vehicle shared across selected vendors; BAH's own share is undisclosed and small against ~$12B revenue. 08-25 closed **73.83, -1.85%** on **1,423,531 vs 2,125,743 ADV = 0.67×**.
+
+**LMT = 3** — catalyst **0**, novelty **2**, confirmation **0**, cleanliness **1**. Same shared $920M NGAGE vehicle, against ~$74B annual revenue — arithmetically immaterial, and LMT is a mega-cap. 08-25 closed **556.52, -1.35%**.
+
+**ZYME = 5** and **BHVN = DQ** — see the two dedicated sections above.
+
+## 2026-08-26 pre-market watchlist
+
+| ticker | score | catalyst (one line)                                                                                          | source                          |
+|--------|-------|--------------------------------------------------------------------------------------------------------------|---------------------------------|
+| SMTC   | 9     | Q2 FY27 rec rev $341.9M +33% YoY, EPS $0.71 vs $0.61; Q3 guide $410M vs $359.3M cons (+14.1%) and EPS $1.05 vs $0.69 (+52%) | sec.gov 8-K / investors.semtech.com |
+| JAZZ   | 8     | FDA approved two Ziihera regimens in 1L HER2+ gastroesophageal adenocarcinoma (label expansion off 2024 BTC)    | investor.jazzpharma.com         |
+| JOYY   | 6     | Q2 rev $590.8M +16.3% YoY vs $569.9M cons; Q3 guide $602-622M; FY non-GAAP op income growth raised to ~20%      | prnewswire.com/JOYY Q2 2026     |
+
+Skipped (below threshold):
+- ZYME (score 5): $250M milestone earned + up to $1.3B more and 20% royalties — but the tape rejected it, spiking +6.0% to 30.50 then closing **-4.52%** on 3.8× ADV. Confirmation 0/2.
+- MCK (score 4): $2.25B acquisition = 2.1% of a $105.5B mega-cap; +3.58% already (mega-cap bar is 4%) and on **0.90× volume**.
+- PSN (score 4): $665M Army IDIQ is a ceiling, not revenue; stock **-1.58%** on 0.36× volume.
+- BAH (score 4): $920M NGAGE is a **multiple-award** vehicle, BAH's share undisclosed; stock **-1.85%** on 0.67× volume.
+- LMT (score 3): same shared $920M vehicle against ~$74B revenue — immaterial; stock **-1.35%**.
+
+Disqualified before scoring:
+- BHVN (DQ — **Freshness**): catalyst is excellent and 4 hours old ($400M near-term cash = 18.4% of a $2.17B cap, PR Newswire 08-26 02:36 ET), but pre-market **+10.5% to +12.1%** is **more than double** the 5% priced-in bar. The move already happened.
+- ESLT (DQ — **liquidity**): real consolidated 30-day ADV **83,450** < `min_avg_daily_volume_shares: 100_000`.
+- MRNA, AMD (DQ — **Material**): analyst price-target hike / upgrade only, explicitly non-qualifying.
+- SMCI, HOOD, NVDA, META, MU (DQ — **Material**): screener moves and macro (Bitcoin > $80k), no named corporate event.
+- YYGH, FGL (DQ — **guardrails**): $2.04 and $0.26 vs `min_price_per_share: 5`; nano-caps.
+- ALOT (DQ — **novelty/size**): shareholder approval of an already-announced deal; event consummated.
+- JNJ, GSK (DQ — **Material**): rare-indication approval and a pediatric label extension on mega-caps.
+
+### 🔴🔴 THE CAP BLOCKS A **NINE** TODAY — third consecutive session, and the score is escalating 6 → 7 → 9
+
+**Market-open cannot buy any of these today.** `max_concurrent_positions: 1` and **KEYS is still open**:
+its `target_exit` is **2026-08-26 = today**, and strategy.md is explicit that a stop **due today** defers
+to end-of-day (only a **strictly past** date triggers the market-open overdue carve-out). So at 09:30 ET
+the slot is **FULL**, and the highest-scoring candidate this watchlist has ever produced is refused before
+preflight is even invoked.
+
+| session | top name | score | why refused |
+|---------|----------|-------|-------------|
+| 08-24 | GSK | 6 | `max_concurrent_positions: 1` |
+| 08-25 | NVT | 7 | `max_concurrent_positions: 1` (novelty verified intact at the open, +2.82%) |
+| **08-26** | **SMTC** | **9** | **`max_concurrent_positions: 1` — KEYS time stop defers to EOD** |
+
+Yesterday's close argued the cap's cost is **unmeasured noise at n=2** — it cost ~2.2pp on 08-24 (GSK) and
+**saved 3.93pp** on 08-25 (NVT closed -3.93%). That reading stands and today does not overturn it. But the
+**score** being refused has now gone 6 → 7 → **9**, and n becomes 3 at tomorrow's close. **This is the
+central number for the weekly review.**
+
+**The earliest SMTC can be bought is the 08-27 open** — and only if the **08-26 EOD run fires** and sells
+KEYS. If EOD misses (~40% historically, and `pmset -g sched` still shows **no bull wake event** on the
+eighth day), the overdue carve-out sells KEYS at the 08-27 *market-open*, and whether the freed slot can
+be re-used in the same run is governed by `routines/market-open.md` — **carry-forward #3, still
+unresolved, and 08-27 is the only morning it could ever matter.**
+
+### ➡️ Novelty kill thresholds for market-open — re-measure at the bell, per the ALB 08-06 / KEYS 08-19 rule
+
+These are the numbers to check against the **opening print**, not the pre-market indication. Sub-$100B
+names use the **5%** bar; MCK is a mega-cap and uses **4%**.
+
+| ticker | pre-catalyst reference | +5% kill threshold | pre-market read (03:39–04:00 PDT) | margin to DQ |
+|--------|------------------------|--------------------|-----------------------------------|--------------|
+| **SMTC** | **08-25 close 127.52** (release was 4:06 PM ET, after the close) | **133.90** | **133.06–133.30 = +4.34% to +4.53%** | **0.45% to 0.65% — RAZOR THIN** |
+| JAZZ | 08-24 close 254.47 (catalyst dated 08-25) | 267.19 | 260.23 (08-25 close) = +2.26% | 2.7% |
+| JOYY | 08-25 close 75.00 (release 7:00 PM ET) | 78.75 | ~77.70 = +3.6% | 1.4% |
+
+**SMTC is 45 to 65 basis points from disqualification before the bell has even rung.** A normal opening
+gap on a name that just guided Q3 EPS **+52% above consensus** clears that easily. Market-open should
+expect to DQ it and must **not** rationalise past the threshold — this is exactly the INTC 07-24 / AMD
+07-23 failure mode the mega-cap clause was written for, and 5% is the sub-$100B line. **If SMTC opens at or
+above 133.90, novelty = 0 and the name does not qualify.** It is moot today regardless (the cap blocks it),
+but the same measurement has to be redone from scratch against a **fresh reference** if SMTC is still the
+candidate at the 08-27 open.
+
+**Do not carry today's +4.3% forward as tomorrow's novelty.** By 08-27 the catalyst is two sessions old and
+the reference price question ("+5% of *what*?") has to be re-answered — the same problem NVT hit when its
+novelty needed re-measuring "from scratch a third time."
+
