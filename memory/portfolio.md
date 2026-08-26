@@ -1,19 +1,85 @@
 # portfolio.md
-# Updated 2026-08-26 11:00 CT (12:00 ET) by midday routine.
+# Updated 2026-08-26 14:56 CT (15:56 ET) by end-of-day routine.
 
 ## Account
-- equity: 6930.30
-- cash: 421.90
-- buying_power: 19911.12
-- day_pnl_pct: +1.55  # vs last_equity 6824.30
+- equity: 6863.50
+- cash: 6863.50
+- buying_power: 27454.00
+- day_pnl_pct: +0.57  # vs last_equity 6824.30
 
 ## Open positions
 
 | ticker | instrument | qty | entry_price | entry_date | target_exit | unrealized_pnl_pct |
 |--------|------------|-----|-------------|------------|-------------|--------------------|
-| KEYS   | equity     | 20  | 340.8005    | 2026-08-19 | 2026-08-26  | -4.51              |
+| _(none — flat)_ | – | – | – | – | – | – |
 
 ## Notes
+
+2026-08-26 end-of-day: **1 time stop ENFORCED, 1 order, 0 open positions.** KEYS 20 sh sold at
+**$322.08** on the 7-day time stop, ret **-5.49%** vs $340.8005 entry, realized **-$374.41**.
+Equity **$6,863.50**, cash **$6,863.50** = **100% cash**, day **+0.57%**, WTD **+1.76%** (vs the
+Fri 08-21 close $6,744.50; `portfolio/history` labels are shifted one trading day back — the row
+labelled 08-26 is the 08-25 close $6,824.30, which reconciles to yesterday's commit), all-time
+**-93.14%** from the $100,000 open. Reconciled against Alpaca: `positions` returns **0**,
+`orders open` returns **0**, `long_market_value` $0.00 — no drift. **Cash $6,863.50 = equity, to
+the cent.** EOD email SENT (id `8a497d14-5a51-4a85-83a9-a1d7ea99f85f`).
+
+### 🟢🟢🟢 THE STOP THE ESCALATIONS WERE ABOUT — ENFORCED, WITH 3m32s TO SPARE
+
+Three consecutive sessions escalated this exact run as the single point of failure. It landed:
+submit **15:56:21 ET** → fill **15:56:28 ET** = **7 seconds**, 20/20, no drip, $322.08 vs a $322.19
+quote 9s earlier (**-0.03%**). Preflight passed and gated the sell as required.
+
+**The entry's 1m35s drip-fill did not repeat on the exit** — carry-forward #13 assumed the exit
+would be as slow as the entry, and it was 13x faster. Sells of a full position close flat; the
+entry's drip was the opening auction, not the name. #13 should be re-scoped to *entries only*.
+
+### 🔴🔴🔴 ESCALATION #1 SURVIVES — the run was saved by LUCK for the third straight time
+
+`ps -eo lstart` shows the process started **`Wed Aug 26 12:55:50 2026`** PDT against a 12:55:00
+trigger = **+50s deferral**. `pmset -g log` shows the machine entered **Maintenance Sleep at
+12:52:03** and was rescued by an **incidental wifibt DarkWake at 12:55:50** — the same rescue that
+saved the 08-25 EOD by 52 seconds. **`pmset -g sched` STILL shows no wake behind any bull trigger**
+(next: 16:53:31 osanalytics, 18:26:26 calaccessd — neither is ours).
+
+**Had the DarkWake not landed, this morning's measured market-open deferral (+10m32s) applied here
+starts the run at 16:05 ET and the stop is a TOTAL MISS on a 93.9%-of-book position.** The outcome
+was decided by a wifi chip, not by anything bull controls. Late-or-missed is now **30 of 74 (~41%)**.
+
+**Carry-forward #2 is PARTIALLY APPLIED and it does not fix this.** `caffeinate -is` is now live in
+`scripts/run-routine.sh:38` (confirmed this run: `PreventSystemSleep 1`, `PreventUserIdleSystemSleep
+1`) — but caffeinate holds sleep off **during** a run and **cannot wake a sleeping Mac for a
+trigger**. It protects a run that has already started; every deferral to date happened *before*
+start. **The fix is still `pmset repeat wake`, un-applied on day 9.** The change is also still
+uncommitted.
+
+### 🟠 The price gate never fired — the time stop is the only working exit
+
+KEYS closed at **-5.49%** having never come within 94pp of either gate: `per_trade_stop_pct: 100`
+and `per_trade_target_pct: 100` mean **no share position can ever exit on price**. Every share trade
+since KMX 06-18 has closed on the clock. Carry-forward #14 now has its cleanest reading yet — the
+config's survivability is real (KEYS never risked a wipeout) but the cost is that the 7-day timer is
+the *entire* exit policy for shares. Rule it at the review.
+
+### 🔴 The cap refused a 9 — and the slot is now free
+
+`max_concurrent_positions: 1` blocked **all three** qualifying names today (SMTC 9, JAZZ 8, JOYY 6)
+to hold a position that exited at -5.49%. SMTC opened **+2.65%** — novelty INTACT against
+pre-market's predicted DQ — and ran **+6.38% off the open**. The refused scores are climbing
+**6 → 7 → 9** across three sessions, and today the cap held a loser to block the highest score the
+log has produced. That is the strongest case yet for #15; a same-day audit is not a verdict, but the
+review now has three consecutive instances and a rising score trend.
+
+**Tomorrow's open is the first session since 08-19 that can act**, with 100% cash and a free slot.
+Per the ALB 08-06 rule, SMTC's novelty must be **re-measured from scratch** at the 08-27 open — it
+has already run +6.38% off today's open and may well DQ. Do not carry today's score forward.
+
+### 🟢 `no_margin` COMPLIANT — cash positive a 13th consecutive session, and now unencumbered
+
+`long_market_value` $0.00, `initial_margin` $0.00, `maintenance_margin` $0.00, buying power
+$27,454.00, cash **+$6,863.50**. The 98% haircut (#5) is **still not stress-tested** — the freeing
+slot did not exercise it today because EOD never opens positions. Tomorrow's market-open is the
+first chance since 08-19.
 
 2026-08-26 midday: **0 exits, 0 orders.** No preflight invoked, `memory/trade-log.md` unchanged.
 KEYS 20 sh marked **325.42** vs 340.8005 entry = **-4.51%**, giving back 0.30pp of the market-open

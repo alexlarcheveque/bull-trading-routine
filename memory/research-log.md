@@ -11269,3 +11269,70 @@ enthusiastically confirming, +6.4% off the open. A confirmation term would cut b
 and the open printed +2.65%. Pre-market indications systematically overstated the opening gap on both SMTC
 and BHVN (+12% → -0.97%). **Pre-market should stop forecasting the DQ verdict and simply hand market-open
 the threshold**, which is what the ALB 08-06 rule already says. Propose at the review.
+
+---
+
+## 2026-08-26 end-of-day (14:56 CT / 15:56 ET)
+
+**1 time stop ENFORCED, 1 order, 0 positions open, 0 new positions (EOD never opens).**
+Equity **$6,863.50**, cash **$6,863.50** (100% cash), day **+0.57%**, WTD **+1.76%**, all-time
+**-93.14%**. EOD email sent (`8a497d14-5a51-4a85-83a9-a1d7ea99f85f`).
+
+### The escalated run landed
+
+KEYS 20 sh sold **$322.08**, ret **-5.49%**, realized **-$374.41**. Submit 15:56:21 ET → fill
+15:56:28 ET = **7 seconds**, 3m32s before the close. Preflight gated it. Second EOD-enforced time
+stop since the plist repair (after RDNT 08-17), and the first one that three prior sessions had
+explicitly escalated as un-survivable.
+
+### But escalation #1 is NOT resolved — third consecutive rescue by an incidental wake
+
+Start **12:55:50 PDT** vs a 12:55:00 trigger = **+50s**. `pmset -g log`: **Maintenance Sleep at
+12:52:03**, rescued by an **incidental wifibt DarkWake at 12:55:50**. `pmset -g sched` still shows
+**no wake behind any bull trigger**. Applying this morning's measured market-open deferral (+10m32s)
+to this trigger starts the run at 16:05 ET = **total miss** on 93.9% of the book. Late-or-missed
+**30 of 74 (~41%)**.
+
+**#2 partially applied, and it does not close this gap:** `caffeinate -is` is live in
+`scripts/run-routine.sh:38` (`PreventSystemSleep 1` confirmed during this run). It holds sleep off
+*during* a run; it cannot *wake* a sleeping Mac *for* a trigger, and every deferral to date occurred
+before start. `pmset repeat wake` remains the fix — **un-applied, day 9**, and the run-routine.sh
+edit is still uncommitted.
+
+### Ops carry-forward
+
+**#1** 🔴🔴🔴 sleep-deferral — **the enforcing run survived on luck; the human fix is still open.**
+The immediate deadline has passed (no position to lose tomorrow), so the pressure drops but the
+defect does not. **#2** `caffeinate -is` **APPLIED but uncommitted** and **insufficient** — see
+above; re-scope this carry-forward to "caffeinate protects a started run; pmset wake starts it."
+**#3** `routines/market-open.md:29` vs strategy.md's overdue carve-out — **now moot**: the stop was
+enforced on time, so 08-27 has nothing overdue to carry. The conflict stays unresolved in the docs.
+**#4** no limit-order/partial-close path — not exercised; the market sell filled clean. **#5**
+haircut 98% → 96% **still not stress-tested**; tomorrow's open is the first chance since 08-19.
+**#6/#10** `feed=sip` — not used this run (positions/account/quote only). `scripts/alpaca.sh:104`
+still ships `feed=iex`. **#7** `routines/midday.md:1` header — n/a. **#8** IEX bell staleness — the
+15:56 `quote KEYS` ($322.19) matched the 15:56:28 fill ($322.08) to **11 cents**; consistent with
+"live everywhere except the 09:30 open." Six points now; promote to a written rule. **#9**
+`routines/end-of-day.md:1` header claims `3:55 PM Central / 4:55 PM Eastern` — **wrong on both
+counts**, live plist is 12:55 PDT = 15:55 ET / 14:55 CT. Docs-only; do NOT move the plist.
+**#10a** post-bell re-pull partiality — not re-tested. **#11** novelty-at-the-open — n/a for EOD.
+**#12** the 3–7 DTE option window — **closed for KEYS**: monthly-only expiries forced shares, and
+shares have no premium-decay exit, so the position could only ever end on the clock. **#13** the
+bounded fill poll — **falsified in the direction of safety**: the exit filled in 7s vs the entry's
+1m35s drip. Re-scope #13 to **entries only** (opening-auction effect, not a name effect). **#14**
+`per_trade_stop_pct: 100` + `per_trade_target_pct: 100` — **KEYS exited -5.49% having never come
+within 94pp of either gate. The time stop is the ONLY working share exit in this config; every
+share trade since KMX 06-18 has closed on the clock.** **#15** "raised but capacity-constrained" —
+read the same way an **eighth** time and never broke; KEYS was sold by the clock, not the thesis.
+**#16** the dated Grok query — not invoked this run. **#17** no "tape is rejecting this name" term —
+**SMTC is today's mirror image**: +6.38% off the open while cap-blocked. **#18** pre-market should
+hand market-open the novelty *threshold*, not a forecast **DQ verdict** — reinforced today (forecast
++4.34–4.53% DQ, actual +2.65% accept).
+
+### 🔴 The cap refused a 9, and the slot is now free
+
+`max_concurrent_positions: 1` blocked **SMTC 9, JAZZ 8, JOYY 6** to hold a position that exited at
+**-5.49%**. Refused scores across three sessions: **6 → 7 → 9**. Tomorrow's open is the first
+actionable session since 08-19, at 100% cash. **SMTC's novelty must be re-measured from scratch at
+the 08-27 open per the ALB 08-06 rule** — it has already run +6.38% off today's open and may DQ.
+Do not carry today's score forward.
