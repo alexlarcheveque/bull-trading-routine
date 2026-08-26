@@ -10958,3 +10958,314 @@ candidate at the 08-27 open.
 the reference price question ("+5% of *what*?") has to be re-answered — the same problem NVT hit when its
 novelty needed re-measuring "from scratch a third time."
 
+
+## 2026-08-26 market-open execution
+
+- market: **open** (`is_open=true`, clock `09:40:49 ET`) | `trading_blocked: false` | `account_blocked: false` | status ACTIVE
+- positions reconciled (Alpaca): 1 — KEYS 20 sh @ 340.8005, `asset_class: us_equity`. Matches portfolio.md. `orders open` = 0. No drift.
+- exits checked: 1 | **exits: 0** | **buys: 0** | **orders sent: 0** | preflight NOT invoked (no order to gate) | `memory/trade-log.md` unchanged
+- account: equity **$6,950.90**, cash **+$421.90**, buying_power $19,968.80, day **+1.86%**, WTD **+3.06%**, all-time **-93.05%**
+
+### 🔴🔴 RUN QUALITY: THE SLEEP-DEFERRAL HIT **MARKET-OPEN** FOR THE FIRST TIME — +10m 32s, THE WORST NON-MISS ON RECORD
+
+Every prior note in this log states the morning trigger "has **never** been hit by the sleep-deferral
+mechanism the 08-20 EOD run root-caused." **That is now false, and it failed by the largest margin any
+routine has recorded short of an outright miss.**
+
+`ps -eo lstart` shows `run-routine.sh market-open` started **`Wed Aug 26 06:40:32 2026`** PDT against a
+**06:30:00** PDT trigger (`com.bull-trading.market-open.plist`, Hour 6 / Minute 30, read live this run) —
+**deferral 10m 32s**. The clock read **09:40:49 ET**: the routine reached the tape **ten minutes and
+forty-nine seconds after the opening bell it exists to trade.**
+
+From `pmset -g log`:
+
+```
+2026-08-26 06:22:35 -0700  DarkWake       DarkWake from Deep Idle [CDNPB] : due to NUB.SPMI0.SW3 ... rtc/Maintenance ... 44 secs
+2026-08-26 06:23:21 -0700  Wake Requests  [*dasd SleepService  wakeAt=06:40:31 "com.apple.energykit.guidance.historical"]
+                                          [dasd TimerPlugin    wakeAt=06:41:17 "...contacts.accounts.validate-cache"]
+                                          [mDNSResponder Maintenance wakeAt=08:23:19]
+                                          [powerd CSPNEvaluation    wakeAt=07:55:37]
+                                          [powerd UserWake          wakeAt=10:13:25 calaccessd.travelEngine]
+2026-08-26 06:40:32 -0700  DarkWake       DarkWake from Deep Idle [CDNPB] : due to NUB.SPMI0.SW3 ... rtc/SleepService
+```
+
+The machine took a 44-second maintenance wake at 06:22:35, went back to sleep ~06:23:19, and the
+**06:30:00 trigger landed into a sleeping machine**. The routine started in the **same second** as the
+06:40:32 wake — the identical signature as 08-20 EOD, 08-21 EOD, 08-25 midday and 08-25 EOD.
+
+**🔴 THE NEW AND WORSE DETAIL: today there was no incidental hardware wake to rescue it.** The 08-25
+midday (+3m50s) and 08-25 EOD (+1m16s) both ran early on an *accidental* `smc.sysState.Wake ... wifibt`
+interrupt, and both notes said so. **Today the machine woke on the scheduled `dasd` wake it had actually
+queued — `wakeAt=06:40:31`, `com.apple.energykit.guidance.historical` — and the routine started at
+06:40:32, one second later.** So **+10m 32s is what the deferral costs when luck is removed.** The two
+small deferrals this week were the lucky draws, not the baseline.
+
+**Nothing bull owns appears anywhere in the wake-request list**, eighth consecutive day. `pmset -g sched`
+read live this run:
+
+```
+[0] wake at 08/26/2026 10:13:25 by com.apple.alarm...calaccessd.travelEngine.periodicRefreshTimer
+[1] wake at 08/26/2026 16:54:30 by com.apple.alarm...osanalytics.hardhighengagementtimer
+```
+
+Two Apple alarms, same as every prior run. **Three of the four triggers have now demonstrably been hit**
+(market-open, midday, end-of-day). The mechanism is trigger-agnostic, exactly as the 08-25 midday note
+argued; this morning removes the last routine anyone believed was immune.
+
+Late-or-missed **29 of 72 (~40%)**, and this is the **first entry contributed by market-open**.
+
+**Cost of today's deferral: ZERO — and only by accident.** The slot was full (see Step 2), so there was no
+entry to be late for. Had the cap not blocked SMTC, we would have paid the 10-minute gap on a name that ran
+**+6.4% off its open in the first 23 minutes**. The one morning market-open is finally late is the one
+morning it had nothing to buy.
+
+### 🔴🔴🔴 ESCALATION #1 — TODAY'S DEFERRAL, APPLIED TO TONIGHT'S EOD, MISSES THE KEYS TIME STOP OUTRIGHT
+
+This is the number that matters. **Tonight's 08-26 EOD is the ONLY run that can enforce the KEYS time
+stop**, and this morning just measured the deferral on the *same machine, same day, no incidental wake*:
+
+| | |
+|---|---|
+| EOD trigger | 12:55:00 PDT = **15:55:00 ET** |
+| runway to the close | **5m 00s** |
+| **today's measured deferral** | **+10m 32s** |
+| implied EOD start | **13:05:32 PDT = 16:05:32 ET** |
+| verdict | 🔴 **MARKET CLOSED — TIME STOP MISSED BY 5m 32s** |
+
+And that is before the order needs to fill: **the KEYS entry itself took 1m 35s to drip-fill** (order
+`27f26670`, 12→15→20). Of the seven EOD deferrals on record (+35s, +9m, +4m16s, +10m59s, +4m51s, +4s,
++1m16s), **four already exceed the 5-minute runway**; today's morning figure would be a fifth.
+
+**➡️ THE FIX, unchanged, eighth day, still a human call:**
+`sudo pmset repeat wake MTWRF 12:50:00`, or a market-hours `caffeinate -s` LaunchAgent (~06:20–13:10 PDT,
+no sudo, covers all four routines — and this morning is the third distinct trigger proving all four need
+it). Moving a trigger earlier is **not** a substitute: a 06:30 trigger fired into a sleeping machine
+deferred 10m32s today, and a 12:40 one would defer identically. Carry-forward #2 (`caffeinate -is`) is
+**not** mitigation — re-falsified a fifth time; this run's own assertion was created at 06:40:32, *after*
+the deferral. **Market-open cannot apply either fix.**
+
+If tonight's EOD misses, the **overdue carve-out** sells KEYS at the 08-27 market-open (precedent KMX
+06-26, PENG 07-16, CCK 07-30, BMY 08-10) — a one-session overshoot on a Thursday, so no weekend risk.
+**Carry-forward #3 becomes live tomorrow morning and 08-27 is the only day it could ever fire.**
+
+### Step 1 — exits: no gate fired. The time stop is due TODAY and correctly defers to EOD.
+
+| gate | value | threshold | fired |
+|------|-------|-----------|-------|
+| profit target | **-4.21%** | +100% (`per_trade_target_pct`) | no |
+| stop loss | **-4.21%** | **-100%** (`per_trade_stop_pct`) | **no — 95.8pp of room** |
+| thesis broken | Grok **NONE ×10 classes** + dated 08-26 query **NONE** | concrete named event | no |
+| **time stop** | target_exit **2026-08-26** = **TODAY** | today >= target_exit | **DUE — but defers to EOD** |
+| overdue carve-out | target_exit is **today**, not strictly past | strictly in the past | **no — does not apply** |
+| expiry guard | n/a — shares, no options open | within 2 trading days | n/a |
+
+**On the time stop, explicitly:** `strategy.md` is unambiguous — "A stop due *today* still defers to
+end-of-day as before," and the market-open carve-out requires `target_exit_date` to be **strictly in the
+past**. 2026-08-26 is today. **Market-open does not sell.** It is tempting to sell here anyway given the
+escalation above — the market is open, the position is at its best mark since entry, and tonight's sole
+enforcing run has a measured 10m32s exposure. **That temptation is exactly what `decision.md` forbids**
+("if anything is ambiguous, do nothing and log it"), and this is not even ambiguous: the rule is written
+and it says defer. Logged loudly, not acted on. **If the operator wants market-open to enforce
+same-day stops, that is a strategy.md edit at the weekly review, not a terminal decision.**
+
+Instrument detected live off Alpaca `asset_class: us_equity` → shares path, `quote`/`sell`, preflight
+`equity`. Mark used is `positions.current_price` (326.45) per the standing lesson.
+
+### 🟢 Grok clean a THIRTEENTH consecutive session — #16 applied a ninth time
+
+1. **Standard 10-class enumeration** (guidance cut, recall, litigation, regulatory/export-control, exec
+   departure, downgrade-only, restatement, dilution, short report, contract/customer loss) — literal
+   **"NONE for all categories (1)–(10)."** Coverage characterised as post-earnings reaction, **analyst
+   price-target RAISES, and institutional buying**.
+2. **Dated 08-26 query**, instructed to ignore the 08-18 print — replied the single word **NONE**. The
+   only 08-26-datelined item in the citations is a **13F disclosing Legal & General Group PLC opening a
+   NEW position**. A *purchase*.
+
+Verdict **THESIS INTACT**. **Nine consecutive dated queries have now returned Form 144, a 13F purchase, a
+10b5-1 Form 4, a 13F purchase, nothing, a 13F purchase, nothing, nothing, and another 13F purchase —
+filings, never events, and not one negative in thirteen sessions.** #16 has earned its place; write it into
+both routine files at the review.
+
+### 🟢 KEYS at **-4.21%** — best mark since entry, on the day the calendar forces the exit
+
+| session | open | high | low | close | volume |
+|---------|------|------|-----|-------|--------|
+| 2026-08-18 (print) | 350.00 | 350.895 | 332.64 | **341.00** | 3,526,271 |
+| 2026-08-19 | 349.00 | 352.00 | 314.52 | **319.45** | 3,875,269 |
+| 2026-08-20 | 314.66 | 322.69 | 313.195 | **316.51** | 1,905,031 |
+| 2026-08-21 | 319.22 | 322.73 | 310.27 | **316.13** | 1,201,274 |
+| 2026-08-24 | 311.09 | 313.82 | 306.8517 | **310.66** | 1,038,616 |
+| 2026-08-25 | 318.22 | 320.73 | 313.865 | **320.12** | **1,607,074** |
+| **2026-08-26** *(partial, 09:53 ET, per #10a)* | **323.13** | **327.065** | **321.03** | **326.74 live** | 62,928 |
+
+**+0.94% off yesterday's close, a second consecutive up-open, and the position's best mark since the
+08-19 entry (-4.21%, a 1.86pp improvement on yesterday's -6.07% close).** Yesterday's EOD note called the
+08-25 close-at-the-highs "the first genuinely bullish shape since the print" and noted the irony that it
+landed on the eve of a calendar-driven exit. **Today extends the shape and sharpens the irony: the name is
+recovering into the session that sells it.** Logged, not acted on — no rule reads intraday shape.
+
+### 🔴 CORRECTION to the 08-25 EOD note — #10a is worse than recorded: the post-bell re-pull was ALSO a partial
+
+The 08-25 EOD run followed #10a correctly (pulled the partial at 15:58 ET, waited for the bell, re-pulled)
+and wrote down **c=320.41, v=1,340,803**, attributing the 29-cent gap to Alpaca's 320.12 mark as a
+"tape-vs-mark spread ... immaterial and *not* staleness."
+
+**Re-pulled today at T+1, the completed 08-25 consolidated bar reads `c=320.12, v=1,607,074`** — **266,271
+more shares** and **29 cents lower**, and it lands **exactly on Alpaca's 320.12 mark, to the cent.**
+
+So: there was **no spread**. Alpaca's mark was right, the sip bar was still incomplete *minutes after the
+close*, and the run that thought it had obeyed #10a had not. **This is the fourth instance of #10a and it
+strictly extends the rule:** re-pulling "after the bell" is **not sufficient** — late and out-of-sequence
+prints keep revising the consolidated bar well past 16:00 ET. **A session close is only final at T+1.**
+Every EOD note that writes down a same-day close is writing down a partial. **Promote this at the review
+alongside #8 and #16.** (The affected numbers in the 08-25 EOD note are cosmetic — the -6.07% mark it
+reported was taken off `positions.current_price` and is unaffected — but the *reasoning* was wrong and the
+next run would have repeated it.)
+
+### Step 2 — halt checks: entries HALTED on the position cap for the THIRD consecutive session
+
+| check | value | cap | halts entries |
+|-------|-------|-----|---------------|
+| day P&L | **+1.86%** (6950.90 vs last_equity 6824.30) | -100% (`daily_loss_cap_pct`) | no |
+| week P&L | **+3.06%** (week opens at Friday's $6,744.50) | -100% (`weekly_loss_cap_pct`) | no |
+| **open positions** | **1** | **1** (`max_concurrent_positions`) | ✅ **YES — slot FULL** |
+| new positions today | 0 | 1 (`max_new_positions_per_day`) | no |
+
+No flatten, no `cancel-all` (0 open orders anyway), no `notify.sh` alert, no `PAUSED` marker. Both loss
+caps remain decorative at 100%. **The binding constraint is `max_concurrent_positions: 1`, for the third
+session running.**
+
+### 🔴🔴🔴 THE CAP BLOCKED A **NINE** — and unlike NVT, the novelty held AND the name is running
+
+Pre-market predicted market-open would have to **disqualify SMTC on freshness**: the +5% kill threshold was
+**133.90** (08-25 close 127.52) and the pre-market indication was **133.06–133.30 = +4.34% to +4.53%**,
+leaving "0.45% to 0.65% — RAZOR THIN," with the instruction "**Market-open should expect to DQ it and must
+not rationalise past the threshold.**"
+
+**The tape said otherwise. SMTC opened at 130.90 — `+2.65%`, a full 2.35pp INSIDE the 5% bar. The
+pre-market indication faded into the bell rather than gapping through it. Novelty is INTACT and SMTC
+qualifies on all three tests.** Measured against the opening print per the ALB 08-06 / KEYS 08-19 rule:
+
+| ticker | score | reference | +5% kill | **08-26 open** | vs ref | novelty |
+|--------|-------|-----------|----------|----------------|--------|---------|
+| **SMTC** | **9** | 08-25 close **127.52** | **133.90** | **130.90** | **+2.65%** | ✅ **INTACT** |
+| **JAZZ** | **8** | 08-24 close 254.47 | 267.19 | 257.40 | +1.15% | ✅ INTACT |
+| **JOYY** | **6** | 08-25 close 75.00 | 78.75 | 76.19 | +1.59% | ✅ INTACT |
+
+**All three above-threshold candidates qualified at the open. All three were refused before preflight was
+invoked, solely by `max_concurrent_positions: 1`.** The escalation is now:
+
+| session | top name | score | novelty at the open | why refused | close-marked outcome |
+|---------|----------|-------|---------------------|-------------|----------------------|
+| 08-24 | GSK | 6 | intact | `max_concurrent_positions: 1` | +0.50% (cost ~2.2pp) |
+| 08-25 | NVT | 7 | intact (+2.82%) | `max_concurrent_positions: 1` | **-3.93% (SAVED 3.93pp)** |
+| **08-26** | **SMTC** | **9** | **intact (+2.65%)** | **`max_concurrent_positions: 1`** | **pending tonight's close** |
+
+**⚠️ I am NOT calling this a measured cost, and that restraint is the lesson from yesterday.** The 08-25
+market-open note declared NVT "the cleanest measurement of the cap's cost the log has" at 09:30 and the
+close inverted it to a **3.93pp saving**. The honest statement is: **SMTC is at 139.25 as of the 09:30–10:00
+bar — `+9.20%` off the 08-25 close and `+6.38%` off its own open, on 1.68M shares in 23 minutes** — and
+**the number that counts is tonight's close, per the 08-14 mark-from-the-open rule.** EOD must mark it.
+
+What *is* established today, and is not a price claim: **the score being refused has gone 6 → 7 → 9, three
+consecutive sessions, and today all three above-threshold names qualified simultaneously.** n becomes 3 at
+tonight's close. **This is the central number for the 08-28 weekly review.**
+
+**The earliest SMTC can be bought is the 08-27 open**, and only if KEYS is sold first — by tonight's EOD,
+or by the overdue carve-out tomorrow morning if EOD misses. Per pre-market: **do not carry today's +2.65%
+forward as tomorrow's novelty** — by 08-27 the catalyst is two sessions old and the reference price must be
+re-answered from scratch, the same problem NVT hit.
+
+### Step 3 — entries: none constructed; preflight never invoked (no order to gate)
+
+Rejection open-marks (sip, per the 08-14 rule — from the **open**, never the prior close):
+
+| ticker | prior close | **08-26 open** | gap | live (09:53 ET) | disposition |
+|--------|-------------|----------------|-----|-----------------|-------------|
+| **SMTC** | 127.52 | **130.90** | **+2.65%** | **139.25 (+6.38% off open)** | **cap-blocked (accept side, score 9, novelty intact)** |
+| **JAZZ** | 260.23 | 257.40 | -1.09% | 255.56 | **cap-blocked (accept side, score 8)** |
+| **JOYY** | 75.00 | 76.19 | +1.59% | 78.31 | **cap-blocked (accept side, score 6)** |
+| ZYME | 27.47 | 27.56 | +0.33% | 28.44 | below threshold (score 5) |
+| MCK | 905.09 | 905.54 | +0.05% | 909.23 | below threshold (score 4) |
+| PSN | 48.04 | 48.40 | +0.75% | 48.78 | below threshold (score 4) |
+| BAH | 73.83 | 73.83 | 0.00% | 74.50 | below threshold (score 4) |
+| LMT | 556.52 | 559.00 | +0.45% | 563.78 | below threshold (score 3) |
+| **BHVN** | 14.38 | **14.24** | **-0.97%** | **13.355 (-7.13% on the day)** | **DQ — freshness (pre-market +10.5% to +12.1%)** |
+
+### 🟢 THE FRESHNESS BAR PAID AGAIN, AND SPECTACULARLY: BHVN's +12% pre-market OPENED NEGATIVE
+
+Pre-market disqualified BHVN despite calling its catalyst "excellent and 4 hours old" ($400M near-term
+cash = 18.4% of a $2.17B cap, PR Newswire 08-26 02:36 ET), purely because the pre-market indication of
+**+10.5% to +12.1%** was **more than double** the 5% priced-in bar.
+
+**BHVN opened at 14.24 — `-0.97%` versus the 08-25 close — and has since fallen to 13.355, `-7.13%` on the
+day.** The entire double-digit pre-market indication evaporated before the bell and then some. Anyone who
+"rationalised past the threshold" on the strength of the catalyst would be down ~6% inside 25 minutes.
+
+**This is the second consecutive session in which a pre-market freshness DQ was vindicated by the opening
+print** (08-25: ROST's claimed "~6% pre-market gap" opened at **-0.01%**). It is also a clean demonstration
+that **a pre-market indication is not a price** — the same lesson SMTC teaches from the opposite direction
+today, where a +4.4% indication opened at +2.65% and *saved* the candidate. **Two names, opposite signs,
+one rule: measure at the bell.** Add both to the tally as **defends**.
+
+### 🟢 Carry-forward #8 — NOT TESTABLE AT THE OPEN TODAY, because the run was 10 minutes late
+
+`./scripts/alpaca.sh quote KEYS` returned `p=325.63` at `t=2026-08-26T13:42:38Z` = **09:42:38 ET**, ~4
+seconds old, agreeing with `positions.current_price` (326.36 at that moment) to **73 cents** (-0.22pp).
+That is **live**.
+
+**But this is not a data point for the rule as written.** The five-point rule says IEX `quote` is *stale at
+the 09:30 open and live everywhere else* — and this run **did not sample the 09:30 open**. It sampled
+09:42, which falls squarely in the "everywhere else" bucket. **The deferral destroyed the only window in
+which #8 could be tested today.** Consistent with the rule; not a test of it. Promote #8 to a written rule
+at the review on the existing five points, and note that market-open is the *only* routine that can ever
+sample the 09:30 condition — so every deferred market-open costs a data point.
+
+### 🟢 `no_margin` COMPLIANT — cash +$421.90, unchanged since the 08-19 fill
+
+No order sent, so nothing could move cash; mark-to-market moves equity only. `long_market_value` $6,529.00,
+`initial_margin` $3,264.50, `maintenance_margin` $1,958.70, `sma` $6,635.10, buying power $19,968.80 — no
+leverage, cash positive a **12th consecutive session**. **20 × 326.45 + 421.90 = $6,950.90 = equity, to the
+cent.** The 98% haircut remains **not stress-tested** (#5) — the slot should free tonight and exercise it.
+
+### 🟠 Carry-forward #6/#10: `feed=sip` load-bearing a SIXTEENTH consecutive run
+
+Daily **and 30-minute** `feed=sip` bars both returned the current session, consistent with the entitlement
+statement (**delayed SIP bars yes, real-time SIP quotes/snapshots no**). Load-bearing today for **every
+novelty measurement, all nine rejection open-marks, the SMTC intraday run, the BHVN collapse and the 08-25
+close correction** — the finding that inverts pre-market's SMTC DQ prediction came from this call.
+`scripts/alpaca.sh:104` still ships `feed=iex`. Not applied — market-open's remit is orders, not tooling.
+
+### Ops carry-forward — nothing applied
+
+**#1** 🔴🔴🔴 sleep-deferral — **hit MARKET-OPEN today for the first time at +10m 32s, the worst non-miss
+on record, and the first deferral measured WITHOUT a rescuing incidental wake. Three of four triggers now
+confirmed. Applied to tonight's 12:55 PDT EOD it starts at 16:05:32 ET and MISSES the KEYS time stop by
+5m32s.** TIME-CRITICAL, human call, un-applied 8th day, **zero enforcing runs of slack**. **#2**
+`caffeinate -is` still uncommitted (with `AGENTS.md`, `.agents/`, `_raw/`, `_edited/`, `.env.bak.broken`,
+`memory/guardrails.md.conservative.bak`); **re-falsified a fifth time** — assertion created 06:40:32, after
+the deferral. **#3** `routines/market-open.md:29` vs strategy.md's overdue carve-out — **goes live tomorrow
+morning if tonight's EOD misses; 08-27 is the only day it could ever fire.** **#4** no limit-order/
+partial-close path. **#5** haircut 98% → 96%, still not stress-tested; the freeing slot should exercise it.
+**#6/#10** `feed=sip` — **sixteenth use**, load-bearing, still unapplied. **#7** `routines/midday.md:1`
+header — not exercised this run. **#8** IEX bell staleness — **not testable today; the deferral destroyed
+the 09:30 sample window.** Five points stand; promote to a written rule. **#9** `routines/end-of-day.md:1`
+header claims `3:55 PM Central / 4:55 PM Eastern` — wrong on both counts; live plist is 12:55 PDT =
+**15:55 ET / 14:55 CT**. Docs-only fix, do NOT move the plist. **#10a** 🔴 **EXTENDED — a post-bell re-pull
+is ALSO a partial. The 08-25 close revised from 320.41/1,340,803 to 320.12/1,607,074 overnight and matched
+Alpaca's mark to the cent. A session close is only final at T+1.** Fourth instance. **#11**
+novelty-at-the-open — **nine marks today: SMTC +2.65% (accept, score 9, novelty INTACT vs a predicted DQ),
+JAZZ -1.09%, JOYY +1.59% (both accept, cap-blocked), five below-threshold, BHVN -0.97% then -7.13% (DQ
+vindicated).** **#12** the 3–7 DTE option window — the reason KEYS is shares at 93.9% of the book with no
+premium-decay exit. **#13** the bounded fill poll — **the KEYS entry's 1m35s drip-fill is what makes a
+deferred EOD unsurvivable.** **#14** `per_trade_stop_pct: 100` + `target_position_pct: 100` survivability —
+**KEYS at -4.21%, its best mark since entry, on the day of its only exit; and the same config's cap has now
+refused 6 → 7 → 9 in three sessions.** **#15** "raised but capacity-constrained" — **moot for KEYS (exits
+today); rule it at the review so the next name inherits a decision.** **#16** the dated Grok query —
+**applied a ninth time**; write it into both routine files. **#17** the rubric has no term for "the tape is
+already rejecting this name" (NVT -14.2% into its catalyst) — **note SMTC is the mirror image: the tape is
+enthusiastically confirming, +6.4% off the open. A confirmation term would cut both ways.** **#18** 🆕
+**pre-market's novelty prediction was WRONG in the safe direction today** — it forecast a DQ at +4.34–4.53%
+and the open printed +2.65%. Pre-market indications systematically overstated the opening gap on both SMTC
+and BHVN (+12% → -0.97%). **Pre-market should stop forecasting the DQ verdict and simply hand market-open
+the threshold**, which is what the ALB 08-06 rule already says. Propose at the review.
